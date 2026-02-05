@@ -1,0 +1,30 @@
+{
+  "data": {
+    "entries": [
+      {
+        "id": "2305769",
+        "slug": "remote-support-saas-service-security-investigation",
+        "title": "BeyondTrust Remote Support SaaS Service Security Investigation",
+        "mainBannerStandalone": [
+          {
+            "id": "2305770",
+            "headingSection": "BeyondTrust Remote Support SaaS Service Security Investigation",
+            "descSection": "<p>Updated 1/28/25 at 5:45 p.m. EST. First published 12/8/24 at 11:00 p.m. EST.</p>"
+          }
+        ]
+      },
+      {
+        "id": "900001",
+        "slug": "rich-text-all-scenarios",
+        "title": "Rich Text – All Scenarios Test Page",
+        "mainBannerStandalone": [
+          {
+            "id": "900001-hero",
+            "headingSection": "Rich Text Test: All Scenarios",
+            "descSection": "<p>This is a <strong>basic paragraph</strong> with <em>italic text</em> and <u>underline</u>.</p>\n<p>This paragraph contains a <a href=\"https://example.com\" target=\"_blank\">link to Example.com</a>.</p>\n<h2>Unordered List</h2>\n<ul class=\"checkmark\">\n<li>First unordered item</li>\n<li>Second unordered item</li>\n<li>Third unordered item</li>\n</ul>\n<h2>Ordered List</h2>\n<ol>\n<li>First ordered step</li>\n<li>Second ordered step</li>\n<li>Third ordered step</li>\n</ol>\n<h2>Image Block</h2>\n<img src=\"https://assets.beyondtrust.com/assets/images/identity-security-insights-featured-promo-graphic.jpg\" alt=\"Demo Image\" />\n<h2>Mixed Content</h2>\n<p>This paragraph appears before a list and contains <strong>bold text</strong>.</p>\n<ul>\n<li>Mixed list item one</li>\n<li>Mixed list item two</li>\n</ul>\n<p>Final paragraph after list with a <a href=\"https://www.google.com\">Google link</a>.</p>\n<h3>Edge Cases</h3>\n<ul>\n<li></li>\n<li>Item with <strong>bold</strong> inside</li>\n</ul>"
+          }
+        ]
+      }
+    ]
+  }
+}
