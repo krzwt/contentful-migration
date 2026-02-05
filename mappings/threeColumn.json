@@ -1,0 +1,9 @@
+{
+  "contentType": "threeColumn",
+  "idField": "id",
+  "fields": {
+    "columnOne": { "from": "col1", "type": "richText" },
+    "columnTwo": { "from": "col2", "type": "richText" },
+    "columnThree": { "from": "col3", "type": "richText" }
+  }
+}

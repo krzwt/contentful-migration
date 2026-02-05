@@ -1,0 +1,14 @@
+{
+  "contentType": "homeHero",
+  "idField": "id",
+  "fields": {
+    "heroTitle": {
+      "from": "headingSection",
+      "type": "text"
+    },
+    "heroDescription": {
+      "from": "descSection",
+      "type": "richText"
+    }
+  }
+}

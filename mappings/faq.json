@@ -1,0 +1,15 @@
+{
+  "contentType": "faq",
+  "handler": "genericComponent",
+  "fields": {
+    "question": "question",
+    "answer": "answer",
+    "category": "category"
+  },
+  "validation": {
+    "required": ["question", "answer"],
+    "types": {
+      "answer": "richText"
+    }
+  }
+}
