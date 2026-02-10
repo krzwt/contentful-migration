@@ -2,42 +2,50 @@ import { convertHtmlToRichText } from "../utils/richText.js";
 
 const LOCALE = "en-US";
 
-export default async function genericComponent(env, craftBlock, mapping) {
-  const blockId = String(craftBlock[mapping.idField] || "").trim();
-  if (!blockId) return null;
+/**
+ * Generic handler driven by mapping JSON
+ * Works for text + richText fields
+ */
+export async function genericComponentHandler(env, block, mapping) {
+  const LOCALE = "en-US";
+  const blockIdValue = String(block[mapping.idField] || "").trim();
+  if (!blockIdValue) return null;
 
-  const fields = {
-    blockId: { [LOCALE]: blockId }
-  };
+  // 🔍 Safe query (blockId MUST be Short text)
+  const existing = await env.getEntries({
+    content_type: mapping.contentType,
+    "fields.blockId": blockIdValue,
+    limit: 1
+  });
 
-  for (const [cfField, config] of Object.entries(mapping.fields)) {
-    const value = craftBlock[config.from];
+  const fields = { blockId: { [LOCALE]: blockIdValue } };
 
-    if (config.type === "richText") {
-      fields[cfField] = {
-        [LOCALE]: await convertHtmlToRichText(env, value || "")
+  for (const [fieldId, cfg] of Object.entries(mapping.fields)) {
+    if (fieldId === "blockId") continue;
+    const value = block[cfg.from];
+
+    if (cfg.type === "richText") {
+      fields[fieldId] = {
+        [LOCALE]: await convertHtmlToRichText(env, value)
       };
     } else {
-      fields[cfField] = {
+      fields[fieldId] = {
         [LOCALE]: value ?? ""
       };
     }
   }
 
-  const existing = await env.getEntries({
-    content_type: mapping.contentType,
-    "fields.blockId": blockId,
-    limit: 1
-  });
-
+  // UPDATE
   if (existing.items.length) {
     const entry = existing.items[0];
     entry.fields = { ...entry.fields, ...fields };
-    await entry.update().then(e => e.publish());
+    await (await entry.update()).publish();
     return entry.sys.id;
   }
 
-  const entry = await env.createEntry(mapping.contentType, { fields });
+  // CREATE
+  const entry = await env.createEntry(mapping.contentType, { fields })
+
   await entry.publish();
   return entry.sys.id;
 }

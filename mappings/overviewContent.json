@@ -1,17 +1,17 @@
 {
-  "contentType": "homeHero",
+  "contentType": "overviewContent",
   "idField": "id",
   "fields": {
     "blockId": {
       "from": "id",
       "type": "text"
     },
-    "heroTitle": {
+    "heading": {
       "from": "headingSection",
       "type": "text"
     },
-    "heroDescription": {
-      "from": "descSection",
+    "body": {
+      "from": "bodyRedactorRestricted",
       "type": "richText"
     }
   }

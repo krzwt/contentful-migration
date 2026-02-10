@@ -10,8 +10,6 @@ export async function handleHomeHero(env, block) {
 
   if (!blockId || !title) return null;
 
-  const richText = await convertHtmlToRichText(env, desc);
-
   const existing = await env.getEntries({
     content_type: CONTENT_TYPE,
     "fields.blockId": blockId,
@@ -21,7 +19,7 @@ export async function handleHomeHero(env, block) {
   if (existing.items.length) {
     const hero = existing.items[0];
     hero.fields.heroTitle = { [LOCALE]: title };
-    hero.fields.heroDescription = { [LOCALE]: richText };
+    hero.fields.heroDescription = { [LOCALE]: desc };
     await (await hero.update()).publish();
     return hero.sys.id;
   }
@@ -30,7 +28,7 @@ export async function handleHomeHero(env, block) {
     fields: {
       blockId: { [LOCALE]: blockId },
       heroTitle: { [LOCALE]: title },
-      heroDescription: { [LOCALE]: richText }
+      heroDescription: { [LOCALE]: desc }
     }
   });
 

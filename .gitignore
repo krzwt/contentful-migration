@@ -35,3 +35,4 @@ logs/
 # Misc
 .cache/
 .parcel-cache/
+data/

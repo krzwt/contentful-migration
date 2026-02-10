@@ -90,6 +90,20 @@ export async function convertHtmlToRichText(env, html) {
 
   for (const node of dom.window.document.body.childNodes) {
 
+    // Handle plain text nodes at root level
+    if (node.nodeType === 3 && node.textContent.trim()) {
+      content.push({
+        nodeType: "paragraph",
+        data: {},
+        content: [{
+          nodeType: "text",
+          value: node.textContent,
+          marks: [],
+          data: {}
+        }]
+      });
+    }
+
     if (node.nodeName === "IMG") {
       const src = normalizeSrc(node.getAttribute("src"));
       if (!src || !isValidHttpUrl(src)) continue;
