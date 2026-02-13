@@ -11,8 +11,8 @@
       "type": "text"
     },
     "heroDescription": {
-      "from": "descSection",
-      "type": "richText"
+      "from": ["descSection", "body180"],
+      "type": "text"
     }
   }
 }

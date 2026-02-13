@@ -4,12 +4,14 @@ import overviewContent from "./mappings/overviewContent.json" with { type: "json
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 
 export const COMPONENTS = {
-  mainBannerStandalone: {
-    handler: genericComponentHandler,
-    mapping: homeHero
+  slimBanner: {
+    contentType: "bannerHero",
+    mapping: slimBannerMapping,
+    handler: genericComponentHandler
   },
-  overviewContentStandalone: {
-    handler: genericComponentHandler,
-    mapping: overviewContent
+  embedContent: {
+    contentType: "resourceTabbed",
+    mapping: resourceTabbedMapping,
+    handler: genericComponentHandler
   }
 };
