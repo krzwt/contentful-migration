@@ -1,9 +1,11 @@
 import homeHero from "./mappings/homeHero.json" with { type: "json" };
 import overviewContent from "./mappings/overviewContent.json" with { type: "json" };
 import bannerHeroMapping from "./mappings/bannerHero.json" with { type: "json" };
+import ctaBlockMapping from "./mappings/ctaBlock.json" with { type: "json" };
 
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { createOrUpdateHero } from "./handlers/bannerHero.js";
+import { createOrUpdateCtaBlock } from "./handlers/ctaBlock.js";
 
 export const COMPONENTS = {
   banner: {
@@ -31,5 +33,9 @@ export const COMPONENTS = {
   homeHero: {
     mapping: homeHero,
     handler: genericComponentHandler
+  },
+  calloutBar: {
+    mapping: ctaBlockMapping,
+    handler: createOrUpdateCtaBlock
   }
 };

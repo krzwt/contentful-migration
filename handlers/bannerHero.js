@@ -29,12 +29,35 @@ function mapVariant(variation) {
    MAIN UPSERT
 ------------------------------ */
 export async function createOrUpdateHero(env, heroData, assetMap = null) {
+  // 1. Verify Content Type exists
+  let contentType;
+  try {
+    contentType = await env.getContentType(CONTENT_TYPE);
+  } catch (err) {
+    console.warn(`   ⚠ Component "${CONTENT_TYPE}" not founded in contentful. Skipping block ${heroData.blockId}.`);
+    return null;
+  }
 
-  const existing = await env.getEntries({
-    content_type: CONTENT_TYPE,
-    "fields.blockId": heroData.blockId,
-    limit: 1
-  });
+  // 2. Verify Fields exist
+  const expectedFields = ["blockId", "blockName", "layoutVariant", "heading", "description", "mediaType", "mediaAssetImageVideo", "videoUrl", "removeShadow", "ctaText", "ctaLink"];
+  const ctFields = contentType.fields.map(f => f.id);
+  const missingFields = expectedFields.filter(f => !ctFields.includes(f));
+
+  if (missingFields.length > 0) {
+    console.warn(`   ⚠ Field(s) not founded in contentful for "${CONTENT_TYPE}": ${missingFields.join(", ")}`);
+  }
+
+  let existing;
+  try {
+    existing = await env.getEntries({
+      content_type: CONTENT_TYPE,
+      "fields.blockId": heroData.blockId,
+      limit: 1
+    });
+  } catch (err) {
+    console.error(`   🛑 Error fetching existing entries for "${CONTENT_TYPE}":`, err.message);
+    return null;
+  }
 
   /* -----------------------------
      MEDIA DETECTION HELPERS

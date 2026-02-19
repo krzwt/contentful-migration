@@ -20,7 +20,7 @@ async function run() {
     missingAssetMetadata: []
   };
 
-  const data = JSON.parse(fs.readFileSync("./data/test-5.json", "utf-8"));
+  const data = JSON.parse(fs.readFileSync("./data/standalone-content.json", "utf-8"));
 
   // Load asset metadata
   const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILE);
