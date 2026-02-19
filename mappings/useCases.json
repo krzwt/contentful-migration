@@ -1,0 +1,18 @@
+{
+    "contentType": "overviewContent",
+    "idField": "id",
+    "fields": {
+        "blockId": {
+            "from": "id",
+            "type": "text"
+        },
+        "heading": {
+            "from": "heading45",
+            "type": "text"
+        },
+        "body": {
+            "from": "useCases",
+            "type": "richText"
+        }
+    }
+}

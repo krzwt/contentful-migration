@@ -1,0 +1,76 @@
+{
+  "contentType": "bannerHero",
+  "idField": "id",
+  "fields": {
+    "blockId": {
+      "from": "id",
+      "type": "text"
+    },
+    "blockName": {
+      "from": "__typename",
+      "type": "text"
+    },
+    "layoutVariant": {
+      "from": "__typename",
+      "type": "variant"
+    },
+    "heading": {
+      "from": [
+        "headingSection",
+        "heading",
+        "title"
+      ],
+      "type": "text"
+    },
+    "description": {
+      "from": [
+        "bodyRedactorRestricted",
+        "body180",
+        "body",
+        "subheading"
+      ],
+      "type": "text"
+    },
+    "mediaType": {
+      "from": [
+        "mediaType",
+        "assetType"
+      ],
+      "type": "text",
+      "default": "Image"
+    },
+    "mediaAssetImageVideo": {
+      "from": [
+        "bannerAsset",
+        "image",
+        "media"
+      ],
+      "type": "asset"
+    },
+    "videoUrl": {
+      "from": [
+        "videoUrl",
+        "video"
+      ],
+      "type": "text"
+    },
+    "removeShadow": {
+      "from": "removeShadow",
+      "type": "boolean"
+    },
+    "ctaText": {
+      "from": [
+        "label",
+        "ctaText"
+      ],
+      "type": "text"
+    },
+    "ctaLink": {
+      "from": [
+        "ctaLink",
+        "url"
+      ],
+      "type": "text"
+    }
+  }
+}
