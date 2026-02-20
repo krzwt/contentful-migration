@@ -35,7 +35,7 @@ logs/
 # Misc
 .cache/
 .parcel-cache/
-data/
+# data/
 debug_*.js
 check_*.js
 verify_*.js
