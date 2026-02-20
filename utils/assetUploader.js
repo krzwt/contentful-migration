@@ -80,10 +80,11 @@ export async function uploadAsset(env, assetId, metadata) {
       const existingAsset = existing.items[0];
       const existingId = existingAsset.sys.id;
 
-      // If it exists but is Draft, try to publish it
+      // If it exists but is Draft, try to fix and publish it
       if (!existingAsset.sys.publishedVersion) {
         const file = existingAsset.fields?.file?.[LOCALE];
         if (file && file.url) {
+          // Already processed — just publish
           try {
             await existingAsset.publish();
             console.log(`   ✓ Asset exists (published now): ${metadata.title} (${existingId})`);
@@ -91,15 +92,28 @@ export async function uploadAsset(env, assetId, metadata) {
             console.log(`   ✓ Asset exists (draft): ${metadata.title} (${existingId})`);
           }
         } else {
-          // Might still be processing, wait for it
-          const processed = await waitForProcessing(env, existingId);
-          if (processed) {
+          // File not processed — re-upload with correct URL and process
+          console.log(`   🔄 Re-uploading file for stuck asset: ${metadata.title}`);
+          try {
+            existingAsset.fields.file = {
+              [LOCALE]: {
+                contentType: metadata.mimeType,
+                fileName: metadata.filename,
+                upload: metadata.url
+              }
+            };
+            const updated = await existingAsset.update();
+            await updated.processForAllLocales();
+            await new Promise(r => setTimeout(r, 3000));
+            const refreshed = await env.getAsset(existingId);
             try {
-              await processed.publish();
-              console.log(`   ✓ Asset exists (processed & published): ${metadata.title} (${existingId})`);
+              await refreshed.publish();
+              console.log(`   ✓ Asset fixed & published: ${metadata.title} (${existingId})`);
             } catch {
-              console.log(`   ✓ Asset exists (draft): ${metadata.title} (${existingId})`);
+              console.log(`   ✓ Asset fixed (draft): ${metadata.title} (${existingId})`);
             }
+          } catch (fixErr) {
+            console.warn(`   ⚠ Could not fix asset: ${metadata.title}: ${fixErr.message?.substring(0, 100)}`);
           }
         }
       } else {
