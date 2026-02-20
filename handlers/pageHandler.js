@@ -56,7 +56,7 @@ async function getOrCreateParentPage(env, parentId, allPages) {
  * Creates a `pageSettings` entry with slug and optional parent page link.
  */
 async function getOrCreatePageSettings(env, pageData, allPages) {
-  const settingsId = `settings-${pageData.slug}`;
+  const settingsId = `settings-${(pageData.slug || "").replace(/\//g, "-")}`;
 
   try {
     const fields = {
@@ -211,6 +211,39 @@ export async function attachHeroToPage(env, pageEntry, heroEntry) {
     return pageEntry;
   } catch (err) {
     console.error(`❌ Error linking component to page:`, err.message);
+    if (err.details) console.error("Details:", JSON.stringify(err.details, null, 2));
+    return pageEntry;
+  }
+}
+
+/**
+ * Sets the complete sections array on a page in one go.
+ * This REPLACES any existing sections to guarantee correct order.
+ */
+export async function setSectionsOnPage(env, pageEntry, sectionEntries) {
+  if (!pageEntry || !sectionEntries.length) return pageEntry;
+
+  try {
+    const links = sectionEntries.map(entry => ({
+      sys: {
+        type: "Link",
+        linkType: "Entry",
+        id: entry.sys.id
+      }
+    }));
+
+    console.log(`\n📋 Setting ${links.length} sections on page "${pageEntry.fields.title[LOCALE]}" (in order)`);
+
+    // Re-fetch to get latest version
+    pageEntry = await env.getEntry(pageEntry.sys.id);
+    pageEntry.fields.sections = { [LOCALE]: links };
+    pageEntry = await pageEntry.update();
+    pageEntry = await pageEntry.publish();
+
+    console.log(`✅ Sections set in correct order.`);
+    return pageEntry;
+  } catch (err) {
+    console.error(`❌ Error setting sections on page:`, err.message);
     if (err.details) console.error("Details:", JSON.stringify(err.details, null, 2));
     return pageEntry;
   }

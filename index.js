@@ -1,7 +1,7 @@
 import fs from "fs";
 import { getEnvironment } from "./config/contentful.js";
 import { COMPONENTS } from "./registry.js";
-import { attachHeroToPage, getOrCreatePage } from "./handlers/pageHandler.js";
+import { setSectionsOnPage, getOrCreatePage } from "./handlers/pageHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import { loadAssetMetadata, processAssets } from "./utils/assetUploader.js";
@@ -111,7 +111,9 @@ async function run() {
       const pageData = batchData[i];
       const pageNum = startIdx + i + 1;
       console.log(`\n➡️ [${pageNum}/${totalPages}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
-      const { slug, title } = pageData;
+      const { slug, title, uri } = pageData;
+      // Use uri as slug (includes parent path, e.g. "sem/remote-access-new")
+      const fullSlug = uri || slug;
 
       let pageEntry = null;
       if (effectiveDryRun) {
@@ -121,19 +123,22 @@ async function run() {
           const parentTitle = parentPage ? parentPage.title : `[NOT IN JSON: ${pageData.parentId}]`;
           const parentSlug = parentPage ? parentPage.slug : "unknown";
           console.log(`   📂 Parent: "${parentTitle}" (slug: ${parentSlug}) → settings.parentPage`);
-          console.log(`   🔗 Full URL: /${parentSlug}/${slug}`);
+          console.log(`   🔗 Slug: /${fullSlug}`);
         } else {
-          console.log(`   📂 Root page (no parent) → /${slug}`);
+          console.log(`   📂 Root page (no parent) → /${fullSlug}`);
         }
       } else {
-        pageEntry = await getOrCreatePage(env, { title, slug, id: pageData.id, parentId: pageData.parentId }, source.pageContentType, data);
+        pageEntry = await getOrCreatePage(env, { title, slug: fullSlug, id: pageData.id, parentId: pageData.parentId }, source.pageContentType, data);
         if (!pageEntry) {
           console.error(`🛑 Skipping page "${title}" because page entry could not be created/found.`);
           continue;
         }
       }
 
-      // Automatically find component fields in the JSON
+      // Collect ALL section entries in order, then set sections array at once
+      const sectionEntries = [];
+
+      // Detect component fields in the JSON (keys with numeric sub-keys)
       const componentFields = Object.keys(pageData).filter(key => {
         const val = pageData[key];
         return val && typeof val === "object" && !Array.isArray(val) &&
@@ -193,14 +198,19 @@ async function run() {
               );
             }
 
-            if (heroEntry && pageEntry) {
-              pageEntry = await attachHeroToPage(env, pageEntry, heroEntry);
+            if (heroEntry) {
+              sectionEntries.push(heroEntry);
             }
           } catch (err) {
             console.error(`❌ Error processing ${type} (${blockId}):`, err.message);
             summary.skipped.push({ page: title, blockId, type, error: err.message });
           }
         }
+      }
+
+      // Set all sections at once in the correct order (replaces existing)
+      if (!effectiveDryRun && pageEntry && sectionEntries.length > 0) {
+        await setSectionsOnPage(env, pageEntry, sectionEntries);
       }
     }
   }
