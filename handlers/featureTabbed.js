@@ -29,7 +29,7 @@ export async function createOrUpdateFeatureTabbed(env, blockData, assetMap = nul
         if (imgIds.length && assetMap) {
             const assetInfo = assetMap.get(String(imgIds[0]));
             if (assetInfo) {
-                assetEntry = await upsertAssetWrapper(env, `ft-${blockId}`, assetInfo.id, assetInfo.mimeType);
+                assetEntry = await upsertAssetWrapper(env, `ft-${blockId}`, assetInfo.id, assetInfo.mimeType, assetInfo.wistiaUrl);
             }
         }
     }

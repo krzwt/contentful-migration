@@ -90,8 +90,8 @@ export async function createOrUpdateHero(env, heroData, assetMap = null) {
 
   // 2. ASSET WRAPPER
   let assetWrapper = null;
-  if (assetId && assetInfo?.id) {
-    assetWrapper = await upsertAssetWrapper(env, heroData.blockId, assetInfo.id, assetInfo.mimeType);
+  if (assetId && assetInfo) {
+    assetWrapper = await upsertAssetWrapper(env, heroData.blockId, assetInfo.id, assetInfo.mimeType, assetInfo.wistiaUrl);
   }
 
   /* -----------------------------

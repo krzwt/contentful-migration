@@ -35,6 +35,7 @@ export async function upsertCta(env, id, label, url) {
  * If it's Draft, try to publish it. Returns true if published.
  */
 async function ensureAssetPublished(env, assetId) {
+    if (!assetId) return false;
     try {
         const asset = await env.getAsset(assetId);
         const file = asset.fields?.file?.[LOCALE];
@@ -78,11 +79,22 @@ async function ensureAssetPublished(env, assetId) {
 
 /**
  * Upserts an 'asset' wrapper entry
+ * @param {string} videoUrl - Optional Wistia/External video URL
  */
-export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType) {
+export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType, videoUrl = null) {
     let type = "Image";
-    if (mimeType?.includes("video")) type = "Video";
+    if (mimeType?.includes("video") || videoUrl) type = "Video";
     if (mimeType?.includes("json") || mimeType?.includes("javascript")) type = "JSON";
+
+    // If it's a Wistia/External video, we use the videoUrl field
+    if (videoUrl) {
+        console.log(`   🎬 Creating video asset wrapper (Wistia): asset-${id}`);
+        const fields = {
+            assetType: { [LOCALE]: "Video" },
+            videoUrl: { [LOCALE]: videoUrl }
+        };
+        return await upsertEntry(env, "asset", `asset-${id}`, fields);
+    }
 
     // Ensure the linked asset is published first
     const isReady = await ensureAssetPublished(env, contentfulAssetId);

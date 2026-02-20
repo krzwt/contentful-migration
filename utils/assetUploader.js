@@ -6,6 +6,41 @@ const S3_BASE_URL = "https://assets-uat.btdevops.io";
 // Cache: asset title/filename → Contentful asset ID (avoid duplicates)
 const uploadedAssetCache = new Map();
 
+// Wistia embed data: craft asset ID → wistia hashed ID
+const wistiaMap = new Map();
+
+/**
+ * Load Wistia embed data from wistia.json
+ */
+export function loadWistiaData(filePath = "./data/wistia.json") {
+  try {
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const json = JSON.parse(raw);
+    const assets = json?.data?.assets || [];
+
+    assets.forEach(asset => {
+      if (asset.wistiaHashedId) {
+        wistiaMap.set(String(asset.id), {
+          title: asset.title,
+          wistiaHashedId: asset.wistiaHashedId,
+          filename: asset.filename
+        });
+      }
+    });
+
+    console.log(`🎬 Loaded ${wistiaMap.size} Wistia video entries`);
+  } catch {
+    console.log(`ℹ️  No wistia.json found — Wistia videos won't be migrated`);
+  }
+}
+
+/**
+ * Check if an asset is a Wistia video
+ */
+export function getWistiaData(craftAssetId) {
+  return wistiaMap.get(String(craftAssetId)) || null;
+}
+
 /**
  * Load asset metadata from GraphQL JSON file
  */
@@ -103,14 +138,22 @@ export async function uploadAsset(env, assetId, metadata) {
               }
             };
             const updated = await existingAsset.update();
-            await updated.processForAllLocales();
-            await new Promise(r => setTimeout(r, 3000));
-            const refreshed = await env.getAsset(existingId);
             try {
-              await refreshed.publish();
-              console.log(`   ✓ Asset fixed & published: ${metadata.title} (${existingId})`);
+              await updated.processForAllLocales();
             } catch {
-              console.log(`   ✓ Asset fixed (draft): ${metadata.title} (${existingId})`);
+              // Timeout is OK for JSON/large files — we'll poll below
+            }
+            // Poll for processing completion
+            const processed = await waitForProcessing(env, existingId);
+            if (processed) {
+              try {
+                await processed.publish();
+                console.log(`   ✓ Asset fixed & published: ${metadata.title} (${existingId})`);
+              } catch {
+                console.log(`   ✓ Asset fixed (draft): ${metadata.title} (${existingId})`);
+              }
+            } else {
+              console.log(`   ⚠ Asset re-uploaded but still processing: ${metadata.title} (${existingId})`);
             }
           } catch (fixErr) {
             console.warn(`   ⚠ Could not fix asset: ${metadata.title}: ${fixErr.message?.substring(0, 100)}`);
@@ -145,8 +188,12 @@ export async function uploadAsset(env, assetId, metadata) {
       }
     });
 
-    // Process the asset
-    await asset.processForAllLocales();
+    // Process the asset (catch timeout for JSON/large files)
+    try {
+      await asset.processForAllLocales();
+    } catch {
+      // Timeout is OK — we poll below
+    }
 
     // Wait for processing to complete (polling)
     const processed = await waitForProcessing(env, asset.sys.id);
@@ -228,6 +275,17 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
   const missingIds = [];
 
   for (const craftAssetId of assetIds) {
+    // 1. Check if it's a Wistia video (fastest path)
+    const wistia = getWistiaData(craftAssetId);
+    if (wistia) {
+      contentfulAssetMap.set(String(craftAssetId), {
+        id: null, // No Contentful Asset ID for Wistia embeds
+        mimeType: "video/wistia",
+        wistiaUrl: `https://fast.wistia.com/embed/medias/${wistia.wistiaHashedId}`
+      });
+      continue;
+    }
+
     const metadata = assetMetadata.get(String(craftAssetId));
 
     if (!metadata) {

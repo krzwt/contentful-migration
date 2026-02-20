@@ -4,7 +4,7 @@ import { COMPONENTS } from "./registry.js";
 import { setSectionsOnPage, getOrCreatePage } from "./handlers/pageHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
-import { loadAssetMetadata, processAssets } from "./utils/assetUploader.js";
+import { loadAssetMetadata, processAssets, loadWistiaData } from "./utils/assetUploader.js";
 
 const isDryRun = false; // Set to true to simulate migration without making changes
 const ASSET_METADATA_FILE = "./data/assets.json"; // GraphQL asset metadata
@@ -53,6 +53,7 @@ async function run() {
 
   // Load asset metadata
   const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILE);
+  loadWistiaData(); // Load data/wistia.json if exists
   console.log(`📚 Loaded ${assetMetadata.size} asset metadata entries\n`);
 
   if (effectiveDryRun) {
@@ -130,7 +131,15 @@ async function run() {
           console.log(`   📂 Root page (no parent) → /${fullSlug}`);
         }
       } else {
-        pageEntry = await getOrCreatePage(env, { title, slug: fullSlug, id: pageData.id, parentId: pageData.parentId, seoMetaTags: pageData.seoMetaTags }, source.pageContentType, data);
+        pageEntry = await getOrCreatePage(env, {
+          title,
+          slug: fullSlug,
+          id: pageData.id,
+          parentId: pageData.parentId,
+          seoMetaTags: pageData.seoMetaTags,
+          status: pageData.status,
+          enabled: pageData.enabled
+        }, source.pageContentType, data);
         if (!pageEntry) {
           console.error(`🛑 Skipping page "${title}" because page entry could not be created/found.`);
           continue;

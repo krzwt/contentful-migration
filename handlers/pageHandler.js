@@ -59,7 +59,7 @@ async function getOrCreateSeo(env, pageData) {
   const seoData = pageData.seoMetaTags?.metaGlobalVars;
   if (!seoData) return null;
 
-  // Only create SEO if there's actual data (skip Twig templates)
+  // Helper to clean values (skip Twig templates)
   const cleanVal = (v) => (v && typeof v === "string" && !v.includes("{{") && v.trim()) ? v.trim() : "";
 
   const metaTitle = cleanVal(seoData.seoTitle);
@@ -67,38 +67,34 @@ async function getOrCreateSeo(env, pageData) {
   const canonicalUrl = cleanVal(seoData.canonicalUrl);
   const ogTitle = cleanVal(seoData.ogTitle);
   const ogDescription = cleanVal(seoData.ogDescription);
-  const robots = cleanVal(seoData.robots);
+  const robots = cleanVal(seoData.robots) || "index, follow";
+  const jsonLdSchema = cleanVal(seoData.jsonLdSchema);
 
   // Parse robots → noIndex / noFollow booleans
   const robotsLower = robots.toLowerCase();
   const noIndex = robotsLower.includes("noindex") || robotsLower === "none";
   const noFollow = robotsLower.includes("nofollow") || robotsLower === "none";
 
-  // Skip if no meaningful SEO data
-  if (!metaTitle && !metaDescription && !canonicalUrl && !ogTitle && !ogDescription && !noIndex && !noFollow) {
-    return null;
-  }
-
   const seoId = `seo-${(pageData.slug || "").replace(/\//g, "-")}`;
 
   try {
     const fields = {
-      metaDescription: { [LOCALE]: metaDescription || pageData.title || "" }
+      metaTitle: { [LOCALE]: metaTitle || pageData.title || "Meta Title" },
+      metaDescription: { [LOCALE]: metaDescription || pageData.title || "Meta Description" },
+      noIndex: { [LOCALE]: noIndex },
+      noFollow: { [LOCALE]: noFollow }
     };
 
-    if (metaTitle) fields.metaTitle = { [LOCALE]: metaTitle };
-    if (metaDescription) fields.metaDescription = { [LOCALE]: metaDescription };
     if (canonicalUrl) fields.canonicalUrl = { [LOCALE]: canonicalUrl };
     if (ogTitle) fields.ogTitle = { [LOCALE]: ogTitle };
     if (ogDescription) fields.ogDescription = { [LOCALE]: ogDescription };
-    fields.noIndex = { [LOCALE]: noIndex };
-    fields.noFollow = { [LOCALE]: noFollow };
+    if (jsonLdSchema) fields.jsonLdSchema = { [LOCALE]: jsonLdSchema };
 
     let entry;
     try {
       entry = await env.getEntry(seoId);
       console.log(`   🔄 Updating SEO: ${seoId}`);
-      entry.fields = fields;
+      entry.fields = { ...entry.fields, ...fields };
       entry = await entry.update();
     } catch {
       console.log(`   ✨ Creating SEO: ${seoId}`);
@@ -109,6 +105,7 @@ async function getOrCreateSeo(env, pageData) {
     return entry;
   } catch (err) {
     console.error(`   ❌ Error with SEO for "${pageData.title}":`, err.message);
+    if (err.details) console.log(JSON.stringify(err.details, null, 2));
     return null;
   }
 }
@@ -121,7 +118,7 @@ async function getOrCreatePageSettings(env, pageData, allPages) {
 
   try {
     const fields = {
-      pageSetting: { [LOCALE]: pageData.slug || "" },
+      pageSetting: { [LOCALE]: `Page Settings: ${pageData.title}` },
       enableSidenav: { [LOCALE]: false }
     };
 
@@ -153,7 +150,13 @@ async function getOrCreatePageSettings(env, pageData, allPages) {
     try {
       entry = await env.getEntry(settingsId);
       console.log(`   🔄 Updating page settings: ${settingsId}`);
-      entry.fields = fields;
+
+      // Update only the fields we care about, preserving others
+      entry.fields.pageSetting = fields.pageSetting;
+      entry.fields.enableSidenav = fields.enableSidenav;
+      if (fields.parentPage) entry.fields.parentPage = fields.parentPage;
+      if (fields.seo) entry.fields.seo = fields.seo;
+
       entry = await entry.update();
     } catch {
       console.log(`   ✨ Creating page settings: ${settingsId}`);
@@ -217,10 +220,11 @@ export async function getOrCreatePage(env, pageData, pageContentType = PAGE_CT, 
       needsUpdate = true;
     }
 
-    // Create and link pageSettings (with parent page) if not already set
-    if (!page.fields.settings?.[LOCALE]) {
-      const settingsEntry = await getOrCreatePageSettings(env, pageData, allPages);
-      if (settingsEntry) {
+    // Always call getOrCreatePageSettings so it can update existing entries (e.g. name changes)
+    const settingsEntry = await getOrCreatePageSettings(env, pageData, allPages);
+    if (settingsEntry) {
+      const currentSettingsId = page.fields.settings?.[LOCALE]?.sys?.id;
+      if (currentSettingsId !== settingsEntry.sys.id) {
         page.fields.settings = {
           [LOCALE]: {
             sys: { type: "Link", linkType: "Entry", id: settingsEntry.sys.id }
@@ -231,11 +235,36 @@ export async function getOrCreatePage(env, pageData, pageContentType = PAGE_CT, 
       }
     }
 
+    const isLive = pageData.enabled !== false && pageData.status === "live";
+
     if (needsUpdate || isNew) {
-      console.log(`📡 Updating/Publishing page "${title}"...`);
+      console.log(`📡 Updating page "${title}" (Status: ${isLive ? 'Live' : 'Hidden/Draft'})...`);
       page = await page.update();
-      page = await page.publish();
-      console.log(`✅ Page "${title}" ready.`);
+
+      if (isLive) {
+        page = await page.publish();
+        console.log(`✅ Page "${title}" published.`);
+      } else {
+        try {
+          // If it's not live, we ensure it's UNPUBLISHED (Draft state)
+          page = await page.unpublish();
+          console.log(`⏸️  Page "${title}" set to Draft (Unpublished).`);
+        } catch {
+          // Might already be draft, ignore
+          console.log(`⏸️  Page "${title}" is in Draft state.`);
+        }
+      }
+    } else {
+      // Even if nothing in fields changed, we might need to sync the publish status
+      const isCurrentlyPublished = !!page.sys.publishedVersion && (page.sys.version === page.sys.publishedVersion + 1);
+
+      if (isLive && !isCurrentlyPublished) {
+        console.log(`📡 Publishing existing page "${title}"...`);
+        page = await page.publish();
+      } else if (!isLive && isCurrentlyPublished) {
+        console.log(`📡 Unpublishing page "${title}"...`);
+        try { page = await page.unpublish(); } catch { }
+      }
     }
 
     return page;

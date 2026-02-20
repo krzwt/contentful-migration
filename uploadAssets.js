@@ -8,7 +8,7 @@
 import "dotenv/config";
 import fs from "fs";
 import { getEnvironment } from "./config/contentful.js";
-import { loadAssetMetadata, uploadAsset } from "./utils/assetUploader.js";
+import { loadAssetMetadata, uploadAsset, loadWistiaData, getWistiaData } from "./utils/assetUploader.js";
 import { extractAssets } from "./utils/assetDetector.js";
 
 const ASSET_METADATA_FILE = "./data/assets.json";
@@ -27,6 +27,7 @@ const DATA_SOURCES = [
 async function run() {
     const env = await getEnvironment();
     const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILE);
+    loadWistiaData(); // Load data/wistia.json if exists
     console.log(`📦 Loaded ${assetMetadata.size} asset metadata entries\n`);
 
     // Collect ALL unique asset IDs across all sources
@@ -47,16 +48,20 @@ async function run() {
     // Separate by what we have metadata for vs missing
     const withMeta = [];
     const missingMeta = [];
+    const wistiaAssets = [];
 
     for (const id of allAssetIds) {
-        if (assetMetadata.has(id)) {
+        if (getWistiaData(id)) {
+            wistiaAssets.push(id);
+        } else if (assetMetadata.has(id)) {
             withMeta.push(id);
         } else {
             missingMeta.push(id);
         }
     }
 
-    console.log(`   ✅ Have metadata: ${withMeta.length}`);
+    console.log(`   ✅ Have metadata (files): ${withMeta.length}`);
+    console.log(`   🎬 Wistia videos: ${wistiaAssets.length}`);
     console.log(`   ❌ Missing metadata: ${missingMeta.length}`);
 
     if (missingMeta.length > 0) {
