@@ -10,6 +10,20 @@ const isDryRun = false; // Set to true to simulate migration without making chan
 const ASSET_METADATA_FILE = "./data/assets.json"; // GraphQL asset metadata
 
 /* ---------------------------------------------------------
+   CLI args: node index.js [--from N] [--to N] [--dry]
+   Examples:
+     npm run migrate                   → all pages
+     npm run migrate -- --from 1 --to 10   → pages 1-10
+     npm run migrate -- --from 11 --to 20  → pages 11-20
+     npm run migrate -- --dry              → dry run all
+--------------------------------------------------------- */
+const args = process.argv.slice(2);
+const fromArg = args.indexOf("--from") !== -1 ? parseInt(args[args.indexOf("--from") + 1]) : null;
+const toArg = args.indexOf("--to") !== -1 ? parseInt(args[args.indexOf("--to") + 1]) : null;
+const cliDryRun = args.includes("--dry");
+const effectiveDryRun = isDryRun || cliDryRun;
+
+/* ---------------------------------------------------------
    DATA SOURCES
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
@@ -27,7 +41,7 @@ const DATA_SOURCES = [
 ];
 
 async function run() {
-  const env = isDryRun ? null : await getEnvironment();
+  const env = effectiveDryRun ? null : await getEnvironment();
   const summary = {
     processed: 0,
     updated: 0,
@@ -41,10 +55,14 @@ async function run() {
   const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILE);
   console.log(`📚 Loaded ${assetMetadata.size} asset metadata entries\n`);
 
-  if (isDryRun) {
+  if (effectiveDryRun) {
     console.log("🏃 Running in DRY RUN mode. No changes will be made to Contentful.\n");
   } else {
     console.log("✅ Connected to Contentful\n");
+  }
+
+  if (fromArg || toArg) {
+    console.log(`📋 Batch mode: pages ${fromArg || 1} to ${toArg || "end"}\n`);
   }
 
   /* ---------------------------------------------------------
@@ -62,31 +80,41 @@ async function run() {
       continue;
     }
 
+    // Apply batch range
+    const startIdx = (fromArg || 1) - 1;  // 0-based
+    const endIdx = toArg ? Math.min(toArg, data.length) : data.length;
+    const batchData = data.slice(startIdx, endIdx);
+
     console.log("\n" + "=".repeat(50));
-    console.log(`📂 Processing: ${source.label} (${data.length} entries → ${source.pageContentType})`);
+    console.log(`📂 Processing: ${source.label} (pages ${startIdx + 1}-${endIdx} of ${data.length} → ${source.pageContentType})`);
     console.log("=".repeat(50));
 
-    // Detect all asset IDs and upload/map them
-    const detectedAssets = extractAssets(data);
-    const assetIds = Array.from(detectedAssets.keys());
-    console.log(`📎 Found ${assetIds.length} unique asset references\n`);
+    // Detect all asset IDs from BATCH and upload/map them
+    // (assets are likely already uploaded via `npm run assets`)
+    const allDetected = new Map();
+    for (const pageData of batchData) {
+      const pageAssets = extractAssets(pageData);
+      pageAssets.forEach((v, k) => allDetected.set(k, v));
+    }
+    const assetIds = Array.from(allDetected.keys());
+    console.log(`📎 Found ${assetIds.length} asset references in this batch\n`);
 
-    if (isDryRun) {
+    if (effectiveDryRun) {
       logAssets(data, assetMetadata);
     }
 
-    const { assetMap: contentfulAssetMap, missingIds } = await processAssets(env, assetIds, assetMetadata, isDryRun);
+    const { assetMap: contentfulAssetMap, missingIds } = await processAssets(env, assetIds, assetMetadata, effectiveDryRun);
     summary.missingAssetMetadata.push(...missingIds);
 
     const totalPages = data.length;
-    for (let pageIdx = 0; pageIdx < data.length; pageIdx++) {
-      const pageData = data[pageIdx];
-      const pageNum = pageIdx + 1;
+    for (let i = 0; i < batchData.length; i++) {
+      const pageData = batchData[i];
+      const pageNum = startIdx + i + 1;
       console.log(`\n➡️ [${pageNum}/${totalPages}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
       const { slug, title } = pageData;
 
       let pageEntry = null;
-      if (isDryRun) {
+      if (effectiveDryRun) {
         // Show parent/child relationship in dry run
         if (pageData.parentId) {
           const parentPage = data.find(p => String(p.id) === String(pageData.parentId));
@@ -133,7 +161,7 @@ async function run() {
 
           console.log(`✅ Detected "${type}" (ID: ${blockId})`);
 
-          if (isDryRun) {
+          if (effectiveDryRun) {
             console.log(`   [DRY RUN] Would process ${type} using ${config.handler.name}`);
             continue;
           }

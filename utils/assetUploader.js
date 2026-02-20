@@ -1,5 +1,4 @@
 import fs from "fs";
-import fetch from "node-fetch";
 
 const LOCALE = "en-US";
 const S3_BASE_URL = "https://assets-uat.btdevops.io";
@@ -37,6 +36,28 @@ export function loadAssetMetadata(filePath) {
 }
 
 /**
+ * Wait for a Contentful asset to finish processing.
+ * Returns true when the asset has a processed file URL.
+ */
+async function waitForProcessing(env, assetId, maxAttempts = 10) {
+  for (let i = 0; i < maxAttempts; i++) {
+    try {
+      const asset = await env.getAsset(assetId);
+      const file = asset.fields?.file?.[LOCALE];
+      if (file && file.url) {
+        return asset; // processed — has a CDN url
+      }
+    } catch (e) {
+      // ignore
+    }
+    const delay = Math.min(2000 + i * 1000, 5000);
+    console.log(`   ⏳ Waiting for processing... (${i + 1}/${maxAttempts})`);
+    await new Promise(r => setTimeout(r, delay));
+  }
+  return null;
+}
+
+/**
  * Upload asset to Contentful from URL (with dedup by filename)
  */
 export async function uploadAsset(env, assetId, metadata) {
@@ -56,8 +77,35 @@ export async function uploadAsset(env, assetId, metadata) {
     });
 
     if (existing.items.length > 0) {
-      const existingId = existing.items[0].sys.id;
-      console.log(`   ✓ Asset exists: ${metadata.title} (${existingId})`);
+      const existingAsset = existing.items[0];
+      const existingId = existingAsset.sys.id;
+
+      // If it exists but is Draft, try to publish it
+      if (!existingAsset.sys.publishedVersion) {
+        const file = existingAsset.fields?.file?.[LOCALE];
+        if (file && file.url) {
+          try {
+            await existingAsset.publish();
+            console.log(`   ✓ Asset exists (published now): ${metadata.title} (${existingId})`);
+          } catch {
+            console.log(`   ✓ Asset exists (draft): ${metadata.title} (${existingId})`);
+          }
+        } else {
+          // Might still be processing, wait for it
+          const processed = await waitForProcessing(env, existingId);
+          if (processed) {
+            try {
+              await processed.publish();
+              console.log(`   ✓ Asset exists (processed & published): ${metadata.title} (${existingId})`);
+            } catch {
+              console.log(`   ✓ Asset exists (draft): ${metadata.title} (${existingId})`);
+            }
+          }
+        }
+      } else {
+        console.log(`   ✓ Asset exists: ${metadata.title} (${existingId})`);
+      }
+
       uploadedAssetCache.set(cacheKey, existingId);
       return existingId;
     }
@@ -83,32 +131,30 @@ export async function uploadAsset(env, assetId, metadata) {
       }
     });
 
-    // Process and publish
-    try {
-      await asset.processForAllLocales();
-      await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for processing
-      const published = await asset.publish();
-      console.log(`   ✓ Uploaded and published: ${metadata.title}`);
-      uploadedAssetCache.set(cacheKey, published.sys.id);
-      return published.sys.id;
-    } catch (publishErr) {
-      const errInfo = typeof publishErr.message === 'string' && publishErr.message.startsWith('{')
-        ? JSON.parse(publishErr.message)
-        : publishErr;
+    // Process the asset
+    await asset.processForAllLocales();
 
-      if (publishErr.name === "VersionMismatch" || errInfo.status === 409) {
-        console.log(`   ⚠ Asset "${metadata.title}" version mismatch during publish. Using asset ID.`);
-        uploadedAssetCache.set(cacheKey, asset.sys.id);
-        return asset.sys.id;
-      }
-      throw publishErr;
+    // Wait for processing to complete (polling)
+    const processed = await waitForProcessing(env, asset.sys.id);
+    if (!processed) {
+      console.warn(`   ⚠ Asset "${metadata.title}" processing timed out. Left as draft.`);
+      uploadedAssetCache.set(cacheKey, asset.sys.id);
+      return asset.sys.id;
     }
-  } catch (err) {
-    const errInfo = typeof err.message === 'string' && err.message.startsWith('{')
-      ? JSON.parse(err.message)
-      : err;
 
-    if (err.name === "VersionMismatch" || errInfo.status === 409 || err.status === 409) {
+    // Now publish
+    try {
+      await processed.publish();
+      console.log(`   ✓ Uploaded & published: ${metadata.title} (${processed.sys.id})`);
+    } catch (pubErr) {
+      console.log(`   ⚠ Uploaded but publish failed: ${metadata.title} (${processed.sys.id})`);
+    }
+
+    uploadedAssetCache.set(cacheKey, processed.sys.id);
+    return processed.sys.id;
+  } catch (err) {
+    // Handle 409 conflict (already exists)
+    if (err.name === "VersionMismatch" || err.status === 409) {
       try {
         const existing = await env.getAssets({
           "fields.title": metadata.title,
@@ -116,7 +162,7 @@ export async function uploadAsset(env, assetId, metadata) {
         });
         if (existing.items.length > 0) {
           const existingId = existing.items[0].sys.id;
-          console.log(`   ✓ Recovered: Using existing asset for "${metadata.title}"`);
+          console.log(`   ✓ Recovered: Using existing asset for "${metadata.title}" (${existingId})`);
           uploadedAssetCache.set(cacheKey, existingId);
           return existingId;
         }
