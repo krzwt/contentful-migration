@@ -1,5 +1,5 @@
 {
-    "contentType": "overviewContent",
+    "contentType": "contentBlock",
     "idField": "id",
     "fields": {
         "blockId": {

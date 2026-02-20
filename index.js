@@ -9,6 +9,23 @@ import { loadAssetMetadata, processAssets } from "./utils/assetUploader.js";
 const isDryRun = false; // Set to true to simulate migration without making changes
 const ASSET_METADATA_FILE = "./data/assets.json"; // GraphQL asset metadata
 
+/* ---------------------------------------------------------
+   DATA SOURCES
+   Each source defines its JSON file and Contentful page type
+--------------------------------------------------------- */
+const DATA_SOURCES = [
+  // {
+  //   file: "./data/standalone-content.json",
+  //   pageContentType: "newStandaloneContent",
+  //   label: "Standalone Content"
+  // },
+  {
+    file: "./data/standalone-conversion.json",
+    pageContentType: "newStandaloneConversion",
+    label: "Standalone Conversion"
+  }
+];
+
 async function run() {
   const env = isDryRun ? null : await getEnvironment();
   const summary = {
@@ -20,107 +37,141 @@ async function run() {
     missingAssetMetadata: []
   };
 
-  const data = JSON.parse(fs.readFileSync("./data/standalone-content.json", "utf-8"));
-
   // Load asset metadata
   const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILE);
   console.log(`📚 Loaded ${assetMetadata.size} asset metadata entries\n`);
 
   if (isDryRun) {
     console.log("🏃 Running in DRY RUN mode. No changes will be made to Contentful.\n");
-    logAssets(data, assetMetadata);
   } else {
     console.log("✅ Connected to Contentful\n");
   }
 
-  // Detect all asset IDs in the page JSON and upload/map them in Contentful
-  const detectedAssets = extractAssets(data);
-  const assetIds = Array.from(detectedAssets.keys());
-
-  console.log(`📎 Found ${assetIds.length} unique asset references in page data\n`);
-
-  const { assetMap: contentfulAssetMap, missingIds } = await processAssets(env, assetIds, assetMetadata, isDryRun);
-  summary.missingAssetMetadata = missingIds;
-
-  for (const pageData of data) {
-    console.log("\n➡️ Page:", pageData.title);
-    const { slug, title } = pageData;
-
-    let pageEntry = null;
-    if (!isDryRun) {
-      pageEntry = await getOrCreatePage(env, { title, slug });
-      if (!pageEntry) {
-        console.error(`🛑 Skipping page "${title}" because page entry could not be created/found.`);
-        continue;
-      }
+  /* ---------------------------------------------------------
+     Process each data source
+  --------------------------------------------------------- */
+  for (const source of DATA_SOURCES) {
+    if (!fs.existsSync(source.file)) {
+      console.log(`\n⚠️ Skipping "${source.label}" — file not found: ${source.file}`);
+      continue;
     }
 
-    // 1. Automatically find component fields in the JSON
-    const componentFields = Object.keys(pageData).filter(key => {
-      const val = pageData[key];
-      return val && typeof val === "object" && !Array.isArray(val) &&
-        Object.keys(val).length > 0 && !isNaN(Object.keys(val)[0]);
-    });
+    const data = JSON.parse(fs.readFileSync(source.file, "utf-8"));
+    if (!data.length) {
+      console.log(`\n⚠️ Skipping "${source.label}" — empty file`);
+      continue;
+    }
 
-    for (const fieldKey of componentFields) {
-      const components = pageData[fieldKey];
+    console.log("\n" + "=".repeat(50));
+    console.log(`📂 Processing: ${source.label} (${data.length} entries → ${source.pageContentType})`);
+    console.log("=".repeat(50));
 
-      for (const blockId in components) {
-        const block = components[blockId];
-        if (!block.enabled) continue;
+    // Detect all asset IDs and upload/map them
+    const detectedAssets = extractAssets(data);
+    const assetIds = Array.from(detectedAssets.keys());
+    console.log(`📎 Found ${assetIds.length} unique asset references\n`);
 
-        const fields = block.fields;
-        const type = block.type || fieldKey;
+    if (isDryRun) {
+      logAssets(data, assetMetadata);
+    }
 
-        const config = COMPONENTS[type];
-        if (!config) {
-          if (!summary.missingMappings.has(type)) {
-            summary.missingMappings.set(type, Object.keys(fields || {}));
-          }
-          console.warn(`ℹ️ skipping: "${type}" (no mapping in registry.js)`);
+    const { assetMap: contentfulAssetMap, missingIds } = await processAssets(env, assetIds, assetMetadata, isDryRun);
+    summary.missingAssetMetadata.push(...missingIds);
+
+    const totalPages = data.length;
+    for (let pageIdx = 0; pageIdx < data.length; pageIdx++) {
+      const pageData = data[pageIdx];
+      const pageNum = pageIdx + 1;
+      console.log(`\n➡️ [${pageNum}/${totalPages}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
+      const { slug, title } = pageData;
+
+      let pageEntry = null;
+      if (isDryRun) {
+        // Show parent/child relationship in dry run
+        if (pageData.parentId) {
+          const parentPage = data.find(p => String(p.id) === String(pageData.parentId));
+          const parentTitle = parentPage ? parentPage.title : `[NOT IN JSON: ${pageData.parentId}]`;
+          const parentSlug = parentPage ? parentPage.slug : "unknown";
+          console.log(`   📂 Parent: "${parentTitle}" (slug: ${parentSlug}) → settings.parentPage`);
+          console.log(`   🔗 Full URL: /${parentSlug}/${slug}`);
+        } else {
+          console.log(`   📂 Root page (no parent) → /${slug}`);
+        }
+      } else {
+        pageEntry = await getOrCreatePage(env, { title, slug, id: pageData.id, parentId: pageData.parentId }, source.pageContentType, data);
+        if (!pageEntry) {
+          console.error(`🛑 Skipping page "${title}" because page entry could not be created/found.`);
           continue;
         }
+      }
 
-        console.log(`✅ Detected "${type}" (ID: ${blockId})`);
+      // Automatically find component fields in the JSON
+      const componentFields = Object.keys(pageData).filter(key => {
+        const val = pageData[key];
+        return val && typeof val === "object" && !Array.isArray(val) &&
+          Object.keys(val).length > 0 && !isNaN(Object.keys(val)[0]);
+      });
 
-        if (isDryRun) {
-          console.log(`   [DRY RUN] Would process ${type} using ${config.handler.name}`);
-          continue;
-        }
+      for (const fieldKey of componentFields) {
+        const components = pageData[fieldKey];
 
-        try {
-          let heroEntry;
-          if (config.handler === genericComponentHandler) {
-            const entryId = await genericComponentHandler(
-              env,
-              { id: blockId, ...fields },
-              config.mapping,
-              contentfulAssetMap
-            );
-            if (entryId) {
-              heroEntry = await env.getEntry(entryId);
+        for (const blockId in components) {
+          const block = components[blockId];
+          if (!block.enabled) continue;
+
+          const fields = block.fields;
+          const type = block.type || fieldKey;
+
+          const config = COMPONENTS[type];
+          if (!config) {
+            if (!summary.missingMappings.has(type)) {
+              summary.missingMappings.set(type, Object.keys(fields || {}));
             }
-          } else {
-            heroEntry = await config.handler(
-              env,
-              {
-                blockId: blockId,
-                ...fields, // Pass all fields from source
-                heading: fields.headingSection || pageData.heading45 || title,
-                body: fields.body180 || fields.bodyRedactorRestricted || fields.description,
-                label: fields.label || fields.ctaLinkText,
-                variation: type
-              },
-              contentfulAssetMap
-            );
+            console.warn(`ℹ️ skipping: "${type}" (no mapping in registry.js)`);
+            continue;
           }
 
-          if (heroEntry && pageEntry) {
-            pageEntry = await attachHeroToPage(env, pageEntry, heroEntry);
+          console.log(`✅ Detected "${type}" (ID: ${blockId})`);
+
+          if (isDryRun) {
+            console.log(`   [DRY RUN] Would process ${type} using ${config.handler.name}`);
+            continue;
           }
-        } catch (err) {
-          console.error(`❌ Error processing ${type} (${blockId}):`, err.message);
-          summary.skipped.push({ page: title, blockId, type, error: err.message });
+
+          try {
+            let heroEntry;
+            if (config.handler === genericComponentHandler) {
+              const entryId = await genericComponentHandler(
+                env,
+                { id: blockId, ...fields },
+                config.mapping,
+                contentfulAssetMap
+              );
+              if (entryId) {
+                heroEntry = await env.getEntry(entryId);
+              }
+            } else {
+              heroEntry = await config.handler(
+                env,
+                {
+                  blockId: blockId,
+                  ...fields, // Pass all fields from source
+                  heading: fields.headingSection || pageData.heading45 || title,
+                  body: fields.body180 || fields.bodyRedactorRestricted || fields.description,
+                  label: fields.label || fields.ctaLinkText,
+                  variation: type
+                },
+                contentfulAssetMap
+              );
+            }
+
+            if (heroEntry && pageEntry) {
+              pageEntry = await attachHeroToPage(env, pageEntry, heroEntry);
+            }
+          } catch (err) {
+            console.error(`❌ Error processing ${type} (${blockId}):`, err.message);
+            summary.skipped.push({ page: title, blockId, type, error: err.message });
+          }
         }
       }
     }

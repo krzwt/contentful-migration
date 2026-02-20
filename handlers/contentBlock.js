@@ -1,13 +1,13 @@
+import { convertHtmlToRichText } from "../utils/richText.js";
 import { upsertCta, upsertSectionTitle } from "../utils/contentfulHelpers.js";
-import { mapBackgroundColor } from "../utils/colorMap.js";
 
 const LOCALE = "en-US";
-const CONTENT_TYPE = "ctaBlock";
+const CONTENT_TYPE = "contentBlock";
 
-/* -----------------------------
-   MAIN UPSERT
- ------------------------------ */
-export async function createOrUpdateCtaBlock(env, blockData, assetMap = null) {
+/**
+ * Custom handler for contentBlock (Overview Content Standalone)
+ */
+export async function createOrUpdateContentBlock(env, blockData, assetMap = null) {
     // 1. Verify Content Type exists
     try {
         await env.getContentType(CONTENT_TYPE);
@@ -60,12 +60,12 @@ export async function createOrUpdateCtaBlock(env, blockData, assetMap = null) {
     }
 
     /* -----------------------------
-       CTA BLOCK FIELDS
+       CONTENT BLOCK FIELDS
     ------------------------------ */
     const fields = {
         blockId: { [LOCALE]: blockData.blockId },
-        blockName: { [LOCALE]: blockData.blockName || blockData.headingSection || "CTA Block" },
-        selectBackgroundColor: { [LOCALE]: mapBackgroundColor(blockData.backgroundColor) }
+        blockName: { [LOCALE]: blockData.blockName || blockData.headingSection || "Content Block" },
+        description: { [LOCALE]: await convertHtmlToRichText(env, blockData.body || blockData.bodyRedactorRestricted || "") }
     };
 
     if (titleEntry) {
@@ -87,12 +87,12 @@ export async function createOrUpdateCtaBlock(env, blockData, assetMap = null) {
     let entry;
     if (existing.items.length) {
         entry = existing.items[0];
-        console.log("🔄 Updating existing ctaBlock:", entry.sys.id);
+        console.log("🔄 Updating existing contentBlock:", entry.sys.id);
         entry.fields = fields;
         entry = await entry.update();
         entry = await entry.publish();
     } else {
-        console.log("✨ Creating new ctaBlock");
+        console.log("✨ Creating new contentBlock");
         entry = await env.createEntry(CONTENT_TYPE, { fields });
         entry = await entry.publish();
     }

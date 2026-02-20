@@ -99,7 +99,7 @@ contentful-migration/
 │   └── homeHero.js                # Custom handler example
 ├── mappings/
 │   ├── homeHero.json              # homeHero content type mapping
-│   └── overviewContent.json       # overviewContent mapping
+│   └── contentBlock.json       # contentBlock mapping
 ├── utils/
 │   ├── assets.js                  # Asset upload utilities
 │   ├── normalize.js               # Data normalization

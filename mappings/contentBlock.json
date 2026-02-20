@@ -1,16 +1,16 @@
 {
-  "contentType": "overviewContent",
+  "contentType": "contentBlock",
   "idField": "id",
   "fields": {
     "blockId": {
       "from": "id",
       "type": "text"
     },
-    "heading": {
+    "title": {
       "from": "headingSection",
       "type": "text"
     },
-    "body": {
+    "description": {
       "from": "bodyRedactorRestricted",
       "type": "richText"
     }

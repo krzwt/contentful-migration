@@ -2,6 +2,10 @@ import fs from "fs";
 import fetch from "node-fetch";
 
 const LOCALE = "en-US";
+const S3_BASE_URL = "https://assets-uat.btdevops.io";
+
+// Cache: asset title/filename → Contentful asset ID (avoid duplicates)
+const uploadedAssetCache = new Map();
 
 /**
  * Load asset metadata from GraphQL JSON file
@@ -13,10 +17,16 @@ export function loadAssetMetadata(filePath) {
 
   const assetMap = new Map();
   assets.forEach(asset => {
+    // Replace S3_BASE_URL placeholder with actual URL
+    let url = asset.url || "";
+    if (url.startsWith("S3_BASE_URL")) {
+      url = url.replace("S3_BASE_URL", S3_BASE_URL);
+    }
+
     assetMap.set(String(asset.id), {
       title: asset.title,
       filename: asset.filename,
-      url: asset.url,
+      url,
       mimeType: asset.mimeType,
       width: asset.width,
       height: asset.height
@@ -27,19 +37,35 @@ export function loadAssetMetadata(filePath) {
 }
 
 /**
- * Upload asset to Contentful from URL
+ * Upload asset to Contentful from URL (with dedup by filename)
  */
 export async function uploadAsset(env, assetId, metadata) {
+  // Check in-memory cache first (same title already uploaded this run)
+  const cacheKey = metadata.filename || metadata.title;
+  if (uploadedAssetCache.has(cacheKey)) {
+    const cachedId = uploadedAssetCache.get(cacheKey);
+    console.log(`   ✓ Using cached asset: ${metadata.title} (${cachedId})`);
+    return cachedId;
+  }
+
   try {
-    // Check if asset already exists (idempotent)
+    // Check if asset already exists in Contentful by title
     const existing = await env.getAssets({
       "fields.title": metadata.title,
       limit: 1
     });
 
     if (existing.items.length > 0) {
-      console.log(`   ✓ Asset exists: ${metadata.title}`);
-      return existing.items[0].sys.id;
+      const existingId = existing.items[0].sys.id;
+      console.log(`   ✓ Asset exists: ${metadata.title} (${existingId})`);
+      uploadedAssetCache.set(cacheKey, existingId);
+      return existingId;
+    }
+
+    // Validate URL before uploading
+    if (!metadata.url || !metadata.url.startsWith("http")) {
+      console.error(`   ✗ Invalid URL for "${metadata.title}": ${metadata.url}`);
+      return null;
     }
 
     // Create asset
@@ -58,32 +84,48 @@ export async function uploadAsset(env, assetId, metadata) {
     });
 
     // Process and publish
-    await asset.processForAllLocales();
-    await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for processing
-    const published = await asset.publish();
+    try {
+      await asset.processForAllLocales();
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for processing
+      const published = await asset.publish();
+      console.log(`   ✓ Uploaded and published: ${metadata.title}`);
+      uploadedAssetCache.set(cacheKey, published.sys.id);
+      return published.sys.id;
+    } catch (publishErr) {
+      const errInfo = typeof publishErr.message === 'string' && publishErr.message.startsWith('{')
+        ? JSON.parse(publishErr.message)
+        : publishErr;
 
-    console.log(`   ✓ Uploaded: ${metadata.title}`);
-    return published.sys.id;
+      if (publishErr.name === "VersionMismatch" || errInfo.status === 409) {
+        console.log(`   ⚠ Asset "${metadata.title}" version mismatch during publish. Using asset ID.`);
+        uploadedAssetCache.set(cacheKey, asset.sys.id);
+        return asset.sys.id;
+      }
+      throw publishErr;
+    }
   } catch (err) {
-    console.error(`   ✗ Failed to upload ${metadata.title}:`, JSON.stringify(err, null, 2));
+    const errInfo = typeof err.message === 'string' && err.message.startsWith('{')
+      ? JSON.parse(err.message)
+      : err;
 
-    // If asset is already published or there is a version conflict (409),
-    // treat it as success and just re-use the existing asset by title.
-    if (err.status === 409) {
+    if (err.name === "VersionMismatch" || errInfo.status === 409 || err.status === 409) {
       try {
         const existing = await env.getAssets({
           "fields.title": metadata.title,
           limit: 1
         });
         if (existing.items.length > 0) {
-          console.log(`   ✓ Using already-published asset for ${metadata.title}`);
-          return existing.items[0].sys.id;
+          const existingId = existing.items[0].sys.id;
+          console.log(`   ✓ Recovered: Using existing asset for "${metadata.title}"`);
+          uploadedAssetCache.set(cacheKey, existingId);
+          return existingId;
         }
-      } catch {
-        // fall through to null return below
+      } catch (recoveryErr) {
+        console.error(`   ✗ Recovery failed for ${metadata.title}:`, recoveryErr.message);
       }
     }
 
+    console.error(`   ✗ Failed to upload ${metadata.title}:`, err.message || err);
     return null;
   }
 }
