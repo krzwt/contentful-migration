@@ -53,14 +53,75 @@ async function getOrCreateParentPage(env, parentId, allPages) {
 }
 
 /**
- * Creates a `pageSettings` entry with slug and optional parent page link.
+ * Creates a `seo` entry from Craft seoMetaTags data.
+ */
+async function getOrCreateSeo(env, pageData) {
+  const seoData = pageData.seoMetaTags?.metaGlobalVars;
+  if (!seoData) return null;
+
+  // Only create SEO if there's actual data (skip Twig templates)
+  const cleanVal = (v) => (v && typeof v === "string" && !v.includes("{{") && v.trim()) ? v.trim() : "";
+
+  const metaTitle = cleanVal(seoData.seoTitle);
+  const metaDescription = cleanVal(seoData.seoDescription);
+  const canonicalUrl = cleanVal(seoData.canonicalUrl);
+  const ogTitle = cleanVal(seoData.ogTitle);
+  const ogDescription = cleanVal(seoData.ogDescription);
+  const robots = cleanVal(seoData.robots);
+
+  // Parse robots → noIndex / noFollow booleans
+  const robotsLower = robots.toLowerCase();
+  const noIndex = robotsLower.includes("noindex") || robotsLower === "none";
+  const noFollow = robotsLower.includes("nofollow") || robotsLower === "none";
+
+  // Skip if no meaningful SEO data
+  if (!metaTitle && !metaDescription && !canonicalUrl && !ogTitle && !ogDescription && !noIndex && !noFollow) {
+    return null;
+  }
+
+  const seoId = `seo-${(pageData.slug || "").replace(/\//g, "-")}`;
+
+  try {
+    const fields = {
+      metaDescription: { [LOCALE]: metaDescription || pageData.title || "" }
+    };
+
+    if (metaTitle) fields.metaTitle = { [LOCALE]: metaTitle };
+    if (metaDescription) fields.metaDescription = { [LOCALE]: metaDescription };
+    if (canonicalUrl) fields.canonicalUrl = { [LOCALE]: canonicalUrl };
+    if (ogTitle) fields.ogTitle = { [LOCALE]: ogTitle };
+    if (ogDescription) fields.ogDescription = { [LOCALE]: ogDescription };
+    fields.noIndex = { [LOCALE]: noIndex };
+    fields.noFollow = { [LOCALE]: noFollow };
+
+    let entry;
+    try {
+      entry = await env.getEntry(seoId);
+      console.log(`   🔄 Updating SEO: ${seoId}`);
+      entry.fields = fields;
+      entry = await entry.update();
+    } catch {
+      console.log(`   ✨ Creating SEO: ${seoId}`);
+      entry = await env.createEntryWithId("seo", seoId, { fields });
+    }
+
+    await entry.publish();
+    return entry;
+  } catch (err) {
+    console.error(`   ❌ Error with SEO for "${pageData.title}":`, err.message);
+    return null;
+  }
+}
+
+/**
+ * Creates a `pageSettings` entry with slug and optional parent page link + SEO.
  */
 async function getOrCreatePageSettings(env, pageData, allPages) {
   const settingsId = `settings-${(pageData.slug || "").replace(/\//g, "-")}`;
 
   try {
     const fields = {
-      slug: { [LOCALE]: pageData.slug || "" },
+      pageSetting: { [LOCALE]: pageData.slug || "" },
       enableSidenav: { [LOCALE]: false }
     };
 
@@ -75,6 +136,17 @@ async function getOrCreatePageSettings(env, pageData, allPages) {
         };
         console.log(`   🔗 Settings: linked parent page (${parentEntryId})`);
       }
+    }
+
+    // Create SEO entry and link it
+    const seoEntry = await getOrCreateSeo(env, pageData);
+    if (seoEntry) {
+      fields.seo = {
+        [LOCALE]: {
+          sys: { type: "Link", linkType: "Entry", id: seoEntry.sys.id }
+        }
+      };
+      console.log(`   🔗 Settings: linked SEO (${seoEntry.sys.id})`);
     }
 
     let entry;

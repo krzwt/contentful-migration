@@ -103,7 +103,9 @@ async function run() {
       logAssets(data, assetMetadata);
     }
 
-    const { assetMap: contentfulAssetMap, missingIds } = await processAssets(env, assetIds, assetMetadata, effectiveDryRun);
+    // lookupOnly=true: just find existing assets by title (no upload/wait)
+    // Assets should already be uploaded via: npm run assets
+    const { assetMap: contentfulAssetMap, missingIds } = await processAssets(env, assetIds, assetMetadata, effectiveDryRun, true);
     summary.missingAssetMetadata.push(...missingIds);
 
     const totalPages = data.length;
@@ -128,7 +130,7 @@ async function run() {
           console.log(`   📂 Root page (no parent) → /${fullSlug}`);
         }
       } else {
-        pageEntry = await getOrCreatePage(env, { title, slug: fullSlug, id: pageData.id, parentId: pageData.parentId }, source.pageContentType, data);
+        pageEntry = await getOrCreatePage(env, { title, slug: fullSlug, id: pageData.id, parentId: pageData.parentId, seoMetaTags: pageData.seoMetaTags }, source.pageContentType, data);
         if (!pageEntry) {
           console.error(`🛑 Skipping page "${title}" because page entry could not be created/found.`);
           continue;

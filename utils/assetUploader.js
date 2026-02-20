@@ -177,9 +177,39 @@ export async function uploadAsset(env, assetId, metadata) {
 }
 
 /**
- * Process all assets for migration
+ * Fast lookup: find existing asset in Contentful by title (no upload, no wait)
+ * Used during page migration when assets are already uploaded.
  */
-export async function processAssets(env, assetIds, assetMetadata, isDryRun = false) {
+export async function lookupAsset(env, assetId, metadata) {
+  const cacheKey = metadata.filename || metadata.title;
+  if (uploadedAssetCache.has(cacheKey)) {
+    return uploadedAssetCache.get(cacheKey);
+  }
+
+  try {
+    const existing = await env.getAssets({
+      "fields.title": metadata.title,
+      limit: 1
+    });
+
+    if (existing.items.length > 0) {
+      const existingId = existing.items[0].sys.id;
+      uploadedAssetCache.set(cacheKey, existingId);
+      return existingId;
+    }
+  } catch (e) {
+    // ignore lookup errors
+  }
+
+  console.warn(`   ⚠ Asset not found in Contentful: "${metadata.title}" (run npm run assets first)`);
+  return null;
+}
+
+/**
+ * Process all assets for migration
+ * @param {boolean} lookupOnly - If true, only look up existing assets (no upload/wait)
+ */
+export async function processAssets(env, assetIds, assetMetadata, isDryRun = false, lookupOnly = false) {
   const contentfulAssetMap = new Map();
   const missingIds = [];
 
@@ -198,6 +228,15 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
         id: "dry-run-asset-id",
         mimeType: metadata.mimeType
       });
+    } else if (lookupOnly) {
+      // Fast path: just find existing asset, no upload/processing
+      const contentfulId = await lookupAsset(env, craftAssetId, metadata);
+      if (contentfulId) {
+        contentfulAssetMap.set(String(craftAssetId), {
+          id: contentfulId,
+          mimeType: metadata.mimeType
+        });
+      }
     } else {
       const contentfulId = await uploadAsset(env, craftAssetId, metadata);
       if (contentfulId) {

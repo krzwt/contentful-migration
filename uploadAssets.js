@@ -38,7 +38,7 @@ async function run() {
 
         for (const pageData of data) {
             const pageAssets = extractAssets(pageData);
-            pageAssets.forEach(a => allAssetIds.add(String(a.id)));
+            pageAssets.forEach((val, assetId) => allAssetIds.add(String(assetId)));
         }
     }
 

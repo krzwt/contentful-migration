@@ -31,23 +31,49 @@ export async function upsertCta(env, id, label, url) {
 }
 
 /**
- * Wait for a Contentful asset to finish processing
+ * Ensure a Contentful asset is published before linking it.
+ * If it's Draft, try to publish it. Returns true if published.
  */
-async function waitForAssetProcessing(env, assetId, maxAttempts = 5) {
-    for (let i = 0; i < maxAttempts; i++) {
-        try {
-            const asset = await env.getAsset(assetId);
-            const file = asset.fields?.file?.[LOCALE];
-            if (file && file.url) {
-                return true; // Asset is processed and has a URL
+async function ensureAssetPublished(env, assetId) {
+    try {
+        const asset = await env.getAsset(assetId);
+        const file = asset.fields?.file?.[LOCALE];
+
+        if (!file || !file.url) {
+            // Asset not processed yet — try to process it
+            console.log(`   ⏳ Asset ${assetId} not processed, triggering process...`);
+            try {
+                await asset.processForAllLocales();
+                await new Promise(r => setTimeout(r, 3000));
+            } catch {
+                // might already be processing
             }
-        } catch (e) {
-            // Asset might not exist yet
+            // Re-check
+            const refreshed = await env.getAsset(assetId);
+            const refreshedFile = refreshed.fields?.file?.[LOCALE];
+            if (!refreshedFile || !refreshedFile.url) {
+                console.warn(`   ⚠ Asset ${assetId} still not processed after retry.`);
+                return false;
+            }
         }
-        console.log(`   ⏳ Waiting for asset ${assetId} to process... (${i + 1}/${maxAttempts})`);
-        await new Promise(resolve => setTimeout(resolve, 3000));
+
+        // Check if already published
+        const latest = await env.getAsset(assetId);
+        if (!latest.sys.publishedVersion || latest.sys.version > latest.sys.publishedVersion + 1) {
+            // Needs publishing
+            try {
+                await latest.publish();
+                console.log(`   ✓ Published Draft asset: ${assetId}`);
+            } catch (pubErr) {
+                console.warn(`   ⚠ Could not publish asset ${assetId}: ${pubErr.message?.substring(0, 100)}`);
+                return false;
+            }
+        }
+        return true;
+    } catch (e) {
+        console.warn(`   ⚠ Asset ${assetId} not found in Contentful.`);
+        return false;
     }
-    return false;
 }
 
 /**
@@ -58,11 +84,34 @@ export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType) {
     if (mimeType?.includes("video")) type = "Video";
     if (mimeType?.includes("json") || mimeType?.includes("javascript")) type = "JSON";
 
-    // Wait for the asset to finish processing before creating the wrapper
-    const isReady = await waitForAssetProcessing(env, contentfulAssetId);
+    // Ensure the linked asset is published first
+    const isReady = await ensureAssetPublished(env, contentfulAssetId);
     if (!isReady) {
-        console.warn(`   ⚠ Asset ${contentfulAssetId} not ready after waiting. Skipping wrapper.`);
-        return null;
+        console.warn(`   ⚠ Asset ${contentfulAssetId} not ready. Saving wrapper as draft.`);
+        // Create/update wrapper but DON'T publish — save as draft
+        try {
+            const fields = {
+                assetType: { [LOCALE]: type },
+                mediaAsset: {
+                    [LOCALE]: {
+                        sys: { type: "Link", linkType: "Asset", id: contentfulAssetId }
+                    }
+                }
+            };
+            let entry;
+            try {
+                entry = await env.getEntry(`asset-${id}`);
+                entry.fields = fields;
+                entry = await entry.update();
+            } catch {
+                entry = await env.createEntryWithId("asset", `asset-${id}`, { fields });
+            }
+            console.log(`   📝 Asset wrapper saved as draft: asset-${id}`);
+            return entry; // Return unpublished entry so it still links to page
+        } catch (err) {
+            console.error(`   🛑 Could not create draft wrapper: ${err.message}`);
+            return null;
+        }
     }
 
     const fields = {
