@@ -156,7 +156,7 @@ async function run() {
           seoMetaTags: pageData.seoMetaTags,
           status: pageData.status,
           enabled: pageData.enabled
-        }, source.pageContentType, data);
+        }, source.pageContentType, data, contentfulAssetMap);
         if (!pageEntry) {
           console.error(`🛑 Skipping page "${title}" because page entry could not be created/found.`);
           continue;

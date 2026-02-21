@@ -83,7 +83,7 @@ async function getOrCreateParentPage(env, parentId, allPages) {
 /**
  * Creates a `seo` entry from Craft seoMetaTags data.
  */
-async function getOrCreateSeo(env, pageData) {
+async function getOrCreateSeo(env, pageData, assetMap = null) {
   const seoData = pageData.seoMetaTags?.metaGlobalVars;
   if (!seoData) return null;
 
@@ -131,9 +131,16 @@ async function getOrCreateSeo(env, pageData) {
     const DEFAULT_SEO_IMAGE = "asset-45209";
 
     if (seoData.seoImage && Array.isArray(seoData.seoImage) && seoData.seoImage[0]) {
-      imageAssetId = `asset-${seoData.seoImage[0]}`;
+      const craftAssetId = String(seoData.seoImage[0]);
+      // Use mapped ID if we have it (pre-migrated or current run)
+      if (assetMap && assetMap.has(craftAssetId)) {
+        imageAssetId = assetMap.get(craftAssetId).id;
+      } else {
+        // Fallback to convention id for new uploads
+        imageAssetId = `asset-${craftAssetId}`;
+      }
     } else {
-      // Use fallback from env or hardcoded default
+      // Use fallback from env or hardcoded brand card
       const fallback = process.env.DEFAULT_SEO_IMAGE_ID || DEFAULT_SEO_IMAGE;
       imageAssetId = fallback.startsWith("asset-") ? fallback : `asset-${fallback}`;
     }
@@ -167,7 +174,7 @@ async function getOrCreateSeo(env, pageData) {
 /**
  * Creates a `pageSettings` entry with slug and optional parent page link + SEO.
  */
-async function getOrCreatePageSettings(env, pageData, allPages) {
+async function getOrCreatePageSettings(env, pageData, allPages, assetMap = null) {
   const settingsId = safeId("settings", pageData.slug);
 
   try {
@@ -190,7 +197,7 @@ async function getOrCreatePageSettings(env, pageData, allPages) {
     }
 
     // Create SEO entry and link it
-    const seoEntry = await getOrCreateSeo(env, pageData);
+    const seoEntry = await getOrCreateSeo(env, pageData, assetMap);
     if (seoEntry) {
       fields.seo = {
         [LOCALE]: {
@@ -229,7 +236,7 @@ async function getOrCreatePageSettings(env, pageData, allPages) {
  * Searches for an existing page by title or creates a new one.
  * Now also handles creating pageSettings with parent page link.
  */
-export async function getOrCreatePage(env, pageData, pageContentType = DEFAULT_PAGE_TYPE, allPages = []) {
+export async function getOrCreatePage(env, pageData, pageContentType = DEFAULT_PAGE_TYPE, allPages = [], assetMap = null) {
   const { title, slug, id: craftId } = pageData;
 
   try {
@@ -275,7 +282,7 @@ export async function getOrCreatePage(env, pageData, pageContentType = DEFAULT_P
     }
 
     // Always call getOrCreatePageSettings so it can update existing entries (e.g. name changes)
-    const settingsEntry = await getOrCreatePageSettings(env, pageData, allPages);
+    const settingsEntry = await getOrCreatePageSettings(env, pageData, allPages, assetMap);
     if (settingsEntry) {
       const currentSettingsId = page.fields.settings?.[LOCALE]?.sys?.id;
       if (currentSettingsId !== settingsEntry.sys.id) {

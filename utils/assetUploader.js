@@ -203,20 +203,31 @@ export async function uploadAsset(env, assetId, metadata) {
       return null;
     }
 
-    // Create asset
-    const asset = await env.createAsset({
-      fields: {
-        title: { [LOCALE]: metadata.title },
-        description: { [LOCALE]: `Migrated from Craft CMS (ID: ${assetId})` },
-        file: {
-          [LOCALE]: {
-            contentType: metadata.mimeType,
-            fileName: metadata.filename,
-            upload: metadata.url
+    // Create asset with a predictable ID
+    const contentfulId = `asset-${assetId}`;
+    let asset;
+    try {
+      asset = await env.createAssetWithId(contentfulId, {
+        fields: {
+          title: { [LOCALE]: metadata.title },
+          description: { [LOCALE]: `Migrated from Craft CMS (ID: ${assetId})` },
+          file: {
+            [LOCALE]: {
+              contentType: metadata.mimeType,
+              fileName: metadata.filename,
+              upload: metadata.url
+            }
           }
         }
+      });
+    } catch (createErr) {
+      // If ID already exists but wasn't found by title (rare), just get it
+      if (createErr.status === 409 || createErr.name === "VersionMismatch") {
+        asset = await env.getAsset(contentfulId);
+      } else {
+        throw createErr;
       }
-    });
+    }
 
     // Process the asset (catch timeout for JSON/large files)
     try {
