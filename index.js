@@ -3,6 +3,7 @@ import { getEnvironment } from "./config/contentful.js";
 import { COMPONENTS } from "./registry.js";
 import { setSectionsOnPage, getOrCreatePage, publishPage } from "./handlers/pageHandler.js";
 import { migratePeople } from "./handlers/peopleHandler.js";
+import { migrateQuotes } from "./handlers/quoteHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import { loadAssetMetadata, processAssets, loadWistiaData, prePopulateAssetCache } from "./utils/assetUploader.js";
@@ -54,7 +55,12 @@ const DATA_SOURCES = [
     file: "./data/people-cpt.json",
     label: "People CPT",
     isPeople: true
-  }
+  },
+  // {
+  //   file: "./data/company-quotes.json",
+  //   label: "Company Quotes",
+  //   isQuotes: true
+  // }
 ];
 
 async function run() {
@@ -266,6 +272,10 @@ async function run() {
 
     if (source.isPeople) {
       await migratePeople(env, batchData, contentfulAssetMap);
+    }
+
+    if (source.isQuotes) {
+      await migrateQuotes(env, batchData, contentfulAssetMap);
     }
   }
 

@@ -161,6 +161,10 @@ export async function upsertSectionTitle(env, id, title) {
  * Exported so handlers can create custom nested content types.
  */
 export async function upsertEntry(env, contentType, entryId, fields) {
+    if (!env) {
+        console.log(`   [DRY RUN] Would upsert ${contentType}: ${entryId}`);
+        return { sys: { id: entryId } };
+    }
     try {
         let entry;
         try {

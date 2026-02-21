@@ -9,8 +9,9 @@ export async function migratePeople(env, peopleData, assetMap = null) {
 
     for (let i = 0; i < peopleData.length; i++) {
         const person = peopleData[i];
+        const personName = person.title || person.personsName || "Unknown Person";
         const progress = `[${i + 1} / ${peopleData.length}]`;
-        console.log(`\n➡️ ${progress} Person: ${person.title} (ID: ${person.id})`);
+        console.log(`\n➡️ ${progress} Person: ${personName} (ID: ${person.id})`);
 
         try {
             // 1. Handle Nested Entries First
@@ -21,7 +22,7 @@ export async function migratePeople(env, peopleData, assetMap = null) {
             // 2. Prepare Fields
             const fields = {
                 entryId: { [LOCALE]: String(person.id) },
-                title: { [LOCALE]: person.title },
+                title: { [LOCALE]: person.title || person.personsName || "Unknown Person" },
                 personsName: { [LOCALE]: person.personsName || "" },
                 personsTitle: { [LOCALE]: person.personsTitle || "" },
                 // Biography: Clean HTML slightly for Long Text (Markdown)
@@ -57,10 +58,10 @@ export async function migratePeople(env, peopleData, assetMap = null) {
             // 5. Upsert the Person
             const contentfulId = `person-${person.id}`;
             await upsertEntry(env, "peopleCpt", contentfulId, fields);
-            console.log(`✅ Person "${person.title}" migrated.`);
+            console.log(`✅ Person "${personName}" migrated.`);
 
         } catch (err) {
-            console.error(`❌ Error migrating person "${person.title}":`, err.message);
+            console.error(`❌ Error migrating person "${personName}":`, err.message);
         }
     }
 }
