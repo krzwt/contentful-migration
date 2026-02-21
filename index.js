@@ -1,7 +1,7 @@
 import fs from "fs";
 import { getEnvironment } from "./config/contentful.js";
 import { COMPONENTS } from "./registry.js";
-import { setSectionsOnPage, getOrCreatePage } from "./handlers/pageHandler.js";
+import { setSectionsOnPage, getOrCreatePage, publishPage } from "./handlers/pageHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import { loadAssetMetadata, processAssets, loadWistiaData } from "./utils/assetUploader.js";
@@ -29,15 +29,25 @@ const effectiveDryRun = isDryRun || cliDryRun;
 --------------------------------------------------------- */
 const DATA_SOURCES = [
   // {
-  //   file: "./data/standalone-content.json",
-  //   pageContentType: "newStandaloneContent",
-  //   label: "Standalone Content"
+  //   file: "./data/standalone-conversion.json",
+  //   pageContentType: "newStandaloneConversion",
+  //   label: "Standalone Conversion"
   // },
   {
-    file: "./data/standalone-conversion.json",
-    pageContentType: "newStandaloneConversion",
-    label: "Standalone Conversion"
-  }
+    file: "./data/standalone-content.json",
+    pageContentType: "newStandaloneContent",
+    label: "Standalone Content"
+  },
+  // {
+  //   file: "./data/standalone-microsite.json",
+  //   pageContentType: "newStandaloneMicrosite",
+  //   label: "Standalone Microsite"
+  // },
+  // {
+  //   file: "./data/standalone-thankyou.json",
+  //   pageContentType: "newStandaloneThankYou",
+  //   label: "Standalone Thank You"
+  // }
 ];
 
 async function run() {
@@ -63,7 +73,7 @@ async function run() {
   }
 
   if (fromArg || toArg) {
-    console.log(`📋 Batch mode: pages ${fromArg || 1} to ${toArg || "end"}\n`);
+    console.log(`📋 Batch mode: pages ${fromArg || 1} to ${toArg || "end"} \n`);
   }
 
   /* ---------------------------------------------------------
@@ -71,7 +81,7 @@ async function run() {
   --------------------------------------------------------- */
   for (const source of DATA_SOURCES) {
     if (!fs.existsSync(source.file)) {
-      console.log(`\n⚠️ Skipping "${source.label}" — file not found: ${source.file}`);
+      console.log(`\n⚠️ Skipping "${source.label}" — file not found: ${source.file} `);
       continue;
     }
 
@@ -87,7 +97,7 @@ async function run() {
     const batchData = data.slice(startIdx, endIdx);
 
     console.log("\n" + "=".repeat(50));
-    console.log(`📂 Processing: ${source.label} (pages ${startIdx + 1}-${endIdx} of ${data.length} → ${source.pageContentType})`);
+    console.log(`📂 Processing: ${source.label} (pages ${startIdx + 1} -${endIdx} of ${data.length} → ${source.pageContentType})`);
     console.log("=".repeat(50));
 
     // Detect all asset IDs from BATCH and upload/map them
@@ -113,7 +123,7 @@ async function run() {
     for (let i = 0; i < batchData.length; i++) {
       const pageData = batchData[i];
       const pageNum = startIdx + i + 1;
-      console.log(`\n➡️ [${pageNum}/${totalPages}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
+      console.log(`\n➡️[${pageNum} / ${totalPages}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
       const { slug, title, uri } = pageData;
       // Use uri as slug (includes parent path, e.g. "sem/remote-access-new")
       const fullSlug = uri || slug;
@@ -125,7 +135,7 @@ async function run() {
           const parentPage = data.find(p => String(p.id) === String(pageData.parentId));
           const parentTitle = parentPage ? parentPage.title : `[NOT IN JSON: ${pageData.parentId}]`;
           const parentSlug = parentPage ? parentPage.slug : "unknown";
-          console.log(`   📂 Parent: "${parentTitle}" (slug: ${parentSlug}) → settings.parentPage`);
+          console.log(`   📂 Parent: "${parentTitle}"(slug: ${parentSlug}) → settings.parentPage`);
           console.log(`   🔗 Slug: /${fullSlug}`);
         } else {
           console.log(`   📂 Root page (no parent) → /${fullSlug}`);
@@ -222,6 +232,11 @@ async function run() {
       // Set all sections at once in the correct order (replaces existing)
       if (!effectiveDryRun && pageEntry && sectionEntries.length > 0) {
         await setSectionsOnPage(env, pageEntry, sectionEntries);
+      }
+
+      // 🚀 Final step: Publish the page now that it has valid sections
+      if (!effectiveDryRun && pageEntry) {
+        await publishPage(env, pageEntry, pageData);
       }
     }
   }

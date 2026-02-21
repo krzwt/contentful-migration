@@ -21,9 +21,15 @@ export function parseCraftLink(linkStr) {
  * Upserts a 'cta' entry
  */
 export async function upsertCta(env, id, label, url) {
+    let safeUrl = url || "";
+    if (safeUrl.length > 255) {
+        console.warn(`   ⚠️ URL for cta-${id} exceeds 255 chars. Truncating...`);
+        safeUrl = safeUrl.substring(0, 255);
+    }
+
     const fields = {
         label: { [LOCALE]: label || "" },
-        url: { [LOCALE]: url || "" },
+        url: { [LOCALE]: safeUrl },
         target: { [LOCALE]: "_self (Same Tab)" }
     };
 

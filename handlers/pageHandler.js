@@ -1,8 +1,22 @@
+import crypto from "crypto";
+
 const LOCALE = "en-US";
-const PAGE_CT = "newStandaloneConversion";
+const DEFAULT_PAGE_TYPE = "page";
+const MAX_ID_LENGTH = 64;
 
 // Cache: Craft parentId → Contentful `page` entry ID
 const parentPageCache = new Map();
+
+/**
+ * Generate a safe Contentful entry ID (max 64 chars).
+ * If the raw ID exceeds 64 chars, truncate and append a short hash for uniqueness.
+ */
+function safeId(prefix, slug) {
+  const raw = `${prefix}-${(slug || "").replace(/\//g, "-")}`;
+  if (raw.length <= MAX_ID_LENGTH) return raw;
+  const hash = crypto.createHash("md5").update(raw).digest("hex").substring(0, 8);
+  return raw.substring(0, MAX_ID_LENGTH - 9) + "-" + hash;
+}
 
 /**
  * Gets or creates a `page` entry to serve as a parent page.
@@ -63,7 +77,7 @@ async function getOrCreateSeo(env, pageData) {
   const cleanVal = (v) => (v && typeof v === "string" && !v.includes("{{") && v.trim()) ? v.trim() : "";
 
   const metaTitle = cleanVal(seoData.seoTitle);
-  const metaDescription = cleanVal(seoData.seoDescription);
+  const metaDescription = cleanVal(seoData.seoDescription).substring(0, 160);
   const canonicalUrl = cleanVal(seoData.canonicalUrl);
   const ogTitle = cleanVal(seoData.ogTitle);
   const ogDescription = cleanVal(seoData.ogDescription);
@@ -75,7 +89,7 @@ async function getOrCreateSeo(env, pageData) {
   const noIndex = robotsLower.includes("noindex") || robotsLower === "none";
   const noFollow = robotsLower.includes("nofollow") || robotsLower === "none";
 
-  const seoId = `seo-${(pageData.slug || "").replace(/\//g, "-")}`;
+  const seoId = safeId("seo", pageData.slug);
 
   try {
     const fields = {
@@ -114,7 +128,7 @@ async function getOrCreateSeo(env, pageData) {
  * Creates a `pageSettings` entry with slug and optional parent page link + SEO.
  */
 async function getOrCreatePageSettings(env, pageData, allPages) {
-  const settingsId = `settings-${(pageData.slug || "").replace(/\//g, "-")}`;
+  const settingsId = safeId("settings", pageData.slug);
 
   try {
     const fields = {
@@ -175,13 +189,13 @@ async function getOrCreatePageSettings(env, pageData, allPages) {
  * Searches for an existing page by title or creates a new one.
  * Now also handles creating pageSettings with parent page link.
  */
-export async function getOrCreatePage(env, pageData, pageContentType = PAGE_CT, allPages = []) {
+export async function getOrCreatePage(env, pageData, pageContentType = DEFAULT_PAGE_TYPE, allPages = []) {
   const { title, slug, id: craftId } = pageData;
 
   try {
     const existing = await env.getEntries({
       content_type: pageContentType,
-      "fields.title": title,
+      "fields.entryId": String(craftId),
       limit: 1
     });
 
@@ -240,31 +254,6 @@ export async function getOrCreatePage(env, pageData, pageContentType = PAGE_CT, 
     if (needsUpdate || isNew) {
       console.log(`📡 Updating page "${title}" (Status: ${isLive ? 'Live' : 'Hidden/Draft'})...`);
       page = await page.update();
-
-      if (isLive) {
-        page = await page.publish();
-        console.log(`✅ Page "${title}" published.`);
-      } else {
-        try {
-          // If it's not live, we ensure it's UNPUBLISHED (Draft state)
-          page = await page.unpublish();
-          console.log(`⏸️  Page "${title}" set to Draft (Unpublished).`);
-        } catch {
-          // Might already be draft, ignore
-          console.log(`⏸️  Page "${title}" is in Draft state.`);
-        }
-      }
-    } else {
-      // Even if nothing in fields changed, we might need to sync the publish status
-      const isCurrentlyPublished = !!page.sys.publishedVersion && (page.sys.version === page.sys.publishedVersion + 1);
-
-      if (isLive && !isCurrentlyPublished) {
-        console.log(`📡 Publishing existing page "${title}"...`);
-        page = await page.publish();
-      } else if (!isLive && isCurrentlyPublished) {
-        console.log(`📡 Unpublishing page "${title}"...`);
-        try { page = await page.unpublish(); } catch { }
-      }
     }
 
     return page;
@@ -272,6 +261,41 @@ export async function getOrCreatePage(env, pageData, pageContentType = PAGE_CT, 
     console.error(`❌ Error in getOrCreatePage for "${title}":`, err.message);
     if (err.details) console.error("Details:", JSON.stringify(err.details, null, 2));
     return null;
+  }
+}
+
+/**
+ * Publishes or unpublishes a page based on its live status.
+ * This should be called AFTER sections have been added.
+ */
+export async function publishPage(env, page, pageData) {
+  const isLive = pageData.enabled !== false && pageData.status === "live";
+  const title = pageData.title;
+
+  try {
+    // Re-fetch to get latest version
+    page = await env.getEntry(page.sys.id);
+
+    const isCurrentlyPublished = !!page.sys.publishedVersion && (page.sys.version === page.sys.publishedVersion + 1);
+
+    if (isLive) {
+      if (!isCurrentlyPublished) {
+        console.log(`📡 Publishing page "${title}"...`);
+        page = await page.publish();
+        console.log(`✅ Page "${title}" published.`);
+      }
+    } else {
+      if (isCurrentlyPublished) {
+        console.log(`📡 Unpublishing page "${title}"...`);
+        page = await page.unpublish();
+        console.log(`⏸️  Page "${title}" set to Draft (Unpublished).`);
+      }
+    }
+    return page;
+  } catch (err) {
+    console.error(`❌ Error publishing page "${title}":`, err.message);
+    if (err.details) console.error("Details:", JSON.stringify(err.details, null, 2));
+    return page;
   }
 }
 

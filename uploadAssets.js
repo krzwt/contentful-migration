@@ -14,13 +14,21 @@ import { extractAssets } from "./utils/assetDetector.js";
 const ASSET_METADATA_FILE = "./data/assets.json";
 
 const DATA_SOURCES = [
-    // {
-    //   file: "./data/standalone-content.json",
-    //   label: "Standalone Content"
-    // },
+    {
+        file: "./data/standalone-content.json",
+        label: "Standalone Content"
+    },
     {
         file: "./data/standalone-conversion.json",
         label: "Standalone Conversion"
+    },
+    {
+        file: "./data/standalone-microsite.json",
+        label: "Standalone Microsite"
+    },
+    {
+        file: "./data/standalone-thankyou.json",
+        label: "Standalone Thank You"
     }
 ];
 
