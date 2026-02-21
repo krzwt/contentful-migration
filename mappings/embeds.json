@@ -1,0 +1,18 @@
+{
+    "contentType": "embeds",
+    "idField": "blockId",
+    "fields": {
+        "title": {
+            "from": "headingSection",
+            "type": "text"
+        },
+        "description": {
+            "from": "bodyRedactorRestricted",
+            "type": "richText"
+        },
+        "embedCode": {
+            "from": "embeds",
+            "type": "text"
+        }
+    }
+}

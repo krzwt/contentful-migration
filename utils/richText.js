@@ -127,7 +127,8 @@ export async function convertHtmlToRichText(env, html) {
     }
 
     if (/^H[1-6]$/.test(node.nodeName)) {
-      const level = node.nodeName.replace("H", "");
+      let level = node.nodeName.replace("H", "");
+      if (level === "1") level = "2"; // Downgrade H1 to H2
       content.push({
         nodeType: `heading-${level}`,
         data: {},

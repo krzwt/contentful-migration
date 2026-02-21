@@ -1,5 +1,9 @@
 import homeHero from "./mappings/homeHero.json" with { type: "json" };
 import ctaBlockMapping from "./mappings/ctaBlock.json" with { type: "json" };
+import siteSectionMapping from "./mappings/siteSection.json" with { type: "json" };
+import embedsMapping from "./mappings/embeds.json" with { type: "json" };
+import formMapping from "./mappings/form.json" with { type: "json" };
+import nonMarketingGetNotifiedFormMapping from "./mappings/nonMarketingGetNotifiedForm.json" with { type: "json" };
 
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { createOrUpdateHero } from "./handlers/bannerHero.js";
@@ -54,5 +58,9 @@ export const COMPONENTS = {
   contactSales: { handler: createOrUpdateContactSales },
 
   /* ---- Generic (mapping-based) ---- */
-  homeHero: { mapping: homeHero, handler: genericComponentHandler }
+  homeHero: { mapping: homeHero, handler: genericComponentHandler },
+  siteSection: { mapping: siteSectionMapping, handler: genericComponentHandler },
+  embeds: { mapping: embedsMapping, handler: genericComponentHandler },
+  form: { mapping: formMapping, handler: genericComponentHandler },
+  nonMarketingGetNotifiedForm: { mapping: nonMarketingGetNotifiedFormMapping, handler: genericComponentHandler }
 };

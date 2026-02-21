@@ -1,6 +1,6 @@
 import crypto from "crypto";
 
-const LOCALE = "en-US";
+export const LOCALE = "en-US";
 const DEFAULT_PAGE_TYPE = "page";
 const MAX_ID_LENGTH = 64;
 
@@ -11,11 +11,25 @@ const parentPageCache = new Map();
  * Generate a safe Contentful entry ID (max 64 chars).
  * If the raw ID exceeds 64 chars, truncate and append a short hash for uniqueness.
  */
-function safeId(prefix, slug) {
-  const raw = `${prefix}-${(slug || "").replace(/\//g, "-")}`;
-  if (raw.length <= MAX_ID_LENGTH) return raw;
-  const hash = crypto.createHash("md5").update(raw).digest("hex").substring(0, 8);
-  return raw.substring(0, MAX_ID_LENGTH - 9) + "-" + hash;
+export function safeId(prefix, slug) {
+  // Sanitize: Only allow a-z, 0-9, _, -, . (Contentful requirement)
+  const sanitized = (slug || "")
+    .replace(/[^a-zA-Z0-9_\-\.]/g, "-")
+    .replace(/-+/g, "-")        // Collapse multiple dashes
+    .replace(/^-+|-+$/g, "");   // Trim dashes
+
+  // Ensure prefix is included
+  const raw = `${prefix}-${sanitized}`;
+
+  // If the result is just the prefix or too long, we MUST use a hash to ensure uniqueness
+  if (raw.length <= MAX_ID_LENGTH && sanitized.length > 0) {
+    return raw;
+  }
+
+  // Generate a fallback ID with hash
+  const hash = crypto.createHash("md5").update(`${prefix}-${slug}`).digest("hex").substring(0, 8);
+  const truncated = raw.substring(0, MAX_ID_LENGTH - 9).replace(/-$/, "");
+  return `${truncated}-${hash}`;
 }
 
 /**

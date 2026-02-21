@@ -2,6 +2,7 @@ import fs from "fs";
 import { getEnvironment } from "./config/contentful.js";
 import { COMPONENTS } from "./registry.js";
 import { setSectionsOnPage, getOrCreatePage, publishPage } from "./handlers/pageHandler.js";
+import { migratePeople } from "./handlers/peopleHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import { loadAssetMetadata, processAssets, loadWistiaData } from "./utils/assetUploader.js";
@@ -33,20 +34,25 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneConversion",
   //   label: "Standalone Conversion"
   // },
-  {
-    file: "./data/standalone-content.json",
-    pageContentType: "newStandaloneContent",
-    label: "Standalone Content"
-  },
   // {
-  //   file: "./data/standalone-microsite.json",
-  //   pageContentType: "newStandaloneMicrosite",
-  //   label: "Standalone Microsite"
+  //   file: "./data/standalone-content.json",
+  //   pageContentType: "newStandaloneContent",
+  //   label: "Standalone Content"
   // },
+  {
+    file: "./data/standalone-microsite.json",
+    pageContentType: "newStandaloneMicrosite",
+    label: "Standalone Microsite"
+  },
   // {
   //   file: "./data/standalone-thankyou.json",
   //   pageContentType: "newStandaloneThankYou",
   //   label: "Standalone Thank You"
+  // },
+  // {
+  //   file: "./data/people-cpt.json",
+  //   label: "People CPT",
+  //   isPeople: true
   // }
 ];
 
@@ -238,6 +244,10 @@ async function run() {
       if (!effectiveDryRun && pageEntry) {
         await publishPage(env, pageEntry, pageData);
       }
+    }
+
+    if (source.isPeople) {
+      await migratePeople(env, data);
     }
   }
 

@@ -1,0 +1,14 @@
+{
+    "contentType": "siteSection",
+    "idField": "blockId",
+    "fields": {
+        "title": {
+            "from": "sectionName",
+            "type": "text"
+        },
+        "url": {
+            "from": "sectionUrlRoot",
+            "type": "text"
+        }
+    }
+}

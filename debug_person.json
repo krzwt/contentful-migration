@@ -1,0 +1,55 @@
+{
+  "sectionId": 40,
+  "postDate": "2025-08-29T15:30:00-05:00",
+  "expiryDate": null,
+  "deletedWithEntryType": false,
+  "_authorId": 26402,
+  "id": 2434638,
+  "tempId": null,
+  "draftId": null,
+  "revisionId": null,
+  "isProvisionalDraft": false,
+  "uid": "17439611-ad29-4d1a-9819-9b0e7e881eac",
+  "siteSettingsId": 3376132,
+  "fieldLayoutId": null,
+  "contentId": 1654757,
+  "enabled": true,
+  "archived": false,
+  "siteId": 1,
+  "title": "Mike Puterbaugh",
+  "slug": "mike-puterbaugh",
+  "uri": null,
+  "dateCreated": "2025-08-29T15:28:46-05:00",
+  "dateUpdated": "2025-08-29T16:08:52-05:00",
+  "dateLastMerged": null,
+  "dateDeleted": null,
+  "trashed": false,
+  "validatingRelatedElement": false,
+  "canonicalId": 2434638,
+  "isDraft": false,
+  "isRevision": false,
+  "isUnpublishedDraft": false,
+  "ref": "people/mike-puterbaugh",
+  "status": "live",
+  "structureId": null,
+  "url": null,
+  "authorId": 26402,
+  "typeId": 65,
+  "personsName": "Mike Puterbaugh",
+  "personsTitle": "Chief Marketing Officer",
+  "personsBiography": "<p>As Chief Marketing Officer, Mike Puterbaugh is responsible for BeyondTrust’s global marketing strategy. He is passionate about building our brand reputation and amplifying our leadership position in the evolving identity security market. With more than 25 years of technology and cybersecurity marketing experience, Mike has built and led world-class marketing teams that drive strong revenue growth, including as part of the leadership team at eEye Digital Security, which was acquired by BeyondTrust in 2012. Prior to returning to BeyondTrust as SVP Product &amp; Influencer Marketing in 2024, Mike served as the CMO at Pathlock, and also held various leadership positions at organizations like Intel, Mercury Interactive, and Quest Software.  Mike has a bachelor’s degree in political science from San Jose State University. </p>",
+  "personsPhoto": [
+    2434658
+  ],
+  "socialMediaLinks": {
+    "2434639": {
+      "type": 111,
+      "fields": {
+        "linkedin": "{\"linkedUrl\":\"https:\\/\\/www.linkedin.com\\/in\\/mikep\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+        "twitterX": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}"
+      }
+    }
+  },
+  "contactInfo": [],
+  "otherLinks": []
+}
