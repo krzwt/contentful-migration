@@ -10,8 +10,38 @@ const uploadedAssetCache = new Map();
 const wistiaMap = new Map();
 
 /**
- * Load Wistia embed data from wistia.json
+ * Pre-populate the asset cache by fetching all existing assets from Contentful.
+ * This avoids hundreds of individual "getAsset" calls.
  */
+export async function prePopulateAssetCache(env) {
+  console.log("🔍 Pre-populating asset cache from Contentful...");
+  let total = 0;
+  let skip = 0;
+  const limit = 100;
+
+  try {
+    while (true) {
+      const response = await env.getAssets({ skip, limit });
+      if (response.items.length === 0) break;
+
+      response.items.forEach(asset => {
+        const title = asset.fields?.title?.[LOCALE];
+        const file = asset.fields?.file?.[LOCALE];
+        const filename = file?.fileName;
+
+        if (title) uploadedAssetCache.set(title, asset.sys.id);
+        if (filename) uploadedAssetCache.set(filename, asset.sys.id);
+        total++;
+      });
+
+      skip += limit;
+      if (response.items.length < limit) break;
+    }
+    console.log(`✅ Cached ${total} existing assets from Contentful.\n`);
+  } catch (err) {
+    console.warn("⚠️  Could not pre-populate asset cache:", err.message);
+  }
+}
 export function loadWistiaData(filePath = "./data/wistia.json") {
   try {
     const raw = fs.readFileSync(filePath, "utf-8");

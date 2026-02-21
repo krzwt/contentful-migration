@@ -36,14 +36,21 @@ logs/
 .cache/
 .parcel-cache/
 # data/
-debug_*.js
-check_*.js
-verify_*.js
-fix_*.js
-scan_*.js
-list_*.js
-dump_*.js
-read_*.js
+debug_*
+check_*
+verify_*
+fix_*
+scan_*
+list_*
+dump_*
+read_*
+temp_*
+test_*
+*.tmp
+*.bak
+dump.json
+debug.json
+# data/
 # *.txt
 # *.json
 !package.json

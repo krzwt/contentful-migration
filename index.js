@@ -5,7 +5,7 @@ import { setSectionsOnPage, getOrCreatePage, publishPage } from "./handlers/page
 import { migratePeople } from "./handlers/peopleHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
-import { loadAssetMetadata, processAssets, loadWistiaData } from "./utils/assetUploader.js";
+import { loadAssetMetadata, processAssets, loadWistiaData, prePopulateAssetCache } from "./utils/assetUploader.js";
 
 const isDryRun = false; // Set to true to simulate migration without making changes
 const ASSET_METADATA_FILE = "./data/assets.json"; // GraphQL asset metadata
@@ -58,6 +58,7 @@ const DATA_SOURCES = [
 
 async function run() {
   const env = effectiveDryRun ? null : await getEnvironment();
+  if (env) await prePopulateAssetCache(env);
   const summary = {
     processed: 0,
     updated: 0,

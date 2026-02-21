@@ -8,7 +8,7 @@
 import "dotenv/config";
 import fs from "fs";
 import { getEnvironment } from "./config/contentful.js";
-import { loadAssetMetadata, uploadAsset, loadWistiaData, getWistiaData } from "./utils/assetUploader.js";
+import { loadAssetMetadata, uploadAsset, loadWistiaData, getWistiaData, prePopulateAssetCache } from "./utils/assetUploader.js";
 import { extractAssets } from "./utils/assetDetector.js";
 
 const ASSET_METADATA_FILE = "./data/assets.json";
@@ -34,6 +34,7 @@ const DATA_SOURCES = [
 
 async function run() {
     const env = await getEnvironment();
+    await prePopulateAssetCache(env);
     const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILE);
     loadWistiaData(); // Load data/wistia.json if exists
     console.log(`📦 Loaded ${assetMetadata.size} asset metadata entries\n`);

@@ -87,11 +87,19 @@ async function getOrCreateSeo(env, pageData) {
   const seoData = pageData.seoMetaTags?.metaGlobalVars;
   if (!seoData) return null;
 
+  const DEFAULT_DESCRIPTION = "BeyondTrust’s Privileged Access Management platform protects your organization from unwanted remote access, stolen credentials, and misused privileges";
+
   // Helper to clean values (skip Twig templates)
   const cleanVal = (v) => (v && typeof v === "string" && !v.includes("{{") && v.trim()) ? v.trim() : "";
 
   const metaTitle = cleanVal(seoData.seoTitle);
-  const metaDescription = cleanVal(seoData.seoDescription).substring(0, 160);
+  let metaDescription = cleanVal(seoData.seoDescription).substring(0, 160);
+
+  // If description is missing or identical to title, use the global default
+  if (!metaDescription || metaDescription.toLowerCase() === (metaTitle || pageData.title || "").toLowerCase()) {
+    metaDescription = DEFAULT_DESCRIPTION;
+  }
+
   const canonicalUrl = cleanVal(seoData.canonicalUrl);
   const ogTitle = cleanVal(seoData.ogTitle);
   const ogDescription = cleanVal(seoData.ogDescription);
@@ -108,7 +116,7 @@ async function getOrCreateSeo(env, pageData) {
   try {
     const fields = {
       metaTitle: { [LOCALE]: metaTitle || pageData.title || "Meta Title" },
-      metaDescription: { [LOCALE]: metaDescription || pageData.title || "Meta Description" },
+      metaDescription: { [LOCALE]: metaDescription },
       noIndex: { [LOCALE]: noIndex },
       noFollow: { [LOCALE]: noFollow }
     };
@@ -117,6 +125,24 @@ async function getOrCreateSeo(env, pageData) {
     if (ogTitle) fields.ogTitle = { [LOCALE]: ogTitle };
     if (ogDescription) fields.ogDescription = { [LOCALE]: ogDescription };
     if (jsonLdSchema) fields.jsonLdSchema = { [LOCALE]: jsonLdSchema };
+
+    // Handle SEO Image
+    let imageAssetId = null;
+    const DEFAULT_SEO_IMAGE = "asset-45209";
+
+    if (seoData.seoImage && Array.isArray(seoData.seoImage) && seoData.seoImage[0]) {
+      imageAssetId = `asset-${seoData.seoImage[0]}`;
+    } else {
+      // Use fallback from env or hardcoded default
+      const fallback = process.env.DEFAULT_SEO_IMAGE_ID || DEFAULT_SEO_IMAGE;
+      imageAssetId = fallback.startsWith("asset-") ? fallback : `asset-${fallback}`;
+    }
+
+    if (imageAssetId) {
+      fields.ogImage = {
+        [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: imageAssetId } }
+      };
+    }
 
     let entry;
     try {

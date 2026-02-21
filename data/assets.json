@@ -1822,6 +1822,17 @@
         "mimeType": "image/png",
         "width": 653,
         "height": 438
+      },
+      {
+        "id": "45209",
+        "title": "Beyondtrust Brand Socialmedia Card",
+        "url": "https://assets-uat.btdevops.io/assets/images/beyondtrust-brand-socialmedia_card.jpg",
+        "filename": "beyondtrust-brand-socialmedia_card.jpg",
+        "mimeType": "image/jpeg",
+        "kind": "image",
+        "width": 1200,
+        "height": 1200,
+        "size": "0"
       }
     ]
   }
