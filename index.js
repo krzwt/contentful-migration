@@ -21,6 +21,7 @@ const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json"]
 const args = process.argv.slice(2);
 const fromArg = args.indexOf("--from") !== -1 ? parseInt(args[args.indexOf("--from") + 1]) : null;
 const toArg = args.indexOf("--to") !== -1 ? parseInt(args[args.indexOf("--to") + 1]) : null;
+const idArg = args.indexOf("--id") !== -1 ? args[args.indexOf("--id") + 1] : null;
 const cliDryRun = args.includes("--dry");
 const effectiveDryRun = isDryRun || cliDryRun;
 
@@ -98,13 +99,27 @@ async function run() {
       continue;
     }
 
-    // Apply batch range
-    const startIdx = (fromArg || 1) - 1;  // 0-based
-    const endIdx = toArg ? Math.min(toArg, data.length) : data.length;
-    const batchData = data.slice(startIdx, endIdx);
+    // Determine which indices to process
+    let targetIndices = [];
+    if (idArg) {
+      const idx = data.findIndex(p => String(p.id) === String(idArg));
+      if (idx !== -1) {
+        targetIndices.push(idx);
+      } else {
+        console.warn(`⚠️ Entry ID "${idArg}" not found in ${source.file}`);
+        continue;
+      }
+    } else {
+      const start = (fromArg || 1) - 1;
+      const end = toArg ? Math.min(toArg, data.length) : data.length;
+      for (let i = start; i < end; i++) targetIndices.push(i);
+    }
+
+    const batchData = targetIndices.map(idx => data[idx]);
 
     console.log("\n" + "=".repeat(50));
-    console.log(`📂 Processing: ${source.label} (pages ${startIdx + 1} -${endIdx} of ${data.length} → ${source.pageContentType})`);
+    const rangeStr = idArg ? `ID: ${idArg}` : `pages ${targetIndices[0] + 1} - ${targetIndices[targetIndices.length - 1] + 1}`;
+    console.log(`📂 Processing: ${source.label} (${rangeStr} of ${data.length} → ${source.pageContentType || "People"})`);
     console.log("=".repeat(50));
 
     // Detect all asset IDs from BATCH and upload/map them
@@ -130,7 +145,7 @@ async function run() {
     if (!source.isPeople) {
       for (let i = 0; i < batchData.length; i++) {
         const pageData = batchData[i];
-        const pageNum = startIdx + i + 1;
+        const pageNum = targetIndices[i] + 1;
         console.log(`\n➡️[${pageNum} / ${totalPages}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
         const { slug, title, uri } = pageData;
         // Use uri as slug (includes parent path, e.g. "sem/remote-access-new")

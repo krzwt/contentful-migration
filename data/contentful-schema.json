@@ -1,4 +1,42 @@
 {
+  "contactInfo": {
+    "name": "🔁 Contact Info",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": false,
+        "localized": true,
+        "disabled": false,
+        "validations": []
+      },
+      "phone": {
+        "name": "Phone",
+        "type": "Symbol",
+        "required": false,
+        "localized": true,
+        "disabled": false,
+        "validations": []
+      },
+      "email": {
+        "name": "Email",
+        "type": "Symbol",
+        "required": false,
+        "localized": true,
+        "disabled": false,
+        "validations": [
+          {
+            "regexp": {
+              "pattern": "^\\w[\\w.-]*@([\\w-]+\\.)+[\\w-]+$",
+              "flags": null
+            }
+          }
+        ]
+      }
+    }
+  },
   "socialLink": {
     "name": "🔁 Social Link",
     "description": "",
@@ -4401,51 +4439,6 @@
             "linkContentType": [
               "cta"
             ]
-          }
-        ]
-      }
-    }
-  },
-  "contactInfo": {
-    "name": "🔁 Contact Info",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": false,
-        "localized": true,
-        "disabled": false,
-        "validations": []
-      },
-      "phone": {
-        "name": "Phone",
-        "type": "Symbol",
-        "required": false,
-        "localized": true,
-        "disabled": false,
-        "validations": [
-          {
-            "regexp": {
-              "pattern": "^\\d[ -.]?\\(?\\d\\d\\d\\)?[ -.]?\\d\\d\\d[ -.]?\\d\\d\\d\\d$",
-              "flags": null
-            }
-          }
-        ]
-      },
-      "email": {
-        "name": "Email",
-        "type": "Symbol",
-        "required": false,
-        "localized": true,
-        "disabled": false,
-        "validations": [
-          {
-            "regexp": {
-              "pattern": "^\\w[\\w.-]*@([\\w-]+\\.)+[\\w-]+$",
-              "flags": null
-            }
           }
         ]
       }
