@@ -45,7 +45,7 @@ list_*.js
 dump_*.js
 read_*.js
 *.txt
-*.json
+# *.json
 !package.json
 !package-lock.json
 !mappings/**/*.json

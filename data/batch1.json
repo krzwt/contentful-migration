@@ -1,0 +1,69 @@
+{
+    "data": {
+        "assets": [
+            {
+                "id": "2422376",
+                "title": "Forrester Landscape Homepage new",
+                "url": "https://assets-uat.btdevops.io/assets/images/Forrester-Landscape-Homepage_new.png",
+                "filename": "Forrester-Landscape-Homepage_new.png",
+                "mimeType": "image/png",
+                "width": 1384,
+                "height": 1080
+            },
+            {
+                "id": "1744268",
+                "title": "BT wheel Entitle update 0524 scaled 700x450",
+                "url": "https://assets-uat.btdevops.io/assets/images/BT-wheel-Entitle-update-0524-scaled-700x450.png",
+                "filename": "BT-wheel-Entitle-update-0524-scaled-700x450.png",
+                "mimeType": "image/png",
+                "width": 731,
+                "height": 447
+            },
+            {
+                "id": "1356805",
+                "title": "Diversity",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/diversity.svg",
+                "filename": "diversity.svg",
+                "mimeType": "image/svg+xml",
+                "width": 44,
+                "height": 44
+            },
+            {
+                "id": "545734",
+                "title": "Cloud 1 orange",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Cloud_1_orange.svg",
+                "filename": "Cloud_1_orange.svg",
+                "mimeType": "image/svg+xml",
+                "width": 85,
+                "height": 69
+            },
+            {
+                "id": "545688",
+                "title": "Checklist orange",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Checklist_orange.svg",
+                "filename": "Checklist_orange.svg",
+                "mimeType": "image/svg+xml",
+                "width": 85,
+                "height": 69
+            },
+            {
+                "id": "545676",
+                "title": "Zero Trust orange",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Zero-Trust_orange.svg",
+                "filename": "Zero-Trust_orange.svg",
+                "mimeType": "image/svg+xml",
+                "width": 85,
+                "height": 69
+            },
+            {
+                "id": "545672",
+                "title": "Console orange",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Console_orange.svg",
+                "filename": "Console_orange.svg",
+                "mimeType": "image/svg+xml",
+                "width": 85,
+                "height": 69
+            }
+        ]
+    }
+}
