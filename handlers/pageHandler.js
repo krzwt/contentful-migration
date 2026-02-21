@@ -93,7 +93,7 @@ async function getOrCreateSeo(env, pageData, assetMap = null) {
   const cleanVal = (v) => (v && typeof v === "string" && !v.includes("{{") && v.trim()) ? v.trim() : "";
 
   const metaTitle = cleanVal(seoData.seoTitle);
-  let metaDescription = cleanVal(seoData.seoDescription).substring(0, 160);
+  let metaDescription = cleanVal(seoData.seoDescription);
 
   // If description is missing or identical to title, use the global default
   if (!metaDescription || metaDescription.toLowerCase() === (metaTitle || pageData.title || "").toLowerCase()) {
