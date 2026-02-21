@@ -72,6 +72,16 @@ async function processSocialLinks(env, person) {
     const ids = [];
     if (!person.socialMediaLinks) return ids;
 
+    const PLATFORM_MAP = {
+        "linkedin": "LinkedIn",
+        "twitterx": "X (Twitter)",
+        "twitter": "X (Twitter)",
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "google": "Google",
+        "youtube": "Youtube"
+    };
+
     // socialMediaLinks is an object with IDs as keys
     const links = Object.values(person.socialMediaLinks);
     for (const linkGroup of links) {
@@ -81,7 +91,9 @@ async function processSocialLinks(env, person) {
             try {
                 const data = JSON.parse(dataStr);
                 if (data.linkedUrl) {
-                    const safePlatform = platform.charAt(0).toUpperCase() + platform.slice(1);
+                    const platformKey = platform.toLowerCase();
+                    const safePlatform = PLATFORM_MAP[platformKey] || (platform.charAt(0).toUpperCase() + platform.slice(1));
+
                     const linkId = safeId(`social-${person.id}`, platform);
 
                     const fields = {

@@ -44,16 +44,16 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneMicrosite",
   //   label: "Standalone Microsite"
   // },
-  {
-    file: "./data/standalone-thankyou.json",
-    pageContentType: "newStandaloneThankYou",
-    label: "Standalone Thank You"
-  },
   // {
-  //   file: "./data/people-cpt.json",
-  //   label: "People CPT",
-  //   isPeople: true
-  // }
+  //   file: "./data/standalone-thankyou.json",
+  //   pageContentType: "newStandaloneThankYou",
+  //   label: "Standalone Thank You"
+  // },
+  {
+    file: "./data/people-cpt.json",
+    label: "People CPT",
+    isPeople: true
+  }
 ];
 
 async function run() {
