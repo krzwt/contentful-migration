@@ -44,7 +44,7 @@ scan_*.js
 list_*.js
 dump_*.js
 read_*.js
-*.txt
+# *.txt
 # *.json
 !package.json
 !package-lock.json
