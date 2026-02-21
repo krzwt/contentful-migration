@@ -1,7 +1,7 @@
 import fs from "fs";
 
 const LOCALE = "en-US";
-const S3_BASE_URL = "https://assets-uat.btdevops.io";
+const S3_BASE_URL = process.env.S3_BASE_URL || "https://assets-uat.btdevops.io";
 
 // Cache: asset title/filename → Contentful asset ID (avoid duplicates)
 const uploadedAssetCache = new Map();
@@ -74,27 +74,42 @@ export function getWistiaData(craftAssetId) {
 /**
  * Load asset metadata from GraphQL JSON file
  */
-export function loadAssetMetadata(filePath) {
-  const raw = fs.readFileSync(filePath, "utf-8");
-  const json = JSON.parse(raw);
-  const assets = json?.data?.assets || [];
-
+export function loadAssetMetadata(filePaths) {
+  const paths = Array.isArray(filePaths) ? filePaths : [filePaths];
   const assetMap = new Map();
-  assets.forEach(asset => {
-    // Replace S3_BASE_URL placeholder with actual URL
-    let url = asset.url || "";
-    if (url.startsWith("S3_BASE_URL")) {
-      url = url.replace("S3_BASE_URL", S3_BASE_URL);
-    }
 
-    assetMap.set(String(asset.id), {
-      title: asset.title,
-      filename: asset.filename,
-      url,
-      mimeType: asset.mimeType,
-      width: asset.width,
-      height: asset.height
-    });
+  paths.forEach(filePath => {
+    try {
+      const raw = fs.readFileSync(filePath, "utf-8");
+      const json = JSON.parse(raw);
+      const assets = json?.data?.assets || [];
+
+      assets.forEach(asset => {
+        let url = asset.url || "";
+
+        // 1. Handle S3_BASE_URL placeholder
+        if (url.startsWith("S3_BASE_URL")) {
+          url = url.replace("S3_BASE_URL", S3_BASE_URL);
+        }
+
+        // 2. Automatically swap broken UAT domain with working domain
+        const BROKEN_DOMAIN = "https://assets-uat.btdevops.io";
+        if (url.startsWith(BROKEN_DOMAIN)) {
+          url = url.replace(BROKEN_DOMAIN, S3_BASE_URL);
+        }
+
+        assetMap.set(String(asset.id), {
+          title: asset.title,
+          filename: asset.filename,
+          url,
+          mimeType: asset.mimeType,
+          width: asset.width,
+          height: asset.height
+        });
+      });
+    } catch (err) {
+      console.warn(`⚠️ Could not load asset metadata from ${filePath}: ${err.message}`);
+    }
   });
 
   return assetMap;

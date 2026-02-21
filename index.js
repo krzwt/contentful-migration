@@ -8,7 +8,7 @@ import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import { loadAssetMetadata, processAssets, loadWistiaData, prePopulateAssetCache } from "./utils/assetUploader.js";
 
 const isDryRun = false; // Set to true to simulate migration without making changes
-const ASSET_METADATA_FILE = "./data/assets.json"; // GraphQL asset metadata
+const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json"]; // GraphQL asset metadata
 
 /* ---------------------------------------------------------
    CLI args: node index.js [--from N] [--to N] [--dry]
@@ -39,21 +39,21 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneContent",
   //   label: "Standalone Content"
   // },
-  {
-    file: "./data/standalone-microsite.json",
-    pageContentType: "newStandaloneMicrosite",
-    label: "Standalone Microsite"
-  },
+  // {
+  //   file: "./data/standalone-microsite.json",
+  //   pageContentType: "newStandaloneMicrosite",
+  //   label: "Standalone Microsite"
+  // },
   // {
   //   file: "./data/standalone-thankyou.json",
   //   pageContentType: "newStandaloneThankYou",
   //   label: "Standalone Thank You"
   // },
-  // {
-  //   file: "./data/people-cpt.json",
-  //   label: "People CPT",
-  //   isPeople: true
-  // }
+  {
+    file: "./data/people-cpt.json",
+    label: "People CPT",
+    isPeople: true
+  }
 ];
 
 async function run() {
@@ -69,7 +69,7 @@ async function run() {
   };
 
   // Load asset metadata
-  const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILE);
+  const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILES);
   loadWistiaData(); // Load data/wistia.json if exists
   console.log(`📚 Loaded ${assetMetadata.size} asset metadata entries\n`);
 
@@ -127,128 +127,130 @@ async function run() {
     summary.missingAssetMetadata.push(...missingIds);
 
     const totalPages = data.length;
-    for (let i = 0; i < batchData.length; i++) {
-      const pageData = batchData[i];
-      const pageNum = startIdx + i + 1;
-      console.log(`\n➡️[${pageNum} / ${totalPages}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
-      const { slug, title, uri } = pageData;
-      // Use uri as slug (includes parent path, e.g. "sem/remote-access-new")
-      const fullSlug = uri || slug;
+    if (!source.isPeople) {
+      for (let i = 0; i < batchData.length; i++) {
+        const pageData = batchData[i];
+        const pageNum = startIdx + i + 1;
+        console.log(`\n➡️[${pageNum} / ${totalPages}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
+        const { slug, title, uri } = pageData;
+        // Use uri as slug (includes parent path, e.g. "sem/remote-access-new")
+        const fullSlug = uri || slug;
 
-      let pageEntry = null;
-      if (effectiveDryRun) {
-        // Show parent/child relationship in dry run
-        if (pageData.parentId) {
-          const parentPage = data.find(p => String(p.id) === String(pageData.parentId));
-          const parentTitle = parentPage ? parentPage.title : `[NOT IN JSON: ${pageData.parentId}]`;
-          const parentSlug = parentPage ? parentPage.slug : "unknown";
-          console.log(`   📂 Parent: "${parentTitle}"(slug: ${parentSlug}) → settings.parentPage`);
-          console.log(`   🔗 Slug: /${fullSlug}`);
+        let pageEntry = null;
+        if (effectiveDryRun) {
+          // Show parent/child relationship in dry run
+          if (pageData.parentId) {
+            const parentPage = data.find(p => String(p.id) === String(pageData.parentId));
+            const parentTitle = parentPage ? parentPage.title : `[NOT IN JSON: ${pageData.parentId}]`;
+            const parentSlug = parentPage ? parentPage.slug : "unknown";
+            console.log(`   📂 Parent: "${parentTitle}"(slug: ${parentSlug}) → settings.parentPage`);
+            console.log(`   🔗 Slug: /${fullSlug}`);
+          } else {
+            console.log(`   📂 Root page (no parent) → /${fullSlug}`);
+          }
         } else {
-          console.log(`   📂 Root page (no parent) → /${fullSlug}`);
-        }
-      } else {
-        pageEntry = await getOrCreatePage(env, {
-          title,
-          slug: fullSlug,
-          id: pageData.id,
-          parentId: pageData.parentId,
-          seoMetaTags: pageData.seoMetaTags,
-          status: pageData.status,
-          enabled: pageData.enabled
-        }, source.pageContentType, data, contentfulAssetMap);
-        if (!pageEntry) {
-          console.error(`🛑 Skipping page "${title}" because page entry could not be created/found.`);
-          continue;
-        }
-      }
-
-      // Collect ALL section entries in order, then set sections array at once
-      const sectionEntries = [];
-
-      // Detect component fields in the JSON (keys with numeric sub-keys)
-      const componentFields = Object.keys(pageData).filter(key => {
-        const val = pageData[key];
-        return val && typeof val === "object" && !Array.isArray(val) &&
-          Object.keys(val).length > 0 && !isNaN(Object.keys(val)[0]);
-      });
-
-      for (const fieldKey of componentFields) {
-        const components = pageData[fieldKey];
-
-        for (const blockId in components) {
-          const block = components[blockId];
-          if (!block.enabled) continue;
-
-          const fields = block.fields;
-          const type = block.type || fieldKey;
-
-          const config = COMPONENTS[type];
-          if (!config) {
-            if (!summary.missingMappings.has(type)) {
-              summary.missingMappings.set(type, Object.keys(fields || {}));
-            }
-            console.warn(`ℹ️ skipping: "${type}" (no mapping in registry.js)`);
+          pageEntry = await getOrCreatePage(env, {
+            title,
+            slug: fullSlug,
+            id: pageData.id,
+            parentId: pageData.parentId,
+            seoMetaTags: pageData.seoMetaTags,
+            status: pageData.status,
+            enabled: pageData.enabled
+          }, source.pageContentType, data, contentfulAssetMap);
+          if (!pageEntry) {
+            console.error(`🛑 Skipping page "${title}" because page entry could not be created/found.`);
             continue;
           }
+        }
 
-          console.log(`✅ Detected "${type}" (ID: ${blockId})`);
+        // Collect ALL section entries in order, then set sections array at once
+        const sectionEntries = [];
 
-          if (effectiveDryRun) {
-            console.log(`   [DRY RUN] Would process ${type} using ${config.handler.name}`);
-            continue;
-          }
+        // Detect component fields in the JSON (keys with numeric sub-keys)
+        const componentFields = Object.keys(pageData).filter(key => {
+          const val = pageData[key];
+          return val && typeof val === "object" && !Array.isArray(val) &&
+            Object.keys(val).length > 0 && !isNaN(Object.keys(val)[0]);
+        });
 
-          try {
-            let heroEntry;
-            if (config.handler === genericComponentHandler) {
-              const entryId = await genericComponentHandler(
-                env,
-                { id: blockId, ...fields },
-                config.mapping,
-                contentfulAssetMap
-              );
-              if (entryId) {
-                heroEntry = await env.getEntry(entryId);
+        for (const fieldKey of componentFields) {
+          const components = pageData[fieldKey];
+
+          for (const blockId in components) {
+            const block = components[blockId];
+            if (!block.enabled) continue;
+
+            const fields = block.fields;
+            const type = block.type || fieldKey;
+
+            const config = COMPONENTS[type];
+            if (!config) {
+              if (!summary.missingMappings.has(type)) {
+                summary.missingMappings.set(type, Object.keys(fields || {}));
               }
-            } else {
-              heroEntry = await config.handler(
-                env,
-                {
-                  blockId: blockId,
-                  ...fields, // Pass all fields from source
-                  heading: fields.headingSection || pageData.heading45 || title,
-                  body: fields.body180 || fields.bodyRedactorRestricted || fields.description,
-                  label: fields.label || fields.ctaLinkText,
-                  variation: type
-                },
-                contentfulAssetMap
-              );
+              console.warn(`ℹ️ skipping: "${type}" (no mapping in registry.js)`);
+              continue;
             }
 
-            if (heroEntry) {
-              sectionEntries.push(heroEntry);
+            console.log(`✅ Detected "${type}" (ID: ${blockId})`);
+
+            if (effectiveDryRun) {
+              console.log(`   [DRY RUN] Would process ${type} using ${config.handler.name}`);
+              continue;
             }
-          } catch (err) {
-            console.error(`❌ Error processing ${type} (${blockId}):`, err.message);
-            summary.skipped.push({ page: title, blockId, type, error: err.message });
+
+            try {
+              let heroEntry;
+              if (config.handler === genericComponentHandler) {
+                const entryId = await genericComponentHandler(
+                  env,
+                  { id: blockId, ...fields },
+                  config.mapping,
+                  contentfulAssetMap
+                );
+                if (entryId) {
+                  heroEntry = await env.getEntry(entryId);
+                }
+              } else {
+                heroEntry = await config.handler(
+                  env,
+                  {
+                    blockId: blockId,
+                    ...fields, // Pass all fields from source
+                    heading: fields.headingSection || pageData.heading45 || title,
+                    body: fields.body180 || fields.bodyRedactorRestricted || fields.description,
+                    label: fields.label || fields.ctaLinkText,
+                    variation: type
+                  },
+                  contentfulAssetMap
+                );
+              }
+
+              if (heroEntry) {
+                sectionEntries.push(heroEntry);
+              }
+            } catch (err) {
+              console.error(`❌ Error processing ${type} (${blockId}):`, err.message);
+              summary.skipped.push({ page: title, blockId, type, error: err.message });
+            }
           }
         }
-      }
 
-      // Set all sections at once in the correct order (replaces existing)
-      if (!effectiveDryRun && pageEntry && sectionEntries.length > 0) {
-        await setSectionsOnPage(env, pageEntry, sectionEntries);
-      }
+        // Set all sections at once in the correct order (replaces existing)
+        if (!effectiveDryRun && pageEntry && sectionEntries.length > 0) {
+          await setSectionsOnPage(env, pageEntry, sectionEntries);
+        }
 
-      // 🚀 Final step: Publish the page now that it has valid sections
-      if (!effectiveDryRun && pageEntry) {
-        await publishPage(env, pageEntry, pageData);
+        // 🚀 Final step: Publish the page now that it has valid sections
+        if (!effectiveDryRun && pageEntry) {
+          await publishPage(env, pageEntry, pageData);
+        }
       }
     }
 
     if (source.isPeople) {
-      await migratePeople(env, data);
+      await migratePeople(env, batchData, contentfulAssetMap);
     }
   }
 

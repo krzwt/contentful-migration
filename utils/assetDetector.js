@@ -6,14 +6,14 @@ export function extractAssets(obj, assetMap = new Map()) {
 
   for (const [key, value] of Object.entries(obj)) {
     // Check for asset arrays (image, video, pdf, etc.)
-    if (Array.isArray(value) && ["image", "video", "pdf", "document"].includes(key)) {
+    if (Array.isArray(value) && ["image", "video", "pdf", "document", "personsPhoto", "logo"].includes(key)) {
       value.forEach(id => {
-        if (typeof id === "number") {
-          assetMap.set(id, { type: key, field: key });
+        if (typeof id === "number" || (typeof id === "string" && !isNaN(id))) {
+          assetMap.set(String(id), { type: key, field: key });
         }
       });
     }
-    
+
     // Check for entries array (linked content)
     if (key === "entries" && Array.isArray(value)) {
       value.forEach(id => {
@@ -37,7 +37,7 @@ export function extractAssets(obj, assetMap = new Map()) {
  */
 export function logAssets(pages, assetMetadata = null) {
   const allAssets = new Map();
-  
+
   pages.forEach(page => {
     const pageAssets = extractAssets(page);
     pageAssets.forEach((info, id) => {

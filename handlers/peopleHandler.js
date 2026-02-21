@@ -4,7 +4,7 @@ import { upsertEntry, makeLink } from "../utils/contentfulHelpers.js";
 /**
  * Main function to migrate People entries
  */
-export async function migratePeople(env, peopleData) {
+export async function migratePeople(env, peopleData, assetMap = null) {
     console.log(`\n👥 Starting People Migration (${peopleData.length} entries)...`);
 
     for (let i = 0; i < peopleData.length; i++) {
@@ -30,8 +30,16 @@ export async function migratePeople(env, peopleData) {
 
             // 3. Handle Photo (Media)
             if (person.personsPhoto && person.personsPhoto[0]) {
+                const craftAssetId = String(person.personsPhoto[0]);
+                let contentfulAssetId = `asset-${craftAssetId}`;
+
+                // If we have a mapped ID (from asset scan), use it
+                if (assetMap && assetMap.has(craftAssetId)) {
+                    contentfulAssetId = assetMap.get(craftAssetId).id;
+                }
+
                 fields.personsPhoto = {
-                    [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: `asset-${person.personsPhoto[0]}` } }
+                    [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: contentfulAssetId } }
                 };
             }
 

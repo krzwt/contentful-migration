@@ -11,7 +11,7 @@ import { getEnvironment } from "./config/contentful.js";
 import { loadAssetMetadata, uploadAsset, loadWistiaData, getWistiaData, prePopulateAssetCache } from "./utils/assetUploader.js";
 import { extractAssets } from "./utils/assetDetector.js";
 
-const ASSET_METADATA_FILE = "./data/assets.json";
+const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json"];
 
 const DATA_SOURCES = [
     {
@@ -29,13 +29,17 @@ const DATA_SOURCES = [
     {
         file: "./data/standalone-thankyou.json",
         label: "Standalone Thank You"
+    },
+    {
+        file: "./data/people-cpt.json",
+        label: "People CPT"
     }
 ];
 
 async function run() {
     const env = await getEnvironment();
     await prePopulateAssetCache(env);
-    const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILE);
+    const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILES);
     loadWistiaData(); // Load data/wistia.json if exists
     console.log(`📦 Loaded ${assetMetadata.size} asset metadata entries\n`);
 

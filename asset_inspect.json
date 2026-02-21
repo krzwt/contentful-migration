@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "tags": [],
+    "concepts": []
+  },
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "ahmdpntb02m6"
+      }
+    },
+    "id": "asset-2495493",
+    "type": "Asset",
+    "createdAt": "2026-02-21T09:23:21.229Z",
+    "updatedAt": "2026-02-21T09:23:21.963Z",
+    "environment": {
+      "sys": {
+        "id": "stage",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "032j9He8sPiQreAtw9hJI4"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "032j9He8sPiQreAtw9hJI4"
+      }
+    },
+    "publishedCounter": 0,
+    "version": 2,
+    "fieldStatus": {
+      "*": {
+        "en-US": "draft"
+      }
+    },
+    "urn": "crn:contentful:::content:spaces/ahmdpntb02m6/environments/stage/assets/asset-2495493"
+  },
+  "fields": {
+    "title": {
+      "en-US": "Tim Chase Headshoet"
+    },
+    "description": {
+      "en-US": "Migrated from Craft CMS (ID: 2495493)"
+    },
+    "file": {
+      "en-US": {
+        "url": "",
+        "error": {
+          "message": "Received HTTP 403 error while fetching asset"
+        },
+        "details": {
+          "size": 0
+        },
+        "fileName": "Tim-Chase-Headshoet_2026-01-16-165118_tlwh.jpeg",
+        "contentType": "image/jpeg"
+      }
+    }
+  }
+}
