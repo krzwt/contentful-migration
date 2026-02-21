@@ -28,10 +28,15 @@ export async function prePopulateAssetCache(env) {
         const title = asset.fields?.title?.[LOCALE];
         const file = asset.fields?.file?.[LOCALE];
         const filename = file?.fileName;
+        const isPublished = !!asset.sys.publishedVersion;
 
-        if (title) uploadedAssetCache.set(title, asset.sys.id);
-        if (filename) uploadedAssetCache.set(filename, asset.sys.id);
-        total++;
+        // ONLY cache if it's already published. 
+        // If it's Draft, we want the upload logic to re-check it and try to fix it.
+        if (isPublished) {
+          if (title) uploadedAssetCache.set(title, asset.sys.id);
+          if (filename) uploadedAssetCache.set(filename, asset.sys.id);
+          total++;
+        }
       });
 
       skip += limit;
@@ -124,11 +129,18 @@ async function waitForProcessing(env, assetId, maxAttempts = 10) {
     try {
       const asset = await env.getAsset(assetId);
       const file = asset.fields?.file?.[LOCALE];
+
       if (file && file.url) {
         return asset; // processed — has a CDN url
       }
+
+      if (file && file.error) {
+        console.warn(`   ✗ Contentful fetch error: ${file.error.message || JSON.stringify(file.error)}`);
+        // If it's a fetch error, it won't magically fix itself by waiting
+        return null;
+      }
     } catch (e) {
-      // ignore
+      // ignore getAsset errors
     }
     const delay = Math.min(2000 + i * 1000, 5000);
     console.log(`   ⏳ Waiting for processing... (${i + 1}/${maxAttempts})`);
@@ -198,7 +210,7 @@ export async function uploadAsset(env, assetId, metadata) {
                 console.log(`   ✓ Asset fixed (draft): ${metadata.title} (${existingId})`);
               }
             } else {
-              console.log(`   ⚠ Asset re-uploaded but still processing: ${metadata.title} (${existingId})`);
+              console.warn(`   ⚠ Asset fixed but still processing/failed: ${metadata.title} (${existingId})`);
             }
           } catch (fixErr) {
             console.warn(`   ⚠ Could not fix asset: ${metadata.title}: ${fixErr.message?.substring(0, 100)}`);
@@ -253,22 +265,21 @@ export async function uploadAsset(env, assetId, metadata) {
 
     // Wait for processing to complete (polling)
     const processed = await waitForProcessing(env, asset.sys.id);
-    if (!processed) {
-      console.warn(`   ⚠ Asset "${metadata.title}" processing timed out. Left as draft.`);
-      uploadedAssetCache.set(cacheKey, asset.sys.id);
-      return asset.sys.id;
+
+    if (processed) {
+      try {
+        await processed.publish();
+        console.log(`   ✓ Uploaded & published: ${metadata.title} (${processed.sys.id})`);
+      } catch (pubErr) {
+        console.log(`   ⚠ Uploaded but publish failed: ${metadata.title} (${processed.sys.id})`);
+      }
+    } else {
+      console.warn(`   ⚠ Asset "${metadata.title}" processing failed or timed out. Link: ${metadata.url}`);
     }
 
-    // Now publish
-    try {
-      await processed.publish();
-      console.log(`   ✓ Uploaded & published: ${metadata.title} (${processed.sys.id})`);
-    } catch (pubErr) {
-      console.log(`   ⚠ Uploaded but publish failed: ${metadata.title} (${processed.sys.id})`);
-    }
-
-    uploadedAssetCache.set(cacheKey, processed.sys.id);
-    return processed.sys.id;
+    const finalId = processed ? processed.sys.id : asset.sys.id;
+    uploadedAssetCache.set(cacheKey, finalId);
+    return finalId;
   } catch (err) {
     // Handle 409 conflict (already exists)
     if (err.name === "VersionMismatch" || err.status === 409) {
