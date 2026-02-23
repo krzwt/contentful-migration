@@ -38,17 +38,30 @@ async function fixContactInfoPhoneValidation(env) {
         return;
     }
 
-    // Remove strict regexp validation
-    const originalCount = phoneField.validations?.length || 0;
-    phoneField.validations = (phoneField.validations || []).filter(v => !v.regexp);
+    // Update to a more flexible international phone regex
+    const internationalPhoneRegex = "^\\+?[\\d\\s.\\-()]{7,25}$";
 
-    if (phoneField.validations.length < originalCount) {
-        console.log("   🗑️ Removing strict phone regex validation to allow international numbers...");
+    // Check if it already has this regex
+    const hasCorrectRegex = phoneField.validations?.some(v => v.regexp?.pattern === internationalPhoneRegex);
+
+    if (hasCorrectRegex) {
+        console.log("   ✅ Phone field already has the flexible international regex.");
+    } else {
+        console.log("   🔄 Updating phone regex to allow international formats...");
+        // Filter out existing regexp validations
+        phoneField.validations = (phoneField.validations || []).filter(v => !v.regexp);
+        // Add the new one
+        phoneField.validations.push({
+            regexp: {
+                pattern: internationalPhoneRegex,
+                flags: ""
+            },
+            message: "Please enter a valid phone number (international formats supported)."
+        });
+
         const updated = await ct.update();
         await updated.publish();
-        console.log("   ✅ Successfully updated 'contactInfo'.");
-    } else {
-        console.log("   ✅ No strict phone regex validation found (already fixed).");
+        console.log("   ✅ Successfully updated 'contactInfo' with flexible phone validation.");
     }
 }
 
