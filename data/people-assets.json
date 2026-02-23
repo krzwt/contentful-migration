@@ -22,7 +22,7 @@
             {
                 "id": "2490447",
                 "title": "Ariento logo",
-                "url": "S3_BASE_URL/assets/images/logos/Ariento-logo.png",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/Ariento-logo.png",
                 "filename": "Ariento-logo.png",
                 "mimeType": "image/png",
                 "width": 850,
@@ -625,7 +625,7 @@
             {
                 "id": "2379106",
                 "title": "Paychex logo",
-                "url": "S3_BASE_URL/assets/images/logos/Paychex_logo.svg",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/Paychex_logo.svg",
                 "filename": "Paychex_logo.svg",
                 "mimeType": "image/svg+xml",
                 "width": 300,
@@ -661,7 +661,7 @@
             {
                 "id": "2366692",
                 "title": "Giga Om Logov3",
-                "url": "S3_BASE_URL/assets/images/logos/GigaOm-Logov3.png",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/GigaOm-Logov3.png",
                 "filename": "GigaOm-Logov3.png",
                 "mimeType": "image/png",
                 "width": 908,
@@ -958,7 +958,7 @@
             {
                 "id": "2137213",
                 "title": "Forrester black Card Grid 688x322",
-                "url": "S3_BASE_URL/assets/images/logos/Forrester_black_CardGrid_688x322.png",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/Forrester_black_CardGrid_688x322.png",
                 "filename": "Forrester_black_CardGrid_688x322.png",
                 "mimeType": "image/png",
                 "width": 688,
@@ -967,7 +967,7 @@
             {
                 "id": "2137212",
                 "title": "Gartner Peer Insights 2024 color Card Grid 688x322",
-                "url": "S3_BASE_URL/assets/images/logos/Gartner-Peer-Insights_2024-color_CardGrid_688x322.png",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/Gartner-Peer-Insights_2024-color_CardGrid_688x322.png",
                 "filename": "Gartner-Peer-Insights_2024-color_CardGrid_688x322.png",
                 "mimeType": "image/png",
                 "width": 688,
@@ -976,7 +976,7 @@
             {
                 "id": "2137174",
                 "title": "Kuppinger Cole Logo Card Grid 688x322",
-                "url": "S3_BASE_URL/assets/images/logos/KuppingerCole_Logo_CardGrid_688x322.png",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/KuppingerCole_Logo_CardGrid_688x322.png",
                 "filename": "KuppingerCole_Logo_CardGrid_688x322.png",
                 "mimeType": "image/png",
                 "width": 688,
@@ -2488,7 +2488,7 @@
             {
                 "id": "1380831",
                 "title": "HCL Logo 1976",
-                "url": "S3_BASE_URL/assets/images/logos/HCL-Logo-1976.png",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/HCL-Logo-1976.png",
                 "filename": "HCL-Logo-1976.png",
                 "mimeType": "image/png",
                 "width": 3840,
@@ -2677,7 +2677,7 @@
             {
                 "id": "1254834",
                 "title": "Zensar logo",
-                "url": "S3_BASE_URL/assets/images/logos/zensar_logo_transparent.png",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/zensar_logo_transparent.png",
                 "filename": "zensar_logo_transparent.png",
                 "mimeType": "image/png",
                 "width": 644,
@@ -2722,7 +2722,7 @@
             {
                 "id": "1230568",
                 "title": "Premier bankcard logo",
-                "url": "S3_BASE_URL/assets/images/logos/premier-bankcard-logo.png",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/premier-bankcard-logo.png",
                 "filename": "premier-bankcard-logo.png",
                 "mimeType": "image/png",
                 "width": 2403,
@@ -2731,7 +2731,7 @@
             {
                 "id": "1217700",
                 "title": "University of miami horizontal rgb",
-                "url": "S3_BASE_URL/assets/images/logos/university-of-miami-horizontal-rgb.png",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/university-of-miami-horizontal-rgb.png",
                 "filename": "university-of-miami-horizontal-rgb.png",
                 "mimeType": "image/png",
                 "width": 689,
@@ -3199,7 +3199,7 @@
             {
                 "id": "543066",
                 "title": "Wynn color",
-                "url": "S3_BASE_URL/assets/images/logos/wynn-color.svg",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/wynn-color.svg",
                 "filename": "wynn-color.svg",
                 "mimeType": "image/svg+xml",
                 "width": 134,
@@ -3208,7 +3208,7 @@
             {
                 "id": "543064",
                 "title": "Williams sonoma color",
-                "url": "S3_BASE_URL/assets/images/logos/williams-sonoma-color.svg",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/williams-sonoma-color.svg",
                 "filename": "williams-sonoma-color.svg",
                 "mimeType": "image/svg+xml",
                 "width": 138,
@@ -3217,7 +3217,7 @@
             {
                 "id": "543063",
                 "title": "IHG color",
-                "url": "S3_BASE_URL/assets/images/logos/IHG-color.svg",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/IHG-color.svg",
                 "filename": "IHG-color.svg",
                 "mimeType": "image/svg+xml",
                 "width": 140,
@@ -3226,7 +3226,7 @@
             {
                 "id": "543062",
                 "title": "Carbonite color",
-                "url": "S3_BASE_URL/assets/images/logos/carbonite-color.svg",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/carbonite-color.svg",
                 "filename": "carbonite-color.svg",
                 "mimeType": "image/svg+xml",
                 "width": 143,
@@ -3235,7 +3235,7 @@
             {
                 "id": "543060",
                 "title": "Servicenow color",
-                "url": "S3_BASE_URL/assets/images/logos/servicenow-color.svg",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/servicenow-color.svg",
                 "filename": "servicenow-color.svg",
                 "mimeType": "image/svg+xml",
                 "width": 143,
@@ -3244,7 +3244,7 @@
             {
                 "id": "505585",
                 "title": "Myvestlogo cmyk mint blue main logo no room",
-                "url": "S3_BASE_URL/assets/images/logos/myvestlogo-cmyk-mint-blue-main-logo-no-room.png",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/myvestlogo-cmyk-mint-blue-main-logo-no-room.png",
                 "filename": "myvestlogo-cmyk-mint-blue-main-logo-no-room.png",
                 "mimeType": "image/png",
                 "width": 915,

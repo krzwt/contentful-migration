@@ -731,7 +731,7 @@
         "id": "2343638",
         "title": "BT icon product Endpoint Privilege Management",
         "filename": "BT_icon_product_Endpoint-Privilege-Management.png",
-        "url": "S3_BASE_URL/assets/images/logos/BT_icon_product_Endpoint-Privilege-Management.png",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/BT_icon_product_Endpoint-Privilege-Management.png",
         "kind": "image",
         "mimeType": "image/png",
         "width": 198,
@@ -852,7 +852,7 @@
         "id": "2295305",
         "title": "Pra cloud",
         "filename": "pra-cloud.svg",
-        "url": "S3_BASE_URL/assets/images/logos/pra-cloud.svg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/pra-cloud.svg",
         "kind": "image",
         "mimeType": "image/svg+xml",
         "width": 76,
@@ -863,7 +863,7 @@
         "id": "2295304",
         "title": "Remote support blue",
         "filename": "remote-support-blue.svg",
-        "url": "S3_BASE_URL/assets/images/logos/remote-support-blue.svg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/remote-support-blue.svg",
         "kind": "image",
         "mimeType": "image/svg+xml",
         "width": 100,
@@ -874,7 +874,7 @@
         "id": "2185161",
         "title": "Rocket ship",
         "filename": "rocket-ship.svg",
-        "url": "S3_BASE_URL/assets/images/logos/rocket-ship.svg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/rocket-ship.svg",
         "kind": "image",
         "mimeType": "image/svg+xml",
         "width": 96,
@@ -929,7 +929,7 @@
         "id": "2126471",
         "title": "SC Awards Card V2",
         "filename": "SC_Awards_Card_V2.png",
-        "url": "S3_BASE_URL/assets/images/logos/SC_Awards_Card_V2.png",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/SC_Awards_Card_V2.png",
         "kind": "image",
         "mimeType": "image/png",
         "width": 688,
@@ -1050,7 +1050,7 @@
         "id": "1556616",
         "title": "Homepage gartner rev2",
         "filename": "homepage-gartner-rev2.jpg",
-        "url": "S3_BASE_URL/assets/images/logos/homepage-gartner-rev2.jpg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/homepage-gartner-rev2.jpg",
         "kind": "image",
         "mimeType": "image/jpeg",
         "width": 688,
@@ -1061,7 +1061,7 @@
         "id": "1556614",
         "title": "Homepage kuppinger cole rev2",
         "filename": "homepage-kuppinger-cole-rev2.jpg",
-        "url": "S3_BASE_URL/assets/images/logos/homepage-kuppinger-cole-rev2.jpg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/homepage-kuppinger-cole-rev2.jpg",
         "kind": "image",
         "mimeType": "image/jpeg",
         "width": 688,
@@ -1413,7 +1413,7 @@
         "id": "2467870",
         "title": "Nova Scotia Top Employers awards page",
         "filename": "Nova-Scotia-Top-Employers-awards-page.png",
-        "url": "S3_BASE_URL/assets/images/logos/Nova-Scotia-Top-Employers-awards-page.png",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Nova-Scotia-Top-Employers-awards-page.png",
         "mimeType": "image/png",
         "width": 500,
         "height": 300
@@ -1422,7 +1422,7 @@
         "id": "2467869",
         "title": "Best workplaces UK 2022 awards page",
         "filename": "Best-workplaces-UK-2022-awards-page.png",
-        "url": "S3_BASE_URL/assets/images/logos/Best-workplaces-UK-2022-awards-page.png",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Best-workplaces-UK-2022-awards-page.png",
         "mimeType": "image/png",
         "width": 500,
         "height": 300
@@ -1440,7 +1440,7 @@
         "id": "2429095",
         "title": "Inc 5000 Color Medallion Logo",
         "filename": "Inc.-5000-Color-Medallion-Logo.png",
-        "url": "S3_BASE_URL/assets/images/logos/Inc.-5000-Color-Medallion-Logo.png",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Inc.-5000-Color-Medallion-Logo.png",
         "mimeType": "image/png",
         "width": 1201,
         "height": 1201
@@ -1458,7 +1458,7 @@
         "id": "2428266",
         "title": "Georgia trend",
         "filename": "georgia_trend.jpeg",
-        "url": "S3_BASE_URL/assets/images/logos/georgia_trend.jpeg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/georgia_trend.jpeg",
         "mimeType": "image/jpeg",
         "width": 1500,
         "height": 500
@@ -1548,7 +1548,7 @@
         "id": "2393890",
         "title": "Calibreone",
         "filename": "Calibreone.png",
-        "url": "S3_BASE_URL/assets/images/logos/Calibreone.png",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Calibreone.png",
         "mimeType": "image/png",
         "width": 259,
         "height": 62
@@ -1557,7 +1557,7 @@
         "id": "2393889",
         "title": "Cyber Security Award 2025 pdf",
         "filename": "CyberSecurityAward-2025.pdf.png",
-        "url": "S3_BASE_URL/assets/images/logos/CyberSecurityAward-2025.pdf.png",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/CyberSecurityAward-2025.pdf.png",
         "mimeType": "image/png",
         "width": 1481,
         "height": 1566
@@ -1584,7 +1584,7 @@
         "id": "1562987",
         "title": "CRN 5 Star Partner Program 2024",
         "filename": "CRN-5-Star-Partner-Program-2024.png",
-        "url": "S3_BASE_URL/assets/images/logos/CRN-5-Star-Partner-Program-2024.png",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/CRN-5-Star-Partner-Program-2024.png",
         "mimeType": "image/png",
         "width": 400,
         "height": 397
@@ -1593,7 +1593,7 @@
         "id": "1521070",
         "title": "Company Inc Best 2023",
         "filename": "company-Inc-Best-2023.png",
-        "url": "S3_BASE_URL/assets/images/logos/company-Inc-Best-2023.png",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/company-Inc-Best-2023.png",
         "mimeType": "image/png",
         "width": 1284,
         "height": 590
@@ -1620,7 +1620,7 @@
         "id": "1457212",
         "title": "CRN Logo",
         "filename": "CRN-Logo.png",
-        "url": "S3_BASE_URL/assets/images/logos/CRN-Logo.png",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/CRN-Logo.png",
         "mimeType": "image/png",
         "width": 500,
         "height": 500
@@ -1833,6 +1833,375 @@
         "width": 1200,
         "height": 1200,
         "size": "0"
+      },
+      {
+        "id": "2479186",
+        "title": "Texas A&M logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/TAM-Stacked-Maroon.png",
+        "filename": "TAM-Stacked-Maroon.png",
+        "mimeType": "image/png",
+        "width": 1081,
+        "height": 1081
+      },
+      {
+        "id": "2475261",
+        "title": "Xing logo svg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Xing_logo.svg.png",
+        "filename": "Xing_logo.svg.png",
+        "mimeType": "image/png",
+        "width": 1024,
+        "height": 405
+      },
+      {
+        "id": "2475201",
+        "title": "Unc health logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Unc-health-logo.png",
+        "filename": "Unc-health-logo.png",
+        "mimeType": "image/png",
+        "width": 1200,
+        "height": 640
+      },
+      {
+        "id": "2451154",
+        "title": "Behavox logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/behavox-logo.png",
+        "filename": "behavox-logo.png",
+        "mimeType": "image/png",
+        "width": 550,
+        "height": 140
+      },
+      {
+        "id": "2429136",
+        "title": "Autoleague",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Autoleague.png",
+        "filename": "Autoleague.png",
+        "mimeType": "image/png",
+        "width": 600,
+        "height": 600
+      },
+      {
+        "id": "2413198",
+        "title": "DXC Technology svg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/DXC_Technology.svg.png",
+        "filename": "DXC_Technology.svg.png",
+        "mimeType": "image/png",
+        "width": 1200,
+        "height": 655
+      },
+      {
+        "id": "2405620",
+        "title": "Ariento logo quote block",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Ariento-logo-quote-block.png",
+        "filename": "Ariento-logo-quote-block.png",
+        "mimeType": "image/png",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "id": "2325904",
+        "title": "Ninjavan",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Ninjavan.svg",
+        "filename": "Ninjavan.svg",
+        "mimeType": "image/svg+xml",
+        "width": 600,
+        "height": 164
+      },
+      {
+        "id": "2310305",
+        "title": "Axians logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/axians_logo.png",
+        "filename": "axians_logo.png",
+        "mimeType": "image/png",
+        "width": 280,
+        "height": 110
+      },
+      {
+        "id": "2125005",
+        "title": "Big ID Logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/BigID_Logo.png",
+        "filename": "BigID_Logo.png",
+        "mimeType": "image/png",
+        "width": 1500,
+        "height": 688
+      },
+      {
+        "id": "2080958",
+        "title": "SC Awards",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/SC_Awards.png",
+        "filename": "SC_Awards.png",
+        "mimeType": "image/png",
+        "width": 935,
+        "height": 600
+      },
+      {
+        "id": "2065510",
+        "title": "Billie logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Billie-logo.svg",
+        "filename": "Billie-logo.svg",
+        "mimeType": "image/svg+xml",
+        "width": 240,
+        "height": 240
+      },
+      {
+        "id": "1890190",
+        "title": "Town of truckee logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/town-of-truckee-logo.png",
+        "filename": "town-of-truckee-logo.png",
+        "mimeType": "image/png",
+        "width": 887,
+        "height": 403
+      },
+      {
+        "id": "1845977",
+        "title": "AMOCO logo clear",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/AMOCO-logo-clear.png",
+        "filename": "AMOCO-logo-clear.png",
+        "mimeType": "image/png",
+        "width": 1420,
+        "height": 537
+      },
+      {
+        "id": "1838090",
+        "title": "No Name security logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/NoName-security-logo.png",
+        "filename": "NoName-security-logo.png",
+        "mimeType": "image/png",
+        "width": 640,
+        "height": 220
+      },
+      {
+        "id": "1838048",
+        "title": "Sourcegraph logo light svg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Sourcegraph-logo-light.svg.png",
+        "filename": "Sourcegraph-logo-light.svg.png",
+        "mimeType": "image/png",
+        "width": 1280,
+        "height": 219
+      },
+      {
+        "id": "1838045",
+        "title": "Starburst logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/starburst-logo.png",
+        "filename": "starburst-logo.png",
+        "mimeType": "image/png",
+        "width": 1200,
+        "height": 307
+      },
+      {
+        "id": "1356534",
+        "title": "Homepage customers dxc dark rev2 1",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/homepage-customers-dxc-dark-rev2-1.png",
+        "filename": "homepage-customers-dxc-dark-rev2-1.png",
+        "mimeType": "image/png",
+        "width": 177,
+        "height": 129
+      },
+      {
+        "id": "1215581",
+        "title": "Morris School District",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/MorrisSchoolDistrict.png",
+        "filename": "MorrisSchoolDistrict.png",
+        "mimeType": "image/png",
+        "width": 185,
+        "height": 185
+      },
+      {
+        "id": "1215549",
+        "title": "Mane Logo quadri jpg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Mane_Logo_quadri_jpg.jpg",
+        "filename": "Mane_Logo_quadri_jpg.jpg",
+        "mimeType": "image/jpeg",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "id": "1210760",
+        "title": "Chili security logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/chili-security-logo.png",
+        "filename": "chili-security-logo.png",
+        "mimeType": "image/png",
+        "width": 198,
+        "height": 149
+      },
+      {
+        "id": "1205376",
+        "title": "Bechtle resource card",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Bechtle-resource-card.png",
+        "filename": "Bechtle-resource-card.png",
+        "mimeType": "image/png",
+        "width": 325,
+        "height": 150
+      },
+      {
+        "id": "1205319",
+        "title": "Amoco",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/amoco.png",
+        "filename": "amoco.png",
+        "mimeType": "image/png",
+        "width": 112,
+        "height": 54
+      },
+      {
+        "id": "872097",
+        "title": "Bmc",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/bmc.svg",
+        "filename": "bmc.svg",
+        "mimeType": "image/svg+xml",
+        "width": 31,
+        "height": 15
+      },
+      {
+        "id": "872036",
+        "title": "Kuppingercole",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/kuppingercole.svg",
+        "filename": "kuppingercole.svg",
+        "mimeType": "image/svg+xml",
+        "width": 165,
+        "height": 21
+      },
+      {
+        "id": "651827",
+        "title": "Kuppinger Cole Logo Privacy Preference Center",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/KuppingerCole_Logo_Privacy_Preference_Center.png",
+        "filename": "KuppingerCole_Logo_Privacy_Preference_Center.png",
+        "mimeType": "image/png",
+        "width": 1164,
+        "height": 231
+      },
+      {
+        "id": "583483",
+        "title": "UNC Charlottle logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/UNC_Charlottle_logo.png",
+        "filename": "UNC_Charlottle_logo.png",
+        "mimeType": "image/png",
+        "width": 1654,
+        "height": 382
+      },
+      {
+        "id": "583481",
+        "title": "Chronopost International Logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Chronopost_International_Logo.png",
+        "filename": "Chronopost_International_Logo.png",
+        "mimeType": "image/png",
+        "width": 5000,
+        "height": 1076
+      },
+      {
+        "id": "551354",
+        "title": "Midlothian city logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/midlothian-city-logo.png",
+        "filename": "midlothian-city-logo.png",
+        "mimeType": "image/png",
+        "width": 291,
+        "height": 87
+      },
+      {
+        "id": "551352",
+        "title": "NHS logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/NHS-logo.png",
+        "filename": "NHS-logo.png",
+        "mimeType": "image/png",
+        "width": 3500,
+        "height": 1600
+      },
+      {
+        "id": "527723",
+        "title": "2560px Investec logo svg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/2560px-Investec_logo.svg.png",
+        "filename": "2560px-Investec_logo.svg.png",
+        "mimeType": "image/png",
+        "width": 2560,
+        "height": 512
+      },
+      {
+        "id": "525746",
+        "title": "2560px Ramboll Logo svg",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/2560px-Ramboll_Logo.svg.png",
+        "filename": "2560px-Ramboll_Logo.svg.png",
+        "mimeType": "image/png",
+        "width": 2560,
+        "height": 572
+      },
+      {
+        "id": "52397",
+        "title": "Beyond Trust B Hex Orange",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/BeyondTrust_B_hex-Orange.png",
+        "filename": "BeyondTrust_B_hex-Orange.png",
+        "mimeType": "image/png",
+        "width": 1092,
+        "height": 1365
+      },
+      {
+        "id": "46475",
+        "title": "Beyond Trust Horiz Hex Orange",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/BeyondTrust_Horiz_hex-Orange.png",
+        "filename": "BeyondTrust_Horiz_hex-Orange.png",
+        "mimeType": "image/png",
+        "width": 1462,
+        "height": 418
+      },
+      {
+        "id": "17360",
+        "title": "Fiserv",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/fiserv.png",
+        "filename": "fiserv.png",
+        "mimeType": "image/png",
+        "width": 97,
+        "height": 90
+      },
+      {
+        "id": "610",
+        "title": "Stribling  Equipment Logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Stribling_Equipment_logo.JPG",
+        "filename": "Stribling_Equipment_logo.JPG",
+        "mimeType": "image/jpeg",
+        "width": 211,
+        "height": 185
+      },
+      {
+        "id": "594",
+        "title": "Redners Logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Redners_logo.JPG",
+        "filename": "Redners_logo.JPG",
+        "mimeType": "image/jpeg",
+        "width": 254,
+        "height": 107
+      },
+      {
+        "id": "589",
+        "title": "Northwell  Health Logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Northwell_Health_logo.JPG",
+        "filename": "Northwell_Health_logo.JPG",
+        "mimeType": "image/jpeg",
+        "width": 329,
+        "height": 196
+      },
+      {
+        "id": "585",
+        "title": "Murphy  Oil  Usa Logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Murphy_Oil_USA_logo.png",
+        "filename": "Murphy_Oil_USA_logo.png",
+        "mimeType": "image/png",
+        "width": 229,
+        "height": 85
+      },
+      {
+        "id": "567",
+        "title": "Horizon  Beverage Logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/Horizon_Beverage_logo.JPG",
+        "filename": "Horizon_Beverage_logo.JPG",
+        "mimeType": "image/jpeg",
+        "width": 150,
+        "height": 120
+      },
+      {
+        "id": "536",
+        "title": "Anatel Logo",
+        "url": "https://assets.beyondtrust.com/assets/images/logos/ANATEL_logo.png",
+        "filename": "ANATEL_logo.png",
+        "mimeType": "image/png",
+        "width": 695,
+        "height": 338
       }
     ]
   }

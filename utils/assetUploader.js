@@ -1,7 +1,7 @@
 import fs from "fs";
 
 const LOCALE = "en-US";
-const S3_BASE_URL = process.env.S3_BASE_URL || "https://assets-uat.btdevops.io";
+const BASE_URL = process.env.BASE_URL || "https://assets-uat.btdevops.io";
 
 // Cache: asset title/filename → Contentful asset ID (avoid duplicates)
 const uploadedAssetCache = new Map();
@@ -92,15 +92,15 @@ export function loadAssetMetadata(filePaths) {
       assets.forEach(asset => {
         let url = asset.url || "";
 
-        // 1. Handle S3_BASE_URL placeholder
-        if (url.startsWith("S3_BASE_URL")) {
-          url = url.replace("S3_BASE_URL", S3_BASE_URL);
+        // 1. Handle https://assets.beyondtrust.com placeholder
+        if (url.startsWith("https://assets.beyondtrust.com")) {
+          url = url.replace("https://assets.beyondtrust.com", BASE_URL);
         }
 
         // 2. Automatically swap broken UAT domain with working domain
         const BROKEN_DOMAIN = "https://assets-uat.btdevops.io";
         if (url.startsWith(BROKEN_DOMAIN)) {
-          url = url.replace(BROKEN_DOMAIN, S3_BASE_URL);
+          url = url.replace(BROKEN_DOMAIN, BASE_URL);
         }
 
         assetMap.set(String(asset.id), {

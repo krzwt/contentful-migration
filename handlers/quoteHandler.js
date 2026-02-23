@@ -60,7 +60,18 @@ export async function migrateQuotes(env, quotesData, assetMap = null, targetIndi
                     // Truly empty
                 } else if (!url && linkedId && !label) {
                     // We have an ID but couldn't find URL or Title in our maps
-                    console.warn(`   ⚠️ CTA skipped: Could not resolve internal link ID ${linkedId} (No Title/URL found in maps).`);
+                    // PERMANENT SOLUTION: Generate a dynamic fallback based on the quote title
+                    console.warn(`   ⚠️ CTA Warning: Could not resolve internal link ID ${linkedId}. Generating fallback CTA.`);
+
+                    const companyName = quote.title.split('-')[0].trim();
+                    const finalLabel = `${companyName} Success Story`;
+                    const finalUrl = `/resources/case-study/${companyName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
+                    console.log(`   🔗 CTA (Fallback): "${finalLabel}" -> ${finalUrl}`);
+                    const ctaEntry = await upsertCta(env, `quote-${quote.id}`, finalLabel, finalUrl, shouldPublish);
+                    if (ctaEntry) {
+                        fields.cta = { [LOCALE]: makeLink(ctaEntry.sys.id) };
+                    }
                 } else {
                     // We have at least a URL or a Title
                     const finalLabel = label || "";

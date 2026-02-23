@@ -52,6 +52,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneThankYou",
   //   label: "Standalone Thank You"
   // },
+  // {
+  //   file: "./data/people-cpt.json",
+  //   label: "People CPT",
+  //   isPeople: true
+  // },
   {
     file: "./data/company-quotes.json",
     label: "Company Quotes",
