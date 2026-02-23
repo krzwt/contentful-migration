@@ -18,30 +18,31 @@ export async function createOrUpdateQuotes(env, blockData, assetMap = null) {
         return null;
     }
 
-    const blockId = blockData.blockId;
-    const heading = blockData.headingSection || blockData.heading || "";
+    const fields = blockData.fields || {};
+    const blockId = blockData.blockId || `quotes-${Date.now()}`;
+    const heading = fields.headingSection || fields.heading || "";
 
     // Build quoteItem entries from source IDs
     const quoteRefs = [];
-    const quoteIds = blockData.companyQuotes || [];
+    const quoteIds = fields.companyQuotes || [];
+
     for (const qId of quoteIds) {
-        const itemEntry = await upsertEntry(env, "quoteItem", `quote-${qId}`, {
-            title: { [LOCALE]: `Quote ${qId}` },
-            quoteText: { [LOCALE]: `[Imported quote ref: ${qId}]` }
-        });
-        if (itemEntry) quoteRefs.push(makeLink(itemEntry.sys.id));
+        // We assume quotes are already migrated with ID: quote-ID
+        // We just link to them. If it doesn't exist, Contentful will show a broken link until it's migrated.
+        quoteRefs.push(makeLink(`quote-${qId}`));
     }
 
-    const fields = {
-        blockId: { [LOCALE]: blockId },
+    const contentfulFields = {
+        blockId: { [LOCALE]: String(blockId) },
         blockName: { [LOCALE]: blockData.blockName || heading || "Quotes Block" },
         heading: { [LOCALE]: heading }
     };
 
     if (quoteRefs.length) {
-        fields.quoteItems = { [LOCALE]: quoteRefs };
+        contentfulFields.quoteItems = { [LOCALE]: quoteRefs };
+        console.log(`   🔗 Linked ${quoteRefs.length} quotes to block.`);
     }
 
     // Upsert the block
-    return await upsertEntry(env, CONTENT_TYPE, `quotesblock-${blockId}`, fields);
+    return await upsertEntry(env, CONTENT_TYPE, `quotesblock-${blockId}`, contentfulFields);
 }

@@ -1,26 +1,93 @@
+import fs from "fs";
 
 const LOCALE = "en-US";
+const GLOBAL_URL_MAP = new Map(); // Map craftId -> uri/slug
+
+/**
+ * Builds a global map of all Entry IDs and their final URLs/Slugs
+ * to help resolve internal links.
+ */
+export function buildUrlMap() {
+    console.log("🔍 Indexing all entries to resolve internal links...");
+    const sources = [
+        "./data/standalone-content.json",
+        "./data/standalone-conversion.json",
+        "./data/standalone-microsite.json",
+        "./data/standalone-thankyou.json",
+        "./data/people-cpt.json",
+        "./data/company-quotes.json"
+    ];
+
+    sources.forEach(file => {
+        if (!fs.existsSync(file)) return;
+        try {
+            const data = JSON.parse(fs.readFileSync(file, "utf-8"));
+            data.forEach(item => {
+                if (item.id) {
+                    const url = item.uri || item.slug || "";
+                    GLOBAL_URL_MAP.set(String(item.id), { url, title: item.title || "" });
+                }
+            });
+        } catch (e) {
+            console.warn(`   ⚠️ Could not index ${file}: ${e.message}`);
+        }
+    });
+
+    // Load manual overrides
+    const manualFile = "./data/manual-links.json";
+    if (fs.existsSync(manualFile)) {
+        try {
+            const manualData = JSON.parse(fs.readFileSync(manualFile, "utf-8"));
+            for (const [id, info] of Object.entries(manualData)) {
+                GLOBAL_URL_MAP.set(String(id), info);
+            }
+            console.log(`   📝 Loaded ${Object.keys(manualData).length} manual link overrides.`);
+        } catch (e) {
+            console.warn(`   ⚠️ Could not load manual links: ${e.message}`);
+        }
+    }
+    console.log(`   ✅ Indexed ${GLOBAL_URL_MAP.size} total entry references.\n`);
+}
+
+/**
+ * Resolves a Craft ID to a relative URL (slug/uri)
+ */
+export function resolveInternalUrl(id) {
+    if (!id) return null;
+    const info = GLOBAL_URL_MAP.get(String(id));
+    return info ? info.url : null;
+}
+
+/**
+ * Resolves a Craft ID to a Title
+ */
+export function resolveInternalTitle(id) {
+    if (!id) return null;
+    const info = GLOBAL_URL_MAP.get(String(id));
+    return info ? info.title : null;
+}
 
 /**
  * Parse Craft CMS link JSON into { url, label }
  */
 export function parseCraftLink(linkStr) {
-    if (!linkStr) return { url: "", label: "" };
+    if (!linkStr) return { url: "", label: "", linkedId: null };
     try {
         const obj = typeof linkStr === "string" ? JSON.parse(linkStr) : linkStr;
         return {
             url: obj.linkedUrl || "",
-            label: obj.linkedTitle || ""
+            label: obj.linkedTitle || "",
+            linkedId: obj.linkedId || null
         };
     } catch {
-        return { url: String(linkStr), label: "" };
+        return { url: String(linkStr), label: "", linkedId: null };
     }
 }
 
 /**
  * Upserts a 'cta' entry
  */
-export async function upsertCta(env, id, label, url) {
+export async function upsertCta(env, id, label, url, shouldPublish = true) {
     let safeUrl = url || "";
     if (safeUrl.length > 255) {
         console.warn(`   ⚠️ URL for cta-${id} exceeds 255 chars. Truncating...`);
@@ -33,7 +100,7 @@ export async function upsertCta(env, id, label, url) {
         target: { [LOCALE]: "_self (Same Tab)" }
     };
 
-    return await upsertEntry(env, "cta", `cta-${id}`, fields);
+    return await upsertEntry(env, "cta", `cta-${id}`, fields, shouldPublish);
 }
 
 /**
@@ -160,9 +227,9 @@ export async function upsertSectionTitle(env, id, title) {
  * Core upsert logic for nested entries using a predictable ID.
  * Exported so handlers can create custom nested content types.
  */
-export async function upsertEntry(env, contentType, entryId, fields) {
+export async function upsertEntry(env, contentType, entryId, fields, shouldPublish = true) {
     if (!env) {
-        console.log(`   [DRY RUN] Would upsert ${contentType}: ${entryId}`);
+        console.log(`   [DRY RUN] Would upsert ${contentType}: ${entryId} (Publish: ${shouldPublish})`);
         return { sys: { id: entryId } };
     }
     try {
@@ -175,6 +242,11 @@ export async function upsertEntry(env, contentType, entryId, fields) {
         } catch (e) {
             console.log(`   ✨ Creating nested ${contentType}: ${entryId}`);
             entry = await env.createEntryWithId(contentType, entryId, { fields });
+        }
+
+        if (!shouldPublish) {
+            console.log(`   📝 Entry ${entryId} saved as draft.`);
+            return entry;
         }
 
         // Retry publish up to 3 times (asset links may need processing time)

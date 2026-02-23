@@ -1,0 +1,150 @@
+{
+    "data": {
+        "assets": [
+            {
+                "id": "2497966",
+                "title": "New Karma Auto Logo",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/New_Karma_Auto_Logo.jpg",
+                "filename": "New_Karma_Auto_Logo.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1920,
+                "height": 1005
+            },
+            {
+                "id": "2496438",
+                "title": "Gartner logo svg",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/Gartner_logo.svg.png",
+                "filename": "Gartner_logo.svg.png",
+                "mimeType": "image/png",
+                "width": 1280,
+                "height": 295
+            },
+            {
+                "id": "2488733",
+                "title": "Keller Group",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/keller-group.png",
+                "filename": "keller-group.png",
+                "mimeType": "image/png",
+                "width": 420,
+                "height": 120
+            },
+            {
+                "id": "2479197",
+                "title": "Norton Logo",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/Norton-Logo.png",
+                "filename": "Norton-Logo.png",
+                "mimeType": "image/png",
+                "width": 836,
+                "height": 211
+            },
+            {
+                "id": "2470104",
+                "title": "VIALTO Logo",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/VIALTO_Logo.jpg",
+                "filename": "VIALTO_Logo.jpg",
+                "mimeType": "image/jpeg",
+                "width": 2697,
+                "height": 1414
+            },
+            {
+                "id": "2467373",
+                "title": "LADWP Logo",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/LADWP-Logo.svg",
+                "filename": "LADWP-Logo.svg",
+                "mimeType": "image/svg+xml",
+                "width": 135,
+                "height": 40
+            },
+            {
+                "id": "2451152",
+                "title": "Axiom medical logo",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/axiom-medical-logo.svg",
+                "filename": "axiom-medical-logo.svg",
+                "mimeType": "image/svg+xml",
+                "width": 257,
+                "height": 256
+            },
+            {
+                "id": "1986426",
+                "title": "Polsinelli Logo",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/Polsinelli-Logo.svg",
+                "filename": "Polsinelli-Logo.svg",
+                "mimeType": "image/svg+xml",
+                "width": 400,
+                "height": 114
+            },
+            {
+                "id": "1230568",
+                "title": "Premier bankcard logo",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/premier-bankcard-logo.png",
+                "filename": "premier-bankcard-logo.png",
+                "mimeType": "image/png",
+                "width": 2403,
+                "height": 344
+            },
+            {
+                "id": "629860",
+                "title": "1280px Deloitte svg",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/1280px-Deloitte.svg.png",
+                "filename": "1280px-Deloitte.svg.png",
+                "mimeType": "image/png",
+                "width": 1280,
+                "height": 278
+            },
+            {
+                "id": "590339",
+                "title": "Oxford color",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/oxford-color.svg",
+                "filename": "oxford-color.svg",
+                "mimeType": "image/svg+xml",
+                "width": 113,
+                "height": 40
+            },
+            {
+                "id": "583983",
+                "title": "Sitelogo",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/sitelogo.png",
+                "filename": "sitelogo.png",
+                "mimeType": "image/png",
+                "width": 190,
+                "height": 100
+            },
+            {
+                "id": "583486",
+                "title": "Illinois DIT Logojpeg",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/Illinois-DIT-Logojpeg.jpeg",
+                "filename": "Illinois-DIT-Logojpeg.jpeg",
+                "mimeType": "image/jpeg",
+                "width": 800,
+                "height": 420
+            },
+            {
+                "id": "578909",
+                "title": "1200px Oxford logo Standalone Twilight svg",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/1200px-Oxford_logo_Standalone_Twilight.svg.png",
+                "filename": "1200px-Oxford_logo_Standalone_Twilight.svg.png",
+                "mimeType": "image/png",
+                "width": 1200,
+                "height": 427
+            },
+            {
+                "id": "570609",
+                "title": "ASKLEPIOS Logo",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/ASKLEPIOS_Logo.png",
+                "filename": "ASKLEPIOS_Logo.png",
+                "mimeType": "image/png",
+                "width": 2560,
+                "height": 685
+            },
+            {
+                "id": "505480",
+                "title": "University of derby logo",
+                "url": "https://assets.beyondtrust.com/assets/images/logos/university-of-derby-logo.png",
+                "filename": "university-of-derby-logo.png",
+                "mimeType": "image/png",
+                "width": 1410,
+                "height": 630
+            }
+        ]
+    }
+}

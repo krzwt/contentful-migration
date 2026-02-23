@@ -4,20 +4,23 @@ import { upsertEntry, makeLink } from "../utils/contentfulHelpers.js";
 /**
  * Main function to migrate People entries
  */
-export async function migratePeople(env, peopleData, assetMap = null) {
+export async function migratePeople(env, peopleData, assetMap = null, targetIndices = null, totalPages = null) {
+    const total = targetIndices ? targetIndices[targetIndices.length - 1] + 1 : (totalPages || peopleData.length);
     console.log(`\n👥 Starting People Migration (${peopleData.length} entries)...`);
 
     for (let i = 0; i < peopleData.length; i++) {
         const person = peopleData[i];
         const personName = person.title || person.personsName || "Unknown Person";
-        const progress = `[${i + 1} / ${peopleData.length}]`;
-        console.log(`\n➡️ ${progress} Person: ${personName} (ID: ${person.id})`);
+        const pageNum = targetIndices ? targetIndices[i] + 1 : i + 1;
+        const progress = `[${pageNum} / ${total}]`;
+        const shouldPublish = person.status === "live";
+        console.log(`\n➡️ ${progress} Person: ${personName} (ID: ${person.id}, Status: ${person.status})`);
 
         try {
-            // 1. Handle Nested Entries First
-            const socialLinkIds = await processSocialLinks(env, person);
-            const contactInfoIds = await processContactInfo(env, person);
-            const otherLinkIds = await processOtherLinks(env, person);
+            // 1. Handle Nested Entries First (Inherit publish status)
+            const socialLinkIds = await processSocialLinks(env, person, shouldPublish);
+            const contactInfoIds = await processContactInfo(env, person, shouldPublish);
+            const otherLinkIds = await processOtherLinks(env, person, shouldPublish);
 
             // 2. Prepare Fields
             const fields = {
@@ -57,8 +60,8 @@ export async function migratePeople(env, peopleData, assetMap = null) {
 
             // 5. Upsert the Person
             const contentfulId = `person-${person.id}`;
-            await upsertEntry(env, "peopleCpt", contentfulId, fields);
-            console.log(`✅ Person "${personName}" migrated.`);
+            await upsertEntry(env, "peopleCpt", contentfulId, fields, shouldPublish);
+            console.log(`✅ Person "${personName}" migrated (${shouldPublish ? 'Published' : 'Draft'}).`);
 
         } catch (err) {
             console.error(`❌ Error migrating person "${personName}":`, err.message);
@@ -69,7 +72,7 @@ export async function migratePeople(env, peopleData, assetMap = null) {
 /**
  * Process Social Media Links
  */
-async function processSocialLinks(env, person) {
+async function processSocialLinks(env, person, shouldPublish = true) {
     const ids = [];
     if (!person.socialMediaLinks) return ids;
 
@@ -102,7 +105,7 @@ async function processSocialLinks(env, person) {
                         url: { [LOCALE]: data.linkedUrl }
                     };
 
-                    await upsertEntry(env, "socialLink", linkId, fields);
+                    await upsertEntry(env, "socialLink", linkId, fields, shouldPublish);
                     ids.push(linkId);
                 }
             } catch (e) { /* skip invalid json */ }
@@ -114,7 +117,7 @@ async function processSocialLinks(env, person) {
 /**
  * Process Contact Info
  */
-async function processContactInfo(env, person) {
+async function processContactInfo(env, person, shouldPublish = true) {
     const ids = [];
     if (!person.contactInfo) return ids;
 
@@ -131,11 +134,11 @@ async function processContactInfo(env, person) {
             if (phone || email) {
                 const contactId = `contact-${person.id}-${contactGroup.type}`;
                 const entryFields = {
-                    title: { [LOCALE]: `Contact: ${person.title}` },
+                    title: { [LOCALE]: `Contact: ${person.title || person.personsName || "Unknown"}` },
                     phone: { [LOCALE]: phone },
                     email: { [LOCALE]: email }
                 };
-                await upsertEntry(env, "contactInfo", contactId, entryFields);
+                await upsertEntry(env, "contactInfo", contactId, entryFields, shouldPublish);
                 ids.push(contactId);
             }
         } catch (e) { /* skip */ }
@@ -146,7 +149,7 @@ async function processContactInfo(env, person) {
 /**
  * Process Other Links (CTAs)
  */
-async function processOtherLinks(env, person) {
+async function processOtherLinks(env, person, shouldPublish = true) {
     // Currently empty in sample, but ready for logic if needed
     return [];
 }

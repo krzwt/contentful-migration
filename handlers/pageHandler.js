@@ -38,7 +38,7 @@ export function safeId(prefix, slug) {
  * we create it as a `page` entry in Contentful so it can be referenced
  * by pageSettings.parentPage.
  */
-async function getOrCreateParentPage(env, parentId, allPages) {
+async function getOrCreateParentPage(env, parentId, allPages, pageContentType = DEFAULT_PAGE_TYPE) {
   if (parentPageCache.has(parentId)) {
     return parentPageCache.get(parentId);
   }
@@ -51,7 +51,7 @@ async function getOrCreateParentPage(env, parentId, allPages) {
   try {
     // Try to find existing page entry by slug
     const existing = await env.getEntries({
-      content_type: "page",
+      content_type: pageContentType,
       "fields.slug": parentSlug,
       limit: 1
     });
@@ -61,8 +61,8 @@ async function getOrCreateParentPage(env, parentId, allPages) {
       pageEntry = existing.items[0];
       console.log(`   📄 Found existing parent page: "${parentTitle}" (${pageEntry.sys.id})`);
     } else {
-      console.log(`   🆕 Creating parent page: "${parentTitle}" (slug: ${parentSlug})`);
-      pageEntry = await env.createEntry("page", {
+      console.log(`   🆕 Creating parent page: "${parentTitle}" (Type: ${pageContentType}, slug: ${parentSlug})`);
+      pageEntry = await env.createEntry(pageContentType, {
         fields: {
           title: { [LOCALE]: parentTitle },
           slug: { [LOCALE]: parentSlug }
@@ -75,7 +75,7 @@ async function getOrCreateParentPage(env, parentId, allPages) {
     parentPageCache.set(parentId, pageEntry.sys.id);
     return pageEntry.sys.id;
   } catch (err) {
-    console.error(`   ❌ Error creating parent page for ${parentId}:`, err.message);
+    console.error(`   ❌ Error creating parent page for ${parentId} (Type: ${pageContentType}):`, err.message);
     return null;
   }
 }
@@ -174,7 +174,7 @@ async function getOrCreateSeo(env, pageData, assetMap = null) {
 /**
  * Creates a `pageSettings` entry with slug and optional parent page link + SEO.
  */
-async function getOrCreatePageSettings(env, pageData, allPages, assetMap = null) {
+async function getOrCreatePageSettings(env, pageData, allPages, pageContentType = DEFAULT_PAGE_TYPE, assetMap = null) {
   const settingsId = safeId("settings", pageData.slug);
 
   try {
@@ -185,7 +185,7 @@ async function getOrCreatePageSettings(env, pageData, allPages, assetMap = null)
 
     // If this page has a parentId, create/find the parent `page` and link it
     if (pageData.parentId) {
-      const parentEntryId = await getOrCreateParentPage(env, pageData.parentId, allPages);
+      const parentEntryId = await getOrCreateParentPage(env, pageData.parentId, allPages, pageContentType);
       if (parentEntryId) {
         fields.parentPage = {
           [LOCALE]: {
@@ -282,7 +282,7 @@ export async function getOrCreatePage(env, pageData, pageContentType = DEFAULT_P
     }
 
     // Always call getOrCreatePageSettings so it can update existing entries (e.g. name changes)
-    const settingsEntry = await getOrCreatePageSettings(env, pageData, allPages, assetMap);
+    const settingsEntry = await getOrCreatePageSettings(env, pageData, allPages, pageContentType, assetMap);
     if (settingsEntry) {
       const currentSettingsId = page.fields.settings?.[LOCALE]?.sys?.id;
       if (currentSettingsId !== settingsEntry.sys.id) {

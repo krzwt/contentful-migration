@@ -1,4 +1,4 @@
-import { upsertEntry, upsertCta, makeLink, parseCraftLink } from "../utils/contentfulHelpers.js";
+import { upsertEntry, upsertCta, makeLink, parseCraftLink, resolveInternalUrl, resolveInternalTitle } from "../utils/contentfulHelpers.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "quoteItem";
@@ -6,16 +6,20 @@ const CONTENT_TYPE = "quoteItem";
 /**
  * Handler for standalone quote entries (quoteItem)
  */
-export async function migrateQuotes(env, quotesData, assetMap = null) {
+export async function migrateQuotes(env, quotesData, assetMap = null, targetIndices = null, totalPages = null) {
+    const total = targetIndices ? targetIndices[targetIndices.length - 1] + 1 : (totalPages || quotesData.length);
     console.log(`\n📰 Starting Company Quotes Migration (${quotesData.length} entries)...`);
 
     for (let i = 0; i < quotesData.length; i++) {
         const quote = quotesData[i];
-        const progress = `[${i + 1} / ${quotesData.length}]`;
-        console.log(`\n➡️ ${progress} Quote: ${quote.title} (ID: ${quote.id})`);
+        const pageNum = targetIndices ? targetIndices[i] + 1 : i + 1;
+        const progress = `[${pageNum} / ${total}]`;
+        const shouldPublish = quote.status === "live";
+        console.log(`\n➡️ ${progress} Quote: ${quote.title} (ID: ${quote.id}, Status: ${quote.status})`);
 
         try {
             const fields = {
+                entryId: { [LOCALE]: String(quote.id) },
                 title: { [LOCALE]: quote.title || `Quote ${quote.id}` },
                 quoteText: { [LOCALE]: quote.quoteText || "" },
                 quoteSource: { [LOCALE]: quote.quoteSource || "" },
@@ -33,9 +37,37 @@ export async function migrateQuotes(env, quotesData, assetMap = null) {
 
             // 2. Handle ctaLink (Link to cta entry)
             if (quote.ctaLink) {
-                const { url, label } = parseCraftLink(quote.ctaLink);
-                if (url || label) {
-                    const ctaEntry = await upsertCta(env, `quote-${quote.id}`, label || "Read More", url);
+                const { url: craftUrl, label: craftLabel, linkedId } = parseCraftLink(quote.ctaLink);
+                let url = craftUrl;
+                let label = craftLabel;
+
+                // 1. Resolve internal links if possible
+                if (linkedId) {
+                    if (!url) {
+                        const resolvedUrl = resolveInternalUrl(String(linkedId));
+                        if (resolvedUrl) {
+                            url = resolvedUrl.startsWith("http") ? resolvedUrl : `/${resolvedUrl.replace(/^\//, "")}`;
+                        }
+                    }
+                    if (!label) {
+                        label = resolveInternalTitle(String(linkedId));
+                    }
+                }
+
+                // 2. Decide if we should create a CTA
+                // If we have NO URL and NO Label, it's an empty link -> Skip
+                if (!url && !label && !linkedId) {
+                    // Truly empty
+                } else if (!url && linkedId && !label) {
+                    // We have an ID but couldn't find URL or Title in our maps
+                    console.warn(`   ⚠️ CTA skipped: Could not resolve internal link ID ${linkedId} (No Title/URL found in maps).`);
+                } else {
+                    // We have at least a URL or a Title
+                    const finalLabel = label || "";
+                    const finalUrl = url || "";
+
+                    console.log(`   🔗 CTA: "${finalLabel || "(No Label)"}" -> ${finalUrl || "(No URL resolved)"}`);
+                    const ctaEntry = await upsertCta(env, `quote-${quote.id}`, finalLabel, finalUrl, shouldPublish);
                     if (ctaEntry) {
                         fields.cta = { [LOCALE]: makeLink(ctaEntry.sys.id) };
                     }
@@ -50,8 +82,8 @@ export async function migrateQuotes(env, quotesData, assetMap = null) {
 
             // 4. Upsert the quoteItem
             const entryId = `quote-${quote.id}`;
-            await upsertEntry(env, CONTENT_TYPE, entryId, fields);
-            console.log(`   ✅ Quote "${quote.title}" migrated.`);
+            await upsertEntry(env, CONTENT_TYPE, entryId, fields, shouldPublish);
+            console.log(`   ✅ Quote "${quote.title}" migrated (${shouldPublish ? 'Published' : 'Draft'}).`);
 
         } catch (err) {
             console.error(`   🛑 Error migrating quote ${quote.id}:`, err.message);

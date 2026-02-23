@@ -7,9 +7,10 @@ import { migrateQuotes } from "./handlers/quoteHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import { loadAssetMetadata, processAssets, loadWistiaData, prePopulateAssetCache } from "./utils/assetUploader.js";
+import { buildUrlMap } from "./utils/contentfulHelpers.js";
 
 const isDryRun = false; // Set to true to simulate migration without making changes
-const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json"]; // GraphQL asset metadata
+const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json", "./data/quote-assets.json"]; // GraphQL asset metadata
 
 /* ---------------------------------------------------------
    CLI args: node index.js [--from N] [--to N] [--dry]
@@ -52,20 +53,18 @@ const DATA_SOURCES = [
   //   label: "Standalone Thank You"
   // },
   {
-    file: "./data/people-cpt.json",
-    label: "People CPT",
-    isPeople: true
-  },
-  // {
-  //   file: "./data/company-quotes.json",
-  //   label: "Company Quotes",
-  //   isQuotes: true
-  // }
+    file: "./data/company-quotes.json",
+    label: "Company Quotes",
+    isQuotes: true
+  }
 ];
 
 async function run() {
   const env = effectiveDryRun ? null : await getEnvironment();
   if (env) await prePopulateAssetCache(env);
+
+  buildUrlMap(); // Build ID -> URL lookup map
+
   const summary = {
     processed: 0,
     updated: 0,
@@ -148,11 +147,12 @@ async function run() {
     summary.missingAssetMetadata.push(...missingIds);
 
     const totalPages = data.length;
-    if (!source.isPeople) {
+    if (source.pageContentType) {
+      const displayTotal = targetIndices[targetIndices.length - 1] + 1;
       for (let i = 0; i < batchData.length; i++) {
         const pageData = batchData[i];
         const pageNum = targetIndices[i] + 1;
-        console.log(`\n➡️[${pageNum} / ${totalPages}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
+        console.log(`\n➡️ [${pageNum} / ${displayTotal}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
         const { slug, title, uri } = pageData;
         // Use uri as slug (includes parent path, e.g. "sem/remote-access-new")
         const fullSlug = uri || slug;
@@ -271,11 +271,11 @@ async function run() {
     }
 
     if (source.isPeople) {
-      await migratePeople(env, batchData, contentfulAssetMap);
+      await migratePeople(env, batchData, contentfulAssetMap, targetIndices, totalPages);
     }
 
     if (source.isQuotes) {
-      await migrateQuotes(env, batchData, contentfulAssetMap);
+      await migrateQuotes(env, batchData, contentfulAssetMap, targetIndices, totalPages);
     }
   }
 
