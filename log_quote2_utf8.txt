@@ -1,0 +1,70 @@
+﻿[dotenv@17.2.3] injecting env (4) from .env -- tip: ≡ƒöÉ prevent committing .env to code: https://dotenvx.com/precommit
+≡ƒöì Pre-populating asset cache from Contentful...
+Γ£à Cached 2344 existing assets from Contentful.
+
+≡ƒöì Indexing all entries to resolve internal links...
+   ≡ƒô¥ Loaded 15 manual link overrides.
+   Γ£à Indexed 1404 total entry references.
+
+Γ£à Loaded 32 categories from ./data/general-categories.json
+Γ£à Loaded 12507 tag definitions.
+≡ƒÄ¼ Loaded 2231 Wistia video entries
+≡ƒôÜ Loaded 2793 asset metadata entries
+
+Γ£à Connected to Contentful
+
+
+==================================================
+≡ƒôé Processing: Resources CPT (ID: 70613 of 1559 ΓåÆ People)
+==================================================
+≡ƒôÄ Found 4 asset references in this batch
+
+
+≡ƒôÜ Starting Resource Migration (1 entries)...
+
+Γ₧í∩╕Å [1 / 1] Whitepapers: Operational Technology (OT) Cybersecurity Assessment (ID: 70613, Status: live)
+   ≡ƒÅ╖∩╕Å  Categories: Use Cases, Manage passwords, secrets, & sessions, Meet compliance mandates, Secure all access: remote, OT, vendor, etc., Support service desks, users, devices, & desktops, Products, Privileged Remote Access
+   ≡ƒöä Updating nested resourcesFields: rf-70613
+≡ƒöä Updating existing contentBlock: 7sfYN0R4eD2Tn6sxglxsvW
+≡ƒöä Updating existing contentBlock: 3HOpkvPvTp0nfLMgeqOAdQ
+node :    Γä╣∩╕Å skipping modular block: "callsToAction" 
+(no mapping)
+At line:1 char:1
++ node index.js --id 70613 > log_quote2.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (   Γä╣∩╕Å sk 
+   ipp...n" (no mapping):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   Γä╣∩╕Å skipping modular block: "pageSection" (no 
+mapping)
+   Γä╣∩╕Å skipping modular block: "resources" (no mapping)
+   ≡ƒöä Updating nested cta: cta-c-323645
+   ≡ƒöä Updating nested quote: quote-323645
+   Γä╣∩╕Å skipping modular block: "video" (no mapping)
+   ≡ƒöä Updating SEO: seo-operational-technology-cybersecurity-assessment
+   ≡ƒöä Updating nested cptSettings: settings-70613
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Operational Technology" (1835137)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Joint Effort Remote Access" (1982416)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Secure Remote Access" (1836122)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Business ContinuityOT" (1982417)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Critical Systems Compliance" (1982418)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "SolutionsICSOT" (1982419)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Enabling Remote Access" (1982420)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Secure InfrastructureOT" (1982421)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "IoT Devices Security" (1982422)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Best Practice Infrastructure Access" (1982423)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Critical InfrastructureOT" (1982424)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Empower Remote Operators" (1982425)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Scalable Remote Access" (1982426)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Visibility Access Control" (1982427)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Network Segregation Audit Trails Least Privilege" (1982428)
+   ≡ƒÅ╖∩╕Å  Processing Tag: "Comprehensive Audit Trails" (1982429)
+   ≡ƒöä Updating nested resourcesCpt: resource-70613
+Γ£à Whitepapers "Operational Technology (OT) Cybersecurity Assessment" migrated (Published).
+
+========================================
+≡ƒôè MIGRATION SUMMARY
+========================================
+
+≡ƒÜÇ Migration Complete

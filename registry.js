@@ -10,6 +10,7 @@ import { createOrUpdateHero } from "./handlers/bannerHero.js";
 import { createOrUpdateCtaBlock } from "./handlers/ctaBlock.js";
 import { createOrUpdateContentBlock } from "./handlers/contentBlock.js";
 import { createOrUpdateQuotes } from "./handlers/quotes.js";
+import { createOrUpdateQuote } from "./handlers/quote.js";
 import { createOrUpdateUseCases } from "./handlers/useCases.js";
 import { createOrUpdateProcessFlow } from "./handlers/processFlow.js";
 import { createOrUpdateFeatureGrid } from "./handlers/featureGrid.js";
@@ -41,7 +42,7 @@ export const COMPONENTS = {
 
   /* ---- New handlers ---- */
   quotes: { handler: createOrUpdateQuotes },
-  quote: { handler: createOrUpdateQuotes },
+  quote: { handler: createOrUpdateQuote },
   useCases: { handler: createOrUpdateUseCases },
   processFlow: { handler: createOrUpdateProcessFlow },
   featureGrid: { handler: createOrUpdateFeatureGrid },

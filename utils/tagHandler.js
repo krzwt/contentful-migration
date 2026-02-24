@@ -74,16 +74,27 @@ export async function processTags(env, craftTagIds) {
         let tag = existingTags.items.find(t => t.sys.id === tagId);
 
         if (!tag) {
+            try {
+                // Check if it exists beyond the first 100 tags
+                tag = await env.getTag(tagId);
+            } catch (err) {
+                tag = null;
+            }
+        }
+
+        if (!tag) {
             console.log(`   ✨ Creating new Environment Tag: "${tagName}" (${tagId})`);
             try {
                 tag = await env.createTag(tagId, tagName);
             } catch (err) {
-                if (!err.message.includes("already exists")) {
-                    console.error(`   🛑 Failed to create tag ${tagId}:`, err.message);
+                const isConflict = String(err.status) === "409" || String(err.message || "").includes("409") || String(err.message || "").includes("already exists");
+                if (isConflict) {
+                    // Fallback: fetch it if creation failed due to race condition or pagination gap
+                    tag = await env.getTag(tagId);
+                } else {
+                    console.error(`   🛑 Failed to create tag ${tagId}:`, err.message || "409 Conflict");
                     continue;
                 }
-                // Fallback: fetch it if creation failed due to race condition
-                tag = await env.getTag(tagId);
             }
         } else if (tag.name !== tagName) {
             console.log(`   🔄 Updating Tag Name: "${tag.name}" -> "${tagName}"`);
