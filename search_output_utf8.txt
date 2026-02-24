@@ -1,0 +1,10 @@
+﻿[dotenv@17.2.3] injecting env (4) from .env -- tip: ≡ƒæÑ sync secrets across teammates & machines: https://dotenvx.com/ops
+Found 2 entries with that title.
+ID: resource-70613 | ContentType: resourcesCpt
+ - Metadata Tags: []
+ - Metadata Concepts: []
+ - Fields: entryId, title, slug, resourceType, resourcesFields
+ID: rf-70613 | ContentType: resourcesFields
+ - Metadata Tags: []
+ - Metadata Concepts: []
+ - Fields: resourceTitle, resourceDescription, resourceCardImage, resourceBannerImage, timeOverride, resourceDocument, signup, salesforceCampaignId, resourceTranscript

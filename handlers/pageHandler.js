@@ -83,7 +83,7 @@ async function getOrCreateParentPage(env, parentId, allPages, pageContentType = 
 /**
  * Creates a `seo` entry from Craft seoMetaTags data.
  */
-async function getOrCreateSeo(env, pageData, assetMap = null) {
+export async function getOrCreateSeo(env, pageData, assetMap = null) {
   const seoData = pageData.seoMetaTags?.metaGlobalVars;
   if (!seoData) return null;
 

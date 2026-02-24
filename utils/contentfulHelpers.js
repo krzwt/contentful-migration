@@ -227,21 +227,35 @@ export async function upsertSectionTitle(env, id, title) {
  * Core upsert logic for nested entries using a predictable ID.
  * Exported so handlers can create custom nested content types.
  */
-export async function upsertEntry(env, contentType, entryId, fields, shouldPublish = true) {
+export async function upsertEntry(env, contentType, entryId, fields, shouldPublish = true, metadata = null) {
     if (!env) {
         console.log(`   [DRY RUN] Would upsert ${contentType}: ${entryId} (Publish: ${shouldPublish})`);
         return { sys: { id: entryId } };
     }
+    let entry;
     try {
-        let entry;
         try {
             entry = await env.getEntry(entryId);
+        } catch (e) {
+            if (e.name === 'NotFound' || e.status === 404) {
+                console.log(`   ✨ Creating nested ${contentType}: ${entryId}`);
+                const payload = { fields };
+                if (metadata) payload.metadata = metadata;
+                entry = await env.createEntryWithId(contentType, entryId, payload);
+            } else {
+                throw e;
+            }
+        }
+
+        if (entry && !entry.sys.createdAt) { // Just created? No, createEntryWithId returns the entry.
+            // If we didn't just create it, we update it.
+        } else if (entry) {
             console.log(`   🔄 Updating nested ${contentType}: ${entryId}`);
             entry.fields = fields;
+            if (metadata) {
+                entry.metadata = { ...entry.metadata, ...metadata };
+            }
             entry = await entry.update();
-        } catch (e) {
-            console.log(`   ✨ Creating nested ${contentType}: ${entryId}`);
-            entry = await env.createEntryWithId(contentType, entryId, { fields });
         }
 
         if (!shouldPublish) {

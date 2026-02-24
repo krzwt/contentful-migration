@@ -41,6 +41,7 @@ export const COMPONENTS = {
 
   /* ---- New handlers ---- */
   quotes: { handler: createOrUpdateQuotes },
+  quote: { handler: createOrUpdateQuotes },
   useCases: { handler: createOrUpdateUseCases },
   processFlow: { handler: createOrUpdateProcessFlow },
   featureGrid: { handler: createOrUpdateFeatureGrid },

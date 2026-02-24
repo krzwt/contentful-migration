@@ -11,7 +11,7 @@ import { getEnvironment } from "./config/contentful.js";
 import { loadAssetMetadata, uploadAsset, loadWistiaData, getWistiaData, prePopulateAssetCache } from "./utils/assetUploader.js";
 import { extractAssets } from "./utils/assetDetector.js";
 
-const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json", "./data/quote-assets.json"];
+const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json", "./data/quote-assets.json", "./data/resource-assets.json"];
 
 const DATA_SOURCES = [
     {
@@ -37,6 +37,10 @@ const DATA_SOURCES = [
     {
         file: "./data/company-quotes.json",
         label: "Company Quotes"
+    },
+    {
+        file: "./data/resources-cpt.json",
+        label: "Resources CPT"
     }
 ];
 

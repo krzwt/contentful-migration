@@ -1,0 +1,185 @@
+﻿[dotenv@17.2.3] injecting env (4) from .env -- tip: ≡ƒôí add observability to secrets: https://dotenvx.com/ops
+{
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "ahmdpntb02m6"
+      }
+    },
+    "id": "resourcesFields",
+    "type": "ContentType",
+    "createdAt": "2026-02-23T13:23:07.026Z",
+    "updatedAt": "2026-02-23T13:23:07.612Z",
+    "environment": {
+      "sys": {
+        "id": "stage",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "publishedVersion": 1,
+    "publishedAt": "2026-02-23T13:23:07.612Z",
+    "firstPublishedAt": "2026-02-23T13:23:07.612Z",
+    "createdBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "032j9He8sPiQreAtw9hJI4"
+      }
+    },
+    "updatedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "032j9He8sPiQreAtw9hJI4"
+      }
+    },
+    "publishedCounter": 1,
+    "version": 2,
+    "publishedBy": {
+      "sys": {
+        "type": "Link",
+        "linkType": "User",
+        "id": "032j9He8sPiQreAtw9hJI4"
+      }
+    },
+    "urn": "crn:contentful:::content:spaces/ahmdpntb02m6/environments/stage/content_types/resourcesFields"
+  },
+  "displayField": "resourceTitle",
+  "name": "≡ƒöü Resources Fields",
+  "description": "",
+  "fields": [
+    {
+      "id": "resourceTitle",
+      "name": "Resource Title",
+      "type": "Symbol",
+      "localized": false,
+      "required": true,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "resourceDescription",
+      "name": "Resource Description",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "resourceCardImage",
+      "name": "Resource Card Image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "resourceBannerImage",
+      "name": "Resource Banner Image",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "image"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "timeOverride",
+      "name": "Time Override",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "resourceDocument",
+      "name": "Resource Document",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "attachment",
+            "pdfdocument"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "resourceVideo",
+      "name": "Resource Video",
+      "type": "Link",
+      "localized": false,
+      "required": false,
+      "validations": [
+        {
+          "linkMimetypeGroup": [
+            "attachment",
+            "video"
+          ]
+        }
+      ],
+      "disabled": false,
+      "omitted": false,
+      "linkType": "Asset"
+    },
+    {
+      "id": "signup",
+      "name": "Signup",
+      "type": "Boolean",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "salesforceCampaignId",
+      "name": "Salesforce Campaign ID",
+      "type": "Symbol",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    },
+    {
+      "id": "resourceTranscript",
+      "name": "Resource Transcript",
+      "type": "Text",
+      "localized": false,
+      "required": false,
+      "validations": [],
+      "disabled": false,
+      "omitted": false
+    }
+  ]
+}

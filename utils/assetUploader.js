@@ -1,7 +1,7 @@
 import fs from "fs";
 
 const LOCALE = "en-US";
-const BASE_URL = process.env.BASE_URL || "https://assets-uat.btdevops.io";
+const BASE_URL = process.env.S3_BASE_URL || process.env.BASE_URL || "https://assets.beyondtrust.com";
 
 // Cache: asset title/filename → Contentful asset ID (avoid duplicates)
 const uploadedAssetCache = new Map();

@@ -4,13 +4,16 @@ import { COMPONENTS } from "./registry.js";
 import { setSectionsOnPage, getOrCreatePage, publishPage } from "./handlers/pageHandler.js";
 import { migratePeople } from "./handlers/peopleHandler.js";
 import { migrateQuotes } from "./handlers/quoteHandler.js";
+import { migrateResources } from "./handlers/resourceHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import { loadAssetMetadata, processAssets, loadWistiaData, prePopulateAssetCache } from "./utils/assetUploader.js";
 import { buildUrlMap } from "./utils/contentfulHelpers.js";
+import { loadCategories } from "./utils/categoryLoader.js";
+import { loadTagMapping } from "./utils/tagHandler.js";
 
 const isDryRun = false; // Set to true to simulate migration without making changes
-const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json", "./data/quote-assets.json"]; // GraphQL asset metadata
+const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json", "./data/quote-assets.json", "./data/resource-assets.json"]; // GraphQL asset metadata
 
 /* ---------------------------------------------------------
    CLI args: node index.js [--from N] [--to N] [--dry]
@@ -57,10 +60,15 @@ const DATA_SOURCES = [
   //   label: "People CPT",
   //   isPeople: true
   // },
+  // {
+  //   file: "./data/company-quotes.json",
+  //   label: "Company Quotes",
+  //   isQuotes: true
+  // },
   {
-    file: "./data/company-quotes.json",
-    label: "Company Quotes",
-    isQuotes: true
+    file: "./data/resources-cpt.json",
+    label: "Resources CPT",
+    isResources: true
   }
 ];
 
@@ -69,6 +77,8 @@ async function run() {
   if (env) await prePopulateAssetCache(env);
 
   buildUrlMap(); // Build ID -> URL lookup map
+  loadCategories(); // Load general-categories.json
+  loadTagMapping(); // Load data/tags.json
 
   const summary = {
     processed: 0,
@@ -281,6 +291,10 @@ async function run() {
 
     if (source.isQuotes) {
       await migrateQuotes(env, batchData, contentfulAssetMap, targetIndices, totalPages);
+    }
+
+    if (source.isResources) {
+      await migrateResources(env, batchData, contentfulAssetMap, targetIndices, totalPages);
     }
   }
 

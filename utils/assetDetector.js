@@ -6,7 +6,11 @@ export function extractAssets(obj, assetMap = new Map()) {
 
   for (const [key, value] of Object.entries(obj)) {
     // Check for asset arrays (image, video, pdf, etc.)
-    if (Array.isArray(value) && ["image", "video", "pdf", "document", "personsPhoto", "logo", "quoteLogo"].includes(key)) {
+    if (Array.isArray(value) && [
+      "image", "video", "pdf", "document", "personsPhoto", "logo", "quoteLogo",
+      "resourceCardImage", "resourceBannerImage", "resourceBannerBackground",
+      "resourceDocument", "resourceVideo", "companyLogo", "resourceCompanyLogo"
+    ].includes(key)) {
       value.forEach(id => {
         if (typeof id === "number" || (typeof id === "string" && !isNaN(id))) {
           assetMap.set(String(id), { type: key, field: key });
