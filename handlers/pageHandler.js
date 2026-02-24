@@ -100,6 +100,11 @@ export async function getOrCreateSeo(env, pageData, assetMap = null) {
     metaDescription = DEFAULT_DESCRIPTION;
   }
 
+  // Truncate if exceeds the Contentful validation limit of 256 characters
+  if (metaDescription.length > 256) {
+    metaDescription = metaDescription.substring(0, 253) + "...";
+  }
+
   const canonicalUrl = cleanVal(seoData.canonicalUrl);
   const ogTitle = cleanVal(seoData.ogTitle);
   const ogDescription = cleanVal(seoData.ogDescription);
