@@ -33,10 +33,17 @@ export async function migrateResources(env, resourceData, assetMap = null, targe
 
         // Try to refine type from General Categories (Content Type group - parent 1836820)
         if (item.generalCategories) {
+            const validTypes = ["Resources", "Case Studies", "Competitor Comparisons", "Datasheets", "Infographics", "Videos", "Whitepapers", "Webinars"];
             for (const catId of item.generalCategories) {
                 const cat = getCategory(catId);
                 if (cat && cat.parentId === 1836820) {
-                    typeLabel = cat.title;
+                    let catTitle = cat.title.replace(/&amp;/g, '&');
+                    if (catTitle === "Research & Reports") {
+                        catTitle = "Whitepapers"; // Fallback mapping for missing dropdown option
+                    }
+                    if (validTypes.includes(catTitle)) {
+                        typeLabel = catTitle;
+                    }
                     break;
                 }
             }
@@ -274,7 +281,8 @@ export async function migrateResources(env, resourceData, assetMap = null, targe
             // 5. Build Environment Tags metadata
             if (item.tags) {
                 const contentfulTags = await processTags(env, item.tags);
-                metadata.tags = contentfulTags;
+                // Contentful has a limit of 100 tags per entry
+                metadata.tags = contentfulTags.slice(0, 100);
             }
 
             // Cleanup empty metadata
