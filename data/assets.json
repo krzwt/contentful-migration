@@ -2202,6 +2202,15 @@
         "mimeType": "image/png",
         "width": 695,
         "height": 338
+      },
+      {
+        "id": "1045512",
+        "title": "City of Dothan Alabama",
+        "url": "https://assets-uat.btdevops.io/assets/images/resource-cards/City-of-Dothan-Alabama.jpg",
+        "filename": "City-of-Dothan-Alabama.jpg",
+        "mimeType": "image/jpeg",
+        "width": 1900,
+        "height": 500
       }
     ]
   }

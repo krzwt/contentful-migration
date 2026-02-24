@@ -1,6 +1,7 @@
 import fs from "fs";
 
 let tagMapping = new Map();
+let tagCreationLimitReached = false;
 
 /**
  * Loads a mapping of Craft Tag ID -> Tag Name
@@ -83,16 +84,24 @@ export async function processTags(env, craftTagIds) {
         }
 
         if (!tag) {
+            if (tagCreationLimitReached) {
+                console.warn(`   ⚠️ Tag limit reached. Skipping creation of: "${tagName}" (${tagId})`);
+                continue;
+            }
             console.log(`   ✨ Creating new Environment Tag: "${tagName}" (${tagId})`);
             try {
                 tag = await env.createTag(tagId, tagName);
             } catch (err) {
-                const isConflict = String(err.status) === "409" || String(err.message || "").includes("409") || String(err.message || "").includes("already exists");
-                if (isConflict) {
+                const errStr = String(err.message || "") + JSON.stringify(err);
+                if (errStr.includes("409") || errStr.includes("already exists")) {
                     // Fallback: fetch it if creation failed due to race condition or pagination gap
                     tag = await env.getTag(tagId);
+                } else if (errStr.includes("usageExceeded") || errStr.includes("403")) {
+                    console.warn(`   🛑 Tag usage limit reached. Stopping further tag creations.`);
+                    tagCreationLimitReached = true;
+                    continue; // Skip adding this tag to the content
                 } else {
-                    console.error(`   🛑 Failed to create tag ${tagId}:`, err.message || "409 Conflict");
+                    console.error(`   🛑 Failed to create tag ${tagId}:`, err.message || err);
                     continue;
                 }
             }
