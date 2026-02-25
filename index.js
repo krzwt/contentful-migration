@@ -35,15 +35,15 @@ const effectiveDryRun = isDryRun || cliDryRun;
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
 const DATA_SOURCES = [
+  {
+    file: "./data/standalone-content.json",
+    pageContentType: "newStandaloneContent",
+    label: "Standalone Content"
+  },
   // {
   //   file: "./data/standalone-conversion.json",
   //   pageContentType: "newStandaloneConversion",
   //   label: "Standalone Conversion"
-  // },
-  // {
-  //   file: "./data/standalone-content.json",
-  //   pageContentType: "newStandaloneContent",
-  //   label: "Standalone Content"
   // },
   // {
   //   file: "./data/standalone-microsite.json",
@@ -65,11 +65,11 @@ const DATA_SOURCES = [
   //   label: "Company Quotes",
   //   isQuotes: true
   // },
-  {
-    file: "./data/resources-cpt.json",
-    label: "Resources CPT",
-    isResources: true
-  }
+  // {
+  //   file: "./data/resources-cpt.json",
+  //   label: "Resources CPT",
+  //   isResources: true
+  // }
 ];
 
 async function run() {
@@ -86,7 +86,8 @@ async function run() {
     created: 0,
     skipped: [],
     missingMappings: new Map(), // type -> fields[]
-    missingAssetMetadata: []
+    missingAssetMetadata: [],
+    missingResources: new Set()
   };
 
   // Load asset metadata
@@ -158,14 +159,37 @@ async function run() {
 
     // lookupOnly=true: just find existing assets by title (no upload/wait)
     // Assets should already be uploaded via: npm run assets
-    const { assetMap: contentfulAssetMap, missingIds } = await processAssets(env, assetIds, assetMetadata, effectiveDryRun, true);
+    const { assetMap: contentfulAssetMap, missingIds } = await processAssets(env, assetIds, assetMetadata, effectiveDryRun, true, summary);
     summary.missingAssetMetadata.push(...missingIds);
 
     const totalPages = data.length;
+    // Load the JSON as raw text for preserving key order (JS sorts numeric keys)
+    const rawFileContent = fs.readFileSync(source.file, "utf8");
+
     if (source.pageContentType) {
       const displayTotal = targetIndices[targetIndices.length - 1] + 1;
       for (let i = 0; i < batchData.length; i++) {
         const pageData = batchData[i];
+
+        // Helper to find original order of keys in the raw JSON file
+        const getOrderedKeys = (fieldName, obj) => {
+          const ids = Object.keys(obj);
+          if (ids.length <= 1) return ids;
+
+          // Find page and field segment in raw text
+          const pId = String(pageData.id);
+          const pIdx = rawFileContent.indexOf(`"id": ${pId}`);
+          const fIdx = rawFileContent.indexOf(`"${fieldName}":`, pIdx);
+          const nextPIdx = rawFileContent.indexOf('"id":', fIdx + 20);
+          const segment = rawFileContent.substring(fIdx, nextPIdx === -1 ? undefined : nextPIdx);
+
+          return ids.sort((a, b) => {
+            const posA = segment.indexOf(`"${a}": {`);
+            const posB = segment.indexOf(`"${b}": {`);
+            return posA - posB;
+          });
+        };
+
         const pageNum = targetIndices[i] + 1;
         console.log(`\n➡️ [${pageNum} / ${displayTotal}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
         const { slug, title, uri } = pageData;
@@ -186,14 +210,11 @@ async function run() {
           }
         } else {
           pageEntry = await getOrCreatePage(env, {
+            ...pageData,
             title,
             slug: fullSlug,
-            id: pageData.id,
-            parentId: pageData.parentId,
-            seoMetaTags: pageData.seoMetaTags,
-            status: pageData.status,
-            enabled: pageData.enabled
           }, source.pageContentType, data, contentfulAssetMap);
+
           if (!pageEntry) {
             console.error(`🛑 Skipping page "${title}" because page entry could not be created/found.`);
             continue;
@@ -212,8 +233,9 @@ async function run() {
 
         for (const fieldKey of componentFields) {
           const components = pageData[fieldKey];
+          const orderedIds = getOrderedKeys(fieldKey, components);
 
-          for (const blockId in components) {
+          for (const blockId of orderedIds) {
             const block = components[blockId];
             if (!block.enabled) continue;
 
@@ -243,7 +265,8 @@ async function run() {
                   env,
                   { id: blockId, ...fields },
                   config.mapping,
-                  contentfulAssetMap
+                  contentfulAssetMap,
+                  summary
                 );
                 if (entryId) {
                   heroEntry = await env.getEntry(entryId);
@@ -259,12 +282,17 @@ async function run() {
                     label: fields.label || fields.ctaLinkText,
                     variation: type
                   },
-                  contentfulAssetMap
+                  contentfulAssetMap,
+                  summary
                 );
               }
 
               if (heroEntry) {
-                sectionEntries.push(heroEntry);
+                if (Array.isArray(heroEntry)) {
+                  sectionEntries.push(...heroEntry);
+                } else {
+                  sectionEntries.push(heroEntry);
+                }
               }
             } catch (err) {
               console.error(`❌ Error processing ${type} (${blockId}):`, err.message);
@@ -286,15 +314,15 @@ async function run() {
     }
 
     if (source.isPeople) {
-      await migratePeople(env, batchData, contentfulAssetMap, targetIndices, totalPages);
+      await migratePeople(env, batchData, contentfulAssetMap, targetIndices, totalPages, summary);
     }
 
     if (source.isQuotes) {
-      await migrateQuotes(env, batchData, contentfulAssetMap, targetIndices, totalPages);
+      await migrateQuotes(env, batchData, contentfulAssetMap, targetIndices, totalPages, summary);
     }
 
     if (source.isResources) {
-      await migrateResources(env, batchData, contentfulAssetMap, targetIndices, totalPages);
+      await migrateResources(env, batchData, contentfulAssetMap, targetIndices, totalPages, summary);
     }
   }
 
@@ -305,6 +333,11 @@ async function run() {
   if (summary.missingAssetMetadata.length > 0) {
     console.log("\n⚠️  MISSING ASSET METADATA (Add these to assets.json):");
     console.log(`   IDs: ${summary.missingAssetMetadata.join(", ")}`);
+  }
+
+  if (summary.missingResources.size > 0) {
+    console.log("\n⚠️  MISSING RESOURCE ENTRIES (Skipped during migration):");
+    console.log(`   IDs: ${Array.from(summary.missingResources).join(", ")}`);
   }
 
   if (summary.missingMappings.size > 0) {

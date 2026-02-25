@@ -2211,6 +2211,153 @@
         "mimeType": "image/jpeg",
         "width": 1900,
         "height": 500
+      },
+      {
+        "id": "1172014",
+        "title": "Stages of identity and access management maturity",
+        "url": "https://assets-uat.btdevops.io/assets/documents/Stages-of-identity-and-access-management-maturity.png",
+        "filename": "Stages-of-identity-and-access-management-maturity.png",
+        "mimeType": "image/png",
+        "width": 800,
+        "height": 333
+      },
+      {
+        "id": "1098309",
+        "title": "Remote support icon",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/remote-support-icon.svg",
+        "filename": "remote-support-icon.svg",
+        "mimeType": "image/svg+xml",
+        "width": 50,
+        "height": 50
+      },
+      {
+        "id": "1096977",
+        "title": "Pra icon",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/pra-icon.svg",
+        "filename": "pra-icon.svg",
+        "mimeType": "image/svg+xml",
+        "width": 50,
+        "height": 50
+      },
+      {
+        "id": "501225",
+        "title": "VPN",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/VPN.svg",
+        "filename": "VPN.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501174",
+        "title": "Session Management",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Session-Management.svg",
+        "filename": "Session-Management.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501172",
+        "title": "Reporting",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Reporting.svg",
+        "filename": "Reporting.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501171",
+        "title": "Remote Access",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Remote-Access.svg",
+        "filename": "Remote-Access.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501158",
+        "title": "Integration",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Integration.svg",
+        "filename": "Integration.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501157",
+        "title": "Infrastructure",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Infrastructure.svg",
+        "filename": "Infrastructure.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501149",
+        "title": "Efficiency",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Efficiency.svg",
+        "filename": "Efficiency.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501137",
+        "title": "Directories",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Directories.svg",
+        "filename": "Directories.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501114",
+        "title": "Customization",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Customization.svg",
+        "filename": "Customization.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501110",
+        "title": "Credentials 3",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Credentials_3.svg",
+        "filename": "Credentials_3.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501108",
+        "title": "Credentials 1",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Credentials_1.svg",
+        "filename": "Credentials_1.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "501091",
+        "title": "Audit 1",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Audit_1.svg",
+        "filename": "Audit_1.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
+        "id": "2366917",
+        "title": "Fed RAMP Authorized 2",
+        "filename": "FedRAMP-Authorized-2.png",
+        "url": "https://assets.beyondtrust.com/assets/images/FedRAMP-Authorized-2.png",
+        "kind": "image",
+        "mimeType": "image/png",
+        "width": 410,
+        "height": 120,
+        "size": "20000",
+        "extension": "png"
       }
     ]
   }

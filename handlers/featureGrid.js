@@ -3,13 +3,13 @@
  * Craft: headingSmall, subheadingSmall, featureGrid (nested items with heading, body, icon, ctaLink)
  * Contentful: featureGrid { blockId, blockName, sectionTitle, description, cta, addItem: [featureGridItem] }
  */
-import { upsertEntry, upsertSectionTitle, upsertCta, makeLink, parseCraftLink } from "../utils/contentfulHelpers.js";
+import { upsertEntry, upsertSectionTitle, upsertCta, makeLink, parseCraftLink, ensureAssetPublished } from "../utils/contentfulHelpers.js";
 import { convertHtmlToRichText } from "../utils/richText.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "featureGrid";
 
-export async function createOrUpdateFeatureGrid(env, blockData, assetMap = null) {
+export async function createOrUpdateFeatureGrid(env, blockData, assetMap = null, summary = null) {
     try { await env.getContentType(CONTENT_TYPE); } catch (err) {
         console.warn(`   ⚠ Content type "${CONTENT_TYPE}" not found: ${err.message}. Skipping.`);
         return null;
@@ -51,9 +51,16 @@ export async function createOrUpdateFeatureGrid(env, blockData, assetMap = null)
         if (itemCta) itemFields.cta = { [LOCALE]: makeLink(itemCta.sys.id) };
 
         if (f.icon?.length && assetMap) {
-            const assetInfo = assetMap.get(String(f.icon[0]));
-            if (assetInfo) {
-                itemFields.icon = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } } };
+            const assetId = String(f.icon[0]);
+            const assetInfo = assetMap.get(assetId);
+            if (assetInfo && assetInfo.id) {
+                const isReady = await ensureAssetPublished(env, assetInfo.id);
+                if (isReady) {
+                    itemFields.icon = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } } };
+                } else {
+                    console.warn(`   ⚠️ Skipping missing icon ${assetInfo.id} for Feature Grid item`);
+                    if (summary) summary.missingAssetMetadata.push(assetId);
+                }
             }
         }
 

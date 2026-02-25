@@ -185,31 +185,31 @@ async function getOrCreatePageSettings(env, pageData, allPages, pageContentType 
   try {
     const fields = {
       pageSetting: { [LOCALE]: `Page Settings: ${pageData.title}` },
-      enableSidenav: { [LOCALE]: false }
+      enableSidenav: { [LOCALE]: !!pageData.enableSidenav },
+      mainNavigationSwitch: { [LOCALE]: pageData.mainNavigationSwitch !== false },
+      mainNavigationDefaultCtAs: { [LOCALE]: pageData.mainNavigationDefaultCtas !== false },
+      mainNavigationSearchSwitch: { [LOCALE]: pageData.mainNavigationSearchSwitch !== false },
+      mainNavigationLanguageSwitch: { [LOCALE]: pageData.mainNavigationLanguageSwitch !== false },
+      breadcrumbSwitch: { [LOCALE]: pageData.breadcrumbSwitch !== false },
+      enableSidebarForm: { [LOCALE]: !!pageData.enableSidebarForm }
     };
 
-    // If this page has a parentId, create/find the parent `page` and link it
+    // Link parent page
     if (pageData.parentId) {
       const parentEntryId = await getOrCreateParentPage(env, pageData.parentId, allPages, pageContentType);
       if (parentEntryId) {
         fields.parentPage = {
-          [LOCALE]: {
-            sys: { type: "Link", linkType: "Entry", id: parentEntryId }
-          }
+          [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: parentEntryId } }
         };
-        console.log(`   🔗 Settings: linked parent page (${parentEntryId})`);
       }
     }
 
-    // Create SEO entry and link it
+    // Link SEO
     const seoEntry = await getOrCreateSeo(env, pageData, assetMap);
     if (seoEntry) {
       fields.seo = {
-        [LOCALE]: {
-          sys: { type: "Link", linkType: "Entry", id: seoEntry.sys.id }
-        }
+        [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: seoEntry.sys.id } }
       };
-      console.log(`   🔗 Settings: linked SEO (${seoEntry.sys.id})`);
     }
 
     let entry;
@@ -217,12 +217,8 @@ async function getOrCreatePageSettings(env, pageData, allPages, pageContentType 
       entry = await env.getEntry(settingsId);
       console.log(`   🔄 Updating page settings: ${settingsId}`);
 
-      // Update only the fields we care about, preserving others
-      entry.fields.pageSetting = fields.pageSetting;
-      entry.fields.enableSidenav = fields.enableSidenav;
-      if (fields.parentPage) entry.fields.parentPage = fields.parentPage;
-      if (fields.seo) entry.fields.seo = fields.seo;
-
+      // Merge fields
+      entry.fields = { ...entry.fields, ...fields };
       entry = await entry.update();
     } catch {
       console.log(`   ✨ Creating page settings: ${settingsId}`);

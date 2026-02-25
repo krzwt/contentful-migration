@@ -87,7 +87,7 @@ export function parseCraftLink(linkStr) {
 /**
  * Upserts a 'cta' entry
  */
-export async function upsertCta(env, id, label, url, shouldPublish = true) {
+export async function upsertCta(env, id, label, url, shouldPublish = true, linkedId = null) {
     let safeUrl = url || "";
     if (safeUrl.length > 255) {
         console.warn(`   ⚠️ URL for cta-${id} exceeds 255 chars. Truncating...`);
@@ -97,8 +97,51 @@ export async function upsertCta(env, id, label, url, shouldPublish = true) {
     const fields = {
         label: { [LOCALE]: label || "" },
         url: { [LOCALE]: safeUrl },
-        target: { [LOCALE]: "_self (Same Tab)" }
+        target: { [LOCALE]: safeUrl.startsWith("http") ? "_blank (New Tab)" : "_self (Same Tab)" }
     };
+
+    // If we have a linkedId, try to find the actual page entry in Contentful to create a Reference link
+    if (linkedId && env) {
+        try {
+            // Search across the main page content types
+            const pageTypes = [
+                "newStandaloneContent",
+                "newStandaloneMicrosite",
+                "newStandaloneThankYou",
+                "newStandaloneConversion",
+                "peopleCpt",
+                "resourceWebinarsCpt",
+                "resourcesCpt",
+                "page"
+            ];
+
+            const queries = pageTypes.map(cpt =>
+                env.getEntries({
+                    content_type: cpt,
+                    "fields.entryId": String(linkedId),
+                    limit: 1
+                }).catch(() => ({ items: [] }))
+            );
+
+            const results = await Promise.all(queries);
+            let pageEntry = null;
+            for (const res of results) {
+                if (res.items && res.items.length > 0) {
+                    pageEntry = res.items[0];
+                    break;
+                }
+            }
+
+            if (pageEntry) {
+                console.log(`   🔗 Linked CTA ${id} to page entry: ${pageEntry.sys.id} (entryId: ${linkedId})`);
+                fields.pageLink = { [LOCALE]: makeLink(pageEntry.sys.id) };
+            } else {
+                console.log(`   ℹ️ Could not find page entry with entryId: ${linkedId} for CTA ${id}. Using URL fallback.`);
+            }
+        } catch (err) {
+            console.warn(`   ⚠️ Error resolving linkedId ${linkedId} for CTA ${id}: ${err.message}`);
+        }
+    }
 
     return await upsertEntry(env, "cta", `cta-${id}`, fields, shouldPublish);
 }
@@ -107,7 +150,7 @@ export async function upsertCta(env, id, label, url, shouldPublish = true) {
  * Ensure a Contentful asset is published before linking it.
  * If it's Draft, try to publish it. Returns true if published.
  */
-async function ensureAssetPublished(env, assetId) {
+export async function ensureAssetPublished(env, assetId) {
     if (!assetId) return false;
     try {
         const asset = await env.getAsset(assetId);

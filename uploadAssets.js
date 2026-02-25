@@ -44,23 +44,43 @@ const DATA_SOURCES = [
     }
 ];
 
+const args = process.argv.slice(2);
+const idArg = args.indexOf("--id") !== -1 ? args[args.indexOf("--id") + 1] : null;
+const fileArg = args.indexOf("--file") !== -1 ? args[args.indexOf("--file") + 1] : null;
+
 async function run() {
     const env = await getEnvironment();
     await prePopulateAssetCache(env);
-    const assetMetadata = loadAssetMetadata(ASSET_METADATA_FILES);
-    loadWistiaData(); // Load data/wistia.json if exists
-    console.log(`📦 Loaded ${assetMetadata.size} asset metadata entries\n`);
 
-    // Collect ALL unique asset IDs across all sources
+    // Collect ALL unique asset IDs
     const allAssetIds = new Set();
+    let assetMetadata;
 
-    for (const source of DATA_SOURCES) {
-        const data = JSON.parse(fs.readFileSync(source.file, "utf-8"));
-        console.log(`📂 Scanning: ${source.label} (${data.length} pages)`);
+    if (idArg) {
+        // Mode 1: Specific IDs
+        console.log(`🎯 Targeted ID mode: ${idArg}`);
+        idArg.split(",").forEach(id => allAssetIds.add(id.trim()));
+        assetMetadata = loadAssetMetadata(ASSET_METADATA_FILES);
+    } else if (fileArg) {
+        // Mode 2: Specific Metadata File (Fastest)
+        console.log(`🎯 Metadata file mode: ${fileArg}`);
+        assetMetadata = loadAssetMetadata([fileArg]);
+        assetMetadata.forEach((val, id) => allAssetIds.add(String(id)));
+    } else {
+        // Mode 3: Full Scan (Original behavior)
+        assetMetadata = loadAssetMetadata(ASSET_METADATA_FILES);
+        loadWistiaData(); // Load data/wistia.json if exists
+        console.log(`📦 Loaded ${assetMetadata.size} asset metadata entries\n`);
 
-        for (const pageData of data) {
-            const pageAssets = extractAssets(pageData);
-            pageAssets.forEach((val, assetId) => allAssetIds.add(String(assetId)));
+        for (const source of DATA_SOURCES) {
+            if (!fs.existsSync(source.file)) continue;
+            const data = JSON.parse(fs.readFileSync(source.file, "utf-8"));
+            console.log(`📂 Scanning: ${source.label} (${data.length} pages)`);
+
+            for (const pageData of data) {
+                const pageAssets = extractAssets(pageData);
+                pageAssets.forEach((val, assetId) => allAssetIds.add(String(assetId)));
+            }
         }
     }
 

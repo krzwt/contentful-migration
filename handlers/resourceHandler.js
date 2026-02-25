@@ -8,7 +8,7 @@ import { genericComponentHandler } from "./genericComponent.js";
 /**
  * Main function to migrate Resource entries
  */
-export async function migrateResources(env, resourceData, assetMap = null, targetIndices = null, totalPages = null) {
+export async function migrateResources(env, resourceData, assetMap = null, targetIndices = null, totalPages = null, summary = null) {
     const total = targetIndices ? targetIndices[targetIndices.length - 1] + 1 : (totalPages || resourceData.length);
     console.log(`\n📚 Starting Resource Migration (${resourceData.length} entries)...`);
 

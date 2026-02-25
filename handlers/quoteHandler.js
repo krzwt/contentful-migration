@@ -6,7 +6,7 @@ const CONTENT_TYPE = "quoteItem";
 /**
  * Handler for standalone quote entries (quoteItem)
  */
-export async function migrateQuotes(env, quotesData, assetMap = null, targetIndices = null, totalPages = null) {
+export async function migrateQuotes(env, quotesData, assetMap = null, targetIndices = null, totalPages = null, summary = null) {
     const total = targetIndices ? targetIndices[targetIndices.length - 1] + 1 : (totalPages || quotesData.length);
     console.log(`\n📰 Starting Company Quotes Migration (${quotesData.length} entries)...`);
 

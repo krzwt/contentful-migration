@@ -337,7 +337,7 @@ export async function lookupAsset(env, assetId, metadata) {
  * Process all assets for migration
  * @param {boolean} lookupOnly - If true, only look up existing assets (no upload/wait)
  */
-export async function processAssets(env, assetIds, assetMetadata, isDryRun = false, lookupOnly = false) {
+export async function processAssets(env, assetIds, assetMetadata, isDryRun = false, lookupOnly = false, summary = null) {
   const contentfulAssetMap = new Map();
   const missingIds = [];
 
@@ -356,8 +356,22 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
     const metadata = assetMetadata.get(String(craftAssetId));
 
     if (!metadata) {
-      console.warn(`   ⚠ No metadata for asset ID: ${craftAssetId}`);
-      missingIds.push(craftAssetId);
+      // PROACTIVE FIX: Even if metadata is missing from our JSON files, the asset might 
+      // already exist in Contentful with our predictable ID format (asset-ID).
+      // We'll attempt to link to it blindly.
+      const predictableId = `asset-${craftAssetId}`;
+      console.log(`   🔗 No metadata for ${craftAssetId}, attempting blind link to ${predictableId}`);
+
+      contentfulAssetMap.set(String(craftAssetId), {
+        id: predictableId,
+        mimeType: "image/unknown" // Fallback
+      });
+
+      if (summary && summary.missingAssetMetadata) {
+        summary.missingAssetMetadata.push(craftAssetId);
+      } else {
+        missingIds.push(craftAssetId);
+      }
       continue;
     }
 

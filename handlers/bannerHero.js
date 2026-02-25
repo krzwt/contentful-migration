@@ -11,12 +11,12 @@ function mapVariant(variation) {
   switch (variation) {
     case "bannerSlim":
     case "slimBanner":
-    case "bannerHero":
       return "Banner Slim";
-    case "bannerMediaRight":
-      return "Banner Media Right";
+    case "bannerHero":
     case "bannerMediaCenter":
       return "Banner Media Center";
+    case "bannerMediaRight":
+      return "Banner Media Right";
     default:
       return "Banner Slim";
   }

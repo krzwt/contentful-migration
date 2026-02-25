@@ -4,7 +4,7 @@ import { upsertEntry, makeLink } from "../utils/contentfulHelpers.js";
 /**
  * Main function to migrate People entries
  */
-export async function migratePeople(env, peopleData, assetMap = null, targetIndices = null, totalPages = null) {
+export async function migratePeople(env, peopleData, assetMap = null, targetIndices = null, totalPages = null, summary = null) {
     const total = targetIndices ? targetIndices[targetIndices.length - 1] + 1 : (totalPages || peopleData.length);
     console.log(`\n👥 Starting People Migration (${peopleData.length} entries)...`);
 

@@ -1,5 +1,10 @@
 import { convertHtmlToRichText } from "../utils/richText.js";
-import { upsertCta, upsertSectionTitle } from "../utils/contentfulHelpers.js";
+import { upsertCta, upsertSectionTitle, parseCraftLink, resolveInternalUrl } from "../utils/contentfulHelpers.js";
+import { createOrUpdateFiftyFifty } from "./fiftyFifty.js";
+import { createOrUpdateContentCta } from "./contentCta.js";
+import { createOrUpdateIconGrid } from "./iconGrid.js";
+import { createOrUpdateMediaBlock } from "./mediaBlock.js";
+
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "contentBlock";
@@ -7,7 +12,7 @@ const CONTENT_TYPE = "contentBlock";
 /**
  * Custom handler for contentBlock (Overview Content Standalone)
  */
-export async function createOrUpdateContentBlock(env, blockData, assetMap = null) {
+export async function createOrUpdateContentBlock(env, blockData, assetMap = null, summary = null) {
     // 1. Verify Content Type exists
     try {
         await env.getContentType(CONTENT_TYPE);
@@ -40,23 +45,16 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
 
     // 2. CTA
     let ctaEntry = null;
-    const label = blockData.label || blockData.ctaText || "";
-    const url = (() => {
-        const rawLink = blockData.ctaLink;
-        if (!rawLink) return "";
-        if (typeof rawLink === "string" && rawLink.startsWith("{")) {
-            try {
-                const parsed = JSON.parse(rawLink);
-                return parsed.linkedUrl || parsed.url || "";
-            } catch (e) {
-                return rawLink;
-            }
-        }
-        return String(rawLink);
-    })();
+    const linkInfo = parseCraftLink(blockData.ctaLink);
+    const label = blockData.label || blockData.ctaText || linkInfo.label || "";
+    let url = linkInfo.url;
 
-    if (label || url) {
-        ctaEntry = await upsertCta(env, blockData.blockId, label, url);
+    if (!url && linkInfo.linkedId) {
+        url = resolveInternalUrl(linkInfo.linkedId) || "";
+    }
+
+    if (label || url || linkInfo.linkedId) {
+        ctaEntry = await upsertCta(env, blockData.blockId, label, url, true, linkInfo.linkedId);
     }
 
     /* -----------------------------
@@ -97,5 +95,39 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
         entry = await entry.publish();
     }
 
-    return entry;
+    const results = [entry];
+
+    // Process nested subsections (e.g. contentWithAsset -> fiftyFiftyComponent)
+    if (blockData.contentSubsections || blockData.contentSubSections) {
+        const subsections = blockData.contentSubsections || blockData.contentSubSections;
+        if (typeof subsections === "object" && !Array.isArray(subsections)) {
+            for (const [subId, subData] of Object.entries(subsections)) {
+                if (!subData.enabled) continue;
+
+                const subType = subData.type;
+                const subFields = subData.fields || subData;
+                let subEntry = null;
+
+                if (subType === "contentWithAsset") {
+                    console.log(`✅ Detected nested contentWithAsset (ID: ${subId}) inside contentBlock ${blockData.blockId}`);
+                    subEntry = await createOrUpdateFiftyFifty(env, subId, subFields, assetMap, summary);
+                } else if (subType === "cta") {
+                    console.log(`✅ Detected nested cta (ID: ${subId}) inside contentBlock ${blockData.blockId} -> contentCta`);
+                    subEntry = await createOrUpdateContentCta(env, subId, subFields, summary);
+                } else if (subType === "grid") {
+                    console.log(`✅ Detected nested grid (ID: ${subId}) inside contentBlock ${blockData.blockId} -> iconGrid`);
+                    subEntry = await createOrUpdateIconGrid(env, subId, subFields, assetMap, summary);
+                } else if (subType === "fullWidthAsset") {
+                    console.log(`✅ Detected nested fullWidthAsset (ID: ${subId}) inside contentBlock ${blockData.blockId} -> mediaBlock`);
+                    subEntry = await createOrUpdateMediaBlock(env, subId, subFields, assetMap, summary);
+                }
+
+                if (subEntry) {
+                    results.push(subEntry);
+                }
+            }
+        }
+    }
+
+    return results;
 }

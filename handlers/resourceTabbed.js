@@ -1,30 +1,38 @@
 /**
  * Handler: resourceTabbed → resourceTabSection
  * Craft: headingSection, tabbedResources (nested type-based tabs with entry IDs)
- * Contentful: resourceTabSection { blockId, blockName, sectionTitle, resourceTabs: [resourceTab] }
- *
- * Note: Craft references entries by ID. Since we don't have the resource data here,
- * we create placeholder resourceTab entries with the tab label.
+ * Contentful: resourceTabSection { blockId, blockName, sectionTitle, resourceTabs, blogTab, documentsTab, videosTab, ... }
  */
 import { upsertEntry, upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
+import fs from "fs";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "resourceTabSection";
 
-// Map Craft tab types to labels
-const TAB_LABELS = {
-    documents: "Documents",
-    videos: "Videos",
-    webinars: "Webinars",
-    caseStudies: "Case Studies",
-    whitepapers: "Whitepapers",
-    datasheets: "Datasheets",
-    ebooks: "eBooks",
-    infographics: "Infographics",
-    blogs: "Blogs"
+// Load ID map to distinguish between resource and webinar (created by utils/create_id_map.js)
+let ID_MAP = {};
+try {
+    if (fs.existsSync('./data/resource_id_map.json')) {
+        ID_MAP = JSON.parse(fs.readFileSync('./data/resource_id_map.json', 'utf-8'));
+    }
+} catch (e) {
+    console.warn("   ⚠️ resource_id_map.json could not be loaded. Defaulting to resource-ID.");
+}
+
+// Map Craft tab types to Contentful field IDs
+const TAB_FIELD_MAP = {
+    documents: "documentsTab",
+    videos: "videosTab",
+    webinars: "webinarsTab",
+    blog: "blogTab",
+    blogs: "blogTab",
+    podcast: "podcastsTab",
+    podcasts: "podcastsTab",
+    events: "eventsTab",
+    media: "mediaTab"
 };
 
-export async function createOrUpdateResourceTabbed(env, blockData, assetMap = null) {
+export async function createOrUpdateResourceTabbed(env, blockData, assetMap = null, summary = null) {
     try { await env.getContentType(CONTENT_TYPE); } catch (err) {
         console.warn(`   ⚠ Content type "${CONTENT_TYPE}" not found: ${err.message}. Skipping.`);
         return null;
@@ -35,36 +43,63 @@ export async function createOrUpdateResourceTabbed(env, blockData, assetMap = nu
 
     const titleEntry = await upsertSectionTitle(env, blockId, heading);
 
-    const tabRefs = [];
     const tabbedData = blockData.tabbedResources || {};
-
-    for (const [tId, tab] of Object.entries(tabbedData)) {
-        if (typeof tab !== "object" || !tab.fields) continue;
-
-        const tabLabel = TAB_LABELS[tab.type] || tab.type || `Tab ${tId}`;
-        const entryIds = tab.fields?.entries || [];
-
-        const tabFields = {
-            tabLabel: { [LOCALE]: tabLabel }
-        };
-
-        // Note: Resource entries (entryIds) are external references.
-        // They would need to be linked if those resources exist in Contentful.
-        // For now, we log them.
-        if (entryIds.length) {
-            console.log(`   📋 Resource tab "${tabLabel}" references ${entryIds.length} entries: ${entryIds.join(", ")}`);
-        }
-
-        const tabEntry = await upsertEntry(env, "resourceTab", `rtab-${tId}`, tabFields);
-        if (tabEntry) tabRefs.push(makeLink(tabEntry.sys.id));
-    }
-
     const fields = {
         blockId: { [LOCALE]: blockId },
         blockName: { [LOCALE]: blockData.blockName || heading || "Resource Tabs" }
     };
+
     if (titleEntry) fields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
-    if (tabRefs.length) fields.resourceTabs = { [LOCALE]: tabRefs };
+
+    // Initialize arrays for all possible tab fields
+    const tabFields = [
+        "blogTab", "documentsTab", "videosTab",
+        "podcastsTab", "eventsTab", "webinarsTab", "mediaTab"
+    ];
+    tabFields.forEach(f => fields[f] = { [LOCALE]: [] });
+
+    for (const [tId, tab] of Object.entries(tabbedData)) {
+        if (typeof tab !== "object" || !tab.fields) continue;
+
+        const type = tab.type;
+        const entryIds = tab.fields?.entries || [];
+
+        if (entryIds.length) {
+            console.log(`   📋 Resource tab "${type}" references ${entryIds.length} entries: ${entryIds.join(", ")}`);
+
+            const targetField = TAB_FIELD_MAP[type];
+            if (!targetField) {
+                console.warn(`   ⚠️ Unknown tab type "${type}". Skipping.`);
+                continue;
+            }
+
+            for (const id of entryIds) {
+                const contentfulId = ID_MAP[id];
+                if (!contentfulId) {
+                    console.warn(`   ⚠️ Skipping unmapped entry ID ${id} in tab "${type}"`);
+                    if (summary) summary.missingResources.add(id);
+                    continue;
+                }
+
+                if (!fields[targetField]) {
+                    fields[targetField] = { [LOCALE]: [] };
+                }
+
+                fields[targetField][LOCALE].push(makeLink(contentfulId));
+            }
+        }
+    }
+
+    // Clean up empty fields and handle "max items" if needed
+    tabFields.forEach(f => {
+        if (fields[f][LOCALE].length === 0) {
+            delete fields[f];
+        } else if (fields[f][LOCALE].length > 6) {
+            console.warn(`   ⚠️ Field "${f}" has ${fields[f][LOCALE].length} items, which exceeds Contentful's limit of 6. Truncating.`);
+            fields[f][LOCALE] = fields[f][LOCALE].slice(0, 6);
+        }
+    });
 
     return await upsertEntry(env, CONTENT_TYPE, `restabs-${blockId}`, fields);
 }
+

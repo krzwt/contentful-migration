@@ -9,7 +9,8 @@ export function extractAssets(obj, assetMap = new Map()) {
     if (Array.isArray(value) && [
       "image", "video", "pdf", "document", "personsPhoto", "logo", "quoteLogo",
       "resourceCardImage", "resourceBannerImage", "resourceBannerBackground",
-      "resourceDocument", "resourceVideo", "companyLogo", "resourceCompanyLogo"
+      "resourceDocument", "resourceVideo", "companyLogo", "resourceCompanyLogo",
+      "icon", "background", "backgroundImage", "mobileImage", "desktopImage", "mainImage", "bannerImage", "asset"
     ].includes(key)) {
       value.forEach(id => {
         if (typeof id === "number" || (typeof id === "string" && !isNaN(id))) {
@@ -18,19 +19,11 @@ export function extractAssets(obj, assetMap = new Map()) {
       });
     }
 
-    // Check for entries array (linked content)
-    if (key === "entries" && Array.isArray(value)) {
-      value.forEach(id => {
-        if (typeof id === "number") {
-          assetMap.set(id, { type: "entry", field: "entries" });
-        }
-      });
-    }
-
     // Recurse into nested objects/arrays
     if (typeof value === "object") {
       extractAssets(value, assetMap);
     }
+
   }
 
   return assetMap;

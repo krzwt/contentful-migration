@@ -6,7 +6,7 @@ const LOCALE = "en-US";
  * Generic handler driven by mapping JSON
  * Works for text + richText fields (and can accept an optional asset map)
  */
-export async function genericComponentHandler(env, block, mapping, assetMap = null) {
+export async function genericComponentHandler(env, block, mapping, assetMap = null, summary = null) {
   const blockIdValue = String(block[mapping.idField] || "").trim();
   if (!blockIdValue) return null;
 

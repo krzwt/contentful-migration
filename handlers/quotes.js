@@ -18,9 +18,12 @@ export async function createOrUpdateQuotes(env, blockData, assetMap = null) {
         return null;
     }
 
-    const fields = blockData.fields || {};
-    const blockId = blockData.blockId || `quotes-${Date.now()}`;
-    const heading = fields.headingSection || fields.heading || "";
+    const fields = blockData || {};
+    const blockId = fields.blockId || `quotes-${Date.now()}`;
+
+    // Only use actual heading fields from Craft. Avoid using fields.heading 
+    // since index.js injects the page title as a fallback if it's empty.
+    const heading = fields.headingSection || fields.heading45 || "";
 
     // Build quoteItem entries from source IDs
     const quoteRefs = [];
