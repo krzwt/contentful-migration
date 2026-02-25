@@ -1,0 +1,18 @@
+{
+    "contentType": "contentBlock",
+    "idField": "id",
+    "fields": {
+        "blockId": {
+            "from": "id",
+            "type": "text"
+        },
+        "heading": {
+            "from": "headingSection",
+            "type": "text"
+        },
+        "body": {
+            "from": "tabbedResources",
+            "type": "richText"
+        }
+    }
+}

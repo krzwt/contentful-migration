@@ -35,3 +35,25 @@ logs/
 # Misc
 .cache/
 .parcel-cache/
+# data/
+debug_*
+check_*
+verify_*
+fix_*
+scan_*
+list_*
+dump_*
+read_*
+temp_*
+test_*
+*.tmp
+*.bak
+dump.json
+debug.json
+# data/
+# *.txt
+# *.json
+!package.json
+!package-lock.json
+!mappings/**/*.json
+!.agent/**/*.json

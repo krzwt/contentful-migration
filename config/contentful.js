@@ -1,7 +1,7 @@
 import contentful from "contentful-management";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({ override: true });
 
 export async function getEnvironment() {
   if (!process.env.CONTENTFUL_MANAGEMENT_TOKEN) {
@@ -15,6 +15,6 @@ export async function getEnvironment() {
   const space = await client.getSpace(process.env.CONTENTFUL_SPACE_ID);
 
   return await space.getEnvironment(
-    process.env.CONTENTFUL_ENV || "master"
+    process.env.CONTENTFUL_ENVIRONMENT || "stage"
   );
 }

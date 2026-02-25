@@ -1,0 +1,14 @@
+{
+    "contentType": "nonMarketingGetNotifiedForm",
+    "idField": "blockId",
+    "fields": {
+        "redirectUrl": {
+            "from": "redirectUrl",
+            "type": "text"
+        },
+        "email": {
+            "from": "email",
+            "type": "text"
+        }
+    }
+}

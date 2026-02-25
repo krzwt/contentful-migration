@@ -1,0 +1,25 @@
+{
+    "contentType": "ctaBlock",
+    "idField": "blockId",
+    "fields": {
+        "selectBackgroundColor": {
+            "from": "backgroundColor",
+            "type": "text"
+        },
+        "sectionTitle": {
+            "from": "headingSection",
+            "type": "text"
+        },
+        "ctaText": {
+            "from": [
+                "label",
+                "ctaText"
+            ],
+            "type": "text"
+        },
+        "ctaLink": {
+            "from": "ctaLink",
+            "type": "text"
+        }
+    }
+}
