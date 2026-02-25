@@ -4,6 +4,7 @@
  * Contentful: partnersLogosBlock { blockId, blockName, sectionTitle, logoList: [addPartnerLogo], gridSize, logoBackground }
  */
 import { upsertEntry, upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "partnersLogosBlock";
@@ -24,11 +25,22 @@ export async function createOrUpdateLogoList(env, blockData, assetMap = null) {
     const logoRefs = [];
     const logoData = blockData.logoList || {};
 
-    for (const [gId, group] of Object.entries(logoData)) {
+    const orderedGIds = getOrderedKeys(blockData.blockSegment, logoData);
+    for (const gId of orderedGIds) {
+        const group = logoData[gId];
         if (typeof group !== "object" || !group.fields) continue;
-        const logos = group.fields?.logos || {};
 
-        for (const [lId, logo] of Object.entries(logos)) {
+        // Extract group segment
+        const gIdx = blockData.blockSegment.indexOf(`"${gId}":`);
+        const nextGId = orderedGIds[orderedGIds.indexOf(gId) + 1];
+        const nextGIdx = nextGId ? blockData.blockSegment.indexOf(`"${nextGId}":`) : blockData.blockSegment.length;
+        const groupSegment = blockData.blockSegment.substring(gIdx, nextGIdx);
+
+        const logos = group.fields?.logos || {};
+        const orderedLogoIds = getOrderedKeys(groupSegment, logos);
+
+        for (const lId of orderedLogoIds) {
+            const logo = logos[lId];
             if (typeof logo !== "object" || !logo.fields) continue;
             const f = logo.fields;
 

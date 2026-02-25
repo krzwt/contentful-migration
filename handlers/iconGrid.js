@@ -1,4 +1,5 @@
 import { upsertEntry, upsertSectionTitle, upsertCta, makeLink, parseCraftLink, resolveInternalUrl } from "../utils/contentfulHelpers.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "iconGrid";
@@ -25,12 +26,13 @@ export async function createOrUpdateIconGrid(env, id, fields, assetMap, summary 
     const items = fields.item || fields.items || {};
     const itemLinks = [];
 
-    // Sort items if they are numeric keys (they usually are)
-    const itemKeys = Object.keys(items).sort((a, b) => {
-        // Fallback to insertion order if not numeric
-        if (isNaN(a) || isNaN(b)) return 0;
-        return parseInt(a) - parseInt(b);
-    });
+    // Use custom ordering utility if blockSegment is available
+    const itemKeys = fields.blockSegment
+        ? getOrderedKeys(fields.blockSegment, items)
+        : Object.keys(items).sort((a, b) => {
+            if (isNaN(a) || isNaN(b)) return 0;
+            return parseInt(a) - parseInt(b);
+        });
 
     for (const itemId of itemKeys) {
         const itemData = items[itemId];

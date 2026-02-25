@@ -1,4 +1,137 @@
 {
+  "sraTrialForm": {
+    "name": "📝 SRA Trial Form",
+    "description": "",
+    "displayField": "formName",
+    "fields": {
+      "formName": {
+        "name": "Form Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "selectForm": {
+        "name": "Select Form",
+        "type": "Link",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "siteForms"
+            ]
+          }
+        ]
+      },
+      "addProduct": {
+        "name": "Add Product",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "products"
+            ]
+          }
+        ]
+      },
+      "salesForceCampaignId": {
+        "name": "SalesForce Campaign ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "trialLength": {
+        "name": "Trial Length",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Standard 14 days",
+              "Month 30 days",
+              "Extended 45 days"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "asset": {
+    "name": "🌍 Asset",
+    "description": "",
+    "displayField": "internalName",
+    "fields": {
+      "internalName": {
+        "name": "Internal Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "assetType": {
+        "name": "Asset Type",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": true,
+        "validations": [
+          {
+            "in": [
+              "Image",
+              "Video",
+              "Video URL",
+              "JSON"
+            ]
+          }
+        ]
+      },
+      "mediaAsset": {
+        "name": "Media Asset (Image / Video / JSON)",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "attachment",
+              "image",
+              "video"
+            ]
+          }
+        ]
+      },
+      "videoUrl": {
+        "name": "Video URL",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "regexp": {
+              "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
+              "flags": null
+            }
+          }
+        ]
+      }
+    }
+  },
   "resourceTabSection": {
     "name": "🧩 Resource Tab Section",
     "description": "",
@@ -524,85 +657,6 @@
         "localized": false,
         "disabled": false,
         "validations": []
-      }
-    }
-  },
-  "sraTrialForm": {
-    "name": "📝 SRA Trial Form",
-    "description": "",
-    "displayField": "webFormHandler",
-    "fields": {
-      "webFormHandler": {
-        "name": "Web Form Handler",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Legacy Form",
-              "Trial Form - 3 Step (Redirect)",
-              "Trial Form - 3 Step (Modal)",
-              "Trial Form - Single (Modal)",
-              "Trial Form - Single (Show on Banner)"
-            ]
-          }
-        ]
-      },
-      "salesForceCampaignId": {
-        "name": "SalesForce Campaign ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "trialLength": {
-        "name": "Trial Length",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Standard 14 days",
-              "Month 30 days",
-              "Extended 45 days"
-            ]
-          }
-        ]
-      },
-      "addProduct": {
-        "name": "Add Product",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "products"
-            ]
-          }
-        ]
-      },
-      "selectForm": {
-        "name": "Select Form",
-        "type": "Link",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "siteForms"
-            ]
-          }
-        ]
       }
     }
   },
@@ -4740,70 +4794,6 @@
             "linkContentType": [
               "cta"
             ]
-          }
-        ]
-      }
-    }
-  },
-  "asset": {
-    "name": "🌍 Asset",
-    "description": "",
-    "displayField": "internalName",
-    "fields": {
-      "internalName": {
-        "name": "Internal Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "assetType": {
-        "name": "Asset Type",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": true,
-        "validations": [
-          {
-            "in": [
-              "Image",
-              "Video",
-              "Video URL",
-              "JSON"
-            ]
-          }
-        ]
-      },
-      "mediaAsset": {
-        "name": "Media Asset (Image / Video / JSON)",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "attachment",
-              "image",
-              "video"
-            ]
-          }
-        ]
-      },
-      "videoUrl": {
-        "name": "Video URL",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "regexp": {
-              "pattern": "^(ftp|http|https):\\/\\/(\\w+:{0,1}\\w*@)?(\\S+)(:[0-9]+)?(\\/|\\/([\\w#!:.?+=&%@!\\-/]))?$",
-              "flags": null
-            }
           }
         ]
       }

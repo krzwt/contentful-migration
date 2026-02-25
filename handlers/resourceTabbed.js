@@ -4,6 +4,7 @@
  * Contentful: resourceTabSection { blockId, blockName, sectionTitle, resourceTabs, blogTab, documentsTab, videosTab, ... }
  */
 import { upsertEntry, upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 import fs from "fs";
 
 const LOCALE = "en-US";
@@ -44,6 +45,8 @@ export async function createOrUpdateResourceTabbed(env, blockData, assetMap = nu
     const titleEntry = await upsertSectionTitle(env, blockId, heading);
 
     const tabbedData = blockData.tabbedResources || {};
+    const orderedTIds = getOrderedKeys(blockData.blockSegment, tabbedData);
+
     const fields = {
         blockId: { [LOCALE]: blockId },
         blockName: { [LOCALE]: blockData.blockName || heading || "Resource Tabs" }
@@ -58,7 +61,8 @@ export async function createOrUpdateResourceTabbed(env, blockData, assetMap = nu
     ];
     tabFields.forEach(f => fields[f] = { [LOCALE]: [] });
 
-    for (const [tId, tab] of Object.entries(tabbedData)) {
+    for (const tId of orderedTIds) {
+        const tab = tabbedData[tId];
         if (typeof tab !== "object" || !tab.fields) continue;
 
         const type = tab.type;

@@ -4,6 +4,7 @@ import { createOrUpdateFiftyFifty } from "./fiftyFifty.js";
 import { createOrUpdateContentCta } from "./contentCta.js";
 import { createOrUpdateIconGrid } from "./iconGrid.js";
 import { createOrUpdateMediaBlock } from "./mediaBlock.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 
 const LOCALE = "en-US";
@@ -101,12 +102,23 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
     if (blockData.contentSubsections || blockData.contentSubSections) {
         const subsections = blockData.contentSubsections || blockData.contentSubSections;
         if (typeof subsections === "object" && !Array.isArray(subsections)) {
-            for (const [subId, subData] of Object.entries(subsections)) {
+            const orderedSubIds = getOrderedKeys(blockData.blockSegment, subsections);
+
+            for (const subId of orderedSubIds) {
+                const subData = subsections[subId];
                 if (!subData.enabled) continue;
+
+                // Extract sub-segment for deeper nesting (e.g. grid items)
+                const sIdx = blockData.blockSegment.indexOf(`"${subId}":`);
+                const nextSId = orderedSubIds[orderedSubIds.indexOf(subId) + 1];
+                const nextSIdx = nextSId ? blockData.blockSegment.indexOf(`"${nextSId}":`) : blockData.blockSegment.length;
+                const subSegment = blockData.blockSegment.substring(sIdx, nextSIdx);
 
                 const subType = subData.type;
                 const subFields = subData.fields || subData;
                 let subEntry = null;
+
+                const passData = { blockId: subId, blockSegment: subSegment, ...subFields };
 
                 if (subType === "contentWithAsset") {
                     console.log(`✅ Detected nested contentWithAsset (ID: ${subId}) inside contentBlock ${blockData.blockId}`);
@@ -116,7 +128,7 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
                     subEntry = await createOrUpdateContentCta(env, subId, subFields, summary);
                 } else if (subType === "grid") {
                     console.log(`✅ Detected nested grid (ID: ${subId}) inside contentBlock ${blockData.blockId} -> iconGrid`);
-                    subEntry = await createOrUpdateIconGrid(env, subId, subFields, assetMap, summary);
+                    subEntry = await createOrUpdateIconGrid(env, subId, passData, assetMap, summary);
                 } else if (subType === "fullWidthAsset") {
                     console.log(`✅ Detected nested fullWidthAsset (ID: ${subId}) inside contentBlock ${blockData.blockId} -> mediaBlock`);
                     subEntry = await createOrUpdateMediaBlock(env, subId, subFields, assetMap, summary);

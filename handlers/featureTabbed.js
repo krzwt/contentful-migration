@@ -5,6 +5,7 @@
  */
 import { upsertEntry, upsertSectionTitle, upsertAssetWrapper, upsertCta, makeLink, parseCraftLink } from "../utils/contentfulHelpers.js";
 import { convertHtmlToRichText } from "../utils/richText.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "featureTabbed";
@@ -23,7 +24,9 @@ export async function createOrUpdateFeatureTabbed(env, blockData, assetMap = nul
     // Handle image asset
     let assetEntry = null;
     const contentAsset = blockData.contentAsset || {};
-    for (const [caId, ca] of Object.entries(contentAsset)) {
+    const orderedCaIds = getOrderedKeys(blockData.blockSegment, contentAsset);
+    for (const caId of orderedCaIds) {
+        const ca = contentAsset[caId];
         if (typeof ca !== "object" || !ca.fields) continue;
         const imgIds = ca.fields?.image || [];
         if (imgIds.length && assetMap) {
@@ -37,8 +40,10 @@ export async function createOrUpdateFeatureTabbed(env, blockData, assetMap = nul
     // Create tabbed items
     const tabRefs = [];
     const tabbedData = blockData.featureTabbed || {};
+    const orderedTIds = getOrderedKeys(blockData.blockSegment, tabbedData);
 
-    for (const [tId, tab] of Object.entries(tabbedData)) {
+    for (const tId of orderedTIds) {
+        const tab = tabbedData[tId];
         if (typeof tab !== "object" || !tab.fields) continue;
         const f = tab.fields;
 

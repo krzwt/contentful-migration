@@ -4,6 +4,7 @@
  * Contentful: statisticsBlock { sectionTitle, description, cta, addStatistics: [statistics], removeColorTheme }
  */
 import { upsertEntry, upsertSectionTitle, upsertCta, makeLink, parseCraftLink } from "../utils/contentfulHelpers.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "statisticsBlock";
@@ -28,11 +29,22 @@ export async function createOrUpdateStatistics(env, blockData, assetMap = null) 
     const statRefs = [];
     const statsData = blockData.statistics || {};
 
-    for (const [sId, statGroup] of Object.entries(statsData)) {
+    const orderedGIds = getOrderedKeys(blockData.blockSegment, statsData);
+    for (const sId of orderedGIds) {
+        const statGroup = statsData[sId];
         if (typeof statGroup !== "object" || !statGroup.fields) continue;
-        const listing = statGroup.fields?.listing || {};
 
-        for (const [itemId, item] of Object.entries(listing)) {
+        // Extract group segment
+        const gIdx = blockData.blockSegment.indexOf(`"${sId}":`);
+        const nextGId = orderedGIds[orderedGIds.indexOf(sId) + 1];
+        const nextGIdx = nextGId ? blockData.blockSegment.indexOf(`"${nextGId}":`) : blockData.blockSegment.length;
+        const groupSegment = blockData.blockSegment.substring(gIdx, nextGIdx);
+
+        const listing = statGroup.fields?.listing || {};
+        const orderedItemIds = getOrderedKeys(groupSegment, listing);
+
+        for (const itemId of orderedItemIds) {
+            const item = listing[itemId];
             if (typeof item !== "object" || !item.fields) continue;
             const f = item.fields;
 

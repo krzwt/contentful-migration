@@ -260,7 +260,7 @@ export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType, v
 export async function upsertSectionTitle(env, id, title) {
     const fields = {
         title: { [LOCALE]: title || "" },
-        enableLinkedHeading: { [LOCALE]: false }
+        enableLinkedHeading: { [LOCALE]: true }
     };
 
     return await upsertEntry(env, "sectionTitle", `title-${id}`, fields);

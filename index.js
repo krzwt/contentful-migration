@@ -11,6 +11,7 @@ import { loadAssetMetadata, processAssets, loadWistiaData, prePopulateAssetCache
 import { buildUrlMap } from "./utils/contentfulHelpers.js";
 import { loadCategories } from "./utils/categoryLoader.js";
 import { loadTagMapping } from "./utils/tagHandler.js";
+import { getOrderedKeys } from "./utils/jsonOrder.js";
 
 const isDryRun = false; // Set to true to simulate migration without making changes
 const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json", "./data/quote-assets.json", "./data/resource-assets.json"]; // GraphQL asset metadata
@@ -35,11 +36,11 @@ const effectiveDryRun = isDryRun || cliDryRun;
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
 const DATA_SOURCES = [
-  {
-    file: "./data/standalone-content.json",
-    pageContentType: "newStandaloneContent",
-    label: "Standalone Content"
-  },
+  // {
+  //   file: "./data/standalone-content.json",
+  //   pageContentType: "newStandaloneContent",
+  //   label: "Standalone Content"
+  // },
   // {
   //   file: "./data/standalone-conversion.json",
   //   pageContentType: "newStandaloneConversion",
@@ -60,11 +61,11 @@ const DATA_SOURCES = [
   //   label: "People CPT",
   //   isPeople: true
   // },
-  // {
-  //   file: "./data/company-quotes.json",
-  //   label: "Company Quotes",
-  //   isQuotes: true
-  // },
+  {
+    file: "./data/company-quotes.json",
+    label: "Company Quotes",
+    isQuotes: true
+  },
   // {
   //   file: "./data/resources-cpt.json",
   //   label: "Resources CPT",
@@ -172,22 +173,17 @@ async function run() {
         const pageData = batchData[i];
 
         // Helper to find original order of keys in the raw JSON file
-        const getOrderedKeys = (fieldName, obj) => {
-          const ids = Object.keys(obj);
-          if (ids.length <= 1) return ids;
-
+        const getFieldSegment = (fieldName) => {
           // Find page and field segment in raw text
           const pId = String(pageData.id);
           const pIdx = rawFileContent.indexOf(`"id": ${pId}`);
-          const fIdx = rawFileContent.indexOf(`"${fieldName}":`, pIdx);
-          const nextPIdx = rawFileContent.indexOf('"id":', fIdx + 20);
-          const segment = rawFileContent.substring(fIdx, nextPIdx === -1 ? undefined : nextPIdx);
+          if (pIdx === -1) return "";
 
-          return ids.sort((a, b) => {
-            const posA = segment.indexOf(`"${a}": {`);
-            const posB = segment.indexOf(`"${b}": {`);
-            return posA - posB;
-          });
+          const fIdx = rawFileContent.indexOf(`"${fieldName}":`, pIdx);
+          if (fIdx === -1) return "";
+
+          const nextPIdx = rawFileContent.indexOf('"id":', fIdx + 20);
+          return rawFileContent.substring(fIdx, nextPIdx === -1 ? undefined : nextPIdx);
         };
 
         const pageNum = targetIndices[i] + 1;
@@ -233,11 +229,18 @@ async function run() {
 
         for (const fieldKey of componentFields) {
           const components = pageData[fieldKey];
-          const orderedIds = getOrderedKeys(fieldKey, components);
+          const fieldSegment = getFieldSegment(fieldKey);
+          const orderedIds = getOrderedKeys(fieldSegment, components);
 
           for (const blockId of orderedIds) {
             const block = components[blockId];
             if (!block.enabled) continue;
+
+            // Extract block segment for nested ordering
+            const bIdx = fieldSegment.indexOf(`"${blockId}":`);
+            const nextBId = orderedIds[orderedIds.indexOf(blockId) + 1];
+            const nextBIdx = nextBId ? fieldSegment.indexOf(`"${nextBId}":`) : fieldSegment.length;
+            const blockSegment = fieldSegment.substring(bIdx, nextBIdx);
 
             const fields = block.fields;
             const type = block.type || fieldKey;
@@ -276,6 +279,7 @@ async function run() {
                   env,
                   {
                     blockId: blockId,
+                    blockSegment: blockSegment,
                     ...fields, // Pass all fields from source
                     heading: fields.headingSection || pageData.heading45 || title,
                     body: fields.body180 || fields.bodyRedactorRestricted || fields.description,
@@ -322,7 +326,7 @@ async function run() {
     }
 
     if (source.isResources) {
-      await migrateResources(env, batchData, contentfulAssetMap, targetIndices, totalPages, summary);
+      await migrateResources(env, batchData, contentfulAssetMap, targetIndices, totalPages, summary, rawFileContent);
     }
   }
 

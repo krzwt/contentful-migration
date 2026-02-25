@@ -4,6 +4,7 @@
  * Contentful: reviewsBlock { blockId, blockName, sectionTitle, description, addReviews: [reviewItem], cta }
  */
 import { upsertEntry, upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "reviewsBlock";
@@ -22,14 +23,24 @@ export async function createOrUpdateReviews(env, blockData, assetMap = null) {
     const reviewRefs = [];
     const reviewsData = blockData.reviews || {};
 
-    for (const [rId, review] of Object.entries(reviewsData)) {
+    const orderedRIds = getOrderedKeys(blockData.blockSegment, reviewsData);
+    for (const rId of orderedRIds) {
+        const review = reviewsData[rId];
         if (typeof review !== "object" || !review.fields) continue;
-        const f = review.fields;
 
-        // Extract nested rows if present
+        // Extract review segment
+        const rIdx = blockData.blockSegment.indexOf(`"${rId}":`);
+        const nextRId = orderedRIds[orderedRIds.indexOf(rId) + 1];
+        const nextRIdx = nextRId ? blockData.blockSegment.indexOf(`"${nextRId}":`) : blockData.blockSegment.length;
+        const reviewSegment = blockData.blockSegment.substring(rIdx, nextRIdx);
+
+        const f = review.fields;
         const rows = f.rows || {};
-        if (Object.keys(rows).length > 0) {
-            for (const [rowId, row] of Object.entries(rows)) {
+        const orderedRowIds = getOrderedKeys(reviewSegment, rows);
+
+        if (orderedRowIds.length > 0) {
+            for (const rowId of orderedRowIds) {
+                const row = rows[rowId];
                 if (typeof row !== "object" || !row.fields) continue;
                 const rf = row.fields;
                 const itemFields = {

@@ -4,6 +4,7 @@
  * Contentful: faQs { sectionTitle, addFaQs: [faQsItem] }
  */
 import { upsertEntry, upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "faQs";
@@ -22,11 +23,22 @@ export async function createOrUpdateFaqs(env, blockData, assetMap = null) {
     const faqRefs = [];
     const faqsData = blockData.faqs || {};
 
-    for (const [gId, faqGroup] of Object.entries(faqsData)) {
+    const orderedGIds = getOrderedKeys(blockData.blockSegment, faqsData);
+    for (const gId of orderedGIds) {
+        const faqGroup = faqsData[gId];
         if (typeof faqGroup !== "object" || !faqGroup.fields) continue;
-        const faqItems = faqGroup.fields?.faqs || {};
 
-        for (const [fId, faq] of Object.entries(faqItems)) {
+        // Extract group segment
+        const gIdx = blockData.blockSegment.indexOf(`"${gId}":`);
+        const nextGId = orderedGIds[orderedGIds.indexOf(gId) + 1];
+        const nextGIdx = nextGId ? blockData.blockSegment.indexOf(`"${nextGId}":`) : blockData.blockSegment.length;
+        const groupSegment = blockData.blockSegment.substring(gIdx, nextGIdx);
+
+        const faqItems = faqGroup.fields?.faqs || {};
+        const orderedItemIds = getOrderedKeys(groupSegment, faqItems);
+
+        for (const fId of orderedItemIds) {
+            const faq = faqItems[fId];
             if (typeof faq !== "object" || !faq.fields) continue;
             const f = faq.fields;
 

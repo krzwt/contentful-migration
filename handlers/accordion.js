@@ -4,6 +4,7 @@
  * Contentful: accordion { blockId, blockName, sectionTitle, description, addAccordion: [accordionItem] }
  */
 import { upsertEntry, upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 import { convertHtmlToRichText } from "../utils/richText.js";
 
 const LOCALE = "en-US";
@@ -23,11 +24,22 @@ export async function createOrUpdateAccordion(env, blockData, assetMap = null) {
     const accordionRefs = [];
     const accData = blockData.accordion || {};
 
-    for (const [aId, accGroup] of Object.entries(accData)) {
+    const orderedGIds = getOrderedKeys(blockData.blockSegment, accData);
+    for (const aId of orderedGIds) {
+        const accGroup = accData[aId];
         if (typeof accGroup !== "object" || !accGroup.fields) continue;
-        const rows = accGroup.fields?.rows || {};
 
-        for (const [rowId, row] of Object.entries(rows)) {
+        // Extract group segment
+        const gIdx = blockData.blockSegment.indexOf(`"${aId}":`);
+        const nextGId = orderedGIds[orderedGIds.indexOf(aId) + 1];
+        const nextGIdx = nextGId ? blockData.blockSegment.indexOf(`"${nextGId}":`) : blockData.blockSegment.length;
+        const groupSegment = blockData.blockSegment.substring(gIdx, nextGIdx);
+
+        const rows = accGroup.fields?.rows || {};
+        const orderedRowIds = getOrderedKeys(groupSegment, rows);
+
+        for (const rowId of orderedRowIds) {
+            const row = rows[rowId];
             if (typeof row !== "object" || !row.fields) continue;
             const f = row.fields;
 

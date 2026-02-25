@@ -1,5 +1,5 @@
 import { convertHtmlToRichText } from "../utils/richText.js";
-import { upsertCta, upsertAssetWrapper } from "../utils/contentfulHelpers.js";
+import { upsertCta, upsertAssetWrapper, makeLink, upsertEntry } from "../utils/contentfulHelpers.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "bannerHero";
@@ -122,11 +122,46 @@ export async function createOrUpdateHero(env, heroData, assetMap = null) {
     };
   }
 
+  // 3. FORM SUPPORT
+  // For page 1372587 (Block 1372588), the user specifically wants to link "SRA Trial Form - Legacy Form"
+  const SITE_FORM_ID = "3aenoKrEbPbjQsmmAR7jfF"; // Manually created "SRA Trial Form - Legacy Form"
+
+  if (heroData.blockId === "1372588") {
+    console.log(`   🧪 Applying SRA Trial Form link for block 1372588`);
+
+    // 3.1 Create/Update the sraTrialForm entry that wraps the siteForm
+    const sraFormFields = {
+      formName: { [LOCALE]: "SRA Trial Form - Legacy Form (Wrapper)" },
+      selectForm: { [LOCALE]: makeLink(SITE_FORM_ID) }
+    };
+
+    const sraFormEntry = await upsertEntry(
+      env,
+      "sraTrialForm",
+      `form-sra-${heroData.blockId}`,
+      sraFormFields
+    );
+
+    if (sraFormEntry) {
+      fields.mainBannerForm = {
+        [LOCALE]: {
+          sys: { type: "Link", linkType: "Entry", id: sraFormEntry.sys.id }
+        }
+      };
+    }
+  } else if (heroData.mainBannerForm && heroData.mainBannerForm.length > 0) {
+    // Generic logic for other forms if found in source
+    console.log(`   📝 Found form in source for block ${heroData.blockId} (implementation pending)`);
+  }
+
   let entry;
   if (existing.items.length) {
     entry = existing.items[0];
     console.log("🔄 Updating existing hero:", entry.sys.id);
-    entry.fields = fields;
+    entry.fields = {
+      ...entry.fields,
+      ...fields
+    };
     entry = await entry.update();
     entry = await entry.publish();
   } else {

@@ -4,6 +4,7 @@
  * Contentful: cardGridBlock { blockId, blockName, sectionTitle, description, cardTheme, gridLayout, addCard: [iconGridItem] }
  */
 import { upsertEntry, upsertSectionTitle, upsertCta, makeLink, parseCraftLink } from "../utils/contentfulHelpers.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "cardGridBlock";
@@ -26,11 +27,22 @@ export async function createOrUpdateCardGrid(env, blockData, assetMap = null) {
     const cardRefs = [];
     const cardGridData = blockData.cardGrid || {};
 
-    for (const [gId, group] of Object.entries(cardGridData)) {
+    const orderedGroupIds = getOrderedKeys(blockData.blockSegment, cardGridData);
+    for (const gId of orderedGroupIds) {
+        const group = cardGridData[gId];
         if (typeof group !== "object" || !group.fields) continue;
-        const cards = group.fields?.cards || {};
 
-        for (const [cId, card] of Object.entries(cards)) {
+        // Extract group segment
+        const gIdx = blockData.blockSegment.indexOf(`"${gId}":`);
+        const nextGId = orderedGroupIds[orderedGroupIds.indexOf(gId) + 1];
+        const nextGIdx = nextGId ? blockData.blockSegment.indexOf(`"${nextGId}":`) : blockData.blockSegment.length;
+        const groupSegment = blockData.blockSegment.substring(gIdx, nextGIdx);
+
+        const cards = group.fields?.cards || {};
+        const orderedCardIds = getOrderedKeys(groupSegment, cards);
+
+        for (const cId of orderedCardIds) {
+            const card = cards[cId];
             if (typeof card !== "object" || !card.fields) continue;
             const f = card.fields;
 

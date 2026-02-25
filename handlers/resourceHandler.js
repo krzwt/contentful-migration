@@ -8,6 +8,7 @@ import {
 } from "../utils/tagHandler.js";
 import { COMPONENTS } from "../registry.js";
 import { genericComponentHandler } from "./genericComponent.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 /**
  * Main function to migrate Resource entries
@@ -18,6 +19,8 @@ export async function migrateResources(
   assetMap = null,
   targetIndices = null,
   totalPages = null,
+  summary = null,
+  rawFileContent = null
 ) {
   const total = targetIndices
     ? targetIndices[targetIndices.length - 1] + 1
@@ -84,10 +87,24 @@ export async function migrateResources(
       console.log(`   🏷️  Categories: ${catNames.join(", ")}`);
     }
 
+    const getPageSegment = (itemId) => {
+      if (!rawFileContent) return "";
+      const pIdIdx = rawFileContent.indexOf(`"id": ${itemId}`);
+      if (pIdIdx === -1) return "";
+      const nextPIdx = rawFileContent.indexOf('"id":', pIdIdx + 10);
+      return rawFileContent.substring(pIdIdx, nextPIdx === -1 ? undefined : nextPIdx);
+    };
+
+    const pageSegment = getPageSegment(item.id);
+
     try {
       // 1. Create Webcast Info if it exists
       const webcastInfoIds = [];
       if (item.webcastInfo) {
+        const wiIdx = pageSegment.indexOf('"webcastInfo":');
+        const wiSegment = wiIdx !== -1 ? pageSegment.substring(wiIdx) : pageSegment;
+        const orderedWiIds = getOrderedKeys(wiSegment, item.webcastInfo);
+
         const tzMap = {
           ET: "Eastern (US & Canada)",
           CT: "Central (US & Canada)",
@@ -101,7 +118,8 @@ export async function migrateResources(
           EET: "Eastern Europe",
         };
 
-        for (const [blockId, webcastData] of Object.entries(item.webcastInfo)) {
+        for (const blockId of orderedWiIds) {
+          const webcastData = item.webcastInfo[blockId];
           if (webcastData.fields) {
             const rawTz = webcastData.fields.webcastTimezone;
             const mappedTz = tzMap[rawTz] || "Eastern (US & Canada)";
@@ -249,8 +267,19 @@ export async function migrateResources(
       // 3.1 Create modular content (resourceContent)
       const sectionEntries = [];
       if (item.mixedContent) {
-        for (const [blockId, block] of Object.entries(item.mixedContent)) {
+        const mcIdx = pageSegment.indexOf('"mixedContent":');
+        const mcSegment = mcIdx !== -1 ? pageSegment.substring(mcIdx) : pageSegment;
+        const orderedBlockIds = getOrderedKeys(mcSegment, item.mixedContent);
+
+        for (const blockId of orderedBlockIds) {
+          const block = item.mixedContent[blockId];
           if (block.enabled === false) continue;
+
+          // Extract block segment for nested ordering (e.g. grid items)
+          const bIdx = mcSegment.indexOf(`"${blockId}":`);
+          const nextBId = orderedBlockIds[orderedBlockIds.indexOf(blockId) + 1];
+          const nextBIdx = nextBId ? mcSegment.indexOf(`"${nextBId}":`) : mcSegment.length;
+          const blockSegment = mcSegment.substring(bIdx, nextBIdx);
 
           const type = block.type;
           const fields = block.fields || {};
@@ -280,6 +309,7 @@ export async function migrateResources(
                 env,
                 {
                   blockId: blockId,
+                  blockSegment: blockSegment,
                   ...fields,
                   // Use common field mappings to match standard handlers
                   heading: fields.blockHeading || fields.headingSection || "",
