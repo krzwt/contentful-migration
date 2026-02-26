@@ -94,13 +94,17 @@ export async function createOrUpdateResourceTabbed(env, blockData, assetMap = nu
         }
     }
 
-    // Clean up empty fields and handle "max items" if needed
+    // Clean up empty fields and handle "max items" based on Contentful schema validation
     tabFields.forEach(f => {
-        if (fields[f][LOCALE].length === 0) {
+        const items = fields[f][LOCALE];
+        if (items.length === 0) {
             delete fields[f];
-        } else if (fields[f][LOCALE].length > 6) {
-            console.warn(`   ⚠️ Field "${f}" has ${fields[f][LOCALE].length} items, which exceeds Contentful's limit of 6. Truncating.`);
-            fields[f][LOCALE] = fields[f][LOCALE].slice(0, 6);
+        } else {
+            const maxLimit = (f === "blogTab") ? 5 : 6;
+            if (items.length > maxLimit) {
+                console.warn(`   ⚠️ Field "${f}" has ${items.length} items, which exceeds Contentful's limit of ${maxLimit}. Truncating.`);
+                fields[f][LOCALE] = items.slice(0, maxLimit);
+            }
         }
     });
 

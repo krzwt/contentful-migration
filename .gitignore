@@ -46,14 +46,31 @@ dump_*
 read_*
 temp_*
 test_*
+inspect_*
+find_*
+sync_*
+analyze_*
+update_*
+uploadAssets.js
 *.tmp
 *.bak
+*.log
+*.txt
 dump.json
 debug.json
-# data/
-# *.txt
-# *.json
+*-output.json
+*-test.json
+*-dump.json
+
+# Keep core directories
+!data/
+!mappings/
+!handlers/
+!utils/
+!config/
 !package.json
 !package-lock.json
 !mappings/**/*.json
 !.agent/**/*.json
+!registry.js
+!index.js

@@ -1,4 +1,0 @@
-FOUND fiftyFiftyComponent!
-Fields: blockId (Symbol), blockName (Symbol), sectionTitle (Link), description (RichText), addAsset (Link), addResource (Link), cta (Link), contentAlignment (Symbol), contentTheme (Symbol)
-FOUND contentBlock!
-Fields: blockId (Symbol), blockName (Symbol), sectionTitle (Link), description (RichText), cta (Link)

@@ -101,13 +101,19 @@ export async function getOrCreateSeo(env, pageData, assetMap = null) {
   }
 
   // Truncate if exceeds the Contentful validation limit of 256 characters
-  if (metaDescription.length > 256) {
-    metaDescription = metaDescription.substring(0, 253) + "...";
+  // We use 255 to be safe with potential multi-byte characters or inclusive limits
+  if (metaDescription.length > 255) {
+    metaDescription = metaDescription.substring(0, 252) + "...";
   }
 
   const canonicalUrl = cleanVal(seoData.canonicalUrl);
   const ogTitle = cleanVal(seoData.ogTitle);
-  const ogDescription = cleanVal(seoData.ogDescription);
+  let ogDescription = cleanVal(seoData.ogDescription);
+
+  if (ogDescription.length > 255) {
+    ogDescription = ogDescription.substring(0, 252) + "...";
+  }
+
   const robots = cleanVal(seoData.robots) || "index, follow";
   const jsonLdSchema = cleanVal(seoData.jsonLdSchema);
 
