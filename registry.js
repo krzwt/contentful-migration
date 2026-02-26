@@ -29,6 +29,7 @@ import { createOrUpdateContactSales } from "./handlers/contactSales.js";
 import { createOrUpdateContentCta } from "./handlers/contentCta.js";
 import { createOrUpdateIconGrid } from "./handlers/iconGrid.js";
 import { createOrUpdateMediaBlock } from "./handlers/mediaBlock.js";
+import { createOrUpdateOfficeLocations } from "./handlers/officeLocations.js";
 
 
 export const COMPONENTS = {
@@ -68,6 +69,7 @@ export const COMPONENTS = {
   grid: { handler: createOrUpdateIconGrid },  // Direct mapping if used as top level
   cta: { handler: createOrUpdateContentCta }, // Direct mapping if used as top level
   fullWidthAsset: { handler: createOrUpdateMediaBlock },
+  officeLocations: { handler: createOrUpdateOfficeLocations },
 
 
   /* ---- Generic (mapping-based) ---- */

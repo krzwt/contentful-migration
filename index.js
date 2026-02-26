@@ -37,7 +37,8 @@ const effectiveDryRun = isDryRun || cliDryRun;
 --------------------------------------------------------- */
 const DATA_SOURCES = [
   // {
-  //   file: "./data/standalone-content.json",
+  //   // file: "./data/standalone-content.json",
+  //   file: "./data/test-sc.json",
   //   pageContentType: "newStandaloneContent",
   //   label: "Standalone Content"
   // },

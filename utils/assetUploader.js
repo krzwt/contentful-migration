@@ -356,21 +356,29 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
     const metadata = assetMetadata.get(String(craftAssetId));
 
     if (!metadata) {
-      // PROACTIVE FIX: Even if metadata is missing from our JSON files, the asset might 
-      // already exist in Contentful with our predictable ID format (asset-ID).
-      // We'll attempt to link to it blindly.
+      // PROACTIVE FIX: Check if asset already exists in Contentful with our predictable ID format (asset-ID).
       const predictableId = `asset-${craftAssetId}`;
-      console.log(`   🔗 No metadata for ${craftAssetId}, attempting blind link to ${predictableId}`);
+      let exists = false;
+      try {
+        await env.getAsset(predictableId);
+        exists = true;
+      } catch (e) {
+        // Not found
+      }
 
-      contentfulAssetMap.set(String(craftAssetId), {
-        id: predictableId,
-        mimeType: "image/unknown" // Fallback
-      });
-
-      if (summary && summary.missingAssetMetadata) {
-        summary.missingAssetMetadata.push(craftAssetId);
+      if (exists) {
+        console.log(`   🔗 No local metadata for ${craftAssetId}, but found existing asset-ID in Contentful. Linking.`);
+        contentfulAssetMap.set(String(craftAssetId), {
+          id: predictableId,
+          mimeType: "image/unknown"
+        });
       } else {
-        missingIds.push(craftAssetId);
+        console.warn(`   ⚠ No local metadata OR Contentful asset found for ${craftAssetId}. Skipping link.`);
+        if (summary && summary.missingAssetMetadata) {
+          summary.missingAssetMetadata.push(craftAssetId);
+        } else {
+          missingIds.push(craftAssetId);
+        }
       }
       continue;
     }

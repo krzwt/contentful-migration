@@ -1,0 +1,618 @@
+[
+    {
+        "sectionId": 66,
+        "postDate": "2026-02-11T05:17:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 2500107,
+        "id": 2500187,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "87c816cf-35d2-4d7c-b46b-3ef0e0ec11fc",
+        "siteSettingsId": 3500054,
+        "fieldLayoutId": null,
+        "structureId": 104759,
+        "contentId": 1753441,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Testing Standalone",
+        "slug": "testing-standalone",
+        "uri": "testing-standalone",
+        "dateCreated": "2026-02-11T05:02:50-06:00",
+        "dateUpdated": "2026-02-25T21:50:00-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 218060,
+        "lft": 74,
+        "rgt": 75,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2500187,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newStandaloneContent/testing-standalone",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/testing-standalone",
+        "authorId": 2500107,
+        "typeId": 132,
+        "mainBannerStandalone": {
+            "2500188": {
+                "type": "bannerSlim",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Testing",
+                    "body180": "Test Desc"
+                }
+            }
+        },
+        "mainNavigationSwitch": true,
+        "mainNavigationDefaultCtas": true,
+        "mainNavigationLanguageSwitch": true,
+        "mainNavigationSearchSwitch": true,
+        "mainNavigationCtaButtonDarkBlue": "{\"linkedUrl\":\"https:\\/\\/google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"test\\\"}\",\"type\":\"url\"}",
+        "mainNavigationCtaButtonWhite": "{\"linkedUrl\":\"https:\\/\\/google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"sadddd\\\"}\",\"type\":\"custom\"}",
+        "breadcrumbSwitch": true,
+        "overviewContentStandalone": {
+            "2502273": {
+                "type": "faqs",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "FAQs",
+                    "faqs": {
+                        "2502274": {
+                            "type": 99,
+                            "fields": {
+                                "faqs": {
+                                    "2502275": {
+                                        "type": "faq",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "question": "Question 1",
+                                            "answer": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+                                        }
+                                    },
+                                    "2502276": {
+                                        "type": "faq",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "question": "Question 2",
+                                            "answer": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "2502277": {
+                "type": "logoList",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Logo List",
+                    "logoList": {
+                        "2502278": {
+                            "type": 97,
+                            "fields": {
+                                "logos": {
+                                    "2502279": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                2496438
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": "Lorem Ipsum"
+                                        }
+                                    },
+                                    "2502281": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                2488733
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": "Lorem Ipsum"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "gridSize": "3",
+                    "logoBackground": "grey"
+                }
+            },
+            "2502282": {
+                "type": "officeLocations",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Office Locations",
+                    "body250": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                    "phoneNumber": "{\"linkedUrl\":\"123456789\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Group Phone Number\\\"}\",\"type\":\"tel\"}",
+                    "globalOfficeLocations": {
+                        "2502283": {
+                            "type": 117,
+                            "fields": {
+                                "officeLocationPhoto": [
+                                    1947721
+                                ],
+                                "officeLocationName": "Office Locations",
+                                "officeStreetAddress": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
+                                "officeGoogleMapLink": "{\"linkedUrl\":\"https:\\/\\/maps.app.goo.gl\\/HMYpFVjuSwojnRmBA\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Google Map\\\"}\",\"type\":\"custom\"}",
+                                "officePhoneNumber": "{\"linkedUrl\":\"123456789\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Phone Number\\\"}\",\"type\":\"tel\"}"
+                            }
+                        },
+                        "2502284": {
+                            "type": 117,
+                            "fields": {
+                                "officeLocationPhoto": [
+                                    83647
+                                ],
+                                "officeLocationName": "Lorem Ipsum",
+                                "officeStreetAddress": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
+                                "officeGoogleMapLink": "{\"linkedUrl\":\"https:\\/\\/maps.app.goo.gl\\/HMYpFVjuSwojnRmBA\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Google Map \\\"}\",\"type\":\"custom\"}",
+                                "officePhoneNumber": "{\"linkedUrl\":\"123456789\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Phone Number\\\"}\",\"type\":\"tel\"}"
+                            }
+                        },
+                        "2502285": {
+                            "type": 117,
+                            "fields": {
+                                "officeLocationPhoto": [
+                                    83620
+                                ],
+                                "officeLocationName": "Lorem Ipsum",
+                                "officeStreetAddress": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
+                                "officeGoogleMapLink": "{\"linkedUrl\":\"https:\\/\\/maps.app.goo.gl\\/HMYpFVjuSwojnRmBA\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Google Map\\\"}\",\"type\":\"custom\"}",
+                                "officePhoneNumber": "{\"linkedUrl\":\"123456789\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Phone Number\\\"}\",\"type\":\"tel\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "2502286": {
+                "type": "processFlow",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Process Flow",
+                    "processFlow": {
+                        "2502287": {
+                            "type": 109,
+                            "fields": {
+                                "heading": "Lorem Ipsum",
+                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                                "image": [
+                                    2483696
+                                ]
+                            }
+                        },
+                        "2502288": {
+                            "type": 109,
+                            "fields": {
+                                "heading": "Lorem Ipsum",
+                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                                "image": [
+                                    2483695
+                                ]
+                            }
+                        },
+                        "2502289": {
+                            "type": 109,
+                            "fields": {
+                                "heading": "Lorem Ipsum",
+                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                                "image": [
+                                    2483694
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "2502290": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        2497974,
+                        2497965,
+                        2498030
+                    ]
+                }
+            },
+            "2502296": {
+                "type": "statistics",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Statistics",
+                    "body250": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                    "label": "Test Link",
+                    "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+                    "statistics": {
+                        "2502297": {
+                            "type": 94,
+                            "fields": {
+                                "listing": {
+                                    "2502298": {
+                                        "type": "statistic",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "rangeStart": 0,
+                                            "rangeEnd": 10,
+                                            "suffix": "$",
+                                            "description": "Lorem Ipsum is simply dummy text.",
+                                            "footnote": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+                                        }
+                                    },
+                                    "2502299": {
+                                        "type": "statistic",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "rangeStart": 20,
+                                            "rangeEnd": 50,
+                                            "suffix": "%",
+                                            "description": "Lorem Ipsum is simply dummy text.",
+                                            "footnote": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "switch": false
+                }
+            },
+            "2502300": {
+                "type": "tryItCta",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Try IT CTA",
+                    "image": [
+                        1947721
+                    ],
+                    "headingLarge": "Lorem Ipsum",
+                    "bodyMedium": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                    "list": {
+                        "2502301": {
+                            "type": 96,
+                            "fields": {
+                                "listing": {
+                                    "2502302": {
+                                        "type": "listItem",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "item": "Lorem Ipsum"
+                                        }
+                                    },
+                                    "2502303": {
+                                        "type": "listItem",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "item": "Lorem Ipsum"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "mainBannerForm": {
+                        "2502304": {
+                            "type": "sraTrialForm",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "webFormHandler": "trialForm3StepRedirect",
+                                "product": "pra",
+                                "salesforceCampaignId": null,
+                                "trialLength": "month"
+                            }
+                        }
+                    }
+                }
+            },
+            "2502305": {
+                "type": "useCases",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "heading45": "Use Cases",
+                    "useCases": {
+                        "2502306": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Lorem Ipsum",
+                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                                "image": [
+                                    2483696
+                                ],
+                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+                                "ctaLabel": "Test Link"
+                            }
+                        },
+                        "2502307": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Lorem Ipsum",
+                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                                "image": [
+                                    2483695
+                                ],
+                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+                                "ctaLabel": "Test Link"
+                            }
+                        },
+                        "2502308": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Lorem Ipsum",
+                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+                                "image": [
+                                    2483694
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2026-02-11T05:02:50-06:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": [],
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": [],
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": true,
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": false,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": false,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    }
+]
