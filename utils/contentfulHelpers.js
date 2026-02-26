@@ -155,12 +155,10 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
 
             if (pageEntry) {
                 console.log(`   🔗 Linked CTA ${id} to page entry: ${pageEntry.sys.id} (entryId: ${linkedId})`);
-                fields.pageLink = { [LOCALE]: makeLink(pageEntry.sys.id) };
-            } else {
-                console.log(`   ℹ️ Could not find page entry with entryId: ${linkedId} for CTA ${id}. Using URL fallback.`);
+                fields.pageLink = { [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: pageEntry.sys.id } } };
             }
-        } catch (err) {
-            console.warn(`   ⚠️ Error resolving linkedId ${linkedId} for CTA ${id}: ${err.message}`);
+        } catch (e) {
+            console.warn(`   ⚠️ Error looking up Internal link for CTA cta-${id}: ${e.message}`);
         }
     }
 
@@ -338,6 +336,9 @@ export async function upsertEntry(env, contentType, entryId, fields, shouldPubli
                     console.log(`   ⏳ Publish retry ${attempt + 1}/3 for ${contentType}: ${entryId}`);
                     await new Promise(r => setTimeout(r, 3000));
                 } else {
+                    if (pubErr.details) {
+                        console.warn(`   ⚠ Validation Error details for ${contentType} (${entryId}):`, JSON.stringify(pubErr.details, null, 2));
+                    }
                     console.warn(`   ⚠ Could not publish ${contentType} (${entryId}): ${pubErr.message?.substring(0, 100)}`);
                     return entry; // Return the draft entry so it can still be linked
                 }

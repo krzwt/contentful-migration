@@ -37,16 +37,16 @@ const effectiveDryRun = isDryRun || cliDryRun;
 --------------------------------------------------------- */
 const DATA_SOURCES = [
   // {
-  //   // file: "./data/standalone-content.json",
-  //   file: "./data/test-sc.json",
+  //   file: "./data/standalone-content.json",
+  //   // file: "./data/test-sc.json",
   //   pageContentType: "newStandaloneContent",
   //   label: "Standalone Content"
   // },
-  {
-    file: "./data/standalone-conversion.json",
-    pageContentType: "newStandaloneConversion",
-    label: "Standalone Conversion"
-  },
+  // {
+  //   file: "./data/standalone-conversion.json",
+  //   pageContentType: "newStandaloneConversion",
+  //   label: "Standalone Conversion"
+  // },
   // {
   //   file: "./data/standalone-microsite.json",
   //   pageContentType: "newStandaloneMicrosite",

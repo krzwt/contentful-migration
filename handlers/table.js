@@ -25,7 +25,9 @@ export async function createOrUpdateTable(env, blockData, assetMap = null) {
     // Convert Craft table to HTML
     let tableHtml = "";
     const tableData = blockData.table;
-    if (tableData && tableData.columns && tableData.rows) {
+    if (tableData && tableData.table) {
+        tableHtml = tableData.table;
+    } else if (tableData && tableData.columns && tableData.rows) {
         const cols = tableData.columns;
         tableHtml = "<table>";
         // Header row

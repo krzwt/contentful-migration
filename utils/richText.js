@@ -81,6 +81,67 @@ function buildListItems(listNode) {
     .filter(Boolean);
 }
 
+function buildTableNodes(tableNode) {
+  const rows = [];
+
+  // Handle thead
+  const thead = tableNode.querySelector("thead");
+  if (thead) {
+    const theadRows = thead.querySelectorAll("tr");
+    theadRows.forEach(tr => {
+      const cells = [];
+      tr.querySelectorAll("td, th").forEach(cell => {
+        cells.push({
+          nodeType: cell.nodeName === "TH" ? "table-header-cell" : "table-cell",
+          data: {},
+          content: [{
+            nodeType: "paragraph",
+            data: {},
+            content: parseInlineNodes(cell)
+          }]
+        });
+      });
+      if (cells.length > 0) {
+        rows.push({
+          nodeType: "table-row",
+          data: {},
+          content: cells
+        });
+      }
+    });
+  }
+
+  // Handle tbody or direct tr children
+  const tbody = tableNode.querySelector("tbody") || tableNode;
+  const tbodyRows = tbody.querySelectorAll("tr");
+  tbodyRows.forEach(tr => {
+    // Skip if this tr was already handled in thead (though querySelector typically separates them)
+    if (thead && thead.contains(tr)) return;
+
+    const cells = [];
+    tr.querySelectorAll("td, th").forEach(cell => {
+      cells.push({
+        nodeType: cell.nodeName === "TH" ? "table-header-cell" : "table-cell",
+        data: {},
+        content: [{
+          nodeType: "paragraph",
+          data: {},
+          content: parseInlineNodes(cell)
+        }]
+      });
+    });
+    if (cells.length > 0) {
+      rows.push({
+        nodeType: "table-row",
+        data: {},
+        content: cells
+      });
+    }
+  });
+
+  return rows;
+}
+
 export async function convertHtmlToRichText(env, html) {
   const source = String(html || "").trim();
   if (!source) return { nodeType: "document", data: {}, content: [] };
@@ -152,6 +213,14 @@ export async function convertHtmlToRichText(env, html) {
         nodeType: node.nodeName === "UL" ? "unordered-list" : "ordered-list",
         data: {},
         content: buildListItems(node)
+      });
+    }
+
+    if (node.nodeName === "TABLE") {
+      content.push({
+        nodeType: "table",
+        data: {},
+        content: buildTableNodes(node)
       });
     }
   }

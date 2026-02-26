@@ -19,7 +19,7 @@ export async function createOrUpdateContentCta(env, id, fields, summary = null) 
 
     if (rawLink) {
         const linkInfo = parseCraftLink(rawLink);
-        let label = fields.linkText || linkInfo.label || "";
+        let label = fields.linkText || fields.customLinkText || fields.label || linkInfo.label || "";
         let url = linkInfo.url;
 
         if (!url && linkInfo.linkedId) {
