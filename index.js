@@ -14,7 +14,7 @@ import { loadTagMapping } from "./utils/tagHandler.js";
 import { getOrderedKeys } from "./utils/jsonOrder.js";
 
 const isDryRun = false; // Set to true to simulate migration without making changes
-const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json", "./data/quote-assets.json", "./data/resource-assets.json"]; // GraphQL asset metadata
+const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json", "./data/quote-assets.json", "./data/resource-assets.json", "./data/missing-fixed.json"]; // GraphQL asset metadata
 
 /* ---------------------------------------------------------
    CLI args: node index.js [--from N] [--to N] [--dry]
@@ -36,12 +36,12 @@ const effectiveDryRun = isDryRun || cliDryRun;
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
 const DATA_SOURCES = [
-  // {
-  //   file: "./data/standalone-content.json",
-  //   // file: "./data/test-sc.json",
-  //   pageContentType: "newStandaloneContent",
-  //   label: "Standalone Content"
-  // },
+  {
+    // file: "./data/standalone-content.json",
+    file: "./data/test-sc.json",
+    pageContentType: "newStandaloneContent",
+    label: "Standalone Content"
+  },
   // {
   //   file: "./data/standalone-conversion.json",
   //   pageContentType: "newStandaloneConversion",

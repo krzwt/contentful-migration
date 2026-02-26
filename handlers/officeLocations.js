@@ -44,8 +44,9 @@ export async function createOrUpdateOfficeLocations(env, blockData, assetMap = n
         const f = office.fields;
 
         const itemFields = {
-            officeLocationName: { [LOCALE]: f.officeLocationName || "" },
-            streetAddress: { [LOCALE]: f.officeStreetAddress || "" }
+            officeLocationName: { [LOCALE]: f.officeLocationName || "Office" },
+            // Strip HTML from street address for Text field
+            streetAddress: { [LOCALE]: (f.officeStreetAddress || "Address").replace(/<[^>]*>/g, "").trim() }
         };
 
         // Handle Map Link
@@ -62,24 +63,21 @@ export async function createOrUpdateOfficeLocations(env, blockData, assetMap = n
             itemFields.phoneCustomLinkText = { [LOCALE]: phoneLink.label || "" };
         }
 
-        // Handle Photo
+        // Handle Photo (Required in Contentful schema)
         if (f.officeLocationPhoto?.length && assetMap) {
             const craftAssetId = String(f.officeLocationPhoto[0]);
             const assetInfo = assetMap.get(craftAssetId);
             if (assetInfo && assetInfo.id) {
-                // Check if the asset actually exists in Contentful before linking
-                let exists = false;
-                try {
-                    await env.getAsset(assetInfo.id);
-                    exists = true;
-                } catch (e) { }
-
-                if (exists) {
-                    itemFields.officeLocationPhoto = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } } };
-                } else {
-                    console.warn(`   ⚠ Asset ${assetInfo.id} (Craft: ${craftAssetId}) not found in Contentful. Skipping link in office location.`);
-                }
+                itemFields.officeLocationPhoto = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } } };
+            } else {
+                console.warn(`   ⚠ Asset metadata missing for ${craftAssetId}. Linking to fallback or skipping.`);
+                const fallbackId = process.env.DEFAULT_SEO_IMAGE_ID || "asset-45209";
+                itemFields.officeLocationPhoto = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: fallbackId.startsWith("asset-") ? fallbackId : `asset-${fallbackId}` } } };
             }
+        } else {
+            console.warn(`   ⚠ No photo provided for office location ${fId}. Using fallback.`);
+            const fallbackId = process.env.DEFAULT_SEO_IMAGE_ID || "asset-45209";
+            itemFields.officeLocationPhoto = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: fallbackId.startsWith("asset-") ? fallbackId : `asset-${fallbackId}` } } };
         }
 
         const itemEntry = await upsertEntry(env, ITEM_CONTENT_TYPE, `officeitem-${fId}`, itemFields);
