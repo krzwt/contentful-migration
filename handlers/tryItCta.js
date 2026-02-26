@@ -33,7 +33,44 @@ export async function createOrUpdateTryCta(env, blockData, assetMap = null) {
     };
 
     // Description (bodyMedium → RichText)
-    const bodyHtml = blockData.bodyMedium || blockData.body || "";
+    let bodyHtml = blockData.bodyMedium || blockData.body || "";
+
+    // Process "list" repeater/matrix if present
+    const listData = blockData.list || {};
+    const listItems = [];
+
+    // Recursive function to extract items from nested structures
+    const extractItems = (data) => {
+        if (!data) return;
+        if (typeof data === 'object' && !Array.isArray(data)) {
+            // Check if this is a block with an "item" or "text" field
+            if (data.fields?.item || data.fields?.text) {
+                listItems.push(data.fields.item || data.fields.text);
+            } else if (data.fields) {
+                // Otherwise iterate through its fields (it might be a block like 'listing')
+                Object.values(data.fields).forEach(val => {
+                    if (val && typeof val === 'object') extractItems(val);
+                });
+            } else {
+                // Could be a container object with IDs as keys
+                Object.values(data).forEach(val => {
+                    if (val && typeof val === 'object') extractItems(val);
+                });
+            }
+        } else if (Array.isArray(data)) {
+            data.forEach(item => extractItems(item));
+        }
+    };
+
+    extractItems(listData);
+
+    if (listItems.length > 0) {
+        console.log(`   📝 tryItCta: Extracted ${listItems.length} list items: ${listItems.join(', ').substring(0, 50)}...`);
+        // Consolidate list items into HTML <ul>
+        const listHtml = `<ul>${listItems.map(it => `<li>${it}</li>`).join('')}</ul>`;
+        bodyHtml = bodyHtml ? `${bodyHtml}<br/>${listHtml}` : listHtml;
+    }
+
     if (bodyHtml) {
         fields.description = { [LOCALE]: await convertHtmlToRichText(env, bodyHtml) };
     }

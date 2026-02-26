@@ -47,7 +47,12 @@
             {
               "linkContentType": [
                 "blogCpt",
-                "resourcesCpt"
+                "resourcesCpt",
+                "resourceWebinarsCpt",
+                "videosCpt",
+                "podcastsCpt",
+                "eventsCpt",
+                "mediaCpt"
               ]
             }
           ],
@@ -72,7 +77,13 @@
           "validations": [
             {
               "linkContentType": [
-                "resourcesCpt"
+                "resourcesCpt",
+                "resourceWebinarsCpt",
+                "videosCpt",
+                "blogCpt",
+                "podcastsCpt",
+                "eventsCpt",
+                "mediaCpt"
               ]
             }
           ],
@@ -98,7 +109,12 @@
             {
               "linkContentType": [
                 "videosCpt",
-                "resourcesCpt"
+                "resourcesCpt",
+                "resourceWebinarsCpt",
+                "blogCpt",
+                "podcastsCpt",
+                "eventsCpt",
+                "mediaCpt"
               ]
             }
           ],
@@ -124,7 +140,12 @@
             {
               "linkContentType": [
                 "podcastsCpt",
-                "resourcesCpt"
+                "resourcesCpt",
+                "resourceWebinarsCpt",
+                "videosCpt",
+                "blogCpt",
+                "eventsCpt",
+                "mediaCpt"
               ]
             }
           ],
@@ -150,7 +171,12 @@
             {
               "linkContentType": [
                 "eventsCpt",
-                "resourcesCpt"
+                "resourcesCpt",
+                "resourceWebinarsCpt",
+                "videosCpt",
+                "blogCpt",
+                "podcastsCpt",
+                "mediaCpt"
               ]
             }
           ],
@@ -176,7 +202,12 @@
             {
               "linkContentType": [
                 "resourceWebinarsCpt",
-                "resourcesCpt"
+                "resourcesCpt",
+                "videosCpt",
+                "blogCpt",
+                "podcastsCpt",
+                "eventsCpt",
+                "mediaCpt"
               ]
             }
           ],
@@ -202,7 +233,12 @@
             {
               "linkContentType": [
                 "mediaCpt",
-                "resourcesCpt"
+                "resourcesCpt",
+                "resourceWebinarsCpt",
+                "videosCpt",
+                "blogCpt",
+                "podcastsCpt",
+                "eventsCpt"
               ]
             }
           ],

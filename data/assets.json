@@ -2,6 +2,15 @@
   "data": {
     "assets": [
       {
+        "id": "501107",
+        "title": "Control",
+        "url": "https://assets-uat.btdevops.io/assets/images/icons/Control.svg",
+        "filename": "Control.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69
+      },
+      {
         "id": "2398129",
         "title": "BeyondTrust_IDversion",
         "filename": "BeyondTrust_IDversion.json",

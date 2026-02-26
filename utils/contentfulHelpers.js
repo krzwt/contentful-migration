@@ -81,9 +81,23 @@ export function parseCraftLink(linkStr) {
     if (!linkStr) return { url: "", label: "", linkedId: null };
     try {
         const obj = typeof linkStr === "string" ? JSON.parse(linkStr) : linkStr;
+        let label = obj.linkedTitle || "";
+
+        // Handle inner payload for custom text labels
+        if (obj.payload) {
+            try {
+                const payload = typeof obj.payload === 'string' ? JSON.parse(obj.payload) : obj.payload;
+                if (payload && payload.customText) {
+                    label = payload.customText;
+                }
+            } catch (e) {
+                // Ignore payload parsing errors
+            }
+        }
+
         return {
             url: obj.linkedUrl || "",
-            label: obj.linkedTitle || "",
+            label: label,
             linkedId: obj.linkedId || null
         };
     } catch {

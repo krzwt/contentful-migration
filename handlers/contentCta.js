@@ -33,7 +33,7 @@ export async function createOrUpdateContentCta(env, id, fields, summary = null) 
 
     const cfFields = {
         blockId: { [LOCALE]: String(id) },
-        blockName: { [LOCALE]: fields.blockName || fields.heading || `Content CTA ${id}` }
+        blockName: { [LOCALE]: fields.blockName || fields.heading || `Content CTA` }
     };
 
     if (ctaEntry) {

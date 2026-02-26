@@ -281,8 +281,8 @@ async function run() {
                     blockId: blockId,
                     blockSegment: blockSegment,
                     ...fields, // Pass all fields from source
-                    heading: fields.headingSection || pageData.heading45 || title,
-                    body: fields.body180 || fields.bodyRedactorRestricted || fields.description,
+                    heading: fields.headingSection || fields.heading || pageData.heading45 || title,
+                    body: fields.body180 || fields.bodyRedactorRestricted || fields.description || fields.subheading,
                     label: fields.label || fields.ctaLinkText,
                     variation: type
                   },
