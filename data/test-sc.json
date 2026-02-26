@@ -881,7 +881,7 @@
                             "type": 101,
                             "fields": {
                                 "tabLink": "Tab 2",
-                                "heading": "Lorem Ipsum",
+                                "heading": "Lorem Ipsum 1",
                                 "body": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
                                 "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
                                 "ctaLinkText": "Test Link",
@@ -903,7 +903,7 @@
                             "type": 101,
                             "fields": {
                                 "tabLink": "Tab 3",
-                                "heading": "Lorem Ipsum",
+                                "heading": "Lorem Ipsum 2",
                                 "body": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
                                 "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
                                 "ctaLinkText": "Test Link",
