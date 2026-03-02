@@ -26,11 +26,11 @@ import { createOrUpdateFeatureTabbed } from "./handlers/featureTabbed.js";
 import { createOrUpdateResourceTabbed } from "./handlers/resourceTabbed.js";
 import { createOrUpdateTryCta } from "./handlers/tryItCta.js";
 import { createOrUpdateContactSales } from "./handlers/contactSales.js";
-import { createOrUpdateContentCta } from "./handlers/contentCta.js";
 import { createOrUpdateIconGrid } from "./handlers/iconGrid.js";
 import { createOrUpdateMediaBlock } from "./handlers/mediaBlock.js";
 import { createOrUpdateOfficeLocations } from "./handlers/officeLocations.js";
 import { createOrUpdateCalloutCards } from "./handlers/calloutCards.js";
+import { createOrUpdateContentCta } from "./handlers/contentCta.js";
 
 
 export const COMPONENTS = {
@@ -68,7 +68,7 @@ export const COMPONENTS = {
   iconGrid: { handler: createOrUpdateIconGrid },
   mediaBlock: { handler: createOrUpdateMediaBlock },
   grid: { handler: createOrUpdateIconGrid },  // Direct mapping if used as top level
-  cta: { handler: createOrUpdateContentCta }, // Direct mapping if used as top level
+  cta: { handler: createOrUpdateCtaBlock }, // Direct mapping if used as top level
   fullWidthAsset: { handler: createOrUpdateMediaBlock },
   officeLocations: { handler: createOrUpdateOfficeLocations },
   calloutCards: { handler: createOrUpdateCalloutCards },

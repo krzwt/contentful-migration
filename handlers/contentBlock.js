@@ -1,7 +1,7 @@
 import { convertHtmlToRichText } from "../utils/richText.js";
 import { upsertCta, upsertSectionTitle, parseCraftLink, resolveInternalUrl } from "../utils/contentfulHelpers.js";
 import { createOrUpdateFiftyFifty } from "./fiftyFifty.js";
-import { createOrUpdateContentCta } from "./contentCta.js";
+import { createOrUpdateCtaBlock } from "./ctaBlock.js";
 import { createOrUpdateIconGrid } from "./iconGrid.js";
 import { createOrUpdateMediaBlock } from "./mediaBlock.js";
 import { getOrderedKeys } from "../utils/jsonOrder.js";
@@ -124,8 +124,8 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
                     console.log(`✅ Detected nested contentWithAsset (ID: ${subId}) inside contentBlock ${blockData.blockId}`);
                     subEntry = await createOrUpdateFiftyFifty(env, subId, subFields, assetMap, summary);
                 } else if (subType === "cta") {
-                    console.log(`✅ Detected nested cta (ID: ${subId}) inside contentBlock ${blockData.blockId} -> contentCta`);
-                    subEntry = await createOrUpdateContentCta(env, subId, subFields, summary);
+                    console.log(`✅ Detected nested cta (ID: ${subId}) inside contentBlock ${blockData.blockId} -> ctaBlock`);
+                    subEntry = await createOrUpdateCtaBlock(env, { blockId: subId, ...subFields }, assetMap, summary);
                 } else if (subType === "grid") {
                     console.log(`✅ Detected nested grid (ID: ${subId}) inside contentBlock ${blockData.blockId} -> iconGrid`);
                     subEntry = await createOrUpdateIconGrid(env, subId, passData, assetMap, summary);
