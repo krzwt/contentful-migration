@@ -128,10 +128,7 @@ export async function createOrUpdateFeatureTabbed(
     if (itemEntry) tabRefs.push(makeLink(itemEntry.sys.id));
   }
 
-  const fields = {
-    blockId: { [LOCALE]: blockId },
-    blockName: { [LOCALE]: blockData.blockName || heading || "Feature Tabbed" },
-  };
+  const fields = {};
   if (titleEntry)
     fields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
   if (blockData.bodyRedactorRestricted) {

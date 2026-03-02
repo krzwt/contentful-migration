@@ -2,49 +2,22 @@
     "data": {
         "assets": [
             {
-                "id": "2489885",
-                "title": "Customization orange",
-                "url": "https://assets-uat.btdevops.io/assets/images/icons/Customization_orange.svg",
-                "filename": "Customization_orange.svg",
-                "mimeType": "image/svg+xml",
-                "width": 85,
-                "height": 69
-            },
-            {
-                "id": "2483706",
-                "title": "Icon Orange Check Certification tailored to your needs",
-                "url": "https://assets-uat.btdevops.io/assets/images/icons/Icon_Orange-Check_Certification-tailored-to-your-needs.svg",
-                "filename": "Icon_Orange-Check_Certification-tailored-to-your-needs.svg",
-                "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
-            },
-            {
-                "id": "1999622",
-                "title": "Identity Security Insights Integrations",
-                "url": "https://assets-uat.btdevops.io/assets/images/image-gallery/Identity-Security-Insights-Integrations.png",
-                "filename": "Identity-Security-Insights-Integrations.png",
+                "id": "1925013",
+                "title": "500x500 Hero Image for website MVR 2024 white background",
+                "url": "https://assets-uat.btdevops.io/assets/images/500x500-Hero-Image-for-website-MVR-2024-white-background.png",
+                "filename": "500x500-Hero-Image-for-website-MVR-2024-white-background.png",
                 "mimeType": "image/png",
-                "width": 553,
-                "height": 311
+                "width": 500,
+                "height": 500
             },
             {
-                "id": "83647",
-                "title": "Pastry Different Breakfast Food",
-                "url": "https://assets-uat.btdevops.io/assets/images/banner-images/pastry-different-breakfast-food.jpg",
-                "filename": "pastry-different-breakfast-food.jpg",
+                "id": "80413",
+                "title": "Ppm Devops",
+                "url": "https://assets-uat.btdevops.io/assets/images/ppm-devops.jpg",
+                "filename": "ppm-devops.jpg",
                 "mimeType": "image/jpeg",
-                "width": 612,
-                "height": 408
-            },
-            {
-                "id": "83620",
-                "title": "Technology Connection Online Networking Medias Conpt 1",
-                "url": "https://assets-uat.btdevops.io/assets/images/banner-images/technology-connection-online-networking-medias-conpt-1.jpg",
-                "filename": "technology-connection-online-networking-medias-conpt-1.jpg",
-                "mimeType": "image/jpeg",
-                "width": 610,
-                "height": 406
+                "width": 350,
+                "height": 350
             }
         ]
     }
