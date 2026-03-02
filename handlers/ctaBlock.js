@@ -4,111 +4,52 @@ import { mapBackgroundColor } from "../utils/colorMap.js";
 const LOCALE = "en-US";
 const CONTENT_TYPE = "ctaBlock";
 
-/* -----------------------------
-   MAIN UPSERT
- ------------------------------ */
-export async function createOrUpdateCtaBlock(env, blockData, assetMap = null) {
-  // 1. Verify Content Type exists
+/**
+ * Handler: ctaBlock → ctaBlock
+ */
+export async function createOrUpdateCtaBlock(env, blockData, assetMap = null, summary = null) {
   try {
     await env.getContentType(CONTENT_TYPE);
   } catch (err) {
-    console.warn(
-      `   ⚠ Component "${CONTENT_TYPE}" not founded in contentful or error: ${err.message}. Skipping block ${blockData.blockId}.`,
-    );
+    console.warn(`   ⚠ Component "${CONTENT_TYPE}" not found: ${err.message}. Skipping.`);
     return null;
   }
 
-  let existing;
-  try {
-    existing = await env.getEntries({
-      content_type: CONTENT_TYPE,
-      "fields.blockId": blockData.blockId,
-      limit: 1,
-    });
-  } catch (err) {
-    console.error(
-      `   🛑 Error fetching existing entries for "${CONTENT_TYPE}":`,
-      err.message,
-    );
-    return null;
-  }
+  const blockId = blockData.blockId || "";
+  const fields = blockData.fields || blockData;
 
-  /* -----------------------------
-       NESTED ENTRIES
-    ------------------------------ */
-
-  // 1. Section Title
+  // 1. Process Section Title
   let titleEntry = null;
-  if (blockData.headingSection) {
-    titleEntry = await upsertSectionTitle(
-      env,
-      blockData.blockId,
-      blockData.headingSection,
-    );
+  const heading = fields.headingSection || fields.heading || "";
+  if (heading) {
+    titleEntry = await upsertSectionTitle(env, blockId, heading);
   }
 
-  // 2. CTA
+  // 2. Process CTA
   let ctaEntry = null;
-  const label = blockData.label || blockData.ctaText || "";
-  const url = (() => {
-    const rawLink = blockData.ctaLink;
-    if (!rawLink) return "";
-    if (typeof rawLink === "string" && rawLink.startsWith("{")) {
-      try {
-        const parsed = JSON.parse(rawLink);
-        return parsed.linkedUrl || parsed.url || "";
-      } catch (e) {
-        return rawLink;
-      }
-    }
-    return String(rawLink);
-  })();
+  const rawLink = fields.ctaLink || fields.contentCTA;
+  if (rawLink) {
+    const linkInfo = parseCraftLink(rawLink);
+    let label = fields.label || fields.linkText || fields.customLinkText || linkInfo.label || "Learn More";
+    let url = linkInfo.url;
 
-  if (label || url) {
-    ctaEntry = await upsertCta(env, blockData.blockId, label, url);
+    if (!url && linkInfo.linkedId) {
+      url = resolveInternalUrl(linkInfo.linkedId) || "";
+    }
+
+    if (url || label || linkInfo.linkedId) {
+      ctaEntry = await upsertCta(env, `ctablock-${blockId}`, label, url, true, linkInfo.linkedId);
+    }
   }
 
-  /* -----------------------------
-       CTA BLOCK FIELDS
-    ------------------------------ */
-  const fields = {
-    blockId: { [LOCALE]: blockData.blockId },
-    blockName: {
-      [LOCALE]: blockData.blockName || blockData.headingSection || "CTA Block",
-    },
-    selectBackgroundColor: {
-      [LOCALE]: mapBackgroundColor(blockData.backgroundColor),
-    },
+  const cfFields = {
+    blockId: { [LOCALE]: String(blockId) },
+    blockName: { [LOCALE]: fields.blockName || heading || "CTA Block" },
+    selectBackgroundColor: { [LOCALE]: mapBackgroundColor(fields.backgroundColor) }
   };
 
-  if (titleEntry) {
-    fields.sectionTitle = {
-      [LOCALE]: {
-        sys: { type: "Link", linkType: "Entry", id: titleEntry.sys.id },
-      },
-    };
-  }
+  if (titleEntry) cfFields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
+  if (ctaEntry) cfFields.cta = { [LOCALE]: makeLink(ctaEntry.sys.id) };
 
-  if (ctaEntry) {
-    fields.cta = {
-      [LOCALE]: {
-        sys: { type: "Link", linkType: "Entry", id: ctaEntry.sys.id },
-      },
-    };
-  }
-
-  let entry;
-  if (existing.items.length) {
-    entry = existing.items[0];
-    console.log("🔄 Updating existing ctaBlock:", entry.sys.id);
-    entry.fields = fields;
-    entry = await entry.update();
-    entry = await entry.publish();
-  } else {
-    console.log("✨ Creating new ctaBlock");
-    entry = await env.createEntry(CONTENT_TYPE, { fields });
-    entry = await entry.publish();
-  }
-
-  return entry;
+  return await upsertEntry(env, CONTENT_TYPE, `ctablock-${blockId}`, cfFields);
 }

@@ -56,12 +56,12 @@ const effectiveDryRun = isDryRun || cliDryRun;
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
 const DATA_SOURCES = [
-  // {
-  //   file: "./data/standalone-content.json",
-  //   // file: "./data/test-sc.json",
-  //   pageContentType: "newStandaloneContent",
-  //   label: "Standalone Content",
-  // },
+  {
+    // file: "./data/standalone-content.json",
+    file: "./data/test-sc.json",
+    pageContentType: "newStandaloneContent",
+    label: "Standalone Content",
+  },
   // {
   //   file: "./data/standalone-conversion.json",
   //   pageContentType: "newStandaloneConversion",
@@ -72,11 +72,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneMicrosite",
   //   label: "Standalone Microsite",
   // },
-  {
-    file: "./data/standalone-thankyou.json",
-    pageContentType: "newStandaloneThankYou",
-    label: "Standalone Thank You",
-  },
+  // {
+  //   file: "./data/standalone-thankyou.json",
+  //   pageContentType: "newStandaloneThankYou",
+  //   label: "Standalone Thank You",
+  // },
   // {
   //   file: "./data/people-cpt.json",
   //   label: "People CPT",
