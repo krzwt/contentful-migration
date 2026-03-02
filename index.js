@@ -1,20 +1,35 @@
 import fs from "fs";
 import { getEnvironment } from "./config/contentful.js";
 import { COMPONENTS } from "./registry.js";
-import { setSectionsOnPage, getOrCreatePage, publishPage } from "./handlers/pageHandler.js";
+import {
+  setSectionsOnPage,
+  getOrCreatePage,
+  publishPage,
+} from "./handlers/pageHandler.js";
 import { migratePeople } from "./handlers/peopleHandler.js";
 import { migrateQuotes } from "./handlers/quoteHandler.js";
 import { migrateResources } from "./handlers/resourceHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
-import { loadAssetMetadata, processAssets, loadWistiaData, prePopulateAssetCache } from "./utils/assetUploader.js";
+import {
+  loadAssetMetadata,
+  processAssets,
+  loadWistiaData,
+  prePopulateAssetCache,
+} from "./utils/assetUploader.js";
 import { buildUrlMap } from "./utils/contentfulHelpers.js";
 import { loadCategories } from "./utils/categoryLoader.js";
 import { loadTagMapping } from "./utils/tagHandler.js";
 import { getOrderedKeys } from "./utils/jsonOrder.js";
 
 const isDryRun = false; // Set to true to simulate migration without making changes
-const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json", "./data/quote-assets.json", "./data/resource-assets.json", "./data/missing-fixed.json"]; // GraphQL asset metadata
+const ASSET_METADATA_FILES = [
+  "./data/assets.json",
+  "./data/people-assets.json",
+  "./data/quote-assets.json",
+  "./data/resource-assets.json",
+  "./data/missing-fixed.json",
+]; // GraphQL asset metadata
 
 /* ---------------------------------------------------------
    CLI args: node index.js [--from N] [--to N] [--dry]
@@ -25,9 +40,14 @@ const ASSET_METADATA_FILES = ["./data/assets.json", "./data/people-assets.json",
      npm run migrate -- --dry              → dry run all
 --------------------------------------------------------- */
 const args = process.argv.slice(2);
-const fromArg = args.indexOf("--from") !== -1 ? parseInt(args[args.indexOf("--from") + 1]) : null;
-const toArg = args.indexOf("--to") !== -1 ? parseInt(args[args.indexOf("--to") + 1]) : null;
-const idArg = args.indexOf("--id") !== -1 ? args[args.indexOf("--id") + 1] : null;
+const fromArg =
+  args.indexOf("--from") !== -1
+    ? parseInt(args[args.indexOf("--from") + 1])
+    : null;
+const toArg =
+  args.indexOf("--to") !== -1 ? parseInt(args[args.indexOf("--to") + 1]) : null;
+const idArg =
+  args.indexOf("--id") !== -1 ? args[args.indexOf("--id") + 1] : null;
 const cliDryRun = args.includes("--dry");
 const effectiveDryRun = isDryRun || cliDryRun;
 
@@ -36,12 +56,12 @@ const effectiveDryRun = isDryRun || cliDryRun;
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
 const DATA_SOURCES = [
-  {
-    // file: "./data/standalone-content.json",
-    file: "./data/test-sc.json",
-    pageContentType: "newStandaloneContent",
-    label: "Standalone Content"
-  },
+  // {
+  //   file: "./data/standalone-content.json",
+  //   // file: "./data/test-sc.json",
+  //   pageContentType: "newStandaloneContent",
+  //   label: "Standalone Content",
+  // },
   // {
   //   file: "./data/standalone-conversion.json",
   //   pageContentType: "newStandaloneConversion",
@@ -50,13 +70,13 @@ const DATA_SOURCES = [
   // {
   //   file: "./data/standalone-microsite.json",
   //   pageContentType: "newStandaloneMicrosite",
-  //   label: "Standalone Microsite"
+  //   label: "Standalone Microsite",
   // },
-  // {
-  //   file: "./data/standalone-thankyou.json",
-  //   pageContentType: "newStandaloneThankYou",
-  //   label: "Standalone Thank You"
-  // },
+  {
+    file: "./data/standalone-thankyou.json",
+    pageContentType: "newStandaloneThankYou",
+    label: "Standalone Thank You",
+  },
   // {
   //   file: "./data/people-cpt.json",
   //   label: "People CPT",
@@ -89,7 +109,7 @@ async function run() {
     skipped: [],
     missingMappings: new Map(), // type -> fields[]
     missingAssetMetadata: [],
-    missingResources: new Set()
+    missingResources: new Set(),
   };
 
   // Load asset metadata
@@ -98,7 +118,9 @@ async function run() {
   console.log(`📚 Loaded ${assetMetadata.size} asset metadata entries\n`);
 
   if (effectiveDryRun) {
-    console.log("🏃 Running in DRY RUN mode. No changes will be made to Contentful.\n");
+    console.log(
+      "🏃 Running in DRY RUN mode. No changes will be made to Contentful.\n",
+    );
   } else {
     console.log("✅ Connected to Contentful\n");
   }
@@ -112,7 +134,9 @@ async function run() {
   --------------------------------------------------------- */
   for (const source of DATA_SOURCES) {
     if (!fs.existsSync(source.file)) {
-      console.log(`\n⚠️ Skipping "${source.label}" — file not found: ${source.file} `);
+      console.log(
+        `\n⚠️ Skipping "${source.label}" — file not found: ${source.file} `,
+      );
       continue;
     }
 
@@ -125,7 +149,7 @@ async function run() {
     // Determine which indices to process
     let targetIndices = [];
     if (idArg) {
-      const idx = data.findIndex(p => String(p.id) === String(idArg));
+      const idx = data.findIndex((p) => String(p.id) === String(idArg));
       if (idx !== -1) {
         targetIndices.push(idx);
       } else {
@@ -138,11 +162,15 @@ async function run() {
       for (let i = start; i < end; i++) targetIndices.push(i);
     }
 
-    const batchData = targetIndices.map(idx => data[idx]);
+    const batchData = targetIndices.map((idx) => data[idx]);
 
     console.log("\n" + "=".repeat(50));
-    const rangeStr = idArg ? `ID: ${idArg}` : `pages ${targetIndices[0] + 1} - ${targetIndices[targetIndices.length - 1] + 1}`;
-    console.log(`📂 Processing: ${source.label} (${rangeStr} of ${data.length} → ${source.pageContentType || "People"})`);
+    const rangeStr = idArg
+      ? `ID: ${idArg}`
+      : `pages ${targetIndices[0] + 1} - ${targetIndices[targetIndices.length - 1] + 1}`;
+    console.log(
+      `📂 Processing: ${source.label} (${rangeStr} of ${data.length} → ${source.pageContentType || "People"})`,
+    );
     console.log("=".repeat(50));
 
     // Detect all asset IDs from BATCH and upload/map them
@@ -161,7 +189,14 @@ async function run() {
 
     // lookupOnly=true: just find existing assets by title (no upload/wait)
     // Assets should already be uploaded via: npm run assets
-    const { assetMap: contentfulAssetMap, missingIds } = await processAssets(env, assetIds, assetMetadata, effectiveDryRun, true, summary);
+    const { assetMap: contentfulAssetMap, missingIds } = await processAssets(
+      env,
+      assetIds,
+      assetMetadata,
+      effectiveDryRun,
+      true,
+      summary,
+    );
     summary.missingAssetMetadata.push(...missingIds);
 
     const totalPages = data.length;
@@ -184,11 +219,16 @@ async function run() {
           if (fIdx === -1) return "";
 
           const nextPIdx = rawFileContent.indexOf('"id":', fIdx + 20);
-          return rawFileContent.substring(fIdx, nextPIdx === -1 ? undefined : nextPIdx);
+          return rawFileContent.substring(
+            fIdx,
+            nextPIdx === -1 ? undefined : nextPIdx,
+          );
         };
 
         const pageNum = targetIndices[i] + 1;
-        console.log(`\n➡️ [${pageNum} / ${displayTotal}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`);
+        console.log(
+          `\n➡️ [${pageNum} / ${displayTotal}] Page: ${pageData.title} (entryId: ${pageData.id || "N/A"})`,
+        );
         const { slug, title, uri } = pageData;
         // Use uri as slug (includes parent path, e.g. "sem/remote-access-new")
         const fullSlug = uri || slug;
@@ -197,23 +237,37 @@ async function run() {
         if (effectiveDryRun) {
           // Show parent/child relationship in dry run
           if (pageData.parentId) {
-            const parentPage = data.find(p => String(p.id) === String(pageData.parentId));
-            const parentTitle = parentPage ? parentPage.title : `[NOT IN JSON: ${pageData.parentId}]`;
+            const parentPage = data.find(
+              (p) => String(p.id) === String(pageData.parentId),
+            );
+            const parentTitle = parentPage
+              ? parentPage.title
+              : `[NOT IN JSON: ${pageData.parentId}]`;
             const parentSlug = parentPage ? parentPage.slug : "unknown";
-            console.log(`   📂 Parent: "${parentTitle}"(slug: ${parentSlug}) → settings.parentPage`);
+            console.log(
+              `   📂 Parent: "${parentTitle}"(slug: ${parentSlug}) → settings.parentPage`,
+            );
             console.log(`   🔗 Slug: /${fullSlug}`);
           } else {
             console.log(`   📂 Root page (no parent) → /${fullSlug}`);
           }
         } else {
-          pageEntry = await getOrCreatePage(env, {
-            ...pageData,
-            title,
-            slug: fullSlug,
-          }, source.pageContentType, data, contentfulAssetMap);
+          pageEntry = await getOrCreatePage(
+            env,
+            {
+              ...pageData,
+              title,
+              slug: fullSlug,
+            },
+            source.pageContentType,
+            data,
+            contentfulAssetMap,
+          );
 
           if (!pageEntry) {
-            console.error(`🛑 Skipping page "${title}" because page entry could not be created/found.`);
+            console.error(
+              `🛑 Skipping page "${title}" because page entry could not be created/found.`,
+            );
             continue;
           }
         }
@@ -222,10 +276,15 @@ async function run() {
         const sectionEntries = [];
 
         // Detect component fields in the JSON (keys with numeric sub-keys)
-        const componentFields = Object.keys(pageData).filter(key => {
+        const componentFields = Object.keys(pageData).filter((key) => {
           const val = pageData[key];
-          return val && typeof val === "object" && !Array.isArray(val) &&
-            Object.keys(val).length > 0 && !isNaN(Object.keys(val)[0]);
+          return (
+            val &&
+            typeof val === "object" &&
+            !Array.isArray(val) &&
+            Object.keys(val).length > 0 &&
+            !isNaN(Object.keys(val)[0])
+          );
         });
 
         for (const fieldKey of componentFields) {
@@ -240,7 +299,9 @@ async function run() {
             // Extract block segment for nested ordering
             const bIdx = fieldSegment.indexOf(`"${blockId}":`);
             const nextBId = orderedIds[orderedIds.indexOf(blockId) + 1];
-            const nextBIdx = nextBId ? fieldSegment.indexOf(`"${nextBId}":`) : fieldSegment.length;
+            const nextBIdx = nextBId
+              ? fieldSegment.indexOf(`"${nextBId}":`)
+              : fieldSegment.length;
             const blockSegment = fieldSegment.substring(bIdx, nextBIdx);
 
             const fields = block.fields;
@@ -251,14 +312,18 @@ async function run() {
               if (!summary.missingMappings.has(type)) {
                 summary.missingMappings.set(type, Object.keys(fields || {}));
               }
-              console.warn(`ℹ️ skipping: "${type}" (no mapping in registry.js)`);
+              console.warn(
+                `ℹ️ skipping: "${type}" (no mapping in registry.js)`,
+              );
               continue;
             }
 
             console.log(`✅ Detected "${type}" (ID: ${blockId})`);
 
             if (effectiveDryRun) {
-              console.log(`   [DRY RUN] Would process ${type} using ${config.handler.name}`);
+              console.log(
+                `   [DRY RUN] Would process ${type} using ${config.handler.name}`,
+              );
               continue;
             }
 
@@ -270,7 +335,7 @@ async function run() {
                   { id: blockId, ...fields },
                   config.mapping,
                   contentfulAssetMap,
-                  summary
+                  summary,
                 );
                 if (entryId) {
                   heroEntry = await env.getEntry(entryId);
@@ -282,13 +347,21 @@ async function run() {
                     blockId: blockId,
                     blockSegment: blockSegment,
                     ...fields, // Pass all fields from source
-                    heading: fields.headingSection || fields.heading || pageData.heading45 || title,
-                    body: fields.body180 || fields.bodyRedactorRestricted || fields.description || fields.subheading,
+                    heading:
+                      fields.headingSection ||
+                      fields.heading ||
+                      pageData.heading45 ||
+                      title,
+                    body:
+                      fields.body180 ||
+                      fields.bodyRedactorRestricted ||
+                      fields.description ||
+                      fields.subheading,
                     label: fields.label || fields.ctaLinkText,
-                    variation: type
+                    variation: type,
                   },
                   contentfulAssetMap,
-                  summary
+                  summary,
                 );
               }
 
@@ -300,8 +373,16 @@ async function run() {
                 }
               }
             } catch (err) {
-              console.error(`❌ Error processing ${type} (${blockId}):`, err.message);
-              summary.skipped.push({ page: title, blockId, type, error: err.message });
+              console.error(
+                `❌ Error processing ${type} (${blockId}):`,
+                err.message,
+              );
+              summary.skipped.push({
+                page: title,
+                blockId,
+                type,
+                error: err.message,
+              });
             }
           }
         }
@@ -319,15 +400,37 @@ async function run() {
     }
 
     if (source.isPeople) {
-      await migratePeople(env, batchData, contentfulAssetMap, targetIndices, totalPages, summary);
+      await migratePeople(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+      );
     }
 
     if (source.isQuotes) {
-      await migrateQuotes(env, batchData, contentfulAssetMap, targetIndices, totalPages, summary);
+      await migrateQuotes(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+      );
     }
 
     if (source.isResources) {
-      await migrateResources(env, batchData, contentfulAssetMap, targetIndices, totalPages, summary, rawFileContent);
+      await migrateResources(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent,
+      );
     }
   }
 
@@ -355,7 +458,9 @@ async function run() {
 
   if (summary.skipped.length > 0) {
     console.log("\n❌ FAILED BLOCKS:");
-    summary.skipped.forEach(s => console.log(`   - [${s.page}] ${s.type} (${s.blockId}): ${s.error}`));
+    summary.skipped.forEach((s) =>
+      console.log(`   - [${s.page}] ${s.type} (${s.blockId}): ${s.error}`),
+    );
   }
 
   console.log("\n🚀 Migration Complete");
