@@ -1,4 +1,5 @@
 import { convertHtmlToRichText } from "../utils/richText.js";
+import { upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
 
 const LOCALE = "en-US";
 
@@ -28,6 +29,32 @@ export async function genericComponentHandler(env, block, mapping, assetMap = nu
 
   const fields = { blockId: { [LOCALE]: blockIdValue } };
 
+  // #region agent log
+  if (mapping.contentType === "embeds") {
+    fetch('http://127.0.0.1:7309/ingest/588f7aad-24fa-4765-a619-4f0aa82527cf', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Debug-Session-Id': 'c19fb8'
+      },
+      body: JSON.stringify({
+        sessionId: 'c19fb8',
+        runId: 'pre-fix',
+        hypothesisId: 'H1',
+        location: 'handlers/genericComponent.js:fields-init',
+        message: 'Embeds generic handler - initial block values',
+        data: {
+          blockIdValue,
+          mappingContentType: mapping.contentType,
+          rawSectionTitle:
+            block.headingSection || block.title || block.blockHeading || null
+        },
+        timestamp: Date.now()
+      })
+    }).catch(() => {});
+  }
+  // #endregion
+
   for (const [fieldId, cfg] of Object.entries(mapping.fields)) {
     if (fieldId === "blockId") continue;
 
@@ -46,6 +73,43 @@ export async function genericComponentHandler(env, block, mapping, assetMap = nu
 
     if ((value === null || value === undefined || value === "") && cfg.default !== undefined) {
       value = cfg.default;
+    }
+
+    // Special-case: embeds.sectionTitle must be a Link -> sectionTitle entry
+    if (mapping.contentType === "embeds" && fieldId === "sectionTitle") {
+      if (value !== null && value !== undefined && value !== "") {
+        const titleEntry = await upsertSectionTitle(env, blockIdValue, String(value));
+
+        // #region agent log
+        fetch('http://127.0.0.1:7309/ingest/588f7aad-24fa-4765-a619-4f0aa82527cf', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Debug-Session-Id': 'c19fb8'
+          },
+          body: JSON.stringify({
+            sessionId: 'c19fb8',
+            runId: 'pre-fix',
+            hypothesisId: 'H2',
+            location: 'handlers/genericComponent.js:embeds-sectionTitle',
+            message: 'Embeds handler - created/linked sectionTitle entry',
+            data: {
+              blockIdValue,
+              rawTitle: String(value),
+              titleEntryId: titleEntry?.sys?.id || null
+            },
+            timestamp: Date.now()
+          })
+        }).catch(() => {});
+        // #endregion
+
+        if (titleEntry && titleEntry.sys && titleEntry.sys.id) {
+          fields[fieldId] = {
+            [LOCALE]: makeLink(titleEntry.sys.id)
+          };
+        }
+      }
+      continue;
     }
 
     if (cfg.type === "asset") {
@@ -93,6 +157,53 @@ export async function genericComponentHandler(env, block, mapping, assetMap = nu
         }
       } else {
         fields[fieldId] = { [LOCALE]: null };
+      }
+      continue;
+    }
+
+    if (cfg.type === "entryArray") {
+      let linkedIds = Array.isArray(value) ? value : (value ? [value] : []);
+      let references = [];
+      for (const linkedId of linkedIds) {
+        if (!linkedId) continue;
+        const linkedIdStr = String(linkedId);
+
+        let existingLinked = { items: [] };
+        try {
+          existingLinked = await env.getEntries({
+            content_type: cfg.linkedContentType,
+            "fields.entryId": linkedIdStr,
+            limit: 1
+          });
+        } catch (err) {
+          console.warn(`   ⚠ Error searching for ${cfg.linkedContentType} with entryId ${linkedIdStr}`);
+        }
+
+        if (existingLinked.items.length > 0) {
+          references.push({
+            sys: { type: "Link", linkType: "Entry", id: existingLinked.items[0].sys.id }
+          });
+        } else {
+          console.log(`   ⚠️ ${cfg.linkedContentType} (entryId: ${linkedIdStr}) not found in Contentful. Creating a stub...`);
+          try {
+            const stubEntry = await env.createEntry(cfg.linkedContentType, {
+              fields: {
+                entryId: { [LOCALE]: linkedIdStr },
+                title: { [LOCALE]: `Embed ${linkedIdStr}` }
+              }
+            });
+            await stubEntry.publish();
+            references.push({
+              sys: { type: "Link", linkType: "Entry", id: stubEntry.sys.id }
+            });
+          } catch (stubErr) {
+            console.error(`   🛑 Error creating stub for ${linkedIdStr}:`, stubErr.message);
+          }
+        }
+      }
+
+      if (references.length > 0) {
+        fields[fieldId] = { [LOCALE]: references };
       }
       continue;
     }
@@ -149,6 +260,32 @@ export async function genericComponentHandler(env, block, mapping, assetMap = nu
       }
     }
   }
+
+  // #region agent log
+  if (mapping.contentType === "embeds") {
+    fetch('http://127.0.0.1:7309/ingest/588f7aad-24fa-4765-a619-4f0aa82527cf', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Debug-Session-Id': 'c19fb8'
+      },
+      body: JSON.stringify({
+        sessionId: 'c19fb8',
+        runId: 'pre-fix',
+        hypothesisId: 'H1',
+        location: 'handlers/genericComponent.js:fields-before-save',
+        message: 'Embeds generic handler - final fields snapshot',
+        data: {
+          blockIdValue,
+          hasSectionTitle: Object.prototype.hasOwnProperty.call(fields, "sectionTitle"),
+          sectionTitleField: fields.sectionTitle || null,
+          fieldKeys: Object.keys(fields)
+        },
+        timestamp: Date.now()
+      })
+    }).catch(() => {});
+  }
+  // #endregion
 
   // UPDATE
   if (existing.items.length) {

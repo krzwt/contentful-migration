@@ -22,7 +22,7 @@
         "slug": "testing-standalone-2",
         "uri": "testing-standalone-2",
         "dateCreated": "2026-03-03T07:57:14-06:00",
-        "dateUpdated": "2026-03-03T08:01:04-06:00",
+        "dateUpdated": "2026-03-03T09:50:08-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218060,
@@ -196,9 +196,14 @@
                                 "Heading",
                                 "Heading",
                                 "Heading"
+                            ],
+                            [
+                                "",
+                                "",
+                                ""
                             ]
                         ],
-                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\">Heading</th><th align=\"center\" width=\"\">Heading</th><th align=\"right\" width=\"\">Heading</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">Heading</td><td align=\"center\">Heading</td><td align=\"right\">Heading</td></tr><tr><td align=\"left\">Heading</td><td align=\"center\">Heading</td><td align=\"right\">Heading</td></tr><tr><td align=\"left\">Heading</td><td align=\"center\">Heading</td><td align=\"right\">Heading</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\">Heading</th><th align=\"center\" width=\"\">Heading</th><th align=\"right\" width=\"\">Heading</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">Heading</td><td align=\"center\">Heading</td><td align=\"right\">Heading</td></tr><tr><td align=\"left\">Heading</td><td align=\"center\">Heading</td><td align=\"right\">Heading</td></tr><tr><td align=\"left\">Heading</td><td align=\"center\">Heading</td><td align=\"right\">Heading</td></tr><tr><td align=\"left\"></td><td align=\"center\"></td><td align=\"right\"></td></tr>\n\n                </tbody>\n\n            </table>\n        "
                     },
                     "textList": {
                         "2503912": {
@@ -215,6 +220,32 @@
                             "collapsed": false,
                             "fields": {
                                 "item": "Add [*] in front of an item to remove the number from the Footnote display"
+                            }
+                        }
+                    }
+                }
+            },
+            "2504068": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Content Block",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": {
+                        "2504069": {
+                            "type": "fullWidthAsset",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "asset": [
+                                    1947721
+                                ],
+                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
                             }
                         }
                     }

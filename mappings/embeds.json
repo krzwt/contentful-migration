@@ -1,18 +1,31 @@
 {
     "contentType": "embeds",
-    "idField": "blockId",
+    "idField": "id",
     "fields": {
-        "title": {
-            "from": "headingSection",
+        "blockName": {
+            "from": [
+                "headingSection",
+                "title",
+                "blockHeading"
+            ],
+            "type": "text"
+        },
+        "sectionTitle": {
+            "from": [
+                "headingSection",
+                "title",
+                "blockHeading"
+            ],
             "type": "text"
         },
         "description": {
             "from": "bodyRedactorRestricted",
             "type": "richText"
         },
-        "embedCode": {
+        "embeds": {
             "from": "embeds",
-            "type": "text"
+            "type": "entryArray",
+            "linkedContentType": "newEmbedsCpt"
         }
     }
 }

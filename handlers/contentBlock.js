@@ -1,5 +1,5 @@
 import { convertHtmlToRichText } from "../utils/richText.js";
-import { upsertCta, upsertSectionTitle, parseCraftLink, resolveInternalUrl } from "../utils/contentfulHelpers.js";
+import { upsertEntry, upsertCta, upsertSectionTitle, makeLink, parseCraftLink, resolveInternalUrl } from "../utils/contentfulHelpers.js";
 import { createOrUpdateFiftyFifty } from "./fiftyFifty.js";
 import { createOrUpdateIconGrid } from "./iconGrid.js";
 import { createOrUpdateMediaBlock } from "./mediaBlock.js";
@@ -150,8 +150,8 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
                     console.log(`✅ Detected nested contentWithAsset (ID: ${subId}) inside contentBlock ${blockData.blockId}`);
                     subEntry = await createOrUpdateFiftyFifty(env, subId, subFields, assetMap, summary);
                 } else if (subType === "cta") {
-                    // Merge nested CTA into the parent Content Block's fullWidthCta field
-                    console.log(`✅ Detected nested cta (ID: ${subId}) inside contentBlock ${blockData.blockId} -> fullWidthCta`);
+                    // Create a SEPARATE Content Block for this CTA to maintain sequential order
+                    console.log(`✅ Creating separate Content Block for nested cta (ID: ${subId}) to preserve order`);
                     const rawCtaLink = subFields.contentCTA || subFields.ctaLink;
                     if (rawCtaLink) {
                         const ctaLinkInfo = parseCraftLink(rawCtaLink);
@@ -160,21 +160,24 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
                         if (!ctaUrl && ctaLinkInfo.linkedId) ctaUrl = resolveInternalUrl(ctaLinkInfo.linkedId) || "";
 
                         if (ctaLabel || ctaUrl || ctaLinkInfo.linkedId) {
-                            const fwCta = await upsertCta(env, `contentcta-${subId}`, ctaLabel, ctaUrl, true, ctaLinkInfo.linkedId);
+                            // 1. Create the CTA entry
+                            const fwCta = await upsertCta(env, `subcta-${subId}`, ctaLabel, ctaUrl, true, ctaLinkInfo.linkedId);
                             if (fwCta) {
-                                // Re-fetch the content block entry and set fullWidthCta
-                                const freshEntry = await env.getEntry(entry.sys.id);
-                                freshEntry.fields.fullWidthCta = {
-                                    [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: fwCta.sys.id } }
+                                // 2. Create a NEW Content Block to wrap this CTA
+                                const ctaWrapperFields = {
+                                    blockId: { [LOCALE]: String(subId) },
+                                    blockName: { [LOCALE]: `CTA Block: ${ctaLabel}` },
+                                    fullWidthCta: { [LOCALE]: makeLink(fwCta.sys.id) }
                                 };
-                                const updatedEntry = await freshEntry.update();
-                                await updatedEntry.publish();
-                                console.log(`   🔗 Linked CTA "${ctaLabel}" to Content Block fullWidthCta`);
+                                const ctaBlockEntry = await upsertEntry(env, "contentBlock", `contentcta-wrapper-${subId}`, ctaWrapperFields);
+                                if (ctaBlockEntry) {
+                                    results.push(ctaBlockEntry);
+                                    console.log(`   ✨ Created separate Content Block wrapper for CTA "${ctaLabel}"`);
+                                }
                             }
                         }
                     }
-                    // Do NOT add to results - this is merged into the content block, not a separate section
-                    subEntry = null;
+                    subEntry = null; // Already added to results via results.push(ctaBlockEntry)
                 } else if (subType === "grid") {
                     console.log(`✅ Detected nested grid (ID: ${subId}) inside contentBlock ${blockData.blockId} -> iconGrid`);
                     subEntry = await createOrUpdateIconGrid(env, subId, passData, assetMap, summary);
