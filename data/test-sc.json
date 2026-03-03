@@ -5,44 +5,44 @@
         "expiryDate": null,
         "deletedWithEntryType": false,
         "_authorId": 2500107,
-        "id": 2500187,
+        "id": 2503814,
         "tempId": null,
         "draftId": null,
         "revisionId": null,
         "isProvisionalDraft": false,
-        "uid": "87c816cf-35d2-4d7c-b46b-3ef0e0ec11fc",
-        "siteSettingsId": 3500054,
+        "uid": "cbe31bd3-f6c4-420d-b302-e4a9723d06d8",
+        "siteSettingsId": 3507651,
         "fieldLayoutId": null,
         "structureId": 104759,
-        "contentId": 1753441,
+        "contentId": 1758943,
         "enabled": true,
         "archived": false,
         "siteId": 1,
         "title": "Testing Standalone",
-        "slug": "testing-standalone",
-        "uri": "testing-standalone",
-        "dateCreated": "2026-02-11T05:02:50-06:00",
-        "dateUpdated": "2026-03-03T00:57:25-06:00",
+        "slug": "testing-standalone-2",
+        "uri": "testing-standalone-2",
+        "dateCreated": "2026-03-03T07:57:14-06:00",
+        "dateUpdated": "2026-03-03T08:01:04-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218060,
-        "lft": 74,
-        "rgt": 75,
+        "lft": 76,
+        "rgt": 77,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
         "parentId": null,
-        "canonicalId": 2500187,
+        "canonicalId": 2503814,
         "isDraft": false,
         "isRevision": false,
         "isUnpublishedDraft": false,
-        "ref": "newStandaloneContent/testing-standalone",
+        "ref": "newStandaloneContent/testing-standalone-2",
         "status": "live",
-        "url": "https://bluetext.beyondtrust.com/testing-standalone",
+        "url": "https://bluetext.beyondtrust.com/testing-standalone-2",
         "authorId": 2500107,
         "typeId": 132,
         "mainBannerStandalone": {
-            "2500188": {
+            "2503815": {
                 "type": "bannerSlim",
                 "enabled": true,
                 "collapsed": false,
@@ -61,607 +61,7 @@
         "mainNavigationCtaButtonWhite": "{\"linkedUrl\":\"https:\\/\\/google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"sadddd\\\"}\",\"type\":\"custom\"}",
         "breadcrumbSwitch": true,
         "overviewContentStandalone": {
-            "2502273": {
-                "type": "faqs",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "FAQs",
-                    "faqs": {
-                        "2502274": {
-                            "type": 99,
-                            "fields": {
-                                "faqs": {
-                                    "2502275": {
-                                        "type": "faq",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "question": "Question 1",
-                                            "answer": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
-                                        }
-                                    },
-                                    "2502276": {
-                                        "type": "faq",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "question": "Question 2",
-                                            "answer": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "2503653": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "CB Heading",
-                    "headingSwitch": false,
-                    "bodyRedactorRestricted": "<p>CB Body</p>",
-                    "ctaLink": "{\"linkedId\":1484508,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
-                    "label": "CTA",
-                    "contentSubsections": {
-                        "2503654": {
-                            "type": "cta",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "contentCTA": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Content CTA\\\"}\",\"type\":\"url\"}"
-                            }
-                        }
-                    }
-                }
-            },
-            "2502277": {
-                "type": "logoList",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Logo List",
-                    "logoList": {
-                        "2502278": {
-                            "type": 97,
-                            "fields": {
-                                "logos": {
-                                    "2502279": {
-                                        "type": "logo",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "logo": [
-                                                2496438
-                                            ],
-                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
-                                            "caption": "Lorem Ipsum"
-                                        }
-                                    },
-                                    "2502281": {
-                                        "type": "logo",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "logo": [
-                                                2488733
-                                            ],
-                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                                            "caption": "Lorem Ipsum"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "gridSize": "3",
-                    "logoBackground": "grey"
-                }
-            },
-            "2502282": {
-                "type": "officeLocations",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Office Locations",
-                    "body250": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                    "phoneNumber": "{\"linkedUrl\":\"123456789\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Group Phone Number\\\"}\",\"type\":\"tel\"}",
-                    "globalOfficeLocations": {
-                        "2502283": {
-                            "type": 117,
-                            "fields": {
-                                "officeLocationPhoto": [
-                                    1947721
-                                ],
-                                "officeLocationName": "Office Locations",
-                                "officeStreetAddress": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
-                                "officeGoogleMapLink": "{\"linkedUrl\":\"https:\\/\\/maps.app.goo.gl\\/HMYpFVjuSwojnRmBA\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Google Map\\\"}\",\"type\":\"custom\"}",
-                                "officePhoneNumber": "{\"linkedUrl\":\"123456789\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Phone Number\\\"}\",\"type\":\"tel\"}"
-                            }
-                        },
-                        "2502284": {
-                            "type": 117,
-                            "fields": {
-                                "officeLocationPhoto": [
-                                    83647
-                                ],
-                                "officeLocationName": "Lorem Ipsum",
-                                "officeStreetAddress": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
-                                "officeGoogleMapLink": "{\"linkedUrl\":\"https:\\/\\/maps.app.goo.gl\\/HMYpFVjuSwojnRmBA\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Google Map \\\"}\",\"type\":\"custom\"}",
-                                "officePhoneNumber": "{\"linkedUrl\":\"123456789\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Phone Number\\\"}\",\"type\":\"tel\"}"
-                            }
-                        },
-                        "2502285": {
-                            "type": 117,
-                            "fields": {
-                                "officeLocationPhoto": [
-                                    83620
-                                ],
-                                "officeLocationName": "Lorem Ipsum",
-                                "officeStreetAddress": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
-                                "officeGoogleMapLink": "{\"linkedUrl\":\"https:\\/\\/maps.app.goo.gl\\/HMYpFVjuSwojnRmBA\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Google Map\\\"}\",\"type\":\"custom\"}",
-                                "officePhoneNumber": "{\"linkedUrl\":\"123456789\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Phone Number\\\"}\",\"type\":\"tel\"}"
-                            }
-                        }
-                    }
-                }
-            },
-            "2502286": {
-                "type": "processFlow",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Process Flow",
-                    "processFlow": {
-                        "2502287": {
-                            "type": 109,
-                            "fields": {
-                                "heading": "Lorem Ipsum",
-                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                "image": [
-                                    2483696
-                                ]
-                            }
-                        },
-                        "2502288": {
-                            "type": 109,
-                            "fields": {
-                                "heading": "Lorem Ipsum",
-                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                "image": [
-                                    2483695
-                                ]
-                            }
-                        },
-                        "2502289": {
-                            "type": 109,
-                            "fields": {
-                                "heading": "Lorem Ipsum",
-                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                "image": [
-                                    2483694
-                                ]
-                            }
-                        }
-                    }
-                }
-            },
-            "2502290": {
-                "type": "quotes",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "companyQuotes": [
-                        2497974,
-                        2497965,
-                        2498030
-                    ]
-                }
-            },
-            "2502296": {
-                "type": "statistics",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Statistics",
-                    "body250": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                    "label": "Test Link",
-                    "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
-                    "statistics": {
-                        "2502297": {
-                            "type": 94,
-                            "fields": {
-                                "listing": {
-                                    "2502298": {
-                                        "type": "statistic",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "rangeStart": 0,
-                                            "rangeEnd": 10,
-                                            "suffix": "$",
-                                            "description": "Lorem Ipsum is simply dummy text.",
-                                            "footnote": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
-                                        }
-                                    },
-                                    "2502299": {
-                                        "type": "statistic",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "rangeStart": 20,
-                                            "rangeEnd": 50,
-                                            "suffix": "%",
-                                            "description": "Lorem Ipsum is simply dummy text.",
-                                            "footnote": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "switch": false
-                }
-            },
-            "2502300": {
-                "type": "tryItCta",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Try IT CTA",
-                    "image": [
-                        1947721
-                    ],
-                    "headingLarge": "Lorem Ipsum",
-                    "bodyMedium": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-                    "list": {
-                        "2502301": {
-                            "type": 96,
-                            "fields": {
-                                "listing": {
-                                    "2502302": {
-                                        "type": "listItem",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "item": "Lorem Ipsum"
-                                        }
-                                    },
-                                    "2502303": {
-                                        "type": "listItem",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "item": "Lorem Ipsum"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "mainBannerForm": {
-                        "2502304": {
-                            "type": "sraTrialForm",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "webFormHandler": "trialForm3StepRedirect",
-                                "product": "pra",
-                                "salesforceCampaignId": null,
-                                "trialLength": "month"
-                            }
-                        }
-                    }
-                }
-            },
-            "2502305": {
-                "type": "useCases",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "heading45": "Use Cases",
-                    "useCases": {
-                        "2502306": {
-                            "type": 102,
-                            "fields": {
-                                "heading": "Lorem Ipsum",
-                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-                                "image": [
-                                    2483696
-                                ],
-                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
-                                "ctaLabel": "Test Link"
-                            }
-                        },
-                        "2502307": {
-                            "type": 102,
-                            "fields": {
-                                "heading": "Lorem Ipsum",
-                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-                                "image": [
-                                    2483695
-                                ],
-                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
-                                "ctaLabel": "Test Link"
-                            }
-                        },
-                        "2502308": {
-                            "type": 102,
-                            "fields": {
-                                "heading": "Lorem Ipsum",
-                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-                                "image": [
-                                    2483694
-                                ],
-                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                                "ctaLabel": null
-                            }
-                        }
-                    }
-                }
-            },
-            "2502500": {
-                "type": "accordion",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Accordion Section",
-                    "body250": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                    "accordion": {
-                        "2502501": {
-                            "type": 108,
-                            "fields": {
-                                "rows": {
-                                    "2502502": {
-                                        "type": "row",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "heading": "Accordion 1",
-                                            "body": "<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>",
-                                            "asset": [
-                                                1947721
-                                            ],
-                                            "linkText": "Test Link",
-                                            "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
-                                            "contentAlignment": false
-                                        }
-                                    },
-                                    "2502503": {
-                                        "type": "row",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "heading": "Accordion 1",
-                                            "body": "<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>",
-                                            "asset": [],
-                                            "linkText": null,
-                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                                            "contentAlignment": false
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "2502504": {
-                "type": "calloutBar",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "backgroundColor": "white",
-                    "headingSection": "Callout Bar",
-                    "label": "CTA Label",
-                    "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
-                }
-            },
-            "2502505": {
-                "type": "calloutCards",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "calloutCards": {
-                        "2502506": {
-                            "type": 110,
-                            "fields": {
-                                "image": [
-                                    1999622
-                                ],
-                                "heading": "Lorem Ipsum",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Custom link text\\\"}\",\"type\":\"url\"}"
-                            }
-                        },
-                        "2502507": {
-                            "type": 110,
-                            "fields": {
-                                "image": [
-                                    1999622
-                                ],
-                                "heading": "Lorem Ipsum",
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Custom link text\\\"}\",\"type\":\"url\"}"
-                            }
-                        }
-                    }
-                }
-            },
-            "2502508": {
-                "type": "cardGrid",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Card Grid",
-                    "subheading": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                    "cardTheme": "logo",
-                    "cardGrid": {
-                        "2502509": {
-                            "type": 106,
-                            "fields": {
-                                "cards": {
-                                    "2502510": {
-                                        "type": "card",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "image": [
-                                                1947721
-                                            ],
-                                            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                            "ctaLabel": "Test Link",
-                                            "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
-                                        }
-                                    },
-                                    "2502511": {
-                                        "type": "card",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "image": [
-                                                1947721
-                                            ],
-                                            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                            "ctaLabel": "Test Link",
-                                            "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "switch": false
-                }
-            },
-            "2502512": {
-                "type": "contactSales",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "image": [
-                        1947721
-                    ],
-                    "headingLarge": "Contact Sales",
-                    "bodyMedium": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                    "mainBannerForm": {
-                        "2502513": {
-                            "type": "sraTrialForm",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "webFormHandler": "trialForm3StepModal",
-                                "product": "rs",
-                                "salesforceCampaignId": null,
-                                "trialLength": "standard"
-                            }
-                        }
-                    }
-                }
-            },
-            "2502514": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Content Block",
-                    "headingSwitch": false,
-                    "bodyRedactorRestricted": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
-                    "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
-                    "label": "Test Link",
-                    "contentSubsections": {
-                        "2502515": {
-                            "type": "grid",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "item": {
-                                    "2502516": {
-                                        "type": 104,
-                                        "fields": {
-                                            "icon": [
-                                                2483706
-                                            ],
-                                            "heading": "Grid",
-                                            "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                            "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
-                                        }
-                                    },
-                                    "2502517": {
-                                        "type": 104,
-                                        "fields": {
-                                            "icon": [
-                                                2489885
-                                            ],
-                                            "heading": "Grid",
-                                            "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                            "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "2502518": {
-                            "type": "contentWithAsset",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "heading": "Content With Asset",
-                                "body": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
-                                "asset": [
-                                    1947721
-                                ],
-                                "resource": [
-                                    2495517
-                                ],
-                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
-                                "linkText": "Test Link",
-                                "contentAlignment": false,
-                                "contentTheme": "blueTheme",
-                                "sidebarEnabled": false
-                            }
-                        },
-                        "2502519": {
-                            "type": "fullWidthAsset",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "asset": [
-                                    1947721
-                                ],
-                                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-                            }
-                        },
-                        "2502520": {
-                            "type": "cta",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "contentCTA": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Test Link\\\"}\",\"type\":\"url\"}"
-                            }
-                        }
-                    }
-                }
-            },
-            "2502521": {
+            "2503874": {
                 "type": "embeds",
                 "enabled": true,
                 "collapsed": true,
@@ -674,324 +74,7 @@
                     ]
                 }
             },
-            "2502522": {
-                "type": "customerBundle",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingMedium": "Customer Bundle",
-                    "bundleGrid": {
-                        "2502523": {
-                            "type": 100,
-                            "fields": {
-                                "grid": {
-                                    "2502524": {
-                                        "type": "item",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "icon": [
-                                                2489885
-                                            ],
-                                            "heading": "Lorem Ipsum",
-                                            "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                            "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
-                                        }
-                                    },
-                                    "2502525": {
-                                        "type": "item",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "icon": [
-                                                2483706
-                                            ],
-                                            "heading": "Lorem Ipsum",
-                                            "body": "https://www.google.com/",
-                                            "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "2502526": {
-                "type": "quotes",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "companyQuotes": [
-                        2498018,
-                        2498008,
-                        2497991
-                    ]
-                }
-            },
-            "2502527": {
-                "type": "featureGrid",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSmall": "Feature Grid",
-                    "subheadingSmall": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                    "label25": "Lorem Ipsum",
-                    "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
-                    "featureGrid": {
-                        "2502528": {
-                            "type": 95,
-                            "fields": {
-                                "heading": "Lorem Ipsum",
-                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                "list": {
-                                    "2502529": {
-                                        "type": "listItem",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "bullet": "Lorem Ipsum"
-                                        }
-                                    },
-                                    "2502530": {
-                                        "type": "listItem",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "bullet": "Lorem Ipsum"
-                                        }
-                                    }
-                                },
-                                "icon": [
-                                    2483696
-                                ],
-                                "ctaLabel": "Lorem Ipsum",
-                                "ctaLink": "{\"linkedId\":2501870,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"{\\\"customText\\\":\\\"Test Link\\\"}\",\"type\":\"entry\"}"
-                            }
-                        },
-                        "2502531": {
-                            "type": 95,
-                            "fields": {
-                                "heading": "Lorem Ipsum",
-                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                "list": {
-                                    "2502532": {
-                                        "type": "listItem",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "bullet": "Lorem Ipsum"
-                                        }
-                                    },
-                                    "2502533": {
-                                        "type": "listItem",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "bullet": "Lorem Ipsum"
-                                        }
-                                    }
-                                },
-                                "icon": [
-                                    2483695
-                                ],
-                                "ctaLabel": "Test Link",
-                                "ctaLink": "{\"linkedId\":2501631,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
-                            }
-                        },
-                        "2502534": {
-                            "type": 95,
-                            "fields": {
-                                "heading": "Lorem Ipsum",
-                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                "list": {
-                                    "2502535": {
-                                        "type": "listItem",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "bullet": "Lorem Ipsum"
-                                        }
-                                    },
-                                    "2502536": {
-                                        "type": "listItem",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "bullet": "Lorem Ipsum"
-                                        }
-                                    }
-                                },
-                                "icon": [
-                                    2483694
-                                ],
-                                "ctaLabel": null,
-                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
-                            }
-                        },
-                        "2502537": {
-                            "type": 95,
-                            "fields": {
-                                "heading": "Lorem Ipsum",
-                                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                "list": {
-                                    "2502538": {
-                                        "type": "listItem",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "bullet": "Lorem Ipsum"
-                                        }
-                                    }
-                                },
-                                "icon": [
-                                    2483695
-                                ],
-                                "ctaLabel": null,
-                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
-                            }
-                        }
-                    }
-                }
-            },
-            "2502539": {
-                "type": "featureTabbed",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Feature Tabbed",
-                    "bodyRedactorRestricted": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
-                    "contentAsset": {
-                        "2502540": {
-                            "type": "image",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "image": [
-                                    1947721
-                                ]
-                            }
-                        }
-                    },
-                    "featureTabbed": {
-                        "2502541": {
-                            "type": 101,
-                            "fields": {
-                                "tabLink": "Tab 1",
-                                "heading": "Lorem Ipsum",
-                                "body": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
-                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
-                                "ctaLinkText": "Test Link",
-                                "featureAsset": {
-                                    "2502542": {
-                                        "type": "video",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "video": [
-                                                2497993
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "2502543": {
-                            "type": 101,
-                            "fields": {
-                                "tabLink": "Tab 2",
-                                "heading": "Lorem Ipsum",
-                                "body": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
-                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
-                                "ctaLinkText": "Test Link",
-                                "featureAsset": {
-                                    "2502544": {
-                                        "type": "image",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "image": [
-                                                83620
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "2502545": {
-                            "type": 101,
-                            "fields": {
-                                "tabLink": "Tab 3",
-                                "heading": "Lorem Ipsum",
-                                "body": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
-                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
-                                "ctaLinkText": "Test Link",
-                                "featureAsset": {
-                                    "2502546": {
-                                        "type": "image",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "image": [
-                                                1947721
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "2502547": {
-                "type": "resourceTabbed",
-                "enabled": true,
-                "collapsed": true,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Resource Tabbed",
-                    "tabbedResources": {
-                        "2502548": {
-                            "type": "blog",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "entries": [
-                                    2496789,
-                                    2495517
-                                ]
-                            }
-                        },
-                        "2502549": {
-                            "type": "documents",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "entries": [
-                                    70613,
-                                    69006
-                                ]
-                            }
-                        },
-                        "2502550": {
-                            "type": "videos",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "entries": [
-                                    70613,
-                                    69006
-                                ]
-                            }
-                        }
-                    }
-                }
-            },
-            "2502551": {
+            "2503904": {
                 "type": "reviews",
                 "enabled": true,
                 "collapsed": true,
@@ -1000,7 +83,7 @@
                     "headingSection": "Reviews",
                     "body250": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
                     "reviews": {
-                        "2502552": {
+                        "2503905": {
                             "type": 112,
                             "fields": {
                                 "star": "5",
@@ -1008,7 +91,7 @@
                                     1947721
                                 ],
                                 "labels": {
-                                    "2502553": {
+                                    "2503906": {
                                         "type": "list",
                                         "enabled": true,
                                         "collapsed": false,
@@ -1016,7 +99,7 @@
                                             "label": "Label"
                                         }
                                     },
-                                    "2502554": {
+                                    "2503907": {
                                         "type": "list",
                                         "enabled": true,
                                         "collapsed": false,
@@ -1030,13 +113,13 @@
                                 "reviewLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"custom\"}"
                             }
                         },
-                        "2502555": {
+                        "2503908": {
                             "type": 112,
                             "fields": {
                                 "star": "2",
                                 "image": [],
                                 "labels": {
-                                    "2502556": {
+                                    "2503909": {
                                         "type": "list",
                                         "enabled": true,
                                         "collapsed": false,
@@ -1050,7 +133,7 @@
                                 "reviewLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"custom\"}"
                             }
                         },
-                        "2502557": {
+                        "2503910": {
                             "type": 112,
                             "fields": {
                                 "star": "4",
@@ -1066,7 +149,7 @@
                     }
                 }
             },
-            "2502636": {
+            "2503911": {
                 "type": "table",
                 "enabled": true,
                 "collapsed": true,
@@ -1118,7 +201,7 @@
                         "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\">Heading</th><th align=\"center\" width=\"\">Heading</th><th align=\"right\" width=\"\">Heading</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">Heading</td><td align=\"center\">Heading</td><td align=\"right\">Heading</td></tr><tr><td align=\"left\">Heading</td><td align=\"center\">Heading</td><td align=\"right\">Heading</td></tr><tr><td align=\"left\">Heading</td><td align=\"center\">Heading</td><td align=\"right\">Heading</td></tr>\n\n                </tbody>\n\n            </table>\n        "
                     },
                     "textList": {
-                        "2502637": {
+                        "2503912": {
                             "type": "item",
                             "enabled": true,
                             "collapsed": false,
@@ -1126,7 +209,7 @@
                                 "item": "Add [*] in front of an item to remove the number from the Footnote display"
                             }
                         },
-                        "2502638": {
+                        "2503913": {
                             "type": "item",
                             "enabled": true,
                             "collapsed": false,
