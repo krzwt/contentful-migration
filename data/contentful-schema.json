@@ -1,4 +1,66 @@
 {
+  "newEmbedsCpt": {
+    "name": "📰 NEW-Embeds CPT",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "code": {
+        "name": "Code",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "newPartnersEmbeds": {
+    "name": "📰 NEW-Partners-Embeds",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "code": {
+        "name": "Code",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
   "newStandaloneContent": {
     "name": "📄 NEW-Standalone-Content",
     "description": "",
@@ -2834,37 +2896,6 @@
           ],
           "linkType": "Entry"
         },
-        "validations": []
-      }
-    }
-  },
-  "newPartnersEmbeds": {
-    "name": "📰 NEW-Partners-Embeds",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "code": {
-        "name": "Code",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
         "validations": []
       }
     }
@@ -7360,37 +7391,6 @@
             ]
           }
         ]
-      }
-    }
-  },
-  "newEmbedsCpt": {
-    "name": "📰 NEW-Embeds CPT",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "code": {
-        "name": "Code",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
       }
     }
   },
