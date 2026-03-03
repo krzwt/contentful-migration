@@ -1,5 +1,5 @@
 {
-    "contentType": "ctaBlock",
+    "contentType": "calloutBar",
     "idField": "blockId",
     "fields": {
         "selectBackgroundColor": {

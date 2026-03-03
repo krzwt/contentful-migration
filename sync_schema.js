@@ -6,10 +6,22 @@ async function syncSchema() {
     const env = await getEnvironment();
     console.log("📡 Fetching all content types from Contentful...");
 
-    const contentTypes = await env.getContentTypes();
+    let contentTypes = [];
+    let skip = 0;
+    const limit = 100;
+    let total = 0;
+
+    do {
+        const response = await env.getContentTypes({ skip, limit });
+        contentTypes = contentTypes.concat(response.items);
+        total = response.total;
+        skip += limit;
+        console.log(`Fetched ${contentTypes.length} of ${total} content types...`);
+    } while (contentTypes.length < total);
+
     const schema = {};
 
-    for (const ct of contentTypes.items) {
+    for (const ct of contentTypes) {
         schema[ct.sys.id] = {
             name: ct.name,
             description: ct.description,
@@ -42,7 +54,7 @@ async function syncSchema() {
 
     const outputPath = "./data/contentful-schema.json";
     fs.writeFileSync(outputPath, JSON.stringify(schema, null, 2));
-    console.log(`✅ Schema synced to ${outputPath} (${contentTypes.items.length} content types)`);
+    console.log(`✅ Schema synced to ${outputPath} (${contentTypes.length} content types)`);
 }
 
 syncSchema().catch(err => {

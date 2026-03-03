@@ -22,7 +22,7 @@
         "slug": "testing-standalone",
         "uri": "testing-standalone",
         "dateCreated": "2026-02-11T05:02:50-06:00",
-        "dateUpdated": "2026-02-26T04:29:48-06:00",
+        "dateUpdated": "2026-03-03T00:57:25-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218060,
@@ -97,6 +97,29 @@
                     }
                 }
             },
+            "2503653": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "CB Heading",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>CB Body</p>",
+                    "ctaLink": "{\"linkedId\":1484508,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                    "label": "CTA",
+                    "contentSubsections": {
+                        "2503654": {
+                            "type": "cta",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "contentCTA": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Content CTA\\\"}\",\"type\":\"url\"}"
+                            }
+                        }
+                    }
+                }
+            },
             "2502277": {
                 "type": "logoList",
                 "enabled": true,
@@ -117,7 +140,7 @@
                                             "logo": [
                                                 2496438
                                             ],
-                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
                                             "caption": "Lorem Ipsum"
                                         }
                                     },
@@ -881,7 +904,7 @@
                             "type": 101,
                             "fields": {
                                 "tabLink": "Tab 2",
-                                "heading": "Lorem Ipsum 1",
+                                "heading": "Lorem Ipsum",
                                 "body": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
                                 "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
                                 "ctaLinkText": "Test Link",
@@ -903,7 +926,7 @@
                             "type": 101,
                             "fields": {
                                 "tabLink": "Tab 3",
-                                "heading": "Lorem Ipsum 2",
+                                "heading": "Lorem Ipsum",
                                 "body": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>",
                                 "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
                                 "ctaLinkText": "Test Link",

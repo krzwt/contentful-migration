@@ -1,4 +1,3362 @@
 {
+  "newStandaloneContent": {
+    "name": "📄 NEW-Standalone-Content",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "settings": {
+        "name": "Settings",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "pageSettings"
+            ]
+          }
+        ]
+      },
+      "sections": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "bannerHero",
+                "accordion",
+                "calloutCards",
+                "cardGridBlock",
+                "contactSales",
+                "contentBlock",
+                "ctaBlock",
+                "customerBundle",
+                "faQs",
+                "featureGrid",
+                "featureTabbed",
+                "fiftyFiftyComponent",
+                "iconGrid",
+                "mediaBlock",
+                "officeLocations",
+                "partnersLogosBlock",
+                "processFlowCards",
+                "quotesBlock",
+                "resourceTabSection",
+                "reviewsBlock",
+                "statisticsBlock",
+                "tableContentBlock",
+                "useCases",
+                "tryItCta",
+                "mediaEmbeds",
+                "calloutBar"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "newStandaloneConversion": {
+    "name": "📄NEW-Standalone-Conversion",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "settings": {
+        "name": "Settings",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "pageSettings"
+            ]
+          }
+        ]
+      },
+      "sections": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "accordion",
+                "bannerHero",
+                "cardGridBlock",
+                "calloutCards",
+                "contactSales",
+                "contentBlock",
+                "faQs",
+                "customerBundle",
+                "featureGrid",
+                "featureTabbed",
+                "fiftyFiftyComponent",
+                "iconGrid",
+                "mediaBlock",
+                "officeLocations",
+                "partnersLogosBlock",
+                "processFlowCards",
+                "quotesBlock",
+                "resourceTabSection",
+                "reviewsBlock",
+                "statisticsBlock",
+                "tableContentBlock",
+                "useCases",
+                "tryItCta",
+                "embeds",
+                "calloutBar"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "page": {
+    "name": "📄 Page",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "unique": true
+          }
+        ]
+      },
+      "settings": {
+        "name": "Settings",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "pageSettings"
+            ]
+          }
+        ]
+      },
+      "sections": {
+        "name": "Sections",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "contentBlock",
+                "fiftyFiftyComponent",
+                "accordion",
+                "iconGrid",
+                "tableContentBlock",
+                "customerBundle",
+                "bannerHero",
+                "resourceTabSection",
+                "mediaBlock",
+                "quotesBlock",
+                "useCases",
+                "processFlowCards",
+                "partnersLogosBlock",
+                "reviewsBlock",
+                "cardGridBlock",
+                "homeHero",
+                "bentoGrid",
+                "partnerEcosystem",
+                "validatedComponent",
+                "resourcesSlider",
+                "platformBlock",
+                "trustCta",
+                "calloutCards",
+                "featureTabbed",
+                "statisticsBlock",
+                "faQs",
+                "officeLocations",
+                "contactSales",
+                "featureGrid",
+                "embeds",
+                "tryItCta",
+                "calloutBar"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "calloutBar": {
+    "name": "🧩 Callout Bar",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "selectBackgroundColor": {
+        "name": "Select Background Color",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Blue",
+              "Orange",
+              "White"
+            ]
+          }
+        ]
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "newGlobalReachMap": {
+    "name": "📰 NEW-Global Reach Map",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "tooltip": {
+        "name": "Tooltip",
+        "type": "RichText",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript",
+              "strikethrough"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "heading-2",
+              "heading-3",
+              "heading-4",
+              "heading-5",
+              "heading-6",
+              "ordered-list",
+              "unordered-list",
+              "hr",
+              "blockquote",
+              "embedded-entry-block",
+              "embedded-asset-block",
+              "table",
+              "asset-hyperlink",
+              "embedded-entry-inline",
+              "entry-hyperlink",
+              "hyperlink"
+            ],
+            "message": "Only heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "globalReachType": {
+        "name": "Global Reach Type",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Partner",
+              "Office"
+            ]
+          }
+        ]
+      },
+      "latitude": {
+        "name": "Latitude",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "longitude": {
+        "name": "Longitude",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "contactSales": {
+    "name": "🧩 Contact Sales",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "name": "Description",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "image": {
+        "name": "Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "addForm": {
+        "name": "Add Form",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "genericForm",
+              "pricingRequestForm",
+              "resourceForm",
+              "sraTrialForm"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "detailedList": {
+    "name": "🧩 Detailed List",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "listHeading": {
+        "name": "List Heading",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "listItems": {
+        "name": "List Items",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "detailedListItems"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "faQs": {
+    "name": "🧩 FAQs",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "addFaQs": {
+        "name": "Add FAQs",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "faQsItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "featureTabbed": {
+    "name": "🧩 Feature Tabbed",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "name": "Description",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "addAsset": {
+        "name": "Add Asset",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "asset"
+            ]
+          }
+        ]
+      },
+      "addFeatureTabbedItem": {
+        "name": "Add Feature Tabbed Item",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "featureTabbedItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "profile": {
+    "name": "🧩 Profile",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "person": {
+        "name": "Person",
+        "type": "Link",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "peopleCpt"
+            ]
+          }
+        ]
+      },
+      "profileImageAlignment": {
+        "name": "Profile Image Alignment",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "resourceTabbed": {
+        "name": "Resource Tabbed",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "resourceTabSection"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "quote": {
+    "name": "🧩 Quote",
+    "description": "",
+    "displayField": "quoteSource",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "quoteBody": {
+        "name": "Quote Body",
+        "type": "Text",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "quoteSource": {
+        "name": "Quote Source",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "quoteCite": {
+        "name": "Quote Cite",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "quoteUrl": {
+        "name": "Quote URL",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "quotePageLink": {
+        "name": "Quote Page Link",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "newStandaloneContent",
+              "newStandaloneMicrosite",
+              "newStandaloneThankYou",
+              "newStandaloneConversion",
+              "resourceWebinarsCpt",
+              "resourcesCpt",
+              "page"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "statisticsBlock": {
+    "name": "🧩 Statistics Block",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "name": "Description",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "addStatistics": {
+        "name": "Add Statistics",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "statistics"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "min": null,
+              "max": 3
+            }
+          }
+        ]
+      },
+      "removeColorTheme": {
+        "name": "Remove Color Theme",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "newStandaloneMicrosite": {
+    "name": "📄 NEW-Standalone-Microsite",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "settings": {
+        "name": "Settings",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "pageSettings"
+            ]
+          }
+        ]
+      },
+      "sectionNavigation": {
+        "name": "Section Navigation",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionNavigation"
+            ]
+          }
+        ]
+      },
+      "overwriteParentCta": {
+        "name": "Overwrite Parent CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "sections": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "accordion",
+                "bannerHero",
+                "calloutCards",
+                "cardGridBlock",
+                "contactSales",
+                "contentBlock",
+                "ctaBlock",
+                "customerBundle",
+                "faQs",
+                "featureGrid",
+                "featureTabbed",
+                "fiftyFiftyComponent",
+                "iconGrid",
+                "mediaBlock",
+                "officeLocations",
+                "partnersLogosBlock",
+                "processFlowCards",
+                "quotesBlock",
+                "resourceTabSection",
+                "reviewsBlock",
+                "statisticsBlock",
+                "tableContentBlock",
+                "useCases",
+                "tryItCta"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "quotesBlock": {
+    "name": "🧩 Quotes Block",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "heading": {
+        "name": "Heading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "description": {
+        "name": "Description",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "background": {
+        "name": "Background",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "White",
+              "Royal Blue"
+            ]
+          }
+        ]
+      },
+      "quoteItems": {
+        "name": "Quote Items",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "quoteItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "min": null,
+              "max": 3
+            }
+          }
+        ]
+      }
+    }
+  },
+  "newCompany": {
+    "name": "📄 NEW-Company",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "settings": {
+        "name": "Settings",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "pageSettings"
+            ]
+          }
+        ]
+      },
+      "sectionNavigation": {
+        "name": "Section Navigation",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionNavigation"
+            ]
+          }
+        ]
+      },
+      "overwriteParentCta": {
+        "name": "Overwrite Parent CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "sections": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "bannerHero",
+                "accordion",
+                "calloutCards",
+                "cardGridBlock",
+                "contactSales",
+                "contentBlock",
+                "ctaBlock",
+                "customerBundle",
+                "faQs",
+                "featureGrid",
+                "featureTabbed",
+                "fiftyFiftyComponent",
+                "iconGrid",
+                "mediaBlock",
+                "officeLocations",
+                "partnersLogosBlock",
+                "processFlowCards",
+                "quotesBlock",
+                "resourceTabSection",
+                "reviewsBlock",
+                "statisticsBlock",
+                "tableContentBlock",
+                "useCases",
+                "tryItCta",
+                "mediaEmbeds",
+                "bannerBrand",
+                "profile",
+                "globalReach"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "globalReach": {
+    "name": "🧩 Global Reach",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "subheading": {
+        "name": "Subheading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "backgroundImage": {
+    "name": "🔁 Background Image",
+    "description": "",
+    "displayField": "repeat",
+    "fields": {
+      "image": {
+        "name": "Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "repeat": {
+        "name": "Repeat?",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "No-Repeat",
+              "Repeat",
+              "Repeat Horizontally",
+              "Repeat Vertically"
+            ]
+          }
+        ]
+      },
+      "position": {
+        "name": "Position",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Top Left",
+              "Top Center",
+              "Top Right",
+              "Center Left",
+              "Center, left offset",
+              "Center",
+              "Center, top offset",
+              "Center, bottom offset",
+              "Center, right offset",
+              "Center Right",
+              "Bottom Left",
+              "Bottom Center",
+              "Bottom Right"
+            ]
+          }
+        ]
+      },
+      "size": {
+        "name": "Size",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Default",
+              "Cover",
+              "Contain",
+              "Banner Logo"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "contentBlock": {
+    "name": "🧩 Content Block",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "name": "Description",
+        "type": "RichText",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript",
+              "strikethrough"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "heading-2",
+              "heading-3",
+              "heading-4",
+              "heading-5",
+              "heading-6",
+              "ordered-list",
+              "unordered-list",
+              "hr",
+              "blockquote",
+              "embedded-entry-block",
+              "table",
+              "asset-hyperlink",
+              "entry-hyperlink",
+              "hyperlink",
+              "embedded-asset-block"
+            ],
+            "message": "Only heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, table, link to asset, link to entry, link to Url, and asset nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "fullWidthCta": {
+        "name": "Full Width CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "centerContent": {
+        "name": "Center Content",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "pageSettings": {
+    "name": "🌍 Page Settings",
+    "description": "",
+    "displayField": "pageSetting",
+    "fields": {
+      "pageSetting": {
+        "name": "Page Setting",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "parentPage": {
+        "name": "Parent Page",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "page",
+              "newStandaloneThankYou",
+              "newStandaloneContent",
+              "newStandaloneConversion",
+              "newStandaloneMicrosite",
+              "newCompany",
+              "company"
+            ]
+          }
+        ]
+      },
+      "enableSidenav": {
+        "name": "Enable Sidenav",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "seo": {
+        "name": "SEO",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "seo"
+            ]
+          }
+        ]
+      },
+      "mainNavigationSwitch": {
+        "name": "Main Navigation - Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationDefaultCtAs": {
+        "name": "Main Navigation - Default CTAs",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationSearchSwitch": {
+        "name": "Main Navigation - Search Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationLanguageSwitch": {
+        "name": "Main Navigation - Language Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationCtaButtonDarkBlue": {
+        "name": "Main Navigation - CTA Button (Dark Blue)",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "mainNavigationCtaButtonWhite": {
+        "name": "Main Navigation - CTA Button (White)",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "breadcrumbSwitch": {
+        "name": "Breadcrumb Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "enableSidebarForm": {
+        "name": "Enable Sidebar Form",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sfHeading": {
+        "name": "Heading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sfDescription": {
+        "name": "Description",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "salesforceCampaignId": {
+        "name": "Salesforce Campaign ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "leadSourceDetails": {
+        "name": "Lead Source Details",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "announcementBanner": {
+    "name": "🌍 Announcement Banner",
+    "description": "",
+    "displayField": "announcementTitle",
+    "fields": {
+      "announcementTitle": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "messageTop": {
+        "name": "Message",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "contentLinkTop": {
+        "name": "Content Link",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "linkTextTop": {
+        "name": "Link Text",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "announcementBottomTitle": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "useModernTheme": {
+        "name": "Use Modern Theme",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "themeType": {
+        "name": "Theme Type",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Short Full Bar (with image option)",
+              "Short Half Bar (no image)",
+              "Long Tall Bar (more text)",
+              "Long Short Bar (less text)"
+            ]
+          }
+        ]
+      },
+      "announcementImage": {
+        "name": "Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "headingSection": {
+        "name": "Heading Section",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "message": {
+        "name": "Message",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "contentLink": {
+        "name": "Content Link",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "linkText": {
+        "name": "Link Text",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "headerAnnouncementTargetEntries": {
+        "name": "Header Announcement Target Entries",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "page",
+                "newStandaloneContent",
+                "newStandaloneMicrosite",
+                "newStandaloneThankYou",
+                "newStandaloneConversion",
+                "company",
+                "newCompany"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "bottomAnnouncementTargetEntries": {
+        "name": "Bottom Announcement Target Entries",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "page",
+                "newStandaloneContent",
+                "newStandaloneMicrosite",
+                "newStandaloneThankYou",
+                "newStandaloneConversion",
+                "company",
+                "newCompany"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "targetPageTemplates": {
+        "name": "Target Page Templates",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Symbol",
+          "validations": [
+            {
+              "in": [
+                "Page",
+                "NewStandaloneContent",
+                "NewStandaloneConversion",
+                "NewStandaloneMicrosite",
+                "NewStandaloneThankYou"
+              ]
+            }
+          ]
+        },
+        "validations": []
+      }
+    }
+  },
+  "sectionNavigationLinks": {
+    "name": "☰ Section Navigation Links",
+    "description": "",
+    "displayField": "label",
+    "fields": {
+      "pageLink": {
+        "name": "Page Link",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "page",
+              "newStandaloneContent",
+              "newStandaloneMicrosite",
+              "newStandaloneThankYou",
+              "newStandaloneConversion",
+              "company",
+              "newCompany"
+            ]
+          }
+        ]
+      },
+      "externalUrl": {
+        "name": "External URL",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "label": {
+        "name": "Label ",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "queryParams": {
+        "name": "Query Params",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "bannerBrand": {
+    "name": "🧩 Banner Brand",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "heading": {
+        "name": "Heading",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "description": {
+        "name": "Description",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "image": {
+        "name": "Image",
+        "type": "Link",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "captionHeading": {
+        "name": "Caption Heading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "captionSubheading": {
+        "name": "Caption Subheading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "partnersLogosBlock": {
+    "name": "🧩 Partners Logos Block",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "name": "Description",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "logoList": {
+        "name": "Add Logo",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "addPartnerLogo"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "gridSize": {
+        "name": "Grid size",
+        "type": "Integer",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      "logoBackground": {
+        "name": "Logo Background",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Grey",
+              "Transparent"
+            ]
+          }
+        ]
+      },
+      "centerAlignedLogos": {
+        "name": "Center Aligned Logos",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "callsToAction": {
+    "name": "🧩 Calls to Action",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "callsToAction": {
+        "name": "Calls to Action",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "callsToActions"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "layout": {
+        "name": "Layout",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Inline",
+              "Stacked"
+            ]
+          }
+        ]
+      },
+      "alignment": {
+        "name": "Alignment",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Left-aligned",
+              "Centered",
+              "Right-aligned"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "checkmarkList": {
+    "name": "🧩Checkmark List",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "listHeading": {
+        "name": "List Heading",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "listItems": {
+        "name": "List Items",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "listItems"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "callout": {
+    "name": "🧩 Callout",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "heading": {
+        "name": "Heading",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "name": "Description",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "callToAction": {
+        "name": "Call To Action",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "calloutVideo": {
+        "name": "Callout Video",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "asset"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "contentBlocks": {
+    "name": "🧩 Content Blocks",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockHeading": {
+        "name": "Block Heading",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "blockBody": {
+        "name": "Block Body",
+        "type": "RichText",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript",
+              "strikethrough"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "heading-2",
+              "heading-3",
+              "heading-4",
+              "heading-5",
+              "heading-6",
+              "ordered-list",
+              "unordered-list",
+              "hr",
+              "blockquote",
+              "embedded-entry-block",
+              "embedded-asset-block",
+              "table",
+              "asset-hyperlink",
+              "embedded-entry-inline",
+              "entry-hyperlink",
+              "hyperlink"
+            ],
+            "message": "Only heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "blockAsset": {
+        "name": "Block Asset",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "asset"
+            ]
+          }
+        ]
+      },
+      "mediaCaption": {
+        "name": "Media caption",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockLayout": {
+        "name": "Block Layout",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Right",
+              "Left",
+              "Right, Bottom-aligned",
+              "Left, Bottom-aligned"
+            ]
+          }
+        ]
+      },
+      "resource": {
+        "name": "Resource",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "resourceWebinarsCpt",
+              "resourcesCpt"
+            ]
+          }
+        ]
+      },
+      "reviewEmbed": {
+        "name": "Review Embed",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Gartner",
+              "G2",
+              "Trust Radius Remote Support",
+              "Trust Radius Privileged Remote Access",
+              "Trust Radius Endpoint Privilege Management"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "coverPhotoSection": {
+    "name": "🧩 Cover Photo Section",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "backgroundImage": {
+        "name": "Background Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "asset"
+            ]
+          }
+        ]
+      },
+      "heading": {
+        "name": "Heading",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "subheading": {
+        "name": "Subheading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "bodyText": {
+        "name": "Body Text",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "callsToActions": {
+    "name": "🔁Calls to Actions",
+    "description": "",
+    "displayField": "label",
+    "fields": {
+      "label": {
+        "name": "Label",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "url": {
+        "name": "URL",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "pageLink": {
+        "name": "Page Link",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "resourceWebinarsCpt",
+              "resourcesCpt",
+              "newStandaloneContent",
+              "newStandaloneMicrosite",
+              "newStandaloneThankYou",
+              "newStandaloneConversion",
+              "newCompany",
+              "company"
+            ]
+          }
+        ]
+      },
+      "mediaAsset": {
+        "name": "Video",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "video"
+            ]
+          }
+        ]
+      },
+      "videoUrl": {
+        "name": "Video URL",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "style": {
+        "name": "Style",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Text Only",
+              "Gray",
+              "White",
+              "Orange",
+              "Solid Orange"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "cta": {
+    "name": "🌍 CTA",
+    "description": "",
+    "displayField": "label",
+    "fields": {
+      "label": {
+        "name": "Label",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "url": {
+        "name": "URL",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "pageLink": {
+        "name": "Page Link",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "newStandaloneContent",
+              "newStandaloneMicrosite",
+              "newStandaloneThankYou",
+              "newStandaloneConversion",
+              "resourceWebinarsCpt",
+              "resourcesCpt",
+              "company",
+              "newCompany"
+            ]
+          }
+        ]
+      },
+      "target": {
+        "name": "Target",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "_self (Same Tab)",
+              "_blank (New Tab)"
+            ]
+          }
+        ]
+      },
+      "variant": {
+        "name": "Variant",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "primary",
+              "secondary",
+              "primary-outline",
+              "secondary-outline",
+              "outline",
+              "outline-white",
+              "ghost",
+              "link"
+            ]
+          }
+        ]
+      },
+      "size": {
+        "name": "Size",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          }
+        ]
+      },
+      "showIcon": {
+        "name": "Show Icon",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "disabled": {
+        "name": "Disabled",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "newPartners": {
+    "name": "📄NEW-Partners",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "settings": {
+        "name": "Settings",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "pageSettings"
+            ]
+          }
+        ]
+      },
+      "contentComponents": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "accordion",
+                "bannerBrand",
+                "bannerHero",
+                "calloutCards",
+                "cardGridBlock",
+                "useCases",
+                "featureGrid",
+                "featureTabbed",
+                "resourceTabSection",
+                "embeds",
+                "quote",
+                "ctaBlock",
+                "iconGrid",
+                "fiftyFiftyComponent"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "newPartnersEmbeds": {
+    "name": "📰 NEW-Partners-Embeds",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "code": {
+        "name": "Code",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "videoCta": {
+    "name": "🌍 Video CTA",
+    "description": "",
+    "displayField": "label",
+    "fields": {
+      "label": {
+        "name": "Label",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "videoUrl": {
+        "name": "Video URL",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "video": {
+        "name": "Video",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "video"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "companyPageBanner": {
+    "name": "🧩 Company Page Banner",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "heading": {
+        "name": "Heading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "knockoutHeading": {
+        "name": "Knockout Heading?",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "subheading": {
+        "name": "Subheading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "description": {
+        "name": "Description",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "videoCta": {
+        "name": "Video CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "videoCta"
+            ]
+          }
+        ]
+      },
+      "backgroundColor": {
+        "name": "Background Color",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Light Grey",
+              "White",
+              "Navy"
+            ]
+          }
+        ]
+      },
+      "backgroundImages": {
+        "name": "Background Images",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "backgroundImage"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "layout": {
+        "name": "Layout",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Stacked",
+              "Heading on left, Body + CTA on left",
+              "Centered"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "images": {
+    "name": "🔁 Images",
+    "description": "",
+    "displayField": "imageCaption",
+    "fields": {
+      "image": {
+        "name": "Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "asset"
+            ]
+          }
+        ]
+      },
+      "imageCaption": {
+        "name": "Image Caption",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "image": {
+    "name": "🧩 Image",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "images": {
+        "name": "Images",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "images"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "layout": {
+        "name": "Layout",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Inline row",
+              "Stacked"
+            ]
+          }
+        ]
+      },
+      "alignment": {
+        "name": "Alignment",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Left-aligned",
+              "Centered",
+              "Right-aligned",
+              "Left, Bottom-aligned",
+              "Centered, Bottom-aligned",
+              "Right, Bottom-aligned"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "company": {
+    "name": "📄 Company",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "settings": {
+        "name": "Settings",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "pageSettings"
+            ]
+          }
+        ]
+      },
+      "sections": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "pageSection",
+                "bannerHero",
+                "accordion",
+                "calloutCards",
+                "callsToAction",
+                "cardGridBlock",
+                "comparisonChart",
+                "contactSales",
+                "contentBlock",
+                "fiftyFiftyComponent",
+                "ctaBlock",
+                "customerBundle",
+                "faQs",
+                "featureGrid",
+                "featureTabbed",
+                "iconGrid",
+                "mediaBlock",
+                "officeLocations",
+                "partnersLogosBlock",
+                "processFlowCards",
+                "quotesBlock",
+                "codeBlock",
+                "companyPageBanner",
+                "contentBlocks",
+                "contentCta",
+                "coverPhotoSection",
+                "embeds",
+                "linkCards",
+                "mediaEmbeds",
+                "quote",
+                "resourceTabSection",
+                "reviewsBlock",
+                "statisticsBlock",
+                "tableContentBlock",
+                "tryItCta",
+                "useCases",
+                "checkmarkList",
+                "callOutCradle",
+                "callout",
+                "detailedList",
+                "image"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "logoList": {
+    "name": "🧩 Logo List",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "layout": {
+        "name": "Layout",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Center",
+              "left"
+            ]
+          }
+        ]
+      },
+      "listHeading": {
+        "name": "List Heading",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "subHeading": {
+        "name": "Sub Heading",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "logos": {
+        "name": "Logos",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "asset"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "detailedListItems": {
+    "name": "🔁Detailed List Items",
+    "description": "",
+    "displayField": "itemText",
+    "fields": {
+      "itemTitle": {
+        "name": "Item Title",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "itemText": {
+        "name": "Item Text",
+        "type": "Text",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
   "bannerHero": {
     "name": "🧩 Banner Hero",
     "description": "",
@@ -171,153 +3529,6 @@
           ],
           "linkType": "Entry"
         },
-        "validations": []
-      }
-    }
-  },
-  "page": {
-    "name": "📄 Page",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "unique": true
-          }
-        ]
-      },
-      "settings": {
-        "name": "Settings",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "pageSettings"
-            ]
-          }
-        ]
-      },
-      "sections": {
-        "name": "Sections",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "contentBlock",
-                "fiftyFiftyComponent",
-                "accordion",
-                "iconGrid",
-                "tableContentBlock",
-                "customerBundle",
-                "bannerHero",
-                "resourceTabSection",
-                "mediaBlock",
-                "quotesBlock",
-                "useCases",
-                "processFlowCards",
-                "partnersLogosBlock",
-                "ctaBlock",
-                "reviewsBlock",
-                "cardGridBlock",
-                "homeHero",
-                "bentoGrid",
-                "partnerEcosystem",
-                "validatedComponent",
-                "resourcesSlider",
-                "platformBlock",
-                "trustCta",
-                "calloutCards",
-                "featureTabbed",
-                "statisticsBlock",
-                "faQs",
-                "officeLocations",
-                "contactSales",
-                "featureGrid",
-                "embeds",
-                "tryItCta",
-                "bannerBrand"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      }
-    }
-  },
-  "bannerBrand": {
-    "name": "🧩 Banner Brand",
-    "description": "",
-    "displayField": "heading",
-    "fields": {
-      "heading": {
-        "name": "Heading",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "description": {
-        "name": "Description",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "image": {
-        "name": "Image",
-        "type": "Link",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "image"
-            ]
-          }
-        ]
-      },
-      "captionHeading": {
-        "name": "Caption Heading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "captionSubheading": {
-        "name": "Caption Subheading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
         "validations": []
       }
     }
@@ -656,414 +3867,6 @@
       }
     }
   },
-  "contentBlock": {
-    "name": "🧩 Content Block",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sectionTitle": {
-        "name": "Section Title",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionTitle"
-            ]
-          }
-        ]
-      },
-      "description": {
-        "name": "Description",
-        "type": "RichText",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "enabledMarks": [
-              "bold",
-              "italic",
-              "underline",
-              "code",
-              "superscript",
-              "subscript",
-              "strikethrough"
-            ],
-            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
-          },
-          {
-            "enabledNodeTypes": [
-              "heading-2",
-              "heading-3",
-              "heading-4",
-              "heading-5",
-              "heading-6",
-              "ordered-list",
-              "unordered-list",
-              "hr",
-              "blockquote",
-              "embedded-entry-block",
-              "table",
-              "asset-hyperlink",
-              "entry-hyperlink",
-              "hyperlink",
-              "embedded-asset-block"
-            ],
-            "message": "Only heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, table, link to asset, link to entry, link to Url, and asset nodes are allowed"
-          },
-          {
-            "nodes": {}
-          }
-        ]
-      },
-      "cta": {
-        "name": "CTA",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "fullWidthCta": {
-        "name": "Full Width CTA",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "newStandaloneContent": {
-    "name": "📄 NEW-Standalone-Content",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "settings": {
-        "name": "Settings",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "pageSettings"
-            ]
-          }
-        ]
-      },
-      "sections": {
-        "name": "Content Components",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "bannerHero",
-                "accordion",
-                "calloutCards",
-                "cardGridBlock",
-                "contactSales",
-                "contentBlock",
-                "ctaBlock",
-                "customerBundle",
-                "faQs",
-                "featureGrid",
-                "featureTabbed",
-                "fiftyFiftyComponent",
-                "iconGrid",
-                "mediaBlock",
-                "officeLocations",
-                "partnersLogosBlock",
-                "processFlowCards",
-                "quotesBlock",
-                "resourceTabSection",
-                "reviewsBlock",
-                "statisticsBlock",
-                "tableContentBlock",
-                "useCases",
-                "tryItCta",
-                "mediaEmbeds"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      }
-    }
-  },
-  "newStandaloneConversion": {
-    "name": "📄NEW-Standalone-Conversion",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "settings": {
-        "name": "Settings",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "pageSettings"
-            ]
-          }
-        ]
-      },
-      "sections": {
-        "name": "Content Components",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "accordion",
-                "bannerHero",
-                "cardGridBlock",
-                "calloutCards",
-                "contactSales",
-                "contentBlock",
-                "ctaBlock",
-                "faQs",
-                "customerBundle",
-                "featureGrid",
-                "featureTabbed",
-                "fiftyFiftyComponent",
-                "iconGrid",
-                "mediaBlock",
-                "officeLocations",
-                "partnersLogosBlock",
-                "processFlowCards",
-                "quotesBlock",
-                "resourceTabSection",
-                "reviewsBlock",
-                "statisticsBlock",
-                "tableContentBlock",
-                "useCases",
-                "tryItCta",
-                "embeds"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      }
-    }
-  },
-  "newStandaloneMicrosite": {
-    "name": "📄 NEW-Standalone-Microsite",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "settings": {
-        "name": "Settings",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "pageSettings"
-            ]
-          }
-        ]
-      },
-      "sectionNavigation": {
-        "name": "Section Navigation",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionNavigation"
-            ]
-          }
-        ]
-      },
-      "overwriteParentCta": {
-        "name": "Overwrite Parent CTA",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "sections": {
-        "name": "Content Components",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "accordion",
-                "bannerHero",
-                "calloutCards",
-                "cardGridBlock",
-                "contactSales",
-                "contentBlock",
-                "ctaBlock",
-                "customerBundle",
-                "faQs",
-                "featureGrid",
-                "featureTabbed",
-                "fiftyFiftyComponent",
-                "iconGrid",
-                "mediaBlock",
-                "officeLocations",
-                "partnersLogosBlock",
-                "processFlowCards",
-                "quotesBlock",
-                "resourceTabSection",
-                "reviewsBlock",
-                "statisticsBlock",
-                "tableContentBlock",
-                "useCases",
-                "tryItCta"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      }
-    }
-  },
   "newStandaloneThankYou": {
     "name": "📄 NEW-Standalone-ThankYou",
     "description": "",
@@ -1148,117 +3951,6 @@
           ],
           "linkType": "Entry"
         },
-        "validations": []
-      }
-    }
-  },
-  "cta": {
-    "name": "🌍 CTA",
-    "description": "",
-    "displayField": "label",
-    "fields": {
-      "label": {
-        "name": "Label",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "url": {
-        "name": "URL",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "pageLink": {
-        "name": "Page Link",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "newStandaloneContent",
-              "newStandaloneMicrosite",
-              "newStandaloneThankYou",
-              "newStandaloneConversion",
-              "resourceWebinarsCpt",
-              "resourcesCpt"
-            ]
-          }
-        ]
-      },
-      "target": {
-        "name": "Target",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "_self (Same Tab)",
-              "_blank (New Tab)"
-            ]
-          }
-        ]
-      },
-      "variant": {
-        "name": "Variant",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "primary",
-              "secondary",
-              "primary-outline",
-              "secondary-outline",
-              "outline",
-              "outline-white",
-              "ghost",
-              "link"
-            ]
-          }
-        ]
-      },
-      "size": {
-        "name": "Size",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "sm",
-              "md",
-              "lg"
-            ]
-          }
-        ]
-      },
-      "showIcon": {
-        "name": "Show Icon",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "disabled": {
-        "name": "Disabled",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
         "validations": []
       }
     }
@@ -1945,69 +4637,6 @@
           {
             "linkContentType": [
               "cta"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "contactSales": {
-    "name": "🧩 Contact Sales",
-    "description": "",
-    "displayField": "description",
-    "fields": {
-      "sectionTitle": {
-        "name": "Section Title",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionTitle"
-            ]
-          }
-        ]
-      },
-      "description": {
-        "name": "Description",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "image": {
-        "name": "Image",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "image"
-            ]
-          }
-        ]
-      },
-      "addForm": {
-        "name": "Add Form",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "genericForm",
-              "pricingRequestForm",
-              "resourceForm",
-              "sraTrialForm"
             ]
           }
         ]
@@ -2939,260 +5568,6 @@
       }
     }
   },
-  "callsToActions": {
-    "name": "🔁Calls to Actions",
-    "description": "",
-    "displayField": "label",
-    "fields": {
-      "label": {
-        "name": "Label",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "url": {
-        "name": "URL",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "pageLink": {
-        "name": "Page Link",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "resourceWebinarsCpt",
-              "resourcesCpt",
-              "newStandaloneContent",
-              "newStandaloneMicrosite",
-              "newStandaloneThankYou",
-              "newStandaloneConversion",
-              "newEmbedsCpt",
-              "peopleCpt"
-            ]
-          }
-        ]
-      },
-      "video": {
-        "name": "Video",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "attachment",
-              "video"
-            ]
-          }
-        ]
-      },
-      "videoJson": {
-        "name": "Video JSON",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "style": {
-        "name": "Style",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Text Only",
-              "Gray",
-              "White",
-              "Orange",
-              "Solid Orange"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "callsToAction": {
-    "name": "🧩 Calls to Action",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "callsToAction": {
-        "name": "Calls to Action",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "callsToActions"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "layout": {
-        "name": "Layout",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Inline",
-              "Stacked"
-            ]
-          }
-        ]
-      },
-      "alignment": {
-        "name": "Alignment",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "eft-aligned",
-              "Centered",
-              "Right-aligned"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "callout": {
-    "name": "🧩 Callout",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "heading": {
-        "name": "Heading",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "description": {
-        "name": "Description",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "calloutImage": {
-        "name": "Callout Image",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "attachment",
-              "image"
-            ]
-          }
-        ]
-      },
-      "callToAction": {
-        "name": "Call To Action",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "calloutVideo": {
-        "name": "Callout Video",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "attachment",
-              "video"
-            ]
-          }
-        ]
-      },
-      "calloutVideoJson": {
-        "name": "Callout Video JSON",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      }
-    }
-  },
   "listItems": {
     "name": "🔁List Items",
     "description": "",
@@ -3204,56 +5579,6 @@
         "required": false,
         "localized": false,
         "disabled": false,
-        "validations": []
-      }
-    }
-  },
-  "checkmarkList": {
-    "name": "🧩Checkmark List",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "listHeading": {
-        "name": "List Heading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "listItems": {
-        "name": "List Items",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "listItems"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
         "validations": []
       }
     }
@@ -3456,339 +5781,6 @@
       }
     }
   },
-  "contentBlocks": {
-    "name": "🧩 Content Blocks",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockHeading": {
-        "name": "Block Heading",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionTitle"
-            ]
-          }
-        ]
-      },
-      "blockBody": {
-        "name": "Block Body",
-        "type": "RichText",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "enabledMarks": [
-              "bold",
-              "italic",
-              "underline",
-              "code",
-              "superscript",
-              "subscript",
-              "strikethrough"
-            ],
-            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
-          },
-          {
-            "enabledNodeTypes": [
-              "heading-2",
-              "heading-3",
-              "heading-4",
-              "heading-5",
-              "heading-6",
-              "ordered-list",
-              "unordered-list",
-              "hr",
-              "blockquote",
-              "embedded-entry-block",
-              "embedded-asset-block",
-              "table",
-              "asset-hyperlink",
-              "embedded-entry-inline",
-              "entry-hyperlink",
-              "hyperlink"
-            ],
-            "message": "Only heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
-          },
-          {
-            "nodes": {}
-          }
-        ]
-      },
-      "blockImage": {
-        "name": "Block Image",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "attachment",
-              "image"
-            ]
-          }
-        ]
-      },
-      "blockVideo": {
-        "name": "Block Video",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "attachment",
-              "video"
-            ]
-          }
-        ]
-      },
-      "blockVideoJson": {
-        "name": "Block Video JSON",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mediaCaption": {
-        "name": "Media caption",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockLayout": {
-        "name": "Block Layout",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Right",
-              "Left",
-              "Right, Bottom-aligned",
-              "Left, Bottom-aligned"
-            ]
-          }
-        ]
-      },
-      "resource": {
-        "name": "Resource",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "newStandaloneContent",
-              "newStandaloneMicrosite",
-              "newStandaloneThankYou",
-              "newStandaloneConversion",
-              "newEmbedsCpt",
-              "peopleCpt",
-              "resourceWebinarsCpt",
-              "resourcesCpt"
-            ]
-          }
-        ]
-      },
-      "reviewEmbed": {
-        "name": "Review Embed",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Gartner",
-              "G2",
-              "Trust Radius Remote Support",
-              "Trust Radius Privileged Remote Access",
-              "Trust Radius Endpoint Privilege Management"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "coverPhotoSection": {
-    "name": "🧩 Cover Photo Section",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "backgroundImage": {
-        "name": "Background Image",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "attachment",
-              "video"
-            ]
-          }
-        ]
-      },
-      "heading": {
-        "name": "Heading",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionTitle"
-            ]
-          }
-        ]
-      },
-      "subheading": {
-        "name": "Subheading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "bodyText": {
-        "name": "Body Text",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "cta": {
-        "name": "CTA",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "quote": {
-    "name": "🧩 Quote",
-    "description": "",
-    "displayField": "quoteSource",
-    "fields": {
-      "quoteBody": {
-        "name": "Quote Body",
-        "type": "Text",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "quoteSource": {
-        "name": "Quote Source",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "quoteCite": {
-        "name": "Quote Cite",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "quoteUrl": {
-        "name": "Quote URL",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "quotePageLink": {
-        "name": "Quote Page Link",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "newStandaloneContent",
-              "newStandaloneMicrosite",
-              "newStandaloneThankYou",
-              "newStandaloneConversion",
-              "resourceWebinarsCpt",
-              "resourcesCpt",
-              "page"
-            ]
-          }
-        ]
-      }
-    }
-  },
   "resourcesCpt": {
     "name": "📰 Resources CPT",
     "description": "",
@@ -3963,56 +5955,6 @@
             ]
           }
         ]
-      }
-    }
-  },
-  "sectionNavigationLinks": {
-    "name": "☰ Section Navigation Links",
-    "description": "",
-    "displayField": "label",
-    "fields": {
-      "pageLink": {
-        "name": "Page Link",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "page",
-              "newStandaloneContent",
-              "newStandaloneMicrosite",
-              "newStandaloneThankYou",
-              "newStandaloneConversion"
-            ]
-          }
-        ]
-      },
-      "externalUrl": {
-        "name": "External URL",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "label": {
-        "name": "Label ",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "queryParams": {
-        "name": "Query Params",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
       }
     }
   },
@@ -4854,193 +6796,6 @@
       }
     }
   },
-  "announcementBanner": {
-    "name": "🌍 Announcement Banner",
-    "description": "",
-    "displayField": "announcementTitle",
-    "fields": {
-      "announcementTitle": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "messageTop": {
-        "name": "Message",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "contentLinkTop": {
-        "name": "Content Link",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "linkTextTop": {
-        "name": "Link Text",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "announcementBottomTitle": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "useModernTheme": {
-        "name": "Use Modern Theme",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "themeType": {
-        "name": "Theme Type",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Short Full Bar (with image option)",
-              "Short Half Bar (no image)",
-              "Long Tall Bar (more text)",
-              "Long Short Bar (less text)"
-            ]
-          }
-        ]
-      },
-      "announcementImage": {
-        "name": "Image",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "image"
-            ]
-          }
-        ]
-      },
-      "headingSection": {
-        "name": "Heading Section",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "message": {
-        "name": "Message",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "contentLink": {
-        "name": "Content Link",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "linkText": {
-        "name": "Link Text",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "headerAnnouncementTargetEntries": {
-        "name": "Header Announcement Target Entries",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "page",
-                "newStandaloneContent",
-                "newStandaloneMicrosite",
-                "newStandaloneThankYou",
-                "newStandaloneConversion"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "bottomAnnouncementTargetEntries": {
-        "name": "Bottom Announcement Target Entries",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "page",
-                "newStandaloneContent",
-                "newStandaloneMicrosite",
-                "newStandaloneThankYou",
-                "newStandaloneConversion"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "targetPageTemplates": {
-        "name": "Target Page Templates",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Symbol",
-          "validations": [
-            {
-              "in": [
-                "Page",
-                "NewStandaloneContent",
-                "NewStandaloneConversion",
-                "NewStandaloneMicrosite",
-                "NewStandaloneThankYou"
-              ]
-            }
-          ]
-        },
-        "validations": []
-      }
-    }
-  },
   "contactInfo": {
     "name": "🔁 Contact Info",
     "description": "",
@@ -5083,189 +6838,6 @@
             }
           }
         ]
-      }
-    }
-  },
-  "pageSettings": {
-    "name": "🌍 Page Settings",
-    "description": "",
-    "displayField": "pageSetting",
-    "fields": {
-      "pageSetting": {
-        "name": "Page Setting",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "parentPage": {
-        "name": "Parent Page",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "page",
-              "newStandaloneThankYou",
-              "newStandaloneContent",
-              "newStandaloneConversion",
-              "newStandaloneMicrosite"
-            ]
-          }
-        ]
-      },
-      "showAnnouncementTop": {
-        "name": "Show Announcement Top",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "showAnnouncementBottom": {
-        "name": "Show Announcement Bottom",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "enableSidenav": {
-        "name": "Enable Sidenav",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "seo": {
-        "name": "SEO",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "seo"
-            ]
-          }
-        ]
-      },
-      "mainNavigationSwitch": {
-        "name": "Main Navigation - Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationDefaultCtAs": {
-        "name": "Main Navigation - Default CTAs",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationSearchSwitch": {
-        "name": "Main Navigation - Search Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationLanguageSwitch": {
-        "name": "Main Navigation - Language Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationCtaButtonDarkBlue": {
-        "name": "Main Navigation - CTA Button (Dark Blue)",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "mainNavigationCtaButtonWhite": {
-        "name": "Main Navigation - CTA Button (White)",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "breadcrumbSwitch": {
-        "name": "Breadcrumb Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "enableSidebarForm": {
-        "name": "Enable Sidebar Form",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sfHeading": {
-        "name": "Heading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sfDescription": {
-        "name": "Description",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "salesforceCampaignId": {
-        "name": "Salesforce Campaign ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "leadSourceDetails": {
-        "name": "Lead Source Details",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
       }
     }
   },
@@ -5997,63 +7569,6 @@
       }
     }
   },
-  "quotesBlock": {
-    "name": "🧩 Quotes Block",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "heading": {
-        "name": "Heading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "quoteItems": {
-        "name": "Quote Items",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "quoteItem"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "min": null,
-              "max": 3
-            }
-          }
-        ]
-      }
-    }
-  },
   "accordionItem": {
     "name": "🔁 Accordion Item",
     "description": "",
@@ -6155,85 +7670,6 @@
             ]
           }
         ]
-      }
-    }
-  },
-  "statisticsBlock": {
-    "name": "🧩 Statistics Block",
-    "description": "",
-    "displayField": "description",
-    "fields": {
-      "sectionTitle": {
-        "name": "Section Title",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionTitle"
-            ]
-          }
-        ]
-      },
-      "description": {
-        "name": "Description",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "cta": {
-        "name": "CTA",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "addStatistics": {
-        "name": "Add Statistics",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "statistics"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "min": null,
-              "max": 3
-            }
-          }
-        ]
-      },
-      "removeColorTheme": {
-        "name": "Remove Color Theme",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
       }
     }
   },
@@ -6389,96 +7825,6 @@
       }
     }
   },
-  "partnersLogosBlock": {
-    "name": "🧩 Partners Logos Block",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sectionTitle": {
-        "name": "Section Title",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionTitle"
-            ]
-          }
-        ]
-      },
-      "logoList": {
-        "name": "Add Logo",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "addPartnerLogo"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "gridSize": {
-        "name": "Grid size",
-        "type": "Integer",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              1,
-              2,
-              3,
-              4,
-              5
-            ]
-          }
-        ]
-      },
-      "logoBackground": {
-        "name": "Logo Background",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Grey",
-              "Transparent"
-            ]
-          }
-        ]
-      }
-    }
-  },
   "faQsItem": {
     "name": "🔁 FAQs Item",
     "description": "",
@@ -6498,47 +7844,6 @@
         "required": true,
         "localized": false,
         "disabled": false,
-        "validations": []
-      }
-    }
-  },
-  "faQs": {
-    "name": "🧩 FAQs",
-    "description": "",
-    "displayField": null,
-    "fields": {
-      "sectionTitle": {
-        "name": "Section Title",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionTitle"
-            ]
-          }
-        ]
-      },
-      "addFaQs": {
-        "name": "Add FAQs",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "faQsItem"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
         "validations": []
       }
     }
@@ -7828,6 +9133,708 @@
         "required": false,
         "localized": false,
         "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "header": {
+    "name": "🌍 Header",
+    "description": "",
+    "displayField": "internalName",
+    "fields": {
+      "internalName": {
+        "name": "Internal Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "siteLogo": {
+        "name": "Site Logo",
+        "type": "Link",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": []
+      },
+      "navigationLinks": {
+        "name": "Navigation Links",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "navigationItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "min": 1,
+              "max": null
+            }
+          }
+        ]
+      },
+      "navigationBottomLinks": {
+        "name": "Navigation - Bottom Links",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "headerNavigationBottomLinks"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "primaryCtaLabel": {
+        "name": "Primary CTA Label",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "primaryCtaLink": {
+        "name": "Primary CTA Link",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "secondaryCtaLabel": {
+        "name": "Secondary CTA Label",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "secondaryCtaLink": {
+        "name": "Secondary CTA Link",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "calloutCards": {
+    "name": "🧩 Callout Cards",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "addCard": {
+        "name": "Add Card",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "iconGridItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "homeHero": {
+    "name": "🧩 Home Hero",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "name": "Description",
+        "type": "RichText",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript",
+              "strikethrough"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "heading-2",
+              "heading-3",
+              "heading-4",
+              "heading-5",
+              "heading-6",
+              "ordered-list",
+              "unordered-list",
+              "hr",
+              "blockquote",
+              "embedded-entry-block",
+              "table",
+              "asset-hyperlink",
+              "embedded-entry-inline",
+              "entry-hyperlink",
+              "hyperlink"
+            ],
+            "message": "Only heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "heroImage": {
+        "name": "Hero Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "backgroundMotion": {
+        "name": "Background Motion",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image",
+              "video"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "customerBundleItem": {
+    "name": "🔁 Customer Bundle Item",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "icon": {
+        "name": "Icon",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "description": {
+        "name": "Description",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "partnerEcosystem": {
+    "name": "🧩 Partner Ecosystem",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "addLogos": {
+        "name": "Add Logos",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "addPartnerLogo"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "subTitle": {
+        "name": "Sub Title",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "validatedComponent": {
+    "name": "🧩 Validated Component",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "customerAnalysts": {
+        "name": "Customer analysts",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "customerAnalystsItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "subTitle": {
+        "name": "Sub Title",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "ctaBlock": {
+    "name": "🧩 CTA Block",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "selectBackgroundColor": {
+        "name": "Select Background Color",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Blue",
+              "Orange",
+              "White"
+            ]
+          }
+        ]
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "mediaBlock": {
+    "name": "🧩 Media Block",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "addAsset": {
+        "name": "Add Asset",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "asset"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "name": "Description",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "cardGridBlock": {
+    "name": "🧩 Card Grid Block",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "description": {
+        "name": "Description",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "cardTheme": {
+        "name": "Card Theme",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Light",
+              "Dark"
+            ]
+          }
+        ]
+      },
+      "gridLayout": {
+        "name": "Grid Layout",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "addCard": {
+        "name": "Add card",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "iconGridItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
         "validations": []
       }
     }

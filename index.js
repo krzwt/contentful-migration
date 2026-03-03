@@ -57,8 +57,8 @@ const effectiveDryRun = isDryRun || cliDryRun;
 --------------------------------------------------------- */
 const DATA_SOURCES = [
   {
-    // file: "./data/standalone-content.json",
-    file: "./data/test-sc.json",
+    file: "./data/standalone-content.json",
+    // file: "./data/test-sc.json",
     pageContentType: "newStandaloneContent",
     label: "Standalone Content",
   },
@@ -292,20 +292,60 @@ async function run() {
           const fieldSegment = getFieldSegment(fieldKey);
           const orderedIds = getOrderedKeys(fieldSegment, components);
 
-          for (const blockId of orderedIds) {
+          for (let k = 0; k < orderedIds.length; k++) {
+            const blockId = orderedIds[k];
             const block = components[blockId];
             if (!block.enabled) continue;
 
+            const bFields = block.fields;
+            const bType = block.type || fieldKey;
+
+            // --- Lookahead Merge Logic ---
+            let mergedCtaEntry = null;
+            const nextBId = orderedIds[k + 1];
+            if (bType === 'contentBlock' && nextBId) {
+              const nextBlock = components[nextBId];
+              const nextType = nextBlock.type || fieldKey;
+              if (nextBlock.enabled && (nextType === 'calloutBar' || nextType === 'cta')) {
+                console.log(`🔗 Lookahead: Merging ${nextType} (${nextBId}) into contentBlock (${blockId})`);
+
+                // Process the CTA block first to get its entry
+                const ctaConfig = COMPONENTS[nextType];
+                if (ctaConfig) {
+                  const ctaResult = await ctaConfig.handler(env, {
+                    blockId: nextBId,
+                    ...nextBlock.fields,
+                    label: nextBlock.fields.label || nextBlock.fields.ctaLinkText,
+                    variation: nextType,
+                  }, contentfulAssetMap, summary);
+
+                  if (ctaResult) {
+                    // Extract the CTA entry from the CTA Block results
+                    // ctaBlock handler returns the ctaBlock entry, but we want the cta entry inside it?
+                    // Actually, the ctaBlock handler returns the result of upsertEntry(ctaBlock).
+                    // We need the ACTUAL 'cta' type entry.
+                    // Wait, our contentBlock.js now expects fullWidthCta to be an entry.
+
+                    // Let's check ctaBlock.js again. It returns the ctaBlock entry.
+                    // But we want the CTA field of that entry?
+                    // Better: just pass the raw data and let contentBlock handler handle it.
+                    mergedCtaEntry = nextBlock.fields;
+                    k++; // Skip the next block in the loop
+                  }
+                }
+              }
+            }
+
             // Extract block segment for nested ordering
             const bIdx = fieldSegment.indexOf(`"${blockId}":`);
-            const nextBId = orderedIds[orderedIds.indexOf(blockId) + 1];
-            const nextBIdx = nextBId
-              ? fieldSegment.indexOf(`"${nextBId}":`)
+            const endBId = orderedIds[k + 1]; // Use updated k
+            const nextBIdx = endBId
+              ? fieldSegment.indexOf(`"${endBId}":`)
               : fieldSegment.length;
             const blockSegment = fieldSegment.substring(bIdx, nextBIdx);
 
             const fields = block.fields;
-            const type = block.type || fieldKey;
+            const type = bType;
 
             const config = COMPONENTS[type];
             if (!config) {
@@ -347,6 +387,7 @@ async function run() {
                     blockId: blockId,
                     blockSegment: blockSegment,
                     ...fields, // Pass all fields from source
+                    fullWidthCta: mergedCtaEntry, // Pass merged CTA data if any
                     heading:
                       fields.headingSection ||
                       fields.heading ||
