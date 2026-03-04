@@ -68,16 +68,16 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneConversion",
   //   label: "Standalone Conversion"
   // },
-  {
-    file: "./data/standalone-microsite.json",
-    pageContentType: "newStandaloneMicrosite",
-    label: "Standalone Microsite",
-  },
   // {
-  //   file: "./data/standalone-thankyou.json",
-  //   pageContentType: "newStandaloneThankYou",
-  //   label: "Standalone Thank You",
+  //   file: "./data/standalone-microsite.json",
+  //   pageContentType: "newStandaloneMicrosite",
+  //   label: "Standalone Microsite",
   // },
+  {
+    file: "./data/standalone-thankyou.json",
+    pageContentType: "newStandaloneThankYou",
+    label: "Standalone Thank You",
+  },
   // {
   //   file: "./data/people-cpt.json",
   //   label: "People CPT",
