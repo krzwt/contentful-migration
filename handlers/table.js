@@ -47,9 +47,25 @@ export async function createOrUpdateTable(env, blockData, assetMap = null) {
         tableHtml += "</table>";
     }
 
-    // Combine body + table
+
+    // Combine body + table + textList
     const bodyHtml = blockData.bodyRedactorRestricted || "";
-    const combinedHtml = bodyHtml + tableHtml;
+    let listHtml = "";
+    if (blockData.textList) {
+        // blockData.textList can be an object or an array
+        const items = Object.values(blockData.textList || {});
+        if (items.length > 0) {
+            listHtml += "<ul>";
+            for (const itemBlock of items) {
+                if (itemBlock.fields && itemBlock.fields.item) {
+                    listHtml += `<li>${itemBlock.fields.item}</li>`;
+                }
+            }
+            listHtml += "</ul>";
+        }
+    }
+    const combinedHtml = bodyHtml + tableHtml + listHtml;
+
 
     const fields = {
         blockId: { [LOCALE]: blockId },

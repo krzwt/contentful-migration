@@ -22,7 +22,7 @@
         "slug": "testing-standalone-2",
         "uri": "testing-standalone-2",
         "dateCreated": "2026-03-03T07:57:14-06:00",
-        "dateUpdated": "2026-03-03T09:50:08-06:00",
+        "dateUpdated": "2026-03-03T10:27:08-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218060,
@@ -228,7 +228,7 @@
             "2504068": {
                 "type": "contentBlock",
                 "enabled": true,
-                "collapsed": false,
+                "collapsed": true,
                 "level": 1,
                 "fields": {
                     "headingSection": "Content Block",
@@ -249,6 +249,86 @@
                             }
                         }
                     }
+                }
+            },
+            "2504152": {
+                "type": "table",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Why and On What Lawful Grounds We Process Your Personal Data",
+                    "bodyRedactorRestricted": null,
+                    "table": {
+                        "columns": [
+                            {
+                                "heading": "",
+                                "width": "",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "",
+                                "width": "",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            }
+                        ],
+                        "rows": [
+                            [
+                                "<center>[Subheading]:Access and use of our websites",
+                                ""
+                            ],
+                            [
+                                "Purpose/Activity",
+                                "The processing of certain technical data, including IP addresses, by our systems is necessary for you to access the websites. It is essential that we keep this information for the duration of your session. This information is also stored in the log files of our system, and we have measures in place to ensure that it is not stored together with other personal data of the user."
+                            ],
+                            [
+                                "Type of Personal Data",
+                                "[check]Technical Data <br> <br>[check]Usage Data <br> <br>[check]Marketing and communications data"
+                            ],
+                            [
+                                "Lawful Basis",
+                                "Lawful Basis"
+                            ],
+                            [
+                                "<center>[Subheading]:To process your inquiries, online trials and demos requests",
+                                ""
+                            ],
+                            [
+                                "Purpose/Activity",
+                                "When you inquire about or order products or services on our website or in other ways, we may ask you to provide personal data to complete these transactions and provide you the relevant products and services. We store this data in our central customer database to fulfil your inquiries, process relevant contracts (including payment processing and, if applicable, credit assessment), and for our own advertising purposes (see below for more information). Payment card information is only used for processing payments and decisions as to whether to offer credit and fraud prevention."
+                            ],
+                            [
+                                "Type of Personal Data",
+                                "[check]Contact information <br> <br>[check]Identity data <br> <br>[check]Financial and transactional data"
+                            ],
+                            [
+                                "Lawful Basis",
+                                "<ins>Contract performance:</ins> We need to process your personal data under the terms of a contract we have with you. This also includes when you ask us to take certain steps before entering into a contract. If you fail to provide the data when requested, we may not be able to perform the contract we have or are trying to enter into with you. In this case, we may have to cancel a product or service you have with us but we will try to notify you if this is the case at the time."
+                            ],
+                            [
+                                "<center>[Subheading]:Direct marketing activities",
+                                ""
+                            ],
+                            [
+                                "Purpose/Activity",
+                                "We process your personal data to send you marketing communications (e.g. via email, social media, or telephone) and product and services recommendations. <br> <br> When you subscribe to our free newsletter on our website, you provide us with personal data via the online form. We also ask you about your marketing preferences when you purchase any products or services. In addition, we may automatically collect personal data upon your registration. <br> <br> We would like to keep you informed about new products, our services and interesting events. To do this, we use your personal data to recommend certain of our products, services or events that may be of interest to you by email or post. To provide more relevant information to you, we may process data relating to your purchase history. We will only use your data for our own marketing and advertising purposes and do not transfer any personal data to third parties for marketing purposes. <br> <br> If you purchase, take a trial of, or express interest in any of our products or services via our website, we may also send you a newsletter to the contact details you provide. Our newsletter will only advertise our products or services that are similar to those that you have purchased, trialled or in which you have expressed interest, provided that you have not opted out of receiving that marketing. <br> <br> If you do not purchase or trial any of our products or services, but wish to subscribe to our newsletter, we ask you to consent to us processing your personal data for these purposes and we reference this Privacy Notice during the registration process. We do not pass this personal data to third parties. We only use it to send you our newsletter. <br> <br> You have the right to withdraw your consent and stop receiving marketing communications and newsletters at any time by contacting us or using our [marketing preference centre]( https://www.beyondtrust.com/forms/manage-subscriptions). <br> <br>We also partner with third party advertising networks to display advertising on our website or to manage our advertising on other sites. Our advertising network providers may collect information about your activities on our website and other websites to provide personalised advertising based on your interests. You can find more information in our Cookie Notice."
+                            ],
+                            [
+                                "Type of Personal Data",
+                                "[check]Contact information <br> <br> [check]Transaction data <br> <br> [check]Marketing and communications data <br> <br> [check]Technical data"
+                            ],
+                            [
+                                "Lawful Basis",
+                                "We send you marketing communications if you provide us with your <ins>consent</ins>. However, we may also rely on our <ins>legitimate interests</ins> to study how customers use our products or services, to develop our business practices and inform our marketing strategy, as well as to contact you about services or products similar to the ones you may have already purchased, discussed, or trialed."
+                            ]
+                        ],
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\"></th><th align=\"left\" width=\"\"></th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\"><center>[Subheading]:Access and use of our websites</td><td align=\"left\"></td></tr><tr><td align=\"left\">Purpose/Activity</td><td align=\"left\">The processing of certain technical data, including IP addresses, by our systems is necessary for you to access the websites. It is essential that we keep this information for the duration of your session. This information is also stored in the log files of our system, and we have measures in place to ensure that it is not stored together with other personal data of the user.</td></tr><tr><td align=\"left\">Type of Personal Data</td><td align=\"left\">[check]Technical Data <br> <br>[check]Usage Data <br> <br>[check]Marketing and communications data</td></tr><tr><td align=\"left\">Lawful Basis</td><td align=\"left\">Lawful Basis</td></tr><tr><td align=\"left\"><center>[Subheading]:To process your inquiries, online trials and demos requests</td><td align=\"left\"></td></tr><tr><td align=\"left\">Purpose/Activity</td><td align=\"left\">When you inquire about or order products or services on our website or in other ways, we may ask you to provide personal data to complete these transactions and provide you the relevant products and services. We store this data in our central customer database to fulfil your inquiries, process relevant contracts (including payment processing and, if applicable, credit assessment), and for our own advertising purposes (see below for more information). Payment card information is only used for processing payments and decisions as to whether to offer credit and fraud prevention.</td></tr><tr><td align=\"left\">Type of Personal Data</td><td align=\"left\">[check]Contact information <br> <br>[check]Identity data <br> <br>[check]Financial and transactional data</td></tr><tr><td align=\"left\">Lawful Basis</td><td align=\"left\"><ins>Contract performance:</ins> We need to process your personal data under the terms of a contract we have with you. This also includes when you ask us to take certain steps before entering into a contract. If you fail to provide the data when requested, we may not be able to perform the contract we have or are trying to enter into with you. In this case, we may have to cancel a product or service you have with us but we will try to notify you if this is the case at the time.</td></tr><tr><td align=\"left\"><center>[Subheading]:Direct marketing activities</td><td align=\"left\"></td></tr><tr><td align=\"left\">Purpose/Activity</td><td align=\"left\">We process your personal data to send you marketing communications (e.g. via email, social media, or telephone) and product and services recommendations. <br> <br> When you subscribe to our free newsletter on our website, you provide us with personal data via the online form. We also ask you about your marketing preferences when you purchase any products or services. In addition, we may automatically collect personal data upon your registration. <br> <br> We would like to keep you informed about new products, our services and interesting events. To do this, we use your personal data to recommend certain of our products, services or events that may be of interest to you by email or post. To provide more relevant information to you, we may process data relating to your purchase history. We will only use your data for our own marketing and advertising purposes and do not transfer any personal data to third parties for marketing purposes. <br> <br> If you purchase, take a trial of, or express interest in any of our products or services via our website, we may also send you a newsletter to the contact details you provide. Our newsletter will only advertise our products or services that are similar to those that you have purchased, trialled or in which you have expressed interest, provided that you have not opted out of receiving that marketing. <br> <br> If you do not purchase or trial any of our products or services, but wish to subscribe to our newsletter, we ask you to consent to us processing your personal data for these purposes and we reference this Privacy Notice during the registration process. We do not pass this personal data to third parties. We only use it to send you our newsletter. <br> <br> You have the right to withdraw your consent and stop receiving marketing communications and newsletters at any time by contacting us or using our [marketing preference centre]( https://www.beyondtrust.com/forms/manage-subscriptions). <br> <br>We also partner with third party advertising networks to display advertising on our website or to manage our advertising on other sites. Our advertising network providers may collect information about your activities on our website and other websites to provide personalised advertising based on your interests. You can find more information in our Cookie Notice.</td></tr><tr><td align=\"left\">Type of Personal Data</td><td align=\"left\">[check]Contact information <br> <br> [check]Transaction data <br> <br> [check]Marketing and communications data <br> <br> [check]Technical data</td></tr><tr><td align=\"left\">Lawful Basis</td><td align=\"left\">We send you marketing communications if you provide us with your <ins>consent</ins>. However, we may also rely on our <ins>legitimate interests</ins> to study how customers use our products or services, to develop our business practices and inform our marketing strategy, as well as to contact you about services or products similar to the ones you may have already purchased, discussed, or trialed.</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                    },
+                    "textList": []
                 }
             }
         },

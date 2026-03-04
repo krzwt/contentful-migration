@@ -2,59 +2,85 @@ import { JSDOM } from "jsdom";
 import { uploadImageFromUrl } from "./assets.js";
 import { normalizeSrc, isValidHttpUrl } from "./normalize.js";
 
-export function parseInlineNodes(node) {
-  const nodes = [];
+export function parseInlineNodes(node, activeMarks = []) {
+  let nodes = [];
 
   node.childNodes.forEach(child => {
-    if (child.nodeType === 3 && child.textContent.trim()) {
-      nodes.push({
-        nodeType: "text",
-        value: child.textContent,
-        marks: [],
-        data: {}
-      });
-    }
+    if (child.nodeType === 3) { // Text node
+      const text = child.textContent;
+      if (text) {
+        const mdLinkRegex = /\[([^\]]+)\]\(\s*([^\)]+)\s*\)/g;
+        let lastIndex = 0;
+        let match;
 
-    if (["STRONG", "B"].includes(child.nodeName)) {
-      nodes.push({
-        nodeType: "text",
-        value: child.textContent,
-        marks: [{ type: "bold" }],
-        data: {}
-      });
-    }
+        while ((match = mdLinkRegex.exec(text)) !== null) {
+          if (match.index > lastIndex) {
+            nodes.push({
+              nodeType: "text",
+              value: text.substring(lastIndex, match.index),
+              marks: [...activeMarks],
+              data: {}
+            });
+          }
 
-    if (["EM", "I"].includes(child.nodeName)) {
-      nodes.push({
-        nodeType: "text",
-        value: child.textContent,
-        marks: [{ type: "italic" }],
-        data: {}
-      });
-    }
+          nodes.push({
+            nodeType: "hyperlink",
+            data: { uri: match[2].trim() },
+            content: [{
+              nodeType: "text",
+              value: match[1],
+              marks: [...activeMarks],
+              data: {}
+            }]
+          });
 
-    if (child.nodeName === "U") {
-      nodes.push({
-        nodeType: "text",
-        value: child.textContent,
-        marks: [{ type: "underline" }],
-        data: {}
-      });
-    }
+          lastIndex = mdLinkRegex.lastIndex;
+        }
 
-    if (child.nodeName === "A") {
-      const href = child.getAttribute("href");
-      if (href) {
+        if (lastIndex < text.length) {
+          const remainingText = text.substring(lastIndex);
+          if (remainingText.length > 0) {
+            nodes.push({
+              nodeType: "text",
+              value: remainingText,
+              marks: [...activeMarks],
+              data: {}
+            });
+          }
+        }
+      }
+    } else if (child.nodeType === 1) { // Element node
+      const newMarks = [...activeMarks];
+      let handled = false;
+      const nodeName = child.nodeName.toUpperCase();
+
+      if (["STRONG", "B"].includes(nodeName)) {
+        newMarks.push({ type: "bold" });
+      } else if (["EM", "I"].includes(nodeName)) {
+        newMarks.push({ type: "italic" });
+      } else if (nodeName === "U" || nodeName === "INS") {
+        newMarks.push({ type: "underline" });
+      } else if (nodeName === "A") {
+        const href = child.getAttribute("href");
         nodes.push({
           nodeType: "hyperlink",
-          data: { uri: href },
-          content: [{
-            nodeType: "text",
-            value: child.textContent,
-            marks: [],
-            data: {}
-          }]
+          data: { uri: href || "" },
+          content: parseInlineNodes(child, activeMarks)
         });
+        handled = true;
+      } else if (nodeName === "BR") {
+        nodes.push({
+          nodeType: "text",
+          value: "<br>",
+          marks: [...activeMarks],
+          data: {}
+        });
+        handled = true;
+      }
+
+      if (!handled) {
+        const childNodes = parseInlineNodes(child, newMarks);
+        nodes = nodes.concat(childNodes);
       }
     }
   });
@@ -81,26 +107,21 @@ function buildListItems(listNode) {
     .filter(Boolean);
 }
 
-function buildTableNodes(tableNode) {
+async function buildTableNodes(env, tableNode) {
   const rows = [];
-
-  // Handle thead
   const thead = tableNode.querySelector("thead");
   if (thead) {
     const theadRows = thead.querySelectorAll("tr");
-    theadRows.forEach(tr => {
+    for (const tr of theadRows) {
       const cells = [];
-      tr.querySelectorAll("td, th").forEach(cell => {
+      for (const cell of tr.querySelectorAll("td, th")) {
+        const cellRichText = await convertHtmlToRichText(env, cell.innerHTML);
         cells.push({
           nodeType: cell.nodeName === "TH" ? "table-header-cell" : "table-cell",
           data: {},
-          content: [{
-            nodeType: "paragraph",
-            data: {},
-            content: parseInlineNodes(cell)
-          }]
+          content: cellRichText.content || []
         });
-      });
+      }
       if (cells.length > 0) {
         rows.push({
           nodeType: "table-row",
@@ -108,28 +129,22 @@ function buildTableNodes(tableNode) {
           content: cells
         });
       }
-    });
+    }
   }
 
-  // Handle tbody or direct tr children
   const tbody = tableNode.querySelector("tbody") || tableNode;
   const tbodyRows = tbody.querySelectorAll("tr");
-  tbodyRows.forEach(tr => {
-    // Skip if this tr was already handled in thead (though querySelector typically separates them)
-    if (thead && thead.contains(tr)) return;
-
+  for (const tr of tbodyRows) {
+    if (thead && thead.contains(tr)) continue;
     const cells = [];
-    tr.querySelectorAll("td, th").forEach(cell => {
+    for (const cell of tr.querySelectorAll("td, th")) {
+      const cellRichText = await convertHtmlToRichText(env, cell.innerHTML);
       cells.push({
         nodeType: cell.nodeName === "TH" ? "table-header-cell" : "table-cell",
         data: {},
-        content: [{
-          nodeType: "paragraph",
-          data: {},
-          content: parseInlineNodes(cell)
-        }]
+        content: cellRichText.content || []
       });
-    });
+    }
     if (cells.length > 0) {
       rows.push({
         nodeType: "table-row",
@@ -137,93 +152,103 @@ function buildTableNodes(tableNode) {
         content: cells
       });
     }
-  });
+  }
 
   return rows;
 }
 
 export async function convertHtmlToRichText(env, html) {
   const source = String(html || "").trim();
-  if (!source) return { nodeType: "document", data: {}, content: [] };
-
   const dom = new JSDOM(`<body>${source}</body>`);
   const content = [];
+  let inlineBuffer = [];
 
-  for (const node of dom.window.document.body.childNodes) {
-
-    // Handle plain text nodes at root level
-    if (node.nodeType === 3 && node.textContent.trim()) {
+  const flushBuffer = () => {
+    if (inlineBuffer.length > 0) {
       content.push({
         nodeType: "paragraph",
         data: {},
-        content: [{
-          nodeType: "text",
-          value: node.textContent,
-          marks: [],
-          data: {}
-        }]
+        content: [...inlineBuffer]
       });
+      inlineBuffer = [];
     }
+  };
 
-    if (node.nodeName === "IMG") {
-      const src = normalizeSrc(node.getAttribute("src"));
-      if (!src || !isValidHttpUrl(src)) continue;
+  const isBlock = (node) => {
+    if (node.nodeType !== 1) return false;
+    const blockTags = ["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE", "HR", "IMG"];
+    return blockTags.includes(node.nodeName.toUpperCase());
+  };
 
-      const assetId = await uploadImageFromUrl(env, src);
-      if (assetId) {
+  for (const node of dom.window.document.body.childNodes) {
+    if (isBlock(node)) {
+      flushBuffer();
+      const nodeName = node.nodeName.toUpperCase();
+
+      if (/^H[1-6]$/.test(nodeName)) {
+        let level = nodeName.replace("H", "");
+        if (level === "1") level = "2";
         content.push({
-          nodeType: "embedded-asset-block",
-          data: {
-            target: {
-              sys: {
-                type: "Link",
-                linkType: "Asset",
-                id: assetId
-              }
-            }
-          },
-          content: []
+          nodeType: `heading-${level}`,
+          data: {},
+          content: parseInlineNodes(node)
         });
-      }
-    }
-
-    if (/^H[1-6]$/.test(node.nodeName)) {
-      let level = node.nodeName.replace("H", "");
-      if (level === "1") level = "2"; // Downgrade H1 to H2
-      content.push({
-        nodeType: `heading-${level}`,
-        data: {},
-        content: parseInlineNodes(node)
-      });
-    }
-
-    if (node.nodeName === "P") {
-      const inline = parseInlineNodes(node);
-      if (inline.length) {
+      } else if (nodeName === "P") {
+        const inline = parseInlineNodes(node);
         content.push({
           nodeType: "paragraph",
           data: {},
           content: inline
         });
+      } else if (["UL", "OL"].includes(nodeName)) {
+        content.push({
+          nodeType: nodeName === "UL" ? "unordered-list" : "ordered-list",
+          data: {},
+          content: buildListItems(node)
+        });
+      } else if (nodeName === "TABLE") {
+        content.push({
+          nodeType: "table",
+          data: {},
+          content: await buildTableNodes(env, node)
+        });
+      } else if (nodeName === "IMG") {
+        const src = normalizeSrc(node.getAttribute("src"));
+        if (src && isValidHttpUrl(src)) {
+          const assetId = await uploadImageFromUrl(env, src);
+          if (assetId) {
+            content.push({
+              nodeType: "embedded-asset-block",
+              data: { target: { sys: { type: "Link", linkType: "Asset", id: assetId } } },
+              content: []
+            });
+          }
+        }
       }
-    }
-
-    if (["UL", "OL"].includes(node.nodeName)) {
-      content.push({
-        nodeType: node.nodeName === "UL" ? "unordered-list" : "ordered-list",
-        data: {},
-        content: buildListItems(node)
-      });
-    }
-
-    if (node.nodeName === "TABLE") {
-      content.push({
-        nodeType: "table",
-        data: {},
-        content: buildTableNodes(node)
-      });
+    } else {
+      const temp = dom.window.document.createElement("div");
+      temp.appendChild(node.cloneNode(true));
+      const nodes = parseInlineNodes(temp);
+      inlineBuffer = inlineBuffer.concat(nodes);
     }
   }
+  flushBuffer();
+
+  if (content.length === 0) {
+    content.push({
+      nodeType: "paragraph",
+      data: {},
+      content: [{ nodeType: "text", value: "", marks: [], data: {} }]
+    });
+  }
+
+  content.forEach(node => {
+    if (["paragraph", "heading-1", "heading-2", "heading-3", "heading-4", "heading-5", "heading-6"].includes(node.nodeType)) {
+      if (!node.content || node.content.length === 0) {
+        node.content = [{ nodeType: "text", value: "", marks: [], data: {} }];
+      }
+    }
+  });
 
   return { nodeType: "document", data: {}, content };
 }
