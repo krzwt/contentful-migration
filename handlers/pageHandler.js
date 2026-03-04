@@ -191,14 +191,34 @@ async function getOrCreatePageSettings(env, pageData, allPages, pageContentType 
   try {
     const fields = {
       pageSetting: { [LOCALE]: `Page Settings: ${pageData.title}` },
-      enableSidenav: { [LOCALE]: !!pageData.enableSidenav },
+      enableSidenav: { [LOCALE]: !!pageData.enableSidenav || pageData.typeId === 136 },
       mainNavigationSwitch: { [LOCALE]: pageData.mainNavigationSwitch !== false },
       mainNavigationDefaultCtAs: { [LOCALE]: pageData.mainNavigationDefaultCtas !== false },
       mainNavigationSearchSwitch: { [LOCALE]: pageData.mainNavigationSearchSwitch !== false },
       mainNavigationLanguageSwitch: { [LOCALE]: pageData.mainNavigationLanguageSwitch !== false },
       breadcrumbSwitch: { [LOCALE]: pageData.breadcrumbSwitch !== false },
-      enableSidebarForm: { [LOCALE]: !!pageData.enableSidebarForm }
+      enableSidebarForm: { [LOCALE]: !!pageData.enableSidebarForm || pageData.typeId === 134 }
     };
+
+    // Extract sidebar form fields if present
+    if (pageData.sidebarFormsStandalone) {
+      const forms = Object.values(pageData.sidebarFormsStandalone);
+      const formBlock = forms.find(f => (f.type === 'form' || f.type === 'resourceForm') && f.enabled);
+      if (formBlock) {
+        if (formBlock.fields.headingSection || formBlock.fields.heading) {
+          fields.sfHeading = { [LOCALE]: formBlock.fields.headingSection || formBlock.fields.heading };
+        }
+        if (formBlock.fields.bodyMedium || formBlock.fields.bodyRedactorRestricted || formBlock.fields.description) {
+          fields.sfDescription = { [LOCALE]: formBlock.fields.bodyMedium || formBlock.fields.bodyRedactorRestricted || formBlock.fields.description };
+        }
+        if (formBlock.fields.salesforceCampaignId) {
+          fields.salesforceCampaignId = { [LOCALE]: formBlock.fields.salesforceCampaignId };
+        }
+        if (formBlock.fields.leadSourceDetails) {
+          fields.leadSourceDetails = { [LOCALE]: formBlock.fields.leadSourceDetails };
+        }
+      }
+    }
 
     // Link parent page
     if (pageData.parentId) {
