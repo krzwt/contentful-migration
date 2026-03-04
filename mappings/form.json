@@ -1,5 +1,5 @@
 {
-    "contentType": "form",
+    "contentType": "formComponent",
     "idField": "blockId",
     "fields": {
         "title": {

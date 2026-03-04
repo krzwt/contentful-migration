@@ -1,5 +1,5 @@
 {
-    "contentType": "nonMarketingGetNotifiedForm",
+    "contentType": "formComponent",
     "idField": "blockId",
     "fields": {
         "redirectUrl": {

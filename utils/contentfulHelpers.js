@@ -28,13 +28,32 @@ export function buildUrlMap() {
     sources.forEach(file => {
         if (!fs.existsSync(file)) return;
         try {
-            const data = JSON.parse(fs.readFileSync(file, "utf-8"));
-            data.forEach(item => {
-                if (item.id) {
-                    const url = item.uri || item.slug || "";
-                    GLOBAL_URL_MAP.set(String(item.id), { url, title: item.title || "" });
+            const content = fs.readFileSync(file, "utf-8");
+
+            // 1. Initial pass: Index items that are top-level objects in the JSON
+            const data = JSON.parse(content);
+            if (Array.isArray(data)) {
+                data.forEach(item => {
+                    if (item.id) {
+                        const url = item.uri || item.slug || "";
+                        GLOBAL_URL_MAP.set(String(item.id), { url, title: item.title || "" });
+                    }
+                });
+            }
+
+            // 2. Secondary pass: Deep-crawl the raw content for {entry:ID@...||URL} patterns.
+            // This captures URIs for internal links to pages/products not yet migrated as top-level entries.
+            const regex = /\{entry:(\d+)(?:@.*?)?\|\|(.*?)\}/g;
+            let match;
+            while ((match = regex.exec(content)) !== null) {
+                const id = String(match[1]);
+                const url = match[2];
+                // Don't overwrite if we already have a URI
+                if (!GLOBAL_URL_MAP.has(id)) {
+                    GLOBAL_URL_MAP.set(id, { url, title: "" });
                 }
-            });
+            }
+
         } catch (e) {
             console.warn(`   ⚠️ Could not index ${file}: ${e.message}`);
         }
@@ -111,6 +130,12 @@ export function parseCraftLink(linkStr) {
  */
 export async function upsertCta(env, id, label, url, shouldPublish = true, linkedId = null) {
     let safeUrl = url || "";
+
+    // Normalize: strip staging/production domain prefixes → relative path
+    safeUrl = safeUrl
+        .replace(/^https?:\/\/bluetext\.beyondtrust\.com/, "")
+        .replace(/^https?:\/\/www\.beyondtrust\.com/, "");
+
     if (safeUrl.length > 255) {
         console.warn(`   ⚠️ URL for cta-${id} exceeds 255 chars. Truncating...`);
         safeUrl = safeUrl.substring(0, 255);
@@ -159,6 +184,18 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
                 console.log(`   🔗 Linked CTA ${id} to page entry: ${pageEntry.sys.id} (entryId: ${linkedId})`);
                 fields.pageLink = { [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: pageEntry.sys.id } } };
                 fields.url = { [LOCALE]: "" }; // Clear URL when internal reference is resolved
+            } else {
+                // Fallback: If page entry not found in Contentful, use resolved internal URL
+                const internalUrl = resolveInternalUrl(linkedId);
+                if (internalUrl) {
+                    // Normalize the internal URL the same way
+                    let normalizedUrl = internalUrl
+                        .replace(/^https?:\/\/bluetext\.beyondtrust\.com/, "")
+                        .replace(/^https?:\/\/www\.beyondtrust\.com/, "");
+                    console.log(`   🌐 Page ${linkedId} not in Contentful. Using URL: ${normalizedUrl}`);
+                    fields.url = { [LOCALE]: normalizedUrl };
+                    fields.target = { [LOCALE]: normalizedUrl.startsWith("http") ? "_blank (New Tab)" : "_self (Same Tab)" };
+                }
             }
         } catch (e) {
             console.warn(`   ⚠️ Error looking up Internal link for CTA cta-${id}: ${e.message}`);

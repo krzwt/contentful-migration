@@ -191,7 +191,7 @@ async function getOrCreatePageSettings(env, pageData, allPages, pageContentType 
   try {
     const fields = {
       pageSetting: { [LOCALE]: `Page Settings: ${pageData.title}` },
-      enableSidenav: { [LOCALE]: !!pageData.enableSidenav || pageData.typeId === 136 },
+      enableSidenav: { [LOCALE]: !!pageData.enableSidenav || pageData.typeId === 133 },
       mainNavigationSwitch: { [LOCALE]: pageData.mainNavigationSwitch !== false },
       mainNavigationDefaultCtAs: { [LOCALE]: pageData.mainNavigationDefaultCtas !== false },
       mainNavigationSearchSwitch: { [LOCALE]: pageData.mainNavigationSearchSwitch !== false },

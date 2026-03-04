@@ -74,14 +74,13 @@ export const COMPONENTS = {
   fullWidthAsset: { handler: createOrUpdateMediaBlock },
   officeLocations: { handler: createOrUpdateOfficeLocations },
   calloutCards: { handler: createOrUpdateCalloutCards },
-  mediaEmbed: { handler: createOrUpdateMediaEmbeds },
-  mediaEmbeds: { handler: createOrUpdateMediaEmbeds },
+  mediaEmbed: { handler: createOrUpdateMediaBlock },
+  mediaEmbeds: { handler: createOrUpdateMediaBlock },
 
 
-  /* ---- Generic (mapping-based) ---- */
-  homeHero: { mapping: homeHero, handler: genericComponentHandler },
-  siteSection: { mapping: siteSectionMapping, handler: genericComponentHandler },
-  embeds: { mapping: embedsMapping, handler: genericComponentHandler },
-  form: { mapping: formMapping, handler: genericComponentHandler },
-  nonMarketingGetNotifiedForm: { mapping: nonMarketingGetNotifiedFormMapping, handler: genericComponentHandler }
+  /* ---- Generic (mapping-based or mapped to handlers) ---- */
+  homeHero: { handler: createOrUpdateHero }, // Maps to bannerHero
+  embeds: { handler: createOrUpdateMediaBlock }, // Maps to mediaBlock
+  form: { mapping: formMapping, handler: genericComponentHandler }, // Mapping needs contentType="formComponent"
+  nonMarketingGetNotifiedForm: { mapping: nonMarketingGetNotifiedFormMapping, handler: genericComponentHandler } // Mapping needs contentType="formComponent"
 };

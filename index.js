@@ -399,12 +399,14 @@ async function run() {
                     heading:
                       fields.headingSection ||
                       fields.heading ||
+                      fields.heroTitle ||
                       pageData.heading45 ||
                       title,
                     body:
                       fields.body180 ||
                       fields.bodyRedactorRestricted ||
                       fields.description ||
+                      fields.heroDescription ||
                       fields.subheading,
                     label: fields.label || fields.ctaLinkText,
                     variation: type,
