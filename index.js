@@ -57,12 +57,12 @@ const effectiveDryRun = isDryRun || cliDryRun;
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
 const DATA_SOURCES = [
-  // {
-  //   file: "./data/standalone-content.json",
-  //   // file: "./data/test-sc.json",
-  //   pageContentType: "newStandaloneContent",
-  //   label: "Standalone Content",
-  // },
+  {
+    file: "./data/standalone-content.json",
+    // file: "./data/test-sc.json",
+    pageContentType: "newStandaloneContent",
+    label: "Standalone Content",
+  },
   // {
   //   file: "./data/standalone-conversion.json",
   //   pageContentType: "newStandaloneConversion",
@@ -93,11 +93,11 @@ const DATA_SOURCES = [
   //   label: "Resources CPT",
   //   isResources: true
   // }
-  {
-    file: "./data/newGlobalReachMap.json",
-    label: "Global Reach Map",
-    isGlobalReachMap: true
-  }
+  // {
+  //   file: "./data/newGlobalReachMap.json",
+  //   label: "Global Reach Map",
+  //   isGlobalReachMap: true
+  // }
 ];
 
 async function run() {
@@ -312,7 +312,9 @@ async function run() {
             if (bType === 'contentBlock' && nextBId) {
               const nextBlock = components[nextBId];
               const nextType = nextBlock.type || fieldKey;
-              if (nextBlock.enabled && (nextType === 'calloutBar' || nextType === 'cta')) {
+              // Only merge simple 'cta' / 'calloutBar' that DON'T have a heading (as they act as CTAs for the content block)
+              // Actually, most calloutBars have their own headings, so let's only merge 'cta' or truly empty-looking calloutBars.
+              if (nextBlock.enabled && (nextType === 'cta' || (nextType === 'calloutBar' && !nextBlock.fields.headingSection))) {
                 console.log(`🔗 Lookahead: Merging ${nextType} (${nextBId}) into contentBlock (${blockId})`);
 
                 // Process the CTA block first to get its entry
