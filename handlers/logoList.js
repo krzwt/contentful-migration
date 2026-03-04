@@ -3,7 +3,7 @@
  * Craft: headingSection, logoList (nested groups with logo items), gridSize, logoBackground
  * Contentful: partnersLogosBlock { blockId, blockName, sectionTitle, logoList: [addPartnerLogo], gridSize, logoBackground }
  */
-import { upsertEntry, upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
+import { upsertEntry, upsertSectionTitle, makeLink, parseCraftLink, upsertCta, resolveInternalTitle } from "../utils/contentfulHelpers.js";
 import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
@@ -52,7 +52,19 @@ export async function createOrUpdateLogoList(env, blockData, assetMap = null) {
                     logoFields.logo = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } } };
                 }
             }
+
             if (f.caption) logoFields.caption = { [LOCALE]: f.caption };
+
+            if (f.logoLink) {
+                let { url, label, linkedId } = parseCraftLink(f.logoLink);
+                if (!label && linkedId) {
+                    label = resolveInternalTitle(linkedId) || label;
+                }
+                if (url || label || linkedId) {
+                    const ctaEntry = await upsertCta(env, lId, label, url, true, linkedId);
+                    if (ctaEntry) logoFields.cta = { [LOCALE]: makeLink(ctaEntry.sys.id) };
+                }
+            }
 
             const logoEntry = await upsertEntry(env, "addPartnerLogo", `logo-${lId}`, logoFields);
             if (logoEntry) logoRefs.push(makeLink(logoEntry.sys.id));
