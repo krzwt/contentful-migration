@@ -3,7 +3,7 @@
  * Craft: headingSection, body250, reviews (nested items with star, reviewDescription, author)
  * Contentful: reviewsBlock { blockId, blockName, sectionTitle, description, addReviews: [reviewItem], cta }
  */
-import { upsertEntry, upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
+import { upsertEntry, upsertSectionTitle, makeLink, parseCraftLink } from "../utils/contentfulHelpers.js";
 import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
@@ -38,29 +38,85 @@ export async function createOrUpdateReviews(env, blockData, assetMap = null) {
         const rows = f.rows || {};
         const orderedRowIds = getOrderedKeys(reviewSegment, rows);
 
+
         if (orderedRowIds.length > 0) {
             for (const rowId of orderedRowIds) {
                 const row = rows[rowId];
                 if (typeof row !== "object" || !row.fields) continue;
                 const rf = row.fields;
+
+                // Handle Image
+                let imageLink = null;
+                const assetId = Array.isArray(rf.image) && rf.image.length > 0 ? rf.image[0] : null;
+                const assetInfo = assetId ? (assetMap && assetMap.get(String(assetId))) : null;
+                if (assetInfo) {
+                    imageLink = { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } };
+                }
+
+                // Handle Labels
+                const labelRefs = [];
+                const labelsData = rf.labels || {};
+                const labelIds = Object.keys(labelsData);
+                for (const lId of labelIds) {
+                    const lFields = labelsData[lId]?.fields || {};
+                    if (lFields.label) {
+                        const labelEntry = await upsertEntry(env, "reviewLabels", `label-${lId}`, {
+                            label: { [LOCALE]: lFields.label }
+                        });
+                        if (labelEntry) labelRefs.push(makeLink(labelEntry.sys.id));
+                    }
+                }
+
+                // Handle Link
+                const linkData = parseCraftLink(rf.reviewLink || rf.reviewUrl);
+
                 const itemFields = {
                     star: { [LOCALE]: parseInt(rf.star) || 5 },
                     review: { [LOCALE]: rf.reviewDescription || rf.body || "" },
                     author: { [LOCALE]: rf.author || "" }
                 };
-                if (rf.reviewUrl) itemFields.reviewUrl = { [LOCALE]: rf.reviewUrl };
+                if (imageLink) itemFields.image = { [LOCALE]: imageLink };
+                if (labelRefs.length > 0) itemFields.labels = { [LOCALE]: labelRefs };
+                if (linkData.url) itemFields.reviewUrl = { [LOCALE]: linkData.url };
 
                 const itemEntry = await upsertEntry(env, "reviewItem", `review-${rowId}`, itemFields);
                 if (itemEntry) reviewRefs.push(makeLink(itemEntry.sys.id));
             }
         } else {
             // Flat structure
+            // Handle Image
+            let imageLink = null;
+            const assetId = Array.isArray(f.image) && f.image.length > 0 ? f.image[0] : null;
+            const assetInfo = assetId ? (assetMap && assetMap.get(String(assetId))) : null;
+            if (assetInfo) {
+                imageLink = { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } };
+            }
+
+            // Handle Labels
+            const labelRefs = [];
+            const labelsData = f.labels || {};
+            const labelIds = Object.keys(labelsData);
+            for (const lId of labelIds) {
+                const lFields = labelsData[lId]?.fields || {};
+                if (lFields.label) {
+                    const labelEntry = await upsertEntry(env, "reviewLabels", `label-${lId}`, {
+                        label: { [LOCALE]: lFields.label }
+                    });
+                    if (labelEntry) labelRefs.push(makeLink(labelEntry.sys.id));
+                }
+            }
+
+            // Handle Link
+            const linkData = parseCraftLink(f.reviewLink || f.reviewUrl);
+
             const itemFields = {
                 star: { [LOCALE]: parseInt(f.star) || 5 },
                 review: { [LOCALE]: f.reviewDescription || f.body || "" },
                 author: { [LOCALE]: f.author || "" }
             };
-            if (f.reviewUrl) itemFields.reviewUrl = { [LOCALE]: f.reviewUrl };
+            if (imageLink) itemFields.image = { [LOCALE]: imageLink };
+            if (labelRefs.length > 0) itemFields.labels = { [LOCALE]: labelRefs };
+            if (linkData.url) itemFields.reviewUrl = { [LOCALE]: linkData.url };
 
             const itemEntry = await upsertEntry(env, "reviewItem", `review-${rId}`, itemFields);
             if (itemEntry) reviewRefs.push(makeLink(itemEntry.sys.id));
