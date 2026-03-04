@@ -9,6 +9,7 @@ import {
 import { migratePeople } from "./handlers/peopleHandler.js";
 import { migrateQuotes } from "./handlers/quoteHandler.js";
 import { migrateResources } from "./handlers/resourceHandler.js";
+import { migrateGlobalReachMap } from "./handlers/newGlobalReachMap.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import {
@@ -56,12 +57,12 @@ const effectiveDryRun = isDryRun || cliDryRun;
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
 const DATA_SOURCES = [
-  {
-    file: "./data/standalone-content.json",
-    // file: "./data/test-sc.json",
-    pageContentType: "newStandaloneContent",
-    label: "Standalone Content",
-  },
+  // {
+  //   file: "./data/standalone-content.json",
+  //   // file: "./data/test-sc.json",
+  //   pageContentType: "newStandaloneContent",
+  //   label: "Standalone Content",
+  // },
   // {
   //   file: "./data/standalone-conversion.json",
   //   pageContentType: "newStandaloneConversion",
@@ -92,6 +93,11 @@ const DATA_SOURCES = [
   //   label: "Resources CPT",
   //   isResources: true
   // }
+  {
+    file: "./data/newGlobalReachMap.json",
+    label: "Global Reach Map",
+    isGlobalReachMap: true
+  }
 ];
 
 async function run() {
@@ -471,6 +477,14 @@ async function run() {
         totalPages,
         summary,
         rawFileContent,
+      );
+    }
+
+    if (source.isGlobalReachMap) {
+      await migrateGlobalReachMap(
+        env,
+        batchData,
+        summary
       );
     }
   }

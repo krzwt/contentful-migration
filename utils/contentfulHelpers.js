@@ -313,7 +313,10 @@ export async function upsertEntry(env, contentType, entryId, fields, shouldPubli
             // If we didn't just create it, we update it.
         } else if (entry) {
             console.log(`   🔄 Updating nested ${contentType}: ${entryId}`);
-            entry.fields = fields;
+            // Merge fields individually
+            for (const [key, val] of Object.entries(fields)) {
+                entry.fields[key] = val;
+            }
             if (metadata) {
                 entry.metadata = { ...entry.metadata, ...metadata };
             }
