@@ -30,6 +30,7 @@ import { createOrUpdateIconGrid } from "./handlers/iconGrid.js";
 import { createOrUpdateMediaBlock } from "./handlers/mediaBlock.js";
 import { createOrUpdateOfficeLocations } from "./handlers/officeLocations.js";
 import { createOrUpdateCalloutCards } from "./handlers/calloutCards.js";
+import { createOrUpdateMediaEmbeds } from "./handlers/mediaEmbeds.js";
 // Removed ctaBlock and contentCta handlers in favor of calloutBar
 
 
@@ -73,6 +74,8 @@ export const COMPONENTS = {
   fullWidthAsset: { handler: createOrUpdateMediaBlock },
   officeLocations: { handler: createOrUpdateOfficeLocations },
   calloutCards: { handler: createOrUpdateCalloutCards },
+  mediaEmbed: { handler: createOrUpdateMediaEmbeds },
+  mediaEmbeds: { handler: createOrUpdateMediaEmbeds },
 
 
   /* ---- Generic (mapping-based) ---- */

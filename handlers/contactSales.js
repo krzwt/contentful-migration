@@ -20,7 +20,10 @@ export async function createOrUpdateContactSales(env, blockData, assetMap = null
 
     const titleEntry = await upsertSectionTitle(env, blockId, heading);
 
-    const fields = {};
+    const fields = {
+        blockId: { [LOCALE]: String(blockId) },
+        blockName: { [LOCALE]: blockData.blockName || heading || `Contact Sales ${blockId}` }
+    };
     if (titleEntry) fields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
     if (blockData.bodyMedium) fields.description = { [LOCALE]: blockData.bodyMedium };
 
