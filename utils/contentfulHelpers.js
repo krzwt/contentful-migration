@@ -81,12 +81,13 @@ export function parseCraftLink(linkStr) {
     if (!linkStr) return { url: "", label: "", linkedId: null };
     try {
         const obj = typeof linkStr === "string" ? JSON.parse(linkStr) : linkStr;
+        const linkedId = obj.linkedId || null;
         let label = obj.linkedTitle || "";
 
         // Handle inner payload for custom text labels
         if (obj.payload) {
             try {
-                const payload = typeof obj.payload === 'string' ? JSON.parse(obj.payload) : obj.payload;
+                const payload = typeof obj.payload === "string" ? JSON.parse(obj.payload) : obj.payload;
                 if (payload && payload.customText) {
                     label = payload.customText;
                 }
@@ -98,7 +99,7 @@ export function parseCraftLink(linkStr) {
         return {
             url: obj.linkedUrl || "",
             label: label,
-            linkedId: obj.linkedId || null
+            linkedId: linkedId
         };
     } catch {
         return { url: String(linkStr), label: "", linkedId: null };
@@ -115,8 +116,9 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
         safeUrl = safeUrl.substring(0, 255);
     }
 
+    let finalLabel = label || "";
     const fields = {
-        label: { [LOCALE]: label || "" },
+        label: { [LOCALE]: finalLabel },
         url: { [LOCALE]: safeUrl },
         target: { [LOCALE]: safeUrl.startsWith("http") ? "_blank (New Tab)" : "_self (Same Tab)" }
     };
@@ -156,6 +158,7 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
             if (pageEntry) {
                 console.log(`   🔗 Linked CTA ${id} to page entry: ${pageEntry.sys.id} (entryId: ${linkedId})`);
                 fields.pageLink = { [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: pageEntry.sys.id } } };
+                fields.url = { [LOCALE]: "" }; // Clear URL when internal reference is resolved
             }
         } catch (e) {
             console.warn(`   ⚠️ Error looking up Internal link for CTA cta-${id}: ${e.message}`);

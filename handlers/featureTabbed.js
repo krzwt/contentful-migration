@@ -68,7 +68,7 @@ export async function createOrUpdateFeatureTabbed(
     // CTA
     let ctaEntry = null;
     const linkInfo = parseCraftLink(f.ctaLink);
-    let label = f.ctaLinkText || f.ctaLabel || linkInfo.label || "";
+    let label = f.ctaLinkText || f.ctaLabel || ""; // Respect blank text if provided
     let url = linkInfo.url;
 
     if (!url && linkInfo.linkedId) {
@@ -128,11 +128,20 @@ export async function createOrUpdateFeatureTabbed(
     if (itemEntry) tabRefs.push(makeLink(itemEntry.sys.id));
   }
 
-  const fields = {};
+  const fields = {
+    blockId: { [LOCALE]: String(blockId) },
+    blockName: { [LOCALE]: blockData.blockName || heading || "Feature Tabbed" },
+  };
+
   if (titleEntry)
     fields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
-  if (blockData.bodyRedactorRestricted) {
-    fields.description = { [LOCALE]: blockData.bodyRedactorRestricted };
+  if (blockData.bodyRedactorRestricted || blockData.body) {
+    fields.description = {
+      [LOCALE]: await convertHtmlToRichText(
+        env,
+        blockData.bodyRedactorRestricted || blockData.body || "",
+      ),
+    };
   }
   if (assetEntry) fields.addAsset = { [LOCALE]: makeLink(assetEntry.sys.id) };
   if (tabRefs.length) fields.addFeatureTabbedItem = { [LOCALE]: tabRefs };
