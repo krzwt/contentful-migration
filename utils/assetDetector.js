@@ -10,7 +10,8 @@ export function extractAssets(obj, assetMap = new Map()) {
       "image", "video", "pdf", "document", "personsPhoto", "logo", "quoteLogo",
       "resourceCardImage", "resourceBannerImage", "resourceBannerBackground",
       "resourceDocument", "resourceVideo", "companyLogo", "resourceCompanyLogo",
-      "icon", "background", "backgroundImage", "mobileImage", "desktopImage", "mainImage", "bannerImage", "asset"
+      "icon", "background", "backgroundImage", "mobileImage", "desktopImage", "mainImage", "bannerImage", "asset",
+      "podcasts", "podcastImage"
     ].includes(key)) {
       value.forEach(id => {
         if (typeof id === "number" || (typeof id === "string" && !isNaN(id))) {

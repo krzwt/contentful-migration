@@ -10,6 +10,7 @@ import { migratePeople } from "./handlers/peopleHandler.js";
 import { migrateQuotes } from "./handlers/quoteHandler.js";
 import { migrateResources } from "./handlers/resourceHandler.js";
 import { migrateGlobalReachMap } from "./handlers/newGlobalReachMap.js";
+import { migratePodcasts } from "./handlers/podcastHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import {
@@ -79,11 +80,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneThankYou",
   //   label: "Standalone Thank You",
   // },
-  {
-    file: "./data/newPartners.json",
-    pageContentType: "newPartners",
-    label: "Partners"
-  },
+  // {
+  //   file: "./data/newPartners.json",
+  //   pageContentType: "newPartners",
+  //   label: "Partners"
+  // },
   // {
   //   file: "./data/people-cpt.json",
   //   label: "People CPT",
@@ -104,6 +105,11 @@ const DATA_SOURCES = [
   //   label: "Global Reach Map",
   //   isGlobalReachMap: true
   // }
+  {
+    file: "./data/newPodcasts.json",
+    label: "Podcasts CPT",
+    isPodcasts: true
+  }
 ];
 
 async function run() {
@@ -530,6 +536,17 @@ async function run() {
         env,
         batchData,
         summary
+      );
+    }
+
+    if (source.isPodcasts) {
+      await migratePodcasts(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
       );
     }
   }

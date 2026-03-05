@@ -21,6 +21,7 @@ export function buildUrlMap() {
         "./data/videos-cpt.json",
         "./data/resource-webinars-cpt.json",
         "./data/podcasts-cpt.json",
+        "./data/newPodcasts.json",
         "./data/events-cpt.json",
         "./data/media-cpt.json",
         "./data/page.json"
@@ -162,6 +163,7 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
                 "peopleCpt",
                 "resourceWebinarsCpt",
                 "resourcesCpt",
+                "podcastsCpt",
                 "page"
             ];
 

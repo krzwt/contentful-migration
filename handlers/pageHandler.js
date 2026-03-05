@@ -183,6 +183,10 @@ export async function getOrCreateSeo(env, pageData, assetMap = null) {
       };
     }
 
+    if (!env) {
+      console.log(`   [DRY RUN] Would upsert SEO: ${seoId}`);
+      return { sys: { id: seoId } };
+    }
     let entry;
     try {
       entry = await env.getEntry(seoId);
