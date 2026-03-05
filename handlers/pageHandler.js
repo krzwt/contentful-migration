@@ -7,6 +7,27 @@ const MAX_ID_LENGTH = 64;
 // Cache: Craft parentId → Contentful `page` entry ID
 const parentPageCache = new Map();
 
+// Cache: contentType → sections field name ("sections" or "contentComponent")
+const sectionsFieldCache = new Map();
+
+/**
+ * Auto-detect whether a content type uses "sections" or "contentComponent".
+ * Result is cached per content type.
+ */
+async function detectSectionsField(env, contentType) {
+  if (sectionsFieldCache.has(contentType)) return sectionsFieldCache.get(contentType);
+  try {
+    const ct = await env.getContentType(contentType);
+    const fieldIds = ct.fields.map(f => f.id);
+    const name = fieldIds.includes("contentComponent") ? "contentComponent" : "sections";
+    sectionsFieldCache.set(contentType, name);
+    console.log(`   🔍 Detected sections field for "${contentType}": ${name}`);
+    return name;
+  } catch {
+    return "sections";
+  }
+}
+
 /**
  * Generate a safe Contentful entry ID (max 64 chars).
  * If the raw ID exceeds 64 chars, truncate and append a short hash for uniqueness.
@@ -282,12 +303,13 @@ export async function getOrCreatePage(env, pageData, pageContentType = DEFAULT_P
     } else {
       console.log(`🆕 Creating new page: ${title}`);
       isNew = true;
+      const sectionsField = await detectSectionsField(env, pageContentType);
       page = await env.createEntry(pageContentType, {
         fields: {
           entryId: { [LOCALE]: craftId ? String(craftId) : "" },
           title: { [LOCALE]: title },
           slug: { [LOCALE]: slug },
-          sections: { [LOCALE]: [] }
+          [sectionsField]: { [LOCALE]: [] }
         }
       });
     }
@@ -433,9 +455,13 @@ export async function setSectionsOnPage(env, pageEntry, sectionEntries) {
 
     console.log(`\n📋 Setting ${links.length} sections on page "${pageEntry.fields.title[LOCALE]}" (in order)`);
 
+    // Auto-detect the sections field
+    const contentTypeId = pageEntry.sys.contentType?.sys?.id || "";
+    const sectionsField = await detectSectionsField(env, contentTypeId);
+
     // Re-fetch to get latest version
     pageEntry = await env.getEntry(pageEntry.sys.id);
-    pageEntry.fields.sections = { [LOCALE]: links };
+    pageEntry.fields[sectionsField] = { [LOCALE]: links };
     pageEntry = await pageEntry.update();
     pageEntry = await pageEntry.publish();
 

@@ -2,22 +2,130 @@
     "data": {
         "assets": [
             {
-                "id": "1925013",
-                "title": "500x500 Hero Image for website MVR 2024 white background",
-                "url": "https://assets-uat.btdevops.io/assets/images/500x500-Hero-Image-for-website-MVR-2024-white-background.png",
-                "filename": "500x500-Hero-Image-for-website-MVR-2024-white-background.png",
+                "id": "1671374",
+                "title": "Westcon comstar logo 551",
+                "url": "S3_BASE_URL/assets/images/logos/westcon-comstar-logo-551.png",
+                "filename": "westcon-comstar-logo-551.png",
                 "mimeType": "image/png",
-                "width": 500,
-                "height": 500
+                "width": 346,
+                "height": 146
             },
             {
-                "id": "80413",
-                "title": "Ppm Devops",
-                "url": "https://assets-uat.btdevops.io/assets/images/ppm-devops.jpg",
-                "filename": "ppm-devops.jpg",
-                "mimeType": "image/jpeg",
-                "width": 350,
-                "height": 350
+                "id": "1671373",
+                "title": "I Security Logo 72dpi 321w",
+                "url": "S3_BASE_URL/assets/images/logos/iSecurity-Logo-72dpi-321w.png",
+                "filename": "iSecurity-Logo-72dpi-321w.png",
+                "mimeType": "image/png",
+                "width": 321,
+                "height": 84
+            },
+            {
+                "id": "1671372",
+                "title": "Perfekt Logo Standard no tagline",
+                "url": "S3_BASE_URL/assets/images/logos/Perfekt-Logo-Standard-no-tagline.png",
+                "filename": "Perfekt-Logo-Standard-no-tagline.png",
+                "mimeType": "image/png",
+                "width": 229,
+                "height": 193
+            },
+            {
+                "id": "1671360",
+                "title": "Ingram micro logo",
+                "url": "S3_BASE_URL/assets/images/logos/Ingram_micro_logo.png",
+                "filename": "Ingram_micro_logo.png",
+                "mimeType": "image/png",
+                "width": 791,
+                "height": 157
+            },
+            {
+                "id": "1671359",
+                "title": "Stratascale logo 012622 strap",
+                "url": "S3_BASE_URL/assets/images/logos/Stratascale-logo-012622-strap.png",
+                "filename": "Stratascale-logo-012622-strap.png",
+                "mimeType": "image/png",
+                "width": 993,
+                "height": 198
+            },
+            {
+                "id": "1553779",
+                "title": "Cyber CX logo",
+                "url": "S3_BASE_URL/assets/images/logos/CyberCX_logo.png",
+                "filename": "CyberCX_logo.png",
+                "mimeType": "image/png",
+                "width": 370,
+                "height": 108
+            },
+            {
+                "id": "1427436",
+                "title": "Integral Partners",
+                "url": "S3_BASE_URL/assets/images/logos/Integral-Partners.png",
+                "filename": "Integral-Partners.png",
+                "mimeType": "image/png",
+                "width": 1011,
+                "height": 206
+            },
+            {
+                "id": "1123900",
+                "title": "Tenable",
+                "url": "S3_BASE_URL/assets/images/logos/tenable.svg",
+                "filename": "tenable.svg",
+                "mimeType": "image/svg+xml",
+                "width": 356,
+                "height": 87
+            },
+            {
+                "id": "1123899",
+                "title": "Servicenow",
+                "url": "S3_BASE_URL/assets/images/logos/servicenow.svg",
+                "filename": "servicenow.svg",
+                "mimeType": "image/svg+xml",
+                "width": 356,
+                "height": 72
+            },
+            {
+                "id": "1119057",
+                "title": "Microsoft img",
+                "url": "S3_BASE_URL/assets/images/logos/microsoft-img.png",
+                "filename": "microsoft-img.png",
+                "mimeType": "image/png",
+                "width": 356,
+                "height": 102
+            },
+            {
+                "id": "872093",
+                "title": "Ping",
+                "url": "S3_BASE_URL/assets/images/logos/Ping.svg",
+                "filename": "Ping.svg",
+                "mimeType": "image/svg+xml",
+                "width": 284,
+                "height": 300
+            },
+            {
+                "id": "872092",
+                "title": "Amazon Web Services Logo",
+                "url": "S3_BASE_URL/assets/images/logos/Amazon_Web_Services_Logo.svg",
+                "filename": "Amazon_Web_Services_Logo.svg",
+                "mimeType": "image/svg+xml",
+                "width": 304,
+                "height": 182
+            },
+            {
+                "id": "669805",
+                "title": "Optiv logo trans",
+                "url": "S3_BASE_URL/assets/images/logos/Optiv_logo_trans.png",
+                "filename": "Optiv_logo_trans.png",
+                "mimeType": "image/png",
+                "width": 5000,
+                "height": 2240
+            },
+            {
+                "id": "92578",
+                "title": "Ping Identity Logo",
+                "url": "S3_BASE_URL/assets/images/logos/ping-identity-logo.png",
+                "filename": "ping-identity-logo.png",
+                "mimeType": "image/png",
+                "width": 1103,
+                "height": 547
             }
         ]
     }

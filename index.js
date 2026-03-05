@@ -64,11 +64,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneContent",
   //   label: "Standalone Content",
   // },
-  {
-    file: "./data/standalone-conversion.json",
-    pageContentType: "newStandaloneConversion",
-    label: "Standalone Conversion"
-  },
+  // {
+  //   file: "./data/standalone-conversion.json",
+  //   pageContentType: "newStandaloneConversion",
+  //   label: "Standalone Conversion"
+  // },
   // {
   //   file: "./data/standalone-microsite.json",
   //   pageContentType: "newStandaloneMicrosite",
@@ -79,6 +79,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneThankYou",
   //   label: "Standalone Thank You",
   // },
+  {
+    file: "./data/newPartners.json",
+    pageContentType: "newPartners",
+    label: "Partners"
+  },
   // {
   //   file: "./data/people-cpt.json",
   //   label: "People CPT",
@@ -282,6 +287,7 @@ async function run() {
         // Collect ALL section entries in order, then set sections array at once
         const sectionEntries = [];
         let navigationEntryLink = null;
+        let overwriteParentCtaLink = null;
 
         // Detect component fields in the JSON (keys with numeric sub-keys)
         const componentFields = Object.keys(pageData).filter((key) => {
@@ -421,13 +427,21 @@ async function run() {
               if (heroEntry) {
                 if (Array.isArray(heroEntry)) {
                   if (fieldKey === 'sectionNavigation') {
-                    navigationEntryLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry[0].sys.id } };
+                    if (type === 'overwriteParentCta') {
+                      overwriteParentCtaLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry[0].sys.id } };
+                    } else {
+                      navigationEntryLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry[0].sys.id } };
+                    }
                   } else {
                     sectionEntries.push(...heroEntry);
                   }
                 } else {
                   if (fieldKey === 'sectionNavigation') {
-                    navigationEntryLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry.sys.id } };
+                    if (type === 'overwriteParentCta') {
+                      overwriteParentCtaLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry.sys.id } };
+                    } else {
+                      navigationEntryLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry.sys.id } };
+                    }
                   } else {
                     sectionEntries.push(heroEntry);
                   }
@@ -454,11 +468,17 @@ async function run() {
             await setSectionsOnPage(env, pageEntry, sectionEntries);
           }
 
-          if (navigationEntryLink) {
-            console.log(`🔗 Setting sectionNavigation on page "${title}"`);
+          if (navigationEntryLink || overwriteParentCtaLink) {
             // Re-fetch to get latest version before updating special field
             pageEntry = await env.getEntry(pageEntry.sys.id);
-            pageEntry.fields.sectionNavigation = { [LOCALE]: navigationEntryLink };
+            if (navigationEntryLink) {
+              console.log(`\n🔗 Setting sectionNavigation on page "${title}"`);
+              pageEntry.fields.sectionNavigation = { [LOCALE]: navigationEntryLink };
+            }
+            if (overwriteParentCtaLink) {
+              console.log(`\n🔗 Setting overwriteParentCta on page "${title}"`);
+              pageEntry.fields.overwriteParentCta = { [LOCALE]: overwriteParentCtaLink };
+            }
             pageEntry = await pageEntry.update();
             // Publish happens in publishPage step
           }

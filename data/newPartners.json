@@ -1,0 +1,3002 @@
+[
+    {
+        "sectionId": 62,
+        "postDate": "2026-01-02T00:00:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 212402,
+        "id": 1068747,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "d4b72880-177b-4aac-a84d-75182416fed7",
+        "siteSettingsId": 1504180,
+        "fieldLayoutId": null,
+        "structureId": 75794,
+        "contentId": 593515,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Partners",
+        "slug": "partners",
+        "uri": "partners",
+        "dateCreated": "2023-09-18T14:09:09-05:00",
+        "dateUpdated": "2026-03-05T00:25:43-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 164565,
+        "lft": 2,
+        "rgt": 13,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 1068747,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newPartners/partners",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/partners",
+        "authorId": 212402,
+        "typeId": 126,
+        "mainBannerPartners": {
+            "1068763": {
+                "type": "bannerMediaRight",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "The PartnerTrust Ecosystem",
+                    "body200": "Engage our partners to gain crucial support in your cybersecurity journey, when you need help buying, implementing, integrating or managing our solutions.",
+                    "bannerAsset": {
+                        "2372039": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    1389726
+                                ]
+                            }
+                        }
+                    },
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                }
+            }
+        },
+        "sectionNavigation": {
+            "1071972": {
+                "type": "siteSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "sectionName": "Overview",
+                    "sectionUrlRoot": "{\"linkedId\":1068747,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                    "links": {
+                        "1071973": {
+                            "type": 63,
+                            "fields": {
+                                "destination": "{\"linkedId\":1068918,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "label": "Partner Locator",
+                                "queryParams": null
+                            }
+                        },
+                        "1071974": {
+                            "type": 63,
+                            "fields": {
+                                "destination": "{\"linkedId\":1070407,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "label": "Technology Alliances",
+                                "queryParams": "#/?amp;f0v0=Technology%20Alliance&f0=Partner_Types_Served__cf&f0v0=technology%20alliance"
+                            }
+                        },
+                        "1071975": {
+                            "type": 63,
+                            "fields": {
+                                "destination": "{\"linkedId\":1072802,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "label": "Become a Partner",
+                                "queryParams": null
+                            }
+                        },
+                        "1687387": {
+                            "type": 63,
+                            "fields": {
+                                "destination": "{\"linkedId\":1670940,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "label": "Star Partners",
+                                "queryParams": null
+                            }
+                        }
+                    },
+                    "cta": {
+                        "1071976": {
+                            "type": 64,
+                            "fields": {
+                                "destination": "{\"linkedId\":1068918,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "label": "Find a Partner"
+                            }
+                        }
+                    },
+                    "icon": []
+                }
+            }
+        },
+        "partnersContent": {
+            "1068770": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "The BeyondTrust Partner Network for Sales, Service, and Support",
+                    "bodyRedactorRestricted": "<p>BeyondTrust works with more than 1k+ partners worldwide that help our customers acquire, implement, integrate, and manage their BeyondTrust solutions according to their unique business requirements to achieve successful outcomes.<em><br /><br /></em>Sales, technical, and marketing resources are available to help partners provide world class services and solutions to our joint customers.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": []
+                }
+            },
+            "1068771": {
+                "type": "featureGrid",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSmall": "The Value of Working with BeyondTrust Partners",
+                    "subheadingSmall": "If you have have specialized requirements for your buying experience requirements, consider using a BeyondTrust Partner.",
+                    "label25": "Find a Partner",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "featureGrid": {
+                        "1068772": {
+                            "type": 95,
+                            "fields": {
+                                "heading": "Achieve Faster Time to Value",
+                                "body": "Partners can get your implementations up and running quickly and can aggregate additional solutions that simplify your experiences.",
+                                "list": [],
+                                "icon": [
+                                    545686
+                                ],
+                                "ctaLabel": null,
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                            }
+                        },
+                        "1068773": {
+                            "type": 95,
+                            "fields": {
+                                "heading": "Drive Business Results",
+                                "body": "Partners have vast industry, regional and technical knowledge on the wider landscape of IT and Security.",
+                                "list": [],
+                                "icon": [
+                                    545698
+                                ],
+                                "ctaLabel": null,
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                            }
+                        },
+                        "1068774": {
+                            "type": 95,
+                            "fields": {
+                                "heading": "Leverage Technology Expertise",
+                                "body": "Partners compliment existing technical support by ensuring products are installed, adopted, and managed on an ongoing basis.",
+                                "list": [],
+                                "icon": [
+                                    545674
+                                ],
+                                "ctaLabel": null,
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                            }
+                        },
+                        "1068776": {
+                            "type": 95,
+                            "fields": {
+                                "heading": "Utilize Industry Knowledge",
+                                "body": "Partners have deep experience in unique industry verticals relevant to the needs of your business.",
+                                "list": [],
+                                "icon": [
+                                    545730
+                                ],
+                                "ctaLabel": null,
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "1068919": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        1086170,
+                        1068914
+                    ]
+                }
+            },
+            "1068920": {
+                "type": "featureTabbed",
+                "enabled": false,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Technology Alliances",
+                    "body250": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius est ornare risus euismod, non facilisis leo viverra. Fusce viverra urna odio, nec luctus diam dictum a. Sed viverra neque id lorem semper, non maximus dolor convallis.",
+                    "contentAsset": {
+                        "1069862": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    1068916
+                                ]
+                            }
+                        }
+                    },
+                    "featureTabbed": {
+                        "1068921": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "AWS",
+                                "heading": "BeyondTrust & AWS",
+                                "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius est ornare risus euismod, non facilisis leo viverra. Fusce viverra urna odio, nec luctus diam dictum a. Sed viverra neque id lorem semper, non maximus dolor convallis.</p>",
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"custom\"}",
+                                "ctaLinkText": null,
+                                "featureAsset": []
+                            }
+                        },
+                        "1068923": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "Microsoft",
+                                "heading": "Microsoft",
+                                "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius est ornare risus euismod, non facilisis leo viverra. Fusce viverra urna odio, nec luctus diam dictum a. Sed viverra neque id lorem semper, non maximus dolor convallis. Integer a lectus quam. Morbi ipsum tellus, maximus id sapien vitae, viverra consequat ligula.</p>",
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
+                                "ctaLinkText": null,
+                                "featureAsset": []
+                            }
+                        },
+                        "1068924": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "Ping Identity",
+                                "heading": "Ping Identity",
+                                "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius est ornare risus euismod, non facilisis leo viverra. Fusce viverra urna odio, nec luctus diam dictum a. Sed viverra neque id lorem semper, non maximus dolor convallis. Integer a lectus quam. Morbi ipsum tellus, maximus id sapien vitae, viverra consequat ligula.</p>",
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
+                                "ctaLinkText": null,
+                                "featureAsset": []
+                            }
+                        },
+                        "1068925": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "SailPoint",
+                                "heading": "SailPoint",
+                                "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius est ornare risus euismod, non facilisis leo viverra. Fusce viverra urna odio, nec luctus diam dictum a. Sed viverra neque id lorem semper, non maximus dolor convallis. Integer a lectus quam. Morbi ipsum tellus, maximus id sapien vitae, viverra consequat ligula.</p>",
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
+                                "ctaLinkText": null,
+                                "featureAsset": []
+                            }
+                        },
+                        "1068926": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "ServiceNow",
+                                "heading": "ServiceNow",
+                                "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius est ornare risus euismod, non facilisis leo viverra. Fusce viverra urna odio, nec luctus diam dictum a. Sed viverra neque id lorem semper, non maximus dolor convallis. Integer a lectus quam. Morbi ipsum tellus, maximus id sapien vitae, viverra consequat ligula.</p>",
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
+                                "ctaLinkText": null,
+                                "featureAsset": []
+                            }
+                        },
+                        "1068927": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "Tenable",
+                                "heading": "Tenable",
+                                "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius est ornare risus euismod, non facilisis leo viverra. Fusce viverra urna odio, nec luctus diam dictum a. Sed viverra neque id lorem semper, non maximus dolor convallis. Integer a lectus quam. Morbi ipsum tellus, maximus id sapien vitae, viverra consequat ligula.</p>",
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
+                                "ctaLinkText": null,
+                                "featureAsset": []
+                            }
+                        },
+                        "1068928": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "All Integrations",
+                                "heading": "All Integrations",
+                                "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius est ornare risus euismod, non facilisis leo viverra. Fusce viverra urna odio, nec luctus diam dictum a. Sed viverra neque id lorem semper, non maximus dolor convallis. Integer a lectus quam. Morbi ipsum tellus, maximus id sapien vitae, viverra consequat ligula.</p>",
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
+                                "ctaLinkText": null,
+                                "featureAsset": []
+                            }
+                        }
+                    }
+                }
+            },
+            "1069316": {
+                "type": "calloutCards",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "calloutCards": {
+                        "1069318": {
+                            "type": 110,
+                            "fields": {
+                                "image": [
+                                    1069315
+                                ],
+                                "heading": "Identity Defined Security Framework",
+                                "description": "BeyondTrust is proud to be a member of the IDSA. The Identity Defined Security Framework provides organizations practical guidance for implementing an identity-centric approach to security.",
+                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.idsalliance.org\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"customText\\\":\\\"Learn More About the IDSA\\\",\\\"target\\\":\\\"_blank\\\"}\",\"type\":\"url\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "1069622": {
+                "type": "resourceTabbed",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Resources",
+                    "tabbedResources": {
+                        "1069623": {
+                            "type": "documents",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "entries": [
+                                    2310558,
+                                    589371,
+                                    91674,
+                                    2374355
+                                ]
+                            }
+                        },
+                        "1089313": {
+                            "type": "blog",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "entries": [
+                                    2488359,
+                                    2351076,
+                                    2218999,
+                                    2147143,
+                                    2103318,
+                                    2056975
+                                ]
+                            }
+                        },
+                        "1114480": {
+                            "type": "videos",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "entries": [
+                                    509772,
+                                    672991,
+                                    91396
+                                ]
+                            }
+                        },
+                        "2350162": {
+                            "type": "media",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "entries": [
+                                    2446254,
+                                    2349443,
+                                    2316534,
+                                    2296229,
+                                    1923673,
+                                    1706296
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-09-28T10:46:38-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "BeyondTrust Partners, Value-Added Resellers, and Referral Partners",
+                "siteNamePosition": "",
+                "seoDescription": "BeyondTrust's partner network is comprised of IT systems management and IT security providers, technology partners, value-added resellers and referral partners.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoTitle": true,
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 62,
+        "postDate": "2023-09-18T14:29:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 77631,
+        "id": 1068918,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "44631c1e-15ce-4c6f-bd44-35af57f2e859",
+        "siteSettingsId": 1504426,
+        "fieldLayoutId": null,
+        "structureId": 75794,
+        "contentId": 593641,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Directory - Partner Locator",
+        "slug": "directory",
+        "uri": "partners/directory",
+        "dateCreated": "2023-09-18T14:29:37-05:00",
+        "dateUpdated": "2024-11-19T11:06:18-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 164565,
+        "lft": 3,
+        "rgt": 4,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 1068747,
+        "canonicalId": 1068918,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newPartners/directory",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/partners/directory",
+        "authorId": 77631,
+        "typeId": 126,
+        "mainBannerPartners": {
+            "1069201": {
+                "type": "bannerMediaRight",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Find a BeyondTrust Partner",
+                    "body200": "Use our locator to quickly find a BeyondTrust partner that provides the services your business requires, in a region near you.",
+                    "bannerAsset": {
+                        "1069210": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    1068761
+                                ]
+                            }
+                        }
+                    },
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                }
+            }
+        },
+        "sectionNavigation": [],
+        "partnersContent": {
+            "1115631": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Find the Right Partner for Your Business",
+                    "bodyRedactorRestricted": "<p>Our Partners offer a wide array of services and benefits tailored to your specific needs. So, it’s important to understand where you may need help.</p>\n<p>Are you looking for support choosing the right products and purchasing them easily? Do you need help implementing a product and require ongoing support and management? Or, do you simply want to understand who we integrate with and the benefits of our seamless integrations?</p>\n<p>By identifying the type of help you need, we can recommend a shortlist of partners for you to review.<br /></p>\n<ul><li><strong>Sales Partners:</strong> Resellers, Distributors, System Integrators, and Cloud Marketplaces<br />Simplify the buying process and get support in navigating the growing number of cybersecurity solutions with transactional partners that operate regionally and globally.</li></ul>\n<ul><li><strong>Technology Alliance Partners:</strong> Leading Software Providers<br />Enable seamless integrations and that maximize the value of your investments with a growing network of more than 100 technology alliance partners.</li></ul>\n<ul><li><strong>Service Partners:</strong> Delivery Partners<br />Achieve faster time-to-value with partners that are trained and certified to implement BeyondTrust solutions.</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": []
+                }
+            },
+            "1071884": {
+                "type": "embed",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Find Your Partner",
+                    "bodyRedactorRestricted": null,
+                    "partnerEmbed": [
+                        1069558
+                    ]
+                }
+            }
+        },
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-09-18T14:29:37-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": [],
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": [],
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": true,
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": true,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": true,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 62,
+        "postDate": "2023-09-18T14:29:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 77631,
+        "id": 1751746,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "ec2250f8-cf98-4add-8f41-785858aba513",
+        "siteSettingsId": 2362617,
+        "fieldLayoutId": null,
+        "structureId": 75794,
+        "contentId": 981172,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "TEST - Directory - Partner Locator",
+        "slug": "directory-test",
+        "uri": "partners/directory-test",
+        "dateCreated": "2024-06-12T05:21:55-05:00",
+        "dateUpdated": "2024-07-16T05:06:42-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 164565,
+        "lft": 5,
+        "rgt": 6,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 1068747,
+        "canonicalId": 1751746,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newPartners/directory-test",
+        "status": "disabled",
+        "url": "https://bluetext.beyondtrust.com/partners/directory-test",
+        "authorId": 77631,
+        "typeId": 126,
+        "mainBannerPartners": {
+            "1751747": {
+                "type": "bannerMediaRight",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Find a BeyondTrust Partner",
+                    "body200": "Use our locator to quickly find a BeyondTrust partner that provides the services your business requires, in a region near you.",
+                    "bannerAsset": {
+                        "1751748": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    1068761
+                                ]
+                            }
+                        }
+                    },
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                }
+            }
+        },
+        "sectionNavigation": [],
+        "partnersContent": {
+            "1751754": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Find the Right Partner for Your Business",
+                    "bodyRedactorRestricted": "<p>Our Partners offer a wide array of services and benefits tailored to your specific needs. So, it’s important to understand where you may need help.</p>\n<p>Are you looking for support choosing the right products and purchasing them easily? Do you need help implementing a product and require ongoing support and management? Or, do you simply want to understand who we integrate with and the benefits of our seamless integrations?</p>\n\n\n<p>By identifying the type of help you need, we can recommend a shortlist of partners for you to review.<br /></p>\n<ul><li><strong>Sales Partners:</strong> Resellers, Distributors, System Integrators, and Cloud Marketplaces<br />Simplify the buying process and get support in navigating the growing number of cybersecurity solutions with transactional partners that operate regionally and globally.</li></ul>\n<ul><li><strong>Technology Alliance Partners:</strong> Leading Software Providers<br />Enable seamless integrations and that maximize the value of your investments with a growing network of more than 100 technology alliance partners.</li></ul>\n<ul><li><strong>Service Partners:</strong> Delivery Partners<br />Achieve faster time to value with partners that are trained and certified to implement BeyondTrust solutions.</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": []
+                }
+            },
+            "1751755": {
+                "type": "embed",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Find Your Partner",
+                    "bodyRedactorRestricted": null,
+                    "partnerEmbed": [
+                        1751742
+                    ]
+                }
+            }
+        },
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-09-18T14:29:37-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": [],
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": [],
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": true,
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": true,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": true,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 62,
+        "postDate": "2024-11-19T00:30:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 212402,
+        "id": 1070407,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "19f700b3-a426-4e06-911a-381e6af12857",
+        "siteSettingsId": 1506055,
+        "fieldLayoutId": null,
+        "structureId": 75794,
+        "contentId": 594272,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Technology Alliances",
+        "slug": "technology-alliances",
+        "uri": "partners/technology-alliances",
+        "dateCreated": "2023-09-18T14:36:31-05:00",
+        "dateUpdated": "2025-03-10T16:17:02-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 164565,
+        "lft": 7,
+        "rgt": 8,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 1068747,
+        "canonicalId": 1070407,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newPartners/technology-alliances",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/partners/technology-alliances",
+        "authorId": 212402,
+        "typeId": 126,
+        "mainBannerPartners": {
+            "1071831": {
+                "type": "bannerMediaRight",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Technology Alliances",
+                    "body200": "Leverage integrations from a global community of partners focused on creating additional efficiencies and value for your BeyondTrust solutions.",
+                    "bannerAsset": {
+                        "1089384": {
+                            "type": "video",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "video": [
+                                    188800
+                                ]
+                            }
+                        }
+                    },
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                }
+            }
+        },
+        "sectionNavigation": [],
+        "partnersContent": {
+            "1071838": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Maximize the Value of BeyondTrust Identity & Access Security Solutions",
+                    "bodyRedactorRestricted": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": {
+                        "1071839": {
+                            "type": "contentWithAsset",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "heading": null,
+                                "body": "<p>Our Technology Alliances Partners are market leaders covering the full spectrum of identity, access, and security. Our mission is to help our customers:</p>\n<ul><li>Reduce attack surfaces quickly </li><li>Unlock advanced inter-product use cases and workflows </li><li>Improve productivity and efficiency </li></ul>\n<p>With more than 100 technology alliance integrations and growing, we work together to create seamless and efficient solutions to combat internal and external threats.</p>\n<p> </p>",
+                                "asset": [
+                                    1619479
+                                ],
+                                "resource": [],
+                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/docs.beyondtrust.com\\/bt-docs\\/docs\\/integrations\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+                                "linkText": "Explore All Integrations",
+                                "contentAlignment": false,
+                                "contentTheme": "whiteTheme",
+                                "sidebarEnabled": false
+                            }
+                        }
+                    }
+                }
+            },
+            "1118715": {
+                "type": "logoList",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Strategic Technology Alliance Partners",
+                    "logoList": {
+                        "1118716": {
+                            "type": 97,
+                            "fields": {
+                                "logos": {
+                                    "1118717": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                872092
+                                            ],
+                                            "logoLink": "{\"linkedId\":604123,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1118718": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1119057
+                                            ],
+                                            "logoLink": "{\"linkedId\":88286,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1118719": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                872093
+                                            ],
+                                            "logoLink": "{\"linkedId\":609152,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1118861": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1123899
+                                            ],
+                                            "logoLink": "{\"linkedId\":604558,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1118862": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1123900
+                                            ],
+                                            "logoLink": "{\"linkedId\":617302,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "gridSize": "5",
+                    "logoBackground": "grey"
+                }
+            },
+            "1071939": {
+                "type": "embed",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Choosing the Right Partner",
+                    "bodyRedactorRestricted": null,
+                    "partnerEmbed": [
+                        1069558
+                    ]
+                }
+            }
+        },
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2024-08-11T13:46:47-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "We have 100+ technology alliance integrations to help you supercharge your existing IT and security investments to reduce risk and improve efficiencies.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 62,
+        "postDate": "2023-09-18T15:02:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 77631,
+        "id": 1072802,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "45711e09-ce1b-405d-9f9f-96fd4d6f3ee6",
+        "siteSettingsId": 1508645,
+        "fieldLayoutId": null,
+        "structureId": 75794,
+        "contentId": 594995,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Become a Partner",
+        "slug": "apply",
+        "uri": "partners/apply",
+        "dateCreated": "2023-09-18T15:02:22-05:00",
+        "dateUpdated": "2025-10-06T09:28:52-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 164565,
+        "lft": 9,
+        "rgt": 10,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 1068747,
+        "canonicalId": 1072802,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newPartners/apply",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/partners/apply",
+        "authorId": 77631,
+        "typeId": 126,
+        "mainBannerPartners": {
+            "1072997": {
+                "type": "bannerMediaRight",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Become a Partner",
+                    "body200": "Extend your market reach and drive success with industry-leading solutions that deliver intelligent, effective security infrastructure to your customers.",
+                    "bannerAsset": {
+                        "1072998": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    1068761
+                                ]
+                            }
+                        }
+                    },
+                    "label": "Apply now",
+                    "ctaLink": "{\"linkedUrl\":\"#apply-now-to-become-a-partner\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}"
+                }
+            }
+        },
+        "sectionNavigation": {
+            "1507743": {
+                "type": "overwriteParentCta",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "cta": {
+                        "1507744": {
+                            "type": 105,
+                            "fields": {
+                                "destination": "{\"linkedUrl\":\"https:\\/\\/partnertrust.beyondtrust.com\\/English\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+                                "label": "Partner Portal Login"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "partnersContent": {
+            "1073004": {
+                "type": "useCases",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading45": "Three Reasons to Join our Partner Program",
+                    "useCases": {
+                        "1073005": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Enablement Expertise",
+                                "body": "Get the tools and training you need to be experts in our solutions by completing our certification program.",
+                                "image": [
+                                    545729
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "1073006": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Competitive Differentiation",
+                                "body": "Showcase your solutions, capabilities and other important factors to customers in our partner locator.",
+                                "image": [
+                                    545691
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "1073007": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Partner Experience",
+                                "body": "Leverage the benefits of ongoing strategic investment and support from dedicated channel, sales, and marketing teams, committed to your success as partner.",
+                                "image": [
+                                    545694
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"custom\"}",
+                                "ctaLabel": null
+                            }
+                        }
+                    }
+                }
+            },
+            "1092262": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Three Ways to Partner With Us",
+                    "bodyRedactorRestricted": "<ul><li><strong><em>Sales Partners</em>:</strong> Resellers, Distributors, System Integrators, and Cloud Marketplaces<br />Simplify the buying process and get support in navigating the growing number of cybersecurity solutions with transactional partners that operate regionally and globally.</li><li><strong><em>Technology Alliance Partners</em>:</strong> Leading Software Providers<br />Enable seamless integrations and that maximize the value of your investments with a growing network of more than 100 technology alliance partners.</li><li><strong><em>Service Partners</em>:</strong> Delivery Partners<br />Achieve faster time to value with partners that are trained and certified to implement BeyondTrust solutions.</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"custom\"}",
+                    "text30": null,
+                    "contentSubsections": []
+                }
+            },
+            "1106639": {
+                "type": "useCases",
+                "enabled": false,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading45": "Apply Now to Become a Partner",
+                    "useCases": {
+                        "1106640": {
+                            "type": 102,
+                            "fields": {
+                                "heading": null,
+                                "body": "To apply please contact your local BeyondTrust authorized distributor.",
+                                "image": [
+                                    545691
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"custom\"}",
+                                "ctaLabel": "Find a local distributor"
+                            }
+                        },
+                        "1106641": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Technology Alliance Partners",
+                                "body": "Application form for software providers seeking to integrate with one or more BeyondTrust solutions.",
+                                "image": [
+                                    545681
+                                ],
+                                "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.beyondtrust.com\\/forms\\/technology-alliance-partner-application\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+                                "ctaLabel": null
+                            }
+                        }
+                    }
+                }
+            },
+            "2455017": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Apply Now to Become a Partner",
+                    "bodyRedactorRestricted": "<h4>Sales &amp; Service Delivery Partners</h4>\n<p>To apply please contact your local BeyondTrust authorized distributor.</p>",
+                    "ctaLink": "{\"linkedUrl\":\"https:\\/\\/www.beyondtrust.com\\/partners\\/directory#\\/?f0=Partner_Types_Served__cf&f0v0=distribution#find-your-partner\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+                    "text30": "Find a local distributor",
+                    "contentSubsections": []
+                }
+            }
+        },
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-09-18T15:02:22-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": [],
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": [],
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": true,
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": true,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": true,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 62,
+        "postDate": "2024-05-02T00:00:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 70871,
+        "id": 1670940,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "af7318d4-bbcf-4b7b-9979-4c214ba152f2",
+        "siteSettingsId": 2262528,
+        "fieldLayoutId": null,
+        "structureId": 75794,
+        "contentId": 933977,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Star Partners",
+        "slug": "star-partner-awards",
+        "uri": "partners/star-partner-awards",
+        "dateCreated": "2024-05-02T06:59:32-05:00",
+        "dateUpdated": "2024-05-10T10:08:12-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 164565,
+        "lft": 11,
+        "rgt": 12,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 1068747,
+        "canonicalId": 1670940,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newPartners/star-partner-awards",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/partners/star-partner-awards",
+        "authorId": 70871,
+        "typeId": 126,
+        "mainBannerPartners": {
+            "1686916": {
+                "type": "bannerMediaRight",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Star Partner Awards",
+                    "body200": "Star Partners have gone above and beyond with their contributions to our customers and our partner ecosystem. Learn more about this year's Star Partner awardees.",
+                    "bannerAsset": {
+                        "1686917": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    1686915
+                                ]
+                            }
+                        }
+                    },
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                }
+            }
+        },
+        "sectionNavigation": [],
+        "partnersContent": {
+            "1681642": {
+                "type": "contentBlock",
+                "enabled": false,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "BeyondTrust Star Partner Awards",
+                    "bodyRedactorRestricted": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": {
+                        "1682243": {
+                            "type": "contentWithAsset",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "heading": null,
+                                "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+                                "asset": [
+                                    1681821
+                                ],
+                                "resource": [],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "linkText": null,
+                                "contentAlignment": false,
+                                "contentTheme": null,
+                                "sidebarEnabled": false
+                            }
+                        }
+                    }
+                }
+            },
+            "1671384": {
+                "type": "featureGrid",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSmall": "Star Award Categories",
+                    "subheadingSmall": "Star Awards are awarded to BeyondTrust partners across a variety of categories, including:",
+                    "label25": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "featureGrid": {
+                        "1671385": {
+                            "type": 95,
+                            "fields": {
+                                "heading": "Innovation Award",
+                                "body": "This accolade is awarded to the Partners who have propelled our customers towards innovative business outcomes.",
+                                "list": [],
+                                "icon": [
+                                    545695
+                                ],
+                                "ctaLabel": null,
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                            }
+                        },
+                        "1671386": {
+                            "type": 95,
+                            "fields": {
+                                "heading": "Acceleration Award",
+                                "body": "This award spotlights the partners who lead business growth in the region by bringing in new customers and expanding existing ones.",
+                                "list": [],
+                                "icon": [
+                                    545681
+                                ],
+                                "ctaLabel": null,
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                            }
+                        },
+                        "1671387": {
+                            "type": 95,
+                            "fields": {
+                                "heading": "Alliance Award",
+                                "body": "This award recognizes the Technology Alliance Partners whose collaboration with BeyondTrust has elevated efficiency and fortified security for our customers.",
+                                "list": [],
+                                "icon": [
+                                    545691
+                                ],
+                                "ctaLabel": null,
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                            }
+                        },
+                        "1671388": {
+                            "type": 95,
+                            "fields": {
+                                "heading": "Customer Outcome Award",
+                                "body": "This award is given to the Partners who have gone above and beyond, driving customer success and delivering lightning-fast time to value.",
+                                "list": [],
+                                "icon": [
+                                    545714
+                                ],
+                                "ctaLabel": null,
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                            }
+                        },
+                        "1671389": {
+                            "type": 95,
+                            "fields": {
+                                "heading": "Ecosystem Award",
+                                "body": "This award showcases the partners who have fully embraced our partner ecosystem and contribute daily to its growth and success.",
+                                "list": [],
+                                "icon": [
+                                    545684
+                                ],
+                                "ctaLabel": null,
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                            }
+                        },
+                        "1671390": {
+                            "type": 95,
+                            "fields": {
+                                "heading": "Value Add Award",
+                                "body": "This award highlights our distributors who go the extra mile to deliver seamless customer experiences and success.",
+                                "list": [],
+                                "icon": [
+                                    545682
+                                ],
+                                "ctaLabel": null,
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "1670942": {
+                "type": "contentBlock",
+                "enabled": false,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Star Awards",
+                    "bodyRedactorRestricted": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": {
+                        "1671391": {
+                            "type": "contentWithAsset",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "heading": null,
+                                "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>",
+                                "asset": [],
+                                "resource": [],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "linkText": null,
+                                "contentAlignment": false,
+                                "contentTheme": null,
+                                "sidebarEnabled": false
+                            }
+                        }
+                    }
+                }
+            },
+            "1670943": {
+                "type": "useCases",
+                "enabled": false,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading45": "Award Categories",
+                    "useCases": {
+                        "1670944": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Innovation Award",
+                                "body": "Illuminate your path with innovation! This accolade awaits the Partner whose groundbreaking solutions have propelled our customers toward unparalleled business outcomes.",
+                                "image": [
+                                    545695
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "1670945": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Acceleration Award",
+                                "body": "Highlighting the partner who contributes significantly to business growth in the region by bringing in new customers and expanding existing ones. This award recognizes outstanding efforts in driving our business forward.",
+                                "image": [
+                                    545681
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "1670946": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Alliance Award",
+                                "body": "Forge alliances for success! This award recognizes the Technology Alliance Partner whose collaboration with BeyondTrust has elevated efficiency and fortified security for our customers.",
+                                "image": [
+                                    545691
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "1670947": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Customer Outcome Award",
+                                "body": "Go beyond the expected! This award honours the Partner who has gone above and beyond, driving customer success and ensuring lightning-fast time to value.",
+                                "image": [
+                                    545714
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "1670948": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Ecosystem Award",
+                                "body": "Thrive in partnership! Claim this award by showcasing how you've embraced our partner ecosystem, safeguarding our mutual customers from cyberthreats and ensuring their identities and access remain secure.",
+                                "image": [
+                                    545684
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "1670949": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Value Add Award",
+                                "body": "Highlight our Value Added Distributors who go the extra mile, mile after mile. Helping to ensure seamless transitions, provide streamlined approaches for the customer and drive unified experience.",
+                                "image": [
+                                    545682
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        }
+                    }
+                }
+            },
+            "1671392": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "2024 Star Award Winners",
+                    "bodyRedactorRestricted": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": {
+                        "1671393": {
+                            "type": "contentWithAsset",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "heading": "EMEA",
+                                "body": "<p><a href=\"https://www.linkedin.com/company/bitsiel/\">Bitsiel</a>: &#x1d5dc;&#x1d5fb;&#x1d5fb;&#x1d5fc;&#x1d603;&#x1d5ee;&#x1d601;&#x1d5f6;&#x1d5fc;&#x1d5fb; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p>\n<a href=\"https://www.linkedin.com/company/dotnextza/\">dotnext</a>: &#x1d5d6;&#x1d602;&#x1d600;&#x1d601;&#x1d5fc;&#x1d5fa;&#x1d5f2;&#x1d5ff; &#x1d5e2;&#x1d602;&#x1d601;&#x1d5f0;&#x1d5fc;&#x1d5fa;&#x1d5f2; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p>\n<a href=\"https://www.linkedin.com/company/tata-consultancy-services/\">Tata Consultancy Services</a>: &#x1d5d4;&#x1d5f0;&#x1d5f0;&#x1d5f2;&#x1d5f9;&#x1d5f2;&#x1d5ff;&#x1d5ee;&#x1d601;&#x1d5f6;&#x1d5fc;&#x1d5fb; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p>\n<a href=\"https://www.linkedin.com/company/cyberiam-holdings/\">CyberIAM</a>: &#x1d5d8;&#x1d5f0;&#x1d5fc;&#x1d600;&#x1d606;&#x1d600;&#x1d601;&#x1d5f2;&#x1d5fa; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p>\n<a href=\"https://www.linkedin.com/company/miel/\">MIEL</a>: &#x1d5e9;&#x1d5ee;&#x1d5f9;&#x1d602;&#x1d5f2; &#x1d5d4;&#x1d5f1;&#x1d5f1; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;<br /><br /><br /><br /></p>",
+                                "asset": [
+                                    1681827
+                                ],
+                                "resource": [],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "linkText": null,
+                                "contentAlignment": false,
+                                "contentTheme": null,
+                                "sidebarEnabled": false
+                            }
+                        },
+                        "1671394": {
+                            "type": "contentWithAsset",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "heading": "APJ",
+                                "body": "<p><a href=\"https://www.linkedin.com/company/ping-identity/\">Ping Identity</a>: &#x1d5d4;&#x1d5f9;&#x1d5f9;&#x1d5f6;&#x1d5ee;&#x1d5fb;&#x1d5f0;&#x1d5f2; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p><a href=\"https://www.linkedin.com/company/perfekt-pty-ltd/\">Perfekt Pty Ltd</a>: &#x1d5dc;&#x1d5fb;&#x1d5fb;&#x1d5fc;&#x1d603;&#x1d5ee;&#x1d601;&#x1d5f6;&#x1d5fc;&#x1d5fb; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p>iSecurity: &#x1d5d6;&#x1d602;&#x1d600;&#x1d601;&#x1d5fc;&#x1d5fa;&#x1d5f2;&#x1d5ff; &#x1d5e2;&#x1d602;&#x1d601;&#x1d5f0;&#x1d5fc;&#x1d5fa;&#x1d5f2; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p><a href=\"https://www.linkedin.com/company/cyber-cx/\">CyberCX</a>: &#x1d5d4;&#x1d5f0;&#x1d5f0;&#x1d5f2;&#x1d5f9;&#x1d5f2;&#x1d5ff;&#x1d5ee;&#x1d601;&#x1d5f6;&#x1d5fc;&#x1d5fb; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p><a href=\"https://www.linkedin.com/company/deloitte/\">Deloitte</a>: &#x1d5d8;&#x1d5f0;&#x1d5fc;&#x1d600;&#x1d606;&#x1d600;&#x1d601;&#x1d5f2;&#x1d5fa; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p><a href=\"https://www.linkedin.com/company/westconcomstor/\">Westcon-Comstor</a>: &#x1d5e9;&#x1d5ee;&#x1d5f9;&#x1d602;&#x1d5f2; &#x1d5d4;&#x1d5f1;&#x1d5f1; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;<br /><br /><br /><br /></p>",
+                                "asset": [
+                                    1681829
+                                ],
+                                "resource": [],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "linkText": null,
+                                "contentAlignment": true,
+                                "contentTheme": null,
+                                "sidebarEnabled": false
+                            }
+                        },
+                        "1671395": {
+                            "type": "contentWithAsset",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "heading": "Americas",
+                                "body": "<p><a href=\"https://www.linkedin.com/company/amazon-web-services/\">Amazon Web Services (AWS)</a>: &#x1d5d4;&#x1d5f9;&#x1d5f9;&#x1d5f6;&#x1d5ee;&#x1d5fb;&#x1d5f0;&#x1d5f2; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;<br /></p>\n<p><a href=\"https://www.linkedin.com/company/hcltech/\">HCLTech</a>: &#x1d5dc;&#x1d5fb;&#x1d5fb;&#x1d5fc;&#x1d603;&#x1d5ee;&#x1d601;&#x1d5f6;&#x1d5fc;&#x1d5fb; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;<br /></p>\n<p><a href=\"https://www.linkedin.com/company/integral-partners-llc/\">Integral Partners LLC</a>: &#x1d5d6;&#x1d602;&#x1d600;&#x1d601;&#x1d5fc;&#x1d5fa;&#x1d5f2;&#x1d5ff; &#x1d5e2;&#x1d602;&#x1d601;&#x1d5f0;&#x1d5fc;&#x1d5fa;&#x1d5f2; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;<br /></p>\n<p><a href=\"https://www.linkedin.com/company/optiv-inc/\">Optiv</a>: &#x1d5d4;&#x1d5f0;&#x1d5f0;&#x1d5f2;&#x1d5f9;&#x1d5f2;&#x1d5ff;&#x1d5ee;&#x1d601;&#x1d5f6;&#x1d5fc;&#x1d5fb; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p><a href=\"https://www.linkedin.com/company/stratascale-llc/\">Stratascale – An SHI Company</a>: &#x1d5d8;&#x1d5f0;&#x1d5fc;&#x1d600;&#x1d606;&#x1d600;&#x1d601;&#x1d5f2;&#x1d5fa; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;</p>\n<p><a href=\"https://www.linkedin.com/company/ingram-micro/\">Ingram Micro</a>: &#x1d5e9;&#x1d5ee;&#x1d5f9;&#x1d602;&#x1d5f2; &#x1d5d4;&#x1d5f1;&#x1d5f1; &#x1d5ea;&#x1d5f6;&#x1d5fb;&#x1d5fb;&#x1d5f2;&#x1d5ff;<br /><br /><br /><br /></p>",
+                                "asset": [
+                                    1682076
+                                ],
+                                "resource": [],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "linkText": null,
+                                "contentAlignment": false,
+                                "contentTheme": null,
+                                "sidebarEnabled": false
+                            }
+                        }
+                    }
+                }
+            },
+            "1671396": {
+                "type": "logoList",
+                "enabled": false,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": null,
+                    "logoList": {
+                        "1671397": {
+                            "type": 97,
+                            "fields": {
+                                "logos": {
+                                    "1671398": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                92578
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1671399": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1671372
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1671400": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1671373
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1671401": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1553779
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1671402": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                629860
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1671403": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1671374
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "gridSize": "3",
+                    "logoBackground": "transparent"
+                }
+            },
+            "1671404": {
+                "type": "logoList",
+                "enabled": false,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": null,
+                    "logoList": {
+                        "1671405": {
+                            "type": 97,
+                            "fields": {
+                                "logos": {
+                                    "1671406": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                872092
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1671407": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1380831
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1671408": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1427436
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1671409": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                669805
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1671410": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1671359
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "1671411": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1671360
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "gridSize": "3",
+                    "logoBackground": "transparent"
+                }
+            },
+            "1687199": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        1687197
+                    ]
+                }
+            },
+            "1671412": {
+                "type": "calloutCards",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "calloutCards": {
+                        "1671413": {
+                            "type": 110,
+                            "fields": {
+                                "image": [
+                                    1671102
+                                ],
+                                "heading": "Find a Partner",
+                                "description": "Use our locator to quickly find a BeyondTrust partner that provides the services your business requires, in a region near you.",
+                                "ctaLink": "{\"linkedId\":1068918,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"{\\\"customText\\\":\\\"Get Started\\\"}\",\"type\":\"entry\"}"
+                            }
+                        },
+                        "1671414": {
+                            "type": 110,
+                            "fields": {
+                                "image": [
+                                    1069314
+                                ],
+                                "heading": "Become a Partner",
+                                "description": "Extend your market reach and drive success with industry-leading solutions that deliver intelligent, effective security infrastructure to your customers.",
+                                "ctaLink": "{\"linkedId\":1072802,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"{\\\"customText\\\":\\\"Learn More\\\"}\",\"type\":\"entry\"}"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2024-05-02T08:30:04-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "Star Partner Awards",
+                "siteNamePosition": "",
+                "seoDescription": "Learn about the Star Partner Awards at BeyondTrust, given to our trusted partners who have gone above and beyond.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoTitle": true,
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    }
+]

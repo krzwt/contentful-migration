@@ -1,4 +1,1247 @@
 {
+  "resourcesCpt": {
+    "name": "📰 Resources CPT",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "resourceType": {
+        "name": "Resource Type",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Resources",
+              "Case Studies",
+              "Competitor Comparisons",
+              "Datasheets",
+              "Infographics",
+              "Videos",
+              "Whitepapers"
+            ]
+          }
+        ]
+      },
+      "resourcesFields": {
+        "name": "Resources Fields",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "resourcesFields"
+            ]
+          }
+        ]
+      },
+      "resourceSetting": {
+        "name": "Resource Setting",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cptSettings"
+            ]
+          }
+        ]
+      },
+      "resourceContent": {
+        "name": "Resource Content",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "bannerHero",
+                "accordion",
+                "calloutCards",
+                "cardGridBlock",
+                "contactSales",
+                "contentBlock",
+                "customerBundle",
+                "faQs",
+                "featureGrid",
+                "featureTabbed",
+                "fiftyFiftyComponent",
+                "iconGrid",
+                "mediaBlock",
+                "officeLocations",
+                "processFlowCards",
+                "resourceTabSection",
+                "reviewsBlock",
+                "statisticsBlock",
+                "tableContentBlock",
+                "tryItCta",
+                "useCases",
+                "partnersLogosBlock",
+                "mediaEmbeds",
+                "quote"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "seo": {
+        "name": "SEO",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "seo"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "cta": {
+    "name": "🌍 CTA",
+    "description": "",
+    "displayField": "label",
+    "fields": {
+      "label": {
+        "name": "Label",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "url": {
+        "name": "URL",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "pageLink": {
+        "name": "Page Link",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "newStandaloneContent",
+              "newStandaloneMicrosite",
+              "newStandaloneThankYou",
+              "newStandaloneConversion",
+              "resourceWebinarsCpt",
+              "resourcesCpt",
+              "company",
+              "newCompany",
+              "newSt",
+              "newStBtu",
+              "newPartners"
+            ]
+          }
+        ]
+      },
+      "target": {
+        "name": "Target",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "_self (Same Tab)",
+              "_blank (New Tab)"
+            ]
+          }
+        ]
+      },
+      "variant": {
+        "name": "Variant",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "primary",
+              "secondary",
+              "primary-outline",
+              "secondary-outline",
+              "outline",
+              "outline-white",
+              "ghost",
+              "link"
+            ]
+          }
+        ]
+      },
+      "size": {
+        "name": "Size",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "sm",
+              "md",
+              "lg"
+            ]
+          }
+        ]
+      },
+      "showIcon": {
+        "name": "Show Icon",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "disabled": {
+        "name": "Disabled",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "sectionNavigationLinks": {
+    "name": "☰ Section Navigation Links",
+    "description": "",
+    "displayField": "label",
+    "fields": {
+      "pageLink": {
+        "name": "Page Link",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "page",
+              "newStandaloneContent",
+              "newStandaloneMicrosite",
+              "newStandaloneThankYou",
+              "newStandaloneConversion",
+              "company",
+              "newCompany",
+              "newPartners"
+            ]
+          }
+        ]
+      },
+      "externalUrl": {
+        "name": "External URL",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "label": {
+        "name": "Label ",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "queryParams": {
+        "name": "Query Params",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "pageSettings": {
+    "name": "🌍 Page Settings",
+    "description": "",
+    "displayField": "pageSetting",
+    "fields": {
+      "pageSetting": {
+        "name": "Page Setting",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "parentPage": {
+        "name": "Parent Page",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "page",
+              "newStandaloneThankYou",
+              "newStandaloneContent",
+              "newStandaloneConversion",
+              "newStandaloneMicrosite",
+              "newCompany",
+              "company",
+              "newPartners"
+            ]
+          }
+        ]
+      },
+      "enableSidenav": {
+        "name": "Enable Sidenav",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "seo": {
+        "name": "SEO",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "seo"
+            ]
+          }
+        ]
+      },
+      "mainNavigationSwitch": {
+        "name": "Main Navigation - Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationDefaultCtAs": {
+        "name": "Main Navigation - Default CTAs",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationSearchSwitch": {
+        "name": "Main Navigation - Search Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationLanguageSwitch": {
+        "name": "Main Navigation - Language Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationCtaButtonDarkBlue": {
+        "name": "Main Navigation - CTA Button (Dark Blue)",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "mainNavigationCtaButtonWhite": {
+        "name": "Main Navigation - CTA Button (White)",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "breadcrumbSwitch": {
+        "name": "Breadcrumb Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "enableSidebarForm": {
+        "name": "Enable Sidebar Form",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sfHeading": {
+        "name": "Heading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sfDescription": {
+        "name": "Description",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "salesforceCampaignId": {
+        "name": "Salesforce Campaign ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "leadSourceDetails": {
+        "name": "Lead Source Details",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "eventsCpt": {
+    "name": "📰 Events CPT",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "unique": true
+          }
+        ]
+      },
+      "seo": {
+        "name": "SEO",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "seo"
+            ]
+          }
+        ]
+      },
+      "mainBanner": {
+        "name": "Main Banner",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": []
+      },
+      "sectionNavigation": {
+        "name": "Section Navigation",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionNavigation"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "podcastsCpt": {
+    "name": "📰 Podcasts CPT",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "unique": true
+          }
+        ]
+      },
+      "bannerHeading": {
+        "name": "Banner Heading",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "bannerDescription": {
+        "name": "Banner Description",
+        "type": "RichText",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript",
+              "strikethrough"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "heading-2",
+              "heading-3",
+              "heading-4",
+              "heading-5",
+              "heading-6",
+              "ordered-list",
+              "unordered-list",
+              "hr",
+              "blockquote",
+              "embedded-entry-block",
+              "embedded-asset-block",
+              "table",
+              "asset-hyperlink",
+              "embedded-entry-inline",
+              "entry-hyperlink",
+              "hyperlink"
+            ],
+            "message": "Only heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "addAsset": {
+        "name": "Add Asset",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "asset"
+            ]
+          }
+        ]
+      },
+      "authorsHosts": {
+        "name": "Authors / Hosts",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "peopleCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "podcasts": {
+        "name": "Podcasts",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "audio"
+            ]
+          }
+        ]
+      },
+      "podcastDuration": {
+        "name": "Podcast Duration",
+        "type": "Integer",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "guests": {
+        "name": "Guests",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "peopleCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "podcastDescription": {
+        "name": "Podcast Description",
+        "type": "RichText",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, and subscript marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "hr",
+              "blockquote",
+              "table"
+            ],
+            "message": "Only horizontal rule, quote, and table nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "textContent": {
+        "name": "Text Content",
+        "type": "RichText",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript",
+              "strikethrough"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "ordered-list",
+              "unordered-list",
+              "hr",
+              "blockquote",
+              "table",
+              "asset-hyperlink",
+              "embedded-entry-inline",
+              "entry-hyperlink",
+              "hyperlink"
+            ],
+            "message": "Only ordered list, Unordered list, horizontal rule, quote, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "podcastImage": {
+        "name": "Podcast Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "tags": {
+        "name": "Tags",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "tags"
+            ]
+          }
+        ]
+      },
+      "contentComponents": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "accordion",
+                "cardGridBlock",
+                "contentBlock",
+                "featureGrid",
+                "featureTabbed",
+                "imageGallery",
+                "faQs",
+                "logoList",
+                "processFlowCards",
+                "quotesBlock",
+                "resourceTabSection",
+                "reviewsBlock",
+                "statisticsBlock",
+                "tableContentBlock",
+                "tryItCta",
+                "useCases"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "seo": {
+        "name": "SEO",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "seo"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "blogCpt": {
+    "name": "📰 Blog CPT",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "unique": true
+          }
+        ]
+      },
+      "image": {
+        "name": "Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "entryType": {
+        "name": "Entry Type",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Symbol",
+          "validations": [
+            {
+              "in": [
+                "Default",
+                "Blog"
+              ]
+            }
+          ]
+        },
+        "validations": []
+      },
+      "bannerHeading": {
+        "name": "Banner Heading",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "bannerDescription": {
+        "name": "Banner Description",
+        "type": "RichText",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript",
+              "strikethrough"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "ordered-list",
+              "unordered-list",
+              "hr",
+              "blockquote",
+              "embedded-entry-block",
+              "embedded-asset-block",
+              "table",
+              "asset-hyperlink",
+              "embedded-entry-inline",
+              "entry-hyperlink",
+              "hyperlink",
+              "heading-2",
+              "heading-3",
+              "heading-4",
+              "heading-5",
+              "heading-6"
+            ],
+            "message": "Only ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, link to Url, heading 2, heading 3, heading 4, heading 5, and heading 6 nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "addAsset": {
+        "name": "Add Asset",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "asset"
+            ]
+          }
+        ]
+      },
+      "authorsHosts": {
+        "name": "Authors / Hosts",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "peopleCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "tags": {
+        "name": "Tags",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "tags"
+            ]
+          }
+        ]
+      },
+      "contentComponents": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "accordion",
+                "cardGridBlock",
+                "calloutBar",
+                "contentBlock",
+                "featureGrid",
+                "featureTabbed",
+                "imageGallery",
+                "faQs",
+                "logoList",
+                "processFlowCards",
+                "quote",
+                "resourceTabSection",
+                "reviewsBlock",
+                "statisticsBlock",
+                "tableContentBlock",
+                "tryItCta",
+                "useCases"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "bottomContent": {
+        "name": "Bottom Content",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "resourceTabSection"
+            ]
+          }
+        ]
+      },
+      "seo": {
+        "name": "SEO",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "seo"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "sectionNavigation": {
+    "name": "🌍 Section Navigation",
+    "description": "",
+    "displayField": "sectionName",
+    "fields": {
+      "sectionName": {
+        "name": "Section Name",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionUrlRoot": {
+        "name": "Section URL Root",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionPageLink": {
+        "name": "Section Page Link",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "page",
+              "newStandaloneContent",
+              "newStandaloneMicrosite",
+              "newStandaloneThankYou",
+              "newStandaloneConversion",
+              "newCompany",
+              "company",
+              "newPartners",
+              "newSt"
+            ]
+          }
+        ]
+      },
+      "addLinks": {
+        "name": "Add Links",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "sectionNavigationLinks"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "icon": {
+        "name": "Icon",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "blogLayout": {
+    "name": "🧩  Blog Layout",
+    "description": "",
+    "displayField": "abstract",
+    "fields": {
+      "abstract": {
+        "name": "Abstract",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "bannerImage": {
+        "name": "Banner Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "resourceCardImage": {
+        "name": "Resource Card Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "introduction": {
+        "name": "Introduction",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "attachedFiles": {
+        "name": "Attached Files",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image",
+                "pdfdocument"
+              ]
+            }
+          ],
+          "linkType": "Asset"
+        },
+        "validations": []
+      }
+    }
+  },
   "newStandaloneMicrosite": {
     "name": "📄 NEW-Standalone-Microsite",
     "description": "",
@@ -631,99 +1874,6 @@
       }
     }
   },
-  "sectionNavigation": {
-    "name": "🌍 Section Navigation",
-    "description": "",
-    "displayField": "sectionName",
-    "fields": {
-      "sectionName": {
-        "name": "Section Name",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sectionUrlRoot": {
-        "name": "Section URL Root",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sectionPageLink": {
-        "name": "Section Page Link",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "page",
-              "newStandaloneContent",
-              "newStandaloneMicrosite",
-              "newStandaloneThankYou",
-              "newStandaloneConversion",
-              "newCompany",
-              "company"
-            ]
-          }
-        ]
-      },
-      "addLinks": {
-        "name": "Add Links",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "sectionNavigationLinks"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "cta": {
-        "name": "CTA",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "icon": {
-        "name": "Icon",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "image"
-            ]
-          }
-        ]
-      }
-    }
-  },
   "wizard": {
     "name": "🧩 Wizard",
     "description": "",
@@ -1316,145 +2466,6 @@
       }
     }
   },
-  "resourcesCpt": {
-    "name": "📰 Resources CPT",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "resourceType": {
-        "name": "Resource Type",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Resources",
-              "Case Studies",
-              "Competitor Comparisons",
-              "Datasheets",
-              "Infographics",
-              "Videos",
-              "Whitepapers"
-            ]
-          }
-        ]
-      },
-      "resourcesFields": {
-        "name": "Resources Fields",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "resourcesFields"
-            ]
-          }
-        ]
-      },
-      "resourceSetting": {
-        "name": "Resource Setting",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cptSettings"
-            ]
-          }
-        ]
-      },
-      "resourceContent": {
-        "name": "Resource Content",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "bannerHero",
-                "accordion",
-                "calloutCards",
-                "cardGridBlock",
-                "contactSales",
-                "contentBlock",
-                "ctaBlock",
-                "customerBundle",
-                "faQs",
-                "featureGrid",
-                "featureTabbed",
-                "fiftyFiftyComponent",
-                "iconGrid",
-                "mediaBlock",
-                "officeLocations",
-                "processFlowCards",
-                "resourceTabSection",
-                "reviewsBlock",
-                "statisticsBlock",
-                "tableContentBlock",
-                "tryItCta",
-                "useCases",
-                "partnersLogosBlock",
-                "mediaEmbeds",
-                "quote"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "seo": {
-        "name": "SEO",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "seo"
-            ]
-          }
-        ]
-      }
-    }
-  },
   "company": {
     "name": "📄 Company",
     "description": "",
@@ -1679,308 +2690,6 @@
           ],
           "linkType": "Entry"
         },
-        "validations": []
-      }
-    }
-  },
-  "eventsCpt": {
-    "name": "📰 Events CPT",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "unique": true
-          }
-        ]
-      },
-      "seo": {
-        "name": "SEO",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "seo"
-            ]
-          }
-        ]
-      },
-      "mainBanner": {
-        "name": "Main Banner",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": []
-      },
-      "sectionNavigation": {
-        "name": "Section Navigation",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionNavigation"
-            ]
-          }
-        ]
-      },
-      "publicEvent": {
-        "name": "Public Event?",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "eventType": {
-        "name": "Event Type",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "In-Person",
-              "Virtual",
-              "Webinar"
-            ]
-          }
-        ]
-      },
-      "region": {
-        "name": "Region",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Symbol",
-          "validations": [
-            {
-              "in": [
-                "North America",
-                "Latin America",
-                "EMEA",
-                "APJ"
-              ]
-            }
-          ]
-        },
-        "validations": []
-      },
-      "language": {
-        "name": "Language",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "English",
-              "Deutsch",
-              "Français",
-              "Español",
-              "Português"
-            ]
-          }
-        ]
-      },
-      "eventStartDate": {
-        "name": "Event Start Date",
-        "type": "Date",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "eventEndDate": {
-        "name": "Event End Date",
-        "type": "Date",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "registrationCutoffDate": {
-        "name": "Registration Cutoff Date",
-        "type": "Date",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "timezone": {
-        "name": "Timezone",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Universal Time Coordinated (UTC/GMT)",
-              "Africa/Casablanca (+01)",
-              "Africa/Johannesburg (SAST)",
-              "Africa/Lagos (WAT)",
-              "Africa/Nairobi (EAT)",
-              "Africa/Tunis (CET)",
-              "America/Argentina/Buenos_Aires (AGT)",
-              "America/Chicago (CT/CST/CDT)",
-              "America/Edmonton (MST/MDT)",
-              "America/Los_Angeles (PT/PST/PDT)",
-              "America/New_York (ET/EST/EDT)",
-              "America/Phoenix (MT/MST/MDT)",
-              "America/Halifax (AST/ADT)",
-              "America/Sao_Paulo (BRT)",
-              "America/Mexico_City (CT/CST/CDT)",
-              "America/Bogota (COT)",
-              "Asia/Bangkok (ICT)",
-              "Asia/Dubai (GST)",
-              "Asia/Jakarta (WIB)",
-              "Asia/Jerusalem (IST)",
-              "Asia/Manila (PST)",
-              "Asia/Makassar (WITA)",
-              "Asia/Qatar (AST)",
-              "Asia/Kolkata (IST)",
-              "Asia/Riyadh (AST)",
-              "Asia/Seoul (KST)",
-              "Asia/Singapore (SST/SGT)",
-              "Australia/Sydney (AET/AEST/AEDT)",
-              "Europe/Lisbon (WET)",
-              "Europe/Paris (CET, CEST)",
-              "Europe/Sofia (EET)",
-              "Europe/London (BST)",
-              "Indian/Mauritius (MUT)"
-            ]
-          }
-        ]
-      },
-      "eventLocationName": {
-        "name": "Event Location Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "streetAddress": {
-        "name": "Street Address",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "city": {
-        "name": "City",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "stateProvince": {
-        "name": "State / Province",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "country": {
-        "name": "Country",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "USA",
-              "United Kingdom",
-              "Asia",
-              "Middle East",
-              "Australia",
-              "Austria",
-              "Belgium",
-              "Brazil",
-              "Canada",
-              "Chlie",
-              "Colombia",
-              "Denmark",
-              "Finland",
-              "France",
-              "Germany",
-              "India",
-              "Italy",
-              "Ivory Coast",
-              "Kenya",
-              "Kuwait",
-              "Lebanon",
-              "Luxembourg",
-              "Mexico",
-              "Mauritius",
-              "Monaco",
-              "Morocco",
-              "Netherlands",
-              "New Zealand",
-              "Nigeria",
-              "Norway",
-              "Philippines",
-              "Poland",
-              "Qatar",
-              "Saudi Arabia",
-              "South Africa",
-              "South Korea",
-              "Spain",
-              "Sweden",
-              "Switzerland",
-              "Tanzania",
-              "United Arab Emirates"
-            ]
-          }
-        ]
-      },
-      "eventManager": {
-        "name": "Event Manager",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": []
-      },
-      "emailLeadNotificationsToEventManager": {
-        "name": "Email lead notifications to Event Manager",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
         "validations": []
       }
     }
@@ -2238,314 +2947,6 @@
               "13px",
               "14px",
               "15px"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "podcastsCpt": {
-    "name": "📰 Podcasts CPT",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "unique": true
-          }
-        ]
-      },
-      "bannerHeading": {
-        "name": "Banner Heading",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "bannerDescription": {
-        "name": "Banner Description",
-        "type": "RichText",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "enabledMarks": [
-              "bold",
-              "italic",
-              "underline",
-              "code",
-              "superscript",
-              "subscript",
-              "strikethrough"
-            ],
-            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
-          },
-          {
-            "enabledNodeTypes": [
-              "heading-2",
-              "heading-3",
-              "heading-4",
-              "heading-5",
-              "heading-6",
-              "ordered-list",
-              "unordered-list",
-              "hr",
-              "blockquote",
-              "embedded-entry-block",
-              "embedded-asset-block",
-              "table",
-              "asset-hyperlink",
-              "embedded-entry-inline",
-              "entry-hyperlink",
-              "hyperlink"
-            ],
-            "message": "Only heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
-          },
-          {
-            "nodes": {}
-          }
-        ]
-      },
-      "addAsset": {
-        "name": "Add Asset",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "asset"
-            ]
-          }
-        ]
-      },
-      "authorsHosts": {
-        "name": "Authors / Hosts",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "peopleCpt"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "podcasts": {
-        "name": "Podcasts",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "audio"
-            ]
-          }
-        ]
-      },
-      "podcastDuration": {
-        "name": "Podcast Duration",
-        "type": "Integer",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "guests": {
-        "name": "Guests",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "peopleCpt"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "podcastDescription": {
-        "name": "Podcast Description",
-        "type": "RichText",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "enabledMarks": [
-              "bold",
-              "italic",
-              "underline",
-              "code",
-              "superscript",
-              "subscript"
-            ],
-            "message": "Only bold, italic, underline, code, superscript, and subscript marks are allowed"
-          },
-          {
-            "enabledNodeTypes": [
-              "hr",
-              "blockquote",
-              "table"
-            ],
-            "message": "Only horizontal rule, quote, and table nodes are allowed"
-          },
-          {
-            "nodes": {}
-          }
-        ]
-      },
-      "textContent": {
-        "name": "Text Content",
-        "type": "RichText",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "enabledMarks": [
-              "bold",
-              "italic",
-              "underline",
-              "code",
-              "superscript",
-              "subscript",
-              "strikethrough"
-            ],
-            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
-          },
-          {
-            "enabledNodeTypes": [
-              "ordered-list",
-              "unordered-list",
-              "hr",
-              "blockquote",
-              "table",
-              "asset-hyperlink",
-              "embedded-entry-inline",
-              "entry-hyperlink",
-              "hyperlink"
-            ],
-            "message": "Only ordered list, Unordered list, horizontal rule, quote, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
-          },
-          {
-            "nodes": {}
-          }
-        ]
-      },
-      "podcastImage": {
-        "name": "Podcast Image",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "image"
-            ]
-          }
-        ]
-      },
-      "tags": {
-        "name": "Tags",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "tags"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "contentComponents": {
-        "name": "Content Components",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "accordion",
-                "cardGridBlock",
-                "contentBlock",
-                "featureGrid",
-                "featureTabbed",
-                "imageGallery",
-                "faQs",
-                "logoList",
-                "processFlowCards",
-                "quotesBlock",
-                "resourceTabSection",
-                "reviewsBlock",
-                "statisticsBlock",
-                "tableContentBlock",
-                "tryItCta",
-                "useCases"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "seo": {
-        "name": "SEO",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "seo"
             ]
           }
         ]
@@ -4622,175 +5023,6 @@
       }
     }
   },
-  "pageSettings": {
-    "name": "🌍 Page Settings",
-    "description": "",
-    "displayField": "pageSetting",
-    "fields": {
-      "pageSetting": {
-        "name": "Page Setting",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "parentPage": {
-        "name": "Parent Page",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "page",
-              "newStandaloneThankYou",
-              "newStandaloneContent",
-              "newStandaloneConversion",
-              "newStandaloneMicrosite",
-              "newCompany",
-              "company"
-            ]
-          }
-        ]
-      },
-      "enableSidenav": {
-        "name": "Enable Sidenav",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "seo": {
-        "name": "SEO",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "seo"
-            ]
-          }
-        ]
-      },
-      "mainNavigationSwitch": {
-        "name": "Main Navigation - Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationDefaultCtAs": {
-        "name": "Main Navigation - Default CTAs",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationSearchSwitch": {
-        "name": "Main Navigation - Search Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationLanguageSwitch": {
-        "name": "Main Navigation - Language Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationCtaButtonDarkBlue": {
-        "name": "Main Navigation - CTA Button (Dark Blue)",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "mainNavigationCtaButtonWhite": {
-        "name": "Main Navigation - CTA Button (White)",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "breadcrumbSwitch": {
-        "name": "Breadcrumb Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "enableSidebarForm": {
-        "name": "Enable Sidebar Form",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sfHeading": {
-        "name": "Heading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sfDescription": {
-        "name": "Description",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "salesforceCampaignId": {
-        "name": "Salesforce Campaign ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "leadSourceDetails": {
-        "name": "Lead Source Details",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      }
-    }
-  },
   "announcementBanner": {
     "name": "🌍 Announcement Banner",
     "description": "",
@@ -4978,58 +5210,6 @@
             }
           ]
         },
-        "validations": []
-      }
-    }
-  },
-  "sectionNavigationLinks": {
-    "name": "☰ Section Navigation Links",
-    "description": "",
-    "displayField": "label",
-    "fields": {
-      "pageLink": {
-        "name": "Page Link",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "page",
-              "newStandaloneContent",
-              "newStandaloneMicrosite",
-              "newStandaloneThankYou",
-              "newStandaloneConversion",
-              "company",
-              "newCompany"
-            ]
-          }
-        ]
-      },
-      "externalUrl": {
-        "name": "External URL",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "label": {
-        "name": "Label ",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "queryParams": {
-        "name": "Query Params",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
         "validations": []
       }
     }
@@ -5740,119 +5920,6 @@
             ]
           }
         ]
-      }
-    }
-  },
-  "cta": {
-    "name": "🌍 CTA",
-    "description": "",
-    "displayField": "label",
-    "fields": {
-      "label": {
-        "name": "Label",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "url": {
-        "name": "URL",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "pageLink": {
-        "name": "Page Link",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "newStandaloneContent",
-              "newStandaloneMicrosite",
-              "newStandaloneThankYou",
-              "newStandaloneConversion",
-              "resourceWebinarsCpt",
-              "resourcesCpt",
-              "company",
-              "newCompany"
-            ]
-          }
-        ]
-      },
-      "target": {
-        "name": "Target",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "_self (Same Tab)",
-              "_blank (New Tab)"
-            ]
-          }
-        ]
-      },
-      "variant": {
-        "name": "Variant",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "primary",
-              "secondary",
-              "primary-outline",
-              "secondary-outline",
-              "outline",
-              "outline-white",
-              "ghost",
-              "link"
-            ]
-          }
-        ]
-      },
-      "size": {
-        "name": "Size",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "sm",
-              "md",
-              "lg"
-            ]
-          }
-        ]
-      },
-      "showIcon": {
-        "name": "Show Icon",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "disabled": {
-        "name": "Disabled",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
       }
     }
   },
@@ -7129,48 +7196,6 @@
           {
             "linkContentType": [
               "cta"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "blogCpt": {
-    "name": "📰 Blog CPT",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "unique": true
-          }
-        ]
-      },
-      "image": {
-        "name": "Image",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "image"
             ]
           }
         ]

@@ -48,6 +48,7 @@ export async function createOrUpdateSectionNavigation(env, blockData, assetMap =
                         "newStandaloneMicrosite",
                         "newStandaloneThankYou",
                         "newStandaloneConversion",
+                        "newPartners",
                         "page"
                     ];
                     for (const type of pageTypes) {
@@ -96,7 +97,7 @@ export async function createOrUpdateSectionNavigation(env, blockData, assetMap =
             // Re-using the page lookup logic or similar
             let linkedPageId = null;
             try {
-                const pageTypes = ["newStandaloneContent", "newStandaloneMicrosite", "newStandaloneThankYou", "newStandaloneConversion", "page"];
+                const pageTypes = ["newStandaloneContent", "newStandaloneMicrosite", "newStandaloneThankYou", "newStandaloneConversion", "newPartners", "page"];
                 for (const type of pageTypes) {
                     const entries = await env.getEntries({
                         content_type: type,
