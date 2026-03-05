@@ -379,10 +379,12 @@ export async function upsertEntry(env, contentType, entryId, fields, shouldPubli
                     console.log(`   ⏳ Publish retry ${attempt + 1}/3 for ${contentType}: ${entryId}`);
                     await new Promise(r => setTimeout(r, 3000));
                 } else {
-                    if (pubErr.details) {
+                    if (pubErr.details && pubErr.details.errors) {
+                        console.error(`   🛑 Validation Error for ${contentType} (${entryId}):`, JSON.stringify(pubErr.details.errors, null, 2));
+                    } else if (pubErr.details) {
                         console.warn(`   ⚠ Validation Error details for ${contentType} (${entryId}):`, JSON.stringify(pubErr.details, null, 2));
                     }
-                    console.warn(`   ⚠ Could not publish ${contentType} (${entryId}): ${pubErr.message?.substring(0, 100)}`);
+                    console.warn(`   ⚠ Could not publish ${contentType} (${entryId}): ${pubErr.message}`);
                     return entry; // Return the draft entry so it can still be linked
                 }
             }

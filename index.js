@@ -23,6 +23,7 @@ import { loadCategories } from "./utils/categoryLoader.js";
 import { loadTagMapping } from "./utils/tagHandler.js";
 import { getOrderedKeys } from "./utils/jsonOrder.js";
 
+const LOCALE = "en-US";
 const isDryRun = false; // Set to true to simulate migration without making changes
 const ASSET_METADATA_FILES = [
   "./data/assets.json",
@@ -68,16 +69,16 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneConversion",
   //   label: "Standalone Conversion"
   // },
-  // {
-  //   file: "./data/standalone-microsite.json",
-  //   pageContentType: "newStandaloneMicrosite",
-  //   label: "Standalone Microsite",
-  // },
   {
-    file: "./data/standalone-thankyou.json",
-    pageContentType: "newStandaloneThankYou",
-    label: "Standalone Thank You",
+    file: "./data/standalone-microsite.json",
+    pageContentType: "newStandaloneMicrosite",
+    label: "Standalone Microsite",
   },
+  // {
+  //   file: "./data/standalone-thankyou.json",
+  //   pageContentType: "newStandaloneThankYou",
+  //   label: "Standalone Thank You",
+  // },
   // {
   //   file: "./data/people-cpt.json",
   //   label: "People CPT",
@@ -280,6 +281,7 @@ async function run() {
 
         // Collect ALL section entries in order, then set sections array at once
         const sectionEntries = [];
+        let navigationEntryLink = null;
 
         // Detect component fields in the JSON (keys with numeric sub-keys)
         const componentFields = Object.keys(pageData).filter((key) => {
@@ -418,9 +420,17 @@ async function run() {
 
               if (heroEntry) {
                 if (Array.isArray(heroEntry)) {
-                  sectionEntries.push(...heroEntry);
+                  if (fieldKey === 'sectionNavigation') {
+                    navigationEntryLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry[0].sys.id } };
+                  } else {
+                    sectionEntries.push(...heroEntry);
+                  }
                 } else {
-                  sectionEntries.push(heroEntry);
+                  if (fieldKey === 'sectionNavigation') {
+                    navigationEntryLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry.sys.id } };
+                  } else {
+                    sectionEntries.push(heroEntry);
+                  }
                 }
               }
             } catch (err) {
@@ -439,8 +449,19 @@ async function run() {
         }
 
         // Set all sections at once in the correct order (replaces existing)
-        if (!effectiveDryRun && pageEntry && sectionEntries.length > 0) {
-          await setSectionsOnPage(env, pageEntry, sectionEntries);
+        if (!effectiveDryRun && pageEntry) {
+          if (sectionEntries.length > 0) {
+            await setSectionsOnPage(env, pageEntry, sectionEntries);
+          }
+
+          if (navigationEntryLink) {
+            console.log(`🔗 Setting sectionNavigation on page "${title}"`);
+            // Re-fetch to get latest version before updating special field
+            pageEntry = await env.getEntry(pageEntry.sys.id);
+            pageEntry.fields.sectionNavigation = { [LOCALE]: navigationEntryLink };
+            pageEntry = await pageEntry.update();
+            // Publish happens in publishPage step
+          }
         }
 
         // 🚀 Final step: Publish the page now that it has valid sections

@@ -31,6 +31,7 @@ import { createOrUpdateMediaBlock } from "./handlers/mediaBlock.js";
 import { createOrUpdateOfficeLocations } from "./handlers/officeLocations.js";
 import { createOrUpdateCalloutCards } from "./handlers/calloutCards.js";
 import { createOrUpdateMediaEmbeds } from "./handlers/mediaEmbeds.js";
+import { createOrUpdateSectionNavigation } from "./handlers/sectionNavigation.js";
 // Removed ctaBlock and contentCta handlers in favor of calloutBar
 
 
@@ -76,6 +77,7 @@ export const COMPONENTS = {
   calloutCards: { handler: createOrUpdateCalloutCards },
   mediaEmbed: { handler: createOrUpdateMediaBlock },
   mediaEmbeds: { handler: createOrUpdateMediaBlock },
+  siteSection: { handler: createOrUpdateSectionNavigation },
 
 
   /* ---- Generic (mapping-based or mapped to handlers) ---- */
