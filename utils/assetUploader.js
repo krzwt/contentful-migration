@@ -103,6 +103,11 @@ export function loadAssetMetadata(filePaths) {
           url = url.replace(BROKEN_DOMAIN, BASE_URL);
         }
 
+        // 3. Handle S3_BASE_URL placeholder
+        if (url.includes("S3_BASE_URL")) {
+          url = url.replace("S3_BASE_URL", BASE_URL);
+        }
+
         assetMap.set(String(asset.id), {
           title: asset.title,
           filename: asset.filename,
