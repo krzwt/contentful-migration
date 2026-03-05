@@ -10,6 +10,7 @@ import {
   makeLink,
   parseCraftLink,
   ensureAssetPublished,
+  resolveInternalUrl,
 } from "../utils/contentfulHelpers.js";
 
 const LOCALE = "en-US";
@@ -46,15 +47,28 @@ export async function createOrUpdateCustomerBundle(
       if (typeof item !== "object" || !item.fields) continue;
       const f = item.fields;
 
+      // Process CTA
       let ctaEntry = null;
-      const link = parseCraftLink(f.ctaLink);
-      if (link.url) {
-        ctaEntry = await upsertCta(
-          env,
-          `cb-${iId}`,
-          link.label || "",
-          link.url,
-        );
+      if (f.ctaLink) {
+        const linkInfo = parseCraftLink(f.ctaLink);
+        let label = f.linkText || linkInfo.label || "Learn More";
+        let url = linkInfo.url;
+
+        if (!url && linkInfo.linkedId) {
+          url = resolveInternalUrl(linkInfo.linkedId) || "";
+        }
+
+        if (url || linkInfo.linkedId) {
+          console.log(`   🔗 Creating CTA for Customer Bundle item ${iId}: ${label} (ID: ${linkInfo.linkedId || 'URL only'})`);
+          ctaEntry = await upsertCta(
+            env,
+            `cb-${iId}`,
+            label,
+            url,
+            true,
+            linkInfo.linkedId,
+          );
+        }
       }
 
       const itemFields = {
