@@ -277,7 +277,8 @@ export async function migratePodcasts(
                 for (const catId of item.podcastCategories) {
                     let conceptId = podcastTaxonomyMap[String(catId)];
 
-                    if (!conceptId) {
+                    // Only fallback to auto-mapping if the ID is strictly not found in the map
+                    if (conceptId === undefined) {
                         const cat = podcastCategoriesData.find(c => String(c.id) === String(catId));
                         if (cat) {
                             // If it's a known failing one or has hyphens, convert to camelCase
@@ -300,7 +301,7 @@ export async function migratePodcasts(
 
                     if (conceptId) {
                         conceptsSet.add(conceptId);
-                    } else {
+                    } else if (conceptId !== "") {
                         const catName = getCategoryName(catId);
                         console.warn(`   ⚠️ No Taxonomy mapping for podcastCategory: ${catName || "Unknown"} (ID: ${catId})`);
                     }
