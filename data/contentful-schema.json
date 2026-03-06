@@ -52,6 +52,88 @@
       }
     }
   },
+  "embedFormsCpt": {
+    "name": "📰 Embed Forms CPT",
+    "description": "",
+    "displayField": "formName",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "formName": {
+        "name": "Form Name",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "htmlEmbed": {
+        "name": "HTML embed",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "embedSource": {
+        "name": "Embed Source",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "lang": {
+        "name": "Language Override",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "EN",
+              "DE",
+              "FR",
+              "ES",
+              "PT",
+              "KO"
+            ]
+          }
+        ]
+      },
+      "sfcid": {
+        "name": "Salesforce Campaign ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "product": {
+        "name": "Product Context",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "redirectUrl": {
+        "name": "Redirect URL",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
   "sectionNavigation": {
     "name": "🌍 Section Navigation",
     "description": "",
@@ -996,37 +1078,6 @@
             ]
           }
         ]
-      }
-    }
-  },
-  "embedFormsCpt": {
-    "name": "📰 Embed Forms CPT",
-    "description": "",
-    "displayField": "formName",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "formName": {
-        "name": "Form Name",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "htmlEmbed": {
-        "name": "HTML embed",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
       }
     }
   },

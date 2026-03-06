@@ -117,16 +117,16 @@ const DATA_SOURCES = [
   //   label: "S&T BTU",
   //   isStBtu: true
   // },
-  // {
-  //   file: "./data/new-S&T.json",
-  //   label: "S&T",
-  //   isSt: true
-  // },
   {
-    file: "./data/forms-import.json",
-    label: "Forms Import",
-    isForms: true
-  }
+    file: "./data/new-S&T.json",
+    label: "S&T",
+    isSt: true
+  },
+  // {
+  //   file: "./data/forms-import.json",
+  //   label: "Forms Import",
+  //   isForms: true
+  // }
 ];
 
 async function run() {

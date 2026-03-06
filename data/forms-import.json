@@ -10,6 +10,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-asset-download\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/asset-download/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Asset Download Form\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -23,6 +26,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-awards-nominations\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/awards-nominations/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Awards Nominations\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -36,6 +42,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-aws-marketplace\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/aws-marketplace/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"AWS Marketplace\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -49,6 +58,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-azure-marketplace\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/azure-marketplace/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Azure Marketplace\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -62,6 +74,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-bigmarker-webinar-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/bigmarker-webinar-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"BigMarker Webinar\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -75,6 +90,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-changelog-subscription\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/changelog-subscription/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Changelog Subscription\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -88,6 +106,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-contact-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/contact-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Contact Form\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -101,6 +122,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-contact-us\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/contact-us/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:682px;\" title=\"Contact Us\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -114,6 +138,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-demo-request\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/demo-request/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Demo Request\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -127,6 +154,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-generic-eval-request\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/generic-eval-request/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Generic Eval Request\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -140,6 +170,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-generic-notification-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/generic-notification-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Generic Notification\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -153,6 +186,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-get-notified-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/get-notified-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Get Notified\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -166,6 +202,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-live-webinar-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/live-webinar-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Live Webinar\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -179,6 +218,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-manage-subscriptions-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/manage-subscriptions-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Manage Subscriptions\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -192,6 +234,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-more-info-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/more-info-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"More Info\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -205,6 +250,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-multi-step-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/multi-step-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Multi-Step Form\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -218,6 +266,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-newsletter-signup\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/newsletter-signup/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:87px;\" title=\"Newsletter Signup\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\" loading=\"lazy\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -231,6 +282,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-non-marketing-get-notified-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/non-marketing-get-notified-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Non Marketing Get Notified\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -244,6 +298,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-on-demand-webinar-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/on-demand-webinar-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"On Demand Webinar\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -257,6 +314,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-partner-reseller-application\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/partner-reseller-application/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Partner Reseller Application\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -270,6 +330,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-pricing-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/pricing-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Pricing Form\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -283,6 +346,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-pricing-request\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/pricing-request/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Pricing Request\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -296,6 +362,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-recorded-demo\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/recorded-demo/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Recorded Demo\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -309,6 +378,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-standard-event-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/standard-event-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Standard Event\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -322,6 +394,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-technology-alliance-partner-application\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/technology-alliance-partner-application/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Technology Alliance Partner Application\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -335,6 +410,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-women-in-security\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/women-in-security/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Women in Security\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         },
@@ -348,6 +426,9 @@
                 },
                 "htmlEmbed": {
                     "en-US": "<div style=\"width:100%;\"><iframe id=\"bt-zoom-event-form\" data-webform-iframe src=\"https://webform.beyondtrust.com/forms/zoom-event-form/embed?embedSource=contentful\" style=\"width:100%; border:none; min-height:500px;\" title=\"Zoom Event\" frameborder=\"0\" sandbox=\"allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation\"></iframe></div>"
+                },
+                "embedSource": {
+                    "en-US": "contentful"
                 }
             }
         }
