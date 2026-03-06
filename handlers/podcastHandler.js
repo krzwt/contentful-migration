@@ -286,9 +286,14 @@ export async function migratePodcasts(
                                     index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
                                 ).join("");
                             } else {
-                                // For single words like "lulzsec", try matching the Title casing if possible
-                                if (cat.title === "LulzSec") conceptId = "lulzSec";
-                                else conceptId = cat.slug;
+                                // For single words like "lulzsec" or "wehackpurple", check if title has camelCase structure
+                                if (cat.title && cat.title.match(/[A-Z].*[A-Z]/)) {
+                                    conceptId = cat.title.charAt(0).toLowerCase() + cat.title.slice(1);
+                                } else if (cat.title === "LulzSec") {
+                                    conceptId = "lulzSec";
+                                } else {
+                                    conceptId = cat.slug;
+                                }
                             }
                         }
                     }
