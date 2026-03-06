@@ -111,17 +111,16 @@ const DATA_SOURCES = [
   //   file: "./data/newPodcasts.json",
   //   label: "Podcasts CPT",
   //   isPodcasts: true
+  // {
+  //   file: "./data/new-S&T-BTU.json",
+  //   label: "S&T BTU",
+  //   isStBtu: true
   // },
   {
-    file: "./data/new-S&T-BTU.json",
-    label: "S&T BTU",
-    isStBtu: true
-  },
-  // {
-  //   file: "./data/new-S&T.json",
-  //   label: "S&T",
-  //   isSt: true
-  // }
+    file: "./data/new-S&T.json",
+    label: "S&T",
+    isSt: true
+  }
 ];
 
 async function run() {
@@ -179,11 +178,13 @@ async function run() {
     // Determine which indices to process
     let targetIndices = [];
     if (idArg) {
-      const idx = data.findIndex((p) => String(p.id) === String(idArg));
-      if (idx !== -1) {
-        targetIndices.push(idx);
-      } else {
-        console.warn(`⚠️ Entry ID "${idArg}" not found in ${source.file}`);
+      const targetIds = String(idArg).split(",").map((id) => id.trim());
+      targetIndices = data
+        .map((p, i) => (targetIds.includes(String(p.id)) ? i : -1))
+        .filter((i) => i !== -1);
+
+      if (targetIndices.length === 0) {
+        console.warn(`⚠️ Entry ID(s) "${idArg}" not found in ${source.file}`);
         continue;
       }
     } else {

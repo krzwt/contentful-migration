@@ -49,17 +49,28 @@ export async function createOrUpdateSectionNavigation(env, blockData, assetMap =
                         "newStandaloneThankYou",
                         "newStandaloneConversion",
                         "newPartners",
+                        "newSt",
+                        "newStBtu",
                         "page"
                     ];
                     for (const type of pageTypes) {
-                        const entries = await env.getEntries({
-                            content_type: type,
-                            "fields.entryId": String(urlRootLink.linkedId),
-                            limit: 1
-                        });
-                        if (entries.items.length > 0) {
-                            sectionPageLink = makeLink(entries.items[0].sys.id);
-                            break;
+                        try {
+                            const entries = await env.getEntries({
+                                content_type: type,
+                                "fields.entryId": String(urlRootLink.linkedId),
+                                limit: 1
+                            });
+                            if (entries.items.length > 0) {
+                                sectionPageLink = makeLink(entries.items[0].sys.id);
+                                break;
+                            }
+                        } catch (e) {
+                            // Silently skip if the content type doesn't have entryId (422)
+                            const errorMsg = typeof e === 'string' ? e : (e.message || "");
+                            const isMissingField = (e.status === 422) || errorMsg.includes("entryId") || errorMsg.includes("422");
+                            if (!isMissingField) {
+                                console.warn(`   ⚠️ Error querying ${type} for ${urlRootLink.linkedId}: ${errorMsg}`);
+                            }
                         }
                     }
                 } catch (e) {
@@ -97,16 +108,20 @@ export async function createOrUpdateSectionNavigation(env, blockData, assetMap =
             // Re-using the page lookup logic or similar
             let linkedPageId = null;
             try {
-                const pageTypes = ["newStandaloneContent", "newStandaloneMicrosite", "newStandaloneThankYou", "newStandaloneConversion", "newPartners", "page"];
+                const pageTypes = ["newStandaloneContent", "newStandaloneMicrosite", "newStandaloneThankYou", "newStandaloneConversion", "newPartners", "newSt", "newStBtu", "page"];
                 for (const type of pageTypes) {
-                    const entries = await env.getEntries({
-                        content_type: type,
-                        "fields.entryId": String(linkInfo.linkedId),
-                        limit: 1
-                    });
-                    if (entries.items.length > 0) {
-                        linkedPageId = entries.items[0].sys.id;
-                        break;
+                    try {
+                        const entries = await env.getEntries({
+                            content_type: type,
+                            "fields.entryId": String(linkInfo.linkedId),
+                            limit: 1
+                        });
+                        if (entries.items.length > 0) {
+                            linkedPageId = entries.items[0].sys.id;
+                            break;
+                        }
+                    } catch (e) {
+                        // Skip if field missing
                     }
                 }
             } catch (e) { }

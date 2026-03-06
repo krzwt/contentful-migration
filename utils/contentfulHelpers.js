@@ -24,6 +24,8 @@ export function buildUrlMap() {
         "./data/newPodcasts.json",
         "./data/events-cpt.json",
         "./data/media-cpt.json",
+        "./data/new-S&T.json",
+        "./data/new-S&T-BTU.json",
         "./data/page.json"
     ];
 

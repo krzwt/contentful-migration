@@ -32,31 +32,35 @@ export async function migrateSt(
 
         try {
             // 1. Process Text Fields directly
-            const shortDescription = item.body200 || "";
-            const introHeading = item.headingSection || item.title || "";
+            // Not used in newSt schema, but we keep the processing logic if needed for internal use
             const introBodyHtml = item.bodyRedactorRestricted || "";
             const introBody = introBodyHtml ? await convertHtmlToRichText(env, introBodyHtml) : null;
 
             // 2. Create SEO
             const seoEntry = await getOrCreateSeo(env, item, assetMap);
 
-            // 3. Create pageSettingsSt entry
-            const settingsId = safeId("settings-st", item.uri || item.slug);
-            const settingsFields = {
-                pageSetting: { [LOCALE]: `Settings: ${item.title}` }
-            };
-            if (seoEntry) settingsFields.seo = { [LOCALE]: makeLink(seoEntry.sys.id) };
-
-            const settingsEntry = await upsertEntry(
-                env,
-                "pageSettingsSt",
-                settingsId,
-                settingsFields,
-                shouldPublish
-            );
+            // 3. Resolve Parent Page
+            let parentPageLink = null;
+            if (item.parentId && env) {
+                try {
+                    const parentEntries = await env.getEntries({
+                        content_type: "newSt",
+                        "fields.entryId": String(item.parentId),
+                        limit: 1
+                    });
+                    if (parentEntries.items.length > 0) {
+                        parentPageLink = makeLink(parentEntries.items[0].sys.id);
+                    }
+                } catch (err) {
+                    console.warn(`   ⚠️ Could not resolve parent page (ID: ${item.parentId})`);
+                }
+            }
 
             // 4. Process Components (Sections)
             const sectionEntries = [];
+            let sectionNavigationEntry = null;
+            let overwriteParentCtaEntry = null;
+
             const getPageSegment = (itemId) => {
                 if (!rawFileContent) return "";
                 const pIdIdx = rawFileContent.indexOf(`"id": ${itemId}`);
@@ -66,8 +70,8 @@ export async function migrateSt(
             };
             const pageSegment = getPageSegment(item.id);
 
-            // Detect component fields (bannerMediaRight, sectionNavigation, servicesOverviewContent)
-            const componentFields = ['bannerMediaRight', 'bannerMediaCenter', 'bannerSlim', 'sectionNavigation', 'servicesOverviewContent'];
+            // Detect component fields
+            const componentFields = ['bannerMediaRight', 'bannerMediaCenter', 'bannerSlim', 'sectionNavigation', 'servicesOverviewContent', 'overwriteParentCta'];
 
             for (const fieldKey of componentFields) {
                 const components = item[fieldKey];
@@ -81,21 +85,24 @@ export async function migrateSt(
                     const block = components[blockId];
                     if (!block.enabled) continue;
 
+                    const blockType = block.type || fieldKey;
+                    const isSecNav = ["siteSection", "sectionNavigation"].includes(blockType) || fieldKey === "sectionNavigation";
+                    const isOverwriteCta = blockType === "overwriteParentCta" || fieldKey === "overwriteParentCta";
+
                     const bIdx = fieldSegment.indexOf(`"${blockId}":`);
                     const nextBId = orderedIds[orderedIds.indexOf(blockId) + 1];
                     const nextBIdx = nextBId ? fieldSegment.indexOf(`"${nextBId}":`) : fieldSegment.length;
                     const blockSegment = fieldSegment.substring(bIdx, nextBIdx);
 
-                    const type = block.type || fieldKey;
                     const fields = block.fields || {};
-                    const config = COMPONENTS[type] || COMPONENTS[fieldKey];
+                    const config = COMPONENTS[blockType] || COMPONENTS[fieldKey];
 
                     if (!config) {
-                        console.warn(`   ℹ️ skipping block: "${type}" (no mapping)`);
+                        console.warn(`   ℹ️ skipping block: "${blockType}" (no mapping)`);
                         continue;
                     }
 
-                    console.log(`   ✅ Detected "${type}" (ID: ${blockId})`);
+                    console.log(`   ✅ Detected "${blockType}" (ID: ${blockId})`);
 
                     try {
                         let entry;
@@ -122,7 +129,7 @@ export async function migrateSt(
                                     heading: fields.headingSection || fields.heading || "",
                                     body: fields.body || fields.bodyRedactorRestricted || "",
                                     label: fields.label || fields.ctaLinkText || "",
-                                    variation: type
+                                    variation: blockType
                                 },
                                 assetMap,
                                 summary
@@ -130,39 +137,21 @@ export async function migrateSt(
                         }
 
                         if (entry) {
-                            if (Array.isArray(entry)) {
-                                sectionEntries.push(...entry.map(e => makeLink(e.sys.id)));
+                            if (isSecNav) {
+                                sectionNavigationEntry = entry;
+                            } else if (isOverwriteCta) {
+                                overwriteParentCtaEntry = entry;
                             } else {
-                                sectionEntries.push(makeLink(entry.sys.id));
+                                // standard sections
+                                if (Array.isArray(entry)) {
+                                    sectionEntries.push(...entry.map(e => makeLink(e.sys.id)));
+                                } else {
+                                    sectionEntries.push(makeLink(entry.sys.id));
+                                }
                             }
                         }
                     } catch (err) {
-                        console.error(`   🛑 Error processing block ${type} (${blockId}):`, err.message);
-                    }
-                }
-            }
-
-            // Process Company Quotes
-            const quoteReferences = [];
-            if (item.companyQuotes && Array.isArray(item.companyQuotes)) {
-                for (const qId of item.companyQuotes) {
-                    if (!qId || !env) {
-                        if (!env && qId) quoteReferences.push(makeLink(`dry-run-quote-${qId}`));
-                        continue;
-                    }
-                    try {
-                        const qEntries = await env.getEntries({
-                            content_type: "quoteItem",
-                            "fields.entryId": String(qId),
-                            limit: 1
-                        });
-                        if (qEntries.items.length > 0) {
-                            quoteReferences.push(makeLink(qEntries.items[0].sys.id));
-                        } else {
-                            console.warn(`   ⚠ Quote with entryId ${qId} not found in Contentful.`);
-                        }
-                    } catch (err) {
-                        console.warn(`   ⚠ Error finding quote ${qId}`);
+                        console.error(`   🛑 Error processing block ${blockType} (${blockId}):`, err.message);
                     }
                 }
             }
@@ -171,19 +160,29 @@ export async function migrateSt(
             const mainFields = {
                 entryId: { [LOCALE]: String(item.id) },
                 title: { [LOCALE]: item.title || "" },
-                slug: { [LOCALE]: item.uri || item.slug || "" },
-                shortDescription: { [LOCALE]: shortDescription },
-                introHeading: { [LOCALE]: introHeading },
-                paragraphFontSize: { [LOCALE]: item.paragraphFontSize || "13px" }
+                slug: { [LOCALE]: item.uri || item.slug || "" }
             };
-            if (introBody) mainFields.introBody = { [LOCALE]: introBody };
-            if (settingsEntry) mainFields.pageSettings = { [LOCALE]: makeLink(settingsEntry.sys.id) };
-            if (sectionEntries.length > 0) mainFields.sections = { [LOCALE]: sectionEntries };
-            if (quoteReferences.length > 0) mainFields.companyQuotes = { [LOCALE]: quoteReferences };
+
+            // Mapped according to the confirmed schema
+            if (parentPageLink) {
+                mainFields.parentPage = { [LOCALE]: parentPageLink };
+            }
+            if (seoEntry) {
+                mainFields.seo = { [LOCALE]: makeLink(seoEntry.sys.id) };
+            }
+            if (sectionNavigationEntry) {
+                mainFields.sectionNavigation = { [LOCALE]: makeLink(Array.isArray(sectionNavigationEntry) ? sectionNavigationEntry[0].sys.id : sectionNavigationEntry.sys.id) };
+            }
+            if (overwriteParentCtaEntry) {
+                mainFields.overwriteParentCta = { [LOCALE]: makeLink(Array.isArray(overwriteParentCtaEntry) ? overwriteParentCtaEntry[0].sys.id : overwriteParentCtaEntry.sys.id) };
+            }
+            if (sectionEntries.length > 0) {
+                mainFields.sections = { [LOCALE]: sectionEntries };
+            }
 
             const mainEntry = await upsertEntry(
                 env,
-                "newSt", // Using newSt as Content Type
+                "newSt",
                 `st-${item.id}`,
                 mainFields,
                 shouldPublish
