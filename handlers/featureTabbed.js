@@ -136,12 +136,10 @@ export async function createOrUpdateFeatureTabbed(
   if (titleEntry)
     fields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
   if (blockData.bodyRedactorRestricted || blockData.body) {
-    fields.description = {
-      [LOCALE]: await convertHtmlToRichText(
-        env,
-        blockData.bodyRedactorRestricted || blockData.body || "",
-      ),
-    };
+    const rawHtml = blockData.bodyRedactorRestricted || blockData.body || "";
+    // Strip HTML tags for Text field
+    const plainText = rawHtml.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
+    fields.description = { [LOCALE]: plainText };
   }
   if (assetEntry) fields.addAsset = { [LOCALE]: makeLink(assetEntry.sys.id) };
   if (tabRefs.length) fields.addFeatureTabbedItem = { [LOCALE]: tabRefs };
