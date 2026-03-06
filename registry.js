@@ -76,7 +76,7 @@ export const COMPONENTS = {
   fullWidthAsset: { handler: createOrUpdateMediaBlock },
   officeLocations: { handler: createOrUpdateOfficeLocations },
   calloutCards: { handler: createOrUpdateCalloutCards },
-  mediaEmbed: { handler: createOrUpdateMediaBlock },
+  mediaEmbed: { handler: createOrUpdateMediaEmbeds },
   mediaEmbeds: { handler: createOrUpdateMediaBlock },
   siteSection: { handler: createOrUpdateSectionNavigation },
   overwriteParentCta: { handler: createOrUpdateOverwriteParentCta },
