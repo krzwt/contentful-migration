@@ -279,13 +279,26 @@ export async function migratePodcasts(
 
                     if (!conceptId) {
                         const cat = podcastCategoriesData.find(c => String(c.id) === String(catId));
-                        if (cat && cat.slug) {
-                            // Convert kebab-case (ransomware-attacks) to camelCase (ransomwareAttacks)
-                            conceptId = cat.slug.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+                        if (cat) {
+                            // If it's a known failing one or has hyphens, convert to camelCase
+                            if (cat.slug && cat.slug.includes("-")) {
+                                conceptId = cat.slug.split("-").map((word, index) =>
+                                    index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+                                ).join("");
+                            } else {
+                                // For single words like "lulzsec", try matching the Title casing if possible
+                                if (cat.title === "LulzSec") conceptId = "lulzSec";
+                                else conceptId = cat.slug;
+                            }
                         }
                     }
 
-                    if (conceptId) conceptsSet.add(conceptId);
+                    if (conceptId) {
+                        conceptsSet.add(conceptId);
+                    } else {
+                        const catName = getCategoryName(catId);
+                        console.warn(`   ⚠️ No Taxonomy mapping for podcastCategory: ${catName || "Unknown"} (ID: ${catId})`);
+                    }
                 }
             }
 
@@ -303,7 +316,7 @@ export async function migratePodcasts(
             // 4. Upsert the Podcast Entry
             // -------------------------------------------------------
             const contentfulId = `podcast-${item.id}`;
-            await upsertEntry(
+            const upsertedEntry = await upsertEntry(
                 env,
                 "podcastsCpt",
                 contentfulId,
@@ -312,9 +325,13 @@ export async function migratePodcasts(
                 finalMetadata
             );
 
-            console.log(
-                `✅ Podcast "${item.title}" migrated (${shouldPublish ? "Published" : "Draft"}).`
-            );
+            if (upsertedEntry) {
+                console.log(
+                    `✅ Podcast "${item.title}" migrated (${shouldPublish ? "Published" : "Draft"}).`
+                );
+            } else {
+                console.error(`❌ Failed to migrate podcast "${item.title}"`);
+            }
         } catch (err) {
             console.error(
                 `❌ Error migrating podcast "${item.title}":`,

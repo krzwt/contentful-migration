@@ -14,7 +14,7 @@ export async function createOrUpdateMediaEmbeds(env, blockData) {
 
     const fields = {
         blockId: { [LOCALE]: String(id) },
-        blockName: { [LOCALE]: blockData.blockName || (cleanUrl ? `Embed: ${cleanUrl}` : `Media Embed ${id}`) },
+        blockName: { [LOCALE]: blockData.blockName || "Embedded Tour" },
         sourceUrl: { [LOCALE]: cleanUrl },
         queryParameters: { [LOCALE]: blockData.queryParameters || "" }
     };

@@ -11,6 +11,7 @@ import { migrateQuotes } from "./handlers/quoteHandler.js";
 import { migrateResources } from "./handlers/resourceHandler.js";
 import { migrateGlobalReachMap } from "./handlers/newGlobalReachMap.js";
 import { migratePodcasts } from "./handlers/podcastHandler.js";
+import { migrateStBtu } from "./handlers/newStBtu.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import {
@@ -109,7 +110,12 @@ const DATA_SOURCES = [
     file: "./data/newPodcasts.json",
     label: "Podcasts CPT",
     isPodcasts: true
-  }
+  },
+  // {
+  //   file: "./data/new-S&T-BTU.json",
+  //   label: "S&T BTU",
+  //   isStBtu: true
+  // }
 ];
 
 async function run() {
@@ -547,6 +553,18 @@ async function run() {
         targetIndices,
         totalPages,
         summary,
+      );
+    }
+
+    if (source.isStBtu) {
+      await migrateStBtu(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent
       );
     }
   }

@@ -13,6 +13,10 @@ export async function genericComponentHandler(env, block, mapping, assetMap = nu
 
   // 🔍 Safe query (blockId MUST be Short text)
   let existing = { items: [] };
+  if (!env) {
+    console.log(`   [DRY RUN] Would upsert ${mapping.contentType}: ${blockIdValue}`);
+    return `dry-run-${blockIdValue}`;
+  }
   try {
     existing = await env.getEntries({
       content_type: mapping.contentType,
@@ -51,7 +55,7 @@ export async function genericComponentHandler(env, block, mapping, assetMap = nu
         },
         timestamp: Date.now()
       })
-    }).catch(() => {});
+    }).catch(() => { });
   }
   // #endregion
 
@@ -100,7 +104,7 @@ export async function genericComponentHandler(env, block, mapping, assetMap = nu
             },
             timestamp: Date.now()
           })
-        }).catch(() => {});
+        }).catch(() => { });
         // #endregion
 
         if (titleEntry && titleEntry.sys && titleEntry.sys.id) {
@@ -283,7 +287,7 @@ export async function genericComponentHandler(env, block, mapping, assetMap = nu
         },
         timestamp: Date.now()
       })
-    }).catch(() => {});
+    }).catch(() => { });
   }
   // #endregion
 

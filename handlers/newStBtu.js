@@ -1,0 +1,193 @@
+import { LOCALE, getOrCreateSeo, safeId, publishPage } from "./pageHandler.js";
+import { upsertEntry, makeLink } from "../utils/contentfulHelpers.js";
+import { COMPONENTS } from "../registry.js";
+import { genericComponentHandler } from "./genericComponent.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
+
+/**
+ * Main function to migrate S&T BTU entries
+ */
+export async function migrateStBtu(
+    env,
+    data,
+    assetMap = null,
+    targetIndices = null,
+    totalPages = null,
+    summary = null,
+    rawFileContent = null
+) {
+    const total = targetIndices
+        ? targetIndices[targetIndices.length - 1] + 1
+        : totalPages || data.length;
+    console.log(`\n📄 Starting S&T BTU Migration (${data.length} entries)...`);
+
+    for (let i = 0; i < data.length; i++) {
+        const item = data[i];
+        const pageNum = targetIndices ? targetIndices[i] + 1 : i + 1;
+        const progress = `[${pageNum} / ${total}]`;
+        const shouldPublish = item.status === "live";
+
+        console.log(`\n➡️ ${progress} S&T BTU: ${item.title} (ID: ${item.id})`);
+
+        try {
+            // 1. Create stFields entry
+            const stFieldsData = {
+                shortDescription: { [LOCALE]: item.body200 || "" },
+                introHeading: { [LOCALE]: item.headingSection || item.title || "" },
+                introBody: { [LOCALE]: item.bodyRedactorRestricted || "" }
+            };
+            const stFieldsEntry = await upsertEntry(
+                env,
+                "stFields",
+                `stf-${item.id}`,
+                stFieldsData,
+                shouldPublish
+            );
+
+            // 2. Create SEO
+            const seoEntry = await getOrCreateSeo(env, item, assetMap);
+
+            // 3. Create pageSettingsSt entry
+            const settingsId = safeId("settings-st", item.uri || item.slug);
+            const settingsFields = {
+                pageSetting: { [LOCALE]: `Settings: ${item.title}` },
+                paragraphFontSize: { [LOCALE]: item.paragraphFontSize || "13px" }
+            };
+            if (stFieldsEntry) settingsFields.content = { [LOCALE]: makeLink(stFieldsEntry.sys.id) };
+            if (seoEntry) settingsFields.seo = { [LOCALE]: makeLink(seoEntry.sys.id) };
+
+            // TODO: parentPage if needed (though newStBtu uses newSt as parent)
+
+            const settingsEntry = await upsertEntry(
+                env,
+                "pageSettingsSt",
+                settingsId,
+                settingsFields,
+                shouldPublish
+            );
+
+            // 4. Process Components (Sections)
+            const sectionEntries = [];
+            const getPageSegment = (itemId) => {
+                if (!rawFileContent) return "";
+                const pIdIdx = rawFileContent.indexOf(`"id": ${itemId}`);
+                if (pIdIdx === -1) return "";
+                const nextPIdx = rawFileContent.indexOf('"id":', pIdIdx + 10);
+                return rawFileContent.substring(pIdIdx, nextPIdx === -1 ? undefined : nextPIdx);
+            };
+            const pageSegment = getPageSegment(item.id);
+
+            // Detect component fields (slimBanner, servicesSideNavContent)
+            const componentFields = ['slimBanner', 'servicesSideNavContent'];
+
+            for (const fieldKey of componentFields) {
+                const components = item[fieldKey];
+                if (!components || typeof components !== 'object') continue;
+
+                const fIdx = pageSegment.indexOf(`"${fieldKey}":`);
+                const fieldSegment = fIdx !== -1 ? pageSegment.substring(fIdx) : pageSegment;
+                const orderedIds = getOrderedKeys(fieldSegment, components);
+
+                for (const blockId of orderedIds) {
+                    const block = components[blockId];
+                    if (!block.enabled) continue;
+
+                    const bIdx = fieldSegment.indexOf(`"${blockId}":`);
+                    const nextBId = orderedIds[orderedIds.indexOf(blockId) + 1];
+                    const nextBIdx = nextBId ? fieldSegment.indexOf(`"${nextBId}":`) : fieldSegment.length;
+                    const blockSegment = fieldSegment.substring(bIdx, nextBIdx);
+
+                    const type = block.type || fieldKey;
+                    const fields = block.fields || {};
+                    const config = COMPONENTS[type];
+
+                    if (!config) {
+                        console.warn(`   ℹ️ skipping block: "${type}" (no mapping)`);
+                        continue;
+                    }
+
+                    console.log(`   ✅ Detected "${type}" (ID: ${blockId})`);
+
+                    try {
+                        let entry;
+                        if (config.handler === genericComponentHandler) {
+                            const entryId = await genericComponentHandler(
+                                env,
+                                { id: blockId, ...fields },
+                                config.mapping,
+                                assetMap,
+                                summary
+                            );
+                            if (entryId && env) {
+                                entry = await env.getEntry(entryId);
+                            } else if (entryId) {
+                                entry = { sys: { id: entryId } };
+                            }
+                        } else {
+                            entry = await config.handler(
+                                env,
+                                {
+                                    blockId,
+                                    blockSegment,
+                                    ...fields,
+                                    heading: fields.headingSection || fields.heading || "",
+                                    body: fields.body || fields.bodyRedactorRestricted || "",
+                                    label: fields.label || fields.ctaLinkText || "",
+                                    variation: type
+                                },
+                                assetMap,
+                                summary
+                            );
+                        }
+
+                        if (entry) {
+                            if (Array.isArray(entry)) {
+                                sectionEntries.push(...entry.map(e => makeLink(e.sys.id)));
+                            } else {
+                                sectionEntries.push(makeLink(entry.sys.id));
+                            }
+                        }
+                    } catch (err) {
+                        console.error(`   🛑 Error processing block ${type} (${blockId}):`, err.message);
+                    }
+                }
+            }
+
+            // 5. Create Main page (newStBtu)
+            const mainFields = {
+                entryId: { [LOCALE]: String(item.id) },
+                title: { [LOCALE]: item.title || "" },
+                slug: { [LOCALE]: item.uri || item.slug || "" }
+            };
+            if (settingsEntry) mainFields.pageSettings = { [LOCALE]: makeLink(settingsEntry.sys.id) };
+            if (sectionEntries.length > 0) mainFields.sections = { [LOCALE]: sectionEntries };
+
+            // Taxonomy concepts
+            const metadata = { concepts: [] };
+            if (item.courseCategories) {
+                // Mapping for professionalServices concept scheme
+                // (Assuming IDs map to concept IDs - might need a mapping file)
+                // For now just logged
+                console.log(`   🏷️  Course Categories: ${item.courseCategories.join(", ")}`);
+            }
+
+            const mainEntry = await upsertEntry(
+                env,
+                "newStBtu",
+                `stbtu-${item.id}`,
+                mainFields,
+                shouldPublish,
+                null // We don't have concept mapping yet
+            );
+
+            if (mainEntry && shouldPublish) {
+                await publishPage(env, mainEntry, item);
+            }
+
+            console.log(`✅ S&T BTU "${item.title}" migrated.`);
+
+        } catch (err) {
+            console.error(`❌ Error migrating S&T BTU "${item.title}":`, err.message);
+        }
+    }
+}

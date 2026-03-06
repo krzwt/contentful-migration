@@ -9,6 +9,8 @@ const parentPageCache = new Map();
 
 // Cache: contentType → sections field name ("sections" or "contentComponent")
 const sectionsFieldCache = new Map();
+// Cache: contentType → settings field name ("settings" or "pageSettings")
+const settingsFieldCache = new Map();
 
 /**
  * Auto-detect whether a content type uses "sections" or "contentComponent".
@@ -25,6 +27,23 @@ async function detectSectionsField(env, contentType) {
     return name;
   } catch {
     return "sections";
+  }
+}
+
+/**
+ * Auto-detect whether a content type uses "settings" or "pageSettings".
+ */
+async function detectSettingsField(env, contentType) {
+  if (settingsFieldCache.has(contentType)) return settingsFieldCache.get(contentType);
+  try {
+    const ct = await env.getContentType(contentType);
+    const fieldIds = ct.fields.map(f => f.id);
+    const name = fieldIds.includes("pageSettings") ? "pageSettings" : "settings";
+    settingsFieldCache.set(contentType, name);
+    console.log(`   🔍 Detected settings field for "${contentType}": ${name}`);
+    return name;
+  } catch {
+    return "settings";
   }
 }
 
@@ -337,9 +356,10 @@ export async function getOrCreatePage(env, pageData, pageContentType = DEFAULT_P
     // Always call getOrCreatePageSettings so it can update existing entries (e.g. name changes)
     const settingsEntry = await getOrCreatePageSettings(env, pageData, allPages, pageContentType, assetMap);
     if (settingsEntry) {
-      const currentSettingsId = page.fields.settings?.[LOCALE]?.sys?.id;
+      const settingsField = await detectSettingsField(env, pageContentType);
+      const currentSettingsId = page.fields[settingsField]?.[LOCALE]?.sys?.id;
       if (currentSettingsId !== settingsEntry.sys.id) {
-        page.fields.settings = {
+        page.fields[settingsField] = {
           [LOCALE]: {
             sys: { type: "Link", linkType: "Entry", id: settingsEntry.sys.id }
           }
@@ -373,6 +393,10 @@ export async function publishPage(env, page, pageData) {
   const title = pageData.title;
 
   try {
+    if (!env) {
+      console.log(`   [DRY RUN] Would publish page: ${title}`);
+      return page;
+    }
     // Re-fetch to get latest version
     page = await env.getEntry(page.sys.id);
 
