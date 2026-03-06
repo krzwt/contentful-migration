@@ -89,7 +89,7 @@ export function parseInlineNodes(node, activeMarks = []) {
       } else if (nodeName === "BR") {
         nodes.push({
           nodeType: "text",
-          value: "<br>",
+          value: "\n",
           marks: [...activeMarks],
           data: {}
         });

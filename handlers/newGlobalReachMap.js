@@ -31,11 +31,11 @@ export async function migrateGlobalReachMap(env, data, summary = null) {
 
         try {
             const fields = {
-                entryId: { [LOCALE]: String(item.id) },
-                title: { [LOCALE]: item.title || `Map Item ${item.id}` },
-                globalReachType: { [LOCALE]: (item.globalReachType ? item.globalReachType.charAt(0).toUpperCase() + item.globalReachType.slice(1) : "") },
-                latitude: { [LOCALE]: String(item.latitude || "") },
-                longitude: { [LOCALE]: String(item.longitude || "") }
+                entryId: { [LOCALE]: String(item.id).trim() },
+                title: { [LOCALE]: (item.title || `Map Item ${item.id}`).trim() },
+                globalReachType: { [LOCALE]: (item.globalReachType ? item.globalReachType.charAt(0).toUpperCase() + item.globalReachType.slice(1).toLowerCase() : "") },
+                latitude: { [LOCALE]: String(item.latitude || "").trim() },
+                longitude: { [LOCALE]: String(item.longitude || "").trim() }
             };
 
             // Process tooltip (HTML to Rich Text)

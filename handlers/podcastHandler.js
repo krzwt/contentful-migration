@@ -9,7 +9,10 @@ import { convertHtmlToRichText } from "../utils/richText.js";
  * Load taxonomy mapping from external file
  */
 const MAPPING_FILE = "./data/taxonomy-mapping.json";
+const PODCAST_CATS_FILE = "./data/taxonomy-podcastCategories.json";
 let podcastTaxonomyMap = {};
+let podcastCategoriesData = [];
+
 if (fs.existsSync(MAPPING_FILE)) {
     try {
         podcastTaxonomyMap = JSON.parse(fs.readFileSync(MAPPING_FILE, "utf-8"));
@@ -17,13 +20,15 @@ if (fs.existsSync(MAPPING_FILE)) {
     } catch (err) {
         console.warn(`⚠️ Error loading taxonomy mapping: ${err.message}`);
     }
-} else {
-    // Fallback if file missing
-    podcastTaxonomyMap = {
-        "85850": "cybersecurity",
-        "85854": "penetrationTesting",
-        "86649": "aliceAndBob"
-    };
+}
+
+if (fs.existsSync(PODCAST_CATS_FILE)) {
+    try {
+        podcastCategoriesData = JSON.parse(fs.readFileSync(PODCAST_CATS_FILE, "utf-8"));
+        console.log(`✅ Loaded ${podcastCategoriesData.length} podcast categories for auto-mapping.`);
+    } catch (err) {
+        console.warn(`⚠️ Error loading podcast categories: ${err.message}`);
+    }
 }
 
 
@@ -66,9 +71,10 @@ export async function migratePodcasts(
             let bannerVideoId = null;
             let bannerPeople = []; // authorsHosts
 
+            let activeBanner = null;
             if (item.mainBannerResources) {
                 const bannerBlocks = Object.values(item.mainBannerResources);
-                const activeBanner = bannerBlocks.find((b) => b.enabled);
+                activeBanner = bannerBlocks.find((b) => b.enabled);
                 if (activeBanner && activeBanner.fields) {
                     const bf = activeBanner.fields;
                     bannerHeading = bf.heading || item.title;
@@ -90,10 +96,11 @@ export async function migratePodcasts(
             // -------------------------------------------------------
             const fields = {
                 entryId: { [LOCALE]: String(item.id) },
-                title: { [LOCALE]: item.title || "" },
-                slug: { [LOCALE]: item.uri || item.slug || "" },
-                bannerHeading: { [LOCALE]: bannerHeading || item.title || "Untitled" },
+                title: { [LOCALE]: (item.title || "").trim() },
+                slug: { [LOCALE]: (item.uri || item.slug || "").trim() },
+                bannerHeading: { [LOCALE]: (bannerHeading || item.title || "Untitled").trim() },
                 postDate: { [LOCALE]: item.postDate ? new Date(item.postDate).toISOString() : null },
+                useLandscapeImageOrVideo: { [LOCALE]: activeBanner?.fields?.switch || false },
             };
 
             if (item.postDate) {
@@ -107,31 +114,32 @@ export async function migratePodcasts(
                 };
             }
 
-            // 2.2 Add Asset (banner image/video wrapper → `asset` content type entry)
-            const assetSourceId = bannerVideoId || bannerImageId;
-            if (assetSourceId) {
-                const assetInfo = assetMap && assetMap.get(assetSourceId);
-                if (assetInfo) {
-                    const assetWrapper = await upsertAssetWrapper(
-                        env,
-                        `podcast-banner-${item.id}`,
-                        assetInfo.id,
-                        assetInfo.mimeType,
-                        assetInfo.wistiaUrl
-                    );
-                    if (assetWrapper) {
-                        fields.addAsset = {
-                            [LOCALE]: makeLink(assetWrapper.sys.id),
-                        };
+            // 2.2 Background Image (Required - map-1323786 logic)
+            if (bannerImageId && assetMap) {
+                const assetInfo = assetMap.get(bannerImageId);
+                if (assetInfo && assetInfo.id) {
+                    fields.backgroundImage = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } } };
+                }
+            }
+            // Fallback if missing (required in schema)
+            if (!fields.backgroundImage) {
+                const fallbackId = process.env.DEFAULT_SEO_IMAGE_ID || "asset-45209";
+                fields.backgroundImage = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: fallbackId.startsWith("asset-") ? fallbackId : `asset-${fallbackId}` } } };
+            }
+
+            // 2.3 Landscape Video
+            if (bannerVideoId && assetMap) {
+                const assetInfo = assetMap.get(bannerVideoId);
+                if (assetInfo && assetInfo.id) {
+                    if (assetInfo.wistiaUrl) {
+                        fields.landscapeVideoUrl = { [LOCALE]: assetInfo.wistiaUrl };
+                    } else {
+                        fields.landscapeVideo = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } } };
                     }
-                } else {
-                    console.warn(
-                        `   ⚠️ Banner asset ${assetSourceId} not found in map, skipping addAsset.`
-                    );
                 }
             }
 
-            // 2.3 Authors / Hosts (from banner people → peopleCpt references)
+            // 2.4 Authors / Hosts (from banner people → peopleCpt references)
             if (bannerPeople.length > 0) {
                 fields.authorsHosts = {
                     [LOCALE]: bannerPeople.map((pid) => makeLink(`person-${pid}`)),
@@ -141,7 +149,7 @@ export async function migratePodcasts(
                 );
             }
 
-            // 2.4 Podcasts (audio asset — direct Asset link)
+            // 2.5 Podcasts (audio asset — direct Asset link)
             if (item.podcasts && item.podcasts[0]) {
                 const craftAudioId = String(item.podcasts[0]);
                 const audioInfo = assetMap && assetMap.get(craftAudioId);
@@ -152,82 +160,58 @@ export async function migratePodcasts(
                         },
                     };
                     console.log(`   🎵 Audio asset linked: ${audioInfo.id}`);
-                } else {
-                    console.warn(
-                        `   ⚠️ Audio asset ${craftAudioId} not found in map, skipping podcasts field.`
-                    );
                 }
             }
 
-            // 2.5 Podcast Duration
+            // 2.6 Podcast Duration
             if (item.podcastDuration) {
-                fields.podcastDuration = { [LOCALE]: item.podcastDuration };
+                fields.podcastDuration = { [LOCALE]: parseInt(item.podcastDuration) || null };
             }
 
-            // 2.6 Guests (top-level people → peopleCpt references)
+            // 2.7 Guests (top-level people → peopleCpt references)
             if (item.people && item.people.length > 0) {
                 fields.guests = {
                     [LOCALE]: item.people.map((pid) => makeLink(`person-${pid}`)),
                 };
-                console.log(
-                    `   🎤 Guests: ${item.people.map((p) => `person-${p}`).join(", ")}`
-                );
             }
 
-            // 2.7 Podcast Description (RichText)
+            // 2.8 Podcast Description (RichText)
             if (item.podcastDescription) {
                 fields.podcastDescription = {
                     [LOCALE]: await convertHtmlToRichText(env, item.podcastDescription),
                 };
             }
 
-            // 2.8 Text Content (RichText)
+            // 2.9 Text Content (RichText)
             if (item.textContent) {
                 fields.textContent = {
                     [LOCALE]: await convertHtmlToRichText(env, item.textContent),
                 };
             }
 
-            // 2.9 Podcast Image (direct Asset link — image mime type)
+            // 2.10 Podcast Image (direct Asset link - used as thumbnail)
             if (item.podcastImage && item.podcastImage[0]) {
                 const craftImageId = String(item.podcastImage[0]);
                 const imageInfo = assetMap && assetMap.get(craftImageId);
                 if (imageInfo) {
-                    fields.podcastImage = {
-                        [LOCALE]: {
-                            sys: { type: "Link", linkType: "Asset", id: imageInfo.id },
-                        },
-                    };
-                    console.log(`   🖼️ Podcast image linked: ${imageInfo.id}`);
-                } else {
-                    console.warn(
-                        `   ⚠️ Image asset ${craftImageId} not found in map, skipping podcastImage.`
-                    );
+                    fields.podcastImage = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: imageInfo.id } } };
                 }
             }
 
-            // 2.10 Tags
+            // 2.11 Tags
             if (item.tags && item.tags.length > 0) {
                 const tagNames = getTagNames(item.tags);
                 const tagsString = tagNames.join(", ");
-                console.log(
-                    `   🏷️ Tags: "${tagsString.substring(0, 50)}..."`
-                );
-
                 const tagsEntry = await upsertEntry(
-                    env,
-                    "tags",
-                    `tags-podcast-${item.id}`,
-                    { tags: { [LOCALE]: tagsString } },
-                    shouldPublish
+                    env, "tags", `tags-podcast-${item.id}`,
+                    { tags: { [LOCALE]: tagsString } }, shouldPublish
                 );
-
                 if (tagsEntry) {
                     fields.tags = { [LOCALE]: makeLink(tagsEntry.sys.id) };
                 }
             }
 
-            // 2.11 SEO
+            // 2.12 SEO
             const seoEntry = await getOrCreateSeo(env, item, assetMap);
             if (seoEntry) {
                 fields.seo = { [LOCALE]: makeLink(seoEntry.sys.id) };
@@ -276,50 +260,44 @@ export async function migratePodcasts(
                 "Retail & Hospitality": "retailHospitality",
             };
 
+            // 3.1 & 3.2 Combine all categories and deduplicate by Concept ID
+            const conceptsSet = new Set();
+
+            // Collect from General Categories
             if (item.generalCategories) {
                 for (const catId of item.generalCategories) {
                     const catName = getCategoryName(catId);
                     const conceptId = conceptMapping[catName];
-                    if (conceptId) {
-                        metadata.concepts.push({
-                            sys: {
-                                type: "Link",
-                                linkType: "TaxonomyConcept",
-                                id: conceptId,
-                            },
-                        });
-                    }
+                    if (conceptId) conceptsSet.add(conceptId);
                 }
             }
 
-            // 3.2 Podcast Categories → podcastCategories taxonomy concepts
-            // These are from the podcastCategories taxonomy scheme
+            // Collect from Podcast Categories
             if (item.podcastCategories && item.podcastCategories.length > 0) {
                 for (const catId of item.podcastCategories) {
-                    const conceptId = podcastTaxonomyMap[String(catId)];
+                    let conceptId = podcastTaxonomyMap[String(catId)];
 
-                    if (conceptId) {
-                        metadata.concepts.push({
-                            sys: {
-                                type: "Link",
-                                linkType: "TaxonomyConcept",
-                                id: conceptId,
-                            },
-                        });
-                    } else {
-                        const catName = getCategoryName(catId);
-                        console.warn(
-                            `   ⚠️  No Taxonomy mapping for category: ${catName || "Unknown"} (ID: ${catId}). ` +
-                            `Add it to data/taxonomy-mapping.json`
-                        );
+                    if (!conceptId) {
+                        const cat = podcastCategoriesData.find(c => String(c.id) === String(catId));
+                        if (cat && cat.slug) {
+                            // Convert kebab-case (ransomware-attacks) to camelCase (ransomwareAttacks)
+                            conceptId = cat.slug.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+                        }
                     }
+
+                    if (conceptId) conceptsSet.add(conceptId);
                 }
             }
 
-            const finalMetadata =
-                metadata.concepts.length === 0 && metadata.tags.length === 0
-                    ? null
-                    : metadata;
+            if (conceptsSet.size > 0) {
+                metadata.concepts = Array.from(conceptsSet).map(id => ({
+                    sys: { type: "Link", linkType: "TaxonomyConcept", id }
+                }));
+            }
+
+            const finalMetadata = metadata.concepts.length === 0 && metadata.tags.length === 0
+                ? null
+                : metadata;
 
             // -------------------------------------------------------
             // 4. Upsert the Podcast Entry
