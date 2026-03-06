@@ -12,6 +12,7 @@ import { migrateResources } from "./handlers/resourceHandler.js";
 import { migrateGlobalReachMap } from "./handlers/newGlobalReachMap.js";
 import { migratePodcasts } from "./handlers/podcastHandler.js";
 import { migrateStBtu } from "./handlers/newStBtu.js";
+import { migrateSt } from "./handlers/newSt.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import {
@@ -106,15 +107,20 @@ const DATA_SOURCES = [
   //   label: "Global Reach Map",
   //   isGlobalReachMap: true
   // }
+  // {
+  //   file: "./data/newPodcasts.json",
+  //   label: "Podcasts CPT",
+  //   isPodcasts: true
+  // },
   {
-    file: "./data/newPodcasts.json",
-    label: "Podcasts CPT",
-    isPodcasts: true
+    file: "./data/new-S&T-BTU.json",
+    label: "S&T BTU",
+    isStBtu: true
   },
   // {
-  //   file: "./data/new-S&T-BTU.json",
-  //   label: "S&T BTU",
-  //   isStBtu: true
+  //   file: "./data/new-S&T.json",
+  //   label: "S&T",
+  //   isSt: true
   // }
 ];
 
@@ -558,6 +564,18 @@ async function run() {
 
     if (source.isStBtu) {
       await migrateStBtu(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent
+      );
+    }
+
+    if (source.isSt) {
+      await migrateSt(
         env,
         batchData,
         contentfulAssetMap,

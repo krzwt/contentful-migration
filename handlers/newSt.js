@@ -6,9 +6,9 @@ import { getOrderedKeys } from "../utils/jsonOrder.js";
 import { convertHtmlToRichText } from "../utils/richText.js";
 
 /**
- * Main function to migrate S&T BTU entries
+ * Main function to migrate S&T entries
  */
-export async function migrateStBtu(
+export async function migrateSt(
     env,
     data,
     assetMap = null,
@@ -20,7 +20,7 @@ export async function migrateStBtu(
     const total = targetIndices
         ? targetIndices[targetIndices.length - 1] + 1
         : totalPages || data.length;
-    console.log(`\n📄 Starting S&T BTU Migration (${data.length} entries)...`);
+    console.log(`\n📄 Starting S&T Migration (${data.length} entries)...`);
 
     for (let i = 0; i < data.length; i++) {
         const item = data[i];
@@ -28,7 +28,7 @@ export async function migrateStBtu(
         const progress = `[${pageNum} / ${total}]`;
         const shouldPublish = item.status === "live";
 
-        console.log(`\n➡️ ${progress} S&T BTU: ${item.title} (ID: ${item.id})`);
+        console.log(`\n➡️ ${progress} S&T: ${item.title} (ID: ${item.id})`);
 
         try {
             // 1. Process Text Fields directly
@@ -46,8 +46,6 @@ export async function migrateStBtu(
                 pageSetting: { [LOCALE]: `Settings: ${item.title}` }
             };
             if (seoEntry) settingsFields.seo = { [LOCALE]: makeLink(seoEntry.sys.id) };
-
-            // TODO: parentPage if needed (though newStBtu uses newSt as parent)
 
             const settingsEntry = await upsertEntry(
                 env,
@@ -68,8 +66,8 @@ export async function migrateStBtu(
             };
             const pageSegment = getPageSegment(item.id);
 
-            // Detect component fields (slimBanner, servicesSideNavContent)
-            const componentFields = ['slimBanner', 'servicesSideNavContent'];
+            // Detect component fields (bannerMediaRight, sectionNavigation, servicesOverviewContent)
+            const componentFields = ['bannerMediaRight', 'bannerMediaCenter', 'bannerSlim', 'sectionNavigation', 'servicesOverviewContent'];
 
             for (const fieldKey of componentFields) {
                 const components = item[fieldKey];
@@ -90,7 +88,7 @@ export async function migrateStBtu(
 
                     const type = block.type || fieldKey;
                     const fields = block.fields || {};
-                    const config = COMPONENTS[type];
+                    const config = COMPONENTS[type] || COMPONENTS[fieldKey];
 
                     if (!config) {
                         console.warn(`   ℹ️ skipping block: "${type}" (no mapping)`);
@@ -104,7 +102,7 @@ export async function migrateStBtu(
                         if (config.handler === genericComponentHandler) {
                             const entryId = await genericComponentHandler(
                                 env,
-                                { id: blockId, ...fields },
+                                { id: blockId, ...fields, blockId: blockId },
                                 config.mapping,
                                 assetMap,
                                 summary
@@ -169,7 +167,7 @@ export async function migrateStBtu(
                 }
             }
 
-            // 5. Create Main page (newStBtu)
+            // 5. Create Main page (newSt)
             const mainFields = {
                 entryId: { [LOCALE]: String(item.id) },
                 title: { [LOCALE]: item.title || "" },
@@ -183,32 +181,22 @@ export async function migrateStBtu(
             if (sectionEntries.length > 0) mainFields.sections = { [LOCALE]: sectionEntries };
             if (quoteReferences.length > 0) mainFields.companyQuotes = { [LOCALE]: quoteReferences };
 
-            // Taxonomy concepts
-            const metadata = { concepts: [] };
-            if (item.courseCategories) {
-                // Mapping for professionalServices concept scheme
-                // (Assuming IDs map to concept IDs - might need a mapping file)
-                // For now just logged
-                console.log(`   🏷️  Course Categories: ${item.courseCategories.join(", ")}`);
-            }
-
             const mainEntry = await upsertEntry(
                 env,
-                "newStBtu",
-                `stbtu-${item.id}`,
+                "newSt", // Using newSt as Content Type
+                `st-${item.id}`,
                 mainFields,
-                shouldPublish,
-                null // We don't have concept mapping yet
+                shouldPublish
             );
 
             if (mainEntry && shouldPublish) {
                 await publishPage(env, mainEntry, item);
             }
 
-            console.log(`✅ S&T BTU "${item.title}" migrated.`);
+            console.log(`✅ S&T "${item.title}" migrated.`);
 
         } catch (err) {
-            console.error(`❌ Error migrating S&T BTU "${item.title}":`, err.message);
+            console.error(`❌ Error migrating S&T "${item.title}":`, err.message);
         }
     }
 }

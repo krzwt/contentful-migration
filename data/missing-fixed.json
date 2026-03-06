@@ -2,157 +2,139 @@
     "data": {
         "assets": [
             {
-                "id": "2483785",
-                "title": "Icon Flexible Scheduling White",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Flexible-Scheduling-White.svg",
-                "filename": "Icon_Flexible-Scheduling-White.svg",
-                "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
+                "id": "2483842",
+                "title": "Get certified",
+                "url": "https://assets-uat.btdevops.io/assets/images/get-certified.jpg",
+                "filename": "get-certified.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1667,
+                "height": 1167
             },
             {
-                "id": "2483784",
-                "title": "Icon Private to Your Team White",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Private-to-Your-Team-White.svg",
-                "filename": "Icon_Private-to-Your-Team-White.svg",
-                "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
+                "id": "2483841",
+                "title": "Private training",
+                "url": "https://assets-uat.btdevops.io/assets/images/private-training.jpg",
+                "filename": "private-training.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1667,
+                "height": 1167
             },
             {
-                "id": "2483783",
-                "title": "Icon Interactive Structured Learning White",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Interactive-Structured-Learning-White.svg",
-                "filename": "Icon_Interactive-Structured-Learning-White.svg",
-                "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
+                "id": "2483840",
+                "title": "Success elevated",
+                "url": "https://assets-uat.btdevops.io/assets/images/success-elevated_2025-12-11-134419_bmcr.jpg",
+                "filename": "success-elevated_2025-12-11-134419_bmcr.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1667,
+                "height": 1167
             },
             {
-                "id": "2483782",
-                "title": "Icon Learn from BT Experts White",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Learn-from-BT-Experts-White.svg",
-                "filename": "Icon_Learn-from-BT-Experts-White.svg",
-                "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
+                "id": "2483839",
+                "title": "Success included",
+                "url": "https://assets-uat.btdevops.io/assets/images/success-included.jpg",
+                "filename": "success-included.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1667,
+                "height": 1167
             },
             {
-                "id": "2483722",
-                "title": "Available Certifications AD Bridge Icon",
-                "url": "S3_BASE_URL/assets/images/logos/Available-Certifications_AD-Bridge_Icon.svg",
-                "filename": "Available-Certifications_AD-Bridge_Icon.svg",
-                "mimeType": "image/svg+xml",
-                "width": 37,
-                "height": 32
+                "id": "2483838",
+                "title": "Success elevated",
+                "url": "https://assets-uat.btdevops.io/assets/images/success-elevated.jpg",
+                "filename": "success-elevated.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1667,
+                "height": 1167
             },
             {
-                "id": "2483721",
-                "title": "Available Certifications Endpoint Privilege Management Icon",
-                "url": "S3_BASE_URL/assets/images/logos/Available-Certifications_Endpoint-Privilege-Management_Icon.svg",
-                "filename": "Available-Certifications_Endpoint-Privilege-Management_Icon.svg",
-                "mimeType": "image/svg+xml",
-                "width": 38,
-                "height": 32
+                "id": "2483837",
+                "title": "Btu homepage",
+                "url": "https://assets-uat.btdevops.io/assets/images/banner-images/btu-homepage.jpg",
+                "filename": "btu-homepage.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1667,
+                "height": 1109
             },
             {
-                "id": "2483720",
-                "title": "Available Certifications Password Safe Icon",
-                "url": "S3_BASE_URL/assets/images/logos/Available-Certifications_Password-Safe_Icon.svg",
-                "filename": "Available-Certifications_Password-Safe_Icon.svg",
-                "mimeType": "image/svg+xml",
-                "width": 43,
-                "height": 32
+                "id": "991384",
+                "title": "Video_DaveG_CXO_V3",
+                "url": "https://assets-uat.btdevops.io/embeds/Video_DaveG_CXO_V3.json",
+                "filename": "Video_DaveG_CXO_V3.json",
+                "mimeType": "application/json",
+                "width": null,
+                "height": null
             },
             {
-                "id": "2483719",
-                "title": "Available Certifications Privileged Remote Access Icon",
-                "url": "S3_BASE_URL/assets/images/logos/Available-Certifications_Privileged-Remote-Access_Icon.svg",
-                "filename": "Available-Certifications_Privileged-Remote-Access_Icon.svg",
-                "mimeType": "image/svg+xml",
-                "width": 27,
-                "height": 32
+                "id": "822658",
+                "title": "Video_PROServ_2023_V5_Final",
+                "url": "https://assets-uat.btdevops.io/embeds/Video_PROServ_2023_V5_Final.json",
+                "filename": "Video_PROServ_2023_V5_Final.json",
+                "mimeType": "application/json",
+                "width": null,
+                "height": null
             },
             {
-                "id": "2483718",
-                "title": "Available Certifications Rmote Support Icon",
-                "url": "S3_BASE_URL/assets/images/logos/Available-Certifications_Rmote-Support_Icon.svg",
-                "filename": "Available-Certifications_Rmote-Support_Icon.svg",
-                "mimeType": "image/svg+xml",
-                "width": 34,
-                "height": 32
+                "id": "818894",
+                "title": "Products main banner image",
+                "url": "https://assets-uat.btdevops.io/assets/images/banner-images/products-main-banner-image.jpg",
+                "filename": "products-main-banner-image.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1331,
+                "height": 783
             },
             {
-                "id": "2483706",
-                "title": "Icon Orange Check Certification tailored to your needs",
-                "url": "https://assets-uat.btdevops.io/assets/images/icons/Icon_Orange-Check_Certification-tailored-to-your-needs.svg",
-                "filename": "Icon_Orange-Check_Certification-tailored-to-your-needs.svg",
-                "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
+                "id": "652920",
+                "title": "Compliance image",
+                "url": "https://assets-uat.btdevops.io/assets/images/banner-images/compliance-image.jpg",
+                "filename": "compliance-image.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1170,
+                "height": 662
             },
             {
-                "id": "2483696",
-                "title": "Icon Share Your Success",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Share-Your-Success.svg",
-                "filename": "Icon_Share-Your-Success.svg",
+                "id": "545723",
+                "title": "Deploy orange",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Deploy_orange.svg",
+                "filename": "Deploy_orange.svg",
                 "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
+                "width": 85,
+                "height": 69
             },
             {
-                "id": "2483695",
-                "title": "Icon Earn Badges",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Earn-Badges.svg",
-                "filename": "Icon_Earn-Badges.svg",
+                "id": "545722",
+                "title": "Audit 2 orange",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Audit_2_orange.svg",
+                "filename": "Audit_2_orange.svg",
                 "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
+                "width": 85,
+                "height": 69
             },
             {
-                "id": "2483694",
-                "title": "Icon Take Courses",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Take-Courses.svg",
-                "filename": "Icon_Take-Courses.svg",
+                "id": "545710",
+                "title": "Discover orange",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Discover_orange.svg",
+                "filename": "Discover_orange.svg",
                 "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
+                "width": 85,
+                "height": 69
             },
             {
-                "id": "2483567",
-                "title": "Icon Flexible Seat Transfers White",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Flexible-Seat-Transfers-White.svg",
-                "filename": "Icon_Flexible-Seat-Transfers-White.svg",
+                "id": "545691",
+                "title": "Collaboration orange",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Collaboration_orange.svg",
+                "filename": "Collaboration_orange.svg",
                 "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
+                "width": 85,
+                "height": 69
             },
             {
-                "id": "2483566",
-                "title": "Icon Certified Skills White",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Certified-Skills-White.svg",
-                "filename": "Icon_Certified-Skills-White.svg",
+                "id": "545689",
+                "title": "Control 4 orange",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Control_4_orange.svg",
+                "filename": "Control_4_orange.svg",
                 "mimeType": "image/svg+xml",
-                "width": 36,
-                "height": 32
-            },
-            {
-                "id": "2483565",
-                "title": "Icon Interactive Labs White",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Interactive-Labs-White.svg",
-                "filename": "Icon_Interactive-Labs-White.svg",
-                "mimeType": "image/svg+xml",
-                "width": 32,
-                "height": 32
-            },
-            {
-                "id": "2483564",
-                "title": "Icon Live expert training White",
-                "url": "https://assets-uat.btdevops.io/assets/images/products/images/Icon_Live-expert-training-White.svg",
-                "filename": "Icon_Live-expert-training-White.svg",
-                "mimeType": "image/svg+xml",
-                "width": 42,
-                "height": 32
+                "width": 85,
+                "height": 69
             }
         ]
     }

@@ -1,0 +1,2412 @@
+[
+    {
+        "sectionId": 58,
+        "postDate": "2023-08-08T17:34:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 77631,
+        "id": 945908,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "8e56b0ed-6283-4fb4-8a90-25c13a5a689a",
+        "siteSettingsId": 1357226,
+        "fieldLayoutId": null,
+        "structureId": 61821,
+        "contentId": 541397,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Services & Training",
+        "slug": "services-training",
+        "uri": "services-training",
+        "dateCreated": "2023-08-08T17:34:22-05:00",
+        "dateUpdated": "2026-03-04T23:14:48-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 128346,
+        "lft": 2,
+        "rgt": 13,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 945908,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newServices/services-training",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/services-training",
+        "authorId": 77631,
+        "typeId": 124,
+        "bannerMediaRight": {
+            "945911": {
+                "type": "banner",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Services & Training",
+                    "body200": "Achieve results faster and maximize the value of your BeyondTrust solutions with our training and services packages.",
+                    "bannerAsset": {
+                        "991487": {
+                            "type": "video",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "video": [
+                                    991384
+                                ]
+                            }
+                        }
+                    },
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                }
+            }
+        },
+        "sectionNavigation": {
+            "945923": {
+                "type": "siteSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "sectionName": "Overview",
+                    "sectionUrlRoot": "{\"linkedId\":945908,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                    "links": {
+                        "945924": {
+                            "type": 63,
+                            "fields": {
+                                "destination": "{\"linkedId\":947228,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "label": "Professional Services",
+                                "queryParams": null
+                            }
+                        },
+                        "945925": {
+                            "type": 63,
+                            "fields": {
+                                "destination": "{\"linkedId\":946615,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "label": "BeyondTrust University",
+                                "queryParams": null
+                            }
+                        },
+                        "945926": {
+                            "type": 63,
+                            "fields": {
+                                "destination": "{\"linkedId\":947838,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "label": "Technical Account Management",
+                                "queryParams": null
+                            }
+                        }
+                    },
+                    "cta": {
+                        "945927": {
+                            "type": 64,
+                            "fields": {
+                                "destination": "{\"linkedUrl\":\"#\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "label": "Inquiry"
+                            }
+                        }
+                    },
+                    "icon": []
+                }
+            }
+        },
+        "servicesOverviewContent": {
+            "945953": {
+                "type": "processFlow",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Our Methodology",
+                    "processFlow": {
+                        "945954": {
+                            "type": 109,
+                            "fields": {
+                                "heading": "Scope",
+                                "body": "BeyondTrust Professional Services will work with you to ensure your services engagement is designed to meet your specific use case needs.",
+                                "image": [
+                                    545710
+                                ]
+                            }
+                        },
+                        "945955": {
+                            "type": 109,
+                            "fields": {
+                                "heading": "Train",
+                                "body": "BeyondTrust University training will equip you to understand, administer, and get the most value from your solutions.",
+                                "image": [
+                                    545691
+                                ]
+                            }
+                        },
+                        "945956": {
+                            "type": 109,
+                            "fields": {
+                                "heading": "Kickoff",
+                                "body": "Your BeyondTrust Professional Services project team will meet with you and key stakeholders to confirm project scope and understand use cases.",
+                                "image": [
+                                    545723
+                                ]
+                            }
+                        },
+                        "945957": {
+                            "type": 109,
+                            "fields": {
+                                "heading": "Implement",
+                                "body": "BeyondTrust Engineers or Architects will work to install, configure, and deploy your BeyondTrust solutions aligned to your criteria.",
+                                "image": [
+                                    545689
+                                ]
+                            }
+                        },
+                        "945958": {
+                            "type": 109,
+                            "fields": {
+                                "heading": "Maintain",
+                                "body": "BeyondTrust Support is available via email, chat, phone, or the Customer Portal to assist you with any issues that arise after your project has completed.",
+                                "image": [
+                                    545722
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "946068": {
+                "type": "linkCards",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Professional Services",
+                    "body250": "Achieve tangible results and improve your security posture sooner with services packages designed to get your solutions up and running more quickly.",
+                    "linkCards": {
+                        "946069": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Implementations",
+                                "body": "Deploy solutions faster using our expertise based on thousands of successful deployments.",
+                                "ctaLink": "{\"linkedUrl\":\"\\/services-training\\/professional-services?service-type=Implementation\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "ctaLinkText": "View All"
+                            }
+                        },
+                        "946070": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Upgrade/Migrations",
+                                "body": "Bring your deployment up to date with assisted upgrades and migrations from previous software versions.",
+                                "ctaLink": "{\"linkedUrl\":\"\\/services-training\\/professional-services?service-type=Upgrade+%2F+Migration\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "ctaLinkText": "View All"
+                            }
+                        },
+                        "946071": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Health Checks",
+                                "body": "Identify opportunities to improve security and usability as the needs of your business evolve.",
+                                "ctaLink": "{\"linkedUrl\":\"\\/services-training\\/professional-services?service-type=Health+Check\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "ctaLinkText": "View All"
+                            }
+                        }
+                    }
+                }
+            },
+            "946308": {
+                "type": "linkCards",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "BeyondTrust University",
+                    "body250": "Accelerate your technical and professional learning experience with role-based product training.",
+                    "linkCards": {
+                        "946309": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Success Included",
+                                "body": "Complimentary self-paced eLearning, designed to kickstart your success with BeyondTrust.",
+                                "ctaLink": "{\"linkedUrl\":\"\\/services\\/beyondtrust-university\\/success-included\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "ctaLinkText": "View All"
+                            }
+                        },
+                        "946311": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Success Elevated",
+                                "body": "Flexible self-paced training, expert-led sessions, and hands-on labs to elevate skills, confidence, and results.",
+                                "ctaLink": "{\"linkedUrl\":\"\\/services\\/beyondtrust-university\\/success-elevated\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "ctaLinkText": "View All"
+                            }
+                        },
+                        "946310": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Private Training",
+                                "body": "Instructor-led training that is offered live either on-site at your location or as a virtual course; will only include your company's participants.",
+                                "ctaLink": "{\"linkedUrl\":\"\\/services\\/beyondtrust-university\\/private-instructor-led-training\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "ctaLinkText": "View All"
+                            }
+                        }
+                    }
+                }
+            },
+            "946216": {
+                "type": "linkCards",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Technical Account Management",
+                    "body250": "Benefit from a dedicated technical resource who will partner with you to gain an in-depth knowledge of your BeyondTrust environment and overall business operations.",
+                    "linkCards": {
+                        "946217": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Standard",
+                                "body": "A basic level of service for access to Subject Matter Expertise (SME).",
+                                "ctaLink": "{\"linkedId\":945909,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "ctaLinkText": null
+                            }
+                        },
+                        "946218": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Enterprise",
+                                "body": "An enhanced level of service for more SME access and upgrade assistance.",
+                                "ctaLink": "{\"linkedId\":954799,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "ctaLinkText": null
+                            }
+                        },
+                        "946219": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Strategic",
+                                "body": "A highly-available level of service for SME access, upgrade assistance, and an annual training budget.",
+                                "ctaLink": "{\"linkedId\":954951,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "ctaLinkText": null
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-08-29T11:35:29-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Achieve results faster and maximize the value of your BeyondTrust solutions with our training and services packages.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 58,
+        "postDate": "2023-08-08T17:34:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 77631,
+        "id": 946615,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "805c6542-a358-4676-bbc4-53bda5ab3658",
+        "siteSettingsId": 1357998,
+        "fieldLayoutId": null,
+        "structureId": 61821,
+        "contentId": 541727,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "BeyondTrust University",
+        "slug": "beyondtrust-university",
+        "uri": "services-training/beyondtrust-university",
+        "dateCreated": "2023-08-08T17:48:33-05:00",
+        "dateUpdated": "2025-12-11T11:56:47-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 128346,
+        "lft": 3,
+        "rgt": 4,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 945908,
+        "canonicalId": 946615,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newServices/beyondtrust-university",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/services-training/beyondtrust-university",
+        "authorId": 77631,
+        "typeId": 124,
+        "bannerMediaRight": {
+            "946616": {
+                "type": "banner",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "BeyondTrust University",
+                    "body200": "Accelerate your technical and professional learning experience with role-based product training.",
+                    "bannerAsset": {
+                        "2483843": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    2483837
+                                ]
+                            }
+                        }
+                    },
+                    "label": "Log in to BeyondTrust University",
+                    "ctaLink": "{\"linkedUrl\":\"https:\\/\\/university.beyondtrust.com\\/learn\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"{\\\"target\\\":\\\"_blank\\\"}\",\"type\":\"url\"}"
+                }
+            }
+        },
+        "sectionNavigation": [],
+        "servicesOverviewContent": {
+            "2483844": {
+                "type": "featureTabbed",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Your training journey starts here",
+                    "bodyRedactorRestricted": "<p>Discover everything BeyondTrust University has to offer and expand your expertise through our flexible training options — including self-paced online courses, instructor-led training, and more!</p>",
+                    "contentAsset": {
+                        "2483845": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    2483838
+                                ]
+                            }
+                        }
+                    },
+                    "featureTabbed": {
+                        "2483846": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "Success Included",
+                                "heading": "Online courses available at no extra cost",
+                                "body": "<p>Our complimentary self-paced eLearning, designed to kickstart your success with BeyondTrust.</p>",
+                                "ctaLink": "{\"linkedId\":2396054,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "ctaLinkText": "Learn more",
+                                "featureAsset": {
+                                    "2483847": {
+                                        "type": "image",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "image": [
+                                                2483839
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "2483848": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "Success Elevated",
+                                "heading": "Curated training subscription with elevated, blended learning",
+                                "body": "<p>Master your product knowledge with expert-led administrative training, labs, workshops, and certification!</p>",
+                                "ctaLink": "{\"linkedId\":2483563,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "ctaLinkText": "Learn more",
+                                "featureAsset": {
+                                    "2483849": {
+                                        "type": "image",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "image": [
+                                                2483840
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "2483850": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "Private Training",
+                                "heading": "Instructor-led training tailored to your needs",
+                                "body": "<p>Interactive learning journey guided by expert instructors in sessions personalized for your company.</p>",
+                                "ctaLink": "{\"linkedId\":2483768,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "ctaLinkText": "Learn more",
+                                "featureAsset": {
+                                    "2483851": {
+                                        "type": "image",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "image": [
+                                                2483841
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "2483852": {
+                            "type": 101,
+                            "fields": {
+                                "tabLink": "Get Certified",
+                                "heading": "Your achievement certified and on display",
+                                "body": "<p>Validate your knowledge and boost your credibility with industry-recognized certifications designed to help you stand out and advance your career.</p>",
+                                "ctaLink": "{\"linkedId\":2483680,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "ctaLinkText": "Learn more",
+                                "featureAsset": {
+                                    "2483853": {
+                                        "type": "image",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "image": [
+                                                2483842
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "2483948": {
+                "type": "table",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Training Program Comparison Chart",
+                    "bodyRedactorRestricted": "<p>Compare your options and understand which training program is right for you. For further inquiries about our training options, reach out to your account representative or <a href=\"mailto:btu@beyondtrust.com\">btu@beyondtrust.com</a>.</p>",
+                    "table": {
+                        "columns": [
+                            {
+                                "heading": "Training Feature",
+                                "width": "",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Description",
+                                "width": "",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Success Included",
+                                "width": "",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Success Elevated",
+                                "width": "",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Private",
+                                "width": "",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            }
+                        ],
+                        "rows": [
+                            [
+                                "Self-Paced Learning",
+                                "Explore our diverse list of self-paced eLearning courses for every BT solution.",
+                                "[check]",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "Learning progress tracking",
+                                "Monitor and measure learner advancement with real-time insights into course completion and performance.",
+                                "[check]",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "CPE Credits",
+                                "Earn Continuing Professional Education (CPE) credits to maintain your professional requirements while expanding your knowledge base.",
+                                "",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "Administrator Learning Paths",
+                                "Follow structured, role-based learning journeys designed to build essential administrator skills from foundational to advanced levels.",
+                                "",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "Live Workshops",
+                                "Participate in interactive, expert-led sessions that combine instruction, discussion, and real-world exercises for immediate skill application.",
+                                "",
+                                "[check]",
+                                ""
+                            ],
+                            [
+                                "Hands-on Labs",
+                                "Gain practical experience through guided, virtualized lab environments that reinforce key concepts and skills.",
+                                "",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "Flexible seat transfers",
+                                "Easily reassign or transfer training seats every 6 months to accommodate shifting team needs and schedules.",
+                                "",
+                                "[check]",
+                                ""
+                            ],
+                            [
+                                "Certification",
+                                "Validate your expertise and demonstrate your professional achievement through industry-recognized certification exams.",
+                                "",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "Examination",
+                                "Demonstrate your progress and validate your skills through a dynamic certification exam.",
+                                "",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "Virtual Instructor-led training (vILT)",
+                                "Engage directly with BeyondTrust University instructors in a structured, virtual learning environment for in-depth guidance and personalized feedback.",
+                                "",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "Onsite Instructor-led training option",
+                                "Bring expert-led training to your location for a structured, collaborative learning experience tailored to your team’s goals. **Travel restrictions may apply",
+                                "",
+                                "",
+                                "[check]"
+                            ]
+                        ],
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\">Training Feature</th><th align=\"left\" width=\"\">Description</th><th align=\"left\" width=\"\">Success Included</th><th align=\"left\" width=\"\">Success Elevated</th><th align=\"left\" width=\"\">Private</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">Self-Paced Learning</td><td align=\"left\">Explore our diverse list of self-paced eLearning courses for every BT solution.</td><td align=\"left\">[check]</td><td align=\"left\">[check]</td><td align=\"left\">[check]</td></tr><tr><td align=\"left\">Learning progress tracking</td><td align=\"left\">Monitor and measure learner advancement with real-time insights into course completion and performance.</td><td align=\"left\">[check]</td><td align=\"left\">[check]</td><td align=\"left\">[check]</td></tr><tr><td align=\"left\">CPE Credits</td><td align=\"left\">Earn Continuing Professional Education (CPE) credits to maintain your professional requirements while expanding your knowledge base.</td><td align=\"left\"></td><td align=\"left\">[check]</td><td align=\"left\">[check]</td></tr><tr><td align=\"left\">Administrator Learning Paths</td><td align=\"left\">Follow structured, role-based learning journeys designed to build essential administrator skills from foundational to advanced levels.</td><td align=\"left\"></td><td align=\"left\">[check]</td><td align=\"left\">[check]</td></tr><tr><td align=\"left\">Live Workshops</td><td align=\"left\">Participate in interactive, expert-led sessions that combine instruction, discussion, and real-world exercises for immediate skill application.</td><td align=\"left\"></td><td align=\"left\">[check]</td><td align=\"left\"></td></tr><tr><td align=\"left\">Hands-on Labs</td><td align=\"left\">Gain practical experience through guided, virtualized lab environments that reinforce key concepts and skills.</td><td align=\"left\"></td><td align=\"left\">[check]</td><td align=\"left\">[check]</td></tr><tr><td align=\"left\">Flexible seat transfers</td><td align=\"left\">Easily reassign or transfer training seats every 6 months to accommodate shifting team needs and schedules.</td><td align=\"left\"></td><td align=\"left\">[check]</td><td align=\"left\"></td></tr><tr><td align=\"left\">Certification</td><td align=\"left\">Validate your expertise and demonstrate your professional achievement through industry-recognized certification exams.</td><td align=\"left\"></td><td align=\"left\">[check]</td><td align=\"left\">[check]</td></tr><tr><td align=\"left\">Examination</td><td align=\"left\">Demonstrate your progress and validate your skills through a dynamic certification exam.</td><td align=\"left\"></td><td align=\"left\">[check]</td><td align=\"left\">[check]</td></tr><tr><td align=\"left\">Virtual Instructor-led training (vILT)</td><td align=\"left\">Engage directly with BeyondTrust University instructors in a structured, virtual learning environment for in-depth guidance and personalized feedback.</td><td align=\"left\"></td><td align=\"left\">[check]</td><td align=\"left\">[check]</td></tr><tr><td align=\"left\">Onsite Instructor-led training option</td><td align=\"left\">Bring expert-led training to your location for a structured, collaborative learning experience tailored to your team’s goals. **Travel restrictions may apply</td><td align=\"left\"></td><td align=\"left\"></td><td align=\"left\">[check]</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                    },
+                    "textList": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "2483951": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Explore course offerings",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "946999": {
+                "type": "toggleCards",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "allSTEntries": "beyondtrustUniversity",
+                    "selectIndividualEntries": {
+                        "2483952": {
+                            "type": "beyondtrustUniversity",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "selectedEntries": [
+                                    959148,
+                                    958207,
+                                    958903,
+                                    958584,
+                                    959951,
+                                    959647,
+                                    959549,
+                                    959377,
+                                    959284,
+                                    959210,
+                                    959031,
+                                    958930,
+                                    958244,
+                                    1029728
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "946676": {
+                "type": "faqs",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "headingSection": "FAQs",
+                    "faqs": {
+                        "946677": {
+                            "type": 99,
+                            "fields": {
+                                "faqs": {
+                                    "946678": {
+                                        "type": "faq",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "question": "Who do I contact if I want to inquire more about BeyondTrust University?",
+                                            "answer": "<p>If you are interested in learning more about our training programs, reach out to your account representative. If you do not know your representative, <a href=\"{entry:32@1:url||https://bluetext.beyondtrust.com/contact}\" target=\"_blank\" rel=\"noreferrer noopener\">please fill out the form here</a> and add “BeyondTrust University” into the message box. Someone will reach out to you after the submission.</p>"
+                                        }
+                                    },
+                                    "946679": {
+                                        "type": "faq",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "question": "What browsers are supported at BeyondTrust University?",
+                                            "answer": "<p>BeyondTrust University recommends using Google Chrome, Microsoft Edge, or Safari for an optimal training experience.</p>"
+                                        }
+                                    },
+                                    "946680": {
+                                        "type": "faq",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "question": "If my contact information or training access is inaccurate, how do I resolve this?",
+                                            "answer": "<p>Please reach out to us at <a href=\"mailto:btu@beyondtrust.com\">btu@beyondtrust.com</a>. </p>"
+                                        }
+                                    },
+                                    "946681": {
+                                        "type": "faq",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "question": "How do I access BeyondTrust University?",
+                                            "answer": "<p>To access BeyondTrust University (BTU), you must have a BeyondTrust Customer Service Portal account. Once your account is created, you will be able to access <a href=\"https://university.beyondtrust.com/\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University</a> along with all other available BeyondTrust resources.</p>"
+                                        }
+                                    },
+                                    "2484002": {
+                                        "type": "faq",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "question": "Where can I find documentation or additional learning materials?",
+                                            "answer": "<p>BeyondTrust offers extensive learning resources designed to support your ongoing development. The additional training opportunities are outlined below.</p>\n<p><em>**A BeyondTrust account is required to access most of the resources listed below.</em></p>\n<ul><li><a href=\"https://beekeepers.beyondtrust.com/\" target=\"_blank\" rel=\"noreferrer noopener\">BeeKeepers Community</a></li><li><a href=\"https://beyondtrustcorp.service-now.com/csm?id=csm_index\" target=\"_blank\" rel=\"noreferrer noopener\">BT Knowledge Base</a></li><li><a href=\"{entry:1834359@1:url||https://bluetext.beyondtrust.com/resources}\" target=\"_blank\" rel=\"noreferrer noopener\">BT Resource Center</a></li><li><a href=\"https://docs.beyondtrust.com/\" target=\"_blank\" rel=\"noreferrer noopener\">BT Technical Documentation</a> </li></ul>"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "947150": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": true,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        506607
+                    ]
+                }
+            }
+        },
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-08-29T11:37:51-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Accelerate your technical and professional learning experience with role-based product training.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 58,
+        "postDate": "2023-08-08T17:34:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 77631,
+        "id": 947228,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "27c0f43f-74a9-4eab-b56c-c163c0acbdc6",
+        "siteSettingsId": 1358651,
+        "fieldLayoutId": null,
+        "structureId": 61821,
+        "contentId": 541881,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Professional Services",
+        "slug": "professional-services",
+        "uri": "services-training/professional-services",
+        "dateCreated": "2023-08-08T17:53:28-05:00",
+        "dateUpdated": "2023-09-25T12:38:50-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 128346,
+        "lft": 5,
+        "rgt": 6,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 945908,
+        "canonicalId": 947228,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newServices/professional-services",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/services-training/professional-services",
+        "authorId": 77631,
+        "typeId": 124,
+        "bannerMediaRight": {
+            "947229": {
+                "type": "banner",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Professional Services",
+                    "body200": "Achieve tangible results and improve your security posture sooner with services packages designed to get your solutions up and running quickly and optimized over time.",
+                    "bannerAsset": {
+                        "961000": {
+                            "type": "video",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "video": [
+                                    822658
+                                ]
+                            }
+                        }
+                    },
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                }
+            }
+        },
+        "sectionNavigation": [],
+        "servicesOverviewContent": {
+            "947266": {
+                "type": "toggleCards",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "allSTEntries": "professionalServices",
+                    "selectIndividualEntries": []
+                }
+            },
+            "947273": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        506607
+                    ]
+                }
+            }
+        },
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-08-29T11:39:53-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Achieve tangible results and improve your security posture sooner with services packages designed to get your solutions up and running quickly.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 58,
+        "postDate": "2023-08-08T17:34:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 77631,
+        "id": 947838,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "1f12e6f5-f042-4340-b8b8-f97753b12e4a",
+        "siteSettingsId": 1359311,
+        "fieldLayoutId": null,
+        "structureId": 61821,
+        "contentId": 542053,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Technical Account Management",
+        "slug": "technical-account-management",
+        "uri": "services-training/technical-account-management",
+        "dateCreated": "2023-08-08T17:55:44-05:00",
+        "dateUpdated": "2025-06-10T15:39:45-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 128346,
+        "lft": 7,
+        "rgt": 8,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 945908,
+        "canonicalId": 947838,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newServices/technical-account-management",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/services-training/technical-account-management",
+        "authorId": 77631,
+        "typeId": 124,
+        "bannerMediaRight": {
+            "947839": {
+                "type": "banner",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Technical Account Management",
+                    "body200": "Partner with a trusted advisor and advocate within BeyondTrust who is uniquely positioned to provide a proactive approach to the support and ongoing operation of your investment.",
+                    "bannerAsset": {
+                        "947840": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    818894
+                                ]
+                            }
+                        }
+                    },
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                }
+            }
+        },
+        "sectionNavigation": [],
+        "servicesOverviewContent": {
+            "947876": {
+                "type": "toggleCards",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "allSTEntries": "tamServices",
+                    "selectIndividualEntries": {
+                        "976850": {
+                            "type": "tamServices",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "selectedEntries": [
+                                    945909,
+                                    954799,
+                                    954951
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "973162": {
+                "type": "table",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Tier Comparison Chart",
+                    "bodyRedactorRestricted": "<p>BeyondTrust enterprise technical account managers (TAMs) are technical resources who will partner with you to gain an in-depth knowledge of your BeyondTrust environment, technical accounts, and overall business operations. Your BeyondTrust TAM will become your trusted advisor and advocate within BeyondTrust and is uniquely positioned to provide a proactive approach to the support and ongoing operation of your BeyondTrust investment.</p>\n<p>Use the following chart to compare your options and to help guide your decision on which TAM service tier is right for you. </p>",
+                    "table": {
+                        "columns": [
+                            {
+                                "heading": "Value Add Services",
+                                "width": "",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Description",
+                                "width": "",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Standard",
+                                "width": "",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Enterprise",
+                                "width": "",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Strategic",
+                                "width": "",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            }
+                        ],
+                        "rows": [
+                            [
+                                "Single Point of Contact",
+                                "TAMs act as a single point of contact for all technical items, enhancing existing support",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Support Incident Reviews",
+                                "Review of all open support incidents ",
+                                "1 call per month[1]",
+                                "4 calls per month[1]",
+                                "12 calls per month[1]"
+                            ],
+                            [
+                                "Enhancement Management",
+                                "TAMs monitor feature requests and provide updates to customers as needed",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Escalation Management",
+                                "Act as an escalation point for new and existing tickets, driving resolution internally",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Product Announcements",
+                                "Provide a notification of product updates and announcements",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Environment Profile Setup & Management ",
+                                "Configuration of an environment profile for streamlined support",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Technical Product Assessment",
+                                "Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Upgrade Coordination",
+                                "Coordination of software upgrades to existing deployments. Product specific, utilizing internal process to inform support teams of pending customer upgrades",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Upgrade Assistance",
+                                "TAM would participate in upgrade during scheduled timeframe to ensure smooth upgrade, and ability to pull in additional resources as necessary.  Product specific, including after-hours, must be pre-scheduled",
+                                "No",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Case Management & Oversight",
+                                "Enhancing existing support services by being more deeply involved in day-to-day operations",
+                                "No",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Go Beyond Access",
+                                "Up to two tickets for access to our Go Beyond user conference (T&E not included)",
+                                "No",
+                                "No",
+                                "Yes"
+                            ],
+                            [
+                                "Health Checks",
+                                "Performed annually (within annual subscription).  Depth of health check is determined on a per product basis",
+                                "No",
+                                "1 annually[1]",
+                                "2 annually[1]"
+                            ],
+                            [
+                                "Training Courses",
+                                "Up to two public training courses",
+                                "No",
+                                "No",
+                                "2 annually[1]"
+                            ],
+                            [
+                                "On-site Visits",
+                                "On-site review and touch point (may be coordinated with a Health Check, Technical Product Assessment",
+                                "No",
+                                "1 annually[1]",
+                                "2 annually[1]"
+                            ]
+                        ],
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"center\" width=\"\">Value Add Services</th><th align=\"center\" width=\"\">Description</th><th align=\"center\" width=\"\">Standard</th><th align=\"center\" width=\"\">Enterprise</th><th align=\"center\" width=\"\">Strategic</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"center\">Single Point of Contact</td><td align=\"center\">TAMs act as a single point of contact for all technical items, enhancing existing support</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Support Incident Reviews</td><td align=\"center\">Review of all open support incidents </td><td align=\"center\">1 call per month[1]</td><td align=\"center\">4 calls per month[1]</td><td align=\"center\">12 calls per month[1]</td></tr><tr><td align=\"center\">Enhancement Management</td><td align=\"center\">TAMs monitor feature requests and provide updates to customers as needed</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Escalation Management</td><td align=\"center\">Act as an escalation point for new and existing tickets, driving resolution internally</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Product Announcements</td><td align=\"center\">Provide a notification of product updates and announcements</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Environment Profile Setup & Management </td><td align=\"center\">Configuration of an environment profile for streamlined support</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Technical Product Assessment</td><td align=\"center\">Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Upgrade Coordination</td><td align=\"center\">Coordination of software upgrades to existing deployments. Product specific, utilizing internal process to inform support teams of pending customer upgrades</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Upgrade Assistance</td><td align=\"center\">TAM would participate in upgrade during scheduled timeframe to ensure smooth upgrade, and ability to pull in additional resources as necessary.  Product specific, including after-hours, must be pre-scheduled</td><td align=\"center\">No</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Case Management & Oversight</td><td align=\"center\">Enhancing existing support services by being more deeply involved in day-to-day operations</td><td align=\"center\">No</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Go Beyond Access</td><td align=\"center\">Up to two tickets for access to our Go Beyond user conference (T&E not included)</td><td align=\"center\">No</td><td align=\"center\">No</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Health Checks</td><td align=\"center\">Performed annually (within annual subscription).  Depth of health check is determined on a per product basis</td><td align=\"center\">No</td><td align=\"center\">1 annually[1]</td><td align=\"center\">2 annually[1]</td></tr><tr><td align=\"center\">Training Courses</td><td align=\"center\">Up to two public training courses</td><td align=\"center\">No</td><td align=\"center\">No</td><td align=\"center\">2 annually[1]</td></tr><tr><td align=\"center\">On-site Visits</td><td align=\"center\">On-site review and touch point (may be coordinated with a Health Check, Technical Product Assessment</td><td align=\"center\">No</td><td align=\"center\">1 annually[1]</td><td align=\"center\">2 annually[1]</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                    },
+                    "textList": {
+                        "973413": {
+                            "type": "item",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "item": "These are executed as necessary, upon requirement or request"
+                            }
+                        }
+                    },
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "947883": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        946087
+                    ]
+                }
+            }
+        },
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-08-29T11:45:41-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Partner with a trusted advisor and advocate from BeyondTrust to provide a proactive approach to the support and ongoing operation of your investment.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 58,
+        "postDate": "2024-02-13T00:00:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 70871,
+        "id": 1416754,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "e6468344-546f-4acd-a395-c236aa08144f",
+        "siteSettingsId": 1934116,
+        "fieldLayoutId": null,
+        "structureId": 61821,
+        "contentId": 779938,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Cloud Migrations",
+        "slug": "cloud-migrations",
+        "uri": "services-training/cloud-migrations",
+        "dateCreated": "2024-02-13T10:08:18-06:00",
+        "dateUpdated": "2024-02-13T10:15:53-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 128346,
+        "lft": 9,
+        "rgt": 10,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 945908,
+        "canonicalId": 1416754,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newServices/cloud-migrations",
+        "status": "disabled",
+        "url": "https://bluetext.beyondtrust.com/services-training/cloud-migrations",
+        "authorId": 70871,
+        "typeId": 124,
+        "bannerMediaRight": {
+            "1416755": {
+                "type": "banner",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Cloud Migrations",
+                    "body200": "Elevate your deployment with BeyondTrust Cloud.",
+                    "bannerAsset": {
+                        "1416756": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    652920
+                                ]
+                            }
+                        }
+                    },
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                }
+            }
+        },
+        "sectionNavigation": {
+            "1416793": {
+                "type": "siteSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "sectionName": "Overview",
+                    "sectionUrlRoot": "{\"linkedId\":1416754,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                    "links": {
+                        "1416794": {
+                            "type": 63,
+                            "fields": {
+                                "destination": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
+                                "label": "Remote Support Migrations",
+                                "queryParams": null
+                            }
+                        },
+                        "1416795": {
+                            "type": 63,
+                            "fields": {
+                                "destination": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
+                                "label": "EPM Migrations",
+                                "queryParams": null
+                            }
+                        }
+                    },
+                    "cta": {
+                        "1416796": {
+                            "type": 64,
+                            "fields": {
+                                "destination": "{\"linkedId\":947228,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "label": "Service Inquiries"
+                            }
+                        }
+                    },
+                    "icon": []
+                }
+            }
+        },
+        "servicesOverviewContent": [],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2024-02-13T10:08:18-06:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": [],
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": [],
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": true,
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": false,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": false,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    }
+]
