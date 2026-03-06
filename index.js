@@ -109,11 +109,12 @@ const DATA_SOURCES = [
   //   label: "Global Reach Map",
   //   isGlobalReachMap: true
   // }
-  // {
-  //   file: "./data/newPodcasts.json",
-  //   label: "Podcasts CPT",
-  //   isPodcasts: true
-  // {
+  {
+    file: "./data/newPodcasts.json",
+    label: "Podcasts CPT",
+    isPodcasts: true
+  },
+  //{
   //   file: "./data/new-S&T-BTU.json",
   //   label: "S&T BTU",
   //   isStBtu: true
@@ -128,11 +129,11 @@ const DATA_SOURCES = [
   //   label: "Forms Import",
   //   isForms: true
   // },
-  {
-    file: "./data/new-press&media.json",
-    label: "Press & Media",
-    isPressMedia: true
-  }
+  // {
+  //   file: "./data/new-press&media.json",
+  //   label: "Press & Media",
+  //   isPressMedia: true
+  // }
 ];
 
 async function run() {
