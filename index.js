@@ -14,6 +14,7 @@ import { migratePodcasts } from "./handlers/podcastHandler.js";
 import { migrateStBtu } from "./handlers/newStBtu.js";
 import { migrateSt } from "./handlers/newSt.js";
 import { migrateForms } from "./handlers/formHandler.js";
+import { migratePressMedia } from "./handlers/pressMediaHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import {
@@ -117,16 +118,21 @@ const DATA_SOURCES = [
   //   label: "S&T BTU",
   //   isStBtu: true
   // },
-  {
-    file: "./data/new-S&T.json",
-    label: "S&T",
-    isSt: true
-  },
+  // {
+  //   file: "./data/new-S&T.json",
+  //   label: "S&T",
+  //   isSt: true
+  // },
   // {
   //   file: "./data/forms-import.json",
   //   label: "Forms Import",
   //   isForms: true
-  // }
+  // },
+  {
+    file: "./data/new-press&media.json",
+    label: "Press & Media",
+    isPressMedia: true
+  }
 ];
 
 async function run() {
@@ -600,6 +606,18 @@ async function run() {
         env,
         dataRaw,
         summary
+      );
+    }
+
+    if (source.isPressMedia) {
+      await migratePressMedia(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent
       );
     }
   }
