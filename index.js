@@ -13,6 +13,7 @@ import { migrateGlobalReachMap } from "./handlers/newGlobalReachMap.js";
 import { migratePodcasts } from "./handlers/podcastHandler.js";
 import { migrateStBtu } from "./handlers/newStBtu.js";
 import { migrateSt } from "./handlers/newSt.js";
+import { migrateForms } from "./handlers/formHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import {
@@ -120,7 +121,12 @@ const DATA_SOURCES = [
     file: "./data/new-S&T.json",
     label: "S&T",
     isSt: true
-  }
+  },
+  // {
+  //   file: "./data/forms-import.json",
+  //   label: "Forms Import",
+  //   isForms: true
+  // }
 ];
 
 async function run() {
@@ -169,9 +175,11 @@ async function run() {
       continue;
     }
 
-    const data = JSON.parse(fs.readFileSync(source.file, "utf-8"));
-    if (!data.length) {
-      console.log(`\n⚠️ Skipping "${source.label}" — empty file`);
+    const dataRaw = JSON.parse(fs.readFileSync(source.file, "utf-8"));
+    const data = Array.isArray(dataRaw) ? dataRaw : (dataRaw.entries || [dataRaw]);
+
+    if (!data || (Array.isArray(data) && !data.length)) {
+      console.log(`\n⚠️ Skipping "${source.label}" — empty or invalid file`);
       continue;
     }
 
@@ -584,6 +592,14 @@ async function run() {
         totalPages,
         summary,
         rawFileContent
+      );
+    }
+
+    if (source.isForms) {
+      await migrateForms(
+        env,
+        dataRaw,
+        summary
       );
     }
   }
