@@ -117,11 +117,11 @@ const DATA_SOURCES = [
   //   label: "Podcasts CPT",
   //   isPodcasts: true
   // },
-  {
-    file: "./data/new-S&T-BTU.json",
-    label: "S&T BTU",
-    isStBtu: true
-  },
+  // {
+  //   file: "./data/new-S&T-BTU.json",
+  //   label: "S&T BTU",
+  //   isStBtu: true
+  // },
   // {
   //   file: "./data/new-S&T.json",
   //   label: "S&T",
@@ -147,11 +147,11 @@ const DATA_SOURCES = [
   //   label: "Press & Media",
   //   isPressMedia: true
   // },
-  // {
-  //   file: "./data/new-blog.json",
-  //   label: "Blog CPT",
-  //   isBlog: true
-  // },
+  {
+    file: "./data/new-blog.json",
+    label: "Blog CPT",
+    isBlog: true
+  },
   // {
   //   file: "./data/Announcements.json",
   //   label: "Announcements",

@@ -406,6 +406,7 @@ export async function upsertEntry(env, contentType, entryId, fields, shouldPubli
 /**
  * Helper: create a Contentful Link reference object
  */
-export function makeLink(id) {
-    return { sys: { type: "Link", linkType: "Entry", id } };
+export function makeLink(id, linkType = "Entry") {
+    return { sys: { type: "Link", linkType: linkType, id } };
 }
+
