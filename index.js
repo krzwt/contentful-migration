@@ -126,7 +126,7 @@ const DATA_SOURCES = [
   //   isSt: true
   // },
   {
-    file: "./data/NEW-S&T-Services.json",
+    file: "./data/new-S&T-Services.json",
     label: "S&T Services",
     isStServices: true,
   },
