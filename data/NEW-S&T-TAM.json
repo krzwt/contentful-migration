@@ -1,0 +1,2109 @@
+[
+    {
+        "sectionId": 61,
+        "postDate": "2023-08-28T17:36:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 212402,
+        "id": 945909,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "323d7a18-12a1-4ff5-97bb-5200f8a237b7",
+        "siteSettingsId": 1357232,
+        "fieldLayoutId": null,
+        "contentId": 541403,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Standard Technical Account Management",
+        "slug": "standard-technical-account-management",
+        "uri": "services/professional-services/standard-technical-account-management",
+        "dateCreated": "2023-08-08T17:36:32-05:00",
+        "dateUpdated": "2025-05-23T15:56:00-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "canonicalId": 945909,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "tamServices/standard-technical-account-management",
+        "status": "live",
+        "structureId": null,
+        "url": "https://bluetext.beyondtrust.com/services/professional-services/standard-technical-account-management",
+        "authorId": 212402,
+        "typeId": 125,
+        "slimBanner": {
+            "946157": {
+                "type": "banner",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Standard Technical Account Management",
+                    "body180": null,
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                }
+            }
+        },
+        "professionalServicesCategories": [],
+        "sectionNavigationParent": [
+            945908
+        ],
+        "body200": "A basic level of service for access to Subject Matter Expertise (SME).",
+        "headingSection": "Standard Service Tier",
+        "bodyRedactorRestricted": "<p>Your BeyondTrust implementation is a critical part of your environment. You need this investment running smoothly and configured according to best practices. BeyondTrust Technical Account Managers (TAMs) help ensure that you are receiving maximum value from your BeyondTrust investment.</p>\n<p>BeyondTrust Standard TAMs are technical resources who will partner with you to gain an in-depth knowledge of your BeyondTrust environment and your business operations. Your TAM will become your trusted advisor and your advocate within BeyondTrust and is uniquely positioned to provide a proactive approach to the support and ongoing operation of your BeyondTrust investment.</p>",
+        "servicesSideNavContent": {
+            "946163": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Customer Profile",
+                    "bodyRedactorRestricted": "<p>You should consider an engagement with a BeyondTrust Technical Account Manager if:</p>\n<ul><li>You want to ensure your solution is running smoothly, optimally, and configured according to best practices<br /></li><li>Your IT staff doesn’t have the time to dedicate themselves to becoming BeyondTrust experts<br /></li><li>Your BeyondTrust environment is complex, or integrated with external systems</li><li>Your organization would benefit from regularly scheduled meetings with a BeyondTrust expert</li><li>You want a single point of contact for escalations who will “own” your high-priority issues until they are resolved</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "946164": {
+                "type": "table",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Value Add Services",
+                    "bodyRedactorRestricted": null,
+                    "table": {
+                        "columns": [
+                            {
+                                "heading": "Value Add Services",
+                                "width": "50%",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Description",
+                                "width": "50%",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            }
+                        ],
+                        "rows": [
+                            [
+                                "Single Point of Contact",
+                                "TAMs act as single point of contact for all technical items, enhancing existing support."
+                            ],
+                            [
+                                "Support Incident Reviews",
+                                "Monthly review of all open support incidents."
+                            ],
+                            [
+                                "Enhancement Management",
+                                "TAMs monitor feature requests and provide updates to customers as needed."
+                            ],
+                            [
+                                "Escalation Management",
+                                "Act as an escalation point for new and existing tickets, driving resolution internally."
+                            ],
+                            [
+                                "Product Announcements",
+                                "Provide notification of product updates and announcements."
+                            ],
+                            [
+                                "Environment Profile Setup & Management",
+                                "Configuration of an environment profile for streamlined support."
+                            ],
+                            [
+                                "Technical Product Assessment",
+                                "Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization"
+                            ],
+                            [
+                                "Upgrade Coordination",
+                                "Coordination of software upgrades to existing deployments; product specific, utilizing internal process to inform support teams of pending customer upgrade."
+                            ]
+                        ],
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"50%\">Value Add Services</th><th align=\"left\" width=\"50%\">Description</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">Single Point of Contact</td><td align=\"left\">TAMs act as single point of contact for all technical items, enhancing existing support.</td></tr><tr><td align=\"left\">Support Incident Reviews</td><td align=\"left\">Monthly review of all open support incidents.</td></tr><tr><td align=\"left\">Enhancement Management</td><td align=\"left\">TAMs monitor feature requests and provide updates to customers as needed.</td></tr><tr><td align=\"left\">Escalation Management</td><td align=\"left\">Act as an escalation point for new and existing tickets, driving resolution internally.</td></tr><tr><td align=\"left\">Product Announcements</td><td align=\"left\">Provide notification of product updates and announcements.</td></tr><tr><td align=\"left\">Environment Profile Setup & Management</td><td align=\"left\">Configuration of an environment profile for streamlined support.</td></tr><tr><td align=\"left\">Technical Product Assessment</td><td align=\"left\">Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization</td></tr><tr><td align=\"left\">Upgrade Coordination</td><td align=\"left\">Coordination of software upgrades to existing deployments; product specific, utilizing internal process to inform support teams of pending customer upgrade.</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                    },
+                    "textList": [],
+                    "pageBreak": "page-break-before",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            }
+        },
+        "companyQuotes": [
+            946087
+        ],
+        "template": "default",
+        "paragraphFontSize": "13px",
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-08-30T14:00:43-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "A basic level of service for access to Subject Matter Expertise (SME).",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 61,
+        "postDate": "2023-08-10T14:38:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 946194,
+        "id": 955065,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "79520b0b-1cac-4d21-904d-88617582e12a",
+        "siteSettingsId": 1368295,
+        "fieldLayoutId": null,
+        "contentId": 545359,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Technical Account Management Service Tier Comparison Chart",
+        "slug": "technical-account-management-service-tier-comparison-chart",
+        "uri": "services/professional-services/technical-account-management-service-tier-comparison-chart",
+        "dateCreated": "2023-08-10T14:38:31-05:00",
+        "dateUpdated": "2025-05-23T15:53:56-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "canonicalId": 955065,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "tamServices/technical-account-management-service-tier-comparison-chart",
+        "status": "disabled",
+        "structureId": null,
+        "url": "https://bluetext.beyondtrust.com/services/professional-services/technical-account-management-service-tier-comparison-chart",
+        "authorId": 946194,
+        "typeId": 125,
+        "slimBanner": {
+            "956805": {
+                "type": "banner",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "TAM Service Comparison",
+                    "body180": "Comparison chart for BeyondTrust TAM service tiers.",
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                }
+            }
+        },
+        "professionalServicesCategories": [],
+        "sectionNavigationParent": [
+            945908
+        ],
+        "body200": "TAM Service Comparison Chart",
+        "headingSection": "Technical Account Management Service Comparison",
+        "bodyRedactorRestricted": "<p>Find the right service level to fit your unique requirements.</p>",
+        "servicesSideNavContent": {
+            "956782": {
+                "type": "table",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": null,
+                    "bodyRedactorRestricted": null,
+                    "table": {
+                        "columns": [
+                            {
+                                "heading": "Value Add Services",
+                                "width": "",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Description",
+                                "width": "",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Standard",
+                                "width": "",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Enterprise",
+                                "width": "",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Strategic",
+                                "width": "",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            }
+                        ],
+                        "rows": [
+                            [
+                                "Single Point of Contact",
+                                "TAMs act as a single point of contact for all technical items, enhancing the support experience",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Support Incident Reviews",
+                                "Review of all open support incidents",
+                                "1 call per month[1]",
+                                "4 calls per month[1]",
+                                "12 calls per month[1]"
+                            ],
+                            [
+                                "Enhancement Management",
+                                "TAMs monitor feature requests and provide updates to customers as needed.",
+                                "[check]",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "Product Announcements",
+                                "Provide notification of product updates and announcements",
+                                "[check]",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "Environment Profile Setup & Management",
+                                "Configuration of an environment profile for streamlined support",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Operational/Deployment Review Call",
+                                "Monthly touchpoint designed to ensure existing goals are being met, review overall user experience and answering product questions",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Technical Product Assessment",
+                                "Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization",
+                                "2 annually[1]",
+                                "2 annually[1]",
+                                "2 annually[1]"
+                            ],
+                            [
+                                "Upgrade Coordination",
+                                "Coordination of software upgrades to existing deployments; product-specific, utilizing internal process to inform support teams of pending customer upgrade",
+                                "Yes",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Upgrade Assistance",
+                                "TAM would participate in upgrade during scheduled timeframe to ensure smooth upgrade, and ability to pull in additional resources as necessary; product specific, including after-hours, must be pre-scheduled",
+                                "No",
+                                "[check]",
+                                "[check]"
+                            ],
+                            [
+                                "Case Management & Oversight",
+                                "Enhancing existing support services by being more deeply involved in day-to-day operations",
+                                "No",
+                                "Yes",
+                                "Yes"
+                            ],
+                            [
+                                "Health Checks",
+                                "Performed annually (within annual subscription). Depth of health check is determined on a per product basis",
+                                "No",
+                                "1 annually[1]",
+                                "2 annually[1]"
+                            ],
+                            [
+                                "Training Courses",
+                                "Public training courses",
+                                "No",
+                                "No",
+                                "2 annually[1]"
+                            ],
+                            [
+                                "On-site Visits",
+                                "On-site review and touch point (includes Customer Success Review).",
+                                "No",
+                                "1 annually[1]",
+                                "2 annually[1]"
+                            ]
+                        ],
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"center\" width=\"\">Value Add Services</th><th align=\"center\" width=\"\">Description</th><th align=\"center\" width=\"\">Standard</th><th align=\"center\" width=\"\">Enterprise</th><th align=\"center\" width=\"\">Strategic</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"center\">Single Point of Contact</td><td align=\"center\">TAMs act as a single point of contact for all technical items, enhancing the support experience</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Support Incident Reviews</td><td align=\"center\">Review of all open support incidents</td><td align=\"center\">1 call per month[1]</td><td align=\"center\">4 calls per month[1]</td><td align=\"center\">12 calls per month[1]</td></tr><tr><td align=\"center\">Enhancement Management</td><td align=\"center\">TAMs monitor feature requests and provide updates to customers as needed.</td><td align=\"center\">[check]</td><td align=\"center\">[check]</td><td align=\"center\">[check]</td></tr><tr><td align=\"center\">Product Announcements</td><td align=\"center\">Provide notification of product updates and announcements</td><td align=\"center\">[check]</td><td align=\"center\">[check]</td><td align=\"center\">[check]</td></tr><tr><td align=\"center\">Environment Profile Setup & Management</td><td align=\"center\">Configuration of an environment profile for streamlined support</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Operational/Deployment Review Call</td><td align=\"center\">Monthly touchpoint designed to ensure existing goals are being met, review overall user experience and answering product questions</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Technical Product Assessment</td><td align=\"center\">Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization</td><td align=\"center\">2 annually[1]</td><td align=\"center\">2 annually[1]</td><td align=\"center\">2 annually[1]</td></tr><tr><td align=\"center\">Upgrade Coordination</td><td align=\"center\">Coordination of software upgrades to existing deployments; product-specific, utilizing internal process to inform support teams of pending customer upgrade</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Upgrade Assistance</td><td align=\"center\">TAM would participate in upgrade during scheduled timeframe to ensure smooth upgrade, and ability to pull in additional resources as necessary; product specific, including after-hours, must be pre-scheduled</td><td align=\"center\">No</td><td align=\"center\">[check]</td><td align=\"center\">[check]</td></tr><tr><td align=\"center\">Case Management & Oversight</td><td align=\"center\">Enhancing existing support services by being more deeply involved in day-to-day operations</td><td align=\"center\">No</td><td align=\"center\">Yes</td><td align=\"center\">Yes</td></tr><tr><td align=\"center\">Health Checks</td><td align=\"center\">Performed annually (within annual subscription). Depth of health check is determined on a per product basis</td><td align=\"center\">No</td><td align=\"center\">1 annually[1]</td><td align=\"center\">2 annually[1]</td></tr><tr><td align=\"center\">Training Courses</td><td align=\"center\">Public training courses</td><td align=\"center\">No</td><td align=\"center\">No</td><td align=\"center\">2 annually[1]</td></tr><tr><td align=\"center\">On-site Visits</td><td align=\"center\">On-site review and touch point (includes Customer Success Review).</td><td align=\"center\">No</td><td align=\"center\">1 annually[1]</td><td align=\"center\">2 annually[1]</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                    },
+                    "textList": {
+                        "956783": {
+                            "type": "item",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "item": "These are executed as necessary, upon requirement or request."
+                            }
+                        }
+                    },
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            }
+        },
+        "companyQuotes": [],
+        "template": "default",
+        "paragraphFontSize": "13px",
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-08-30T14:00:58-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Comparison chart for BeyondTrust TAM service tiers.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 61,
+        "postDate": "2023-08-08T17:36:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 212402,
+        "id": 2504233,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "e1312fdd-2f0b-4385-8742-0360f0ccdee9",
+        "siteSettingsId": 3508320,
+        "fieldLayoutId": null,
+        "contentId": 1759351,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Test Strategic Technical Account Management",
+        "slug": "strategic-technical-account-management-2",
+        "uri": "services/professional-services/strategic-technical-account-management-2",
+        "dateCreated": "2026-03-03T22:49:40-06:00",
+        "dateUpdated": "2026-03-04T00:07:18-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "canonicalId": 2504233,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "tamServices/strategic-technical-account-management-2",
+        "status": "live",
+        "structureId": null,
+        "url": "https://bluetext.beyondtrust.com/services/professional-services/strategic-technical-account-management-2",
+        "authorId": 212402,
+        "typeId": 125,
+        "slimBanner": {
+            "2504234": {
+                "type": "banner",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Strategic Technical Account Management",
+                    "body180": null,
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                }
+            }
+        },
+        "professionalServicesCategories": [],
+        "sectionNavigationParent": [
+            945908
+        ],
+        "body200": "A highly-available level of service for SME access, upgrade assistance, and an annual training budget.",
+        "headingSection": "Strategic Service Tier",
+        "bodyRedactorRestricted": "<p>Your BeyondTrust implementation is a critical part of your environment. You need this investment running smoothly and configured according to best practices. BeyondTrust Technical Account Managers (TAMs) help ensure that you are receiving maximum value from your BeyondTrust investment. </p>\n<p>BeyondTrust Strategic TAMs are resources who will partner with you to gain an in-depth knowledge of your BeyondTrust environment and your business operations. The TAM will become your trusted advisor and advocate within BeyondTrust, and is uniquely positioned to provide a proactive approach to the support and ongoing operation of your BeyondTrust investment. </p>\n<p>Strategic TAMs have a focused customer list to allow for a high level of availability.</p>",
+        "servicesSideNavContent": {
+            "2504240": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Customer Profile",
+                    "bodyRedactorRestricted": "<p>You should consider an engagement with a BeyondTrust Strategic Technical Account Manager if:</p>\n<ul><li>You want to ensure that your solution is running smoothly, optimally, and configured according to best practices<br /></li><li>Your IT staff doesn’t have the time to dedicate themselves to becoming BeyondTrust experts<br /></li><li>Your BeyondTrust environment is complex, or integrated with external systems</li><li>Your organization would benefit from regularly scheduled meetings with a BeyondTrust expert</li><li>You want a single point of contact for escalations who will “own” your high priority issues until they are resolved</li><li>You want to ensure that your solution is running smoothly, optimally, and configured according to best practices</li><li>You want assistance with product upgrades</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "2504241": {
+                "type": "table",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Value Add Services",
+                    "bodyRedactorRestricted": null,
+                    "table": {
+                        "columns": [
+                            {
+                                "heading": "Value Add Services",
+                                "width": "50%",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Description",
+                                "width": "50%",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            }
+                        ],
+                        "rows": [
+                            [
+                                "Single Point of Contact",
+                                "TAMs act as single point of contact for all technical items, enhancing existing support."
+                            ],
+                            [
+                                "Support Incident Reviews",
+                                "Up to three review calls per week of all open support incidents."
+                            ],
+                            [
+                                "Enhancement Management",
+                                "TAMs monitor feature requests and provide updates to customers as needed."
+                            ],
+                            [
+                                "Escalation Management",
+                                "Act as an escalation point for new and existing tickets, driving resolution internally."
+                            ],
+                            [
+                                "Product Announcements",
+                                "Provide notification of product updates and announcements."
+                            ],
+                            [
+                                "Environment Profile Setup & Management",
+                                "Configuration of an environment profile for streamlined support."
+                            ],
+                            [
+                                "Technical Product Assessment",
+                                "Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization"
+                            ],
+                            [
+                                "Upgrade Coordination",
+                                "Coordination of software upgrades to existing deployments; product specific, utilizing internal process to inform support teams of pending customer upgrade."
+                            ],
+                            [
+                                "Upgrade Assistance",
+                                "TAM would participate in upgrade during scheduled timeframe to ensure smooth upgrade, and ability to pull in additional resources as necessary; product specific, including after-hours, must be pre-scheduled."
+                            ],
+                            [
+                                "Case Management & Oversight",
+                                "Enhancing existing support services by being more deeply involved in day-to-day operations."
+                            ],
+                            [
+                                "Go Beyond Access",
+                                "Up to two tickets for access to our GoBeyond user conference (T&E not included)."
+                            ],
+                            [
+                                "Health Checks",
+                                "Up to two annually; depth of Health Check is determined on a per product basis."
+                            ],
+                            [
+                                "Training Courses",
+                                "Up to two shared virtual training courses."
+                            ],
+                            [
+                                "On-site Visits",
+                                "On-site review and touch point; up to two annually (includes the Customer Success Review)."
+                            ]
+                        ],
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"50%\">Value Add Services</th><th align=\"left\" width=\"50%\">Description</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">Single Point of Contact</td><td align=\"left\">TAMs act as single point of contact for all technical items, enhancing existing support.</td></tr><tr><td align=\"left\">Support Incident Reviews</td><td align=\"left\">Up to three review calls per week of all open support incidents.</td></tr><tr><td align=\"left\">Enhancement Management</td><td align=\"left\">TAMs monitor feature requests and provide updates to customers as needed.</td></tr><tr><td align=\"left\">Escalation Management</td><td align=\"left\">Act as an escalation point for new and existing tickets, driving resolution internally.</td></tr><tr><td align=\"left\">Product Announcements</td><td align=\"left\">Provide notification of product updates and announcements.</td></tr><tr><td align=\"left\">Environment Profile Setup & Management</td><td align=\"left\">Configuration of an environment profile for streamlined support.</td></tr><tr><td align=\"left\">Technical Product Assessment</td><td align=\"left\">Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization</td></tr><tr><td align=\"left\">Upgrade Coordination</td><td align=\"left\">Coordination of software upgrades to existing deployments; product specific, utilizing internal process to inform support teams of pending customer upgrade.</td></tr><tr><td align=\"left\">Upgrade Assistance</td><td align=\"left\">TAM would participate in upgrade during scheduled timeframe to ensure smooth upgrade, and ability to pull in additional resources as necessary; product specific, including after-hours, must be pre-scheduled.</td></tr><tr><td align=\"left\">Case Management & Oversight</td><td align=\"left\">Enhancing existing support services by being more deeply involved in day-to-day operations.</td></tr><tr><td align=\"left\">Go Beyond Access</td><td align=\"left\">Up to two tickets for access to our GoBeyond user conference (T&E not included).</td></tr><tr><td align=\"left\">Health Checks</td><td align=\"left\">Up to two annually; depth of Health Check is determined on a per product basis.</td></tr><tr><td align=\"left\">Training Courses</td><td align=\"left\">Up to two shared virtual training courses.</td></tr><tr><td align=\"left\">On-site Visits</td><td align=\"left\">On-site review and touch point; up to two annually (includes the Customer Success Review).</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                    },
+                    "textList": [],
+                    "pageBreak": "page-break-before",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            }
+        },
+        "companyQuotes": [
+            946087,
+            2498027,
+            2498018
+        ],
+        "template": "default",
+        "paragraphFontSize": "13px",
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-08-30T14:01:15-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "A highly-available level of service for SME access, upgrade assistance, and an annual training budget.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 61,
+        "postDate": "2023-08-08T17:36:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 212402,
+        "id": 954951,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "f30c7e35-ce27-40bc-b005-4910772d9313",
+        "siteSettingsId": 1368151,
+        "fieldLayoutId": null,
+        "contentId": 545215,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Strategic Technical Account Management",
+        "slug": "strategic-technical-account-management",
+        "uri": "services/professional-services/strategic-technical-account-management",
+        "dateCreated": "2023-08-10T13:51:42-05:00",
+        "dateUpdated": "2025-05-23T15:57:01-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "canonicalId": 954951,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "tamServices/strategic-technical-account-management",
+        "status": "live",
+        "structureId": null,
+        "url": "https://bluetext.beyondtrust.com/services/professional-services/strategic-technical-account-management",
+        "authorId": 212402,
+        "typeId": 125,
+        "slimBanner": {
+            "954952": {
+                "type": "banner",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Strategic Technical Account Management",
+                    "body180": null,
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                }
+            }
+        },
+        "professionalServicesCategories": [],
+        "sectionNavigationParent": [
+            945908
+        ],
+        "body200": "A highly-available level of service for SME access, upgrade assistance, and an annual training budget.",
+        "headingSection": "Strategic Service Tier",
+        "bodyRedactorRestricted": "<p>Your BeyondTrust implementation is a critical part of your environment. You need this investment running smoothly and configured according to best practices. BeyondTrust Technical Account Managers (TAMs) help ensure that you are receiving maximum value from your BeyondTrust investment. </p>\n<p>BeyondTrust Strategic TAMs are resources who will partner with you to gain an in-depth knowledge of your BeyondTrust environment and your business operations. The TAM will become your trusted advisor and advocate within BeyondTrust, and is uniquely positioned to provide a proactive approach to the support and ongoing operation of your BeyondTrust investment. </p>\n<p>Strategic TAMs have a focused customer list to allow for a high level of availability.</p>",
+        "servicesSideNavContent": {
+            "954958": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Customer Profile",
+                    "bodyRedactorRestricted": "<p>You should consider an engagement with a BeyondTrust Strategic Technical Account Manager if:</p>\n<ul><li>You want to ensure that your solution is running smoothly, optimally, and configured according to best practices<br /></li><li>Your IT staff doesn’t have the time to dedicate themselves to becoming BeyondTrust experts<br /></li><li>Your BeyondTrust environment is complex, or integrated with external systems</li><li>Your organization would benefit from regularly scheduled meetings with a BeyondTrust expert</li><li>You want a single point of contact for escalations who will “own” your high priority issues until they are resolved</li><li>You want to ensure that your solution is running smoothly, optimally, and configured according to best practices</li><li>You want assistance with product upgrades</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "954959": {
+                "type": "table",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Value Add Services",
+                    "bodyRedactorRestricted": null,
+                    "table": {
+                        "columns": [
+                            {
+                                "heading": "Value Add Services",
+                                "width": "50%",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Description",
+                                "width": "50%",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            }
+                        ],
+                        "rows": [
+                            [
+                                "Single Point of Contact",
+                                "TAMs act as single point of contact for all technical items, enhancing existing support."
+                            ],
+                            [
+                                "Support Incident Reviews",
+                                "Up to three review calls per week of all open support incidents."
+                            ],
+                            [
+                                "Enhancement Management",
+                                "TAMs monitor feature requests and provide updates to customers as needed."
+                            ],
+                            [
+                                "Escalation Management",
+                                "Act as an escalation point for new and existing tickets, driving resolution internally."
+                            ],
+                            [
+                                "Product Announcements",
+                                "Provide notification of product updates and announcements."
+                            ],
+                            [
+                                "Environment Profile Setup & Management",
+                                "Configuration of an environment profile for streamlined support."
+                            ],
+                            [
+                                "Technical Product Assessment",
+                                "Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization"
+                            ],
+                            [
+                                "Upgrade Coordination",
+                                "Coordination of software upgrades to existing deployments; product specific, utilizing internal process to inform support teams of pending customer upgrade."
+                            ],
+                            [
+                                "Upgrade Assistance",
+                                "TAM would participate in upgrade during scheduled timeframe to ensure smooth upgrade, and ability to pull in additional resources as necessary; product specific, including after-hours, must be pre-scheduled."
+                            ],
+                            [
+                                "Case Management & Oversight",
+                                "Enhancing existing support services by being more deeply involved in day-to-day operations."
+                            ],
+                            [
+                                "Go Beyond Access",
+                                "Up to two tickets for access to our GoBeyond user conference (T&E not included)."
+                            ],
+                            [
+                                "Health Checks",
+                                "Up to two annually; depth of Health Check is determined on a per product basis."
+                            ],
+                            [
+                                "Training Courses",
+                                "Up to two shared virtual training courses."
+                            ],
+                            [
+                                "On-site Visits",
+                                "On-site review and touch point; up to two annually (includes the Customer Success Review)."
+                            ]
+                        ],
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"50%\">Value Add Services</th><th align=\"left\" width=\"50%\">Description</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">Single Point of Contact</td><td align=\"left\">TAMs act as single point of contact for all technical items, enhancing existing support.</td></tr><tr><td align=\"left\">Support Incident Reviews</td><td align=\"left\">Up to three review calls per week of all open support incidents.</td></tr><tr><td align=\"left\">Enhancement Management</td><td align=\"left\">TAMs monitor feature requests and provide updates to customers as needed.</td></tr><tr><td align=\"left\">Escalation Management</td><td align=\"left\">Act as an escalation point for new and existing tickets, driving resolution internally.</td></tr><tr><td align=\"left\">Product Announcements</td><td align=\"left\">Provide notification of product updates and announcements.</td></tr><tr><td align=\"left\">Environment Profile Setup & Management</td><td align=\"left\">Configuration of an environment profile for streamlined support.</td></tr><tr><td align=\"left\">Technical Product Assessment</td><td align=\"left\">Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization</td></tr><tr><td align=\"left\">Upgrade Coordination</td><td align=\"left\">Coordination of software upgrades to existing deployments; product specific, utilizing internal process to inform support teams of pending customer upgrade.</td></tr><tr><td align=\"left\">Upgrade Assistance</td><td align=\"left\">TAM would participate in upgrade during scheduled timeframe to ensure smooth upgrade, and ability to pull in additional resources as necessary; product specific, including after-hours, must be pre-scheduled.</td></tr><tr><td align=\"left\">Case Management & Oversight</td><td align=\"left\">Enhancing existing support services by being more deeply involved in day-to-day operations.</td></tr><tr><td align=\"left\">Go Beyond Access</td><td align=\"left\">Up to two tickets for access to our GoBeyond user conference (T&E not included).</td></tr><tr><td align=\"left\">Health Checks</td><td align=\"left\">Up to two annually; depth of Health Check is determined on a per product basis.</td></tr><tr><td align=\"left\">Training Courses</td><td align=\"left\">Up to two shared virtual training courses.</td></tr><tr><td align=\"left\">On-site Visits</td><td align=\"left\">On-site review and touch point; up to two annually (includes the Customer Success Review).</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                    },
+                    "textList": [],
+                    "pageBreak": "page-break-before",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            }
+        },
+        "companyQuotes": [
+            946087
+        ],
+        "template": "default",
+        "paragraphFontSize": "13px",
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-08-30T14:01:15-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "A highly-available level of service for SME access, upgrade assistance, and an annual training budget.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 61,
+        "postDate": "2023-08-08T17:36:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 212402,
+        "id": 954799,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "465820a3-9d70-495c-9898-c4cdfcac2cab",
+        "siteSettingsId": 1367959,
+        "fieldLayoutId": null,
+        "contentId": 545023,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Enterprise Technical Account Management",
+        "slug": "enterprise-technical-account-management",
+        "uri": "services/professional-services/enterprise-technical-account-management",
+        "dateCreated": "2023-08-10T13:40:26-05:00",
+        "dateUpdated": "2025-08-26T10:42:34-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "canonicalId": 954799,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "tamServices/enterprise-technical-account-management",
+        "status": "live",
+        "structureId": null,
+        "url": "https://bluetext.beyondtrust.com/services/professional-services/enterprise-technical-account-management",
+        "authorId": 212402,
+        "typeId": 125,
+        "slimBanner": {
+            "954800": {
+                "type": "banner",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Enterprise Technical Account Management",
+                    "body180": null,
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
+                }
+            }
+        },
+        "professionalServicesCategories": [],
+        "sectionNavigationParent": [
+            945908
+        ],
+        "body200": "An enhanced level of service for more SME access and upgrade assistance.",
+        "headingSection": "Enterprise Service Tier",
+        "bodyRedactorRestricted": "<p>Your BeyondTrust implementation plays a vital role in your organization’s security and operations. To ensure it runs smoothly and is configured in line with best practices, our Technical Account Managers (TAMs) are here to help you get the most out of your investment.</p>\n<p>Enterprise TAMs serve as strategic partners, developing a deep understanding of both your BeyondTrust environment and your broader business needs. Acting as trusted advisors and internal advocates, TAMs take a proactive approach to support and ongoing operations - helping you maximize value, reduce risk and stay ahead of evolving requirements.</p>",
+        "servicesSideNavContent": {
+            "954806": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Customer Profile",
+                    "bodyRedactorRestricted": "<p>You should consider an engagement with a BeyondTrust Technical Account Manager if:</p>\n<ul><li>You’d like to ensure your BeyondTrust solution is operating smoothly, optimized for performance, and configured according to best practices.</li><li>Your IT team has limited bandwidth to become deeply versed in BeyondTrust products.</li><li>Your environment is complex or involves integrations with other systems.</li><li>Your organization would benefit from regular scheduled touchpoints with a BeyondTrust expert.</li><li>You prefer having a dedicated technical contact to manage escalations and oversee resolution of high-priority issues.</li><li>You’re planning product upgrades and would appreciate expert guidance throughout the process. </li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "954807": {
+                "type": "table",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Value Add Services",
+                    "bodyRedactorRestricted": null,
+                    "table": {
+                        "columns": [
+                            {
+                                "heading": "Value Add Services",
+                                "width": "50%",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "Description",
+                                "width": "50%",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            }
+                        ],
+                        "rows": [
+                            [
+                                "Single Point of Contact",
+                                "TAMs act as single point of contact for all technical items, enhancing existing support."
+                            ],
+                            [
+                                "Support Incident Reviews",
+                                "Weekly review of all open support incidents."
+                            ],
+                            [
+                                "Enhancement Management",
+                                "TAMs monitor feature requests and provide updates to customers as needed."
+                            ],
+                            [
+                                "Escalation Management",
+                                "Act as an escalation point for new and existing tickets, driving resolution internally."
+                            ],
+                            [
+                                "Product Announcements",
+                                "Provide notification of product updates and announcements."
+                            ],
+                            [
+                                "Environment Profile Setup & Management",
+                                "Configuration of an environment profile for streamlined support."
+                            ],
+                            [
+                                "Technical Product Assessment",
+                                "Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization"
+                            ],
+                            [
+                                "Upgrade Coordination",
+                                "Coordination of software upgrades to existing deployments; product specific, utilizing internal process to inform support teams of pending customer upgrade."
+                            ],
+                            [
+                                "Upgrade Assistance",
+                                "TAM would participate in upgrade during scheduled timeframe to ensure smooth upgrade, and, ability to pull in additional resources as necessary; product specific, including after-hours, must be pre-scheduled."
+                            ],
+                            [
+                                "Case Management & Oversight",
+                                "Enhancing existing support services by being more deeply involved in day-to-day operations."
+                            ],
+                            [
+                                "Health Checks",
+                                "Up to one annually; depth of Health Check is determined on a per product basis."
+                            ],
+                            [
+                                "On-site Visits",
+                                "On-site review and touch point; up to one annually."
+                            ]
+                        ],
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"50%\">Value Add Services</th><th align=\"left\" width=\"50%\">Description</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">Single Point of Contact</td><td align=\"left\">TAMs act as single point of contact for all technical items, enhancing existing support.</td></tr><tr><td align=\"left\">Support Incident Reviews</td><td align=\"left\">Weekly review of all open support incidents.</td></tr><tr><td align=\"left\">Enhancement Management</td><td align=\"left\">TAMs monitor feature requests and provide updates to customers as needed.</td></tr><tr><td align=\"left\">Escalation Management</td><td align=\"left\">Act as an escalation point for new and existing tickets, driving resolution internally.</td></tr><tr><td align=\"left\">Product Announcements</td><td align=\"left\">Provide notification of product updates and announcements.</td></tr><tr><td align=\"left\">Environment Profile Setup & Management</td><td align=\"left\">Configuration of an environment profile for streamlined support.</td></tr><tr><td align=\"left\">Technical Product Assessment</td><td align=\"left\">Product assessments reviews are conducted by TAMs to analyze current usage, capture current state of production adoption and enables quicker time to value on new features and provides our customers with opportunities to establish goals for advance product utilization</td></tr><tr><td align=\"left\">Upgrade Coordination</td><td align=\"left\">Coordination of software upgrades to existing deployments; product specific, utilizing internal process to inform support teams of pending customer upgrade.</td></tr><tr><td align=\"left\">Upgrade Assistance</td><td align=\"left\">TAM would participate in upgrade during scheduled timeframe to ensure smooth upgrade, and, ability to pull in additional resources as necessary; product specific, including after-hours, must be pre-scheduled.</td></tr><tr><td align=\"left\">Case Management & Oversight</td><td align=\"left\">Enhancing existing support services by being more deeply involved in day-to-day operations.</td></tr><tr><td align=\"left\">Health Checks</td><td align=\"left\">Up to one annually; depth of Health Check is determined on a per product basis.</td></tr><tr><td align=\"left\">On-site Visits</td><td align=\"left\">On-site review and touch point; up to one annually.</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                    },
+                    "textList": [],
+                    "pageBreak": "page-break-before",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            }
+        },
+        "companyQuotes": [
+            946087
+        ],
+        "template": "default",
+        "paragraphFontSize": "13px",
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2023-08-30T14:01:52-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "An enhanced level of service for more SME access and upgrade assistance.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "1",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "1",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    }
+]

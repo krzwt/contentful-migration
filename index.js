@@ -16,6 +16,7 @@ import { migrateSt } from "./handlers/newSt.js";
 import { migrateForms } from "./handlers/formHandler.js";
 import { migratePressMedia } from "./handlers/pressMediaHandler.js";
 import { migrateBlogs } from "./handlers/blogHandler.js";
+import { migrateAnnouncements } from "./handlers/announcementHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
@@ -116,15 +117,25 @@ const DATA_SOURCES = [
   //   label: "Podcasts CPT",
   //   isPodcasts: true
   // },
-  //{
-  //   file: "./data/new-S&T-BTU.json",
-  //   label: "S&T BTU",
-  //   isStBtu: true
-  // },
+  {
+    file: "./data/new-S&T-BTU.json",
+    label: "S&T BTU",
+    isStBtu: true
+  },
   // {
   //   file: "./data/new-S&T.json",
   //   label: "S&T",
   //   isSt: true
+  // },
+  // {
+  //   file: "./data/NEW-S&T-Services.json",
+  //   label: "S&T Services",
+  //   isStServices: true,
+  // },
+  // {
+  //   file: "./data/NEW-S&T-TAM.json",
+  //   label: "S&T TAM",
+  //   isStTAM: true,
   // },
   // {
   //   file: "./data/forms-import.json",
@@ -135,12 +146,17 @@ const DATA_SOURCES = [
   //   file: "./data/new-press&media.json",
   //   label: "Press & Media",
   //   isPressMedia: true
+  // },
+  // {
+  //   file: "./data/new-blog.json",
+  //   label: "Blog CPT",
+  //   isBlog: true
+  // },
+  // {
+  //   file: "./data/Announcements.json",
+  //   label: "Announcements",
+  //   isAnnouncements: true
   // }
-  {
-    file: "./data/new-blog.json",
-    label: "Blog CPT",
-    isBlog: true
-  }
 ];
 
 
@@ -639,6 +655,15 @@ async function run() {
         totalPages,
         summary,
         rawFileContent
+      );
+    }
+
+    if (source.isAnnouncements) {
+      await migrateAnnouncements(
+        env,
+        batchData,
+        contentfulAssetMap,
+        summary
       );
     }
   }

@@ -13,7 +13,7 @@ async function run() {
         const environment = await space.getEnvironment(envId);
 
         let results = "ID VALIDATION RESULTS:\n";
-        
+
         const testIds = [
             'products',
             'services',
@@ -26,7 +26,8 @@ async function run() {
             'entitle',
             'implementation',
             'upgradeMigration',
-            'healthCheck'
+            'healthCheck',
+            'successElevated'
         ];
 
         for (const id of testIds) {
@@ -34,7 +35,7 @@ async function run() {
                 // Always fetch fresh to avoid 409
                 const entry = await environment.getEntry('st-sv-947227');
                 const originalConcepts = entry.metadata?.concepts || [];
-                
+
                 entry.metadata = {
                     ...entry.metadata,
                     concepts: [
@@ -44,14 +45,14 @@ async function run() {
 
                 await entry.update();
                 results += `✅ ${id}: VALID\n`;
-                
+
                 // Cleanup
                 const refreshed = await environment.getEntry('st-sv-947227');
                 refreshed.metadata.concepts = originalConcepts;
                 await refreshed.update();
-                
+
             } catch (err) {
-                 results += `❌ ${id}: INVALID (${err.message})\n`;
+                results += `❌ ${id}: INVALID (${err.message})\n`;
             }
             // Small delay
             await new Promise(r => setTimeout(r, 500));
