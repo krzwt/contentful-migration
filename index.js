@@ -125,16 +125,16 @@ const DATA_SOURCES = [
   //   label: "S&T",
   //   isSt: true
   // },
-  // {
-  //   file: "./data/NEW-S&T-Services.json",
-  //   label: "S&T Services",
-  //   isStServices: true,
-  // },
   {
-    file: "./data/NEW-S&T-TAM.json",
-    label: "S&T TAM",
-    isStTAM: true,
+    file: "./data/NEW-S&T-Services.json",
+    label: "S&T Services",
+    isStServices: true,
   },
+  // {
+  //   file: "./data/NEW-S&T-TAM.json",
+  //   label: "S&T TAM",
+  //   isStTAM: true,
+  // },
   // {
   //   file: "./data/forms-import.json",
   //   label: "Forms Import",
