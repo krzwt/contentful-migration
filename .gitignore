@@ -74,3 +74,4 @@ debug.json
 !.agent/**/*.json
 !registry.js
 !index.js
+missing-fixed.json
