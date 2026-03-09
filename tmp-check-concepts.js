@@ -1,5 +1,6 @@
 import contentful from 'contentful-management';
 import 'dotenv/config';
+import fs from 'fs';
 
 async function run() {
     const client = contentful.createClient({
@@ -8,31 +9,59 @@ async function run() {
 
     try {
         const space = await client.getSpace(process.env.CONTENTFUL_SPACE_ID);
-        const environment = await space.getEnvironment(process.env.CONTENTFUL_ENVIRONMENT_ID || 'master');
+        const envId = process.env.CONTENTFUL_ENVIRONMENT || 'dev';
+        const environment = await space.getEnvironment(envId);
 
-        console.log(`\n🔍 Fetching taxonomy concepts for environment: ${environment.sys.id}...`);
+        let results = "ID VALIDATION RESULTS:\n";
+        
+        const testIds = [
+            'products',
+            'services',
+            'privilegeManagement',
+            'privilegedRemoteAccess',
+            'remoteSupport',
+            'passwordSafe',
+            'adBridge',
+            'identitySecurityInsights',
+            'entitle',
+            'implementation',
+            'upgradeMigration',
+            'healthCheck'
+        ];
 
-        // Contentful Management API for Taxonomy
-        const concepts = await environment.getTaxonomyConcepts();
+        for (const id of testIds) {
+            try {
+                // Always fetch fresh to avoid 409
+                const entry = await environment.getEntry('st-sv-947227');
+                const originalConcepts = entry.metadata?.concepts || [];
+                
+                entry.metadata = {
+                    ...entry.metadata,
+                    concepts: [
+                        { sys: { type: 'Link', linkType: 'TaxonomyConcept', id: id } }
+                    ]
+                };
 
-        console.log(`✅ Found ${concepts.total} concepts.`);
-
-        console.log("\nListing concept IDs that contain 'endpoint' or 'privilege':");
-        concepts.items.forEach(c => {
-            const id = c.sys.id;
-            if (id.toLowerCase().includes('endpoint') || id.toLowerCase().includes('privilege')) {
-                console.log(`- ID: ${id}`);
+                await entry.update();
+                results += `✅ ${id}: VALID\n`;
+                
+                // Cleanup
+                const refreshed = await environment.getEntry('st-sv-947227');
+                refreshed.metadata.concepts = originalConcepts;
+                await refreshed.update();
+                
+            } catch (err) {
+                 results += `❌ ${id}: INVALID (${err.message})\n`;
             }
-        });
+            // Small delay
+            await new Promise(r => setTimeout(r, 500));
+        }
 
-        console.log("\nAll concept IDs for debugging:");
-        concepts.items.forEach(c => {
-            console.log(`- ${c.sys.id}`);
-        });
+        fs.writeFileSync('final-test-results.txt', results);
+        console.log("Final results saved to final-test-results.txt");
 
     } catch (e) {
-        console.error("❌ ERROR FETCHING CONCEPTS:", e.message);
-        if (e.details) console.error(JSON.stringify(e.details, null, 2));
+        console.error("❌ ERROR:", e.message);
     }
 }
 
