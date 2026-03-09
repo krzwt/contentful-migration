@@ -11,10 +11,6 @@ import { migrateQuotes } from "./handlers/quoteHandler.js";
 import { migrateResources } from "./handlers/resourceHandler.js";
 import { migrateGlobalReachMap } from "./handlers/newGlobalReachMap.js";
 import { migratePodcasts } from "./handlers/podcastHandler.js";
-import { migrateStBtu } from "./handlers/newStBtu.js";
-import { migrateSt } from "./handlers/newSt.js";
-import { migrateForms } from "./handlers/formHandler.js";
-import { migratePressMedia } from "./handlers/pressMediaHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import {
@@ -74,11 +70,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneConversion",
   //   label: "Standalone Conversion"
   // },
-  // {
-  //   file: "./data/standalone-microsite.json",
-  //   pageContentType: "newStandaloneMicrosite",
-  //   label: "Standalone Microsite",
-  // },
+  {
+    file: "./data/standalone-microsite.json",
+    pageContentType: "newStandaloneMicrosite",
+    label: "Standalone Microsite",
+  },
   // {
   //   file: "./data/standalone-thankyou.json",
   //   pageContentType: "newStandaloneThankYou",
@@ -109,31 +105,11 @@ const DATA_SOURCES = [
   //   label: "Global Reach Map",
   //   isGlobalReachMap: true
   // }
-  {
-    file: "./data/newPodcasts.json",
-    label: "Podcasts CPT",
-    isPodcasts: true
-  },
-  //{
-  //   file: "./data/new-S&T-BTU.json",
-  //   label: "S&T BTU",
-  //   isStBtu: true
-  // },
   // {
-  //   file: "./data/new-S&T.json",
-  //   label: "S&T",
-  //   isSt: true
+  //   file: "./data/newPodcasts.json",
+  //   label: "Podcasts CPT",
+  //   isPodcasts: true,
   // },
-  // {
-  //   file: "./data/forms-import.json",
-  //   label: "Forms Import",
-  //   isForms: true
-  // },
-  // {
-  //   file: "./data/new-press&media.json",
-  //   label: "Press & Media",
-  //   isPressMedia: true
-  // }
 ];
 
 async function run() {
@@ -182,24 +158,20 @@ async function run() {
       continue;
     }
 
-    const dataRaw = JSON.parse(fs.readFileSync(source.file, "utf-8"));
-    const data = Array.isArray(dataRaw) ? dataRaw : (dataRaw.entries || [dataRaw]);
-
-    if (!data || (Array.isArray(data) && !data.length)) {
-      console.log(`\n⚠️ Skipping "${source.label}" — empty or invalid file`);
+    const data = JSON.parse(fs.readFileSync(source.file, "utf-8"));
+    if (!data.length) {
+      console.log(`\n⚠️ Skipping "${source.label}" — empty file`);
       continue;
     }
 
     // Determine which indices to process
     let targetIndices = [];
     if (idArg) {
-      const targetIds = String(idArg).split(",").map((id) => id.trim());
-      targetIndices = data
-        .map((p, i) => (targetIds.includes(String(p.id)) ? i : -1))
-        .filter((i) => i !== -1);
-
-      if (targetIndices.length === 0) {
-        console.warn(`⚠️ Entry ID(s) "${idArg}" not found in ${source.file}`);
+      const idx = data.findIndex((p) => String(p.id) === String(idArg));
+      if (idx !== -1) {
+        targetIndices.push(idx);
+      } else {
+        console.warn(`⚠️ Entry ID "${idArg}" not found in ${source.file}`);
         continue;
       }
     } else {
@@ -351,23 +323,36 @@ async function run() {
             // --- Lookahead Merge Logic ---
             let mergedCtaEntry = null;
             const nextBId = orderedIds[k + 1];
-            if (bType === 'contentBlock' && nextBId) {
+            if (bType === "contentBlock" && nextBId) {
               const nextBlock = components[nextBId];
               const nextType = nextBlock.type || fieldKey;
               // Only merge simple 'cta' / 'calloutBar' that DON'T have a heading (as they act as CTAs for the content block)
               // Actually, most calloutBars have their own headings, so let's only merge 'cta' or truly empty-looking calloutBars.
-              if (nextBlock.enabled && (nextType === 'cta' || (nextType === 'calloutBar' && !nextBlock.fields.headingSection))) {
-                console.log(`🔗 Lookahead: Merging ${nextType} (${nextBId}) into contentBlock (${blockId})`);
+              if (
+                nextBlock.enabled &&
+                (nextType === "cta" ||
+                  (nextType === "calloutBar" &&
+                    !nextBlock.fields.headingSection))
+              ) {
+                console.log(
+                  `🔗 Lookahead: Merging ${nextType} (${nextBId}) into contentBlock (${blockId})`,
+                );
 
                 // Process the CTA block first to get its entry
                 const ctaConfig = COMPONENTS[nextType];
                 if (ctaConfig) {
-                  const ctaResult = await ctaConfig.handler(env, {
-                    blockId: nextBId,
-                    ...nextBlock.fields,
-                    label: nextBlock.fields.label || nextBlock.fields.ctaLinkText,
-                    variation: nextType,
-                  }, contentfulAssetMap, summary);
+                  const ctaResult = await ctaConfig.handler(
+                    env,
+                    {
+                      blockId: nextBId,
+                      ...nextBlock.fields,
+                      label:
+                        nextBlock.fields.label || nextBlock.fields.ctaLinkText,
+                      variation: nextType,
+                    },
+                    contentfulAssetMap,
+                    summary,
+                  );
 
                   if (ctaResult) {
                     // Extract the CTA entry from the CTA Block results
@@ -460,21 +445,45 @@ async function run() {
 
               if (heroEntry) {
                 if (Array.isArray(heroEntry)) {
-                  if (fieldKey === 'sectionNavigation') {
-                    if (type === 'overwriteParentCta') {
-                      overwriteParentCtaLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry[0].sys.id } };
+                  if (fieldKey === "sectionNavigation") {
+                    if (type === "overwriteParentCta") {
+                      overwriteParentCtaLink = {
+                        sys: {
+                          type: "Link",
+                          linkType: "Entry",
+                          id: heroEntry[0].sys.id,
+                        },
+                      };
                     } else {
-                      navigationEntryLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry[0].sys.id } };
+                      navigationEntryLink = {
+                        sys: {
+                          type: "Link",
+                          linkType: "Entry",
+                          id: heroEntry[0].sys.id,
+                        },
+                      };
                     }
                   } else {
                     sectionEntries.push(...heroEntry);
                   }
                 } else {
-                  if (fieldKey === 'sectionNavigation') {
-                    if (type === 'overwriteParentCta') {
-                      overwriteParentCtaLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry.sys.id } };
+                  if (fieldKey === "sectionNavigation") {
+                    if (type === "overwriteParentCta") {
+                      overwriteParentCtaLink = {
+                        sys: {
+                          type: "Link",
+                          linkType: "Entry",
+                          id: heroEntry.sys.id,
+                        },
+                      };
                     } else {
-                      navigationEntryLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry.sys.id } };
+                      navigationEntryLink = {
+                        sys: {
+                          type: "Link",
+                          linkType: "Entry",
+                          id: heroEntry.sys.id,
+                        },
+                      };
                     }
                   } else {
                     sectionEntries.push(heroEntry);
@@ -507,11 +516,15 @@ async function run() {
             pageEntry = await env.getEntry(pageEntry.sys.id);
             if (navigationEntryLink) {
               console.log(`\n🔗 Setting sectionNavigation on page "${title}"`);
-              pageEntry.fields.sectionNavigation = { [LOCALE]: navigationEntryLink };
+              pageEntry.fields.sectionNavigation = {
+                [LOCALE]: navigationEntryLink,
+              };
             }
             if (overwriteParentCtaLink) {
               console.log(`\n🔗 Setting overwriteParentCta on page "${title}"`);
-              pageEntry.fields.overwriteParentCta = { [LOCALE]: overwriteParentCtaLink };
+              pageEntry.fields.overwriteParentCta = {
+                [LOCALE]: overwriteParentCtaLink,
+              };
             }
             pageEntry = await pageEntry.update();
             // Publish happens in publishPage step
@@ -560,11 +573,7 @@ async function run() {
     }
 
     if (source.isGlobalReachMap) {
-      await migrateGlobalReachMap(
-        env,
-        batchData,
-        summary
-      );
+      await migrateGlobalReachMap(env, batchData, summary);
     }
 
     if (source.isPodcasts) {
@@ -575,50 +584,6 @@ async function run() {
         targetIndices,
         totalPages,
         summary,
-      );
-    }
-
-    if (source.isStBtu) {
-      await migrateStBtu(
-        env,
-        batchData,
-        contentfulAssetMap,
-        targetIndices,
-        totalPages,
-        summary,
-        rawFileContent
-      );
-    }
-
-    if (source.isSt) {
-      await migrateSt(
-        env,
-        batchData,
-        contentfulAssetMap,
-        targetIndices,
-        totalPages,
-        summary,
-        rawFileContent
-      );
-    }
-
-    if (source.isForms) {
-      await migrateForms(
-        env,
-        dataRaw,
-        summary
-      );
-    }
-
-    if (source.isPressMedia) {
-      await migratePressMedia(
-        env,
-        batchData,
-        contentfulAssetMap,
-        targetIndices,
-        totalPages,
-        summary,
-        rawFileContent
       );
     }
   }
