@@ -51,14 +51,62 @@
             }
         },
         "courseCategories": [
-            6950,
-            6951,
-            6952,
-            33342,
-            33343,
-            6953,
-            33338,
-            84697
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 6951,
+                "title": "Remote Support",
+                "slug": "remote-support",
+                "parentId": 6950,
+                "uid": "8988fc63-29fb-4fe1-af54-b95b331c749a"
+            },
+            {
+                "id": 6952,
+                "title": "Privileged Remote Access",
+                "slug": "privileged-remote-access",
+                "parentId": 6950,
+                "uid": "4aa36c3e-7a98-4668-9743-c04868f251c6"
+            },
+            {
+                "id": 33342,
+                "title": "Password Safe",
+                "slug": "password-safe",
+                "parentId": 6950,
+                "uid": "b6425c46-c55a-4e3a-9ed3-5a059d1c0d68"
+            },
+            {
+                "id": 33343,
+                "title": "Privilege Management",
+                "slug": "privilege-management",
+                "parentId": 6950,
+                "uid": "f4422896-c75a-4060-a20b-c10ae324494e"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            },
+            {
+                "id": 84697,
+                "title": "Success Elevated",
+                "slug": "success-elevated",
+                "parentId": 6953,
+                "uid": "3f2bfb8a-741d-4cbe-90a4-8d211075a380"
+            }
         ],
         "sectionNavigationParent": [],
         "body200": "Training tailored to your needs",
@@ -589,10 +637,34 @@
             }
         },
         "courseCategories": [
-            6953,
-            6954,
-            33338,
-            84697
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6954,
+                "title": "eLearning",
+                "slug": "elearning",
+                "parentId": 6953,
+                "uid": "3bd1e496-b425-4958-8bb1-02e4526d3322"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            },
+            {
+                "id": 84697,
+                "title": "Success Elevated",
+                "slug": "success-elevated",
+                "parentId": 6953,
+                "uid": "3f2bfb8a-741d-4cbe-90a4-8d211075a380"
+            }
         ],
         "sectionNavigationParent": [],
         "body200": "Why Certification Matters",
@@ -1197,13 +1269,55 @@
             }
         },
         "courseCategories": [
-            6950,
-            6951,
-            6952,
-            33342,
-            33343,
-            6953,
-            84697
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 6951,
+                "title": "Remote Support",
+                "slug": "remote-support",
+                "parentId": 6950,
+                "uid": "8988fc63-29fb-4fe1-af54-b95b331c749a"
+            },
+            {
+                "id": 6952,
+                "title": "Privileged Remote Access",
+                "slug": "privileged-remote-access",
+                "parentId": 6950,
+                "uid": "4aa36c3e-7a98-4668-9743-c04868f251c6"
+            },
+            {
+                "id": 33342,
+                "title": "Password Safe",
+                "slug": "password-safe",
+                "parentId": 6950,
+                "uid": "b6425c46-c55a-4e3a-9ed3-5a059d1c0d68"
+            },
+            {
+                "id": 33343,
+                "title": "Privilege Management",
+                "slug": "privilege-management",
+                "parentId": 6950,
+                "uid": "f4422896-c75a-4060-a20b-c10ae324494e"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 84697,
+                "title": "Success Elevated",
+                "slug": "success-elevated",
+                "parentId": 6953,
+                "uid": "3f2bfb8a-741d-4cbe-90a4-8d211075a380"
+            }
         ],
         "sectionNavigationParent": [],
         "body200": "Overview",
@@ -1673,10 +1787,34 @@
             }
         },
         "courseCategories": [
-            6950,
-            33342,
-            6953,
-            84697
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 33342,
+                "title": "Password Safe",
+                "slug": "password-safe",
+                "parentId": 6950,
+                "uid": "b6425c46-c55a-4e3a-9ed3-5a059d1c0d68"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 84697,
+                "title": "Success Elevated",
+                "slug": "success-elevated",
+                "parentId": 6953,
+                "uid": "3f2bfb8a-741d-4cbe-90a4-8d211075a380"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -1730,26 +1868,13 @@
                             "type": 108,
                             "fields": {
                                 "rows": {
-                                    "2452919": {
+                                    "1333626": {
                                         "type": "row",
                                         "enabled": true,
                                         "collapsed": false,
                                         "fields": {
-                                            "heading": "Instructor-Led Shared Virtual Training",
-                                            "body": "<p>Every Success Elevated license includes access to our comprehensive, virtual instructor-led administrative training sessions. <a href=\"{entry:1029728@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/password-safe-administration-2}\" target=\"_blank\" rel=\"noreferrer noopener\">Click here</a> to explore what’s covered and how it can elevate your expertise.</p>",
-                                            "asset": [],
-                                            "linkText": null,
-                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                                            "contentAlignment": false
-                                        }
-                                    },
-                                    "1333628": {
-                                        "type": "row",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "heading": "Live Workshops",
-                                            "body": "<p>During our live workshop sessions, our world-class instructor team will demonstrate specific aspects of a course and allow learners to ask questions along the way. These workshops provide the perfect opportunity to get answers to your questions about how particular pieces of the product work and are especially helpful for administrators managing more challenging environments and use cases. The sessions are offered at several times to accommodate different time zones around the globe.</p>",
+                                            "heading": "On-Demand eLearning",
+                                            "body": "<p>Build knowledge of best practices, product features, and implementation workflows all based around the schedule that matters most: yours! Constant access means that you can return to concepts over time to review or refresh whenever you want. Because the content is continuously updated, you can trust that you are up to date on new features and workflows that empower you to securely do your job.</p>",
                                             "asset": [],
                                             "linkText": null,
                                             "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
@@ -1769,13 +1894,26 @@
                                             "contentAlignment": false
                                         }
                                     },
-                                    "1333626": {
+                                    "1333628": {
                                         "type": "row",
                                         "enabled": true,
                                         "collapsed": false,
                                         "fields": {
-                                            "heading": "On-Demand eLearning",
-                                            "body": "<p>Build knowledge of best practices, product features, and implementation workflows all based around the schedule that matters most: yours! Constant access means that you can return to concepts over time to review or refresh whenever you want. Because the content is continuously updated, you can trust that you are up to date on new features and workflows that empower you to securely do your job.</p>",
+                                            "heading": "Live Workshops",
+                                            "body": "<p>During our live workshop sessions, our world-class instructor team will demonstrate specific aspects of a course and allow learners to ask questions along the way. These workshops provide the perfect opportunity to get answers to your questions about how particular pieces of the product work and are especially helpful for administrators managing more challenging environments and use cases. The sessions are offered at several times to accommodate different time zones around the globe.</p>",
+                                            "asset": [],
+                                            "linkText": null,
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "contentAlignment": false
+                                        }
+                                    },
+                                    "2452919": {
+                                        "type": "row",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "heading": "Instructor-Led Shared Virtual Training",
+                                            "body": "<p>Every Success Elevated license includes access to our comprehensive, virtual instructor-led administrative training sessions. <a href=\"{entry:1029728@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/password-safe-administration-2}\" target=\"_blank\" rel=\"noreferrer noopener\">Click here</a> to explore what’s covered and how it can elevate your expertise.</p>",
                                             "asset": [],
                                             "linkText": null,
                                             "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
@@ -2106,10 +2244,34 @@
             }
         },
         "courseCategories": [
-            6950,
-            6952,
-            6953,
-            84697
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 6952,
+                "title": "Privileged Remote Access",
+                "slug": "privileged-remote-access",
+                "parentId": 6950,
+                "uid": "4aa36c3e-7a98-4668-9743-c04868f251c6"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 84697,
+                "title": "Success Elevated",
+                "slug": "success-elevated",
+                "parentId": 6953,
+                "uid": "3f2bfb8a-741d-4cbe-90a4-8d211075a380"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -2163,26 +2325,13 @@
                             "type": 108,
                             "fields": {
                                 "rows": {
-                                    "2452940": {
+                                    "1333466": {
                                         "type": "row",
                                         "enabled": true,
                                         "collapsed": false,
                                         "fields": {
-                                            "heading": "Instructor-Led Shared Virtual Training",
-                                            "body": "<p>Every Success Elevated license includes access to our comprehensive, virtual instructor-led administrative training sessions. <a href=\"{entry:958930@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/privileged-remote-access-administration}\" target=\"_blank\" rel=\"noreferrer noopener\">Click here</a> to explore what’s covered and how it can elevate your expertise.</p>",
-                                            "asset": [],
-                                            "linkText": null,
-                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                                            "contentAlignment": false
-                                        }
-                                    },
-                                    "1333468": {
-                                        "type": "row",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "heading": "Live Workshops",
-                                            "body": "<p>During our live workshop sessions, our world-class instructor team will demonstrate specific aspects of a course and allow learners to ask questions along the way. These workshops provide the perfect opportunity to get answers to your questions about how particular pieces of the product work and are especially helpful for administrators managing more challenging environments and use cases. The sessions are offered at several times to accommodate different time zones around the globe.</p>",
+                                            "heading": "On-Demand eLearning",
+                                            "body": "<p>Build knowledge of best practices, product features, and implementation workflows all based around the schedule that matters most: <em>yours</em>! Constant access means that you can return to concepts over time to review or refresh whenever you want. Because the content is continuously updated, you can trust that you are up to date on new features and workflows that empower you to securely do your job.</p>",
                                             "asset": [],
                                             "linkText": null,
                                             "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
@@ -2202,13 +2351,26 @@
                                             "contentAlignment": false
                                         }
                                     },
-                                    "1333466": {
+                                    "1333468": {
                                         "type": "row",
                                         "enabled": true,
                                         "collapsed": false,
                                         "fields": {
-                                            "heading": "On-Demand eLearning",
-                                            "body": "<p>Build knowledge of best practices, product features, and implementation workflows all based around the schedule that matters most: <em>yours</em>! Constant access means that you can return to concepts over time to review or refresh whenever you want. Because the content is continuously updated, you can trust that you are up to date on new features and workflows that empower you to securely do your job.</p>",
+                                            "heading": "Live Workshops",
+                                            "body": "<p>During our live workshop sessions, our world-class instructor team will demonstrate specific aspects of a course and allow learners to ask questions along the way. These workshops provide the perfect opportunity to get answers to your questions about how particular pieces of the product work and are especially helpful for administrators managing more challenging environments and use cases. The sessions are offered at several times to accommodate different time zones around the globe.</p>",
+                                            "asset": [],
+                                            "linkText": null,
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "contentAlignment": false
+                                        }
+                                    },
+                                    "2452940": {
+                                        "type": "row",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "heading": "Instructor-Led Shared Virtual Training",
+                                            "body": "<p>Every Success Elevated license includes access to our comprehensive, virtual instructor-led administrative training sessions. <a href=\"{entry:958930@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/privileged-remote-access-administration}\" target=\"_blank\" rel=\"noreferrer noopener\">Click here</a> to explore what’s covered and how it can elevate your expertise.</p>",
                                             "asset": [],
                                             "linkText": null,
                                             "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
@@ -2539,10 +2701,34 @@
             }
         },
         "courseCategories": [
-            6950,
-            6951,
-            6953,
-            84697
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 6951,
+                "title": "Remote Support",
+                "slug": "remote-support",
+                "parentId": 6950,
+                "uid": "8988fc63-29fb-4fe1-af54-b95b331c749a"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 84697,
+                "title": "Success Elevated",
+                "slug": "success-elevated",
+                "parentId": 6953,
+                "uid": "3f2bfb8a-741d-4cbe-90a4-8d211075a380"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -2562,6 +2748,19 @@
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "text30": null,
                     "contentSubsections": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "958232": {
+                "type": "toggleAddon",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Get Certified while earning CPE credits",
+                    "bodyRedactorRestricted": "<p>Earn CPE credits and get everything you need to pass your certification with confidence—from hands-on labs to expert-led workshops. Learn more about our <a href=\"{entry:2483680@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/get-certified}\" target=\"_blank\" rel=\"noreferrer noopener\">certification program</a> and see all of <a href=\"https://www.credly.com/organizations/beyondtrust/badges\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University's digital badges with Credly here</a>. </p>",
                     "pageBreak": "",
                     "backgroundColor": "white",
                     "includeInPdf": true
@@ -2596,26 +2795,13 @@
                             "type": 108,
                             "fields": {
                                 "rows": {
-                                    "2452885": {
+                                    "1187877": {
                                         "type": "row",
                                         "enabled": true,
                                         "collapsed": false,
                                         "fields": {
-                                            "heading": "Instructor-Led Shared Virtual Training",
-                                            "body": "<p>Every Success Elevated license includes access to our comprehensive, virtual instructor-led administrative training sessions. <a href=\"{entry:958244@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/remote-support-administration}\" target=\"_blank\" rel=\"noreferrer noopener\">Click here</a> to explore what’s covered and how it can elevate your expertise.</p>",
-                                            "asset": [],
-                                            "linkText": null,
-                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                                            "contentAlignment": false
-                                        }
-                                    },
-                                    "1187879": {
-                                        "type": "row",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "heading": "Live Workshops",
-                                            "body": "<p>During our live workshop sessions, our world-class instructor team will demonstrate specific aspects of a course and allow learners to ask questions along the way. These workshops provide the perfect opportunity to get answers to your questions about how particular pieces of the product work and are especially helpful for administrators managing more challenging environments and use cases. The sessions are offered at several times to accommodate different time zones around the globe.</p>",
+                                            "heading": "On-Demand eLearning",
+                                            "body": "<p>Build knowledge of best practices, product features, and implementation workflows all based around the schedule that matters most: <em>yours</em>! Constant access means that you can return to concepts over time to review or refresh whenever you want. Because the content is continuously updated, you can trust that you are up to date on new features and workflows that empower you to securely do your job.</p>",
                                             "asset": [],
                                             "linkText": null,
                                             "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
@@ -2635,13 +2821,26 @@
                                             "contentAlignment": false
                                         }
                                     },
-                                    "1187877": {
+                                    "1187879": {
                                         "type": "row",
                                         "enabled": true,
                                         "collapsed": false,
                                         "fields": {
-                                            "heading": "On-Demand eLearning",
-                                            "body": "<p>Build knowledge of best practices, product features, and implementation workflows all based around the schedule that matters most: <em>yours</em>! Constant access means that you can return to concepts over time to review or refresh whenever you want. Because the content is continuously updated, you can trust that you are up to date on new features and workflows that empower you to securely do your job.</p>",
+                                            "heading": "Live Workshops",
+                                            "body": "<p>During our live workshop sessions, our world-class instructor team will demonstrate specific aspects of a course and allow learners to ask questions along the way. These workshops provide the perfect opportunity to get answers to your questions about how particular pieces of the product work and are especially helpful for administrators managing more challenging environments and use cases. The sessions are offered at several times to accommodate different time zones around the globe.</p>",
+                                            "asset": [],
+                                            "linkText": null,
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "contentAlignment": false
+                                        }
+                                    },
+                                    "2452885": {
+                                        "type": "row",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "heading": "Instructor-Led Shared Virtual Training",
+                                            "body": "<p>Every Success Elevated license includes access to our comprehensive, virtual instructor-led administrative training sessions. <a href=\"{entry:958244@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/remote-support-administration}\" target=\"_blank\" rel=\"noreferrer noopener\">Click here</a> to explore what’s covered and how it can elevate your expertise.</p>",
                                             "asset": [],
                                             "linkText": null,
                                             "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
@@ -2653,19 +2852,6 @@
                         }
                     },
                     "pageBreak": "page-break-after",
-                    "backgroundColor": "white",
-                    "includeInPdf": true
-                }
-            },
-            "958232": {
-                "type": "toggleAddon",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Get Certified while earning CPE credits",
-                    "bodyRedactorRestricted": "<p>Earn CPE credits and get everything you need to pass your certification with confidence—from hands-on labs to expert-led workshops. Learn more about our <a href=\"{entry:2483680@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/get-certified}\" target=\"_blank\" rel=\"noreferrer noopener\">certification program</a> and see all of <a href=\"https://www.credly.com/organizations/beyondtrust/badges\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University's digital badges with Credly here</a>. </p>",
-                    "pageBreak": "",
                     "backgroundColor": "white",
                     "includeInPdf": true
                 }
@@ -2972,11 +3158,41 @@
             }
         },
         "courseCategories": [
-            6950,
-            6951,
-            6953,
-            6954,
-            33338
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 6951,
+                "title": "Remote Support",
+                "slug": "remote-support",
+                "parentId": 6950,
+                "uid": "8988fc63-29fb-4fe1-af54-b95b331c749a"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6954,
+                "title": "eLearning",
+                "slug": "elearning",
+                "parentId": 6953,
+                "uid": "3bd1e496-b425-4958-8bb1-02e4526d3322"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -3469,10 +3685,34 @@
             }
         },
         "courseCategories": [
-            6950,
-            33343,
-            6953,
-            33338
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 33343,
+                "title": "Privilege Management",
+                "slug": "privilege-management",
+                "parentId": 6950,
+                "uid": "f4422896-c75a-4060-a20b-c10ae324494e"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -3505,22 +3745,6 @@
                 "fields": {
                     "headingSection": "Key Learning Objectives",
                     "bodyRedactorRestricted": "<ul><li><strong>Architecture Overview</strong> – Understand the architecture, traffic flow, and general functionality of AD Bridge. </li><li><strong>Initial Configuration</strong> – Learn about the logging and management tools of AD Bridge and how to configure them properly.</li><li><strong>Extend Group Policy Objects (GPO)</strong> – Understand how to create GPO(s) that manage users and their attributes automatically.</li><li><strong>Manage Identity Agents</strong> – Learn about agent services and how to manage and troubleshoot issues.</li></ul>",
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                    "text30": null,
-                    "contentSubsections": [],
-                    "pageBreak": "",
-                    "backgroundColor": "white",
-                    "includeInPdf": true
-                }
-            },
-            "990628": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Get Certified while earning CPE credits",
-                    "bodyRedactorRestricted": "<p>Participants who successfully complete the AD Bridge Foundations training are eligible to take the associated BeyondTrust Certification exam and earn up to 12 hours of Continuing Professional Education (CPE) credits. Learn more about our <a href=\"{entry:2483680@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/get-certified}\" target=\"_blank\" rel=\"noreferrer noopener\">certification program</a> and see all of <a href=\"https://www.credly.com/organizations/beyondtrust/badges\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University's digital badges with Credly here</a>.</p>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "text30": null,
                     "contentSubsections": [],
@@ -3603,6 +3827,22 @@
                         "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\"></th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">[Subheading]: Unit 1: Laying the Foundation</td></tr><tr><td align=\"left\">Course Overview and Objectives</td></tr><tr><td align=\"left\">Lesson 1: Technical Overview</td></tr><tr><td align=\"left\">Lesson 2: Deployment Overview</td></tr><tr><td align=\"left\">[Subheading]: Unit 2: Installation and Configuration</td></tr><tr><td align=\"left\">Lesson 1: Management Tools</td></tr><tr><td align=\"left\">Lesson 2: Provisioning Users</td></tr><tr><td align=\"left\">Lesson 3: Cells</td></tr><tr><td align=\"left\">Lesson 4: Agent Deployment</td></tr><tr><td align=\"left\">[Subheading]: Unit 3: Group Policy & Managing Users</td></tr><tr><td align=\"left\">Lesson 1: GPO Configuration</td></tr><tr><td align=\"left\">Lesson 2: User Management</td></tr><tr><td align=\"left\">[Subheading]: Unit 4: Managing Identity Agents</td></tr><tr><td align=\"left\">Lesson 1: Agent Architecture</td></tr><tr><td align=\"left\">Lesson 2: Troubleshooting Logins</td></tr><tr><td align=\"left\">Lesson 3: Agent Troubleshooting</td></tr><tr><td align=\"left\">Lesson 4: Troubleshooting SSO Logins</td></tr>\n\n                </tbody>\n\n            </table>\n        "
                     },
                     "textList": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "990628": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Get Certified while earning CPE credits",
+                    "bodyRedactorRestricted": "<p>Participants who successfully complete the AD Bridge Foundations training are eligible to take the associated BeyondTrust Certification exam and earn up to 12 hours of Continuing Professional Education (CPE) credits. Learn more about our <a href=\"{entry:2483680@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/get-certified}\" target=\"_blank\" rel=\"noreferrer noopener\">certification program</a> and see all of <a href=\"https://www.credly.com/organizations/beyondtrust/badges\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University's digital badges with Credly here</a>.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
                     "pageBreak": "",
                     "backgroundColor": "white",
                     "includeInPdf": true
@@ -3910,10 +4150,34 @@
             }
         },
         "courseCategories": [
-            6950,
-            33343,
-            6953,
-            33338
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 33343,
+                "title": "Privilege Management",
+                "slug": "privilege-management",
+                "parentId": 6950,
+                "uid": "f4422896-c75a-4060-a20b-c10ae324494e"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -3922,22 +4186,6 @@
         "headingSection": "Knowledge Enables Success",
         "bodyRedactorRestricted": "<p>Gain the foundational knowledge needed to administer, configure, and utilize your BeyondTrust solution for optimum performance. BeyondTrust University training is designed to maximize the value of your BeyondTrust solutions by educating your users on best practices for configuring and using our products.</p>\n<p>This course is designed for the IT security professional tasked with installation, administering, monitoring and reporting on Endpoint Privilege Management for Unix &amp; Linux. Students learn how to install the products components, identify and edit configuration files, create policy for privilege delegation, install the components needed for I/O log review, and use the Analytics and Reporting from within BeyondInsight.<br /></p>",
         "servicesSideNavContent": {
-            "959765": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Key Learning Objectives",
-                    "bodyRedactorRestricted": "<ul><li><strong>Initial Configuration</strong> – Learn how to install and configure BeyondInsight for Unix &amp; Linux and the Endpoint Privilege Management for Unix &amp; Linux software suite for your environment.</li><li><strong>Deploy Policies</strong> – See how to configure script-based or role-based policies and deploy them using the policy editor.</li><li><strong>Reports and Auditing</strong> – Review your event logs and investigate activity, including the Advanced Control and Audit (ACA) feature.</li></ul>",
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                    "text30": null,
-                    "contentSubsections": [],
-                    "pageBreak": "",
-                    "backgroundColor": "white",
-                    "includeInPdf": true
-                }
-            },
             "959764": {
                 "type": "contentBlock",
                 "enabled": true,
@@ -3954,14 +4202,14 @@
                     "includeInPdf": true
                 }
             },
-            "993543": {
+            "959765": {
                 "type": "contentBlock",
                 "enabled": true,
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "headingSection": "Get certified while earning CPE credits",
-                    "bodyRedactorRestricted": "<p>Participants who successfully complete the Endpoint Privilege Management for Unix &amp; Linux training are eligible to take the associated BeyondTrust Certification exam and earn up to 15 hours of Continuing Professional Education (CPE) credits. Learn more about our <a href=\"{entry:2483680@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/get-certified}\" target=\"_blank\" rel=\"noreferrer noopener\">certification program</a> and see all of <a href=\"https://www.credly.com/organizations/beyondtrust/badges\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University's digital badges with Credly here</a>.</p>",
+                    "headingSection": "Key Learning Objectives",
+                    "bodyRedactorRestricted": "<ul><li><strong>Initial Configuration</strong> – Learn how to install and configure BeyondInsight for Unix &amp; Linux and the Endpoint Privilege Management for Unix &amp; Linux software suite for your environment.</li><li><strong>Deploy Policies</strong> – See how to configure script-based or role-based policies and deploy them using the policy editor.</li><li><strong>Reports and Auditing</strong> – Review your event logs and investigate activity, including the Advanced Control and Audit (ACA) feature.</li></ul>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "text30": null,
                     "contentSubsections": [],
@@ -4071,6 +4319,22 @@
                         "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\"></th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">[Subheading]: Unit 1: Introduction</td></tr><tr><td align=\"left\">Introduction</td></tr><tr><td align=\"left\">[Subheading]: Unit 2: Architecture & Installation</td></tr><tr><td align=\"left\">Lesson 1: Understand the Key Components of the Solution </td></tr><tr><td align=\"left\">Lesson 2: Install all Components on a Linux Host</td></tr><tr><td align=\"left\">[Subheading]: Unit 3 – Configure Basic Policy</td></tr><tr><td align=\"left\">Lesson 1: Identifying the Key Configuration Files</td></tr><tr><td align=\"left\">Lesson 2: Create and Verify a New Policy</td></tr><tr><td align=\"left\">[Subheading]: Unit 4 – Privilege Delegation</td></tr><tr><td align=\"left\">Lesson 1: Policy Precedence and Order of Processing </td></tr><tr><td align=\"left\">Lesson 2: Privilege Delegation Use Cases</td></tr><tr><td align=\"left\">[Subheading]: Unit 5 – Auditing & Logging</td></tr><tr><td align=\"left\">Lesson 1: Understanding the Auditing and Logging Capabilities </td></tr><tr><td align=\"left\">Lesson 2: Review Event Logs </td></tr><tr><td align=\"left\">Lesson 3: Use the Replay Utility to Investigate I/O Log Activity</td></tr><tr><td align=\"left\">[Subheading]: Unit 6 – Integration</td></tr><tr><td align=\"left\">Lesson 1: Configure Solr for I/O Log Indexing and Search </td></tr><tr><td align=\"left\">Lesson 2: Review Audit Data from BeyondInsight</td></tr><tr><td align=\"left\">Lesson 3: Configure with Sudo</td></tr><tr><td align=\"left\">[Subheading]: Unit 7 – Final Configuration</td></tr><tr><td align=\"left\">Lesson 1: Policy Structure </td></tr><tr><td align=\"left\">Lesson 2: Policy Use Cases </td></tr><tr><td align=\"left\">Lesson 3: Advanced Control and Audit </td></tr><tr><td align=\"left\">Lesson 4: Authentication </td></tr><tr><td align=\"left\">Lesson 5: Failover </td></tr><tr><td align=\"left\">Lesson 6: Additional Product Integrations</td></tr>\n\n                </tbody>\n\n            </table>\n        "
                     },
                     "textList": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "993543": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Get certified while earning CPE credits",
+                    "bodyRedactorRestricted": "<p>Participants who successfully complete the Endpoint Privilege Management for Unix &amp; Linux training are eligible to take the associated BeyondTrust Certification exam and earn up to 15 hours of Continuing Professional Education (CPE) credits. Learn more about our <a href=\"{entry:2483680@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/get-certified}\" target=\"_blank\" rel=\"noreferrer noopener\">certification program</a> and see all of <a href=\"https://www.credly.com/organizations/beyondtrust/badges\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University's digital badges with Credly here</a>.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
                     "pageBreak": "",
                     "backgroundColor": "white",
                     "includeInPdf": true
@@ -4378,11 +4642,41 @@
             }
         },
         "courseCategories": [
-            6950,
-            33343,
-            6953,
-            6955,
-            33338
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 33343,
+                "title": "Privilege Management",
+                "slug": "privilege-management",
+                "parentId": 6950,
+                "uid": "f4422896-c75a-4060-a20b-c10ae324494e"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6955,
+                "title": "Shared Virtual",
+                "slug": "public-shared-training",
+                "parentId": 6953,
+                "uid": "82c498a7-2eac-45ac-9314-a5a5484dd960"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -4415,22 +4709,6 @@
                 "fields": {
                     "headingSection": "Key Learning Objectives",
                     "bodyRedactorRestricted": "<ul><li><strong>Deploying the Software</strong> – Walk through the different ways of installing and deploying the software including deployment to endpoints.</li><li><strong>Configuration and Control</strong> – Learn how to configure policies and how to create application control through workstyles and application groups.</li><li><strong>Achieve Least Privilege</strong> – Remove excessive end-user privileges without hindering productivity.</li><li><strong>Control Authorization Requests</strong> – Maintain security, user productivity, and IT operational efficiency by enforcing least privilege across the Mac environment.</li></ul>",
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                    "text30": null,
-                    "contentSubsections": [],
-                    "pageBreak": "",
-                    "backgroundColor": "white",
-                    "includeInPdf": true
-                }
-            },
-            "993891": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Get certified while earning CPE credits",
-                    "bodyRedactorRestricted": "<p>Participants who successfully complete the Endpoint Privilege Management for Mac training are eligible to take the associated BeyondTrust Certification exam and earn up to 8 hours of Continuing Professional Education (CPE) credits. Learn more about our <a href=\"{entry:2483680@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/get-certified}\" target=\"_blank\" rel=\"noreferrer noopener\">certification program</a> and see all of <a href=\"https://www.credly.com/organizations/beyondtrust/badges\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University's digital badges with Credly here</a>.</p>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "text30": null,
                     "contentSubsections": [],
@@ -4533,6 +4811,22 @@
                         "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\"></th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">[Subheading]: Unit 1: Laying the Foundation </td></tr><tr><td align=\"left\">Lesson 1: What is Privilege Management? </td></tr><tr><td align=\"left\">Lesson 2: Policy Deployment Options </td></tr><tr><td align=\"left\">Lesson 3: Client Overview </td></tr><tr><td align=\"left\">Lesson 4: Rapid Deployment Tool </td></tr><tr><td align=\"left\">Lesson 5: Editing Policy </td></tr><tr><td align=\"left\">Lesson 6: Policy Overview</td></tr><tr><td align=\"left\">[Subheading]: Unit 2: Configuring Core Policy Components</td></tr><tr><td align=\"left\">Lesson 1: Workstyles </td></tr><tr><td align=\"left\">Lesson 2: Defining Applications </td></tr><tr><td align=\"left\">Lesson 3: End-User Messages </td></tr><tr><td align=\"left\">Lesson 4: Application Rules</td></tr><tr><td align=\"left\">[Subheading]: Unit 3: Applying Use Cases</td></tr><tr><td align=\"left\">Lesson 1: Specific Authorizations</td></tr><tr><td align=\"left\">Lesson 2: Authorization Replacement </td></tr><tr><td align=\"left\">Lesson 3: System Trusted Applications </td></tr><tr><td align=\"left\">Lesson 4: Blocking Applications </td></tr><tr><td align=\"left\">Lesson 5: Handling Unknown Applications </td></tr><tr><td align=\"left\">Lesson 6: Controlling Sudo </td></tr><tr><td align=\"left\">Lesson 7: Mount Assist and /Applications/</td></tr>\n\n                </tbody>\n\n            </table>\n        "
                     },
                     "textList": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "993891": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Get certified while earning CPE credits",
+                    "bodyRedactorRestricted": "<p>Participants who successfully complete the Endpoint Privilege Management for Mac training are eligible to take the associated BeyondTrust Certification exam and earn up to 8 hours of Continuing Professional Education (CPE) credits. Learn more about our <a href=\"{entry:2483680@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/get-certified}\" target=\"_blank\" rel=\"noreferrer noopener\">certification program</a> and see all of <a href=\"https://www.credly.com/organizations/beyondtrust/badges\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University's digital badges with Credly here</a>.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
                     "pageBreak": "",
                     "backgroundColor": "white",
                     "includeInPdf": true
@@ -4840,10 +5134,34 @@
             }
         },
         "courseCategories": [
-            6950,
-            33343,
-            6953,
-            84697
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 33343,
+                "title": "Privilege Management",
+                "slug": "privilege-management",
+                "parentId": 6950,
+                "uid": "f4422896-c75a-4060-a20b-c10ae324494e"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 84697,
+                "title": "Success Elevated",
+                "slug": "success-elevated",
+                "parentId": 6953,
+                "uid": "3f2bfb8a-741d-4cbe-90a4-8d211075a380"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -4852,22 +5170,6 @@
         "headingSection": "Knowledge Enables Success",
         "bodyRedactorRestricted": "<p>Gain the foundational knowledge needed to administer, configure, and utilize your BeyondTrust solution for optimum performance. Subscription training includes on-demand eLearning and instructor-led workshops that provide a strong foundation for understanding your implementation and learning best practices for deploying and administering Privilege Management for Mac. Live workshops will put you in a focused training session with specialized instructors, allowing for real-time feedback and answers to your questions.</p>\n<p>New content is regularly added as new software versions are released, so you can anticipate and get the greatest value from product changes and enhancements. The materials are updated continuously to ensure you make the most of the recommendations and insights into product features and best practice use cases. </p>",
         "servicesSideNavContent": {
-            "959497": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "About This Course",
-                    "bodyRedactorRestricted": "<p>The Privilege Management for Mac Subscription course is ideal for security professionals who need to learn about security risks, the role and benefits of Least Privilege, the user experience with Privilege Management, and the components of its framework.</p>",
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                    "text30": null,
-                    "contentSubsections": [],
-                    "pageBreak": "",
-                    "backgroundColor": "white",
-                    "includeInPdf": true
-                }
-            },
             "959496": {
                 "type": "contentBlock",
                 "enabled": true,
@@ -4876,6 +5178,22 @@
                 "fields": {
                     "headingSection": "Key Learning Objectives",
                     "bodyRedactorRestricted": "<ul><li><strong>Deploying the Software</strong> – Walk through the different ways of installing and deploying the software including deployment to endpoints.</li><li><strong>Configuration and Control</strong> – Learn how to configure policies and how to create application control through workstyles and application groups.</li><li><strong>Achieve Least Privilege</strong> – Remove excessive end-user privileges without hindering productivity.</li><li><strong>Control Authorization Requests</strong> – Maintain security, user productivity, and IT operational efficiency by enforcing least privilege across the Mac environment.</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "959497": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "About This Course",
+                    "bodyRedactorRestricted": "<p>The Privilege Management for Mac Subscription course is ideal for security professionals who need to learn about security risks, the role and benefits of Least Privilege, the user experience with Privilege Management, and the components of its framework.</p>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "text30": null,
                     "contentSubsections": [],
@@ -5292,11 +5610,41 @@
             }
         },
         "courseCategories": [
-            6950,
-            33343,
-            6953,
-            6955,
-            33338
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 33343,
+                "title": "Privilege Management",
+                "slug": "privilege-management",
+                "parentId": 6950,
+                "uid": "f4422896-c75a-4060-a20b-c10ae324494e"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6955,
+                "title": "Shared Virtual",
+                "slug": "public-shared-training",
+                "parentId": 6953,
+                "uid": "82c498a7-2eac-45ac-9314-a5a5484dd960"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -5817,10 +6165,34 @@
             }
         },
         "courseCategories": [
-            6950,
-            33343,
-            6953,
-            84697
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 33343,
+                "title": "Privilege Management",
+                "slug": "privilege-management",
+                "parentId": 6950,
+                "uid": "f4422896-c75a-4060-a20b-c10ae324494e"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 84697,
+                "title": "Success Elevated",
+                "slug": "success-elevated",
+                "parentId": 6953,
+                "uid": "3f2bfb8a-741d-4cbe-90a4-8d211075a380"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -5874,26 +6246,13 @@
                             "type": 108,
                             "fields": {
                                 "rows": {
-                                    "2452980": {
+                                    "1333507": {
                                         "type": "row",
                                         "enabled": true,
                                         "collapsed": false,
                                         "fields": {
-                                            "heading": "Instructor-Led Shared Virtual Training",
-                                            "body": "<p>Every Success Elevated license includes access to our comprehensive, virtual instructor-led administrative training sessions. <a href=\"{entry:959377@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/privilege-management-for-windows}\" target=\"_blank\" rel=\"noreferrer noopener\">Click here for EPM-Windows</a> &amp; <a href=\"{entry:959549@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/privilege-management-for-mac}\" target=\"_blank\" rel=\"noreferrer noopener\">click here for EPM-Mac</a> to explore what’s covered and how it can elevate your expertise.</p>",
-                                            "asset": [],
-                                            "linkText": null,
-                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                                            "contentAlignment": false
-                                        }
-                                    },
-                                    "1333509": {
-                                        "type": "row",
-                                        "enabled": true,
-                                        "collapsed": false,
-                                        "fields": {
-                                            "heading": "Live Workshops",
-                                            "body": "<p>During our live workshop sessions, our world-class instructor team will demonstrate specific aspects of the product and allow learners to ask questions. These workshops provide the perfect opportunity to get answers to your questions about how particular pieces of the product work, and are especially helpful for administrators managing more challenging environments and use cases. The sessions are offered at several times to accommodate different time zones around the globe.</p>",
+                                            "heading": "On-Demand eLearning",
+                                            "body": "<p>Build knowledge of best practices, product features, and implementation workflows, all based around the schedule that matters most: <em>yours</em>! Constant access means you can return to concepts over time to review or refresh whenever you want. Because the content is continuously updated, you can trust that you are up to date on new features and workflows that empower you to securely do your job.</p>",
                                             "asset": [],
                                             "linkText": null,
                                             "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
@@ -5913,6 +6272,19 @@
                                             "contentAlignment": false
                                         }
                                     },
+                                    "1333509": {
+                                        "type": "row",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "heading": "Live Workshops",
+                                            "body": "<p>During our live workshop sessions, our world-class instructor team will demonstrate specific aspects of the product and allow learners to ask questions. These workshops provide the perfect opportunity to get answers to your questions about how particular pieces of the product work, and are especially helpful for administrators managing more challenging environments and use cases. The sessions are offered at several times to accommodate different time zones around the globe.</p>",
+                                            "asset": [],
+                                            "linkText": null,
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "contentAlignment": false
+                                        }
+                                    },
                                     "1608226": {
                                         "type": "row",
                                         "enabled": true,
@@ -5926,13 +6298,13 @@
                                             "contentAlignment": false
                                         }
                                     },
-                                    "1333507": {
+                                    "2452980": {
                                         "type": "row",
                                         "enabled": true,
                                         "collapsed": false,
                                         "fields": {
-                                            "heading": "On-Demand eLearning",
-                                            "body": "<p>Build knowledge of best practices, product features, and implementation workflows, all based around the schedule that matters most: <em>yours</em>! Constant access means you can return to concepts over time to review or refresh whenever you want. Because the content is continuously updated, you can trust that you are up to date on new features and workflows that empower you to securely do your job.</p>",
+                                            "heading": "Instructor-Led Shared Virtual Training",
+                                            "body": "<p>Every Success Elevated license includes access to our comprehensive, virtual instructor-led administrative training sessions. <a href=\"{entry:959377@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/privilege-management-for-windows}\" target=\"_blank\" rel=\"noreferrer noopener\">Click here for EPM-Windows</a> &amp; <a href=\"{entry:959549@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/privilege-management-for-mac}\" target=\"_blank\" rel=\"noreferrer noopener\">click here for EPM-Mac</a> to explore what’s covered and how it can elevate your expertise.</p>",
                                             "asset": [],
                                             "linkText": null,
                                             "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
@@ -6263,10 +6635,34 @@
             }
         },
         "courseCategories": [
-            6950,
-            33342,
-            6953,
-            6954
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 33342,
+                "title": "Password Safe",
+                "slug": "password-safe",
+                "parentId": 6950,
+                "uid": "b6425c46-c55a-4e3a-9ed3-5a059d1c0d68"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6954,
+                "title": "eLearning",
+                "slug": "elearning",
+                "parentId": 6953,
+                "uid": "3bd1e496-b425-4958-8bb1-02e4526d3322"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -6299,22 +6695,6 @@
                 "fields": {
                     "headingSection": "Key Learning Objectives",
                     "bodyRedactorRestricted": "<ul><li><strong>Navigating the Web Portal</strong> – Familiarize learners with using local accounts and showing AD login.</li><li><strong>Password Access</strong> – Request and retrieve passwords using Password Safe.</li><li><strong>Account Grid</strong> – Prioritize and navigate the information important to your organization.</li><li><strong>Session Usage</strong> – Learn to use the Password Safe console to request SSH &amp; RDP Sessions.</li></ul>",
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                    "text30": null,
-                    "contentSubsections": [],
-                    "pageBreak": "",
-                    "backgroundColor": "white",
-                    "includeInPdf": true
-                }
-            },
-            "1068670": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Knowledge Check",
-                    "bodyRedactorRestricted": "<p>Participants who successfully complete the Password Safe User training are eligible to take the associated BeyondTrust exam to verify knowledge and understanding.</p>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "text30": null,
                     "contentSubsections": [],
@@ -6374,6 +6754,22 @@
                         "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\"></th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">[Subheading]: Welcome & Overview</td></tr><tr><td align=\"left\">Lesson 1: Password Safe Overview</td></tr><tr><td align=\"left\">Lesson 2: Accessing the Web Portal </td></tr><tr><td align=\"left\">Lesson 3: Navigating the Web Portal</td></tr><tr><td align=\"left\">[Subheading]: Password & Session Management</td></tr><tr><td align=\"left\">Lesson 1: Methods for Requesting Sessions </td></tr><tr><td align=\"left\">Lesson 2: Retrieving and Viewing Passwords </td></tr><tr><td align=\"left\">Lesson 3: Checking in Requests </td></tr><tr><td align=\"left\">Lesson 4: Requesting and Initiating RDP Sessions </td></tr><tr><td align=\"left\">Lesson 5: Requesting and Initiating SSH Sessions</td></tr>\n\n                </tbody>\n\n            </table>\n        "
                     },
                     "textList": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "1068670": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Knowledge Check",
+                    "bodyRedactorRestricted": "<p>Participants who successfully complete the Password Safe User training are eligible to take the associated BeyondTrust exam to verify knowledge and understanding.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
                     "pageBreak": "",
                     "backgroundColor": "white",
                     "includeInPdf": true
@@ -6681,11 +7077,41 @@
             }
         },
         "courseCategories": [
-            6950,
-            6952,
-            6953,
-            6954,
-            33338
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 6952,
+                "title": "Privileged Remote Access",
+                "slug": "privileged-remote-access",
+                "parentId": 6950,
+                "uid": "4aa36c3e-7a98-4668-9743-c04868f251c6"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6954,
+                "title": "eLearning",
+                "slug": "elearning",
+                "parentId": 6953,
+                "uid": "3bd1e496-b425-4958-8bb1-02e4526d3322"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -7121,11 +7547,41 @@
             }
         },
         "courseCategories": [
-            6950,
-            6952,
-            6953,
-            6955,
-            33338
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 6952,
+                "title": "Privileged Remote Access",
+                "slug": "privileged-remote-access",
+                "parentId": 6950,
+                "uid": "4aa36c3e-7a98-4668-9743-c04868f251c6"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6955,
+                "title": "Shared Virtual",
+                "slug": "public-shared-training",
+                "parentId": 6953,
+                "uid": "82c498a7-2eac-45ac-9314-a5a5484dd960"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -7625,10 +8081,34 @@
             }
         },
         "courseCategories": [
-            6950,
-            6951,
-            6953,
-            6954
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 6951,
+                "title": "Remote Support",
+                "slug": "remote-support",
+                "parentId": 6950,
+                "uid": "8988fc63-29fb-4fe1-af54-b95b331c749a"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6954,
+                "title": "eLearning",
+                "slug": "elearning",
+                "parentId": 6953,
+                "uid": "3bd1e496-b425-4958-8bb1-02e4526d3322"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -8121,11 +8601,41 @@
             }
         },
         "courseCategories": [
-            6950,
-            6951,
-            6953,
-            6955,
-            33338
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 6951,
+                "title": "Remote Support",
+                "slug": "remote-support",
+                "parentId": 6950,
+                "uid": "8988fc63-29fb-4fe1-af54-b95b331c749a"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6955,
+                "title": "Shared Virtual",
+                "slug": "public-shared-training",
+                "parentId": 6953,
+                "uid": "82c498a7-2eac-45ac-9314-a5a5484dd960"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -8158,22 +8668,6 @@
                 "fields": {
                     "headingSection": "Key Learning Objectives",
                     "bodyRedactorRestricted": "<ul><li><strong>Configure the Appliance </strong>– Learn how to configure Remote Support in the network, including: software installation, defining email alerts, and saving site backups</li><li><strong>Establishing Security Policies</strong> – Set site-wide security options, define local users, create group policies, and add users and support teams through existing directory services, such as Active Directory </li><li><strong>Enabling Support Options</strong> – Learn about representative and customer-initiated support options. Configure Support Buttons, Canned Scripts, Special Actions, collaboration, Jump technology, and public portals for deployment</li></ul>",
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                    "text30": null,
-                    "contentSubsections": [],
-                    "pageBreak": "",
-                    "backgroundColor": "white",
-                    "includeInPdf": true
-                }
-            },
-            "1001255": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Get Certified while earning CPE credits",
-                    "bodyRedactorRestricted": "<p>Participants who successfully complete the Remote Support Administration training are eligible to take the associated BeyondTrust Certification exam and earn up to 16 hours of Continuing Professional Education (CPE) credits. Learn more about our <a href=\"{entry:2483680@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/get-certified}\" target=\"_blank\" rel=\"noreferrer noopener\">certification program</a> and see all of <a href=\"https://www.credly.com/organizations/beyondtrust/badges\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University's digital badges with Credly here</a>.</p>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "text30": null,
                     "contentSubsections": [],
@@ -8354,6 +8848,22 @@
                         "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\"></th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">[Subheading]: Unit 1: Remote Support Introduction</td></tr><tr><td align=\"left\">Welcome Course Overview</td></tr><tr><td align=\"left\">Lesson 1: How Remote Support Works</td></tr><tr><td align=\"left\">Lesson 2: Representative Console Interface </td></tr><tr><td align=\"left\">Lesson 3: Administrator Interfaces </td></tr><tr><td align=\"left\">Lesson 4: What is Supported </td></tr><tr><td align=\"left\">Lesson 5: Version Options & Features</td></tr><tr><td align=\"left\">[Subheading]: Unit 2: Configuration Options</td></tr><tr><td align=\"left\">Lesson 1: Setting Site-Wide Options </td></tr><tr><td align=\"left\">Lesson 2: Licensing Management</td></tr><tr><td align=\"left\">[Subheading]: Unit 3: Support Options</td></tr><tr><td align=\"left\">Lesson 1: Defining Skills </td></tr><tr><td align=\"left\">Lesson 2: Defining Support Teams </td></tr><tr><td align=\"left\">Lesson 3: Defining Issues </td></tr><tr><td align=\"left\">Lesson 4: Configuring the Support Button </td></tr><tr><td align=\"left\">Lesson 5: Canned Scripts & Custom Special Actions</td></tr><tr><td align=\"left\">[Subheading]: Unit 4: Jump Technology</td></tr><tr><td align=\"left\">Lesson 1: Understanding Jump Methods</td></tr><tr><td align=\"left\">Lesson 2: Creating Jump Groups </td></tr><tr><td align=\"left\">Lesson 3: Adding Jump Item Roles </td></tr><tr><td align=\"left\">Lesson 4: Deploying Jump Clients </td></tr><tr><td align=\"left\">Lesson 5: Deploying Jumpoints</td></tr><tr><td align=\"left\">[Subheading]: Unit 5: Security and Roles</td></tr><tr><td align=\"left\">Lesson 1: Setting Security Options </td></tr><tr><td align=\"left\">Lesson 2: Session Policies </td></tr><tr><td align=\"left\">Lesson 3: Defining Local Users </td></tr><tr><td align=\"left\">Lesson 4: Defining Group Policies </td></tr><tr><td align=\"left\">Lesson 5: Defining Group Policies with LDAP</td></tr><tr><td align=\"left\">[Subheading]: Unit 6: Support Portal</td></tr><tr><td align=\"left\">Lesson 1: Creating Public Sites </td></tr><tr><td align=\"left\">Lesson 2: Customer Notices </td></tr><tr><td align=\"left\">Lesson 3: Customizing the Customer Client </td></tr><tr><td align=\"left\">Lesson 4: Understanding HTML Templates </td></tr><tr><td align=\"left\">Lesson 5: Modifying Style Sheets</td></tr><tr><td align=\"left\">[Subheading]: Appendices</td></tr><tr><td align=\"left\">Appendix A: References </td></tr><tr><td align=\"left\">Appendix B: Using Certificate Management </td></tr><tr><td align=\"left\">Appendix C: Permissions </td></tr><tr><td align=\"left\">Appendix D: Appliance Features </td></tr><tr><td align=\"left\">Appendix E: Configure Representative Console Settings </td></tr><tr><td align=\"left\">Appendix F: Glossary</td></tr><tr><td align=\"left\">[Subheading]: Supplemental eLearning</td></tr><tr><td align=\"left\">Vault </td></tr><tr><td align=\"left\">Reporting </td></tr><tr><td align=\"left\">Integration Client </td></tr><tr><td align=\"left\">Appliance Administration</td></tr>\n\n                </tbody>\n\n            </table>\n        "
                     },
                     "textList": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "1001255": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Get Certified while earning CPE credits",
+                    "bodyRedactorRestricted": "<p>Participants who successfully complete the Remote Support Administration training are eligible to take the associated BeyondTrust Certification exam and earn up to 16 hours of Continuing Professional Education (CPE) credits. Learn more about our <a href=\"{entry:2483680@1:url||https://bluetext.beyondtrust.com/services/beyondtrust-university/get-certified}\" target=\"_blank\" rel=\"noreferrer noopener\">certification program</a> and see all of <a href=\"https://www.credly.com/organizations/beyondtrust/badges\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust University's digital badges with Credly here</a>.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
                     "pageBreak": "",
                     "backgroundColor": "white",
                     "includeInPdf": true
@@ -8661,9 +9171,27 @@
             }
         },
         "courseCategories": [
-            6950,
-            6951,
-            6953
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 6951,
+                "title": "Remote Support",
+                "slug": "remote-support",
+                "parentId": 6950,
+                "uid": "8988fc63-29fb-4fe1-af54-b95b331c749a"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -8672,6 +9200,45 @@
         "headingSection": "Your success is our priority",
         "bodyRedactorRestricted": "<p>Success Included is our on-demand training program, available at no additional cost to all active customers. This industry-leading approach ensures that every customer has immediate access to comprehensive training across our entire product portfolio—regardless of which products they own. Available 24x7 across global time zones, the learning includes product onboarding, key features, maintenance, and much more!</p>",
         "servicesSideNavContent": {
+            "2398196": {
+                "type": "linkCards",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Advanced learning",
+                    "body250": "Accelerate your technical and professional learning experience with our advanced learning offerings.",
+                    "linkCards": {
+                        "2398197": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Success Elevated",
+                                "body": "Enhance your learning with flexible self-paced training, expert-led sessions, and hands-on labs to elevate skills, confidence, and results.",
+                                "ctaLink": "{\"linkedUrl\":\"\\/services-training\\/beyondtrust-university?course-format=Success+Elevated\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "ctaLinkText": "View All"
+                            }
+                        },
+                        "2398198": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Shared Virtual",
+                                "body": "Virtual, instructor-led training offered at set times that provide opportunities for interaction and discussion; registration required and will include attendees from a variety of companies.",
+                                "ctaLink": "{\"linkedUrl\":\"\\/services-training\\/beyondtrust-university?course-format=Shared+Virtual\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "ctaLinkText": "View All"
+                            }
+                        },
+                        "2398199": {
+                            "type": 107,
+                            "fields": {
+                                "heading": "Private Training",
+                                "body": "Instructor-led training that is offered live either on-site at your location or as a virtual course; will only include your company's participants.",
+                                "ctaLink": "{\"linkedUrl\":\"\\/services-training\\/beyondtrust-university?course-format=Private+On-site+or+Virtual\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "ctaLinkText": "View All"
+                            }
+                        }
+                    }
+                }
+            },
             "2398238": {
                 "type": "faqs",
                 "enabled": true,
@@ -8736,45 +9303,6 @@
                     "pageBreak": "",
                     "backgroundColor": "white",
                     "includeInPdf": true
-                }
-            },
-            "2398196": {
-                "type": "linkCards",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Advanced learning",
-                    "body250": "Accelerate your technical and professional learning experience with our advanced learning offerings.",
-                    "linkCards": {
-                        "2398197": {
-                            "type": 107,
-                            "fields": {
-                                "heading": "Success Elevated",
-                                "body": "Enhance your learning with flexible self-paced training, expert-led sessions, and hands-on labs to elevate skills, confidence, and results.",
-                                "ctaLink": "{\"linkedUrl\":\"\\/services-training\\/beyondtrust-university?course-format=Success+Elevated\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
-                                "ctaLinkText": "View All"
-                            }
-                        },
-                        "2398198": {
-                            "type": 107,
-                            "fields": {
-                                "heading": "Shared Virtual",
-                                "body": "Virtual, instructor-led training offered at set times that provide opportunities for interaction and discussion; registration required and will include attendees from a variety of companies.",
-                                "ctaLink": "{\"linkedUrl\":\"\\/services-training\\/beyondtrust-university?course-format=Shared+Virtual\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
-                                "ctaLinkText": "View All"
-                            }
-                        },
-                        "2398199": {
-                            "type": 107,
-                            "fields": {
-                                "heading": "Private Training",
-                                "body": "Instructor-led training that is offered live either on-site at your location or as a virtual course; will only include your company's participants.",
-                                "ctaLink": "{\"linkedUrl\":\"\\/services-training\\/beyondtrust-university?course-format=Private+On-site+or+Virtual\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
-                                "ctaLinkText": "View All"
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -9079,11 +9607,41 @@
             }
         },
         "courseCategories": [
-            6950,
-            33342,
-            6953,
-            6955,
-            33338
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 33342,
+                "title": "Password Safe",
+                "slug": "password-safe",
+                "parentId": 6950,
+                "uid": "b6425c46-c55a-4e3a-9ed3-5a059d1c0d68"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6955,
+                "title": "Shared Virtual",
+                "slug": "public-shared-training",
+                "parentId": 6953,
+                "uid": "82c498a7-2eac-45ac-9314-a5a5484dd960"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -9544,11 +10102,41 @@
             }
         },
         "courseCategories": [
-            6950,
-            33342,
-            6953,
-            6955,
-            33338
+            {
+                "id": 6950,
+                "title": "Product",
+                "slug": "product",
+                "parentId": null,
+                "uid": "c4a49e61-ec9a-4282-a174-b8fece74cc6e"
+            },
+            {
+                "id": 33342,
+                "title": "Password Safe",
+                "slug": "password-safe",
+                "parentId": 6950,
+                "uid": "b6425c46-c55a-4e3a-9ed3-5a059d1c0d68"
+            },
+            {
+                "id": 6953,
+                "title": "Course Format",
+                "slug": "course-format",
+                "parentId": null,
+                "uid": "effb7e4c-25ed-4c1c-bec4-0e4cc41448e5"
+            },
+            {
+                "id": 6955,
+                "title": "Shared Virtual",
+                "slug": "public-shared-training",
+                "parentId": 6953,
+                "uid": "82c498a7-2eac-45ac-9314-a5a5484dd960"
+            },
+            {
+                "id": 33338,
+                "title": "Private On-site or Virtual",
+                "slug": "private-dedicated-training",
+                "parentId": 6953,
+                "uid": "bb866bb4-c5b1-4f60-9cf7-c39bd6ec0784"
+            }
         ],
         "sectionNavigationParent": [
             945908
@@ -9581,22 +10169,6 @@
                 "fields": {
                     "headingSection": "Key Learning Objectives",
                     "bodyRedactorRestricted": "<ul><li><strong>Initial Configuration</strong> – Learn how to configure Password Safe for your environment.</li><li><strong>Onboarding Systems</strong> – Discover new assets in your network and enable their management through Password Safe.</li><li><strong>Session Usage</strong> – Learn to use the Password Safe console to: request &amp; approve sessions, enable session recording, and view sessions &amp; reports.</li><li><strong>Creating Workflow with Smart Rules</strong> – Manage your workflow by adding directories, users, and machines through Smart Rules.</li><li><strong>Additional Configuration</strong> – Configure databases Remote Apps, and SSH Keys.</li></ul>",
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                    "text30": null,
-                    "contentSubsections": [],
-                    "pageBreak": "",
-                    "backgroundColor": "white",
-                    "includeInPdf": true
-                }
-            },
-            "996839": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "CPE Certification Credits",
-                    "bodyRedactorRestricted": "<p>Participants who successfully complete the Password Safe training are eligible to take the associated BeyondTrust Certification exam. Earn up to 15 hours of Continuing Professional Education (CPE) credits.</p>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "text30": null,
                     "contentSubsections": [],
@@ -9700,6 +10272,22 @@
                         "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"\"></th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">[Subheading]: Unit 1: Laying the Foundation</td></tr><tr><td align=\"left\">LESSON 1: Introduction and Overview</td></tr><tr><td align=\"left\">LESSON 2: Deployment Options</td></tr><tr><td align=\"left\">[Subheading]: Unit 2: Discovering Your Environment</td></tr><tr><td align=\"left\">LESSON 1: Functional Accounts and Password Rules</td></tr><tr><td align=\"left\">LESSON 2: Discovering and Adding Systems</td></tr><tr><td align=\"left\">LESSON 3: Smart Rules and Queries</td></tr><tr><td align=\"left\">[Subheading]: Unit 3: Managing Access</td></tr><tr><td align=\"left\">LESSON 1: Onboarding Systems</td></tr><tr><td align=\"left\">LESSON 2: Onboarding Managed Accounts</td></tr><tr><td align=\"left\">LESSON 3: Creating Access Policies</td></tr><tr><td align=\"left\">LESSON 4: Mapping End Users and Groups</td></tr><tr><td align=\"left\">LESSON 5: Requesting, Approving, and Viewing Sessions</td></tr><tr><td align=\"left\">[Subheading]: Unit 4: Accessing Systems</td></tr><tr><td align=\"left\">LESSON 1: Mapping Dedicated Administrator Accounts</td></tr><tr><td align=\"left\">LESSON 2: Managing Windows Service Accounts</td></tr><tr><td align=\"left\">LESSON 3: Managing Database Accounts</td></tr><tr><td align=\"left\">LESSON 4: Configuring Remote Applications for Windows</td></tr><tr><td align=\"left\">[Subheading]: Appendices</td></tr><tr><td align=\"left\">Managing Unix and Linux Systems</td></tr><tr><td align=\"left\">Managing Cloud Platforms</td></tr>\n\n                </tbody>\n\n            </table>\n        "
                     },
                     "textList": [],
+                    "pageBreak": "",
+                    "backgroundColor": "white",
+                    "includeInPdf": true
+                }
+            },
+            "996839": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "CPE Certification Credits",
+                    "bodyRedactorRestricted": "<p>Participants who successfully complete the Password Safe training are eligible to take the associated BeyondTrust Certification exam. Earn up to 15 hours of Continuing Professional Education (CPE) credits.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "text30": null,
+                    "contentSubsections": [],
                     "pageBreak": "",
                     "backgroundColor": "white",
                     "includeInPdf": true
