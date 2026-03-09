@@ -198,12 +198,13 @@ export async function migrateStBtu(
                 "Active Directory Bridge": "activeDirectoryBridge",
                 "Success Elevated": "successElevated",
                 "Resource Type": "contentType",
-                "Course Format": null
+                "Course Format": "courseFormat"
             };
 
             const VALID_CONCEPTS = new Set([
                 "products", "passwordSafe", "privilegedRemoteAccess", "remoteSupport",
                 "activeDirectoryBridge", "identitySecurityInsights", "successElevated",
+                "courseFormat",
                 "endpointPrivilegeManagementForUnixAndLinux", "endpointPrivilegeManagementForWindowsAndMac",
                 "entitle", "contentType", "useCases", "industries",
                 "managePasswordsSecretsSessions", "enforceLeastPrivilegeJitAccess",
