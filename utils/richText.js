@@ -1,24 +1,13 @@
 import { JSDOM } from "jsdom";
 import { uploadImageFromUrl } from "./assets.js";
-import { normalizeSrc, isValidHttpUrl } from "./normalize.js";
+import { normalizeSrc, isValidHttpUrl, cleanCraftUrls } from "./normalize.js";
 
 /**
  * Cleans Craft CMS reference tags from URLs in HTML source.
  * e.g. {entry:123@1:url||https://example.com} -> https://example.com
  * e.g. https://example.com#entry:123@1:url -> https://example.com
  */
-export function cleanCraftUrls(html) {
-  if (!html) return "";
-  let cleaned = html;
 
-  // 1. Resolve {entry:ID@SITE:url||FALLBACK} to FALLBACK
-  cleaned = cleaned.replace(/\{entry:[^|]+\|\|(.*?)\}/g, "$1");
-
-  // 2. Remove #entry:ID@SITE:url fragments
-  cleaned = cleaned.replace(/#entry:\d+@\d+:url/g, "");
-
-  return cleaned;
-}
 
 export function parseInlineNodes(node, activeMarks = []) {
   let nodes = [];
