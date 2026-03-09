@@ -7,6 +7,8 @@ import nonMarketingGetNotifiedFormMapping from "./mappings/nonMarketingGetNotifi
 
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { createOrUpdateHero } from "./handlers/bannerHero.js";
+import { createOrUpdateBannerImmersive } from "./handlers/bannerImmersive.js";
+
 import { createOrUpdateCalloutBar } from "./handlers/calloutBar.js";
 import { createOrUpdateContentBlock } from "./handlers/contentBlock.js";
 import { createOrUpdateQuotes } from "./handlers/quotes.js";
@@ -48,6 +50,8 @@ export const COMPONENTS = {
   bannerMediaRight: { handler: createOrUpdateHero },
   bannerMediaCenter: { handler: createOrUpdateHero },
   bannerHero: { handler: createOrUpdateHero },
+  bannerImmersive: { handler: createOrUpdateBannerImmersive },
+
 
   /* ---- Content blocks ---- */
   contentBlock: { handler: createOrUpdateContentBlock },
@@ -89,6 +93,8 @@ export const COMPONENTS = {
   contentWithAsset: { handler: createOrUpdateFiftyFifty },
   fiftyFiftyComponent: { handler: createOrUpdateFiftyFifty },
   mainBannerPress: { handler: createOrUpdatePressBanner },
+  quotesBlock: { handler: createOrUpdateQuotes },
+
 
 
   /* ---- Generic (mapping-based or mapped to handlers) ---- */

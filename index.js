@@ -15,7 +15,9 @@ import { migrateStBtu } from "./handlers/newStBtu.js";
 import { migrateSt } from "./handlers/newSt.js";
 import { migrateForms } from "./handlers/formHandler.js";
 import { migratePressMedia } from "./handlers/pressMediaHandler.js";
+import { migrateBlogs } from "./handlers/blogHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
+
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import {
   loadAssetMetadata,
@@ -109,11 +111,11 @@ const DATA_SOURCES = [
   //   label: "Global Reach Map",
   //   isGlobalReachMap: true
   // }
-  {
-    file: "./data/newPodcasts.json",
-    label: "Podcasts CPT",
-    isPodcasts: true
-  },
+  // {
+  //   file: "./data/newPodcasts.json",
+  //   label: "Podcasts CPT",
+  //   isPodcasts: true
+  // },
   //{
   //   file: "./data/new-S&T-BTU.json",
   //   label: "S&T BTU",
@@ -134,7 +136,13 @@ const DATA_SOURCES = [
   //   label: "Press & Media",
   //   isPressMedia: true
   // }
+  {
+    file: "./data/new-blog.json",
+    label: "Blog CPT",
+    isBlog: true
+  }
 ];
+
 
 async function run() {
   const env = effectiveDryRun ? null : await getEnvironment();
@@ -621,7 +629,20 @@ async function run() {
         rawFileContent
       );
     }
+
+    if (source.isBlog) {
+      await migrateBlogs(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent
+      );
+    }
   }
+
 
   console.log("\n" + "=".repeat(40));
   console.log("📊 MIGRATION SUMMARY");
