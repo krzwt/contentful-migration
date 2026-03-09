@@ -34,6 +34,9 @@ import { createOrUpdateMediaEmbeds } from "./handlers/mediaEmbeds.js";
 import { createOrUpdateSectionNavigation } from "./handlers/sectionNavigation.js";
 import { createOrUpdateOverwriteParentCta } from "./handlers/overwriteParentCta.js";
 import { createOrUpdateLinkCards } from "./handlers/linkCards.js";
+import { createOrUpdateToggleCards } from "./handlers/toggleCards.js";
+import { createOrUpdateFiftyFifty } from "./handlers/fiftyFifty.js";
+import { createOrUpdatePressBanner } from "./handlers/pressMediaHandler.js";
 // Removed ctaBlock and contentCta handlers in favor of calloutBar
 
 
@@ -82,6 +85,10 @@ export const COMPONENTS = {
   siteSection: { handler: createOrUpdateSectionNavigation },
   overwriteParentCta: { handler: createOrUpdateOverwriteParentCta },
   linkCards: { handler: createOrUpdateLinkCards },
+  toggleCards: { handler: createOrUpdateToggleCards },
+  contentWithAsset: { handler: createOrUpdateFiftyFifty },
+  fiftyFiftyComponent: { handler: createOrUpdateFiftyFifty },
+  mainBannerPress: { handler: createOrUpdatePressBanner },
 
 
   /* ---- Generic (mapping-based or mapped to handlers) ---- */

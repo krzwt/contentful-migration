@@ -183,13 +183,78 @@ export async function migrateStBtu(
             if (sectionEntries.length > 0) mainFields.sections = { [LOCALE]: sectionEntries };
             if (quoteReferences.length > 0) mainFields.companyQuotes = { [LOCALE]: quoteReferences };
 
-            // Taxonomy concepts
+            // -------------------------------------------------------
+            // 3. Build Taxonomy Concepts metadata
+            // -------------------------------------------------------
             const metadata = { concepts: [] };
-            if (item.courseCategories) {
-                // Mapping for professionalServices concept scheme
-                // (Assuming IDs map to concept IDs - might need a mapping file)
-                // For now just logged
-                console.log(`   🏷️  Course Categories: ${item.courseCategories.join(", ")}`);
+
+            const conceptMapping = {
+                "Product": "products",
+                "Password Safe": "passwordSafe",
+                "Privileged Remote Access": "privilegedRemoteAccess",
+                "Remote Support": "remoteSupport",
+                "Endpoint Privilege Management": "products",
+                "Privilege Management": "products",
+                "Active Directory Bridge": "activeDirectoryBridge",
+                "Resource Type": "contentType",
+                "Course Format": null
+            };
+
+            const VALID_CONCEPTS = new Set([
+                "products", "passwordSafe", "privilegedRemoteAccess", "remoteSupport",
+                "activeDirectoryBridge", "identitySecurityInsights",
+                "endpointPrivilegeManagementForUnixAndLinux", "endpointPrivilegeManagementForWindowsAndMac",
+                "entitle", "contentType", "useCases", "industries",
+                "managePasswordsSecretsSessions", "enforceLeastPrivilegeJitAccess",
+                "improveIdentitySecurityPosture", "meetComplianceMandates",
+                "secureAllAccessRemoteOtVendorEtc", "supportServiceDesksUsersDevicesDesktops"
+            ]);
+
+            if (item.courseCategories && item.courseCategories.length > 0) {
+                const conceptsSet = new Set();
+
+                for (const cat of item.courseCategories) {
+                    let conceptId = null;
+                    const title = typeof cat === 'object' ? cat.title : null;
+                    const slug = typeof cat === 'object' ? cat.slug : null;
+
+                    if (title && conceptMapping[title] !== undefined) {
+                        conceptId = conceptMapping[title];
+                    } else if (slug) {
+                        const manualSlugMapping = {
+                            "product": "products",
+                            "password-safe": "passwordSafe",
+                            "remote-support": "remoteSupport",
+                            "privileged-remote-access": "privilegedRemoteAccess",
+                            "privilege-management": "products",
+                            "ad-bridge": "activeDirectoryBridge"
+                        };
+
+                        if (manualSlugMapping[slug]) {
+                            conceptId = manualSlugMapping[slug];
+                        } else {
+                            // Try camelCase for sub-categories
+                            const camId = slug.split("-").map((word, index) =>
+                                index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
+                            ).join("");
+
+                            if (VALID_CONCEPTS.has(camId)) {
+                                conceptId = camId;
+                            }
+                        }
+                    }
+
+                    if (conceptId && VALID_CONCEPTS.has(conceptId)) {
+                        conceptsSet.add(conceptId);
+                    }
+                }
+
+                if (conceptsSet.size > 0) {
+                    metadata.concepts = Array.from(conceptsSet).map(id => ({
+                        sys: { type: "Link", linkType: "TaxonomyConcept", id }
+                    }));
+                    console.log(`   🏷️  Taxonomy Concepts: ${Array.from(conceptsSet).join(", ")}`);
+                }
             }
 
             const mainEntry = await upsertEntry(
@@ -198,7 +263,7 @@ export async function migrateStBtu(
                 `stbtu-${item.id}`,
                 mainFields,
                 shouldPublish,
-                null // We don't have concept mapping yet
+                metadata.concepts.length > 0 ? metadata : null
             );
 
             if (mainEntry && shouldPublish) {

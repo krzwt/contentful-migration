@@ -1,4 +1,5 @@
 import fs from "fs";
+import { cleanCraftUrls } from "./normalize.js";
 
 const LOCALE = "en-US";
 const GLOBAL_URL_MAP = new Map(); // Map craftId -> uri/slug
@@ -133,7 +134,7 @@ export function parseCraftLink(linkStr) {
  * Upserts a 'cta' entry
  */
 export async function upsertCta(env, id, label, url, shouldPublish = true, linkedId = null) {
-    let safeUrl = url || "";
+    let safeUrl = cleanCraftUrls(url || "");
 
     // Normalize: strip staging/production domain prefixes → relative path
     safeUrl = safeUrl

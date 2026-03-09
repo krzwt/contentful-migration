@@ -119,13 +119,13 @@ export async function migratePodcasts(
                 const assetInfo = assetMap.get(bannerImageId);
                 if (assetInfo && assetInfo.id) {
                     fields.backgroundImage = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } } };
+                } else {
+                    fields.backgroundImage = { [LOCALE]: null };
                 }
+            } else {
+                fields.backgroundImage = { [LOCALE]: null };
             }
-            // Fallback if missing (required in schema)
-            if (!fields.backgroundImage) {
-                const fallbackId = process.env.DEFAULT_SEO_IMAGE_ID || "asset-45209";
-                fields.backgroundImage = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: fallbackId.startsWith("asset-") ? fallbackId : `asset-${fallbackId}` } } };
-            }
+
 
             // 2.3 Landscape Video
             if (bannerVideoId && assetMap) {
@@ -195,7 +195,11 @@ export async function migratePodcasts(
                 const imageInfo = assetMap && assetMap.get(craftImageId);
                 if (imageInfo) {
                     fields.podcastImage = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: imageInfo.id } } };
+                } else {
+                    fields.podcastImage = { [LOCALE]: null };
                 }
+            } else {
+                fields.podcastImage = { [LOCALE]: null };
             }
 
             // 2.11 Tags
