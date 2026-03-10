@@ -11,51 +11,35 @@ const GLOBAL_ENTRY_ID_TO_SYS_ID = new Map(); // Map craftId -> Contentful Sys ID
  */
 export function buildUrlMap() {
     console.log("🔍 Indexing all entries to resolve internal links...");
-    const sources = [
-        "./data/standalone-content.json",
-        "./data/standalone-conversion.json",
-        "./data/standalone-microsite.json",
-        "./data/standalone-thankyou.json",
-        "./data/newPartners.json",
-        "./data/people-cpt.json",
-        "./data/company-quotes.json",
-        "./data/resources-cpt.json",
-        "./data/videos-cpt.json",
-        "./data/resource-webinars-cpt.json",
-        "./data/podcasts-cpt.json",
-        "./data/newPodcasts.json",
-        "./data/events.json",
-        "./data/media-cpt.json",
-        "./data/new-S&T.json",
-        "./data/new-S&T-BTU.json",
-        "./data/users.json",
-        "./data/page.json"
-    ];
+    // Dynamically find all relevant data files
+    const dataDir = "./data";
+    const files = fs.readdirSync(dataDir)
+        .filter(f => f.endsWith(".json") && !f.includes("assets") && !f.includes("schema") && !f.includes("wistia") && !f.includes("mapping") && !f.includes("tags"));
 
-    sources.forEach(file => {
-        if (!fs.existsSync(file)) return;
+    files.forEach(fileName => {
+        const file = `${dataDir}/${fileName}`;
         try {
             const content = fs.readFileSync(file, "utf-8");
 
-            // 1. Initial pass: Index items that are top-level objects in the JSON
+            // 1. Initial pass: Index items that are top-level objects or part of a top-level array
             const data = JSON.parse(content);
-            if (Array.isArray(data)) {
-                data.forEach(item => {
-                    if (item.id) {
-                        const url = item.uri || item.slug || "";
+            const items = Array.isArray(data) ? data : [data];
+
+            items.forEach(item => {
+                if (item && item.id) {
+                    const url = item.uri || item.slug || item.url || "";
+                    if (url) {
                         GLOBAL_URL_MAP.set(String(item.id), { url, title: item.title || "" });
                     }
-                });
-            }
+                }
+            });
 
             // 2. Secondary pass: Deep-crawl the raw content for {entry:ID@...||URL} patterns.
-            // This captures URIs for internal links to pages/products not yet migrated as top-level entries.
             const regex = /\{entry:(\d+)(?:@.*?)?\|\|(.*?)\}/g;
             let match;
             while ((match = regex.exec(content)) !== null) {
                 const id = String(match[1]);
                 const url = match[2];
-                // Don't overwrite if we already have a URI
                 if (!GLOBAL_URL_MAP.has(id)) {
                     GLOBAL_URL_MAP.set(id, { url, title: "" });
                 }
@@ -269,6 +253,10 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
                 console.log(`   🌐 Page ${linkedId} not in Contentful. Using URL: ${normalizedUrl}`);
                 fields.url = { [LOCALE]: normalizedUrl };
                 fields.target = { [LOCALE]: normalizedUrl.startsWith("http") ? "_blank (New Tab)" : "_self (Same Tab)" };
+            } else if (safeUrl) {
+                // If we have a linkedId but it's not found anywhere, at least keep the original safeUrl if it exists
+                console.log(`   ⚠ Linked ID ${linkedId} could not be resolved. Falling back to original URL.`);
+                fields.url = { [LOCALE]: safeUrl };
             }
         }
     }
