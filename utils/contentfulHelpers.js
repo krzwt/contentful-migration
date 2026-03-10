@@ -1,5 +1,5 @@
 import fs from "fs";
-import { cleanCraftUrls } from "./normalize.js";
+import { cleanCraftUrls, normalizeUrl } from "./normalize.js";
 
 const LOCALE = "en-US";
 const GLOBAL_URL_MAP = new Map(); // Map craftId -> uri/slug
@@ -239,9 +239,7 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
     let safeUrl = cleanCraftUrls(url || "");
 
     // Normalize: strip staging/production domain prefixes → relative path
-    safeUrl = safeUrl
-        .replace(/^https?:\/\/bluetext\.beyondtrust\.com/, "")
-        .replace(/^https?:\/\/www\.beyondtrust\.com/, "");
+    safeUrl = normalizeUrl(safeUrl);
 
     if (safeUrl.length > 255) {
         console.warn(`   ⚠️ URL for cta-${id} exceeds 255 chars. Truncating...`);
@@ -267,9 +265,7 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
             // Fallback: If page entry not found in Contentful, use resolved internal URL from slugs
             const internalUrl = resolveInternalUrl(linkedId);
             if (internalUrl) {
-                let normalizedUrl = internalUrl
-                    .replace(/^https?:\/\/bluetext\.beyondtrust\.com/, "")
-                    .replace(/^https?:\/\/www\.beyondtrust\.com/, "");
+                let normalizedUrl = normalizeUrl(internalUrl);
                 console.log(`   🌐 Page ${linkedId} not in Contentful. Using URL: ${normalizedUrl}`);
                 fields.url = { [LOCALE]: normalizedUrl };
                 fields.target = { [LOCALE]: normalizedUrl.startsWith("http") ? "_blank (New Tab)" : "_self (Same Tab)" };

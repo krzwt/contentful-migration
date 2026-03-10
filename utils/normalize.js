@@ -32,3 +32,20 @@ export function cleanCraftUrls(html) {
 
   return cleaned;
 }
+
+/**
+ * Normalizes a URL by stripping known staging/production domains
+ * to ensure relative paths are used for internal links.
+ */
+export function normalizeUrl(url) {
+  if (!url) return "";
+  let normalized = String(url).trim();
+
+  // Strip known domains to make links relative
+  normalized = normalized
+    .replace(/^https?:\/\/bluetext\.beyondtrust\.com/, "")
+    .replace(/^https?:\/\/bluetext\.beyondtrust\.co/, "")
+    .replace(/^https?:\/\/www\.beyondtrust\.com/, "");
+
+  return normalized;
+}

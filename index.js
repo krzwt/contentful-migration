@@ -71,12 +71,12 @@ const effectiveDryRun = isDryRun || cliDryRun;
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
 const DATA_SOURCES = [
-  // {
-  //   file: "./data/standalone-content.json",
-  //   // file: "./data/test-sc.json",
-  //   pageContentType: "newStandaloneContent",
-  //   label: "Standalone Content",
-  // },
+  {
+    file: "./data/standalone-content.json",
+    // file: "./data/test-sc.json",
+    pageContentType: "newStandaloneContent",
+    label: "Standalone Content",
+  },
   // {
   //   file: "./data/standalone-conversion.json",
   //   pageContentType: "newStandaloneConversion",
@@ -167,11 +167,11 @@ const DATA_SOURCES = [
   //   label: "Users",
   //   isUsers: true
   // },
-  {
-    file: "./data/events.json",
-    label: "Events",
-    isEvents: true
-  },
+  // {
+  //   file: "./data/events.json",
+  //   label: "Events",
+  //   isEvents: true
+  // },
 ];
 
 async function run() {

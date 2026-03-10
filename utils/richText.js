@@ -1,6 +1,6 @@
 import { JSDOM } from "jsdom";
 import { uploadImageFromUrl } from "./assets.js";
-import { normalizeSrc, isValidHttpUrl, cleanCraftUrls } from "./normalize.js";
+import { normalizeSrc, isValidHttpUrl, cleanCraftUrls, normalizeUrl } from "./normalize.js";
 
 /**
  * Cleans Craft CMS reference tags from URLs in HTML source.
@@ -32,7 +32,7 @@ export function parseInlineNodes(node, activeMarks = []) {
 
           nodes.push({
             nodeType: "hyperlink",
-            data: { uri: match[2].trim() },
+            data: { uri: normalizeUrl(match[2].trim()) },
             content: [{
               nodeType: "text",
               value: match[1],
@@ -71,7 +71,7 @@ export function parseInlineNodes(node, activeMarks = []) {
         const href = child.getAttribute("href");
         nodes.push({
           nodeType: "hyperlink",
-          data: { uri: href || "" },
+          data: { uri: normalizeUrl(href || "") },
           content: parseInlineNodes(child, activeMarks)
         });
         handled = true;
