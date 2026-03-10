@@ -17,6 +17,7 @@ import { migrateForms } from "./handlers/formHandler.js";
 import { migratePressMedia } from "./handlers/pressMediaHandler.js";
 import { migrateBlogs } from "./handlers/blogHandler.js";
 import { migrateAnnouncements } from "./handlers/announcementHandler.js";
+import { migrateUsers } from "./handlers/userHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
@@ -26,12 +27,13 @@ import {
   loadWistiaData,
   prePopulateAssetCache,
 } from "./utils/assetUploader.js";
-import { buildUrlMap } from "./utils/contentfulHelpers.js";
+import { buildUrlMap, prePopulateEntryIdCache } from "./utils/contentfulHelpers.js";
 import { loadCategories } from "./utils/categoryLoader.js";
 import { loadTagMapping } from "./utils/tagHandler.js";
 import { getOrderedKeys } from "./utils/jsonOrder.js";
 
 const LOCALE = "en-US";
+
 const isDryRun = false; // Set to true to simulate migration without making changes
 const ASSET_METADATA_FILES = [
   "./data/assets.json",
@@ -147,22 +149,29 @@ const DATA_SOURCES = [
   //   label: "Press & Media",
   //   isPressMedia: true
   // },
-  {
-    file: "./data/new-blog.json",
-    label: "Blog CPT",
-    isBlog: true
-  },
+  // {
+  //   file: "./data/new-blog.json",
+  //   label: "Blog CPT",
+  //   isBlog: true
+  // },
   // {
   //   file: "./data/Announcements.json",
   //   label: "Announcements",
   //   isAnnouncements: true
-  // }
+  // },
+  {
+    file: "./data/users.json",
+    label: "Users",
+    isUsers: true
+  }
 ];
-
 
 async function run() {
   const env = effectiveDryRun ? null : await getEnvironment();
-  if (env) await prePopulateAssetCache(env);
+  if (env) {
+    await prePopulateAssetCache(env);
+    await prePopulateEntryIdCache(env);
+  }
 
   buildUrlMap(); // Build ID -> URL lookup map
   loadCategories(); // Load general-categories.json
@@ -663,6 +672,17 @@ async function run() {
         env,
         batchData,
         contentfulAssetMap,
+        summary
+      );
+    }
+
+    if (source.isUsers) {
+      await migrateUsers(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
         summary
       );
     }

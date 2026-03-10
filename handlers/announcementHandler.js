@@ -1,172 +1,161 @@
-import { upsertEntry, resolveInternalUrl } from "../utils/contentfulHelpers.js";
+import { makeLink, upsertEntry, parseCraftLink, resolveEntryRef } from "../utils/contentfulHelpers.js";
 
 const LOCALE = "en-US";
 
-const THEME_MAPPING = {
-    shortFullBarWithImageOption: "Short Full Bar (with image option)",
-    shortHalfBarNoImage: "Short Half Bar (no image)",
-    longTallBarMoreText: "Long Tall Bar (more text)",
-    longShortBarLessText: "Long Short Bar (less text)"
-};
-
-const TEMPLATE_MAPPING = {
-    landingPages: "Page",
-    newSolutions: "NewStandaloneContent",
-    newStandaloneContent: "NewStandaloneContent",
-    newStandaloneConversion: "NewStandaloneConversion",
-    newStandaloneMicrosite: "NewStandaloneMicrosite",
-    newStandaloneThankYou: "NewStandaloneThankYou"
-};
+const ALLOWED_TARGET_TYPES = [
+    "page",
+    "newStandaloneContent",
+    "newStandaloneMicrosite",
+    "newStandaloneThankYou",
+    "newStandaloneConversion",
+    "company",
+    "newCompany"
+];
 
 /**
- * Resolves source IDs to Contentful Entry references by batching queries
+ * Normalizes themeType to Contentful enum values
  */
-async function resolveTargetEntries(env, ids) {
-    if (!ids || !ids.length) return [];
-    if (!env) return ids.map(id => ({ sys: { type: "Link", linkType: "Entry", id: `dry-run-${id}` } })); // Handle dry run
-
-    const pageTypes = [
-        "page",
-        "newStandaloneContent",
-        "newStandaloneMicrosite",
-        "newStandaloneThankYou",
-        "newStandaloneConversion",
-        "company",
-        "newCompany"
-    ];
-
-    const resultsMap = new Map();
-    const chunkSize = 100;
-
-    console.log(`     🔍 Resolving ${ids.length} target entries...`);
-
-    for (let i = 0; i < ids.length; i += chunkSize) {
-        const chunk = ids.slice(i, i + chunkSize);
-        const idString = chunk.join(',');
-
-        // Query all content types concurrently for this chunk
-        const promises = pageTypes.map(async (type) => {
-            try {
-                const res = await env.getEntries({
-                    content_type: type,
-                    "fields.entryId[in]": idString,
-                    limit: chunk.length
-                });
-                if (res && res.items) {
-                    for (const item of res.items) {
-                        const originalId = item.fields.entryId?.['en-US'] || item.fields.entryId;
-                        if (originalId) {
-                            resultsMap.set(String(originalId), item.sys.id);
-                        }
-                    }
-                }
-            } catch (e) {
-                // Skip if content type not found or other errors
-            }
-        });
-
-        await Promise.all(promises);
+function normalizeThemeType(type) {
+    switch (type) {
+        case "shortFullBarWithImageOption":
+            return "Short Full Bar (with image option)";
+        case "shortHalfBarNoImage":
+            return "Short Half Bar (no image)";
+        case "longTallBarMoreText":
+            return "Long Tall Bar (more text)";
+        case "longShortBarLessText":
+            return "Long Short Bar (less text)";
+        default:
+            if (!type) return "Short Full Bar (with image option)";
+            // Attempt generic mapping if it's already close
+            if (type.includes("Short Full")) return "Short Full Bar (with image option)";
+            return "Short Full Bar (with image option)";
     }
-
-    const results = [];
-    for (const id of ids) {
-        const sysId = resultsMap.get(String(id));
-        if (sysId) {
-            results.push({ sys: { type: "Link", linkType: "Entry", id: sysId } });
-        }
-    }
-    return results;
 }
 
-export async function migrateAnnouncements(env, entries, contentfulAssetMap, summary) {
-    console.log(`\n🚀 Migrating ${entries.length} Announcement items...`);
+/**
+ * Main function to migrate Announcements
+ */
+export async function migrateAnnouncements(
+    env,
+    announcementData,
+    assetMap = null,
+    summary = null
+) {
+    console.log(`\n📢 Starting Announcements Migration (${announcementData.length} entries)...`);
 
-    for (const item of entries) {
-        const entryId = `announcement-${item.id}`;
-        console.log(`   ➡️ Processing Announcement: ${item.title} (${item.id})`);
+    for (let i = 0; i < announcementData.length; i++) {
+        const item = announcementData[i];
+        console.log(`\n➡️ [${i + 1} / ${announcementData.length}] Announcement: ${item.title} (ID: ${item.id})`);
 
-        const fields = {
-            announcementTitle: { [LOCALE]: item.title || "" }
-        };
-        const isHeader = String(item.typeId) === "153";
-        const isBottom = String(item.typeId) === "154";
+        try {
+            const isTop = String(item.typeId) === "154";
+            const isBottom = String(item.typeId) === "153";
 
-        // Parse content link
-        let linkUrl = "";
-        if (item.contentLink) {
-            try {
-                const linkObj = typeof item.contentLink === "string" ? JSON.parse(item.contentLink) : item.contentLink;
-                linkUrl = linkObj.linkedUrl || "";
-                if (!linkUrl && linkObj.linkedId) {
-                    linkUrl = resolveInternalUrl(linkObj.linkedId) || "";
-                }
-            } catch (e) {
-                linkUrl = String(item.contentLink);
-            }
-        }
+            const fields = {
+                entryId: { [LOCALE]: String(item.id) },
+                // announcementTitle is the displayField, so always fill it from Craft title
+                announcementTitle: { [LOCALE]: (item.title || "").trim() },
+            };
 
-        if (isHeader) {
-            fields.messageTop = { [LOCALE]: item.message || "" };
-            fields.contentLinkTop = { [LOCALE]: linkUrl };
-            fields.linkTextTop = { [LOCALE]: item.linkText || "" };
-            fields.headingSection = { [LOCALE]: item.headingSection || "" };
+            const linkData = parseCraftLink(item.contentLink);
+            const finalUrl = linkData.url || "";
+            const finalLabel = item.linkText || linkData.label || "";
 
-            if (item.themeType && THEME_MAPPING[item.themeType]) {
-                fields.themeType = { [LOCALE]: THEME_MAPPING[item.themeType] };
-            }
+            if (isTop) {
+                // --- Group: Announcement Top ---
+                fields.messageTop = { [LOCALE]: (item.message || "").trim() };
+                fields.contentLinkTop = { [LOCALE]: finalUrl };
+                fields.linkTextTop = { [LOCALE]: finalLabel };
 
-            if (item.image && item.image.length > 0) {
-                const assetData = contentfulAssetMap.get(String(item.image[0]));
-                if (assetData) {
-                    const actualAssetId = typeof assetData === "string" ? assetData : assetData.id;
-                    fields.announcementImage = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: actualAssetId } } };
-                }
-            }
-
-            // Targeting for Header (Type 153)
-            if (item.targeting) {
-                const targetingKey = Object.keys(item.targeting)[0];
-                const targeting = item.targeting[targetingKey];
-                if (targeting && targeting.fields) {
-                    if (targeting.fields.targetEntries) {
-                        const resolved = await resolveTargetEntries(env, targeting.fields.targetEntries);
-                        if (resolved.length > 0) {
-                            fields.headerAnnouncementTargetEntries = { [LOCALE]: resolved };
+                // Targeting (Header)
+                if (item.targetEntries && Array.isArray(item.targetEntries)) {
+                    const validLinks = [];
+                    for (const tid of item.targetEntries) {
+                        const ref = resolveEntryRef(tid);
+                        if (!ref) {
+                            // console.log(`   ⚠️ Target ${tid} not found in cache.`);
+                            continue;
+                        }
+                        if (ALLOWED_TARGET_TYPES.includes(ref.type)) {
+                            validLinks.push(makeLink(ref.id));
+                        } else {
+                            console.log(`   🚫 Filtering out target ${tid} of type ${ref.type} (Sys.ID: ${ref.id}) for field ${isTop ? "Header" : "Bottom"}`);
                         }
                     }
-                    if (targeting.fields.targetSection) {
-                        const templates = targeting.fields.targetSection
-                            .map(s => TEMPLATE_MAPPING[s])
-                            .filter(Boolean);
-                        if (templates.length > 0) {
-                            fields.targetPageTemplates = { [LOCALE]: [...new Set(templates)] };
+
+                    if (validLinks.length > 0) {
+                        fields.headerAnnouncementTargetEntries = { [LOCALE]: validLinks };
+                        console.log(`   🔗 Linked ${validLinks.length} target entries (Header).`);
+                    } else if (item.targetEntries.length > 0) {
+                        console.log(`   ⚠️ Could not resolve any allowed target entries in Contentful. Skipping links.`);
+                    }
+                }
+            } else if (isBottom) {
+                // --- Group: Announcement Bottom ---
+                fields.announcementBottomTitle = { [LOCALE]: (item.title || "").trim() };
+                fields.useModernTheme = { [LOCALE]: item.switch !== undefined ? !!item.switch : true };
+                fields.themeType = { [LOCALE]: normalizeThemeType(item.themeType) };
+                fields.headingSection = { [LOCALE]: (item.headingSection || "").trim() };
+                fields.message = { [LOCALE]: (item.message || "").trim() };
+                fields.contentLink = { [LOCALE]: finalUrl };
+                fields.linkText = { [LOCALE]: finalLabel };
+
+                // Image
+                if (item.image && item.image[0] && assetMap) {
+                    const assetInfo = assetMap.get(String(item.image[0]));
+                    if (assetInfo && assetInfo.id) {
+                        fields.announcementImage = { [LOCALE]: makeLink(assetInfo.id, "Asset") };
+                    }
+                }
+
+                // Targeting (Bottom)
+                let targetEntries = [];
+                if (Array.isArray(item.targetEntries)) {
+                    targetEntries = item.targetEntries;
+                } else if (item.targeting && typeof item.targeting === 'object') {
+                    const firstTarget = Object.values(item.targeting)[0];
+                    if (firstTarget && firstTarget.fields && Array.isArray(firstTarget.fields.targetEntries)) {
+                        targetEntries = firstTarget.fields.targetEntries;
+                    }
+                }
+
+                if (targetEntries.length > 0) {
+                    const validLinks = [];
+                    for (const tid of targetEntries) {
+                        const ref = resolveEntryRef(tid);
+                        if (!ref) {
+                            // console.log(`   ⚠️ Target ${tid} not found in cache.`);
+                            continue;
                         }
+                        if (ALLOWED_TARGET_TYPES.includes(ref.type)) {
+                            validLinks.push(makeLink(ref.id));
+                        } else {
+                            console.log(`   🚫 Filtering out target ${tid} of type ${ref.type} (Sys.ID: ${ref.id}) for field ${isBottom ? "Bottom" : "Header"}`);
+                        }
+                    }
+
+                    if (validLinks.length > 0) {
+                        fields.bottomAnnouncementTargetEntries = { [LOCALE]: validLinks };
+                        console.log(`   🔗 Linked ${validLinks.length} target entries (Bottom).`);
+                    } else if (targetEntries.length > 0) {
+                        console.log(`   ⚠️ Could not resolve any allowed target entries in Contentful. Skipping links.`);
                     }
                 }
             }
-        } else if (isBottom) {
-            fields.announcementBottomTitle = { [LOCALE]: item.title || "" };
-            fields.message = { [LOCALE]: item.message || "" };
-            fields.contentLink = { [LOCALE]: linkUrl };
-            fields.linkText = { [LOCALE]: item.linkText || "" };
 
-            // For type 154, targetEntries is top-level
-            if (item.targetEntries) {
-                const resolved = await resolveTargetEntries(env, item.targetEntries);
-                if (resolved.length > 0) {
-                    fields.bottomAnnouncementTargetEntries = { [LOCALE]: resolved };
-                }
-            }
+            await upsertEntry(
+                env,
+                "announcementBanner",
+                `announcement-${item.id}`,
+                fields,
+                item.status === "live"
+            );
+
+            console.log(`   ✅ Announcement "${item.title}" migrated.`);
+
+        } catch (err) {
+            console.error(`   🛑 Error migrating announcement "${item.title}":`, err.message);
         }
-
-        // Always set modern theme to false for now unless we find a switch, but cast strictly to boolean
-        const rawThemeValue = item.useModernTheme;
-        const isModern = !!rawThemeValue && rawThemeValue !== "0" && String(rawThemeValue).toLowerCase() !== "false";
-        fields.useModernTheme = { [LOCALE]: isModern };
-
-        await upsertEntry(env, "announcementBanner", entryId, fields, true);
-        summary.processed++;
     }
-
-    console.log(`\n✅ Finished migrating Announcements`);
 }

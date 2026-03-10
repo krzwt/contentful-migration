@@ -3,6 +3,7 @@ import { cleanCraftUrls } from "./normalize.js";
 
 const LOCALE = "en-US";
 const GLOBAL_URL_MAP = new Map(); // Map craftId -> uri/slug
+const GLOBAL_ENTRY_ID_TO_SYS_ID = new Map(); // Map craftId -> Contentful Sys ID
 
 /**
  * Builds a global map of all Entry IDs and their final URLs/Slugs
@@ -27,6 +28,7 @@ export function buildUrlMap() {
         "./data/media-cpt.json",
         "./data/new-S&T.json",
         "./data/new-S&T-BTU.json",
+        "./data/users.json",
         "./data/page.json"
     ];
 
@@ -78,6 +80,106 @@ export function buildUrlMap() {
         }
     }
     console.log(`   ✅ Indexed ${GLOBAL_URL_MAP.size} total entry references.\n`);
+}
+
+/**
+ * Pre-populates a map of Craft entryId -> Contentful Sys ID
+ * to avoid making redundant queries during migration.
+ */
+export async function prePopulateEntryIdCache(env) {
+    if (!env) return;
+    console.log("🔍 Pre-populating entryId sys.id cache from Contentful...");
+
+    const contentTypes = [
+        "users",
+        "blogCpt",
+        "resourcesCpt",
+        "resourceWebinarsCpt",
+        "announcementBanner",
+        "newStBtu",
+        "newPressMediaCpt",
+        "podcastsCpt",
+        "newStTam",
+        "newStServices",
+        "embedFormsCpt",
+        "newSt",
+        "newGlobalReachMap",
+        "eventsCpt",
+        "newEventsCpt",
+        "newStandaloneContent",
+        "newStandaloneConversion",
+        "newStandaloneMicrosite",
+        "newStandaloneThankYou",
+        "peopleCpt",
+        "newCompany",
+        "newPartners",
+        "company",
+        "newPartnersEmbeds",
+        "newEmbedsCpt",
+        "quoteItem"
+    ];
+
+    let totalCached = 0;
+    for (const contentType of contentTypes) {
+        try {
+            let skip = 0;
+            let countForType = 0;
+            while (true) {
+                const response = await env.getEntries({
+                    content_type: contentType,
+                    select: "sys.id,fields.entryId",
+                    limit: 1000,
+                    skip: skip
+                });
+
+                if (response.items.length === 0) break;
+
+                response.items.forEach(item => {
+                    const craftId = item.fields?.entryId?.[LOCALE];
+                    if (craftId) {
+                        GLOBAL_ENTRY_ID_TO_SYS_ID.set(String(craftId), {
+                            id: item.sys.id,
+                            type: contentType
+                        });
+                        countForType++;
+                        totalCached++;
+                    }
+                });
+
+                skip += response.items.length;
+                if (response.items.length < 1000) break;
+            }
+            if (countForType > 0) {
+                console.log(`   ✅ Cached ${countForType} ${contentType} entries.`);
+            }
+        } catch (e) {
+            // Usually means content type not found or query error
+            console.warn(`   ⚠️ Skipping ${contentType}: ${e.message}`);
+        }
+    }
+
+    console.log(`   🚀 Total cache: ${totalCached} entryId mappings.\n`);
+}
+
+
+/**
+ * Registers a new entry in the local cache
+ */
+export function registerEntryId(craftId, sysId, contentType) {
+    if (craftId && sysId && contentType) {
+        GLOBAL_ENTRY_ID_TO_SYS_ID.set(String(craftId), {
+            id: sysId,
+            type: contentType
+        });
+    }
+}
+
+/**
+ * Resolves a Craft ID to a Contentful Sys ID and Type
+ */
+export function resolveEntryRef(craftId) {
+    if (!craftId) return null;
+    return GLOBAL_ENTRY_ID_TO_SYS_ID.get(String(craftId)) || null;
 }
 
 /**
@@ -153,59 +255,25 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
         target: { [LOCALE]: safeUrl.startsWith("http") ? "_blank (New Tab)" : "_self (Same Tab)" }
     };
 
-    // If we have a linkedId, try to find the actual page entry in Contentful to create a Reference link
+    // If we have a linkedId, try to find the actual page entry in Contentful using the cache
     if (linkedId && env) {
-        try {
-            // Search across the main page content types
-            const pageTypes = [
-                "newStandaloneContent",
-                "newStandaloneMicrosite",
-                "newStandaloneThankYou",
-                "newStandaloneConversion",
-                "newPartners",
-                "peopleCpt",
-                "resourceWebinarsCpt",
-                "resourcesCpt",
-                "podcastsCpt",
-                "page"
-            ];
+        const ref = resolveEntryRef(linkedId);
 
-            const queries = pageTypes.map(cpt =>
-                env.getEntries({
-                    content_type: cpt,
-                    "fields.entryId": String(linkedId),
-                    limit: 1
-                }).catch(() => ({ items: [] }))
-            );
-
-            const results = await Promise.all(queries);
-            let pageEntry = null;
-            for (const res of results) {
-                if (res.items && res.items.length > 0) {
-                    pageEntry = res.items[0];
-                    break;
-                }
+        if (ref) {
+            console.log(`   🔗 Linked CTA ${id} to page entry: ${ref.id} (type: ${ref.type})`);
+            fields.pageLink = { [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: ref.id } } };
+            fields.url = { [LOCALE]: "" }; // Clear URL when internal reference is resolved
+        } else {
+            // Fallback: If page entry not found in Contentful, use resolved internal URL from slugs
+            const internalUrl = resolveInternalUrl(linkedId);
+            if (internalUrl) {
+                let normalizedUrl = internalUrl
+                    .replace(/^https?:\/\/bluetext\.beyondtrust\.com/, "")
+                    .replace(/^https?:\/\/www\.beyondtrust\.com/, "");
+                console.log(`   🌐 Page ${linkedId} not in Contentful. Using URL: ${normalizedUrl}`);
+                fields.url = { [LOCALE]: normalizedUrl };
+                fields.target = { [LOCALE]: normalizedUrl.startsWith("http") ? "_blank (New Tab)" : "_self (Same Tab)" };
             }
-
-            if (pageEntry) {
-                console.log(`   🔗 Linked CTA ${id} to page entry: ${pageEntry.sys.id} (entryId: ${linkedId})`);
-                fields.pageLink = { [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: pageEntry.sys.id } } };
-                fields.url = { [LOCALE]: "" }; // Clear URL when internal reference is resolved
-            } else {
-                // Fallback: If page entry not found in Contentful, use resolved internal URL
-                const internalUrl = resolveInternalUrl(linkedId);
-                if (internalUrl) {
-                    // Normalize the internal URL the same way
-                    let normalizedUrl = internalUrl
-                        .replace(/^https?:\/\/bluetext\.beyondtrust\.com/, "")
-                        .replace(/^https?:\/\/www\.beyondtrust\.com/, "");
-                    console.log(`   🌐 Page ${linkedId} not in Contentful. Using URL: ${normalizedUrl}`);
-                    fields.url = { [LOCALE]: normalizedUrl };
-                    fields.target = { [LOCALE]: normalizedUrl.startsWith("http") ? "_blank (New Tab)" : "_self (Same Tab)" };
-                }
-            }
-        } catch (e) {
-            console.warn(`   ⚠️ Error looking up Internal link for CTA cta-${id}: ${e.message}`);
         }
     }
 
@@ -342,6 +410,7 @@ export async function upsertEntry(env, contentType, entryId, fields, shouldPubli
         return { sys: { id: entryId } };
     }
     let entry;
+    let justCreated = false;
     try {
         try {
             entry = await env.getEntry(entryId);
@@ -351,14 +420,13 @@ export async function upsertEntry(env, contentType, entryId, fields, shouldPubli
                 const payload = { fields };
                 if (metadata) payload.metadata = metadata;
                 entry = await env.createEntryWithId(contentType, entryId, payload);
+                justCreated = true;
             } else {
                 throw e;
             }
         }
 
-        if (entry && !entry.sys.createdAt) { // Just created? No, createEntryWithId returns the entry.
-            // If we didn't just create it, we update it.
-        } else if (entry) {
+        if (entry && !justCreated) {
             console.log(`   🔄 Updating nested ${contentType}: ${entryId}`);
             // Merge fields individually
             for (const [key, val] of Object.entries(fields)) {
@@ -369,6 +437,9 @@ export async function upsertEntry(env, contentType, entryId, fields, shouldPubli
             }
             entry = await entry.update();
         }
+
+        // Register in cache
+        registerEntryId(fields.entryId?.[LOCALE], entry.sys.id, contentType);
 
         if (!shouldPublish) {
             console.log(`   📝 Entry ${entryId} saved as draft.`);
