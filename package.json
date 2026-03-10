@@ -4,7 +4,8 @@
     "type": "module",
     "scripts": {
         "assets": "node uploadAssets.js",
-        "migrate": "node index.js"
+        "migrate": "node index.js",
+        "check:models": "node scripts/check-unused-models.js"
     },
     "dependencies": {
         "contentful-management": "^11.68.0",

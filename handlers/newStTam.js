@@ -6,27 +6,9 @@ import { getOrderedKeys } from "../utils/jsonOrder.js";
 import { convertHtmlToRichText } from "../utils/richText.js";
 
 /**
- * ID mapping for Professional Services Taxonomy (Craft ID -> Contentful Concept ID)
+ * Main function to migrate S&T TAM (Technical Account Management) entries
  */
-const PS_TAXONOMY_MAP = {
-  947469: "products",
-  989366: "services",
-  971413: "privilegeManagement",
-  947534: "remoteSupport",
-  971414: "privilegedRemoteAccess",
-  971412: "passwordSafe",
-  971415: "adBridge",
-  2071294: "entitle",
-  2071293: "identitySecurityInsights",
-  989367: "implementation",
-  989368: "upgradeMigration",
-  989369: "healthCheck",
-};
-
-/**
- * Main function to migrate S&T Services entries
- */
-export async function migrateStServices(
+export async function migrateStTam(
   env,
   data,
   assetMap = null,
@@ -39,7 +21,7 @@ export async function migrateStServices(
     ? targetIndices[targetIndices.length - 1] + 1
     : totalPages || data.length;
   console.log(
-    `\n📄 Starting S&T Services Migration (${data.length} entries)...`,
+    `\n📄 Starting S&T TAM Migration (${data.length} entries)...`,
   );
 
   for (let i = 0; i < data.length; i++) {
@@ -49,7 +31,7 @@ export async function migrateStServices(
     const shouldPublish = item.status === "live";
 
     console.log(
-      `\n➡️ ${progress} S&T Services: ${item.title} (ID: ${item.id})`,
+      `\n➡️ ${progress} S&T TAM: ${item.title} (ID: ${item.id})`,
     );
 
     try {
@@ -230,7 +212,7 @@ export async function migrateStServices(
         }
       }
 
-      // 6. Create Main page (newStServices)
+      // 6. Create Main page (newStTam)
       const mainFields = {
         entryId: { [LOCALE]: String(item.id) },
         title: { [LOCALE]: item.title || "" },
@@ -253,41 +235,23 @@ export async function migrateStServices(
         mainFields.companyQuotes = { [LOCALE]: companyQuotesLinks };
       }
 
-      // 7. Taxonomy Concepts
-      const metadata = { concepts: [], tags: [] };
-      if (
-        item.professionalServicesCategories &&
-        Array.isArray(item.professionalServicesCategories)
-      ) {
-        for (const catId of item.professionalServicesCategories) {
-          const conceptId = PS_TAXONOMY_MAP[String(catId)];
-          if (conceptId) {
-            metadata.concepts.push({
-              sys: { type: "Link", linkType: "TaxonomyConcept", id: conceptId },
-            });
-          } else {
-            console.warn(`   ⚠️ No taxonomy mapping for category ID: ${catId}`);
-          }
-        }
-      }
-
       const mainEntry = await upsertEntry(
         env,
-        "newStServices",
-        `st-sv-${item.id}`,
+        "newStTam",
+        `st-tam-${item.id}`,
         mainFields,
         shouldPublish,
-        metadata.concepts.length > 0 ? metadata : null,
+        null,
       );
 
       if (mainEntry && shouldPublish) {
         await publishPage(env, mainEntry, item);
       }
 
-      console.log(`✅ S&T Services "${item.title}" migrated.`);
+      console.log(`✅ S&T TAM "${item.title}" migrated.`);
     } catch (err) {
       console.error(
-        `❌ Error migrating S&T Services "${item.title}":`,
+        `❌ Error migrating S&T TAM "${item.title}":`,
         err.message,
       );
     }

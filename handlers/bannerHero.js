@@ -26,6 +26,9 @@ function mapVariant(variation) {
    MAIN UPSERT
  ------------------------------ */
 export async function createOrUpdateHero(env, heroData, assetMap = null) {
+  if (!env) {
+    return { sys: { id: `dry-run-hero-${heroData.blockId}` } };
+  }
   // 1. Verify Content Type exists
   try {
     await env.getContentType(CONTENT_TYPE);

@@ -1,5 +1,5 @@
 import { LOCALE, getOrCreateSeo, safeId, publishPage } from "./pageHandler.js";
-import { upsertEntry, makeLink } from "../utils/contentfulHelpers.js";
+import { upsertEntry, makeLink, resolveEntryRef } from "../utils/contentfulHelpers.js";
 import { COMPONENTS } from "../registry.js";
 import { genericComponentHandler } from "./genericComponent.js";
 import { getOrderedKeys } from "../utils/jsonOrder.js";
@@ -47,7 +47,17 @@ export async function migrateStBtu(
             };
             if (seoEntry) settingsFields.seo = { [LOCALE]: makeLink(seoEntry.sys.id) };
 
-            // TODO: parentPage if needed (though newStBtu uses newSt as parent)
+            // Resolve parent page if available in sectionNavigationParent
+            if (item.sectionNavigationParent && Array.isArray(item.sectionNavigationParent) && item.sectionNavigationParent.length > 0) {
+                const parentId = item.sectionNavigationParent[0];
+                const parentRef = resolveEntryRef(parentId);
+                if (parentRef) {
+                    console.log(`   🔗 Linking parent page: ${parentId} -> ${parentRef.id} (${parentRef.type})`);
+                    settingsFields.parentPage = { [LOCALE]: makeLink(parentRef.id) };
+                } else {
+                    console.warn(`   ⚠️ Parent page ID ${parentId} not found in cache.`);
+                }
+            }
 
             const settingsEntry = await upsertEntry(
                 env,

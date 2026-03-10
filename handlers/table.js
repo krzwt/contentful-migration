@@ -12,6 +12,9 @@ const LOCALE = "en-US";
 const CONTENT_TYPE = "tableContentBlock";
 
 export async function createOrUpdateTable(env, blockData, assetMap = null) {
+    if (!env) {
+        return { sys: { id: `dry-run-table-${blockData.blockId}` } };
+    }
     try { await env.getContentType(CONTENT_TYPE); } catch (err) {
         console.warn(`   ⚠ Content type "${CONTENT_TYPE}" not found: ${err.message}. Skipping.`);
         return null;

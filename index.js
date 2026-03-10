@@ -13,6 +13,8 @@ import { migrateGlobalReachMap } from "./handlers/newGlobalReachMap.js";
 import { migratePodcasts } from "./handlers/podcastHandler.js";
 import { migrateStBtu } from "./handlers/newStBtu.js";
 import { migrateSt } from "./handlers/newSt.js";
+import { migrateStTam } from "./handlers/newStTam.js";
+import { migrateStServices } from "./handlers/newStServices.js";
 import { migrateForms } from "./handlers/formHandler.js";
 import { migratePressMedia } from "./handlers/pressMediaHandler.js";
 import { migrateBlogs } from "./handlers/blogHandler.js";
@@ -129,15 +131,15 @@ const DATA_SOURCES = [
   //   label: "S&T",
   //   isSt: true
   // },
-  // {
-  //   file: "./data/NEW-S&T-Services.json",
-  //   label: "S&T Services",
-  //   isStServices: true,
-  // },
+  {
+    file: "./data/NEW-S&T-Services.json",
+    label: "S&T Services",
+    isStServices: true,
+  },
   // {
   //   file: "./data/NEW-S&T-TAM.json",
   //   label: "S&T TAM",
-  //   isStTAM: true,
+  //   isStTam: true,
   // },
   // {
   //   file: "./data/forms-import.json",
@@ -159,11 +161,11 @@ const DATA_SOURCES = [
   //   label: "Announcements",
   //   isAnnouncements: true
   // },
-  {
-    file: "./data/users.json",
-    label: "Users",
-    isUsers: true
-  }
+  // {
+  //   file: "./data/users.json",
+  //   label: "Users",
+  //   isUsers: true
+  // }
 ];
 
 async function run() {
@@ -611,6 +613,18 @@ async function run() {
       );
     }
 
+    if (source.isSt) {
+      await migrateSt(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent
+      );
+    }
+
     if (source.isStBtu) {
       await migrateStBtu(
         env,
@@ -623,8 +637,20 @@ async function run() {
       );
     }
 
-    if (source.isSt) {
-      await migrateSt(
+    if (source.isStTam) {
+      await migrateStTam(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent
+      );
+    }
+
+    if (source.isStServices) {
+      await migrateStServices(
         env,
         batchData,
         contentfulAssetMap,

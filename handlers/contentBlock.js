@@ -13,6 +13,9 @@ const CONTENT_TYPE = "contentBlock";
  * Custom handler for contentBlock (Overview Content Standalone)
  */
 export async function createOrUpdateContentBlock(env, blockData, assetMap = null, summary = null) {
+    if (!env) {
+        return { sys: { id: `dry-run-contentBlock-${blockData.blockId}` } };
+    }
     // 1. Verify Content Type exists
     try {
         await env.getContentType(CONTENT_TYPE);
