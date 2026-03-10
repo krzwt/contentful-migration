@@ -87,6 +87,7 @@ export const COMPONENTS = {
   mediaEmbed: { handler: createOrUpdateMediaEmbeds },
   mediaEmbeds: { handler: createOrUpdateMediaEmbeds },
   siteSection: { handler: createOrUpdateSectionNavigation },
+  sectionNavigation: { handler: createOrUpdateSectionNavigation },
   overwriteParentCta: { handler: createOrUpdateOverwriteParentCta },
   linkCards: { handler: createOrUpdateLinkCards },
   toggleCards: { handler: createOrUpdateToggleCards },

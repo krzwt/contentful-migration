@@ -1,7 +1,388 @@
 {
+  "eventsCpt": {
+    "name": "📰 Events CPT",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "unique": true
+          }
+        ]
+      },
+      "postDate": {
+        "name": "Post Date",
+        "type": "Date",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "entryType": {
+        "name": "Entry Type",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Conferences",
+              "User Groups",
+              "Virtual Events(Zoom)"
+            ]
+          }
+        ]
+      },
+      "alternativeListingThumbnail": {
+        "name": "Alternative Listing Thumbnail",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "eventStartDate": {
+        "name": "Event Start Date",
+        "type": "Date",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "eventEndDate": {
+        "name": "Event End Date",
+        "type": "Date",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "timezone": {
+        "name": "Timezone",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "Universal Time Coordinated (UTC/GMT)",
+              "Africa/Casablanca (+01)",
+              "Africa/Johannesburg (SAST)",
+              "Africa/Lagos (WAT)",
+              "Africa/Nairobi (EAT)",
+              "Africa/Tunis (CET)",
+              "America/Argentina/Buenos_Aires (AGT)",
+              "America/Chicago (CT/CST/CDT)",
+              "America/Edmonton (MST/MDT)",
+              "America/Los_Angeles (PT/PST/PDT)",
+              "America/New_York (ET/EST/EDT)",
+              "America/Phoenix (MT/MST/MDT)",
+              "America/Halifax (AST/ADT)",
+              "America/Sao_Paulo (BRT)",
+              "America/Mexico_City (CT/CST/CDT)",
+              "America/Bogota (COT)",
+              "Asia/Bangkok (ICT)",
+              "Asia/Dubai (GST)",
+              "Asia/Jakarta (WIB)",
+              "Asia/Jerusalem (IST)",
+              "Asia/Manila (PST)",
+              "Asia/Makassar (WITA)",
+              "Asia/Qatar (AST)",
+              "Asia/Riyadh (AST)",
+              "Asia/Seoul (KST)",
+              "Asia/Singapore (SST/SGT)",
+              "Asia/Tehran (IRDT)",
+              "Australia/Sydney (AET/AEST/AEDT)",
+              "Europe/Lisbon (WET)",
+              "Europe/Paris (CET, CEST)",
+              "Europe/Sofia (EET)",
+              "Europe/London (BST)",
+              "Asia/Kolkata (IST)",
+              "Indian/Mauritius (MUT)",
+              "Pacific/Auckland"
+            ]
+          }
+        ]
+      },
+      "region": {
+        "name": "Region",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "North America",
+              "Latin America",
+              "EMEA",
+              "APJ"
+            ]
+          }
+        ]
+      },
+      "resourceCardImage": {
+        "name": "Resource Card Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "seo": {
+        "name": "SEO",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "seo"
+            ]
+          }
+        ]
+      },
+      "publicEvent": {
+        "name": "Public Event?",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "eventAgenda": {
+        "name": "Event Agenda",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "eventAgendaItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "bannerImage": {
+        "name": "Banner Image",
+        "type": "Link",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "bannerHeading": {
+        "name": "Banner Heading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "bannerSubheading": {
+        "name": "Banner Subheading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "bannerBody": {
+        "name": "Banner Body",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "bannerCta": {
+        "name": "Banner CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "eventTypeLayoutFields": {
+        "name": "Event Type - Layout Fields",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "eventConferencesType",
+              "eventUserGroups",
+              "eventVirtualEventszoom"
+            ]
+          }
+        ]
+      },
+      "sections": {
+        "name": "Sections",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "coverPhotoSection",
+                "mediaBlock",
+                "events"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "coverPhotoSection": {
+    "name": "🧩 Cover Photo Section",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "backgroundImage": {
+        "name": "Background Image",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Asset",
+        "validations": [
+          {
+            "linkMimetypeGroup": [
+              "image"
+            ]
+          }
+        ]
+      },
+      "heading": {
+        "name": "Heading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "subheading": {
+        "name": "Subheading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "bodyText": {
+        "name": "Body Text",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "cta": {
+        "name": "CTA",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      }
+    }
+  },
   "questions": {
     "name": "🧩 Questions",
-    "description": "",
+    "description": "Using on Users.",
     "displayField": "question",
     "fields": {
       "question": {
@@ -19,6 +400,946 @@
         "localized": false,
         "disabled": false,
         "validations": []
+      }
+    }
+  },
+  "pageSettingsSt": {
+    "name": "🌍 Page Settings - S&T",
+    "description": "",
+    "displayField": "pageSetting",
+    "fields": {
+      "pageSetting": {
+        "name": "Page Setting",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "parentPage": {
+        "name": "Parent Page",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "newSt"
+            ]
+          }
+        ]
+      },
+      "seo": {
+        "name": "SEO",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "seo"
+            ]
+          }
+        ]
+      },
+      "content": {
+        "name": "Content",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "stFields"
+            ]
+          }
+        ]
+      },
+      "paragraphFontSize": {
+        "name": "Paragraph Font Size",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "13px",
+              "14px",
+              "15px"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "pageSettings": {
+    "name": "🌍 Page Settings",
+    "description": "",
+    "displayField": "pageSetting",
+    "fields": {
+      "pageSetting": {
+        "name": "Page Setting",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "parentPage": {
+        "name": "Parent Page",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "page",
+              "newStandaloneThankYou",
+              "newStandaloneContent",
+              "newStandaloneConversion",
+              "newStandaloneMicrosite",
+              "newCompany",
+              "company",
+              "newPartners"
+            ]
+          }
+        ]
+      },
+      "enableSidenav": {
+        "name": "Enable Sidenav",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "seo": {
+        "name": "SEO",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "seo"
+            ]
+          }
+        ]
+      },
+      "mainNavigationSwitch": {
+        "name": "Main Navigation - Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationDefaultCtAs": {
+        "name": "Main Navigation - Default CTAs",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationSearchSwitch": {
+        "name": "Main Navigation - Search Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationLanguageSwitch": {
+        "name": "Main Navigation - Language Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "mainNavigationCtaButtonDarkBlue": {
+        "name": "Main Navigation - CTA Button (Dark Blue)",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "mainNavigationCtaButtonWhite": {
+        "name": "Main Navigation - CTA Button (White)",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "cta"
+            ]
+          }
+        ]
+      },
+      "breadcrumbSwitch": {
+        "name": "Breadcrumb Switch",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "enableSidebarForm": {
+        "name": "Enable Sidebar Form",
+        "type": "Boolean",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sfHeading": {
+        "name": "Heading",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sfDescription": {
+        "name": "Description",
+        "type": "Text",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "salesforceCampaignId": {
+        "name": "Salesforce Campaign ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "leadSourceDetails": {
+        "name": "Lead Source Details",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      }
+    }
+  },
+  "newStServices": {
+    "name": "📄 NEW-S&T-Services",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "postDate": {
+        "name": "Post Date",
+        "type": "Date",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "shortDescription": {
+        "name": "Short Description",
+        "type": "Text",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "introHeading": {
+        "name": "Intro Heading",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "introBody": {
+        "name": "Intro Body",
+        "type": "RichText",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript",
+              "strikethrough"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "heading-1",
+              "heading-2",
+              "heading-3",
+              "heading-4",
+              "heading-5",
+              "heading-6",
+              "ordered-list",
+              "unordered-list",
+              "hr",
+              "blockquote",
+              "embedded-entry-block",
+              "embedded-asset-block",
+              "table",
+              "asset-hyperlink",
+              "embedded-entry-inline",
+              "entry-hyperlink",
+              "hyperlink"
+            ],
+            "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "pageSettings": {
+        "name": "Page Settings",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "pageSettingsSt"
+            ]
+          }
+        ]
+      },
+      "sections": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "bannerHero",
+                "featureGrid",
+                "featureTabbed",
+                "contentBlock",
+                "faQs",
+                "linkCards",
+                "accordion",
+                "calloutCards",
+                "partnersLogosBlock",
+                "cardGridBlock",
+                "customerBundle",
+                "tableContentBlock",
+                "useCases",
+                "calloutBar",
+                "callout",
+                "callOutCradle",
+                "contactSales",
+                "contentCta",
+                "fiftyFiftyComponent",
+                "iconGrid",
+                "logoList",
+                "quotesBlock",
+                "resourceTabSection",
+                "tryItCta"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "companyQuotes": {
+        "name": "Company Quotes",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "quoteItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "min": null,
+              "max": 3
+            }
+          }
+        ]
+      },
+      "paragraphFontSize": {
+        "name": "Paragraph Font Size",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "13px",
+              "14px",
+              "15px"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "newStTam": {
+    "name": "📄 NEW-S&T-TAM",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "postDate": {
+        "name": "Post Date",
+        "type": "Date",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "shortDescription": {
+        "name": "Short Description",
+        "type": "Text",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "introHeading": {
+        "name": "Intro Heading",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "introBody": {
+        "name": "Intro Body",
+        "type": "RichText",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript",
+              "strikethrough"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "heading-1",
+              "heading-2",
+              "heading-3",
+              "heading-4",
+              "heading-5",
+              "heading-6",
+              "ordered-list",
+              "unordered-list",
+              "hr",
+              "blockquote",
+              "embedded-entry-block",
+              "embedded-asset-block",
+              "table",
+              "asset-hyperlink",
+              "embedded-entry-inline",
+              "entry-hyperlink",
+              "hyperlink"
+            ],
+            "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "pageSettings": {
+        "name": "Page Settings",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "pageSettingsSt"
+            ]
+          }
+        ]
+      },
+      "sections": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "bannerHero",
+                "featureGrid",
+                "featureTabbed",
+                "contentBlock",
+                "faQs",
+                "linkCards",
+                "accordion",
+                "calloutCards",
+                "partnersLogosBlock",
+                "cardGridBlock",
+                "customerBundle",
+                "tableContentBlock",
+                "useCases",
+                "callout",
+                "calloutBar",
+                "contactSales",
+                "contentCta",
+                "fiftyFiftyComponent",
+                "iconGrid",
+                "logoList",
+                "mediaEmbeds",
+                "quotesBlock",
+                "resourceTabSection",
+                "reviewsBlock",
+                "tryItCta"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "companyQuotes": {
+        "name": "Company Quotes",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "quoteItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "min": null,
+              "max": 3
+            }
+          }
+        ]
+      },
+      "paragraphFontSize": {
+        "name": "Paragraph Font Size",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "13px",
+              "14px",
+              "15px"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "newStBtu": {
+    "name": "📄 NEW-S&T-BTU",
+    "description": "",
+    "displayField": "title",
+    "fields": {
+      "entryId": {
+        "name": "Entry ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "title": {
+        "name": "Title",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "slug": {
+        "name": "Slug",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "postDate": {
+        "name": "Post Date",
+        "type": "Date",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "shortDescription": {
+        "name": "Short Description",
+        "type": "Text",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "introHeading": {
+        "name": "Intro Heading",
+        "type": "Symbol",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "introBody": {
+        "name": "Intro Body",
+        "type": "RichText",
+        "required": true,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "enabledMarks": [
+              "bold",
+              "italic",
+              "underline",
+              "code",
+              "superscript",
+              "subscript",
+              "strikethrough"
+            ],
+            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+          },
+          {
+            "enabledNodeTypes": [
+              "heading-1",
+              "heading-2",
+              "heading-3",
+              "heading-4",
+              "heading-5",
+              "heading-6",
+              "ordered-list",
+              "unordered-list",
+              "hr",
+              "blockquote",
+              "embedded-entry-block",
+              "embedded-asset-block",
+              "table",
+              "asset-hyperlink",
+              "embedded-entry-inline",
+              "entry-hyperlink",
+              "hyperlink"
+            ],
+            "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+          },
+          {
+            "nodes": {}
+          }
+        ]
+      },
+      "pageSettings": {
+        "name": "Page Settings",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "pageSettingsSt"
+            ]
+          }
+        ]
+      },
+      "sections": {
+        "name": "Content Components",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "bannerHero",
+                "featureGrid",
+                "featureTabbed",
+                "contentBlock",
+                "faQs",
+                "linkCards",
+                "accordion",
+                "calloutCards",
+                "partnersLogosBlock",
+                "cardGridBlock",
+                "customerBundle",
+                "tableContentBlock",
+                "useCases",
+                "callout",
+                "calloutBar",
+                "contactSales",
+                "contentCta",
+                "fiftyFiftyComponent",
+                "iconGrid",
+                "logoList",
+                "mediaEmbeds",
+                "mediaBlock",
+                "quotesBlock",
+                "resourceTabSection",
+                "tryItCta"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      },
+      "companyQuotes": {
+        "name": "Company Quotes",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "quoteItem"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "min": null,
+              "max": 3
+            }
+          }
+        ]
+      },
+      "paragraphFontSize": {
+        "name": "Paragraph Font Size",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "13px",
+              "14px",
+              "15px"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "toggleCards": {
+    "name": "🧩 Toggle Cards",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "allStEntries": {
+        "name": "All S&T Entries",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": [
+          {
+            "in": [
+              "All BeyondTrust University",
+              "All Professional Services",
+              "All TAM"
+            ]
+          }
+        ]
+      },
+      "selectIndividualEntries": {
+        "name": "Select Individual Entries",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "newStBtu",
+                "newStServices",
+                "newStTam"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": []
+      }
+    }
+  },
+  "events": {
+    "name": "🧩 Events",
+    "description": "",
+    "displayField": null,
+    "fields": {
+      "cards": {
+        "name": "Cards",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "eventsCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "max": 4
+            }
+          }
+        ]
       }
     }
   },
@@ -1323,199 +2644,6 @@
       }
     }
   },
-  "newStBtu": {
-    "name": "📄 NEW-S&T-BTU",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "shortDescription": {
-        "name": "Short Description",
-        "type": "Text",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "introHeading": {
-        "name": "Intro Heading",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "introBody": {
-        "name": "Intro Body",
-        "type": "RichText",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "enabledMarks": [
-              "bold",
-              "italic",
-              "underline",
-              "code",
-              "superscript",
-              "subscript",
-              "strikethrough"
-            ],
-            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
-          },
-          {
-            "enabledNodeTypes": [
-              "heading-1",
-              "heading-2",
-              "heading-3",
-              "heading-4",
-              "heading-5",
-              "heading-6",
-              "ordered-list",
-              "unordered-list",
-              "hr",
-              "blockquote",
-              "embedded-entry-block",
-              "embedded-asset-block",
-              "table",
-              "asset-hyperlink",
-              "embedded-entry-inline",
-              "entry-hyperlink",
-              "hyperlink"
-            ],
-            "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
-          },
-          {
-            "nodes": {}
-          }
-        ]
-      },
-      "pageSettings": {
-        "name": "Page Settings",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "pageSettingsSt"
-            ]
-          }
-        ]
-      },
-      "sections": {
-        "name": "Content Components",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "bannerHero",
-                "featureGrid",
-                "featureTabbed",
-                "contentBlock",
-                "faQs",
-                "linkCards",
-                "accordion",
-                "calloutCards",
-                "partnersLogosBlock",
-                "cardGridBlock",
-                "customerBundle",
-                "tableContentBlock",
-                "useCases",
-                "callout",
-                "calloutBar",
-                "contactSales",
-                "contentCta",
-                "fiftyFiftyComponent",
-                "iconGrid",
-                "logoList",
-                "mediaEmbeds",
-                "mediaBlock",
-                "quotesBlock",
-                "resourceTabSection",
-                "tryItCta"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "companyQuotes": {
-        "name": "Company Quotes",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "quoteItem"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "min": null,
-              "max": 3
-            }
-          }
-        ]
-      },
-      "paragraphFontSize": {
-        "name": "Paragraph Font Size",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "13px",
-              "14px",
-              "15px"
-            ]
-          }
-        ]
-      }
-    }
-  },
   "newPressMediaCpt": {
     "name": "📰 NEW-Press & Media CPT",
     "description": "",
@@ -2084,391 +3212,6 @@
         "localized": false,
         "disabled": false,
         "validations": []
-      }
-    }
-  },
-  "newStTam": {
-    "name": "📄 NEW-S&T-TAM",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "shortDescription": {
-        "name": "Short Description",
-        "type": "Text",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "introHeading": {
-        "name": "Intro Heading",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "introBody": {
-        "name": "Intro Body",
-        "type": "RichText",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "enabledMarks": [
-              "bold",
-              "italic",
-              "underline",
-              "code",
-              "superscript",
-              "subscript",
-              "strikethrough"
-            ],
-            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
-          },
-          {
-            "enabledNodeTypes": [
-              "heading-1",
-              "heading-2",
-              "heading-3",
-              "heading-4",
-              "heading-5",
-              "heading-6",
-              "ordered-list",
-              "unordered-list",
-              "hr",
-              "blockquote",
-              "embedded-entry-block",
-              "embedded-asset-block",
-              "table",
-              "asset-hyperlink",
-              "embedded-entry-inline",
-              "entry-hyperlink",
-              "hyperlink"
-            ],
-            "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
-          },
-          {
-            "nodes": {}
-          }
-        ]
-      },
-      "pageSettings": {
-        "name": "Page Settings",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "pageSettingsSt"
-            ]
-          }
-        ]
-      },
-      "sections": {
-        "name": "Content Components",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "bannerHero",
-                "featureGrid",
-                "featureTabbed",
-                "contentBlock",
-                "faQs",
-                "linkCards",
-                "accordion",
-                "calloutCards",
-                "partnersLogosBlock",
-                "cardGridBlock",
-                "customerBundle",
-                "tableContentBlock",
-                "useCases",
-                "callout",
-                "calloutBar",
-                "contactSales",
-                "contentCta",
-                "fiftyFiftyComponent",
-                "iconGrid",
-                "logoList",
-                "mediaEmbeds",
-                "quotesBlock",
-                "resourceTabSection",
-                "reviewsBlock",
-                "tryItCta"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "companyQuotes": {
-        "name": "Company Quotes",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "quoteItem"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "min": null,
-              "max": 3
-            }
-          }
-        ]
-      },
-      "paragraphFontSize": {
-        "name": "Paragraph Font Size",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "13px",
-              "14px",
-              "15px"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "newStServices": {
-    "name": "📄 NEW-S&T-Services",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "shortDescription": {
-        "name": "Short Description",
-        "type": "Text",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "introHeading": {
-        "name": "Intro Heading",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "introBody": {
-        "name": "Intro Body",
-        "type": "RichText",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "enabledMarks": [
-              "bold",
-              "italic",
-              "underline",
-              "code",
-              "superscript",
-              "subscript",
-              "strikethrough"
-            ],
-            "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
-          },
-          {
-            "enabledNodeTypes": [
-              "heading-1",
-              "heading-2",
-              "heading-3",
-              "heading-4",
-              "heading-5",
-              "heading-6",
-              "ordered-list",
-              "unordered-list",
-              "hr",
-              "blockquote",
-              "embedded-entry-block",
-              "embedded-asset-block",
-              "table",
-              "asset-hyperlink",
-              "embedded-entry-inline",
-              "entry-hyperlink",
-              "hyperlink"
-            ],
-            "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
-          },
-          {
-            "nodes": {}
-          }
-        ]
-      },
-      "pageSettings": {
-        "name": "Page Settings",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "pageSettingsSt"
-            ]
-          }
-        ]
-      },
-      "sections": {
-        "name": "Content Components",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "bannerHero",
-                "featureGrid",
-                "featureTabbed",
-                "contentBlock",
-                "faQs",
-                "linkCards",
-                "accordion",
-                "calloutCards",
-                "partnersLogosBlock",
-                "cardGridBlock",
-                "customerBundle",
-                "tableContentBlock",
-                "useCases",
-                "calloutBar",
-                "callout",
-                "callOutCradle",
-                "contactSales",
-                "contentCta",
-                "fiftyFiftyComponent",
-                "iconGrid",
-                "logoList",
-                "quotesBlock",
-                "resourceTabSection",
-                "tryItCta"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "companyQuotes": {
-        "name": "Company Quotes",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "quoteItem"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "min": null,
-              "max": 3
-            }
-          }
-        ]
-      },
-      "paragraphFontSize": {
-        "name": "Paragraph Font Size",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "13px",
-              "14px",
-              "15px"
-            ]
-          }
-        ]
       }
     }
   },
@@ -3264,64 +4007,6 @@
       }
     }
   },
-  "toggleCards": {
-    "name": "🧩 Toggle Cards",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "allStEntries": {
-        "name": "All S&T Entries",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "All BeyondTrust University",
-              "All Professional Services",
-              "All TAM"
-            ]
-          }
-        ]
-      },
-      "selectIndividualEntries": {
-        "name": "Select Individual Entries",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "newStBtu"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      }
-    }
-  },
   "mediaEmbeds": {
     "name": "🧩 Media Embeds",
     "description": "Embed an Interactive Demo/Product Tour iframe onto the page. Choose an iframe URL from the dropdown list and add any additional file path or query string parameters.",
@@ -3526,295 +4211,6 @@
         "localized": false,
         "disabled": false,
         "validations": []
-      }
-    }
-  },
-  "eventsCpt": {
-    "name": "📰 Events CPT",
-    "description": "",
-    "displayField": "title",
-    "fields": {
-      "entryId": {
-        "name": "Entry ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "title": {
-        "name": "Title",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "slug": {
-        "name": "Slug",
-        "type": "Symbol",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "unique": true
-          }
-        ]
-      },
-      "entryType": {
-        "name": "Entry Type",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Conferences",
-              "User Groups",
-              "Virtual Events(Zoom)"
-            ]
-          }
-        ]
-      },
-      "alternativeListingThumbnail": {
-        "name": "Alternative Listing Thumbnail",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "image"
-            ]
-          }
-        ]
-      },
-      "eventStartDate": {
-        "name": "Event Start Date",
-        "type": "Date",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "eventEndDate": {
-        "name": "Event End Date",
-        "type": "Date",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "timezone": {
-        "name": "Timezone",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Universal Time Coordinated (UTC/GMT)",
-              "Africa/Casablanca (+01)",
-              "Africa/Johannesburg (SAST)",
-              "Africa/Lagos (WAT)",
-              "Africa/Nairobi (EAT)",
-              "Africa/Tunis (CET)",
-              "America/Argentina/Buenos_Aires (AGT)",
-              "America/Chicago (CT/CST/CDT)",
-              "America/Edmonton (MST/MDT)",
-              "America/Los_Angeles (PT/PST/PDT)",
-              "America/New_York (ET/EST/EDT)",
-              "America/Phoenix (MT/MST/MDT)",
-              "America/Halifax (AST/ADT)",
-              "America/Sao_Paulo (BRT)",
-              "America/Mexico_City (CT/CST/CDT)",
-              "America/Bogota (COT)",
-              "Asia/Bangkok (ICT)",
-              "Asia/Dubai (GST)",
-              "Asia/Jakarta (WIB)",
-              "Asia/Jerusalem (IST)",
-              "Asia/Manila (PST)",
-              "Asia/Makassar (WITA)",
-              "Asia/Qatar (AST)",
-              "Asia/Riyadh (AST)",
-              "Asia/Seoul (KST)",
-              "Asia/Singapore (SST/SGT)",
-              "Asia/Tehran (IRDT)",
-              "Australia/Sydney (AET/AEST/AEDT)",
-              "Europe/Lisbon (WET)",
-              "Europe/Paris (CET, CEST)",
-              "Europe/Sofia (EET)",
-              "Europe/London (BST)",
-              "Asia/Kolkata (IST)",
-              "Indian/Mauritius (MUT)"
-            ]
-          }
-        ]
-      },
-      "region": {
-        "name": "Region",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "North America",
-              "Latin America",
-              "EMEA",
-              "APJ"
-            ]
-          }
-        ]
-      },
-      "resourceCardImage": {
-        "name": "Resource Card Image",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "image"
-            ]
-          }
-        ]
-      },
-      "seo": {
-        "name": "SEO",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "seo"
-            ]
-          }
-        ]
-      },
-      "sectionNavigation": {
-        "name": "Section Navigation",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionNavigation"
-            ]
-          }
-        ]
-      },
-      "publicEvent": {
-        "name": "Public Event?",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "eventAgenda": {
-        "name": "Event Agenda",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "eventAgendaItem"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
-      },
-      "bannerImage": {
-        "name": "Banner Image",
-        "type": "Link",
-        "required": true,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Asset",
-        "validations": [
-          {
-            "linkMimetypeGroup": [
-              "image"
-            ]
-          }
-        ]
-      },
-      "bannerHeading": {
-        "name": "Banner Heading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "bannerSubheading": {
-        "name": "Banner Subheading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "bannerBody": {
-        "name": "Banner Body",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "bannerCta": {
-        "name": "Banner CTA",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "eventTypeLayoutFields": {
-        "name": "Event Type - Layout Fields",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "eventConferencesType",
-              "eventUserGroups",
-              "eventVirtualEventszoom"
-            ]
-          }
-        ]
       }
     }
   },
@@ -5133,176 +5529,6 @@
       }
     }
   },
-  "pageSettings": {
-    "name": "🌍 Page Settings",
-    "description": "",
-    "displayField": "pageSetting",
-    "fields": {
-      "pageSetting": {
-        "name": "Page Setting",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "parentPage": {
-        "name": "Parent Page",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "page",
-              "newStandaloneThankYou",
-              "newStandaloneContent",
-              "newStandaloneConversion",
-              "newStandaloneMicrosite",
-              "newCompany",
-              "company",
-              "newPartners"
-            ]
-          }
-        ]
-      },
-      "enableSidenav": {
-        "name": "Enable Sidenav",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "seo": {
-        "name": "SEO",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "seo"
-            ]
-          }
-        ]
-      },
-      "mainNavigationSwitch": {
-        "name": "Main Navigation - Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationDefaultCtAs": {
-        "name": "Main Navigation - Default CTAs",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationSearchSwitch": {
-        "name": "Main Navigation - Search Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationLanguageSwitch": {
-        "name": "Main Navigation - Language Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "mainNavigationCtaButtonDarkBlue": {
-        "name": "Main Navigation - CTA Button (Dark Blue)",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "mainNavigationCtaButtonWhite": {
-        "name": "Main Navigation - CTA Button (White)",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      },
-      "breadcrumbSwitch": {
-        "name": "Breadcrumb Switch",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "enableSidebarForm": {
-        "name": "Enable Sidebar Form",
-        "type": "Boolean",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sfHeading": {
-        "name": "Heading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sfDescription": {
-        "name": "Description",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "salesforceCampaignId": {
-        "name": "Salesforce Campaign ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "leadSourceDetails": {
-        "name": "Lead Source Details",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      }
-    }
-  },
   "linkCardsItem": {
     "name": "🔁 Link Cards Item",
     "description": "",
@@ -5732,82 +5958,6 @@
           {
             "linkContentType": [
               "cta"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "pageSettingsSt": {
-    "name": "🌍 Page Settings - S&T",
-    "description": "",
-    "displayField": "pageSetting",
-    "fields": {
-      "pageSetting": {
-        "name": "Page Setting",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "parentPage": {
-        "name": "Parent Page",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "newSt"
-            ]
-          }
-        ]
-      },
-      "seo": {
-        "name": "SEO",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "seo"
-            ]
-          }
-        ]
-      },
-      "content": {
-        "name": "Content",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "stFields"
-            ]
-          }
-        ]
-      },
-      "paragraphFontSize": {
-        "name": "Paragraph Font Size",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "13px",
-              "14px",
-              "15px"
             ]
           }
         ]
@@ -8024,90 +8174,6 @@
       }
     }
   },
-  "coverPhotoSection": {
-    "name": "🧩 Cover Photo Section",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "backgroundImage": {
-        "name": "Background Image",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "asset"
-            ]
-          }
-        ]
-      },
-      "heading": {
-        "name": "Heading",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionTitle"
-            ]
-          }
-        ]
-      },
-      "subheading": {
-        "name": "Subheading",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "bodyText": {
-        "name": "Body Text",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "cta": {
-        "name": "CTA",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "cta"
-            ]
-          }
-        ]
-      }
-    }
-  },
   "callsToActions": {
     "name": "🔁Calls to Actions",
     "description": "",
@@ -8471,86 +8537,6 @@
             ]
           }
         ]
-      }
-    }
-  },
-  "logoList": {
-    "name": "🧩 Logo List",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "layout": {
-        "name": "Layout",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": [
-          {
-            "in": [
-              "Center",
-              "left"
-            ]
-          }
-        ]
-      },
-      "listHeading": {
-        "name": "List Heading",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionTitle"
-            ]
-          }
-        ]
-      },
-      "subHeading": {
-        "name": "Sub Heading",
-        "type": "Text",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "logos": {
-        "name": "Logos",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "asset"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": []
       }
     }
   },

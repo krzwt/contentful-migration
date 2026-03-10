@@ -1,1 +1,33 @@
-{}
+{
+    "data": {
+        "assets": [
+            {
+                "id": "89138",
+                "title": "Ppm Password Safe User Group Graphic",
+                "url": "https://assets-uat.btdevops.io/assets/images/ppm-password-safe-user-group-graphic.jpg",
+                "filename": "ppm-password-safe-user-group-graphic.jpg",
+                "mimeType": "image/jpeg",
+                "width": 800,
+                "height": 400
+            },
+            {
+                "id": "84400",
+                "title": "Remote Support User Group Graphic",
+                "url": "https://assets-uat.btdevops.io/assets/images/Remote-support-user-group-graphic_220325_141534.jpg",
+                "filename": "Remote-support-user-group-graphic_220325_141534.jpg",
+                "mimeType": "image/jpeg",
+                "width": 800,
+                "height": 400
+            },
+            {
+                "id": "77713",
+                "title": "Bt Events Go Beyond Connections 2021 Resource Cards V2 Privileged Password Management",
+                "url": "https://assets-uat.btdevops.io/assets/images/resource-cards/BT_Events_GoBeyondConnections_2021_ResourceCards_v2_PrivilegedPasswordManagement.jpg",
+                "filename": "BT_Events_GoBeyondConnections_2021_ResourceCards_v2_PrivilegedPasswordManagement.jpg",
+                "mimeType": "image/jpeg",
+                "width": 310,
+                "height": 150
+            }
+        ]
+    }
+}

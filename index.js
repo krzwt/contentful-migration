@@ -20,6 +20,7 @@ import { migratePressMedia } from "./handlers/pressMediaHandler.js";
 import { migrateBlogs } from "./handlers/blogHandler.js";
 import { migrateAnnouncements } from "./handlers/announcementHandler.js";
 import { migrateUsers } from "./handlers/userHandler.js";
+import { migrateEvents } from "./handlers/eventHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
@@ -131,11 +132,11 @@ const DATA_SOURCES = [
   //   label: "S&T",
   //   isSt: true
   // },
-  {
-    file: "./data/NEW-S&T-Services.json",
-    label: "S&T Services",
-    isStServices: true,
-  },
+  // {
+  //   file: "./data/NEW-S&T-Services.json",
+  //   label: "S&T Services",
+  //   isStServices: true,
+  // },
   // {
   //   file: "./data/NEW-S&T-TAM.json",
   //   label: "S&T TAM",
@@ -165,7 +166,12 @@ const DATA_SOURCES = [
   //   file: "./data/users.json",
   //   label: "Users",
   //   isUsers: true
-  // }
+  // },
+  {
+    file: "./data/events.json",
+    label: "Events",
+    isEvents: true
+  },
 ];
 
 async function run() {
@@ -710,6 +716,18 @@ async function run() {
         targetIndices,
         totalPages,
         summary
+      );
+    }
+
+    if (source.isEvents) {
+      await migrateEvents(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent
       );
     }
   }
