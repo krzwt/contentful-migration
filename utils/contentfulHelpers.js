@@ -27,6 +27,7 @@ export function buildUrlMap() {
 
             items.forEach(item => {
                 if (item && item.id) {
+                    if (item.status && item.status !== "live") return;
                     const url = item.uri || item.slug || item.url || "";
                     if (url) {
                         GLOBAL_URL_MAP.set(String(item.id), { url, title: item.title || "" });
@@ -73,35 +74,24 @@ export function buildUrlMap() {
 export async function prePopulateEntryIdCache(env) {
     if (!env) return;
     console.log("🔍 Pre-populating entryId sys.id cache from Contentful...");
-
-    const contentTypes = [
-        "users",
-        "blogCpt",
-        "resourcesCpt",
-        "resourceWebinarsCpt",
-        "announcementBanner",
-        "newStBtu",
-        "newPressMediaCpt",
-        "podcastsCpt",
-        "newStTam",
-        "newStServices",
-        "embedFormsCpt",
-        "newSt",
-        "newGlobalReachMap",
-        "eventsCpt",
-        "newEventsCpt",
-        "newStandaloneContent",
-        "newStandaloneConversion",
-        "newStandaloneMicrosite",
-        "newStandaloneThankYou",
-        "peopleCpt",
-        "newCompany",
-        "newPartners",
-        "company",
-        "newPartnersEmbeds",
-        "newEmbedsCpt",
-        "quoteItem"
-    ];
+    // Dynamically fetch all content types to find any with an 'entryId' field
+    let contentTypes = [];
+    try {
+        const ctResponse = await env.getContentTypes();
+        contentTypes = ctResponse.items
+            .filter(ct => ct.fields.some(f => f.id === "entryId"))
+            .map(ct => ct.sys.id);
+        console.log(`   🔍 Found ${contentTypes.length} content types with 'entryId' field.`);
+    } catch (e) {
+        console.warn("   ⚠️ Could not fetch content types, falling back to static list.");
+        contentTypes = [
+            "blogCpt", "resourcesCpt", "resourceWebinarsCpt", "announcementBanner",
+            "newStBtu", "newPressMediaCpt", "podcastsCpt", "newStTam", "newStServices",
+            "embedFormsCpt", "newSt", "newGlobalReachMap", "eventsCpt", "newStandaloneContent",
+            "newStandaloneConversion", "newStandaloneMicrosite", "newStandaloneThankYou",
+            "peopleCpt", "newCompany", "newPartners", "company", "quoteItem"
+        ];
+    }
 
     let totalCached = 0;
     for (const contentType of contentTypes) {
@@ -137,8 +127,7 @@ export async function prePopulateEntryIdCache(env) {
                 console.log(`   ✅ Cached ${countForType} ${contentType} entries.`);
             }
         } catch (e) {
-            // Usually means content type not found or query error
-            console.warn(`   ⚠️ Skipping ${contentType}: ${e.message}`);
+            // Silently skip content types that might fail or have no entries
         }
     }
 
@@ -246,19 +235,16 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
             fields.pageLink = { [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: ref.id } } };
             fields.url = { [LOCALE]: "" }; // Clear URL when internal reference is resolved
         } else {
-            // Fallback: If page entry not found in Contentful, use resolved internal URL from slugs
-            const internalUrl = resolveInternalUrl(linkedId);
-            if (internalUrl) {
-                let normalizedUrl = normalizeUrl(internalUrl);
-                console.log(`   🌐 Page ${linkedId} not in Contentful. Using URL: ${normalizedUrl}`);
-                fields.url = { [LOCALE]: normalizedUrl };
-                fields.target = { [LOCALE]: normalizedUrl.startsWith("http") ? "_blank (New Tab)" : "_self (Same Tab)" };
-            } else if (safeUrl) {
-                // If we have a linkedId but it's not found anywhere, at least keep the original safeUrl if it exists
-                console.log(`   ⚠ Linked ID ${linkedId} could not be resolved. Falling back to original URL.`);
-                fields.url = { [LOCALE]: safeUrl };
-            }
+            // User: If URL is not "managed" (linked to an entry), it is not required.
+            console.log(`   ⚠️ Skipping cta-${id}: Internal reference ${linkedId} not found in Contentful (Not Managed).`);
+            return null;
         }
+    }
+
+    // skip if NO URL or Page Link
+    if (!fields.url?.[LOCALE] && !fields.pageLink?.[LOCALE]) {
+        console.warn(`   ⚠️ Skipping creation of cta-${id}: No destination found (URL or Page Link).`);
+        return null;
     }
 
     return await upsertEntry(env, "cta", `cta-${id}`, fields, shouldPublish);

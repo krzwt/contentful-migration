@@ -61,7 +61,7 @@ export async function createOrUpdateUseCases(env, blockData, assetMap = null) {
       description: { [LOCALE]: f.body || "" },
     };
     if (itemTitle) itemFields.title = { [LOCALE]: makeLink(itemTitle.sys.id) };
-    if (ctaEntry) itemFields.cta = { [LOCALE]: makeLink(ctaEntry.sys.id) };
+    itemFields.cta = { [LOCALE]: ctaEntry ? makeLink(ctaEntry.sys.id) : null };
 
     // Handle icon/image
     if (f.image?.length && assetMap) {

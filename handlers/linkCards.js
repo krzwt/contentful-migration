@@ -44,10 +44,6 @@ export async function createOrUpdateLinkCards(env, blockData, assetMap = null, s
             let label = f.ctaLinkText || linkInfo.label || "Learn More";
             let url = linkInfo.url;
 
-            if (!url && linkInfo.linkedId) {
-                url = resolveInternalUrl(linkInfo.linkedId) || "";
-            }
-
             if (url || linkInfo.linkedId) {
                 const ctaEntry = await upsertCta(env, `lcitem-${cId}`, label, url, true, linkInfo.linkedId);
                 if (ctaEntry) {

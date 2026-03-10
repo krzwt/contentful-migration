@@ -91,9 +91,6 @@ export async function createOrUpdateSectionNavigation(env, blockData, assetMap =
         const linkInfo = parseCraftLink(lFields.destination);
         const label = lFields.label || linkInfo.label || "Learn More";
         let url = linkInfo.url;
-        if (!url && linkInfo.linkedId) {
-            url = resolveInternalUrl(linkInfo.linkedId) || "";
-        }
 
         const linkEntryFields = {
             label: { [LOCALE]: label }
@@ -152,9 +149,6 @@ export async function createOrUpdateSectionNavigation(env, blockData, assetMap =
             const ctaInfo = parseCraftLink(cFields.destination);
             const label = cFields.label || ctaInfo.label;
             let url = ctaInfo.url;
-            if (!url && ctaInfo.linkedId) {
-                url = resolveInternalUrl(ctaInfo.linkedId) || "";
-            }
 
             if (url || label || ctaInfo.linkedId) {
                 // The 'cta' field on sectionNavigation takes a regular 'cta' entry? 

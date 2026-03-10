@@ -69,11 +69,8 @@ export async function createOrUpdateFeatureTabbed(
     let ctaEntry = null;
     const linkInfo = parseCraftLink(f.ctaLink);
     let label = f.ctaLinkText || f.ctaLabel || ""; // Respect blank text if provided
+    // URL
     let url = linkInfo.url;
-
-    if (!url && linkInfo.linkedId) {
-      url = resolveInternalUrl(linkInfo.linkedId) || "";
-    }
 
     if (url || label || linkInfo.linkedId) {
       ctaEntry = await upsertCta(
@@ -92,7 +89,11 @@ export async function createOrUpdateFeatureTabbed(
       description: { [LOCALE]: await convertHtmlToRichText(env, f.body || "") },
     };
 
-    if (ctaEntry) itemFields.cta = { [LOCALE]: makeLink(ctaEntry.sys.id) };
+    if (ctaEntry) {
+      itemFields.cta = { [LOCALE]: makeLink(ctaEntry.sys.id) };
+    } else {
+      itemFields.cta = { [LOCALE]: null };
+    }
 
     // Handle tab-level asset
     let tabAssetWrapper = null;

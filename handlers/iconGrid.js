@@ -87,10 +87,6 @@ async function createOrUpdateIconGridItem(env, id, fields, assetMap, summary) {
         let label = fields.linkText || linkInfo.label || "Learn More";
         let url = linkInfo.url;
 
-        if (!url && linkInfo.linkedId) {
-            url = resolveInternalUrl(linkInfo.linkedId) || "";
-        }
-
         if (url || linkInfo.linkedId) {
             const ctaEntry = await upsertCta(env, `griditem-${id}`, label, url, true, linkInfo.linkedId);
             if (ctaEntry) {

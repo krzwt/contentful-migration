@@ -93,7 +93,7 @@ export async function createOrUpdateStatistics(
   if (titleEntry)
     fields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
   if (blockData.body250) fields.description = { [LOCALE]: blockData.body250 };
-  if (ctaEntry) fields.cta = { [LOCALE]: makeLink(ctaEntry.sys.id) };
+  fields.cta = { [LOCALE]: ctaEntry ? makeLink(ctaEntry.sys.id) : null };
   if (statRefs.length) fields.addStatistics = { [LOCALE]: statRefs };
 
   return await upsertEntry(env, CONTENT_TYPE, `stats-${blockId}`, fields);

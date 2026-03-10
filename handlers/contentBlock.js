@@ -77,13 +77,7 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
         };
     }
 
-    if (ctaEntry) {
-        fields.cta = {
-            [LOCALE]: {
-                sys: { type: "Link", linkType: "Entry", id: ctaEntry.sys.id }
-            }
-        };
-    }
+    fields.cta = { [LOCALE]: ctaEntry ? makeLink(ctaEntry.sys.id) : null };
 
     // 3. Full Width CTA (New)
     let fullWidthCtaEntry = null;
@@ -104,13 +98,7 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
         }
     }
 
-    if (fullWidthCtaEntry) {
-        fields.fullWidthCta = {
-            [LOCALE]: {
-                sys: { type: "Link", linkType: "Entry", id: fullWidthCtaEntry.sys.id }
-            }
-        };
-    }
+    fields.fullWidthCta = { [LOCALE]: fullWidthCtaEntry ? makeLink(fullWidthCtaEntry.sys.id) : null };
 
     let entry;
     if (existing.items.length) {

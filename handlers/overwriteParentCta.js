@@ -26,10 +26,6 @@ export async function createOrUpdateOverwriteParentCta(env, blockData, assetMap 
     const label = cFields.label || linkInfo.label || "Learn More";
     let url = linkInfo.url;
 
-    if (!url && linkInfo.linkedId) {
-        url = resolveInternalUrl(linkInfo.linkedId) || "";
-    }
-
     if (url || label || linkInfo.linkedId) {
         console.log(`   📝 Creating Overwrite Parent CTA [${ctaBlock.id || ctaKeys[0]}] for block ${blockId}`);
         return await upsertCta(env, `overwrite-cta-${blockId}`, label, url, true, linkInfo.linkedId);

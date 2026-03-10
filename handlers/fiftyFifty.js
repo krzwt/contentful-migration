@@ -54,11 +54,8 @@ export async function createOrUpdateFiftyFifty(
   if (fields.ctaLink) {
     const linkInfo = parseCraftLink(fields.ctaLink);
     let label = fields.linkText || linkInfo.label || fields.ctaLabel || "";
+    // URL
     let url = linkInfo.url;
-
-    if (!url && linkInfo.linkedId) {
-      url = resolveInternalUrl(linkInfo.linkedId) || "";
-    }
 
     if (url || linkInfo.linkedId) {
       ctaEntry = await upsertCta(
@@ -130,7 +127,9 @@ export async function createOrUpdateFiftyFifty(
 
   if (titleEntry)
     cfFields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
-  if (ctaEntry) cfFields.cta = { [LOCALE]: makeLink(ctaEntry.sys.id) };
+
+  cfFields.cta = { [LOCALE]: ctaEntry ? makeLink(ctaEntry.sys.id) : null };
+
   if (assetLink) cfFields.addAsset = { [LOCALE]: assetLink };
   // if (resourceLink) cfFields.addResource = { [LOCALE]: resourceLink }; // Skip resources for now per user request
 
