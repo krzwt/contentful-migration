@@ -41,6 +41,12 @@ export function normalizeUrl(url) {
   if (!url) return "";
   let normalized = String(url).trim();
 
+  // If the link points to a PDF, preserve the absolute URL
+  // because PDFs may remain hosted on the legacy server
+  if (normalized.toLowerCase().includes(".pdf")) {
+    return normalized;
+  }
+
   // Strip known domains to make links relative
   normalized = normalized
     .replace(/^https?:\/\/bluetext\.beyondtrust\.com/, "")

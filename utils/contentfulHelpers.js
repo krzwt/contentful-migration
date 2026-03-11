@@ -236,10 +236,11 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
     }
 
     let finalLabel = label || "";
+    const isPdf = safeUrl.toLowerCase().includes(".pdf");
     const fields = {
         label: { [LOCALE]: finalLabel },
         url: { [LOCALE]: safeUrl },
-        target: { [LOCALE]: safeUrl.startsWith("http") ? "_blank (New Tab)" : "_self (Same Tab)" }
+        target: { [LOCALE]: (safeUrl.startsWith("http") || isPdf) ? "_blank (New Tab)" : "_self (Same Tab)" }
     };
 
     // If we have a linkedId, try to find the actual page entry in Contentful using the cache
