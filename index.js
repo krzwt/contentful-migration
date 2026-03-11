@@ -21,6 +21,7 @@ import { migrateBlogs } from "./handlers/blogHandler.js";
 import { migrateAnnouncements } from "./handlers/announcementHandler.js";
 import { migrateUsers } from "./handlers/userHandler.js";
 import { migrateEvents } from "./handlers/eventHandler.js";
+import { migrateVideos } from "./handlers/videoHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
@@ -80,11 +81,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneContent",
   //   label: "Standalone Content",
   // },
-  {
-    file: "./data/standalone-conversion.json",
-    pageContentType: "newStandaloneConversion",
-    label: "Standalone Conversion",
-  },
+  // {
+  //   file: "./data/standalone-conversion.json",
+  //   pageContentType: "newStandaloneConversion",
+  //   label: "Standalone Conversion",
+  // },
   // {
   //   file: "./data/standalone-microsite.json",
   //   pageContentType: "newStandaloneMicrosite",
@@ -175,6 +176,11 @@ const DATA_SOURCES = [
   //   label: "Events",
   //   isEvents: true
   // },
+  {
+    file: "./data/NEW-Video.json",
+    label: "NEW-Video CPT",
+    isVideos: true,
+  },
 ];
 
 async function run() {
@@ -763,6 +769,17 @@ async function run() {
         totalPages,
         summary,
         rawFileContent,
+      );
+    }
+
+    if (source.isVideos) {
+      await migrateVideos(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
       );
     }
   }
