@@ -16,7 +16,7 @@ const LOCALE = "en-US";
 const CONTENT_TYPE = "cardGridBlock";
 
 // Craft cardTheme → Contentful cardTheme mapping
-const THEME_MAP = { image: "Light", dark: "Dark", light: "Light" };
+const THEME_MAP = { image: "Light", dark: "Dark", light: "Light", logo: "Light" };
 
 export async function createOrUpdateCardGrid(env, blockData, assetMap = null) {
   try {
@@ -29,9 +29,12 @@ export async function createOrUpdateCardGrid(env, blockData, assetMap = null) {
   }
 
   const blockId = blockData.blockId;
-  const heading = blockData.headingSection || blockData.heading || "";
+  // Only use headingSection to avoid falling back to the page title
+  const heading = blockData.headingSection || "";
 
-  const titleEntry = await upsertSectionTitle(env, blockId, heading);
+  const titleEntry = heading
+    ? await upsertSectionTitle(env, blockId, heading)
+    : null;
 
   // Parse nested card items
   const cardRefs = [];
@@ -58,11 +61,10 @@ export async function createOrUpdateCardGrid(env, blockData, assetMap = null) {
       if (typeof card !== "object" || !card.fields) continue;
       const f = card.fields;
 
-      const itemTitle = await upsertSectionTitle(
-        env,
-        `cg-${cId}`,
-        f.description || "",
-      );
+      const itemTitleStr = f.heading || f.title || "";
+      const itemTitle = itemTitleStr
+        ? await upsertSectionTitle(env, `cg-${cId}`, itemTitleStr)
+        : null;
 
       let ctaEntry = null;
       const link = parseCraftLink(f.ctaLink);
@@ -107,16 +109,21 @@ export async function createOrUpdateCardGrid(env, blockData, assetMap = null) {
 
   const fields = {
     blockId: { [LOCALE]: blockId },
-    blockName: { [LOCALE]: blockData.blockName || heading || "Card Grid" },
+    blockName: { [LOCALE]: blockData.blockName || blockData.headingSection || blockData.heading || "Card Grid" },
     cardTheme: {
       [LOCALE]: THEME_MAP[(blockData.cardTheme || "").toLowerCase()] || "Light",
     },
   };
-  if (titleEntry)
-    fields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
+  fields.sectionTitle = titleEntry ? { [LOCALE]: makeLink(titleEntry.sys.id) } : null;
   if (blockData.subheading)
     fields.description = { [LOCALE]: blockData.subheading };
   if (cardRefs.length) fields.addCard = { [LOCALE]: cardRefs };
+  
+  if (blockData.switch !== undefined) {
+    fields.gridLayout = {
+      [LOCALE]: blockData.switch === "1" || blockData.switch === true,
+    };
+  }
 
   return await upsertEntry(env, CONTENT_TYPE, `cardgrid-${blockId}`, fields);
 }
