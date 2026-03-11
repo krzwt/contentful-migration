@@ -49,3 +49,26 @@ export function normalizeUrl(url) {
 
   return normalized;
 }
+
+/**
+ * Unwraps security-wrapped (Proofpoint/Urldefense) URLs and ensures path length safety.
+ */
+export function unwrapUrl(url, maxLength = 255) {
+  if (!url) return "";
+  let cleaned = String(url).trim();
+
+  // Handle urldefense.com/v3/__[URL]__;!!...
+  if (cleaned.includes("urldefense.com/v3/__")) {
+    const match = cleaned.match(/urldefense\.com\/v3\/__(.*?)__/);
+    if (match && match[1]) {
+      cleaned = match[1];
+    }
+  }
+
+  // Final length safety check for Contentful Symbol fields
+  if (cleaned.length > maxLength) {
+    return cleaned.substring(0, maxLength);
+  }
+
+  return cleaned;
+}

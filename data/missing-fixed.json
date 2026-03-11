@@ -2,13 +2,247 @@
     "data": {
         "assets": [
             {
-                "id": "2373481",
-                "title": "BT icon product Endpoint Privilege Management",
-                "url": "https://assets-uat.btdevops.io/assets/images/icons/BT_icon_product_Endpoint-Privilege-Management.png",
-                "filename": "BT_icon_product_Endpoint-Privilege-Management.png",
+                "id": "2045554",
+                "title": "Nasdaq",
+                "url": "S3_BASE_URL/assets/images/logos/nasdaq.jpg",
+                "filename": "nasdaq.jpg",
+                "mimeType": "image/jpeg",
+                "width": 400,
+                "height": 400
+            },
+            {
+                "id": "1833897",
+                "title": "Blog body images square 2023",
+                "url": "S3_BASE_URL/assets/images/logos/Blog-body-images-square-2023.png",
+                "filename": "Blog-body-images-square-2023.png",
                 "mimeType": "image/png",
-                "width": 198,
-                "height": 165
+                "width": 800,
+                "height": 800
+            },
+            {
+                "id": "1821862",
+                "title": "Blog Resource Card 2023 3",
+                "url": "S3_BASE_URL/assets/images/logos/Blog-Resource-Card-2023-3.png",
+                "filename": "Blog-Resource-Card-2023-3.png",
+                "mimeType": "image/png",
+                "width": 410,
+                "height": 205
+            },
+            {
+                "id": "1742591",
+                "title": "Cy Security News Logo 300x110",
+                "url": "S3_BASE_URL/assets/images/logos/CySecurity-News-Logo-300x110.png",
+                "filename": "CySecurity-News-Logo-300x110.png",
+                "mimeType": "image/png",
+                "width": 300,
+                "height": 110
+            },
+            {
+                "id": "1637506",
+                "title": "Vulnerabilities Report",
+                "url": "S3_BASE_URL/assets/images/logos/Vulnerabilities-Report.png",
+                "filename": "Vulnerabilities-Report.png",
+                "mimeType": "image/png",
+                "width": 400,
+                "height": 397
+            },
+            {
+                "id": "1628048",
+                "title": "Beyond Trust Acquires Entitle Just In Time",
+                "url": "S3_BASE_URL/assets/images/logos/BeyondTrust-Acquires-Entitle-Just-In-Time.png",
+                "filename": "BeyondTrust-Acquires-Entitle-Just-In-Time.png",
+                "mimeType": "image/png",
+                "width": 400,
+                "height": 397
+            },
+            {
+                "id": "1574743",
+                "title": "Executive Leadership Team",
+                "url": "S3_BASE_URL/assets/images/logos/Executive-Leadership-Team.png",
+                "filename": "Executive-Leadership-Team.png",
+                "mimeType": "image/png",
+                "width": 400,
+                "height": 397
+            },
+            {
+                "id": "1541209",
+                "title": "Finance ME Logo",
+                "url": "S3_BASE_URL/assets/images/logos/Finance-ME-Logo.png",
+                "filename": "Finance-ME-Logo.png",
+                "mimeType": "image/png",
+                "width": 400,
+                "height": 400
+            },
+            {
+                "id": "1509486",
+                "title": "Brand asset 1",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/brand-asset-1.jpg",
+                "filename": "brand-asset-1.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1060,
+                "height": 800
+            },
+            {
+                "id": "1509485",
+                "title": "Brand asset 3",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/brand-asset-3.jpg",
+                "filename": "brand-asset-3.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1060,
+                "height": 800
+            },
+            {
+                "id": "1509484",
+                "title": "Brand asset 2",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/brand-asset-2.jpg",
+                "filename": "brand-asset-2.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1060,
+                "height": 800
+            },
+            {
+                "id": "1509483",
+                "title": "Brand asset 4",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/brand-asset-4.jpg",
+                "filename": "brand-asset-4.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1060,
+                "height": 800
+            },
+            {
+                "id": "1508073",
+                "title": "Beyond Trust LOGO Med Res White horizontal",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Med-Res_White-horizontal.jpg",
+                "filename": "BeyondTrust_LOGO_Med-Res_White-horizontal.jpg",
+                "mimeType": "image/jpeg",
+                "width": 1365,
+                "height": 317
+            },
+            {
+                "id": "1508072",
+                "title": "Beyond Trust LOGO Med Res White stacked",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Med-Res_White-stacked.jpg",
+                "filename": "BeyondTrust_LOGO_Med-Res_White-stacked.jpg",
+                "mimeType": "image/jpeg",
+                "width": 706,
+                "height": 574
+            },
+            {
+                "id": "1508054",
+                "title": "Beyond Trust LOGO Digital Use Lo Res color stacked white bkgd",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Digital-Use_Lo-Res_color-stacked_white-bkgd_2024-03-05-131107_jzlu.jpg",
+                "filename": "BeyondTrust_LOGO_Digital-Use_Lo-Res_color-stacked_white-bkgd_2024-03-05-131107_jzlu.jpg",
+                "mimeType": "image/jpeg",
+                "width": 706,
+                "height": 574
+            },
+            {
+                "id": "1508018",
+                "title": "Beyond Trust LOGO Digital Use Lo Res color horiz",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Digital-Use_Lo-Res_color-horiz_2024-03-05-130818_iaho.jpg",
+                "filename": "BeyondTrust_LOGO_Digital-Use_Lo-Res_color-horiz_2024-03-05-130818_iaho.jpg",
+                "mimeType": "image/jpeg",
+                "width": 3200,
+                "height": 744
+            },
+            {
+                "id": "1507882",
+                "title": "Beyond Trust LOGO Hi Res white horiz",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Hi-Res_white-horiz.svg",
+                "filename": "BeyondTrust_LOGO_Hi-Res_white-horiz.svg",
+                "mimeType": "image/svg+xml",
+                "width": 768,
+                "height": 178
+            },
+            {
+                "id": "1507880",
+                "title": "Beyond Trust LOGO Digital Use Lo Res white horiz trans bkgd",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Digital-Use_Lo-Res_white-horiz_trans-bkgd_2024-03-05-123503_npuh.png",
+                "filename": "BeyondTrust_LOGO_Digital-Use_Lo-Res_white-horiz_trans-bkgd_2024-03-05-123503_npuh.png",
+                "mimeType": "image/png",
+                "width": 768,
+                "height": 179
+            },
+            {
+                "id": "1507867",
+                "title": "Beyond Trust LOGO Hi Res color horiz",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Hi-Res_color-horiz.svg",
+                "filename": "BeyondTrust_LOGO_Hi-Res_color-horiz.svg",
+                "mimeType": "image/svg+xml",
+                "width": 768,
+                "height": 178
+            },
+            {
+                "id": "1507866",
+                "title": "Beyond Trust LOGO Digital Use Lo Res color horiz trans bkgd",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Digital-Use_Lo-Res_color-horiz_trans-bkgd.png",
+                "filename": "BeyondTrust_LOGO_Digital-Use_Lo-Res_color-horiz_trans-bkgd.png",
+                "mimeType": "image/png",
+                "width": 768,
+                "height": 179
+            },
+            {
+                "id": "1507826",
+                "title": "Beyond Trust LOGO Hi Res color stacked",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Hi-Res_color-stacked.svg",
+                "filename": "BeyondTrust_LOGO_Hi-Res_color-stacked.svg",
+                "mimeType": "image/svg+xml",
+                "width": 712,
+                "height": 579
+            },
+            {
+                "id": "1507824",
+                "title": "Beyond Trust LOGO Digital Use Lo Res color stacked trans bkgd",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Digital-Use_Lo-Res_color-stacked_trans-bkgd.png",
+                "filename": "BeyondTrust_LOGO_Digital-Use_Lo-Res_color-stacked_trans-bkgd.png",
+                "mimeType": "image/png",
+                "width": 706,
+                "height": 574
+            },
+            {
+                "id": "1507785",
+                "title": "Beyond Trust LOGO Hi Res white stacked",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Hi-Res_white-stacked.svg",
+                "filename": "BeyondTrust_LOGO_Hi-Res_white-stacked.svg",
+                "mimeType": "image/svg+xml",
+                "width": 712,
+                "height": 579
+            },
+            {
+                "id": "1507784",
+                "title": "Beyond Trust LOGO Hi Res white stacked",
+                "url": "https://s3.reg.amazonaws.com/$S3_BUCKET//assets/brand-assets/BeyondTrust_LOGO_Hi-Res_white-stacked.png",
+                "filename": "BeyondTrust_LOGO_Hi-Res_white-stacked.png",
+                "mimeType": "image/png",
+                "width": 2970,
+                "height": 2415
+            },
+            {
+                "id": "1475882",
+                "title": "Khaleej Times Press Logo",
+                "url": "S3_BASE_URL/assets/images/logos/Khaleej-Times-Press-Logo.png",
+                "filename": "Khaleej-Times-Press-Logo.png",
+                "mimeType": "image/png",
+                "width": 400,
+                "height": 400
+            },
+            {
+                "id": "1475860",
+                "title": "Crn security 100 pr square 400x400",
+                "url": "S3_BASE_URL/assets/images/logos/crn-security-100-pr-square-400x400.png",
+                "filename": "crn-security-100-pr-square-400x400.png",
+                "mimeType": "image/png",
+                "width": 400,
+                "height": 400
+            },
+            {
+                "id": "1356801",
+                "title": "Allhands",
+                "url": "https://assets-uat.btdevops.io/assets/images/products/images/allhands.svg",
+                "filename": "allhands.svg",
+                "mimeType": "image/svg+xml",
+                "width": 50,
+                "height": 50
             }
         ]
     }
