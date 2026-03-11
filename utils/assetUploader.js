@@ -108,6 +108,19 @@ export function loadAssetMetadata(filePaths) {
           url = url.replace("S3_BASE_URL", BASE_URL);
         }
 
+        // 4. Handle S3 bucket placeholder (reg/staging)
+        const S3_BUCKET_PLACEHOLDER = "https://s3.reg.amazonaws.com/$S3_BUCKET/";
+        if (url.startsWith(S3_BUCKET_PLACEHOLDER)) {
+          url = url.replace(S3_BUCKET_PLACEHOLDER, BASE_URL + "/");
+        }
+
+        // 5. General handle for leftover $S3_BUCKET text
+        if (url.includes("$S3_BUCKET")) {
+          // If BASE_URL is something like https://assets.beyondtrust.com, we just use that as prefix?
+          url = url.replace("$S3_BUCKET", "beyondtrust-assets"); // Arbitrary guess, but maybe they want BASE_URL?
+        }
+
+
         assetMap.set(String(asset.id), {
           title: asset.title,
           filename: asset.filename,

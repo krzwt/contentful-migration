@@ -263,9 +263,8 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
                 }
             }
         } else {
-            // User: If URL is not "managed" (linked to an entry), it is not required.
-            console.log(`   ⚠️ Skipping cta-${id}: Internal reference ${linkedId} not found in Contentful (Not Managed).`);
-            return null;
+            // If the reference is not found in Contentful, we still create the CTA entry with the provided URL fallback.
+            console.log(`   🔗 Internal reference ${linkedId} for cta-${id} not found in Contentful. Using URL fallback.`);
         }
     }
 

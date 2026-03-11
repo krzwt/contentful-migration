@@ -51,7 +51,10 @@ export async function createOrUpdateCustomerBundle(
       let ctaEntry = null;
       if (f.ctaLink) {
         const linkInfo = parseCraftLink(f.ctaLink);
-        let label = f.linkText || linkInfo.label || "Explore More";
+        let label = (f.linkText || linkInfo.label || "").trim();
+        if (!label || label === "Learn More") {
+          label = "Explore More";
+        }
         let url = linkInfo.url;
 
         if (!url && linkInfo.linkedId) {
