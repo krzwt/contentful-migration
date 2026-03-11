@@ -3,7 +3,7 @@
  * Craft: headingSection, tabbedResources (nested type-based tabs with entry IDs)
  * Contentful: resourceTabSection { blockId, blockName, sectionTitle, resourceTabs, blogTab, documentsTab, videosTab, ... }
  */
-import { upsertEntry, upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
+import { upsertEntry, upsertSectionTitle, makeLink, resolveEntryRef } from "../utils/contentfulHelpers.js";
 import { getOrderedKeys } from "../utils/jsonOrder.js";
 import fs from "fs";
 
@@ -40,7 +40,7 @@ export async function createOrUpdateResourceTabbed(env, blockData, assetMap = nu
     }
 
     const blockId = blockData.blockId;
-    const heading = blockData.headingSection || "";
+    const heading = blockData.heading || blockData.headingSection || "";
 
     const titleEntry = await upsertSectionTitle(env, blockId, heading);
 
@@ -78,7 +78,15 @@ export async function createOrUpdateResourceTabbed(env, blockData, assetMap = nu
             }
 
             for (const id of entryIds) {
-                const contentfulId = ID_MAP[id];
+                let contentfulId = ID_MAP[id];
+                if (!contentfulId) {
+                    // Fallback to entryId cache (handles blogs, podcasts, etc.)
+                    const ref = resolveEntryRef(id);
+                    if (ref) {
+                        contentfulId = ref.id;
+                    }
+                }
+
                 if (!contentfulId) {
                     console.warn(`   ⚠️ Skipping unmapped entry ID ${id} in tab "${type}"`);
                     if (summary) summary.missingResources.add(id);
