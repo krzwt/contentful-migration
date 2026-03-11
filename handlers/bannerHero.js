@@ -133,24 +133,35 @@ export async function createOrUpdateHero(env, heroData, assetMap = null) {
     console.log(`   🧪 Applying SRA Trial Form link for block 1372588`);
 
     // 3.1 Create/Update the sraTrialForm entry that wraps the siteForm
+    // Note: Schema check shows mainBannerForm expects "embedFormsCpt". 
+    // We try to use that if possible, or fall back to draft linking if requested.
     const sraFormFields = {
       formName: { [LOCALE]: "SRA Trial Form - Legacy Form (Wrapper)" },
-      selectForm: { [LOCALE]: makeLink(SITE_FORM_ID) }
+      // selectForm: { [LOCALE]: makeLink(SITE_FORM_ID) } // Legacy field?
     };
 
-    const sraFormEntry = await upsertEntry(
-      env,
-      "sraTrialForm",
-      `form-sra-${heroData.blockId}`,
-      sraFormFields
-    );
+    // If SITE_FORM_ID exists, we could use it, but since it's missing, let's be safe.
+    let sraFormEntry = null;
+    try {
+      sraFormEntry = await upsertEntry(
+        env,
+        "embedFormsCpt", // Changed from "sraTrialForm" to match bannerHero schema
+        `form-sra-${heroData.blockId}`,
+        sraFormFields
+      );
+    } catch (err) {
+      console.warn(`   ⚠ Could not create/update SRA Form Entry: ${err.message}`);
+    }
 
-    if (sraFormEntry) {
+    if (sraFormEntry && sraFormEntry.sys.publishedVersion) {
       fields.mainBannerForm = {
         [LOCALE]: {
           sys: { type: "Link", linkType: "Entry", id: sraFormEntry.sys.id }
         }
       };
+    } else {
+      console.warn(`   ⚠️ Skipping broken SRA Form link for block 1372588 (Entry not published or missing)`);
+      fields.mainBannerForm = { [LOCALE]: null }; // Explicitly clear if broken
     }
   } else if (heroData.mainBannerForm && heroData.mainBannerForm.length > 0) {
     // Generic logic for other forms if found in source

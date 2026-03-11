@@ -30,7 +30,10 @@ import {
   loadWistiaData,
   prePopulateAssetCache,
 } from "./utils/assetUploader.js";
-import { buildUrlMap, prePopulateEntryIdCache } from "./utils/contentfulHelpers.js";
+import {
+  buildUrlMap,
+  prePopulateEntryIdCache,
+} from "./utils/contentfulHelpers.js";
 import { loadCategories } from "./utils/categoryLoader.js";
 import { loadTagMapping } from "./utils/tagHandler.js";
 import { getOrderedKeys } from "./utils/jsonOrder.js";
@@ -71,17 +74,17 @@ const effectiveDryRun = isDryRun || cliDryRun;
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
 const DATA_SOURCES = [
-  {
-    file: "./data/standalone-content.json",
-    // file: "./data/test-sc.json",
-    pageContentType: "newStandaloneContent",
-    label: "Standalone Content",
-  },
   // {
-  //   file: "./data/standalone-conversion.json",
-  //   pageContentType: "newStandaloneConversion",
-  //   label: "Standalone Conversion"
+  //   file: "./data/standalone-content.json",
+  //   // file: "./data/test-sc.json",
+  //   pageContentType: "newStandaloneContent",
+  //   label: "Standalone Content",
   // },
+  {
+    file: "./data/standalone-conversion.json",
+    pageContentType: "newStandaloneConversion",
+    label: "Standalone Conversion",
+  },
   // {
   //   file: "./data/standalone-microsite.json",
   //   pageContentType: "newStandaloneMicrosite",
@@ -224,7 +227,9 @@ async function run() {
     }
 
     const dataRaw = JSON.parse(fs.readFileSync(source.file, "utf-8"));
-    const data = Array.isArray(dataRaw) ? dataRaw : (dataRaw.entries || [dataRaw]);
+    const data = Array.isArray(dataRaw)
+      ? dataRaw
+      : dataRaw.entries || [dataRaw];
 
     if (!data || (Array.isArray(data) && !data.length)) {
       console.log(`\n⚠️ Skipping "${source.label}" — empty or invalid file`);
@@ -234,7 +239,9 @@ async function run() {
     // Determine which indices to process
     let targetIndices = [];
     if (idArg) {
-      const targetIds = String(idArg).split(",").map((id) => id.trim());
+      const targetIds = String(idArg)
+        .split(",")
+        .map((id) => id.trim());
       targetIndices = data
         .map((p, i) => (targetIds.includes(String(p.id)) ? i : -1))
         .filter((i) => i !== -1);
@@ -392,23 +399,36 @@ async function run() {
             // --- Lookahead Merge Logic ---
             let mergedCtaEntry = null;
             const nextBId = orderedIds[k + 1];
-            if (bType === 'contentBlock' && nextBId) {
+            if (bType === "contentBlock" && nextBId) {
               const nextBlock = components[nextBId];
               const nextType = nextBlock.type || fieldKey;
               // Only merge simple 'cta' / 'calloutBar' that DON'T have a heading (as they act as CTAs for the content block)
               // Actually, most calloutBars have their own headings, so let's only merge 'cta' or truly empty-looking calloutBars.
-              if (nextBlock.enabled && (nextType === 'cta' || (nextType === 'calloutBar' && !nextBlock.fields.headingSection))) {
-                console.log(`🔗 Lookahead: Merging ${nextType} (${nextBId}) into contentBlock (${blockId})`);
+              if (
+                nextBlock.enabled &&
+                (nextType === "cta" ||
+                  (nextType === "calloutBar" &&
+                    !nextBlock.fields.headingSection))
+              ) {
+                console.log(
+                  `🔗 Lookahead: Merging ${nextType} (${nextBId}) into contentBlock (${blockId})`,
+                );
 
                 // Process the CTA block first to get its entry
                 const ctaConfig = COMPONENTS[nextType];
                 if (ctaConfig) {
-                  const ctaResult = await ctaConfig.handler(env, {
-                    blockId: nextBId,
-                    ...nextBlock.fields,
-                    label: nextBlock.fields.label || nextBlock.fields.ctaLinkText,
-                    variation: nextType,
-                  }, contentfulAssetMap, summary);
+                  const ctaResult = await ctaConfig.handler(
+                    env,
+                    {
+                      blockId: nextBId,
+                      ...nextBlock.fields,
+                      label:
+                        nextBlock.fields.label || nextBlock.fields.ctaLinkText,
+                      variation: nextType,
+                    },
+                    contentfulAssetMap,
+                    summary,
+                  );
 
                   if (ctaResult) {
                     // Extract the CTA entry from the CTA Block results
@@ -501,21 +521,45 @@ async function run() {
 
               if (heroEntry) {
                 if (Array.isArray(heroEntry)) {
-                  if (fieldKey === 'sectionNavigation') {
-                    if (type === 'overwriteParentCta') {
-                      overwriteParentCtaLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry[0].sys.id } };
+                  if (fieldKey === "sectionNavigation") {
+                    if (type === "overwriteParentCta") {
+                      overwriteParentCtaLink = {
+                        sys: {
+                          type: "Link",
+                          linkType: "Entry",
+                          id: heroEntry[0].sys.id,
+                        },
+                      };
                     } else {
-                      navigationEntryLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry[0].sys.id } };
+                      navigationEntryLink = {
+                        sys: {
+                          type: "Link",
+                          linkType: "Entry",
+                          id: heroEntry[0].sys.id,
+                        },
+                      };
                     }
                   } else {
                     sectionEntries.push(...heroEntry);
                   }
                 } else {
-                  if (fieldKey === 'sectionNavigation') {
-                    if (type === 'overwriteParentCta') {
-                      overwriteParentCtaLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry.sys.id } };
+                  if (fieldKey === "sectionNavigation") {
+                    if (type === "overwriteParentCta") {
+                      overwriteParentCtaLink = {
+                        sys: {
+                          type: "Link",
+                          linkType: "Entry",
+                          id: heroEntry.sys.id,
+                        },
+                      };
                     } else {
-                      navigationEntryLink = { sys: { type: "Link", linkType: "Entry", id: heroEntry.sys.id } };
+                      navigationEntryLink = {
+                        sys: {
+                          type: "Link",
+                          linkType: "Entry",
+                          id: heroEntry.sys.id,
+                        },
+                      };
                     }
                   } else {
                     sectionEntries.push(heroEntry);
@@ -548,11 +592,15 @@ async function run() {
             pageEntry = await env.getEntry(pageEntry.sys.id);
             if (navigationEntryLink) {
               console.log(`\n🔗 Setting sectionNavigation on page "${title}"`);
-              pageEntry.fields.sectionNavigation = { [LOCALE]: navigationEntryLink };
+              pageEntry.fields.sectionNavigation = {
+                [LOCALE]: navigationEntryLink,
+              };
             }
             if (overwriteParentCtaLink) {
               console.log(`\n🔗 Setting overwriteParentCta on page "${title}"`);
-              pageEntry.fields.overwriteParentCta = { [LOCALE]: overwriteParentCtaLink };
+              pageEntry.fields.overwriteParentCta = {
+                [LOCALE]: overwriteParentCtaLink,
+              };
             }
             pageEntry = await pageEntry.update();
             // Publish happens in publishPage step
@@ -601,11 +649,7 @@ async function run() {
     }
 
     if (source.isGlobalReachMap) {
-      await migrateGlobalReachMap(
-        env,
-        batchData,
-        summary
-      );
+      await migrateGlobalReachMap(env, batchData, summary);
     }
 
     if (source.isPodcasts) {
@@ -627,7 +671,7 @@ async function run() {
         targetIndices,
         totalPages,
         summary,
-        rawFileContent
+        rawFileContent,
       );
     }
 
@@ -639,7 +683,7 @@ async function run() {
         targetIndices,
         totalPages,
         summary,
-        rawFileContent
+        rawFileContent,
       );
     }
 
@@ -651,7 +695,7 @@ async function run() {
         targetIndices,
         totalPages,
         summary,
-        rawFileContent
+        rawFileContent,
       );
     }
 
@@ -663,16 +707,12 @@ async function run() {
         targetIndices,
         totalPages,
         summary,
-        rawFileContent
+        rawFileContent,
       );
     }
 
     if (source.isForms) {
-      await migrateForms(
-        env,
-        dataRaw,
-        summary
-      );
+      await migrateForms(env, dataRaw, summary);
     }
 
     if (source.isPressMedia) {
@@ -683,7 +723,7 @@ async function run() {
         targetIndices,
         totalPages,
         summary,
-        rawFileContent
+        rawFileContent,
       );
     }
 
@@ -695,17 +735,12 @@ async function run() {
         targetIndices,
         totalPages,
         summary,
-        rawFileContent
+        rawFileContent,
       );
     }
 
     if (source.isAnnouncements) {
-      await migrateAnnouncements(
-        env,
-        batchData,
-        contentfulAssetMap,
-        summary
-      );
+      await migrateAnnouncements(env, batchData, contentfulAssetMap, summary);
     }
 
     if (source.isUsers) {
@@ -715,7 +750,7 @@ async function run() {
         contentfulAssetMap,
         targetIndices,
         totalPages,
-        summary
+        summary,
       );
     }
 
@@ -727,11 +762,10 @@ async function run() {
         targetIndices,
         totalPages,
         summary,
-        rawFileContent
+        rawFileContent,
       );
     }
   }
-
 
   console.log("\n" + "=".repeat(40));
   console.log("📊 MIGRATION SUMMARY");
