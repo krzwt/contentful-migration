@@ -5,6 +5,22 @@ const LOCALE = "en-US";
 const GLOBAL_URL_MAP = new Map(); // Map craftId -> uri/slug
 const GLOBAL_ENTRY_ID_TO_SYS_ID = new Map(); // Map craftId -> Contentful Sys ID
 
+const ALLOWED_PAGE_LINK_TYPES = [
+    "newStandaloneContent",
+    "newStandaloneMicrosite",
+    "newStandaloneThankYou",
+    "newStandaloneConversion",
+    "resourceWebinarsCpt",
+    "resourcesCpt",
+    "company",
+    "newCompany",
+    "newSt",
+    "newStBtu",
+    "newPartners",
+    "newStServices",
+    "newStTam"
+];
+
 /**
  * Builds a global map of all Entry IDs and their final URLs/Slugs
  * to help resolve internal links.
@@ -231,9 +247,21 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
         const ref = resolveEntryRef(linkedId);
 
         if (ref) {
-            console.log(`   🔗 Linked CTA ${id} to page entry: ${ref.id} (type: ${ref.type})`);
-            fields.pageLink = { [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: ref.id } } };
-            fields.url = { [LOCALE]: "" }; // Clear URL when internal reference is resolved
+            if (ALLOWED_PAGE_LINK_TYPES.includes(ref.type)) {
+                console.log(`   🔗 Linked CTA ${id} to page entry: ${ref.id} (type: ${ref.type})`);
+                fields.pageLink = { [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: ref.id } } };
+                fields.url = { [LOCALE]: "" }; // Clear URL when internal reference is resolved
+            } else {
+                // Fallback to URL if the type is not allowed in pageLink field (e.g. blogCpt, podcastsCpt)
+                const resolvedUrl = resolveInternalUrl(linkedId);
+                if (resolvedUrl) {
+                    console.log(`   🔗 Content type "${ref.type}" not allowed in pageLink. Falling back to URL for cta-${id}: ${resolvedUrl}`);
+                    fields.url = { [LOCALE]: normalizeUrl(resolvedUrl) };
+                    fields.pageLink = { [LOCALE]: null }; // Explicitly clear pageLink if it was set previously
+                } else {
+                    console.warn(`   ⚠️ Reference ${linkedId} (type: ${ref.type}) not allowed in pageLink and no URL could be resolved for cta-${id}.`);
+                }
+            }
         } else {
             // User: If URL is not "managed" (linked to an entry), it is not required.
             console.log(`   ⚠️ Skipping cta-${id}: Internal reference ${linkedId} not found in Contentful (Not Managed).`);
