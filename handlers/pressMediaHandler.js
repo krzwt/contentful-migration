@@ -12,6 +12,8 @@ import { getOrderedKeys } from "../utils/jsonOrder.js";
 import { COMPONENTS } from "../registry.js";
 import { genericComponentHandler } from "./genericComponent.js";
 import { convertHtmlToRichText } from "../utils/richText.js";
+import { getOrCreateSeo } from "./pageHandler.js";
+import { getCategoryName } from "../utils/categoryLoader.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "newPressMediaCpt";
@@ -25,6 +27,17 @@ const ENTRY_TYPE_MAP = {
     "149": "Media Coverage", // mediaCoverage
     "150": "Media Assets",   // mediaAssets
 };
+
+// Load Press & Media Categories for mapping
+const PRESS_CATS_FILE = "./data/taxonomy-pressMediaCategories.json";
+let pressCategoriesData = [];
+if (fs.existsSync(PRESS_CATS_FILE)) {
+    try {
+        pressCategoriesData = JSON.parse(fs.readFileSync(PRESS_CATS_FILE, "utf-8"));
+    } catch (err) {
+        console.warn(`⚠️ Error loading press categories: ${err.message}`);
+    }
+}
 
 /**
  * Specific migration handler for Press & Media content
@@ -189,12 +202,76 @@ export async function migratePressMedia(env, data, assetMap, targetIndices, tota
 
         if (mediaContactLink) cfFields.mediaContact = { [LOCALE]: mediaContactLink };
         if (mediaLogoLink) cfFields.mediaLogo = { [LOCALE]: mediaLogoLink };
-        if (contentComponents.length > 0) cfFields.contentComponents = { [LOCALE]: contentComponents };
+        if (contentComponents.length > 0) cfFields.sections = { [LOCALE]: contentComponents };
         if (sectionNavigationLink) cfFields.sectionNavigation = { [LOCALE]: sectionNavigationLink };
+
+        // 5.5 SEO
+        const seoEntry = await getOrCreateSeo(env, item, assetMap);
+        if (seoEntry) {
+            cfFields.seo = { [LOCALE]: makeLink(seoEntry.sys.id) };
+        }
+
+        // 5.6 Coverage Link
+        if (item.pressLink) {
+            const link = parseCraftLink(item.pressLink);
+            if (link.url) cfFields.coverageLink = { [LOCALE]: link.url };
+        }
+
+        // 5.7 Taxonomy Concepts
+        const metadata = { concepts: [], tags: [] };
+        const conceptsSet = new Set();
+        const conceptMapping = {
+            "Use Cases": "useCases",
+            "Manage passwords, secrets, & sessions": "managePasswordsSecretsSessions",
+            "Enforce least privilege & JIT access": "enforceLeastPrivilegeJitAccess",
+            "Improve identity security & posture": "improveIdentitySecurityPosture",
+            "Meet compliance mandates": "meetComplianceMandates",
+            "Secure all access: remote, OT, vendor, etc.": "secureAllAccessRemoteOtVendorEtc",
+            "Support service desks, users, devices, & desktops": "supportServiceDesksUsersDevicesDesktops",
+            "Content Type": "contentType",
+            "Videos": "videos",
+            "Products": "products",
+            "Industries": "industries",
+            "Manufacturing": "manufacturing",
+            "Healthcare": "healthcare",
+            "Financial Services": "financialServices",
+            "Government": "government",
+            "High Tech": "highTech",
+            "Education": "education",
+            "Energy and Utilities": "energyAndUtilities",
+            "Retail & Hospitality": "retailHospitality",
+            "Tags": "tags",
+            "Cybersecurity": "cybersecurity",
+            "Products Slug": "productsSlug",
+            "People": "people"
+        };
+
+        if (item.generalCategories) {
+            for (const catId of item.generalCategories) {
+                const catName = getCategoryName(catId);
+                const conceptId = conceptMapping[catName];
+                if (conceptId) conceptsSet.add(conceptId);
+            }
+        }
+
+        if (item.pressMediaCategories) {
+            for (const catId of item.pressMediaCategories) {
+                const cat = pressCategoriesData.find(c => String(c.id) === String(catId));
+                const catName = cat ? cat.title : null;
+                const conceptId = conceptMapping[catName];
+                if (conceptId) conceptsSet.add(conceptId);
+            }
+        }
+
+        if (conceptsSet.size > 0) {
+            metadata.concepts = Array.from(conceptsSet).map(id => ({
+                sys: { type: "Link", linkType: "TaxonomyConcept", id }
+            }));
+        }
 
         // 7. Upsert/Publish Press & Media Entry
         try {
-            await upsertEntry(env, CONTENT_TYPE, entryId, cfFields);
+            await upsertEntry(env, CONTENT_TYPE, entryId, cfFields, true, conceptsSet.size > 0 ? metadata : null);
             summary.created++;
         } catch (err) {
             console.error(`   🛑 Error upserting Press entry ${item.id}:`, err.message);
@@ -215,8 +292,7 @@ export async function createOrUpdatePressBanner(env, bannerData, assetMap = null
         blockName: { [LOCALE]: bannerData.heading || "Press Banner" },
         heading: { [LOCALE]: bannerData.heading || "" },
         description: { [LOCALE]: String(bannerData.body || "") },
-        bannerOption: { [LOCALE]: bannerData.variation === "bannerSlim" ? "Banner Slim" : "Banner Media Right" },
-        stackHeadingAndBody: { [LOCALE]: !!bannerData.switch }
+        bannerOption: { [LOCALE]: bannerData.variation === "bannerSlim" ? "Banner Slim" : "Banner Media Right" }
     };
 
     // Handle CTA if present

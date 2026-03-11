@@ -80,11 +80,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneContent",
   //   label: "Standalone Content",
   // },
-  {
-    file: "./data/standalone-conversion.json",
-    pageContentType: "newStandaloneConversion",
-    label: "Standalone Conversion",
-  },
+  // {
+  //   file: "./data/standalone-conversion.json",
+  //   pageContentType: "newStandaloneConversion",
+  //   label: "Standalone Conversion",
+  // },
   // {
   //   file: "./data/standalone-microsite.json",
   //   pageContentType: "newStandaloneMicrosite",
@@ -150,11 +150,11 @@ const DATA_SOURCES = [
   //   label: "Forms Import",
   //   isForms: true
   // },
-  // {
-  //   file: "./data/new-press&media.json",
-  //   label: "Press & Media",
-  //   isPressMedia: true
-  // },
+  {
+    file: "./data/new-press&media.json",
+    label: "Press & Media",
+    isPressMedia: true,
+  },
   // {
   //   file: "./data/new-blog.json",
   //   label: "Blog CPT",
