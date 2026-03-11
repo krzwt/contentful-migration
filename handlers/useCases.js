@@ -25,7 +25,7 @@ export async function createOrUpdateUseCases(env, blockData, assetMap = null) {
   }
 
   const blockId = blockData.blockId;
-  const heading = blockData.heading45 || blockData.headingSection || "";
+  const heading = blockData.heading45 || blockData.headingSection || "Use Cases";
 
   // Create sectionTitle
   const titleEntry = await upsertSectionTitle(env, blockId, heading);
