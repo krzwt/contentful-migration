@@ -98,7 +98,9 @@ export async function createOrUpdateFeatureTabbed(
     // Handle tab-level asset
     let tabAssetWrapper = null;
     const featureAsset = f.featureAsset || {};
-    for (const faId in featureAsset) {
+    const orderedFaIds = getOrderedKeys(blockData.blockSegment, featureAsset);
+
+    for (const faId of orderedFaIds) {
       const fa = featureAsset[faId];
       if (typeof fa !== "object" || !fa.fields) continue;
       const faFields = fa.fields;

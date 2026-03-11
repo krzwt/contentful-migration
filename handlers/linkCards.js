@@ -5,6 +5,7 @@
  * Contentful Items (linkCardsItem): { heading, description, cta }
  */
 import { upsertEntry, makeLink, upsertCta, parseCraftLink, resolveInternalUrl, upsertSectionTitle } from "../utils/contentfulHelpers.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "linkCards";
@@ -29,7 +30,10 @@ export async function createOrUpdateLinkCards(env, blockData, assetMap = null, s
     const itemRefs = [];
 
     // Parse items
-    for (const [cId, card] of Object.entries(cards)) {
+    const orderedCIds = getOrderedKeys(blockData.blockSegment, cards);
+
+    for (const cId of orderedCIds) {
+        const card = cards[cId];
         if (typeof card !== "object" || !card.fields) continue;
         const f = card.fields;
 

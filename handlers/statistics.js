@@ -89,12 +89,22 @@ export async function createOrUpdateStatistics(
     }
   }
 
-  const fields = {};
+  const fields = {
+    blockId: { [LOCALE]: blockId },
+    blockName: { [LOCALE]: blockData.blockName || "Statistics Block" },
+  };
+
   if (titleEntry)
     fields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
   if (blockData.body250) fields.description = { [LOCALE]: blockData.body250 };
   fields.cta = { [LOCALE]: ctaEntry ? makeLink(ctaEntry.sys.id) : null };
   if (statRefs.length) fields.addStatistics = { [LOCALE]: statRefs };
+
+  if (blockData.switch !== undefined) {
+    fields.removeColorTheme = {
+      [LOCALE]: blockData.switch === "1" || blockData.switch === true,
+    };
+  }
 
   return await upsertEntry(env, CONTENT_TYPE, `stats-${blockId}`, fields);
 }

@@ -12,6 +12,7 @@ import {
   ensureAssetPublished,
 } from "../utils/contentfulHelpers.js";
 import { convertHtmlToRichText } from "../utils/richText.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "featureGrid";
@@ -53,8 +54,10 @@ export async function createOrUpdateFeatureGrid(
   // Create featureGridItem entries
   const itemRefs = [];
   const gridData = blockData.featureGrid || {};
+  const orderedGIds = getOrderedKeys(blockData.blockSegment, gridData);
 
-  for (const [gId, grid] of Object.entries(gridData)) {
+  for (const gId of orderedGIds) {
+    const grid = gridData[gId];
     if (typeof grid !== "object" || !grid.fields) continue;
     const f = grid.fields;
 

@@ -363,10 +363,14 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
     // 1. Check if it's a Wistia video (fastest path)
     const wistia = getWistiaData(craftAssetId);
     if (wistia) {
+      const wUrl = wistia.wistiaHashedId.startsWith("http") 
+         ? wistia.wistiaHashedId 
+         : `https://fast.wistia.com/embed/medias/${wistia.wistiaHashedId}`;
+         
       contentfulAssetMap.set(String(craftAssetId), {
         id: null, // No Contentful Asset ID for Wistia embeds
         mimeType: "video/wistia",
-        wistiaUrl: `https://fast.wistia.com/embed/medias/${wistia.wistiaHashedId}`
+        wistiaUrl: wUrl
       });
       continue;
     }

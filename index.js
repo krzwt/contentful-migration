@@ -22,7 +22,6 @@ import { migrateAnnouncements } from "./handlers/announcementHandler.js";
 import { migrateUsers } from "./handlers/userHandler.js";
 import { migrateEvents } from "./handlers/eventHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
-
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import {
   loadAssetMetadata,
