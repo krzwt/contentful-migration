@@ -10,7 +10,6 @@ const ALLOWED_PAGE_LINK_TYPES = [
     "newStandaloneMicrosite",
     "newStandaloneThankYou",
     "newStandaloneConversion",
-    "resourceWebinarsCpt",
     "resourcesCpt",
     "company",
     "newCompany",
@@ -101,7 +100,7 @@ export async function prePopulateEntryIdCache(env) {
     } catch (e) {
         console.warn("   ⚠️ Could not fetch content types, falling back to static list.");
         contentTypes = [
-            "blogCpt", "resourcesCpt", "resourceWebinarsCpt", "announcementBanner",
+            "blogCpt", "resourcesCpt", "announcementBanner",
             "newStBtu", "newPressMediaCpt", "podcastsCpt", "newStTam", "newStServices",
             "embedFormsCpt", "newSt", "newGlobalReachMap", "eventsCpt", "newStandaloneContent",
             "newStandaloneConversion", "newStandaloneMicrosite", "newStandaloneThankYou",
@@ -415,7 +414,15 @@ export async function upsertEntry(env, contentType, entryId, fields, shouldPubli
         } catch (e) {
             if (e.name === 'NotFound' || e.status === 404) {
                 console.log(`   ✨ Creating nested ${contentType}: ${entryId}`);
-                const payload = { fields };
+                const sanitizedFields = {};
+                for (const [key, val] of Object.entries(fields)) {
+                    const localeVal = val && val[LOCALE];
+                    const isNull = localeVal === null;
+                    const isBrokenLink = localeVal && typeof localeVal === "object" && localeVal.sys && (localeVal.sys.id == null || localeVal.sys.id === "");
+                    if (isNull || isBrokenLink) continue;
+                    sanitizedFields[key] = val;
+                }
+                const payload = { fields: sanitizedFields };
                 if (metadata) payload.metadata = metadata;
                 entry = await env.createEntryWithId(contentType, entryId, payload);
                 justCreated = true;
@@ -426,9 +433,23 @@ export async function upsertEntry(env, contentType, entryId, fields, shouldPubli
 
         if (entry && !justCreated) {
             console.log(`   🔄 Updating nested ${contentType}: ${entryId}`);
-            // Merge fields individually
+            // Replace any existing broken link fields (Link with id null) with null so they get cleared
+            for (const [key, val] of Object.entries(entry.fields || {})) {
+                const localeVal = val && val[LOCALE];
+                if (localeVal && typeof localeVal === "object" && localeVal.sys && (localeVal.sys.id == null || localeVal.sys.id === "")) {
+                    entry.fields[key] = { [LOCALE]: null };
+                }
+            }
+            // Merge fields individually; set null to clear link fields (overwrite invalid links)
             for (const [key, val] of Object.entries(fields)) {
-                entry.fields[key] = val;
+                const localeVal = val && val[LOCALE];
+                const isExplicitNull = localeVal === null;
+                const isBrokenLink = localeVal && typeof localeVal === "object" && localeVal.sys && (localeVal.sys.id == null || localeVal.sys.id === "");
+                if (isExplicitNull || isBrokenLink) {
+                    entry.fields[key] = { [LOCALE]: null };
+                } else {
+                    entry.fields[key] = val;
+                }
             }
             if (metadata) {
                 entry.metadata = { ...entry.metadata, ...metadata };

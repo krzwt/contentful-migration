@@ -1,16 +1,50 @@
 {
     "data": {
-        "assets": [
-            {
-                "id": "2332490",
-                "title": "Entitle logo",
-                "url": "https://assets-uat.btdevops.io/assets/images/icons/Entitle-logo.png",
-                "filename": "Entitle-logo.png",
-                "mimeType": "image/png",
-                "width": 592,
-                "height": 624,
-                "size": "18825"
-            }
-        ]
+      "assets": [
+        {
+          "id": "2328214",
+          "title": "Cyber Leaders Exchange",
+          "url": "https://assets-uat.btdevops.io/assets/images/resource-cards/Case-Study.png",
+          "filename": "Case-Study.png",
+          "mimeType": "image/png",
+          "width": 2000,
+          "height": 2000,
+          "size": "1483709",
+          "alt": null
+        },
+        {
+          "id": "2320461",
+          "title": "Resource Card Ninja Van case study",
+          "url": "https://assets-uat.btdevops.io/assets/images/resource-cards/Ninja-Van-Resource-Card.png",
+          "filename": "Ninja-Van-Resource-Card.png",
+          "mimeType": "image/png",
+          "width": 2000,
+          "height": 2000,
+          "size": "173353",
+          "alt": null
+        },
+        {
+          "id": "2121227",
+          "title": "Entitle Datasheet Resource Card 2000x2000 whitepaper",
+          "url": "https://assets-uat.btdevops.io/assets/images/resource-cards/Entitle_Datasheet_Resource-Card_2000x2000-whitepaper.png",
+          "filename": "Entitle_Datasheet_Resource-Card_2000x2000-whitepaper.png",
+          "mimeType": "image/png",
+          "width": 2000,
+          "height": 2000,
+          "size": "1363319",
+          "alt": null
+        },
+        {
+          "id": "710104",
+          "title": "Partner gift banner",
+          "url": "https://assets-uat.btdevops.io/assets/images/banner-images/partner-gift-banner.jpg",
+          "filename": "partner-gift-banner.jpg",
+          "mimeType": "image/jpeg",
+          "width": 2100,
+          "height": 400,
+          "size": "73000",
+          "alt": null
+        }
+      ]
     }
-}
+  }

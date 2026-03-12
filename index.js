@@ -22,7 +22,6 @@ import { migrateAnnouncements } from "./handlers/announcementHandler.js";
 import { migrateUsers } from "./handlers/userHandler.js";
 import { migrateEvents } from "./handlers/eventHandler.js";
 import { migrateVideos } from "./handlers/videoHandler.js";
-import { migrateWebinars } from "./handlers/webinarHandler.js";
 import { migrateResearch } from "./handlers/researchHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
@@ -112,11 +111,12 @@ const DATA_SOURCES = [
   //   label: "Company Quotes",
   //   isQuotes: true
   // },
-  // {
-  //   file: "./data/resources-cpt.json",
-  //   label: "Resources CPT",
-  //   isResources: true
-  // }
+  {
+    // file: "./data/resources-cpt.json",
+    file: "./data/test-resources-cpt.json",
+    label: "Resources CPT",
+    isResources: true
+  }
   // {
   //   file: "./data/newGlobalReachMap.json",
   //   label: "Global Reach Map",
@@ -152,11 +152,11 @@ const DATA_SOURCES = [
   //   label: "Forms Import",
   //   isForms: true
   // },
-  {
-    file: "./data/new-press&media.json",
-    label: "Press & Media",
-    isPressMedia: true,
-  },
+  // {
+  //   file: "./data/new-press&media.json",
+  //   label: "Press & Media",
+  //   isPressMedia: true,
+  // },
   // {
   //   file: "./data/new-blog.json",
   //   label: "Blog CPT",
@@ -795,18 +795,6 @@ async function run() {
 
     if (source.isVideos) {
       await migrateVideos(
-        env,
-        batchData,
-        contentfulAssetMap,
-        targetIndices,
-        totalPages,
-        summary,
-        rawFileContent,
-      );
-    }
-
-    if (source.isWebinars) {
-      await migrateWebinars(
         env,
         batchData,
         contentfulAssetMap,

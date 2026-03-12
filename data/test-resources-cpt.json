@@ -1,0 +1,2126 @@
+[
+    {
+        "sectionId": 4,
+        "postDate": "2026-03-03T09:51:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 2500107,
+        "id": 2506067,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "3606c555-16bc-4376-839f-006b0a78e2af",
+        "siteSettingsId": 3512059,
+        "fieldLayoutId": null,
+        "contentId": 1762099,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Test Resource VIdeo",
+        "slug": "test-resource-video",
+        "uri": "resources/videos/test-resource-video",
+        "dateCreated": "2026-03-12T07:15:18-05:00",
+        "dateUpdated": "2026-03-12T07:22:04-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "canonicalId": 2506067,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "resources/test-resource-video",
+        "status": "live",
+        "structureId": null,
+        "url": "https://bluetext.beyondtrust.com/resources/videos/test-resource-video",
+        "authorId": 2500107,
+        "typeId": 26,
+        "resourceTitle": "Test Resource Second Title",
+        "resourceDescription": "<p><strong>Resource Description field value</strong></p>",
+        "demoVideo": true,
+        "generalCategories": [
+            1836820,
+            1837393
+        ],
+        "tags": [
+            1565558,
+            2506231
+        ],
+        "resourceCardImage": [
+            2320461
+        ],
+        "resourceBannerBackground": [
+            2467609
+        ],
+        "resourceVideo": [
+            2497783
+        ],
+        "resourceTranscript": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam",
+        "signupRequired": false,
+        "salesforceCampaignId": "7017V000001NG5GQAW",
+        "mixedContent": {
+            "2506068": {
+                "type": "reviewTombstones",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "tombstone": {
+                        "2506069": {
+                            "type": 91,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 1",
+                                "tombstoneBody": "Tombstone Body 1",
+                                "reviewEmbed": "trustRadiusEndpointPrivilegeManagement"
+                            }
+                        },
+                        "2506070": {
+                            "type": 91,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 2",
+                                "tombstoneBody": "Tombstone Body 2",
+                                "reviewEmbed": "gartner"
+                            }
+                        }
+                    }
+                }
+            },
+            "2506071": {
+                "type": "simpleList",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "listType": "unordered",
+                    "listHeading": "List Heading",
+                    "listItems": {
+                        "2506072": {
+                            "type": 54,
+                            "fields": {
+                                "itemText": "<p>Item Text 1</p>"
+                            }
+                        },
+                        "2506073": {
+                            "type": 54,
+                            "fields": {
+                                "itemText": "<p>Item Text 2</p>"
+                            }
+                        }
+                    }
+                }
+            },
+            "2506074": {
+                "type": "stackedPhotoBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "heading": "Heading",
+                    "description": "Description",
+                    "blockImage": [
+                        1947688
+                    ],
+                    "imageLayout": "left-small",
+                    "callsToAction": {
+                        "2506075": {
+                            "type": 53,
+                            "fields": {
+                                "ctaText": "CTA Text",
+                                "ctaUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "2506076": {
+                "type": "stackedPhotoBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "heading": "Heading",
+                    "description": "Description",
+                    "blockImage": [
+                        1947688
+                    ],
+                    "imageLayout": "left-large",
+                    "callsToAction": {
+                        "2506077": {
+                            "type": 53,
+                            "fields": {
+                                "ctaText": "CTA",
+                                "ctaUrl": "{\"linkedId\":945909,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        },
+                        "2506078": {
+                            "type": 53,
+                            "fields": {
+                                "ctaText": "Learn More",
+                                "ctaUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "2506079": {
+                "type": "pageSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "sectionHeading": "PS Section Heading",
+                    "sectionColor": "light-gray",
+                    "sectionBackgroundImage": [
+                        1947688
+                    ],
+                    "sectionBackgroundPattern": "curved-pattern",
+                    "sectionImage": [
+                        83488
+                    ],
+                    "sectionLayout": "centered"
+                }
+            },
+            "2506080": {
+                "type": "calloutCradle",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "layout": "right",
+                    "heading": "COC Heading",
+                    "description": "COC Description",
+                    "callToAction": {
+                        "2506081": {
+                            "type": 77,
+                            "fields": {
+                                "label": "Label",
+                                "ctaUrl": "{\"linkedId\":945909,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        }
+                    },
+                    "calloutImage": [
+                        83620
+                    ]
+                }
+            },
+            "2506082": {
+                "type": "callsToAction",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "buttons": {
+                        "2506083": {
+                            "type": 7,
+                            "fields": {
+                                "label": "Label 1",
+                                "ctaUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "video": [
+                                    2497993
+                                ],
+                                "style": "button"
+                            }
+                        },
+                        "2506084": {
+                            "type": 7,
+                            "fields": {
+                                "label": "Label 2",
+                                "ctaUrl": "{\"linkedId\":954799,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "video": [
+                                    2497783
+                                ],
+                                "style": "button btn-white"
+                            }
+                        },
+                        "2506085": {
+                            "type": 7,
+                            "fields": {
+                                "label": "Label 3",
+                                "ctaUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+                                "video": [],
+                                "style": "button btn-orange"
+                            }
+                        }
+                    },
+                    "layout": "default",
+                    "alignment": "default"
+                }
+            },
+            "2506086": {
+                "type": "callout",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "heading": "CO Heading",
+                    "description": "CO Description",
+                    "calloutImage": [
+                        53159
+                    ],
+                    "callToAction": {
+                        "2506087": {
+                            "type": 30,
+                            "fields": {
+                                "label": "Label",
+                                "ctaUrl": "{\"linkedId\":954951,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        }
+                    },
+                    "calloutVideo": [
+                        2487927
+                    ]
+                }
+            },
+            "2506088": {
+                "type": "checkmarkList",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "listHeading": "CL List Heading",
+                    "listItems": {
+                        "2506089": {
+                            "type": 87,
+                            "fields": {
+                                "itemText": "Item Text 1"
+                            }
+                        },
+                        "2506090": {
+                            "type": 87,
+                            "fields": {
+                                "itemText": "Item Text 2"
+                            }
+                        },
+                        "2506091": {
+                            "type": 87,
+                            "fields": {
+                                "itemText": "Item Text 3"
+                            }
+                        },
+                        "2506092": {
+                            "type": 87,
+                            "fields": {
+                                "itemText": "Item Text 4"
+                            }
+                        },
+                        "2506093": {
+                            "type": 87,
+                            "fields": {
+                                "itemText": "Item Text 5"
+                            }
+                        }
+                    }
+                }
+            },
+            "2506094": {
+                "type": "codeBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                }
+            },
+            "2506095": {
+                "type": "comparisonChart",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "table": {
+                        "columns": [
+                            {
+                                "heading": "TC Heading 1",
+                                "width": "33.33",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "TC Heading 2",
+                                "width": "33.33",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "TC Heading 3",
+                                "width": "33.33",
+                                "align": "right",
+                                "type": "number",
+                                "options": []
+                            }
+                        ],
+                        "rows": [
+                            [
+                                "Table Content",
+                                "Table Content",
+                                "Table Content"
+                            ],
+                            [
+                                "Table Content",
+                                "Table Content",
+                                "Table Content"
+                            ],
+                            [
+                                "Table Content",
+                                "Table Content",
+                                "Table Content"
+                            ],
+                            [
+                                "Table Content",
+                                "Table Content",
+                                "Table Content"
+                            ]
+                        ],
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"33.33\">TC Heading 1</th><th align=\"center\" width=\"33.33\">TC Heading 2</th><th align=\"right\" width=\"33.33\">TC Heading 3</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">Table Content</td><td align=\"center\">Table Content</td><td align=\"right\">Table Content</td></tr><tr><td align=\"left\">Table Content</td><td align=\"center\">Table Content</td><td align=\"right\">Table Content</td></tr><tr><td align=\"left\">Table Content</td><td align=\"center\">Table Content</td><td align=\"right\">Table Content</td></tr><tr><td align=\"left\">Table Content</td><td align=\"center\">Table Content</td><td align=\"right\">Table Content</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                    },
+                    "notes": {
+                        "2506096": {
+                            "type": 10,
+                            "fields": {
+                                "note": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+                            }
+                        }
+                    }
+                }
+            },
+            "2506097": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "blockHeading": "CB Block Heading",
+                    "blockBody": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam</p>",
+                    "blockImage": [
+                        9615
+                    ],
+                    "blockVideo": [
+                        2487927
+                    ],
+                    "mediaCaption": "CB Media caption",
+                    "blockLayout": "shift-right",
+                    "resource": [
+                        70613
+                    ],
+                    "reviewEmbed": "trustRadiusRemoteSupport"
+                }
+            },
+            "2506098": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "blockHeading": "Block Heading",
+                    "blockBody": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam</p>",
+                    "blockImage": [],
+                    "blockVideo": [
+                        2497993
+                    ],
+                    "mediaCaption": null,
+                    "blockLayout": "u--right-aligned-bottom",
+                    "resource": [
+                        501085
+                    ],
+                    "reviewEmbed": "g2"
+                }
+            },
+            "2506099": {
+                "type": "coverPhotoSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "backgroundImage": [
+                        1947721
+                    ],
+                    "heading": "CPS Heading",
+                    "subheading": "CPS Subheading",
+                    "bodyText": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
+                    "ctaText": "CTA Text",
+                    "ctaUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                }
+            },
+            "2506100": {
+                "type": "coverPhotoSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "backgroundImage": [
+                        1573356
+                    ],
+                    "heading": "Heading",
+                    "subheading": "Subheading",
+                    "bodyText": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
+                    "ctaText": "View image",
+                    "ctaUrl": "{\"linkedId\":2038697,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"asset\"}"
+                }
+            },
+            "2506101": {
+                "type": "coverPhotoSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "backgroundImage": [
+                        710104
+                    ],
+                    "heading": "Heading",
+                    "subheading": null,
+                    "bodyText": null,
+                    "ctaText": "BeyondTrust Executive Summary",
+                    "ctaUrl": "{\"linkedId\":21910,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                }
+            },
+            "2506102": {
+                "type": "detailedList",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "listHeading": "DL List Heading",
+                    "listItems": {
+                        "2506103": {
+                            "type": 55,
+                            "fields": {
+                                "itemTitle": "Item Title",
+                                "itemText": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.<br /></p>"
+                            }
+                        },
+                        "2506104": {
+                            "type": 55,
+                            "fields": {
+                                "itemTitle": "Lorem ipsum dolor sit amet",
+                                "itemText": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</p>"
+                            }
+                        },
+                        "2506105": {
+                            "type": 55,
+                            "fields": {
+                                "itemTitle": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
+                                "itemText": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</p>"
+                            }
+                        }
+                    }
+                }
+            },
+            "2506106": {
+                "type": "events",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "cards": [
+                        1263221,
+                        1146901,
+                        1044045
+                    ]
+                }
+            },
+            "2506107": {
+                "type": "image",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "images": {
+                        "2506108": {
+                            "type": 8,
+                            "fields": {
+                                "image": [
+                                    2328235
+                                ],
+                                "caption": "Image Caption"
+                            }
+                        },
+                        "2506109": {
+                            "type": 8,
+                            "fields": {
+                                "image": [
+                                    2328214
+                                ],
+                                "caption": null
+                            }
+                        },
+                        "2506110": {
+                            "type": 8,
+                            "fields": {
+                                "image": [
+                                    2121227
+                                ],
+                                "caption": "Image Caption"
+                            }
+                        }
+                    },
+                    "layout": "default",
+                    "alignment": "default"
+                }
+            },
+            "2506111": {
+                "type": "logoList",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "layout": "center",
+                    "listHeading": "Logo List Heading",
+                    "subHeading": "Logo Sub Heading",
+                    "logos": [
+                        2463010,
+                        2320461,
+                        2310977
+                    ]
+                }
+            },
+            "2506112": {
+                "type": "quote",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "quoteBody": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.﻿",
+                    "quoteSource": "Quote Source",
+                    "quoteCite": "Quote Cite",
+                    "quoteUrl": "{\"linkedId\":69006,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                }
+            },
+            "2506113": {
+                "type": "quote",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "quoteBody": "Quote Body",
+                    "quoteSource": "Quote Source",
+                    "quoteCite": "Quote Cite",
+                    "quoteUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                }
+            },
+            "2506114": {
+                "type": "resources",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "cards": [
+                        1967545,
+                        2014551,
+                        2489608
+                    ]
+                }
+            },
+            "2506115": {
+                "type": "reviewTombstones",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "tombstone": {
+                        "2506116": {
+                            "type": 91,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 1",
+                                "tombstoneBody": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.﻿",
+                                "reviewEmbed": "gartner"
+                            }
+                        },
+                        "2506117": {
+                            "type": 91,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 2",
+                                "tombstoneBody": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.﻿",
+                                "reviewEmbed": "g2"
+                            }
+                        }
+                    }
+                }
+            },
+            "2506118": {
+                "type": "text",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "textContent": "<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</h4>"
+                }
+            },
+            "2506119": {
+                "type": "tombstones",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "tombstone": {
+                        "2506120": {
+                            "type": 2,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 1",
+                                "tombstoneImage": [
+                                    2424794
+                                ],
+                                "tombstoneBody": "Tombstone Body 1",
+                                "tombstoneUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}"
+                            }
+                        },
+                        "2506121": {
+                            "type": 2,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 2",
+                                "tombstoneImage": [
+                                    2424789
+                                ],
+                                "tombstoneBody": "Tombstone Body 2",
+                                "tombstoneUrl": "{\"linkedId\":2495445,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        },
+                        "2506122": {
+                            "type": 2,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 3",
+                                "tombstoneImage": [
+                                    848405
+                                ],
+                                "tombstoneBody": "Tombstone Body 3",
+                                "tombstoneUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "2506123": {
+                "type": "twoColumnBlockLists",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "layout": "top",
+                    "heading": "TWBL Heading",
+                    "description": "TWBL Description",
+                    "callToAction": {
+                        "2506124": {
+                            "type": 75,
+                            "fields": {
+                                "ctaText": "Lorem ipsum",
+                                "ctaUrl": "{\"linkedId\":2483563,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        }
+                    },
+                    "twoColumnBlockList": {
+                        "2506125": {
+                            "type": 76,
+                            "fields": {
+                                "twoColumnBlockListHeadline": "Two Column Block List Headline 1",
+                                "twoColumnBlockListImage": [
+                                    2483706
+                                ],
+                                "twoColumnBlockListBody": "Two Column Block List Body 1",
+                                "twoColumnBlockListUrl": "{\"linkedId\":2495517,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        },
+                        "2506126": {
+                            "type": 76,
+                            "fields": {
+                                "twoColumnBlockListHeadline": "Two Column Block List Headline 2",
+                                "twoColumnBlockListImage": [
+                                    2489885
+                                ],
+                                "twoColumnBlockListBody": "Two Column Block List Body 2",
+                                "twoColumnBlockListUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                            }
+                        },
+                        "2506127": {
+                            "type": 76,
+                            "fields": {
+                                "twoColumnBlockListHeadline": "Two Column Block List Headline 3",
+                                "twoColumnBlockListImage": [
+                                    2453762
+                                ],
+                                "twoColumnBlockListBody": "Two Column Block List Body 3",
+                                "twoColumnBlockListUrl": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "2506128": {
+                "type": "video",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "video": [
+                        2497993
+                    ],
+                    "videoDescription": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam."
+                }
+            },
+            "2506129": {
+                "type": "footnotes",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "footnotes": "<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</h4>",
+                    "sectionColor": "white"
+                }
+            }
+        },
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2026-03-11T06:49:28-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoDescription": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceCardImage",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceCardImage",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceCardImage",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 4,
+        "postDate": "2026-03-03T09:51:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 2500107,
+        "id": 2505907,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "1841536b-d143-4dc3-bf9c-3e212c587b91",
+        "siteSettingsId": 3511884,
+        "fieldLayoutId": null,
+        "contentId": 1762078,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Test Resource Webinar",
+        "slug": "test-resource-webinar",
+        "uri": "resources/webinars/test-resource-webinar",
+        "dateCreated": "2026-03-12T06:56:36-05:00",
+        "dateUpdated": "2026-03-12T07:31:43-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "canonicalId": 2505907,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "resources/test-resource-webinar",
+        "status": "live",
+        "structureId": null,
+        "url": "https://bluetext.beyondtrust.com/resources/webinars/test-resource-webinar",
+        "authorId": 2500107,
+        "typeId": 23,
+        "resourceTitle": "Test Resource Second Title",
+        "people": [
+            2495453
+        ],
+        "generalCategories": [
+            1836820,
+            1837393
+        ],
+        "tags": [
+            1565558
+        ],
+        "companyLogo": [
+            2496910
+        ],
+        "resourceCardImage": [
+            2320461
+        ],
+        "resourceBannerImage": [],
+        "resourceDescription": "<p><strong>Resource Description field value</strong></p>",
+        "resourceVideo": [
+            2489285
+        ],
+        "resourceTranscript": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
+        "includeIsc2Info": true,
+        "publicEvent": true,
+        "salesforceCampaignId": "7017V000001NG5GQAW",
+        "eloquaCampaignId": null,
+        "eventStartDate": "2026-03-12T21:00:00-05:00",
+        "startDateTime": "2026-03-12T21:00:00-05:00",
+        "endDateTime": "2026-03-12T21:00:00-05:00",
+        "thirdPartyUrl": "https://google.com/",
+        "webcastInfo": {
+            "2506248": {
+                "type": 4,
+                "fields": {
+                    "webcastId": "Eastern (US & Canada)",
+                    "webcastTimezone": "ET"
+                }
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 4,
+        "postDate": "2026-03-03T09:51:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 2500107,
+        "id": 2505747,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "ec28da90-36fb-4565-b35b-630469247896",
+        "siteSettingsId": 3511699,
+        "fieldLayoutId": null,
+        "contentId": 1762048,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Test Resources",
+        "slug": "test-resources",
+        "uri": "resources/webinars/test-resources",
+        "dateCreated": "2026-03-12T06:50:58-05:00",
+        "dateUpdated": "2026-03-12T07:18:37-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "canonicalId": 2505747,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "resources/test-resources",
+        "status": "live",
+        "structureId": null,
+        "url": "https://bluetext.beyondtrust.com/resources/webinars/test-resources",
+        "authorId": 2500107,
+        "typeId": 23,
+        "resourceTitle": "Test Resource Second Title",
+        "people": [
+            2495453
+        ],
+        "generalCategories": [
+            1836820,
+            1837393
+        ],
+        "tags": [],
+        "companyLogo": [],
+        "resourceCardImage": [
+            2320461
+        ],
+        "resourceBannerImage": [
+            2467960
+        ],
+        "resourceDescription": "<p><strong>Resource Description field value</strong></p>",
+        "resourceVideo": [],
+        "resourceTranscript": "Resource Transcript\nResource Transcript\nResource Transcript\nResource Transcript\nResource Transcript",
+        "includeIsc2Info": true,
+        "publicEvent": true,
+        "salesforceCampaignId": "7017V000001NG5GQAW",
+        "eloquaCampaignId": null,
+        "eventStartDate": "2026-03-10T02:00:00-05:00",
+        "startDateTime": "2026-03-11T02:00:00-05:00",
+        "endDateTime": "2026-03-19T03:00:00-05:00",
+        "thirdPartyUrl": "https://www.google.com/",
+        "webcastInfo": {
+            "2506228": {
+                "type": 4,
+                "fields": {
+                    "webcastId": "321654988",
+                    "webcastTimezone": "CET"
+                }
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 4,
+        "postDate": "2026-03-03T09:51:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 2500107,
+        "id": 2504067,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "1e4bbb30-69f5-4bd0-82a1-1eb1003e446f",
+        "siteSettingsId": 3507944,
+        "fieldLayoutId": null,
+        "contentId": 1759060,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Test Resource Whitepapers",
+        "slug": "test-resource-whitepapers",
+        "uri": "resources/whitepapers/test-resource-whitepapers",
+        "dateCreated": "2026-03-03T09:30:45-06:00",
+        "dateUpdated": "2026-03-12T06:28:53-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "canonicalId": 2504067,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "resources/test-resource-whitepapers",
+        "status": "live",
+        "structureId": null,
+        "url": "https://bluetext.beyondtrust.com/resources/whitepapers/test-resource-whitepapers",
+        "authorId": 2500107,
+        "typeId": 24,
+        "resourceTitle": "Test Resource Second Title",
+        "resourceDescription": "<p><strong>Resource Description field value</strong></p>",
+        "resourceCardImage": [
+            2320461
+        ],
+        "resourceBannerBackground": [
+            2426612
+        ],
+        "generalCategories": [
+            1836820,
+            1837393
+        ],
+        "tags": [
+            1565558
+        ],
+        "timeOverride": "1000",
+        "resourceDocument": [
+            2485696
+        ],
+        "signupRequired": false,
+        "salesforceCampaignId": "7017V000001NG5GQAW",
+        "mixedContent": {
+            "2504074": {
+                "type": "reviewTombstones",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "tombstone": {
+                        "2504075": {
+                            "type": 91,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 1",
+                                "tombstoneBody": "Tombstone Body 1",
+                                "reviewEmbed": "trustRadiusEndpointPrivilegeManagement"
+                            }
+                        },
+                        "2504076": {
+                            "type": 91,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 2",
+                                "tombstoneBody": "Tombstone Body 2",
+                                "reviewEmbed": "gartner"
+                            }
+                        }
+                    }
+                }
+            },
+            "2504124": {
+                "type": "simpleList",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "listType": "unordered",
+                    "listHeading": "List Heading",
+                    "listItems": {
+                        "2504125": {
+                            "type": 54,
+                            "fields": {
+                                "itemText": "<p>Item Text 1</p>"
+                            }
+                        },
+                        "2504126": {
+                            "type": 54,
+                            "fields": {
+                                "itemText": "<p>Item Text 2</p>"
+                            }
+                        }
+                    }
+                }
+            },
+            "2504146": {
+                "type": "stackedPhotoBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "heading": "Heading",
+                    "description": "Description",
+                    "blockImage": [
+                        1947688
+                    ],
+                    "imageLayout": "left-small",
+                    "callsToAction": {
+                        "2504147": {
+                            "type": 53,
+                            "fields": {
+                                "ctaText": "CTA Text",
+                                "ctaUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "2504810": {
+                "type": "stackedPhotoBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "heading": "Heading",
+                    "description": "Description",
+                    "blockImage": [
+                        1947688
+                    ],
+                    "imageLayout": "left-large",
+                    "callsToAction": {
+                        "2504811": {
+                            "type": 53,
+                            "fields": {
+                                "ctaText": "CTA",
+                                "ctaUrl": "{\"linkedId\":945909,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        },
+                        "2504812": {
+                            "type": 53,
+                            "fields": {
+                                "ctaText": "Learn More",
+                                "ctaUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "2505552": {
+                "type": "pageSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "sectionHeading": "PS Section Heading",
+                    "sectionColor": "light-gray",
+                    "sectionBackgroundImage": [
+                        1947688
+                    ],
+                    "sectionBackgroundPattern": "curved-pattern",
+                    "sectionImage": [
+                        83488
+                    ],
+                    "sectionLayout": "centered"
+                }
+            },
+            "2505553": {
+                "type": "calloutCradle",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "layout": "right",
+                    "heading": "COC Heading",
+                    "description": "COC Description",
+                    "callToAction": {
+                        "2505554": {
+                            "type": 77,
+                            "fields": {
+                                "label": "Label",
+                                "ctaUrl": "{\"linkedId\":945909,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        }
+                    },
+                    "calloutImage": [
+                        83620
+                    ]
+                }
+            },
+            "2505555": {
+                "type": "callsToAction",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "buttons": {
+                        "2505556": {
+                            "type": 7,
+                            "fields": {
+                                "label": "Label 1",
+                                "ctaUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}",
+                                "video": [
+                                    2497993
+                                ],
+                                "style": "button"
+                            }
+                        },
+                        "2505557": {
+                            "type": 7,
+                            "fields": {
+                                "label": "Label 2",
+                                "ctaUrl": "{\"linkedId\":954799,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "video": [
+                                    2497783
+                                ],
+                                "style": "button btn-white"
+                            }
+                        },
+                        "2505558": {
+                            "type": 7,
+                            "fields": {
+                                "label": "Label 3",
+                                "ctaUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+                                "video": [],
+                                "style": "button btn-orange"
+                            }
+                        }
+                    },
+                    "layout": "default",
+                    "alignment": "default"
+                }
+            },
+            "2505559": {
+                "type": "callout",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "heading": "CO Heading",
+                    "description": "CO Description",
+                    "calloutImage": [
+                        53159
+                    ],
+                    "callToAction": {
+                        "2505560": {
+                            "type": 30,
+                            "fields": {
+                                "label": "Label",
+                                "ctaUrl": "{\"linkedId\":954951,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        }
+                    },
+                    "calloutVideo": [
+                        2487927
+                    ]
+                }
+            },
+            "2505561": {
+                "type": "checkmarkList",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "listHeading": "CL List Heading",
+                    "listItems": {
+                        "2505562": {
+                            "type": 87,
+                            "fields": {
+                                "itemText": "Item Text 1"
+                            }
+                        },
+                        "2505563": {
+                            "type": 87,
+                            "fields": {
+                                "itemText": "Item Text 2"
+                            }
+                        },
+                        "2505564": {
+                            "type": 87,
+                            "fields": {
+                                "itemText": "Item Text 3"
+                            }
+                        },
+                        "2505565": {
+                            "type": 87,
+                            "fields": {
+                                "itemText": "Item Text 4"
+                            }
+                        },
+                        "2505566": {
+                            "type": 87,
+                            "fields": {
+                                "itemText": "Item Text 5"
+                            }
+                        }
+                    }
+                }
+            },
+            "2505567": {
+                "type": "codeBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                }
+            },
+            "2505568": {
+                "type": "comparisonChart",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "table": {
+                        "columns": [
+                            {
+                                "heading": "TC Heading 1",
+                                "width": "33.33",
+                                "align": "left",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "TC Heading 2",
+                                "width": "33.33",
+                                "align": "center",
+                                "type": "singleline",
+                                "options": []
+                            },
+                            {
+                                "heading": "TC Heading 3",
+                                "width": "33.33",
+                                "align": "right",
+                                "type": "number",
+                                "options": []
+                            }
+                        ],
+                        "rows": [
+                            [
+                                "Table Content",
+                                "Table Content",
+                                "Table Content"
+                            ],
+                            [
+                                "Table Content",
+                                "Table Content",
+                                "Table Content"
+                            ],
+                            [
+                                "Table Content",
+                                "Table Content",
+                                "Table Content"
+                            ],
+                            [
+                                "Table Content",
+                                "Table Content",
+                                "Table Content"
+                            ]
+                        ],
+                        "table": "\n            <table>\n                <thead>\n                    <tr>\n        <th align=\"left\" width=\"33.33\">TC Heading 1</th><th align=\"center\" width=\"33.33\">TC Heading 2</th><th align=\"right\" width=\"33.33\">TC Heading 3</th>\n                    </tr>\n                </thead>\n\n                <tbody><tr><td align=\"left\">Table Content</td><td align=\"center\">Table Content</td><td align=\"right\">Table Content</td></tr><tr><td align=\"left\">Table Content</td><td align=\"center\">Table Content</td><td align=\"right\">Table Content</td></tr><tr><td align=\"left\">Table Content</td><td align=\"center\">Table Content</td><td align=\"right\">Table Content</td></tr><tr><td align=\"left\">Table Content</td><td align=\"center\">Table Content</td><td align=\"right\">Table Content</td></tr>\n\n                </tbody>\n\n            </table>\n        "
+                    },
+                    "notes": {
+                        "2505569": {
+                            "type": 10,
+                            "fields": {
+                                "note": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam"
+                            }
+                        }
+                    }
+                }
+            },
+            "2505612": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "blockHeading": "CB Block Heading",
+                    "blockBody": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam</p>",
+                    "blockImage": [
+                        9615
+                    ],
+                    "blockVideo": [
+                        2487927
+                    ],
+                    "mediaCaption": "CB Media caption",
+                    "blockLayout": "shift-right",
+                    "resource": [
+                        70613
+                    ],
+                    "reviewEmbed": "trustRadiusRemoteSupport"
+                }
+            },
+            "2505617": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "blockHeading": "Block Heading",
+                    "blockBody": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam</p>",
+                    "blockImage": [],
+                    "blockVideo": [
+                        2497993
+                    ],
+                    "mediaCaption": null,
+                    "blockLayout": "u--right-aligned-bottom",
+                    "resource": [
+                        501085
+                    ],
+                    "reviewEmbed": "g2"
+                }
+            },
+            "2505628": {
+                "type": "coverPhotoSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "backgroundImage": [
+                        1947721
+                    ],
+                    "heading": "CPS Heading",
+                    "subheading": "CPS Subheading",
+                    "bodyText": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
+                    "ctaText": "CTA Text",
+                    "ctaUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                }
+            },
+            "2505632": {
+                "type": "coverPhotoSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "backgroundImage": [
+                        1573356
+                    ],
+                    "heading": "Heading",
+                    "subheading": "Subheading",
+                    "bodyText": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.",
+                    "ctaText": "View image",
+                    "ctaUrl": "{\"linkedId\":2038697,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"asset\"}"
+                }
+            },
+            "2505641": {
+                "type": "coverPhotoSection",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "backgroundImage": [
+                        710104
+                    ],
+                    "heading": "Heading",
+                    "subheading": null,
+                    "bodyText": null,
+                    "ctaText": "BeyondTrust Executive Summary",
+                    "ctaUrl": "{\"linkedId\":21910,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                }
+            },
+            "2505651": {
+                "type": "detailedList",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "listHeading": "DL List Heading",
+                    "listItems": {
+                        "2505652": {
+                            "type": 55,
+                            "fields": {
+                                "itemTitle": "Item Title",
+                                "itemText": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.<br /></p>"
+                            }
+                        },
+                        "2505653": {
+                            "type": 55,
+                            "fields": {
+                                "itemTitle": "Lorem ipsum dolor sit amet",
+                                "itemText": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</p>"
+                            }
+                        },
+                        "2505654": {
+                            "type": 55,
+                            "fields": {
+                                "itemTitle": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
+                                "itemText": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</p>"
+                            }
+                        }
+                    }
+                }
+            },
+            "2505655": {
+                "type": "events",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "cards": [
+                        1263221,
+                        1146901,
+                        1044045
+                    ]
+                }
+            },
+            "2505656": {
+                "type": "image",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "images": {
+                        "2505657": {
+                            "type": 8,
+                            "fields": {
+                                "image": [
+                                    2328235
+                                ],
+                                "caption": "Image Caption"
+                            }
+                        },
+                        "2505658": {
+                            "type": 8,
+                            "fields": {
+                                "image": [
+                                    2328214
+                                ],
+                                "caption": null
+                            }
+                        },
+                        "2505659": {
+                            "type": 8,
+                            "fields": {
+                                "image": [
+                                    2121227
+                                ],
+                                "caption": "Image Caption"
+                            }
+                        }
+                    },
+                    "layout": "default",
+                    "alignment": "default"
+                }
+            },
+            "2505660": {
+                "type": "logoList",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "layout": "center",
+                    "listHeading": "Logo List Heading",
+                    "subHeading": "Logo Sub Heading",
+                    "logos": [
+                        2463010,
+                        2320461,
+                        2310977
+                    ]
+                }
+            },
+            "2505661": {
+                "type": "quote",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "quoteBody": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.﻿",
+                    "quoteSource": "Quote Source",
+                    "quoteCite": "Quote Cite",
+                    "quoteUrl": "{\"linkedId\":69006,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                }
+            },
+            "2505662": {
+                "type": "quote",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "quoteBody": "Quote Body",
+                    "quoteSource": "Quote Source",
+                    "quoteCite": "Quote Cite",
+                    "quoteUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                }
+            },
+            "2505678": {
+                "type": "resources",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "cards": [
+                        1967545,
+                        2014551,
+                        2489608
+                    ]
+                }
+            },
+            "2505679": {
+                "type": "reviewTombstones",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "tombstone": {
+                        "2505680": {
+                            "type": 91,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 1",
+                                "tombstoneBody": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.﻿",
+                                "reviewEmbed": "gartner"
+                            }
+                        },
+                        "2505681": {
+                            "type": 91,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 2",
+                                "tombstoneBody": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.﻿",
+                                "reviewEmbed": "g2"
+                            }
+                        }
+                    }
+                }
+            },
+            "2505682": {
+                "type": "text",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "textContent": "<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</h4>"
+                }
+            },
+            "2505683": {
+                "type": "tombstones",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "tombstone": {
+                        "2505684": {
+                            "type": 2,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 1",
+                                "tombstoneImage": [
+                                    2424794
+                                ],
+                                "tombstoneBody": "Tombstone Body 1",
+                                "tombstoneUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}"
+                            }
+                        },
+                        "2505685": {
+                            "type": 2,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 2",
+                                "tombstoneImage": [
+                                    2424789
+                                ],
+                                "tombstoneBody": "Tombstone Body 2",
+                                "tombstoneUrl": "{\"linkedId\":2495445,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        },
+                        "2505686": {
+                            "type": 2,
+                            "fields": {
+                                "tombstoneHeadline": "Tombstone Headline 3",
+                                "tombstoneImage": [
+                                    848405
+                                ],
+                                "tombstoneBody": "Tombstone Body 3",
+                                "tombstoneUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\\/\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "2505698": {
+                "type": "twoColumnBlockLists",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "layout": "top",
+                    "heading": "TWBL Heading",
+                    "description": "TWBL Description",
+                    "callToAction": {
+                        "2505699": {
+                            "type": 75,
+                            "fields": {
+                                "ctaText": "Lorem ipsum",
+                                "ctaUrl": "{\"linkedId\":2483563,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        }
+                    },
+                    "twoColumnBlockList": {
+                        "2505700": {
+                            "type": 76,
+                            "fields": {
+                                "twoColumnBlockListHeadline": "Two Column Block List Headline 1",
+                                "twoColumnBlockListImage": [
+                                    2483706
+                                ],
+                                "twoColumnBlockListBody": "Two Column Block List Body 1",
+                                "twoColumnBlockListUrl": "{\"linkedId\":2495517,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}"
+                            }
+                        },
+                        "2505701": {
+                            "type": 76,
+                            "fields": {
+                                "twoColumnBlockListHeadline": "Two Column Block List Headline 2",
+                                "twoColumnBlockListImage": [
+                                    2489885
+                                ],
+                                "twoColumnBlockListBody": "Two Column Block List Body 2",
+                                "twoColumnBlockListUrl": "{\"linkedUrl\":\"https:\\/\\/google.com\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                            }
+                        },
+                        "2505702": {
+                            "type": 76,
+                            "fields": {
+                                "twoColumnBlockListHeadline": "Two Column Block List Headline 3",
+                                "twoColumnBlockListImage": [
+                                    2453762
+                                ],
+                                "twoColumnBlockListBody": "Two Column Block List Body 3",
+                                "twoColumnBlockListUrl": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "2505704": {
+                "type": "video",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "video": [
+                        2497993
+                    ],
+                    "videoDescription": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam."
+                }
+            },
+            "2505705": {
+                "type": "footnotes",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "footnotes": "<h4>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam.</h4>",
+                    "sectionColor": "white"
+                }
+            }
+        },
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2026-03-11T06:49:28-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoDescription": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceCardImage",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceCardImage",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceCardImage",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    }
+]

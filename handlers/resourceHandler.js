@@ -48,8 +48,8 @@ export async function migrateResources(
 
     let typeLabel = typeMap[item.typeId] || "Resources";
 
-    // Try to refine type from General Categories (Content Type group - parent 1836820)
-    if (item.generalCategories) {
+    // Only refine from General Categories when typeId is missing or not in typeMap (so typeId wins)
+    if ((item.typeId == null || !(item.typeId in typeMap)) && item.generalCategories) {
       const validTypes = [
         "Resources",
         "Case Studies",
@@ -157,10 +157,10 @@ export async function migrateResources(
         timeOverride: { [LOCALE]: item.timeOverride || "" },
       };
 
-      // Handle Assets in Resource Fields
+      // Only set asset/link fields when the target exists in the map (resolvable); otherwise skip to avoid notResolvable on publish
       if (item.resourceCardImage && item.resourceCardImage[0]) {
         const craftAssetId = String(item.resourceCardImage[0]);
-        if (assetMap && assetMap.has(craftAssetId)) {
+        if (assetMap?.has(craftAssetId)) {
           const contentfulAssetId = assetMap.get(craftAssetId).id;
           resourceFields.resourceCardImage = {
             [LOCALE]: {
@@ -169,7 +169,7 @@ export async function migrateResources(
           };
         } else {
           console.warn(
-            `   ⚠️ Asset ${craftAssetId} not found in map, skipping link for resourceCardImage.`,
+            `   ⚠️ Asset ${craftAssetId} not in map, skipping resourceCardImage (omit to avoid notResolvable).`,
           );
         }
       }
@@ -180,7 +180,7 @@ export async function migrateResources(
         const craftAssetId = String(
           item.resourceBannerImage?.[0] || item.resourceBannerBackground?.[0],
         );
-        if (assetMap && assetMap.has(craftAssetId)) {
+        if (assetMap?.has(craftAssetId)) {
           const contentfulAssetId = assetMap.get(craftAssetId).id;
           resourceFields.resourceBannerImage = {
             [LOCALE]: {
@@ -189,13 +189,13 @@ export async function migrateResources(
           };
         } else {
           console.warn(
-            `   ⚠️ Asset ${craftAssetId} not found in map, skipping link for resourceBannerImage.`,
+            `   ⚠️ Asset ${craftAssetId} not in map, skipping resourceBannerImage (omit to avoid notResolvable).`,
           );
         }
       }
       if (item.resourceDocument && item.resourceDocument[0]) {
         const craftAssetId = String(item.resourceDocument[0]);
-        if (assetMap && assetMap.has(craftAssetId)) {
+        if (assetMap?.has(craftAssetId)) {
           const contentfulAssetId = assetMap.get(craftAssetId).id;
           resourceFields.resourceDocument = {
             [LOCALE]: {
@@ -204,24 +204,16 @@ export async function migrateResources(
           };
         } else {
           console.warn(
-            `   ⚠️ Asset ${craftAssetId} not found in map, skipping link for resourceDocument.`,
+            `   ⚠️ Asset ${craftAssetId} not in map, skipping resourceDocument (omit to avoid notResolvable).`,
           );
         }
       }
       if (item.resourceVideo && item.resourceVideo[0]) {
         const craftAssetId = String(item.resourceVideo[0]);
-        if (assetMap && assetMap.has(craftAssetId)) {
-          const contentfulAssetId = assetMap.get(craftAssetId).id;
-          resourceFields.resourceVideo = {
-            [LOCALE]: {
-              sys: { type: "Link", linkType: "Asset", id: contentfulAssetId },
-            },
-          };
-        } else {
-          console.warn(
-            `   ⚠️ Asset ${craftAssetId} not found in map, skipping link for resourceVideo.`,
-          );
-        }
+        console.warn(
+          `   ⚠️ resourceVideo (asset ${craftAssetId}) skipped: link requires resolvable "asset" Entry (not set to avoid notResolvable).`,
+        );
+        resourceFields.resourceVideo = { [LOCALE]: null };
       }
 
       if (item.tags) {
@@ -264,7 +256,14 @@ export async function migrateResources(
         resourcesFields: { [LOCALE]: makeLink(resourceFieldsEntry.sys.id) },
       };
 
-      // 3.1 Create modular content (resourceContent)
+      if (item.postDate) {
+        const d = new Date(item.postDate);
+        if (!isNaN(d.getTime())) {
+          mainFields.postDate = { [LOCALE]: d.toISOString().slice(0, 10) };
+        }
+      }
+
+      // 3.1 Create modular content (sections = "Resource Content" in Contentful)
       const sectionEntries = [];
       if (item.mixedContent) {
         const mcIdx = pageSegment.indexOf('"mixedContent":');
@@ -337,32 +336,13 @@ export async function migrateResources(
         }
       }
       if (sectionEntries.length > 0) {
-        mainFields.resourceContent = { [LOCALE]: sectionEntries };
+        mainFields.sections = { [LOCALE]: sectionEntries };
       }
 
       // 3.2 Handle SEO
       const seoEntry = await getOrCreateSeo(env, item, assetMap);
       if (seoEntry) {
         mainFields.seo = { [LOCALE]: makeLink(seoEntry.sys.id) };
-      }
-
-      // 3.3 Create Resource Settings (cptSettings)
-      const settingsFields = {
-        pageSetting: { [LOCALE]: `Settings: ${item.title}` },
-        showAnnouncementTop: { [LOCALE]: false },
-        showAnnouncementBottom: { [LOCALE]: false },
-      };
-      const settingsEntry = await upsertEntry(
-        env,
-        "cptSettings",
-        `settings-${item.id}`,
-        settingsFields,
-        shouldPublish,
-      );
-      if (settingsEntry) {
-        mainFields.resourceSetting = {
-          [LOCALE]: makeLink(settingsEntry.sys.id),
-        };
       }
 
       const metadata = { concepts: [], tags: [] };
@@ -436,58 +416,16 @@ export async function migrateResources(
           ? null
           : metadata;
 
-      if (item.typeId === 23) {
-        // Webinar Specific
-        mainFields.resourceFields = mainFields.resourcesFields; // Field ID is slightly different in schema for webinars
-        delete mainFields.resourcesFields;
-
-        mainFields.includeIsc2Info = { [LOCALE]: !!item.includeIsc2Info };
-        mainFields.publicEvent = { [LOCALE]: !!item.publicEvent };
-        mainFields.eloquaCampaignId = {
-          [LOCALE]: String(item.eloquaCampaignId || ""),
-        };
-
-        if (item.people && item.people.length > 0) {
-          mainFields.authorsHosts = {
-            [LOCALE]: makeLink(`person-${item.people[0]}`),
-          };
-        }
-
-        if (item.eventStartDate)
-          mainFields.eventStartDate = { [LOCALE]: item.eventStartDate };
-        if (item.startDateTime)
-          mainFields.startDateTime = { [LOCALE]: item.startDateTime };
-        if (item.endDateTime)
-          mainFields.endDateTime = { [LOCALE]: item.endDateTime };
-
-        if (item.thirdPartyUrl)
-          mainFields.thirdPartyUrl = { [LOCALE]: String(item.thirdPartyUrl) };
-        if (webcastInfoIds.length > 0) {
-          mainFields.webcastInfo = {
-            [LOCALE]: webcastInfoIds.map((id) => makeLink(id)),
-          };
-        }
-
-        await upsertEntry(
-          env,
-          "resourceWebinarsCpt",
-          `webinar-${item.id}`,
-          mainFields,
-          shouldPublish,
-          finalMetadata,
-        );
-      } else {
-        // Standard Resource
-        mainFields.resourceType = { [LOCALE]: typeLabel };
-        await upsertEntry(
-          env,
-          "resourcesCpt",
-          `resource-${item.id}`,
-          mainFields,
-          shouldPublish,
-          finalMetadata,
-        );
-      }
+      // All items (including former webinars) → resourcesCpt only; resourceWebinarsCpt no longer used
+      mainFields.resourceType = { [LOCALE]: typeLabel };
+      await upsertEntry(
+        env,
+        "resourcesCpt",
+        `resource-${item.id}`,
+        mainFields,
+        shouldPublish,
+        finalMetadata,
+      );
 
       console.log(
         `✅ ${typeLabel} "${item.title}" migrated (${shouldPublish ? "Published" : "Draft"}).`,
