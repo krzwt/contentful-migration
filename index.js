@@ -82,11 +82,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneContent",
   //   label: "Standalone Content",
   // },
-  {
-    file: "./data/standalone-conversion.json",
-    pageContentType: "newStandaloneConversion",
-    label: "Standalone Conversion",
-  },
+  // {
+  //   file: "./data/standalone-conversion.json",
+  //   pageContentType: "newStandaloneConversion",
+  //   label: "Standalone Conversion",
+  // },
   // {
   //   file: "./data/standalone-microsite.json",
   //   pageContentType: "newStandaloneMicrosite",
@@ -152,11 +152,11 @@ const DATA_SOURCES = [
   //   label: "Forms Import",
   //   isForms: true
   // },
-  // {
-  //   file: "./data/new-press&media.json",
-  //   label: "Press & Media",
-  //   isPressMedia: true,
-  // },
+  {
+    file: "./data/new-press&media.json",
+    label: "Press & Media",
+    isPressMedia: true,
+  },
   // {
   //   file: "./data/new-blog.json",
   //   label: "Blog CPT",
@@ -268,18 +268,29 @@ async function run() {
       }
     } else {
       const start = (fromArg || 1) - 1;
-      const end = toArg ? Math.min(toArg, data.length) : data.length;
+      let end = toArg ? Math.min(toArg, data.length) : data.length;
+      // If --from/--to produce no range (e.g. --to 0 or --from 2 --to 1), process at least one page
+      if (end <= start && (fromArg != null || toArg != null)) {
+        end = Math.min(start + 1, data.length);
+      }
       for (let i = start; i < end; i++) targetIndices.push(i);
     }
 
     const batchData = targetIndices.map((idx) => data[idx]);
+    if (batchData.length === 0) {
+      console.log(`\n⚠️ "${source.label}" — no entries in range. Skipping.`);
+      continue;
+    }
 
     console.log("\n" + "=".repeat(50));
     const rangeStr = idArg
       ? `ID: ${idArg}`
-      : `pages ${targetIndices[0] + 1} - ${targetIndices[targetIndices.length - 1] + 1}`;
+      : targetIndices.length > 0
+        ? `pages ${targetIndices[0] + 1} - ${targetIndices[targetIndices.length - 1] + 1}`
+        : `no range (--from/--to may be invalid)`;
+    const destLabel = source.pageContentType || source.label || "entries";
     console.log(
-      `📂 Processing: ${source.label} (${rangeStr} of ${data.length} → ${source.pageContentType || "People"})`,
+      `📂 Processing: ${source.label} (${rangeStr} of ${data.length} → ${destLabel})`,
     );
     console.log("=".repeat(50));
 

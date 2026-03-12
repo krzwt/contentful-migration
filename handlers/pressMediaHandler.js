@@ -27,6 +27,7 @@ const ENTRY_TYPE_MAP = {
   148: "Listing", // pressListing
   149: "Media Coverage", // mediaCoverage
   150: "Media Assets", // mediaAssets
+  151: "Boilerplate",
 };
 
 // Load Press & Media Categories for mapping
@@ -149,7 +150,10 @@ export async function migratePressMedia(
           (bType === "mainBannerPress"
             ? { handler: createOrUpdatePressBanner }
             : null) ||
-          (bType === "assetGrid" ? { handler: createOrUpdateAssetGrid } : null);
+          (bType === "assetGrid" ? { handler: createOrUpdateAssetGrid } : null) ||
+          (bType === "contentSummary"
+            ? { handler: createOrUpdateContentSummary }
+            : null);
 
         if (config) {
           console.log(
@@ -179,6 +183,11 @@ export async function migratePressMedia(
               innerFIdx,
               nextPIdx === -1 ? undefined : nextPIdx,
             );
+          }
+
+          // Pass full block for contentSummary (needs list.listing structure)
+          if (bType === "contentSummary") {
+            handlerData.list = block.fields.list;
           }
 
           if (config.handler === genericComponentHandler) {
@@ -256,6 +265,35 @@ export async function migratePressMedia(
       abstract: { [LOCALE]: item.abstract || "" },
       addFeaturedToListing: { [LOCALE]: !!item.switch },
     };
+
+    // Post Date (Contentful Date: YYYY-MM-DD)
+    if (item.postDate) {
+      const d = new Date(item.postDate);
+      if (!isNaN(d.getTime())) {
+        cfFields.postDate = {
+          [LOCALE]: d.toISOString().slice(0, 10),
+        };
+      }
+    }
+
+    // Legacy Link (Symbol) – set if source has legacyUrl or legacyLink
+    const legacyUrl =
+      item.legacyLink ||
+      (item.legacyUrl && typeof item.legacyUrl === "string" ? item.legacyUrl : null);
+    if (legacyUrl) {
+      cfFields.legacyLink = { [LOCALE]: unwrapUrl(legacyUrl) };
+    }
+
+    // Boilerplate (RichText) – for Entry Type "Boilerplate", map bodyRedactorRestricted
+    if (entryType === "Boilerplate" && item.bodyRedactorRestricted) {
+      try {
+        cfFields.boilerplate = {
+          [LOCALE]: await convertHtmlToRichText(env, item.bodyRedactorRestricted),
+        };
+      } catch (err) {
+        console.warn(`   ⚠️ Boilerplate rich text conversion failed: ${err.message}`);
+      }
+    }
 
     if (mediaContactLink)
       cfFields.mediaContact = { [LOCALE]: mediaContactLink };
@@ -380,6 +418,8 @@ export async function createOrUpdatePressBanner(
           ? "Banner Slim"
           : "Banner Media Right",
     },
+    // "Stack heading and body?" – from Craft mainBannerPress block field "switch"
+    stackHeadingAndBody: { [LOCALE]: !!bannerData.switch },
   };
 
   // Handle CTA if present
@@ -400,6 +440,84 @@ export async function createOrUpdatePressBanner(
   }
 
   return await upsertEntry(env, CT, `banner-${bannerData.blockId}`, fields);
+}
+
+/**
+ * Handler for contentSummary (Details Content - Press bullet list).
+ * Craft: block.fields.list.<key>.fields.listing.<id> = { type: "listItem", fields: { item: "..." } }
+ * Contentful: contentSummary has bulletPoint (Array of Link → listing, max 4). listing has item (Symbol).
+ */
+export async function createOrUpdateContentSummary(
+  env,
+  blockData,
+  assetMap = null,
+  summary = null,
+) {
+  const CT_SUMMARY = "contentSummary";
+  const CT_LISTING = "listing";
+  const blockId = String(blockData.blockId || "");
+  if (!blockId || !env) return null;
+
+  const listData = blockData.list;
+  if (!listData || typeof listData !== "object") {
+    console.warn(`   ⚠️ contentSummary ${blockId}: no list data`);
+    return null;
+  }
+
+  const firstListKey = Object.keys(listData)[0];
+  const listNode = firstListKey && listData[firstListKey];
+  const listingObj =
+    listNode?.fields?.listing && typeof listNode.fields.listing === "object"
+      ? listNode.fields.listing
+      : null;
+  if (!listingObj) {
+    console.warn(`   ⚠️ contentSummary ${blockId}: no listing items`);
+    return null;
+  }
+
+  const listingIds = Object.keys(listingObj)
+    .filter((k) => listingObj[k].enabled !== false)
+    .sort((a, b) => Number(a) - Number(b));
+  const itemTexts = listingIds
+    .map((id) => listingObj[id].fields?.item)
+    .filter((t) => t != null && String(t).trim() !== "");
+  const maxItems = 4;
+  const textsToMigrate = itemTexts.slice(0, maxItems);
+
+  const bulletLinks = [];
+  for (let i = 0; i < textsToMigrate.length; i++) {
+    const listingEntryId = `listing-${blockId}-${i}`;
+    const listingEntry = await upsertEntry(
+      env,
+      CT_LISTING,
+      listingEntryId,
+      { item: { [LOCALE]: String(textsToMigrate[i]).trim() } },
+      true,
+    );
+    if (listingEntry?.sys?.id) {
+      bulletLinks.push(makeLink(listingEntry.sys.id));
+    }
+  }
+
+  if (bulletLinks.length === 0) {
+    console.warn(`   ⚠️ contentSummary ${blockId}: no listing entries created`);
+    return null;
+  }
+
+  const summaryEntryId = `contentSummary-${blockId}`;
+  const summaryFields = {
+    blockId: { [LOCALE]: blockId },
+    blockName: { [LOCALE]: blockData.blockName || "Content Summary" },
+    bulletPoint: { [LOCALE]: bulletLinks },
+  };
+  const entry = await upsertEntry(
+    env,
+    CT_SUMMARY,
+    summaryEntryId,
+    summaryFields,
+    true,
+  );
+  return entry;
 }
 
 /**
