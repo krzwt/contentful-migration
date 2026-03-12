@@ -102,5 +102,6 @@ export const COMPONENTS = {
   homeHero: { handler: createOrUpdateHero }, // Maps to bannerHero
   embeds: { handler: createOrUpdateMediaBlock }, // Maps to mediaBlock
   form: { mapping: formMapping, handler: genericComponentHandler }, // Mapping needs contentType="formComponent"
-  nonMarketingGetNotifiedForm: { mapping: nonMarketingGetNotifiedFormMapping, handler: genericComponentHandler } // Mapping needs contentType="formComponent"
+  nonMarketingGetNotifiedForm: { mapping: nonMarketingGetNotifiedFormMapping, handler: genericComponentHandler }, // Mapping needs contentType="formComponent"
+  contactForm: { mapping: nonMarketingGetNotifiedFormMapping, handler: genericComponentHandler } // Reuse same mapping → formComponent
 };

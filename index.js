@@ -82,11 +82,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneContent",
   //   label: "Standalone Content",
   // },
-  // {
-  //   file: "./data/standalone-conversion.json",
-  //   pageContentType: "newStandaloneConversion",
-  //   label: "Standalone Conversion",
-  // },
+  {
+    file: "./data/standalone-conversion.json",
+    pageContentType: "newStandaloneConversion",
+    label: "Standalone Conversion",
+  },
   // {
   //   file: "./data/standalone-microsite.json",
   //   pageContentType: "newStandaloneMicrosite",
@@ -181,11 +181,11 @@ const DATA_SOURCES = [
   //   label: "Video CPT",
   //   isVideos: true,
   // },
-  {
-    file: "./data/NEW-Webinars.json",
-    label: "Webinar CPT",
-    isWebinars: true,
-  },
+  // {
+  //   file: "./data/NEW-Webinars.json",
+  //   label: "Webinar CPT",
+  //   isWebinars: true,
+  // },
   // {
   //   file: "./data/NEW-Research.json",
   //   label: "Research CPT",

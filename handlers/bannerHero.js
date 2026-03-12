@@ -1,5 +1,6 @@
 import { convertHtmlToRichText } from "../utils/richText.js";
 import { upsertCta, upsertAssetWrapper, makeLink, upsertEntry } from "../utils/contentfulHelpers.js";
+import { createOrUpdateFormComponent } from "./formComponent.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "bannerHero";
@@ -128,6 +129,10 @@ export async function createOrUpdateHero(env, heroData, assetMap = null) {
   // 3. FORM SUPPORT
   // For page 1372587 (Block 1372588), the user specifically wants to link "SRA Trial Form - Legacy Form"
   const SITE_FORM_ID = "3aenoKrEbPbjQsmmAR7jfF"; // Manually created "SRA Trial Form - Legacy Form"
+  const GENERIC_FORM_VERSION_TO_EMBED_ENTRYID = {
+    // Craft "Contact Form" banner variant → ContactSalesForm embed
+    bannerContactForm: "ContactSalesForm",
+  };
 
   if (heroData.blockId === "1372588") {
     console.log(`   🧪 Applying SRA Trial Form link for block 1372588`);
@@ -163,9 +168,50 @@ export async function createOrUpdateHero(env, heroData, assetMap = null) {
       console.warn(`   ⚠️ Skipping broken SRA Form link for block 1372588 (Entry not published or missing)`);
       fields.mainBannerForm = { [LOCALE]: null }; // Explicitly clear if broken
     }
-  } else if (heroData.mainBannerForm && heroData.mainBannerForm.length > 0) {
-    // Generic logic for other forms if found in source
-    console.log(`   📝 Found form in source for block ${heroData.blockId} (implementation pending)`);
+  } else if (heroData.mainBannerForm && typeof heroData.mainBannerForm === "object") {
+    // Generic logic for other forms: create a formComponent and link it here.
+    console.log(
+      `   📝 Found form in source for block ${heroData.blockId} – creating Form Component for bannerHero.mainBannerForm`,
+    );
+
+    const formBlocks = heroData.mainBannerForm;
+    const formIds = Object.keys(formBlocks || {});
+
+    for (const fId of formIds) {
+      const fBlock = formBlocks[fId];
+      if (!fBlock || !fBlock.enabled) continue;
+      const fFields = fBlock.fields || {};
+
+      try {
+        const mappedEmbedEntryId =
+          GENERIC_FORM_VERSION_TO_EMBED_ENTRYID[fFields.version || ""] || null;
+
+        const formEntry = await createOrUpdateFormComponent(env, {
+          blockId: fId,
+          blockName: fFields.blockName || "Main Banner Form",
+          redirectUrl: fFields.redirectUrl,
+          salesforceCampaignId: fFields.salesforceCampaignId,
+          product: fFields.product,
+          // Standalone pages are currently EN-only
+          lang: "EN",
+          // Select the appropriate embedFormsCpt by entryId, based on Craft form version
+          selectFormEntryId: mappedEmbedEntryId,
+        });
+
+        if (formEntry && formEntry.sys && formEntry.sys.id) {
+          fields.mainBannerForm = {
+            [LOCALE]: {
+              sys: { type: "Link", linkType: "Entry", id: formEntry.sys.id },
+            },
+          };
+          break;
+        }
+      } catch (err) {
+        console.warn(
+          `   ⚠ Error creating banner main form component for block ${fId}: ${err.message}`,
+        );
+      }
+    }
   }
 
   let entry;
