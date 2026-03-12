@@ -43,6 +43,7 @@ import { createOrUpdateSimpleList } from "./handlers/simpleList.js";
 import { createOrUpdateStackedPhotoBlock } from "./handlers/stackedPhotoBlock.js";
 import { createOrUpdateCallOutCradle } from "./handlers/callOutCradle.js";
 import { createOrUpdateCallsToActionBlock } from "./handlers/callsToActionBlock.js";
+import { createOrUpdatePageSection } from "./handlers/pageSection.js";
 // Removed ctaBlock and contentCta handlers in favor of calloutBar
 
 
@@ -103,6 +104,7 @@ export const COMPONENTS = {
   stackedPhotoBlock: { handler: createOrUpdateStackedPhotoBlock },
   calloutCradle: { handler: createOrUpdateCallOutCradle },
   callsToAction: { handler: createOrUpdateCallsToActionBlock },
+  pageSection: { handler: createOrUpdatePageSection },
 
 
 

@@ -19,7 +19,7 @@ Allowed section types in schema: `simpleList`, `stackedPhotoBlock`, `pageSection
 | 5 | **reviewTombstones** | ❌ No | tombstones? | Needs handler or alias to tombstones |
 | 6 | **simpleList** | ✅ Yes | simpleList | Mapped → createOrUpdateSimpleList |
 | 7 | **stackedPhotoBlock** | ✅ Yes | stackedPhotoBlock | Mapped → createOrUpdateStackedPhotoBlock |
-| 8 | **pageSection** | ❌ No | pageSection | Needs handler |
+| 8 | **pageSection** | ✅ Yes | pageSection | Mapped → createOrUpdatePageSection |
 | 9 | **calloutCradle** | ✅ Yes | callOutCradle | Mapped → createOrUpdateCallOutCradle |
 | 10 | **callsToAction** | ✅ Yes | callsToAction | Mapped → createOrUpdateCallsToActionBlock |
 | 11 | **checkmarkList** | ❌ No | checkmarkList | Needs handler |
@@ -40,10 +40,10 @@ Allowed section types in schema: `simpleList`, `stackedPhotoBlock`, `pageSection
 
 ## Summary
 
-- **Mapped (8):** contentBlock, quote, logoList, callout, simpleList, stackedPhotoBlock, calloutCradle, callsToAction  
-- **Not mapped (15):** reviewTombstones, pageSection, checkmarkList, codeBlock, comparisonChart, coverPhotoSection, detailedList, events, image, resources, text, tombstones, twoColumnBlockLists, video, footnotes  
+- **Mapped (9):** contentBlock, quote, logoList, callout, simpleList, stackedPhotoBlock, calloutCradle, callsToAction, pageSection  
+- **Not mapped (14):** reviewTombstones, checkmarkList, codeBlock, comparisonChart, coverPhotoSection, detailedList, events, image, resources, text, tombstones, twoColumnBlockLists, video, footnotes  
 
-To migrate all test components you need to add **handlers (and optionally mappings)** for the 15 unmapped types, and ensure the Resources CPT field name matches the handler (code uses `resourceContent`; confirm it matches the Contentful field, e.g. `sections` or `resourceContent`).
+To migrate all test components you need to add **handlers (and optionally mappings)** for the 14 unmapped types, and ensure the Resources CPT field name matches the handler (code uses `resourceContent`; confirm it matches the Contentful field, e.g. `sections` or `resourceContent`).
 
 ## Run test resource (single entry)
 
