@@ -228,7 +228,7 @@ export async function migrateResources(
           "tags",
           `tags-entry-${item.id}`,
           { tags: { [LOCALE]: tagsString } },
-          shouldPublish,
+          true,
         );
 
         if (tagsEntry) {
@@ -241,7 +241,7 @@ export async function migrateResources(
         "resourcesFields",
         `rf-${item.id}`,
         resourceFields,
-        shouldPublish,
+        true,
       );
 
       if (!resourceFieldsEntry) {
@@ -304,28 +304,30 @@ export async function migrateResources(
                 componentEntry = await env.getEntry(entryId);
               }
             } else {
-              componentEntry = await config.handler(
-                env,
-                {
-                  blockId: blockId,
-                  blockSegment: blockSegment,
-                  ...fields,
-                  // Use common field mappings to match standard handlers
-                  heading: fields.blockHeading || fields.headingSection || "",
-                  body:
-                    fields.blockBody ||
-                    fields.body ||
-                    fields.bodyRedactorRestricted ||
-                    "",
-                  label: fields.label || fields.ctaLinkText || "",
-                  variation: type,
-                },
-                assetMap,
-              );
+              const handlerPayload = {
+                blockId: blockId,
+                blockSegment: blockSegment,
+                ...fields,
+                heading: fields.blockHeading || fields.headingSection || "",
+                body:
+                  fields.blockBody ||
+                  fields.body ||
+                  fields.bodyRedactorRestricted ||
+                  "",
+                label: fields.label || fields.ctaLinkText || "",
+                variation: type,
+              };
+              if (type === "contentBlock") {
+                handlerPayload._targetContentType = "contentBlocks";
+              }
+              componentEntry = await config.handler(env, handlerPayload, assetMap);
             }
 
             if (componentEntry) {
-              sectionEntries.push(makeLink(componentEntry.sys.id));
+              const entries = Array.isArray(componentEntry) ? componentEntry : [componentEntry];
+              for (const e of entries) {
+                if (e?.sys?.id) sectionEntries.push(makeLink(e.sys.id));
+              }
             }
           } catch (err) {
             console.error(
