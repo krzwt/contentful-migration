@@ -50,7 +50,16 @@ const STYLE_MAP = {
   "button btn-solid-orange": "Solid Orange",
   "text": "Text Only",
   "text only": "Text Only",
+  "textonly": "Text Only",
+  "text-only": "Text Only",
+  "gray": "Gray",
+  "white": "White",
+  "orange": "Orange",
+  "solid orange": "Solid Orange",
+  "solidorange": "Solid Orange",
 };
+
+const ALLOWED_STYLES = ["Text Only", "Gray", "White", "Orange", "Solid Orange"];
 
 function normalizeLayout(value) {
   if (!value) return undefined;
@@ -66,8 +75,9 @@ function normalizeAlignment(value) {
 
 function normalizeStyle(value) {
   if (!value) return undefined;
-  const key = String(value).toLowerCase().trim();
-  return STYLE_MAP[key] || STYLE_MAP[value] || value;
+  const key = String(value).toLowerCase().trim().replace(/\s+/g, "");
+  const mapped = STYLE_MAP[key] || STYLE_MAP[String(value).toLowerCase().trim()] || value;
+  return ALLOWED_STYLES.includes(mapped) ? mapped : STYLE_MAP["button"];
 }
 
 export async function createOrUpdateCallsToActionBlock(env, blockData, assetMap = null) {

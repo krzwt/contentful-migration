@@ -112,8 +112,8 @@ const DATA_SOURCES = [
   //   isQuotes: true
   // },
   {
-    // file: "./data/resources-cpt.json",
-    file: "./data/test-resources-cpt.json",
+    file: "./data/resources-cpt.json",
+    // file: "./data/test-resources-cpt.json",
     label: "Resources CPT",
     isResources: true
   }
