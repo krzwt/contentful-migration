@@ -88,7 +88,7 @@ export async function processTags(env, craftTagIds) {
     if (!tag) {
       if (tagCreationLimitReached) {
         console.warn(
-          `   ⚠️ Tag limit reached. Skipping creation of: "${tagName}" (${tagId})`,
+          `   ⚠️ Contentful tag quota reached (usageExceeded). Skipping creation of: "${tagName}" (${tagId}). Existing tags are still linked.`,
         );
         continue;
       }
@@ -104,7 +104,7 @@ export async function processTags(env, craftTagIds) {
           tag = await env.getTag(tagId);
         } else if (errStr.includes("usageExceeded") || errStr.includes("403")) {
           console.warn(
-            `   🛑 Tag usage limit reached. Stopping further tag creations.`,
+            `   🛑 Contentful tag quota reached (usageExceeded/403). No more new tags will be created this run. Existing tags will still be linked.`,
           );
           tagCreationLimitReached = true;
           continue; // Skip adding this tag to the content

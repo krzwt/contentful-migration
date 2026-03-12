@@ -1,11 +1,7 @@
 import { LOCALE, getOrCreateSeo, safeId } from "./pageHandler.js";
 import { upsertEntry, makeLink, ensurePublished } from "../utils/contentfulHelpers.js";
 import { getCategoryName, getCategory } from "../utils/categoryLoader.js";
-import {
-  processTags,
-  loadTagMapping,
-  getTagNames,
-} from "../utils/tagHandler.js";
+import { loadTagMapping, getTagNames } from "../utils/tagHandler.js";
 import { COMPONENTS } from "../registry.js";
 import { genericComponentHandler } from "./genericComponent.js";
 import { getOrderedKeys } from "../utils/jsonOrder.js";
@@ -404,12 +400,8 @@ export async function migrateResources(
         }
       }
 
-      // 5. Build Environment Tags metadata
-      if (item.tags) {
-        const contentfulTags = await processTags(env, item.tags);
-        // Contentful has a limit of 100 tags per entry
-        metadata.tags = contentfulTags.slice(0, 100);
-      }
+      // Tags: use only the Tags field (resourcesFields.tags → tags entry with comma-separated names).
+      // Do not use Contentful default Environment Tags (metadata.tags) to avoid quota limits.
 
       // Cleanup empty metadata
       // Contentful API requires the 'tags' property to be present if 'metadata' is sent, even if empty.

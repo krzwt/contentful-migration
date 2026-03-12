@@ -44,14 +44,14 @@ export async function createOrUpdateStackedPhotoBlock(env, blockData, assetMap =
 
   const blockId = blockData.blockId;
 
-  // Block image: single asset link (from map or fallback asset-{craftId} if asset exists in Contentful)
+  // Block image: only set when asset exists in assetMap to avoid notResolvable on publish
   let blockImageLink = null;
-  const blockImageIds = blockData.blockImage;
-  if (Array.isArray(blockImageIds) && blockImageIds.length > 0) {
-    const craftAssetId = String(blockImageIds[0]);
-    const contentfulAssetId =
-      assetMap?.get(craftAssetId)?.id ?? `asset-${craftAssetId}`;
-    blockImageLink = { sys: { type: "Link", linkType: "Asset", id: contentfulAssetId } };
+  const blockImageIds = Array.isArray(blockData.blockImage) ? blockData.blockImage : (blockData.blockImage ? [blockData.blockImage] : []);
+  const craftAssetId = blockImageIds[0] != null ? String(blockImageIds[0]) : null;
+  if (craftAssetId && assetMap?.get(craftAssetId)?.id) {
+    blockImageLink = { sys: { type: "Link", linkType: "Asset", id: assetMap.get(craftAssetId).id } };
+  } else if (blockImageIds.length > 0) {
+    blockImageLink = null; // clear invalid link on update
   }
 
   // CTAs: create cta entries and link
@@ -97,6 +97,8 @@ export async function createOrUpdateStackedPhotoBlock(env, blockData, assetMap =
   }
   if (blockImageLink) {
     fields.blockImage = { [LOCALE]: blockImageLink };
+  } else if (blockImageIds.length > 0) {
+    fields.blockImage = { [LOCALE]: null };
   }
 
   return await upsertEntry(
