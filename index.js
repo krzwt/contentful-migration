@@ -21,6 +21,9 @@ import { migrateBlogs } from "./handlers/blogHandler.js";
 import { migrateAnnouncements } from "./handlers/announcementHandler.js";
 import { migrateUsers } from "./handlers/userHandler.js";
 import { migrateEvents } from "./handlers/eventHandler.js";
+import { migrateVideos } from "./handlers/videoHandler.js";
+import { migrateWebinars } from "./handlers/webinarHandler.js";
+import { migrateResearch } from "./handlers/researchHandler.js";
 import { genericComponentHandler } from "./handlers/genericComponent.js";
 import { logAssets, extractAssets } from "./utils/assetDetector.js";
 import {
@@ -73,12 +76,12 @@ const effectiveDryRun = isDryRun || cliDryRun;
    Each source defines its JSON file and Contentful page type
 --------------------------------------------------------- */
 const DATA_SOURCES = [
-  {
-    file: "./data/standalone-content.json",
-    // file: "./data/test-sc.json",
-    pageContentType: "newStandaloneContent",
-    label: "Standalone Content",
-  },
+  // {
+  //   file: "./data/standalone-content.json",
+  //   // file: "./data/test-sc.json",
+  //   pageContentType: "newStandaloneContent",
+  //   label: "Standalone Content",
+  // },
   // {
   //   file: "./data/standalone-conversion.json",
   //   pageContentType: "newStandaloneConversion",
@@ -173,6 +176,20 @@ const DATA_SOURCES = [
   //   file: "./data/events.json",
   //   label: "Events",
   //   isEvents: true
+  // {
+  //   file: "./data/NEW-Video.json",
+  //   label: "Video CPT",
+  //   isVideos: true,
+  // },
+  {
+    file: "./data/NEW-Webinars.json",
+    label: "Webinar CPT",
+    isWebinars: true,
+  },
+  // {
+  //   file: "./data/NEW-Research.json",
+  //   label: "Research CPT",
+  //   isResearch: true,
   // },
 ];
 
@@ -755,6 +772,42 @@ async function run() {
 
     if (source.isEvents) {
       await migrateEvents(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent,
+      );
+    }
+
+    if (source.isVideos) {
+      await migrateVideos(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent,
+      );
+    }
+
+    if (source.isWebinars) {
+      await migrateWebinars(
+        env,
+        batchData,
+        contentfulAssetMap,
+        targetIndices,
+        totalPages,
+        summary,
+        rawFileContent,
+      );
+    }
+
+    if (source.isResearch) {
+      await migrateResearch(
         env,
         batchData,
         contentfulAssetMap,

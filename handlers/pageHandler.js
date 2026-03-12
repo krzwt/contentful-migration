@@ -481,7 +481,12 @@ export async function setSectionsOnPage(env, pageEntry, sectionEntries) {
       }
     }));
 
-    console.log(`\n📋 Setting ${links.length} sections on page "${pageEntry.fields.title[LOCALE]}" (in order)`);
+    console.log(`\n📋 Setting ${links.length} sections on page "${pageEntry.fields?.title?.[LOCALE] || 'Untitled'}" (in order)`);
+
+    if (!env) {
+      console.log(`   [DRY RUN] Would link ${links.length} sections to page.`);
+      return pageEntry;
+    }
 
     // Auto-detect the sections field
     const contentTypeId = pageEntry.sys.contentType?.sys?.id || "";

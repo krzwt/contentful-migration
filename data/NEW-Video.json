@@ -1,0 +1,3390 @@
+[
+    {
+        "sectionId": 77,
+        "postDate": "2024-09-03T14:54:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 75866,
+        "id": 2014551,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "9607163c-07f7-4baa-b1ed-f93b7f0b788f",
+        "siteSettingsId": 2726173,
+        "fieldLayoutId": null,
+        "structureId": 365015,
+        "contentId": 1204851,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Identity Security Insights Demo",
+        "slug": "identity-security-insights-demo",
+        "uri": "resources/videos/identity-security-insights-demo",
+        "dateCreated": "2024-09-03T14:54:59-05:00",
+        "dateUpdated": "2025-10-06T15:44:54-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654266,
+        "lft": 6,
+        "rgt": 7,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2014551,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newVideo/identity-security-insights-demo",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/videos/identity-security-insights-demo",
+        "authorId": 75866,
+        "typeId": 163,
+        "mainBannerResources": {
+            "2014552": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Identity Security Insights Demo",
+                    "bodyRedactorRestricted": "<p>See how Identity Security Insights® can help you gain the visibility and context you need to protect your entire identity estate.</p>",
+                    "resourceBannerImage": [
+                        1834407
+                    ],
+                    "switch": false,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2014605": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Identity Security Insights Product Features",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p><span dir=\"ltr\">See how simple it is to gain a complete view of your interconnected identity landscape, just like an attacker.</span><br /></p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": {
+                        "2014801": {
+                            "type": "grid",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "item": {
+                                    "2014802": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                501172
+                                            ],
+                                            "heading": "Unified Identity Insights Dashboard",
+                                            "body": "Gain a complete view of identity security posture—identities, accounts, effective privileges, escalation paths, and threats from a single lens.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2014803": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                501177
+                                            ],
+                                            "heading": "AI/ML-based Detections & Recommendations",
+                                            "body": "Proactively detect the abuse of privileges and identity infrastructure. Leverage context-rich recommendations to understand and remediate risks.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2014959": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                501158
+                                            ],
+                                            "heading": "Seamless Enterprise Security Integrations",
+                                            "body": "Leverage out-of-the-box integrations with SIEM, SOAR, and ITSM for further correlation and response, or build custom integrations for extensibility.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2014960": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                501173
+                                            ],
+                                            "heading": "Pre-built Reports with Quick Insights",
+                                            "body": "Further analyze non-human accounts, effective privileges, local accounts, endpoint access, risky SSH keys, policy deviations, and trends.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2014961": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                501157
+                                            ],
+                                            "heading": "Visualized Paths to Privilege™",
+                                            "body": "See how attackers can exploit obscure interconnections between accounts, privileges, and configurations across identity estate to escalate privileges.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2014962": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                501180
+                                            ],
+                                            "heading": "Integrated PAM Controls",
+                                            "body": "Use PAM controls like Just-in-Time access to proactively eliminate excessive privileges, block vendor and guest accounts, and enforce least privilege.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2014963": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                501123
+                                            ],
+                                            "heading": "Quick Deployment and Results",
+                                            "body": "Get up and running in less than an hour with native connectors. Gain actionable findings paired with rich context, within a day.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2014964": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                501096
+                                            ],
+                                            "heading": "Intelligent, Cloud-Native Platform",
+                                            "body": "Leverage a cloud-native, data-driven platform. Gain broad visibility, deep context, and advanced analysis to stop sophisticated identity threats.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "2014606": {
+                "type": "logoList",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "BeyondTrust is Trusted by 20,000+ Companies",
+                    "logoList": {
+                        "2014607": {
+                            "type": 97,
+                            "fields": {
+                                "logos": {
+                                    "2014608": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                543060
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "2014609": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                543066
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "2014610": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                543064
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "2014611": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                1217700
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "2014612": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                543063
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "2014613": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                543062
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "2014614": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                423074
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    },
+                                    "2014615": {
+                                        "type": "logo",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "logo": [
+                                                505480
+                                            ],
+                                            "logoLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                            "caption": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "gridSize": "1",
+                    "logoBackground": "grey"
+                }
+            }
+        },
+        "resourceVideo": [
+            876125
+        ],
+        "signupRequired": true,
+        "modalFormsResources": {
+            "2014634": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Watch Demo",
+                    "bodyMedium": "Watch a recorded demo of Identity Security Insights and gain access to our full collection of product demos.",
+                    "salesforceCampaignId": "7017V000001NG43QAG"
+                }
+            },
+            "2014750": {
+                "type": "RecordedDemo",
+                "enabled": true,
+                "collapsed": false,
+                "level": 2,
+                "fields": {
+                    "redirectUrl": "{\"linkedId\":1959958,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                    "productList": "Identity Security Insights"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837274,
+            43853,
+            1716547
+        ],
+        "tags": [
+            1839720,
+            2014720,
+            2014723,
+            2014724,
+            2014995,
+            2014996,
+            2014997,
+            2014713,
+            2014998,
+            2014999
+        ],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-07-24T08:52:55-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "See how Identity Security Insights can help you gain the visibility and context you need to protect your entire identity estate.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "https://www.beyondtrust.com/products/identity-security-insights/demo",
+                "robots": "noindex",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true,
+                    "robots": true,
+                    "canonicalUrl": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceVideo",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceVideo",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceVideo",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 77,
+        "postDate": "2025-03-18T11:11:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 670521,
+        "id": 2347257,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "8fe8b6b9-5c3c-4c15-ab4b-0af82ae883d1",
+        "siteSettingsId": 3214280,
+        "fieldLayoutId": null,
+        "structureId": 365015,
+        "contentId": 1526135,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Modern PAM Demo",
+        "slug": "modern-pam-demo",
+        "uri": "resources/videos/modern-pam-demo",
+        "dateCreated": "2025-03-18T11:05:59-05:00",
+        "dateUpdated": "2025-05-14T16:36:23-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654266,
+        "lft": 8,
+        "rgt": 9,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2347257,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newVideo/modern-pam-demo",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/videos/modern-pam-demo",
+        "authorId": 670521,
+        "typeId": 163,
+        "mainBannerResources": {
+            "2347258": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Modern PAM Demo",
+                    "bodyRedactorRestricted": "<p>Experience Modern PAM in Action with BeyondTrust.</p>",
+                    "resourceBannerImage": [
+                        2349094
+                    ],
+                    "switch": true,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2347317": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Watch the Modern PAM Demo Video",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>Discover how our one-platform approach will empower you to:</p>\n<ul><li>Gain deep identity risk assessment across your entire cloud and hybrid environment, even across domains</li><li>Uncover hidden risks, privilege paths, and misconfigurations and know how to act on it</li><li>Achieve zero standing privilege by enabling just-in-time (JIT) access across your IT environment</li>\n<li>Secure access from anything to anything</li></ul>",
+                    "ctaLink": "{\"linkedId\":2333865,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"{\\\"target\\\":\\\"_blank\\\"}\",\"type\":\"entry\"}",
+                    "label": "Learn more about Modern PAM",
+                    "contentSubsections": []
+                }
+            }
+        },
+        "resourceVideo": [
+            2346947
+        ],
+        "signupRequired": false,
+        "modalFormsResources": {
+            "2347288": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Null",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "Null"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837274
+        ],
+        "tags": [
+            2211420,
+            1974100,
+            1840189,
+            1839720,
+            1835492,
+            1912584,
+            1955177,
+            1886170,
+            1840336,
+            1842449
+        ],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-03-18T17:49:02-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Modern PAM Demo—a. in-depth video walkthrough of our unified solution.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceVideo",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceVideo",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceVideo",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 77,
+        "postDate": "2025-03-18T15:51:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 670521,
+        "id": 2347326,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "2130cabf-c3da-41b2-845c-dd2a9559af23",
+        "siteSettingsId": 3214509,
+        "fieldLayoutId": null,
+        "structureId": 365015,
+        "contentId": 1526348,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Industry Voices - Kevin Greene",
+        "slug": "industry-voices-kevin-greene",
+        "uri": "resources/videos/industry-voices-kevin-greene",
+        "dateCreated": "2025-03-18T15:39:15-05:00",
+        "dateUpdated": "2025-06-25T15:45:42-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654266,
+        "lft": 10,
+        "rgt": 11,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2347326,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newVideo/industry-voices-kevin-greene",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/videos/industry-voices-kevin-greene",
+        "authorId": 670521,
+        "typeId": 163,
+        "mainBannerResources": {
+            "2347329": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Industry Voices - Kevin Greene",
+                    "bodyRedactorRestricted": "<p>In this Industry Voices segment, we hear from Kevin Greene, <strong>Chief Security Strategist, PubSec, </strong>at BeyondTrust, as he discusses identity security and cybersecurity challenges in the government sector.</p>\n<p>Presented by <strong>GovLoop and</strong><strong> BeyondTrust</strong>.</p>",
+                    "resourceBannerImage": [
+                        2400572
+                    ],
+                    "switch": true,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2347335": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Strengthening Government Cybersecurity: Insights from Kevin Greene of BeyondTrust",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<ul><li>Understand why <strong>identity security is the frontline of defense</strong> against modern cyber threats in government agencies.</li>\n<li>Learn how <strong>zero trust principles</strong> and modern <strong>privileged access management (PAM)</strong> can reduce identity attack surfaces.</li>\n<li>Discover the <strong>role of AI and automation</strong> in securing government environments and enforcing least privilege.</li>\n<li>Explore key <strong>cybersecurity challenges in federal agencies</strong>, including FedRAMP adoption, misconfigurations, and privilege exploitation.</li>\n<li>Hear expert insights on <strong>future trends in cybersecurity</strong>, from quantum computing to software resilience and national defense strategies.</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            }
+        },
+        "resourceVideo": [
+            2346950
+        ],
+        "signupRequired": false,
+        "modalFormsResources": {
+            "2347341": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Null",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "Null"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837274
+        ],
+        "tags": [],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-03-18T15:54:42-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "In this Industry Voices segment, we hear from Kevin Greene at BeyondTrust as he discusses identity security and cybersecurity challenges in the government sector.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceVideo",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceVideo",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceVideo",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 77,
+        "postDate": "2025-06-25T22:05:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 92286,
+        "id": 2400785,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "539c53d2-46c8-441a-82e0-0e760dfb77d7",
+        "siteSettingsId": 3312797,
+        "fieldLayoutId": null,
+        "structureId": 365015,
+        "contentId": 1603762,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "현대적인 PAM으로 오늘날의 아이덴티티 보안 과제에 대응하기",
+        "slug": "현대적인-pam으로-오늘날의-아이덴티티-보안-과제에-대응하기",
+        "uri": "resources/videos/현대적인-pam으로-오늘날의-아이덴티티-보안-과제에-대응하기",
+        "dateCreated": "2025-06-25T22:02:19-05:00",
+        "dateUpdated": "2025-06-25T22:06:48-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654266,
+        "lft": 12,
+        "rgt": 13,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2400785,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newVideo/현대적인-pam으로-오늘날의-아이덴티티-보안-과제에-대응하기",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/videos/현대적인-pam으로-오늘날의-아이덴티티-보안-과제에-대응하기",
+        "authorId": 92286,
+        "typeId": 163,
+        "mainBannerResources": {
+            "2400786": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "현대적인 PAM으로 오늘날의 아이덴티티 보안 과제에 대응하기",
+                    "bodyRedactorRestricted": null,
+                    "resourceBannerImage": [
+                        1834407
+                    ],
+                    "switch": false,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2400792": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "위험 감소, 비용 절감, 그리고 생산성 최적화",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>오늘날 대부분의 조직은 하이브리드 IT 환경 전반에서 높은 권한을 식별하고 적절한 수준의 접근 권한을 설정하는 데 어려움을 겪고 있습니다. 복잡한 워크플로우를 도입하지 않고 이를 달성하는 것은 말할 것도 없이 어려운 것이지만, 이러한 워크플로우는 마찰을 가중시키고 생산성을 저하시킬 수 있습니다.</p>\n<p>전통적으로 권한 접근 관리(PAM)는 권한 접근이 있는 계정을 보호하는 데 중점을 두었지만, 오늘날 “주요권한”으로 간주되는 범위는 그렇게 단순한 것은 아닙니다. 이제 거의 모든 아이덴티티에는 이해되고 보호해야 할 *Paths to Privilege™가 있습니다.</p>\n<p>조직은 보다 민첩하고 포괄적인 접근 방식이 필요합니다. 최신의 PAM은 이러한 중요한 아이덴티티 보안의 격차를 해결하는 동시에 액세스 워크플로우를 최적화하여 최종 사용자 및 관리자의 생산성을 향상시킬 수 있습니다.<br /><br /></p>\n<p><strong>영상을</strong> <strong>시청하고</strong> <strong>알아보세요</strong><strong>:</strong></p>\n<ul><li>가시성과 관리의 격차로 인해 조직이 여러 도메인을 넘나드는 위협에 어떻게 노출되는지를 알아보세요.</li><li><em>True Privilege</em>와 <em>Paths to Privilege</em> 개념이 무엇이며, 이러한 개념을 이해하고 대응하는 것이 왜 최신의 성공적인 아이덴티티 보안에 중요한지 알아보세요.</li><li>BeyondTrust의 혁신적인 최신의 PAM 접근 방식이 어떻게 공격 표면을 최소화하고 헬프데스크 티켓을 줄이며, 최종 사용자의 생산성을 향상시키는지를 확인해보세요.</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            }
+        },
+        "resourceVideo": [
+            2398116
+        ],
+        "signupRequired": true,
+        "modalFormsResources": {
+            "2400811": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "지금 시청하기",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "701Vw00000IjnobIAB"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837274
+        ],
+        "tags": [],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-06-25T22:02:19-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": [],
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": [],
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": true,
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": false,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": false,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 77,
+        "postDate": "2025-06-25T22:21:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 92286,
+        "id": 2400818,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "1dd99271-946b-49b4-bc93-5c65977b2398",
+        "siteSettingsId": 3312865,
+        "fieldLayoutId": null,
+        "structureId": 365015,
+        "contentId": 1603830,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Menghadapi Tantangan Keamanan Identitas Saat Ini dengan PAM Modern",
+        "slug": "menghadapi-tantangan-keamanan-identitas-saat-ini-dengan-pam-modern",
+        "uri": "resources/videos/menghadapi-tantangan-keamanan-identitas-saat-ini-dengan-pam-modern",
+        "dateCreated": "2025-06-25T22:18:53-05:00",
+        "dateUpdated": "2025-06-25T22:22:14-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654266,
+        "lft": 14,
+        "rgt": 15,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2400818,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newVideo/menghadapi-tantangan-keamanan-identitas-saat-ini-dengan-pam-modern",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/videos/menghadapi-tantangan-keamanan-identitas-saat-ini-dengan-pam-modern",
+        "authorId": 92286,
+        "typeId": 163,
+        "mainBannerResources": {
+            "2400819": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Menghadapi Tantangan Keamanan Identitas Saat Ini dengan PAM Modern",
+                    "bodyRedactorRestricted": null,
+                    "resourceBannerImage": [
+                        1834407
+                    ],
+                    "switch": false,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2400825": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Kurangi Risiko, Turunkan Biaya, dan Optimalkan Produktivitas",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>Sebagian besar organisasi saat ini kesulitan dalam mengidentifikasi dan menentukan tingkat akses secara tepat di seluruh lingkungan TI hybrid mereka, apalagi mencapainya tanpa memasukkan alur kerja yang rumit yang mana akan menambah hambatan dan mengganggu produktivitas.</p>\n<p>Meskipun Privileged Access Management (PAM) secara tradisional berfokus pada perlindungan akun-akun dengan akses istimewa, definisi “akses istimewa” saat ini tidak lagi sesederhana itu. Kini, hampir setiap identitas memiliki <em>Paths to Privilege™</em> yang perlu dipahami dan dilindungi.</p>\n<p>Organisasi jelas membutuhkan pendekatan yang lebih gesit dan menyeluruh. PAM modern dapat mengatasi celah keamanan identitas yang krusial ini, sekaligus mengoptimalkan alur kerja akses guna meningkatkan produktivitas pengguna akhir dan administrator.<br /><br /></p>\n<p><strong>Tonton video ini dan pelajari:</strong></p>\n<ul><li>Bagaimana kurangnya visibilitas dan celah dalam operasional membuat organisasi rentan terhadap ancaman lintas domain.</li><li>Apa itu konsep <em>True Privilege</em> dan <em>Paths to Privilege</em>, serta mengapa memahami dan menanganinya sangat penting untuk keberhasilan keamanan identitas modern.</li><li>Pendekatan BeyondTrust yang inovatif terhadap PAM Modern, dan bagaimana pendekatan ini meminimalkan permukaan serangan, mengurangi tiket help desk, serta meningkatkan produktivitas pengguna akhir.</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            }
+        },
+        "resourceVideo": [
+            2398129
+        ],
+        "signupRequired": true,
+        "modalFormsResources": {
+            "2400831": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Tonton Sekarang",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "701Vw00000IjnobIAB"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837274
+        ],
+        "tags": [],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-06-25T22:18:53-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": [],
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": [],
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": true,
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": false,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": false,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 77,
+        "postDate": "2025-09-15T16:27:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 670521,
+        "id": 2443195,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "7c4026ed-4a6a-40e8-a46c-8273acb30604",
+        "siteSettingsId": 3391087,
+        "fieldLayoutId": null,
+        "structureId": 365015,
+        "contentId": 1666095,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Securing AI Agents as Part of Your Identity Strategy",
+        "slug": "securing-ai-agents-explainer",
+        "uri": "resources/videos/securing-ai-agents-explainer",
+        "dateCreated": "2025-09-15T16:17:13-05:00",
+        "dateUpdated": "2025-09-16T14:40:27-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654266,
+        "lft": 16,
+        "rgt": 17,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2443195,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newVideo/securing-ai-agents-explainer",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/videos/securing-ai-agents-explainer",
+        "authorId": 670521,
+        "typeId": 163,
+        "mainBannerResources": {
+            "2443196": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Securing AI Agents as Part of Your Identity Strategy",
+                    "bodyRedactorRestricted": null,
+                    "resourceBannerImage": [
+                        1834450
+                    ],
+                    "switch": true,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2443212": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Making AI Safe, Secure, and Governed",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>BeyondTrust makes AI security a core part of your organization's identity-first strategy, empowering you with the clarity and control to securely manage AI agents, and minimize risks.</p>\n<ul>\n<li>\n<p><strong>Discover and govern AI agents: </strong>See which agents exist, what they can access, and who controls them.</p>\n</li>\n<li>\n<p><strong>Eliminate unnecessary risk: </strong>Secure sensitive credentials, remove excess privileges, and prevent hidden vulnerabilities.</p>\n</li>\n<li>\n<p><strong>Defend against AI-specific threats: </strong>Protect your business from risks like prompt injections that can lead to data breaches.</p>\n</li>\n<li>\n<p><strong>Empower secure innovation: </strong>Leverage Pathfinder Intelligence for instant answers and smarter decisions, while the MCP server enables your AI agents to extend the value of the platform into other BeyondTrust products.</p></li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            }
+        },
+        "resourceVideo": [
+            2443392
+        ],
+        "signupRequired": false,
+        "modalFormsResources": {
+            "2443209": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Null",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "Null"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837274,
+            6944,
+            6948,
+            1716548,
+            20890,
+            6945,
+            6946,
+            6949,
+            43853,
+            1972045,
+            1716547,
+            8403,
+            43848
+        ],
+        "tags": [
+            2418067,
+            2434262,
+            1839720,
+            2443215,
+            2001018,
+            1840080,
+            1837255,
+            2443216,
+            2443217,
+            2443218
+        ],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-09-15T17:36:27-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Watch this short video to learn how BeyondTrust secures agentic AI and other AI-related risks as part of a holistic identity security strategy.  ",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceVideo",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceVideo",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceVideo",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 77,
+        "postDate": "2025-12-17T12:05:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 670521,
+        "id": 2486764,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "d37910fa-ab22-4519-a5de-0bbc868d62bd",
+        "siteSettingsId": 3474794,
+        "fieldLayoutId": null,
+        "structureId": 365015,
+        "contentId": 1733133,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Govern Conditional Access and Enhance Productivity with Identity Security Insights and PingOne DaVinci",
+        "slug": "identity-security-insights-and-pingone-davinci",
+        "uri": "resources/videos/identity-security-insights-and-pingone-davinci",
+        "dateCreated": "2025-12-17T11:34:41-06:00",
+        "dateUpdated": "2025-12-17T13:34:18-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654266,
+        "lft": 18,
+        "rgt": 19,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2486764,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newVideo/identity-security-insights-and-pingone-davinci",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/videos/identity-security-insights-and-pingone-davinci",
+        "authorId": 670521,
+        "typeId": 163,
+        "mainBannerResources": {
+            "2486773": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Govern Conditional Access and Enhance Productivity with Identity Security Insights and PingOne DaVinci",
+                    "bodyRedactorRestricted": null,
+                    "resourceBannerImage": [
+                        2486898
+                    ],
+                    "switch": true,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2486779": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Streamline access with integrated MFA and adaptive policies",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>Users get the right access at the right time with contextual, self-service workflows powered by PingOne DaVinci and BeyondTrust <a href=\"{entry:503809@1:url||https://bluetext.beyondtrust.com/products/identity-security-insights}\" target=\"_blank\" rel=\"noreferrer noopener\">Identity Security Insights</a>. Access requests, approvals, and revocations adapt to real-time risk signals, business context, and user behavior—reducing friction while maintaining strong access governance.</p>",
+                    "ctaLink": "{\"linkedId\":609152,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                    "label": "Learn More",
+                    "contentSubsections": []
+                }
+            }
+        },
+        "resourceVideo": [
+            2486798
+        ],
+        "signupRequired": false,
+        "modalFormsResources": {
+            "2486802": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Null",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "Null"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837274,
+            6944,
+            6948,
+            1716548,
+            6946,
+            43853,
+            1716547
+        ],
+        "tags": [
+            2486767,
+            1835492,
+            2486768,
+            2486769,
+            1835588,
+            2486770,
+            1839846,
+            2486771,
+            1839720,
+            2486772
+        ],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-12-17T12:05:05-06:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Govern Conditional Access and Enhance Productivity with Identity Security Insights and PingOne DaVinci",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceVideo",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceVideo",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceVideo",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 77,
+        "postDate": "2025-12-17T12:32:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 670521,
+        "id": 2486809,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "e9aee33a-59b0-4858-9c82-8d13ebc235e2",
+        "siteSettingsId": 3474929,
+        "fieldLayoutId": null,
+        "structureId": 365015,
+        "contentId": 1733268,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Unify IGA and PAM with BeyondTrust Password Safe and Ping AIC",
+        "slug": "beyondtrust-password-safe-and-ping-aic",
+        "uri": "resources/videos/beyondtrust-password-safe-and-ping-aic",
+        "dateCreated": "2025-12-17T12:14:12-06:00",
+        "dateUpdated": "2025-12-17T13:33:12-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654266,
+        "lft": 20,
+        "rgt": 21,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2486809,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newVideo/beyondtrust-password-safe-and-ping-aic",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/videos/beyondtrust-password-safe-and-ping-aic",
+        "authorId": 670521,
+        "typeId": 163,
+        "mainBannerResources": {
+            "2486820": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Unify IGA and PAM with BeyondTrust and Ping",
+                    "bodyRedactorRestricted": null,
+                    "resourceBannerImage": [
+                        2486892
+                    ],
+                    "switch": true,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2486826": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Automate access controls across the identity lifecycle",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>With unified visibility across PingOne Identity Governance and BeyondTrust <a href=\"{entry:506639@1:url||https://bluetext.beyondtrust.com/products/password-safe}\" target=\"_blank\" rel=\"noreferrer noopener\">Password Safe</a> and <a href=\"{entry:503809@1:url||https://bluetext.beyondtrust.com/products/identity-security-insights}\" target=\"_blank\" rel=\"noreferrer noopener\">Identity Security Insights</a>, organizations can quickly identify and assess risks such as ungoverned identities, unmanaged access, and standing privileges. This consolidated view ensures access is always aligned to user roles and business needs throughout the joiner–mover–leaver lifecycle.</p>",
+                    "ctaLink": "{\"linkedId\":609152,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                    "label": "Learn More",
+                    "contentSubsections": []
+                }
+            }
+        },
+        "resourceVideo": [
+            2486810
+        ],
+        "signupRequired": false,
+        "modalFormsResources": {
+            "2486832": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Null",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "Null"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837274,
+            6944,
+            1716548,
+            20890,
+            43853,
+            8403
+        ],
+        "tags": [
+            2059098,
+            2486812,
+            2486813,
+            1900206,
+            2486814,
+            2486815,
+            2486816,
+            2486817,
+            2486818,
+            2486819
+        ],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-12-17T12:32:38-06:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Automate access controls across the identity lifecycle with BeyondTrust Password Safe and Ping AIC.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceVideo",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceVideo",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceVideo",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 77,
+        "postDate": "2025-12-17T12:49:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 670521,
+        "id": 2486849,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "e28689b4-1c51-4a3e-80df-b66666b836e4",
+        "siteSettingsId": 3475049,
+        "fieldLayoutId": null,
+        "structureId": 365015,
+        "contentId": 1733388,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Automate Threat Response and Session Termination with BeyondTrust and PingOne DaVinci",
+        "slug": "automate-itdr-with-beyondtrust-and-pingone-davinci",
+        "uri": "resources/videos/automate-itdr-with-beyondtrust-and-pingone-davinci",
+        "dateCreated": "2025-12-17T12:36:40-06:00",
+        "dateUpdated": "2025-12-17T13:34:04-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654266,
+        "lft": 22,
+        "rgt": 23,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2486849,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newVideo/automate-itdr-with-beyondtrust-and-pingone-davinci",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/videos/automate-itdr-with-beyondtrust-and-pingone-davinci",
+        "authorId": 670521,
+        "typeId": 163,
+        "mainBannerResources": {
+            "2486860": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Automate Threat Response and Session Termination with BeyondTrust and PingOne DaVinci",
+                    "bodyRedactorRestricted": null,
+                    "resourceBannerImage": [
+                        2486901
+                    ],
+                    "switch": true,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2486866": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Improve security posture with fast threat detection and privileged session control",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>PingOne DaVinci and BeyondTrust work together to automate incident response, enabling teams to detect threats and dial in the appropriate privileged access with greater speed and consistency. Through no-code orchestration, PingOne DaVinci lets security and IT teams build drag-and-drop workflows that handle access approvals, provisioning, and revocation without manual intervention.</p>",
+                    "ctaLink": "{\"linkedId\":609152,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                    "label": "Learn More",
+                    "contentSubsections": []
+                }
+            }
+        },
+        "resourceVideo": [
+            2486850
+        ],
+        "signupRequired": false,
+        "modalFormsResources": {
+            "2486872": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Null",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "Null"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837274,
+            6944,
+            6948,
+            1716548,
+            6946,
+            6949,
+            43853,
+            1716547,
+            8403,
+            8402,
+            43848
+        ],
+        "tags": [
+            2486852,
+            1844828,
+            2145382,
+            2486853,
+            2486854,
+            2486855,
+            2486856,
+            2486857,
+            2486858,
+            2486859
+        ],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2025-12-17T12:49:55-06:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Automate Threat Response and Session Termination with BeyondTrust and PingOne DaVinci",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceVideo",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceVideo",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceVideo",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    }
+]
