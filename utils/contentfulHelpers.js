@@ -494,6 +494,23 @@ export async function upsertEntry(env, contentType, entryId, fields, shouldPubli
 }
 
 /**
+ * Ensures an entry is published. Refetches and calls publish() if not already published.
+ * Use after upsertEntry when the entry must be published (e.g. nested resourcesFields/tags).
+ */
+export async function ensurePublished(env, entry, label = "entry") {
+    if (!env || !entry?.sys?.id) return entry;
+    try {
+        const refetched = await env.getEntry(entry.sys.id);
+        if (refetched.sys.publishedAt) return refetched;
+        await refetched.publish();
+        return await env.getEntry(entry.sys.id);
+    } catch (err) {
+        console.warn(`   ⚠ Could not publish ${label} (${entry.sys.id}): ${err.message}`);
+        return entry;
+    }
+}
+
+/**
  * Helper: create a Contentful Link reference object
  */
 export function makeLink(id, linkType = "Entry") {

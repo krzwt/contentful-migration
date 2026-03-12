@@ -1,5 +1,5 @@
 import { LOCALE, getOrCreateSeo, safeId } from "./pageHandler.js";
-import { upsertEntry, makeLink } from "../utils/contentfulHelpers.js";
+import { upsertEntry, makeLink, ensurePublished } from "../utils/contentfulHelpers.js";
 import { getCategoryName, getCategory } from "../utils/categoryLoader.js";
 import {
   processTags,
@@ -223,20 +223,20 @@ export async function migrateResources(
           `   📝 Preparing comma-separated tags: "${tagsString.substring(0, 50)}..."`,
         );
 
-        const tagsEntry = await upsertEntry(
+        let tagsEntry = await upsertEntry(
           env,
           "tags",
           `tags-entry-${item.id}`,
           { tags: { [LOCALE]: tagsString } },
           true,
         );
-
         if (tagsEntry) {
+          tagsEntry = await ensurePublished(env, tagsEntry, "tags");
           resourceFields.tags = { [LOCALE]: makeLink(tagsEntry.sys.id) };
         }
       }
 
-      const resourceFieldsEntry = await upsertEntry(
+      let resourceFieldsEntry = await upsertEntry(
         env,
         "resourcesFields",
         `rf-${item.id}`,
@@ -247,6 +247,7 @@ export async function migrateResources(
       if (!resourceFieldsEntry) {
         throw new Error("Failed to create Resources Fields entry.");
       }
+      resourceFieldsEntry = await ensurePublished(env, resourceFieldsEntry, "resourcesFields");
 
       // 3. Create Main Entry
       const mainFields = {
