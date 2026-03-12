@@ -49,15 +49,22 @@ export async function createOrUpdateFiftyFifty(
   // 2. Description (Rich Text)
   const description = await convertHtmlToRichText(env, fields.body || "");
 
-  // 3. CTA
+  // 3. CTA – support ctaLink, contentCTA, ctaUrl and linkText, ctaLinkText, ctaLabel
   let ctaEntry = null;
-  if (fields.ctaLink) {
-    const linkInfo = parseCraftLink(fields.ctaLink);
-    let label = fields.linkText || linkInfo.label || fields.ctaLabel || "";
-    // URL
-    let url = linkInfo.url;
-
-    if (url || linkInfo.linkedId) {
+  const ctaLinkRaw = fields.ctaLink || fields.contentCTA || fields.ctaUrl;
+  if (ctaLinkRaw) {
+    const linkInfo = parseCraftLink(ctaLinkRaw);
+    const label =
+      fields.linkText ||
+      fields.ctaLinkText ||
+      fields.ctaLabel ||
+      linkInfo.label ||
+      "";
+    let url = linkInfo.url || "";
+    if (!url && linkInfo.linkedId) {
+      url = resolveInternalUrl(linkInfo.linkedId) || "";
+    }
+    if (label || url || linkInfo.linkedId) {
       ctaEntry = await upsertCta(
         env,
         `fifty-${id}`,

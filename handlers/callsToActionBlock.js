@@ -40,6 +40,10 @@ const ALIGNMENT_MAP = {
   center: "Centered",
   centered: "Centered",
   right: "Right-aligned",
+  "u--left": "Left-aligned",
+  "u--center": "Centered",
+  "u--centered": "Centered",
+  "u--right": "Right-aligned",
 };
 
 const STYLE_MAP = {
@@ -69,8 +73,8 @@ function normalizeLayout(value) {
 
 function normalizeAlignment(value) {
   if (!value) return undefined;
-  const key = String(value).toLowerCase().trim();
-  return ALIGNMENT_MAP[key] || value;
+  const key = String(value).toLowerCase().trim().replace(/^u--/, "");
+  return ALIGNMENT_MAP[key] || ALIGNMENT_MAP[String(value).toLowerCase().trim()] || "Centered";
 }
 
 function normalizeStyle(value) {

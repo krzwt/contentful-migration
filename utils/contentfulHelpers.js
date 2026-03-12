@@ -31,6 +31,8 @@ export function buildUrlMap() {
     const files = fs.readdirSync(dataDir)
         .filter(f => f.endsWith(".json") && !f.includes("assets") && !f.includes("schema") && !f.includes("wistia") && !f.includes("mapping") && !f.includes("tags"));
 
+    const MAX_SIZE_FOR_REGEX = 2 * 1024 * 1024; // 2MB – skip slow regex on huge files
+
     files.forEach(fileName => {
         const file = `${dataDir}/${fileName}`;
         try {
@@ -50,14 +52,16 @@ export function buildUrlMap() {
                 }
             });
 
-            // 2. Secondary pass: Deep-crawl the raw content for {entry:ID@...||URL} patterns.
-            const regex = /\{entry:(\d+)(?:@.*?)?\|\|(.*?)\}/g;
-            let match;
-            while ((match = regex.exec(content)) !== null) {
-                const id = String(match[1]);
-                const url = match[2];
-                if (!GLOBAL_URL_MAP.has(id)) {
-                    GLOBAL_URL_MAP.set(id, { url, title: "" });
+            // 2. Secondary pass: Deep-crawl for {entry:ID@...||URL} only on smaller files (avoids hang on large JSON)
+            if (content.length <= MAX_SIZE_FOR_REGEX) {
+                const regex = /\{entry:(\d+)(?:@.*?)?\|\|(.*?)\}/g;
+                let match;
+                while ((match = regex.exec(content)) !== null) {
+                    const id = String(match[1]);
+                    const url = match[2];
+                    if (!GLOBAL_URL_MAP.has(id)) {
+                        GLOBAL_URL_MAP.set(id, { url, title: "" });
+                    }
                 }
             }
 
