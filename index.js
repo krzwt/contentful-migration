@@ -48,6 +48,7 @@ const ASSET_METADATA_FILES = [
   "./data/quote-assets.json",
   "./data/resource-assets.json",
   "./data/missing-fixed.json",
+  "./data/standalone-microsite-asset-urls.json", // S3 video URLs (no upload); paste GraphQL result here
 ]; // GraphQL asset metadata
 
 /* ---------------------------------------------------------
@@ -86,11 +87,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneConversion",
   //   label: "Standalone Conversion",
   // },
-  // {
-  //   file: "./data/standalone-microsite.json",
-  //   pageContentType: "newStandaloneMicrosite",
-  //   label: "Standalone Microsite",
-  // },
+  {
+    file: "./data/standalone-microsite.json",
+    pageContentType: "newStandaloneMicrosite",
+    label: "Standalone Microsite",
+  },
   // {
   //   file: "./data/standalone-thankyou.json",
   //   pageContentType: "newStandaloneThankYou",
@@ -111,12 +112,12 @@ const DATA_SOURCES = [
   //   label: "Company Quotes",
   //   isQuotes: true
   // },
-  {
-    file: "./data/resources-cpt.json",
-    // file: "./data/test-resources-cpt.json",
-    label: "Resources CPT",
-    isResources: true
-  }
+  // {
+  //   file: "./data/resources-cpt.json",
+  //   // file: "./data/test-resources-cpt.json",
+  //   label: "Resources CPT",
+  //   isResources: true
+  // }
   // {
   //   file: "./data/newGlobalReachMap.json",
   //   label: "Global Reach Map",

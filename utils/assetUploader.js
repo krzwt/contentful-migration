@@ -377,6 +377,17 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
 
     const metadata = assetMetadata.get(String(craftAssetId));
 
+    // S3 / assets.beyondtrust.com: use direct URL for videos (no upload to Contentful)
+    const S3_VIDEO_DOMAIN = "assets.beyondtrust.com";
+    if (metadata?.url && metadata.mimeType?.startsWith("video/") && metadata.url.includes(S3_VIDEO_DOMAIN)) {
+      contentfulAssetMap.set(String(craftAssetId), {
+        id: null,
+        mimeType: metadata.mimeType || "video/mp4",
+        wistiaUrl: metadata.url,
+      });
+      continue;
+    }
+
     if (!metadata) {
       // PROACTIVE FIX: Check if asset already exists in Contentful with our predictable ID format (asset-ID).
       const predictableId = `asset-${craftAssetId}`;

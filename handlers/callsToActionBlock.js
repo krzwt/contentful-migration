@@ -125,14 +125,17 @@ export async function createOrUpdateCallsToActionBlock(env, blockData, assetMap 
       // If ref.type not allowed (e.g. newStTam), we set pageLink to null so update clears the invalid link
     }
 
-    // mediaAsset: video from Craft
+    // mediaAsset (uploaded) or videoUrl (S3/Wistia direct URL)
     let mediaAssetLink = null;
+    let videoUrlValue = null;
     const videoIds = btn.fields.video;
     if (Array.isArray(videoIds) && videoIds.length > 0 && assetMap) {
       const craftAssetId = String(videoIds[0]);
       const assetInfo = assetMap.get(craftAssetId);
       if (assetInfo?.id) {
         mediaAssetLink = { sys: { type: "Link", linkType: "Asset", id: assetInfo.id } };
+      } else if (assetInfo?.wistiaUrl) {
+        videoUrlValue = assetInfo.wistiaUrl; // S3 or Wistia direct URL — no upload
       }
     }
 
@@ -147,6 +150,10 @@ export async function createOrUpdateCallsToActionBlock(env, blockData, assetMap 
     }
     if (mediaAssetLink) {
       itemFields.mediaAsset = { [LOCALE]: mediaAssetLink };
+    }
+    if (videoUrlValue) {
+      itemFields.videoUrl = { [LOCALE]: videoUrlValue };
+      itemFields.mediaAsset = { [LOCALE]: null }; // clear uploaded asset when using direct URL
     }
     const style = normalizeStyle(btn.fields.style);
     if (style) {

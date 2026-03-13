@@ -7,6 +7,7 @@ import {
   upsertCta,
   upsertSectionTitle,
   parseCraftLink,
+  resolveEntryRef,
 } from "../utils/contentfulHelpers.js";
 import { getOrderedKeys } from "../utils/jsonOrder.js";
 import { COMPONENTS } from "../registry.js";
@@ -26,7 +27,7 @@ const ENTRY_TYPE_MAP = {
   147: "Press Release", // pressRelease
   148: "Listing", // pressListing
   149: "Media Coverage", // mediaCoverage
-  150: "Media Assets", // mediaAssets
+  146: "Media Assets", // mediaAssets
   151: "Boilerplate",
 };
 
@@ -151,6 +152,7 @@ export async function migratePressMedia(
             ? { handler: createOrUpdatePressBanner }
             : null) ||
           (bType === "assetGrid" ? { handler: createOrUpdateAssetGrid } : null) ||
+          (bType === "biography" ? { handler: createOrUpdateBiography } : null) ||
           (bType === "contentSummary"
             ? { handler: createOrUpdateContentSummary }
             : null);
@@ -217,11 +219,7 @@ export async function migratePressMedia(
               contentComponents.push(makeLink(componentEntry.sys.id));
             }
           }
-        } else if (
-          bType !== "contentSummary" &&
-          bType !== "biographies" &&
-          bType !== "biography"
-        ) {
+        } else if (bType !== "contentSummary" && bType !== "biographies") {
           console.warn(
             `   ⚠️ No component mapping for block type "${bType}" found in ${fieldName}`,
           );
@@ -266,9 +264,10 @@ export async function migratePressMedia(
       addFeaturedToListing: { [LOCALE]: !!item.switch },
     };
 
-    // Post Date (Contentful Date: YYYY-MM-DD)
-    if (item.postDate) {
-      const d = new Date(item.postDate);
+    // Post Date (Contentful Date: YYYY-MM-DD) – from postDate, dateCreated, or date
+    const dateRaw = item.postDate || item.dateCreated || item.date;
+    if (dateRaw) {
+      const d = new Date(dateRaw);
       if (!isNaN(d.getTime())) {
         cfFields.postDate = {
           [LOCALE]: d.toISOString().slice(0, 10),
@@ -562,48 +561,128 @@ export async function createOrUpdateAssetGrid(
     return results;
   }
 
-  const assets = gridData.asset || [];
+  const assets = Array.isArray(gridData.asset)
+    ? gridData.asset
+    : Array.isArray(gridData.assets)
+      ? gridData.assets
+      : [];
+  // assetGrid.asset is Array of Link to "images" entries (Contentful schema)
+  const assetLinks = [];
   for (let i = 0; i < assets.length; i++) {
     const craftAssetId = String(assets[i]);
     const assetInfo = assetMap.get(craftAssetId);
-
-    if (assetInfo) {
-      const wrapper = await upsertAssetWrapper(
+    if (assetInfo?.id) {
+      const imageFields = {
+        image: { [LOCALE]: makeLink(assetInfo.id, "Asset") },
+        imageCaption: { [LOCALE]: "" },
+      };
+      const imagesEntry = await upsertEntry(
         env,
-        craftAssetId,
-        assetInfo.id,
-        assetInfo.mimeType,
-        assetInfo.wistiaUrl,
+        "images",
+        `images-${gridData.blockId}-${i}`,
+        imageFields,
+        true,
       );
-      if (wrapper) {
-        const fields = {
-          blockId: { [LOCALE]: `${gridData.blockId}-${i}` },
-          blockName: {
-            [LOCALE]: `Asset ${i + 1} for ${gridData.heading || "Grid"}`,
-          },
-          asset: { [LOCALE]: makeLink(wrapper.sys.id) },
-        };
+      if (imagesEntry) assetLinks.push(makeLink(imagesEntry.sys.id));
+    }
+  }
 
-        if (gridData.heading && i === 0) {
-          const titleEntry = await upsertSectionTitle(
-            env,
-            gridData.blockId,
-            gridData.heading,
-          );
-          if (titleEntry)
-            fields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
+  if (assetLinks.length === 0) return results;
+
+  // One assetGrid entry per grid with asset = Array of Link to images
+  const fields = {
+    blockId: { [LOCALE]: String(gridData.blockId) },
+    blockName: {
+      [LOCALE]: gridData.heading || gridData.blockName || "Asset Grid",
+    },
+    asset: { [LOCALE]: assetLinks },
+  };
+  if (gridData.heading) {
+    const titleEntry = await upsertSectionTitle(
+      env,
+      gridData.blockId,
+      gridData.heading,
+    );
+    if (titleEntry?.sys?.id) {
+      fields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
+    }
+  }
+  const entry = await upsertEntry(
+    env,
+    CT,
+    `grid-${gridData.blockId}`,
+    fields,
+    true,
+  );
+  if (entry) results.push(entry);
+  return results;
+}
+
+/**
+ * Handler for biography (Press & Media)
+ * Contentful: biography { blockId, blockName, sectionTitle?, biography (Array Link peopleCpt) }
+ * Craft: person/people/biography as array of person IDs
+ */
+export async function createOrUpdateBiography(env, blockData, assetMap, summary) {
+  const CT = "biography";
+  if (!env) return { sys: { id: `biography-${blockData.blockId}` } };
+
+  try {
+    await env.getContentType(CT);
+  } catch (err) {
+    console.warn(`   ⚠ biography not found in Contentful: ${err.message}. Skipping.`);
+    return null;
+  }
+
+  const blockId = blockData.blockId;
+  const personIds = [
+    ...(Array.isArray(blockData.biography) ? blockData.biography : []),
+    ...(Array.isArray(blockData.people) ? blockData.people : []),
+    ...(Array.isArray(blockData.person) ? blockData.person : []),
+    ...(blockData.person != null && !Array.isArray(blockData.person) ? [blockData.person] : []),
+  ];
+  const peopleLinks = [];
+  for (const id of personIds) {
+    const personId = String(id);
+    const ref = resolveEntryRef(personId);
+    if (ref && ref.type === "peopleCpt" && ref.id) {
+      peopleLinks.push(makeLink(ref.id));
+    } else {
+      try {
+        const personEntries = await env.getEntries({
+          content_type: "peopleCpt",
+          "fields.entryId": personId,
+          limit: 1,
+        });
+        if (personEntries.items.length > 0) {
+          peopleLinks.push(makeLink(personEntries.items[0].sys.id));
         }
-
-        const entry = await upsertEntry(
-          env,
-          CT,
-          `grid-${gridData.blockId}-${i}`,
-          fields,
-        );
-        if (entry) results.push(entry);
+      } catch (_) {
+        // skip
       }
     }
   }
 
-  return results;
+  let sectionTitleLink = null;
+  if (blockData.heading || blockData.headingSection) {
+    const titleEntry = await upsertSectionTitle(
+      env,
+      blockId,
+      blockData.heading || blockData.headingSection || "Biography",
+    );
+    if (titleEntry?.sys?.id) {
+      sectionTitleLink = makeLink(titleEntry.sys.id);
+    }
+  }
+
+  const fields = {
+    blockId: { [LOCALE]: String(blockId) },
+    blockName: { [LOCALE]: blockData.blockName || blockData.heading || "Biography" },
+    biography: { [LOCALE]: peopleLinks },
+  };
+  if (sectionTitleLink) {
+    fields.sectionTitle = { [LOCALE]: sectionTitleLink };
+  }
+
+  return await upsertEntry(env, CT, `biography-${blockId}`, fields, true);
 }

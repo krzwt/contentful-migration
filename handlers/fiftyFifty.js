@@ -76,10 +76,11 @@ export async function createOrUpdateFiftyFifty(
     }
   }
 
-  // 4. Asset (Image/Video)
+  // 4. Asset (Image/Video) — use asset or video array; S3/Wistia URLs go to Video URL field (no upload)
   let assetLink = null;
-  if (fields.asset?.length && assetMap) {
-    const craftAssetId = String(fields.asset[0]);
+  const assetIds = fields.asset?.length ? fields.asset : fields.video;
+  if (assetIds?.length && assetMap) {
+    const craftAssetId = String(assetIds[0]);
     const assetInfo = assetMap.get(craftAssetId);
 
     if (assetInfo) {
