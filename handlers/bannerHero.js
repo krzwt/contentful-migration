@@ -95,7 +95,7 @@ export async function createOrUpdateHero(env, heroData, assetMap = null) {
   // 2. ASSET WRAPPER
   let assetWrapper = null;
   if (assetId && assetInfo) {
-    assetWrapper = await upsertAssetWrapper(env, heroData.blockId, assetInfo.id, assetInfo.mimeType, assetInfo.wistiaUrl);
+    assetWrapper = await upsertAssetWrapper(env, heroData.blockId, assetInfo.id, assetInfo.mimeType, assetInfo.wistiaUrl, assetInfo.title);
   }
 
   /* -----------------------------
@@ -137,36 +137,45 @@ export async function createOrUpdateHero(env, heroData, assetMap = null) {
   if (heroData.blockId === "1372588") {
     console.log(`   🧪 Applying SRA Trial Form link for block 1372588`);
 
-    // 3.1 Create/Update the sraTrialForm entry that wraps the siteForm
-    // Note: Schema check shows mainBannerForm expects "embedFormsCpt". 
-    // We try to use that if possible, or fall back to draft linking if requested.
+    // mainBannerForm must link to formComponent; formComponent.selectForm links to embedFormsCpt.
+    const SRA_EMBED_ENTRY_ID = "form-sra-1372588";
     const sraFormFields = {
+      entryId: { [LOCALE]: SRA_EMBED_ENTRY_ID },
       formName: { [LOCALE]: "SRA Trial Form - Legacy Form (Wrapper)" },
-      // selectForm: { [LOCALE]: makeLink(SITE_FORM_ID) } // Legacy field?
     };
 
-    // If SITE_FORM_ID exists, we could use it, but since it's missing, let's be safe.
-    let sraFormEntry = null;
+    let sraEmbedEntry = null;
     try {
-      sraFormEntry = await upsertEntry(
+      sraEmbedEntry = await upsertEntry(
         env,
-        "embedFormsCpt", // Changed from "sraTrialForm" to match bannerHero schema
-        `form-sra-${heroData.blockId}`,
-        sraFormFields
+        "embedFormsCpt",
+        SRA_EMBED_ENTRY_ID,
+        sraFormFields,
+        true,
       );
     } catch (err) {
-      console.warn(`   ⚠ Could not create/update SRA Form Entry: ${err.message}`);
+      console.warn(`   ⚠ Could not create/update SRA embed form: ${err.message}`);
     }
 
-    if (sraFormEntry && sraFormEntry.sys.publishedVersion) {
-      fields.mainBannerForm = {
-        [LOCALE]: {
-          sys: { type: "Link", linkType: "Entry", id: sraFormEntry.sys.id }
-        }
-      };
+    if (sraEmbedEntry?.sys?.id) {
+      const formComponentEntry = await createOrUpdateFormComponent(env, {
+        blockId: heroData.blockId,
+        blockName: "SRA Trial Form - Legacy Form",
+        selectFormEntryId: SRA_EMBED_ENTRY_ID,
+        embedSource: "contentful",
+        lang: "EN",
+      });
+      if (formComponentEntry?.sys?.id) {
+        fields.mainBannerForm = {
+          [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: formComponentEntry.sys.id } },
+        };
+      } else {
+        console.warn(`   ⚠️ Could not create formComponent for SRA; clearing mainBannerForm.`);
+        fields.mainBannerForm = { [LOCALE]: null };
+      }
     } else {
-      console.warn(`   ⚠️ Skipping broken SRA Form link for block 1372588 (Entry not published or missing)`);
-      fields.mainBannerForm = { [LOCALE]: null }; // Explicitly clear if broken
+      console.warn(`   ⚠️ SRA embed form not ready; clearing mainBannerForm.`);
+      fields.mainBannerForm = { [LOCALE]: null };
     }
   } else if (heroData.mainBannerForm && typeof heroData.mainBannerForm === "object") {
     // Generic logic for other forms: create a formComponent and link it here.

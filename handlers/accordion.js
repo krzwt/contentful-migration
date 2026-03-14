@@ -85,6 +85,7 @@ export async function createOrUpdateAccordion(
             assetInfo.id,
             assetInfo.mimeType,
             assetInfo.wistiaUrl,
+            assetInfo.title,
           );
           if (assetWrapper) {
             itemFields.addAsset = { [LOCALE]: makeLink(assetWrapper.sys.id) };

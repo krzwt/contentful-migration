@@ -71,7 +71,7 @@ export async function createOrUpdateMediaBlock(
     const craftAssetId = String(blockData.asset[0]);
     const assetInfo = assetMap.get(craftAssetId);
     if (assetInfo) {
-      assetEntry = await upsertAssetWrapper(env, id, assetInfo.id, assetInfo.mimeType, assetInfo.wistiaUrl);
+      assetEntry = await upsertAssetWrapper(env, id, assetInfo.id, assetInfo.mimeType, assetInfo.wistiaUrl, assetInfo.title);
     }
   } else if (cleanUrl) {
     // It's an external embed URL

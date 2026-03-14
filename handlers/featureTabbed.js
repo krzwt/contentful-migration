@@ -50,6 +50,7 @@ export async function createOrUpdateFeatureTabbed(
           assetInfo.id,
           assetInfo.mimeType,
           assetInfo.wistiaUrl,
+          assetInfo.title,
         );
       }
     }
@@ -114,6 +115,7 @@ export async function createOrUpdateFeatureTabbed(
             assetInfo.id,
             assetInfo.mimeType,
             assetInfo.wistiaUrl,
+            assetInfo.title,
           );
           break;
         }

@@ -90,6 +90,7 @@ export async function createOrUpdateFiftyFifty(
         assetInfo.id,
         assetInfo.mimeType,
         assetInfo.wistiaUrl,
+        assetInfo.title,
       );
       if (assetWrapper) {
         assetLink = makeLink(assetWrapper.sys.id);

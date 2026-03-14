@@ -370,7 +370,8 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
       contentfulAssetMap.set(String(craftAssetId), {
         id: null, // No Contentful Asset ID for Wistia embeds
         mimeType: "video/wistia",
-        wistiaUrl: wUrl
+        wistiaUrl: wUrl,
+        title: wistia.title || null,
       });
       continue;
     }
@@ -384,6 +385,7 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
         id: null,
         mimeType: metadata.mimeType || "video/mp4",
         wistiaUrl: metadata.url,
+        title: metadata.title || null,
       });
       continue;
     }
@@ -403,7 +405,8 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
         console.log(`   🔗 No local metadata for ${craftAssetId}, but found existing asset-ID in Contentful. Linking.`);
         contentfulAssetMap.set(String(craftAssetId), {
           id: predictableId,
-          mimeType: "image/unknown"
+          mimeType: "image/unknown",
+          title: null,
         });
       } else {
         console.warn(`   ⚠ No local metadata OR Contentful asset found for ${craftAssetId}. Skipping link.`);
@@ -420,7 +423,8 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
       console.log(`   [DRY RUN] Would upload: ${metadata.title} (${metadata.url})`);
       contentfulAssetMap.set(String(craftAssetId), {
         id: "dry-run-asset-id",
-        mimeType: metadata.mimeType
+        mimeType: metadata.mimeType,
+        title: metadata.title || null,
       });
     } else if (lookupOnly) {
       // Fast path: just find existing asset, no upload/processing
@@ -428,7 +432,8 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
       if (contentfulId) {
         contentfulAssetMap.set(String(craftAssetId), {
           id: contentfulId,
-          mimeType: metadata.mimeType
+          mimeType: metadata.mimeType,
+          title: metadata.title || null,
         });
       }
     } else {
@@ -436,7 +441,8 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
       if (contentfulId) {
         contentfulAssetMap.set(String(craftAssetId), {
           id: contentfulId,
-          mimeType: metadata.mimeType
+          mimeType: metadata.mimeType,
+          title: metadata.title || null,
         });
       }
     }

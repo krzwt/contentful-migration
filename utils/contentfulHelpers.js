@@ -332,8 +332,9 @@ export async function ensureAssetPublished(env, assetId) {
 /**
  * Upserts an 'asset' wrapper entry
  * @param {string} videoUrl - Optional Wistia/External video URL
+ * @param {string} [internalName] - Optional title for Internal Name field (max 256 chars)
  */
-export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType, videoUrl = null) {
+export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType, videoUrl = null, internalName = null) {
     let type = "Image";
     if (mimeType?.includes("video") || videoUrl) type = "Video";
     if (mimeType?.includes("json") || mimeType?.includes("javascript")) type = "JSON";
@@ -346,6 +347,9 @@ export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType, v
             videoUrl: { [LOCALE]: videoUrl },
             mediaAsset: { [LOCALE]: null }  // clear any previously uploaded asset so only Video URL is used
         };
+        if (internalName != null && String(internalName).trim() !== "") {
+            fields.internalName = { [LOCALE]: String(internalName).trim().slice(0, 256) };
+        }
         // S3 thumbnail URL — Contentful field "Video Thumbnail URL" is usually id "videoThumbnailUrl"
         const thumbnailUrl = getVideoThumbnailUrl(videoUrl);
         const thumbnailFieldId = "videoThumbnailUrl";
@@ -376,6 +380,9 @@ export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType, v
                     }
                 }
             };
+            if (internalName != null && String(internalName).trim() !== "") {
+                fields.internalName = { [LOCALE]: String(internalName).trim().slice(0, 256) };
+            }
             let entry;
             try {
                 entry = await env.getEntry(`asset-${id}`);
@@ -400,6 +407,9 @@ export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType, v
             }
         }
     };
+    if (internalName != null && String(internalName).trim() !== "") {
+        fields.internalName = { [LOCALE]: String(internalName).trim().slice(0, 256) };
+    }
 
     return await upsertEntry(env, "asset", `asset-${id}`, fields);
 }
