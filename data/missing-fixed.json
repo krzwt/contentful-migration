@@ -2,54 +2,14 @@
   "data": {
     "assets": [
       {
-        "id": "2524829",
-        "title": "Nash County Public Schools Logo",
-        "url": "S3_BASE_URL/assets/images/logos/Nash-County-Public-Schools-Logo.png",
-        "filename": "Nash-County-Public-Schools-Logo.png",
-        "mimeType": "image/png",
-        "width": 2226,
-        "height": 770,
-        "size": "88113"
-      },
-      {
-        "id": "2515486",
-        "title": "Gigaom logo primary",
-        "url": "S3_BASE_URL/assets/images/logos/gigaom-logo-primary.svg",
-        "filename": "gigaom-logo-primary.svg",
-        "mimeType": "image/svg+xml",
-        "width": 1800,
-        "height": 324,
-        "size": "1861"
-      },
-      {
-        "id": "2514134",
-        "title": "Pete Herzog Audio Episode",
-        "url": "https://assets-uat.btdevops.io/assets/documents/Pete-Herzog-Audio-Episode.mp3",
-        "filename": "Pete-Herzog-Audio-Episode.mp3",
+        "id": "2502978",
+        "title": "Brandyn Murtagh Audio Episode",
+        "url": "https://assets-uat.btdevops.io/assets/documents/Brandyn-Murtagh-Audio-Episode.mp3",
+        "filename": "Brandyn-Murtagh-Audio-Episode.mp3",
         "mimeType": "audio/mpeg",
         "width": null,
         "height": null,
-        "size": "92948141"
-      },
-      {
-        "id": "2511828",
-        "title": "Awards page top infosec innovator winner",
-        "url": "S3_BASE_URL/assets/images/logos/Awards-page-top-infosec-innovator-winner.png",
-        "filename": "Awards-page-top-infosec-innovator-winner.png",
-        "mimeType": "image/png",
-        "width": 500,
-        "height": 300,
-        "size": "65648"
-      },
-      {
-        "id": "545730",
-        "title": "Visibility orange",
-        "url": "https://assets-uat.btdevops.io/assets/images/products/images/Visibility_orange.svg",
-        "filename": "Visibility_orange.svg",
-        "mimeType": "image/svg+xml",
-        "width": 85,
-        "height": 69,
-        "size": "879"
+        "size": "80742426"
       }
     ]
   }
