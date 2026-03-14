@@ -95,36 +95,34 @@ export async function migrateEvents(
 
             const layoutFields = {};
 
-            // Map Location fields if present
-            if (item.location && typeof item.location === 'object' && !Array.isArray(item.location)) {
-                const locationKeys = Object.keys(item.location);
-                if (locationKeys.length > 0) {
-                    const loc = item.location[locationKeys[0]].fields;
-                    layoutFields.eventLocationName = { [LOCALE]: loc.eventLocationName || "" };
-                    layoutFields.streetAddress = { [LOCALE]: loc.streetAddress || "" };
-                    layoutFields.city = { [LOCALE]: loc.city || "Virtual" }; // Required in eventUserGroups
-                    layoutFields.stateProvince = { [LOCALE]: loc.state || "" };
-                    
-                    // Normalize country to match Contentful validation list if possible
-                    // Contentful expects values like "USA", "United Kingdom", "Asia", etc.
-                    let country = loc.country || "USA";
-                    if (country === "United States") country = "USA";
-                    layoutFields.country = { [LOCALE]: country }; 
+            // Location fields only exist on eventConferencesType and eventUserGroups (not eventVirtualEventszoom)
+            const hasLocationFields = item.typeId === 51 || item.typeId === 50;
+            if (hasLocationFields) {
+                if (item.location && typeof item.location === 'object' && !Array.isArray(item.location)) {
+                    const locationKeys = Object.keys(item.location);
+                    if (locationKeys.length > 0) {
+                        const loc = item.location[locationKeys[0]].fields;
+                        layoutFields.eventLocationName = { [LOCALE]: loc.eventLocationName || "" };
+                        layoutFields.streetAddress = { [LOCALE]: loc.streetAddress || "" };
+                        layoutFields.city = { [LOCALE]: loc.city || "Virtual" }; // Required in eventUserGroups
+                        layoutFields.stateProvince = { [LOCALE]: loc.state || "" };
+                        let country = loc.country || "USA";
+                        if (country === "United States") country = "USA";
+                        layoutFields.country = { [LOCALE]: country };
+                    } else {
+                        layoutFields.city = { [LOCALE]: "Virtual" };
+                        layoutFields.country = { [LOCALE]: "USA" };
+                    }
                 } else {
-                    // Fallback for missing location but required fields
                     layoutFields.city = { [LOCALE]: "Virtual" };
                     layoutFields.country = { [LOCALE]: "USA" };
                 }
-            } else {
-                // Fallback for missing location property
-                layoutFields.city = { [LOCALE]: "Virtual" };
-                layoutFields.country = { [LOCALE]: "USA" };
             }
 
-            // Map Partner Logos
-            if (item.eventPartnerLogo && item.eventPartnerLogo.length > 0) {
+            // Partner logos only on eventConferencesType and eventUserGroups (not eventVirtualEventszoom)
+            if (hasLocationFields && item.eventPartnerLogo && item.eventPartnerLogo.length > 0) {
                 const logoLinks = item.eventPartnerLogo.map(id => {
-                    const am = assetMap.get(String(id));
+                    const am = assetMap?.get(String(id));
                     return am ? makeLink(am.id, "Asset") : null;
                 }).filter(Boolean);
                 if (logoLinks.length > 0) {
