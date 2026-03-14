@@ -143,6 +143,26 @@ export async function migrateResources(
         }
       }
 
+      // 1.1 Create Resource Webinar Fields entry when Webinars type and webcastInfo present (for resourcesCpt.resourceWebinarFields)
+      let resourceWebinarFieldsEntry = null;
+      const isWebinar = item.typeId === 23;
+      if (isWebinar && webcastInfoIds.length > 0) {
+        const rwfFields = {
+          blockName: { [LOCALE]: item.resourceTitle || item.title || "Webinar" },
+          webcastInfo: { [LOCALE]: webcastInfoIds.map((id) => makeLink(id)) },
+        };
+        resourceWebinarFieldsEntry = await upsertEntry(
+          env,
+          "resourceWebinarFields",
+          `rwf-${item.id}`,
+          rwfFields,
+          shouldPublish,
+        );
+        if (resourceWebinarFieldsEntry) {
+          resourceWebinarFieldsEntry = await ensurePublished(env, resourceWebinarFieldsEntry, "resourceWebinarFields");
+        }
+      }
+
       // 2. Create Resource Fields Component
       const resourceFields = {
         resourceTitle: { [LOCALE]: item.resourceTitle || item.title || "" },
@@ -342,6 +362,11 @@ export async function migrateResources(
       const seoEntry = await getOrCreateSeo(env, item, assetMap);
       if (seoEntry) {
         mainFields.seo = { [LOCALE]: makeLink(seoEntry.sys.id) };
+      }
+
+      // 3.3 Resource Webinar Fields (for Webinars type with webcastInfo)
+      if (resourceWebinarFieldsEntry?.sys?.id) {
+        mainFields.resourceWebinarFields = { [LOCALE]: makeLink(resourceWebinarFieldsEntry.sys.id) };
       }
 
       const metadata = { concepts: [], tags: [] };

@@ -85,6 +85,7 @@ export const COMPONENTS = {
   contentCta: { handler: createOrUpdateCalloutBar },
   iconGrid: { handler: createOrUpdateIconGrid },
   mediaBlock: { handler: createOrUpdateMediaBlock },
+  video: { handler: createOrUpdateMediaBlock }, // Craft "video" block → mediaBlock (addAsset from video field)
   grid: { handler: createOrUpdateIconGrid },  // Direct mapping if used as top level
   cta: { handler: createOrUpdateCalloutBar }, // Direct mapping if used as top level
   fullWidthAsset: { handler: createOrUpdateMediaBlock },

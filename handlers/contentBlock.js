@@ -60,10 +60,11 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
        NESTED ENTRIES
     ------------------------------ */
 
-    // 1. Section Title
+    // 1. Section Title (Block Heading in Content Block Resources is Link to sectionTitle)
+    const headingText = blockData.headingSection || blockData.heading || blockData.blockHeading || "";
     let titleEntry = null;
-    if (blockData.headingSection) {
-        titleEntry = await upsertSectionTitle(env, blockData.blockId, blockData.headingSection);
+    if (headingText && String(headingText).trim()) {
+        titleEntry = await upsertSectionTitle(env, blockData.blockId, String(headingText).trim());
     }
 
     // 2. CTA
@@ -88,7 +89,7 @@ export async function createOrUpdateContentBlock(env, blockData, assetMap = null
     const bodyRich = await convertHtmlToRichText(env, blockData.body || blockData.bodyRedactorRestricted || "");
     const fields = {
         blockId: { [LOCALE]: blockData.blockId },
-        blockName: { [LOCALE]: blockData.blockName || blockData.headingSection || "Content Block" },
+        blockName: { [LOCALE]: blockData.blockName || headingText || "Content Block" },
     };
     if (isContentBlocks) {
         fields.blockBody = { [LOCALE]: bodyRich };

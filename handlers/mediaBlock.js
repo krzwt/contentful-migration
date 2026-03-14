@@ -63,15 +63,18 @@ export async function createOrUpdateMediaBlock(
     titleEntry = await upsertSectionTitle(env, `mediablock-${id}`, heading);
   }
 
-  // 2. Media Asset Link (detect either Craft asset OR external sourceUrl)
+  // 2. Media Asset Link (Craft asset, video field, or external sourceUrl)
   let assetEntry = null;
   const cleanUrl = (blockData.sourceUrl || "").replace(/\/$/, "");
+  const craftAssetIdFromBlock =
+    blockData.asset?.length ? String(blockData.asset[0]) : blockData.video?.length ? String(blockData.video[0]) : null;
 
-  if (blockData.asset?.length && assetMap) {
-    const craftAssetId = String(blockData.asset[0]);
-    const assetInfo = assetMap.get(craftAssetId);
+  if (craftAssetIdFromBlock && assetMap) {
+    const assetInfo = assetMap.get(craftAssetIdFromBlock);
     if (assetInfo) {
       assetEntry = await upsertAssetWrapper(env, id, assetInfo.id, assetInfo.mimeType, assetInfo.wistiaUrl, assetInfo.title);
+    } else if (blockData.video?.length) {
+      console.warn(`   ⚠️ Video block ${id}: asset ${craftAssetIdFromBlock} not in map; mediaBlock addAsset will be empty.`);
     }
   } else if (cleanUrl) {
     // It's an external embed URL
@@ -79,12 +82,12 @@ export async function createOrUpdateMediaBlock(
     assetEntry = await upsertAssetWrapper(env, id, null, "video/mp4", cleanUrl);
   }
 
+  const defaultBlockName =
+    blockData.blockName || heading || (cleanUrl ? `Embed: ${cleanUrl}` : (craftAssetIdFromBlock ? "Video" : `Media Block ${id}`));
   const cfFields = {
     blockId: { [LOCALE]: String(id) },
-    blockName: {
-      [LOCALE]: blockData.blockName || heading || (cleanUrl ? `Embed: ${cleanUrl}` : `Media Block ${id}`),
-    },
-    description: { [LOCALE]: blockData.description || "" },
+    blockName: { [LOCALE]: defaultBlockName },
+    description: { [LOCALE]: blockData.description || blockData.videoDescription || "" },
   };
 
   if (titleEntry) cfFields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };

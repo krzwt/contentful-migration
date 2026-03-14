@@ -118,12 +118,12 @@ const DATA_SOURCES = [
   //   label: "Company Quotes",
   //   isQuotes: true
   // },
-  // {
-  //   file: "./data/resources-cpt.json",
-  //   // file: "./data/test-resources-cpt.json",
-  //   label: "Resources CPT",
-  //   isResources: true
-  // }
+  {
+    file: "./data/resources-cpt.json",
+    // file: "./data/test-resources-cpt.json",
+    label: "Resources CPT",
+    isResources: true
+  }
   // {
   //   file: "./data/newGlobalReachMap.json",
   //   label: "Global Reach Map",

@@ -1,4 +1,4 @@
-import { upsertEntry, makeLink, parseCraftLink, resolveInternalUrl } from "../utils/contentfulHelpers.js";
+import { upsertEntry, makeLink, parseCraftLink, resolveInternalUrl, upsertCta } from "../utils/contentfulHelpers.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "quote";
@@ -37,39 +37,14 @@ export async function createOrUpdateQuote(env, blockData, assetMap = null) {
         contentfulFields.quoteCite = { [LOCALE]: String(fields.quoteCite) };
     }
 
-    // Determine how to save the link (quoteUrl vs quotePageLink)
-    if (finalLinkedId) {
-        let validEntryId = null;
-
-        // In Contentful, entries use prefixes like page-, resource-, webinar-
-        const possiblePrefixes = ["page-", "resource-", "webinar-", "person-", "quote-"];
-        for (const prefix of possiblePrefixes) {
-            try {
-                const checkId = `${prefix}${finalLinkedId}`;
-                const entryCheck = await env.getEntry(checkId);
-                if (entryCheck) {
-                    validEntryId = checkId;
-                    break;
-                }
-            } catch (err) {
-                // not found, ignore 404
-            }
+    // quoteUrl in Contentful is Link to "cta" entry, not a string — create CTA and link
+    const urlForCta = finalUrl || (finalLinkedId ? resolveInternalUrl(String(finalLinkedId)) : null);
+    if (urlForCta) {
+        const label = (fields.quoteCite && String(fields.quoteCite).slice(0, 200)) || "Source";
+        const ctaEntry = await upsertCta(env, `quote-cta-${blockId}`, label, urlForCta, true, finalLinkedId || undefined);
+        if (ctaEntry?.sys?.id) {
+            contentfulFields.quoteUrl = { [LOCALE]: makeLink(ctaEntry.sys.id) };
         }
-
-        if (validEntryId) {
-            contentfulFields.quotePageLink = { [LOCALE]: makeLink(validEntryId) };
-        } else {
-            console.warn(`   ⚠️ Quote Warning: Could not find Contentful entry for linkedId ${finalLinkedId}. Falling back to plain URL string.`);
-            const fallbackUrl = resolveInternalUrl(String(finalLinkedId));
-            if (fallbackUrl) {
-                contentfulFields.quoteUrl = { [LOCALE]: String(fallbackUrl) };
-            } else if (finalUrl) {
-                contentfulFields.quoteUrl = { [LOCALE]: String(finalUrl) };
-            }
-        }
-    } else if (finalUrl) {
-        // Plain external URL
-        contentfulFields.quoteUrl = { [LOCALE]: String(finalUrl) };
     }
 
     // Upsert the entry
