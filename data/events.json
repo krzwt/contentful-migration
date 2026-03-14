@@ -15911,7 +15911,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-03-10T02:17:04-05:00",
+            "sourceDateUpdated": "2026-03-14T00:13:04-05:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -16262,7 +16262,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-03-10T02:17:04-05:00",
+            "sourceDateUpdated": "2026-03-14T00:13:04-05:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -16613,7 +16613,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-03-10T02:17:04-05:00",
+            "sourceDateUpdated": "2026-03-14T00:13:04-05:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -18700,7 +18700,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-03-10T02:17:05-05:00",
+            "sourceDateUpdated": "2026-03-14T00:13:04-05:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -19887,7 +19887,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-03-10T02:17:05-05:00",
+            "sourceDateUpdated": "2026-03-14T00:13:05-05:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -20234,7 +20234,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-03-10T02:17:05-05:00",
+            "sourceDateUpdated": "2026-03-14T00:13:05-05:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -23000,7 +23000,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-03-10T02:17:05-05:00",
+            "sourceDateUpdated": "2026-03-14T00:13:05-05:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -23231,11 +23231,11 @@
         "enabled": true,
         "archived": false,
         "siteId": 1,
-        "title": "Test EMEIA | Privileged Remote Access User Group",
-        "slug": "test-emeia-virtual-user-group-pra",
-        "uri": "events/conferences/test-emeia-virtual-user-group-pra",
+        "title": "EMEIA | Privileged Remote Access User Group",
+        "slug": "emeia-virtual-user-group-pra",
+        "uri": "events/virtualevents/emeia-virtual-user-group-pra",
         "dateCreated": "2022-12-07T09:34:44-06:00",
-        "dateUpdated": "2026-03-09T11:05:56-05:00",
+        "dateUpdated": "2023-03-29T13:30:25-05:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "trashed": false,
@@ -23244,19 +23244,21 @@
         "isDraft": false,
         "isRevision": false,
         "isUnpublishedDraft": false,
-        "ref": "events/test-emeia-virtual-user-group-pra",
+        "ref": "events/emeia-virtual-user-group-pra",
         "status": "live",
         "structureId": null,
-        "url": "https://bluetext.beyondtrust.com/events/conferences/test-emeia-virtual-user-group-pra",
+        "url": "https://bluetext.beyondtrust.com/events/virtualevents/emeia-virtual-user-group-pra",
         "authorId": 7407,
-        "typeId": 51,
+        "typeId": 100,
         "image": [],
-        "eventStartDate": "2026-03-12T10:00:00-05:00",
-        "eventEndDate": "2026-04-06T11:15:00-05:00",
-        "timezone": "Pacific/Auckland",
-        "region": [
-            "northAmerica"
+        "eventStartDate": "2023-04-04T10:00:00-05:00",
+        "eventEndDate": "2023-04-04T11:15:00-05:00",
+        "timezone": "UTC",
+        "region": [],
+        "eventManager": [
+            7407
         ],
+        "emailEventManager": true,
         "newEventPageBanner": {
             "215278": {
                 "type": 85,
@@ -23264,20 +23266,143 @@
                     "image": [
                         89334
                     ],
-                    "heading": "EMEIA Virtual User Group - Privileged Remote Access head",
-                    "subheading": "EMEIA Virtual User Group - Privileged Remote Access subhead",
-                    "body": "EMEIA Virtual User Group - Privileged Remote Access body",
+                    "heading": "EMEIA Virtual User Group - Privileged Remote Access",
+                    "subheading": null,
+                    "body": null,
                     "cta": []
                 }
             }
         },
-        "textContent": null,
-        "eventPartnerLogo": [],
         "resourceCardImage": [
             78390
         ],
-        "location": [],
+        "salesforceCampaignId": "7017V000001gmx3QAA",
+        "zoomMeetingId": "96279469978",
+        "zoomMeetingPasscode": null,
+        "zoomMeetingPhoneNumbers": "{\"linkedUrl\":\"\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
         "publicEvent": true,
+        "registrationCutoffDate": null,
+        "closeRegistration": false,
+        "mixedContent": {
+            "215284": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "blockHeading": "Join the Privileged Remote Access user community for a virtual user group!",
+                    "blockBody": "<p>Join your fellow Privileged Remote Access users for an interactive session featuring BeyondTrust University, technical experts and fellow users. We will be featuring a special technical workshop from around Group Policy in Privileged Remote Access, as well as some exciting updates in the product. </p>",
+                    "blockImage": [],
+                    "blockVideo": [],
+                    "mediaCaption": null,
+                    "blockLayout": "shift-right",
+                    "resource": [],
+                    "reviewEmbed": ""
+                }
+            },
+            "215286": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "blockHeading": null,
+                    "blockBody": "<p>Leveraging Group Policy allows you to centralize access right assignments for groups of users in your Privileged Remote Access environment.</p>\n<p><strong>In this session you will learn how to:</strong></p>\n<ul><li>Understand the role of Group Policy in Privileged Remote Access</li><li>Follow best practices for using Group Policy</li><li>Troubleshoot access rights based on Group Policy</li></ul>",
+                    "blockImage": [],
+                    "blockVideo": [],
+                    "mediaCaption": null,
+                    "blockLayout": "shift-right",
+                    "resource": [],
+                    "reviewEmbed": ""
+                }
+            },
+            "215287": {
+                "type": "stackedPhotoBlock",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "heading": "Levi Zapanta, BTU Instructor",
+                    "description": "Prior to BeyondTrust, Levi has several years of experience working in Support Desk and Infrastructure roles.\nHe spent many years working in the Private Equity sector giving him a great exposure to security, compliance, identity and access configurations in on-prem / hybrid Infrastructure environments.",
+                    "blockImage": [
+                        446904
+                    ],
+                    "imageLayout": "right-small",
+                    "callsToAction": []
+                }
+            }
+        },
+        "prebuiltOptionalFields": [],
+        "additionalFormFields": {
+            "215288": {
+                "type": "checkboxField",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "eloquaField": "whatProducts",
+                    "questionTitle": "Which BeyondTrust products are you currently using?",
+                    "checkboxOptions": {
+                        "215289": {
+                            "type": 71,
+                            "fields": {
+                                "checkboxOption": "Privileged Remote Access",
+                                "checkboxValue": "Privileged Remote Access"
+                            }
+                        },
+                        "215290": {
+                            "type": 71,
+                            "fields": {
+                                "checkboxOption": "Remote Support",
+                                "checkboxValue": "Remote Support"
+                            }
+                        },
+                        "215291": {
+                            "type": 71,
+                            "fields": {
+                                "checkboxOption": "Endpoint Privilege Management for Windows & Mac",
+                                "checkboxValue": "Endpoint Privilege Management for Windows & Mac"
+                            }
+                        },
+                        "215292": {
+                            "type": 71,
+                            "fields": {
+                                "checkboxOption": "Endpoint Privilege Management for Unix & Linux",
+                                "checkboxValue": "Endpoint Privilege Management for Unix & Linux"
+                            }
+                        },
+                        "215293": {
+                            "type": 71,
+                            "fields": {
+                                "checkboxOption": "AD Bridge",
+                                "checkboxValue": "AD Bridge"
+                            }
+                        },
+                        "215294": {
+                            "type": 71,
+                            "fields": {
+                                "checkboxOption": "Password Safe",
+                                "checkboxValue": "Password Safe"
+                            }
+                        },
+                        "215295": {
+                            "type": 71,
+                            "fields": {
+                                "checkboxOption": "DevOps Secrets Safe",
+                                "checkboxValue": "DevOps Secrets Safe"
+                            }
+                        }
+                    },
+                    "required": true
+                }
+            },
+            "215296": {
+                "type": "textField",
+                "enabled": true,
+                "collapsed": false,
+                "fields": {
+                    "eloquaField": "additionalQuestions",
+                    "questionTitle": "We will be hosting an open Q&A during the session. If you have questions or topics to submit ahead of time, please do so here.",
+                    "required": true
+                }
+            }
+        },
         "eventAgenda": {
             "215297": {
                 "type": 32,
@@ -23285,13 +23410,9 @@
                     "eventStartDate": "2023-04-04T10:00:00-05:00",
                     "eventEndDate": "2023-04-04T10:05:00-05:00",
                     "sessionTitle": "Welcome and Introduction",
-                    "speakers": [
-                        1563737,
-                        1557266,
-                        1523503
-                    ],
-                    "description": "Short Description",
-                    "longDescription": "<p><strong>Long Description</strong></p>"
+                    "speakers": [],
+                    "description": null,
+                    "longDescription": null
                 }
             },
             "215298": {
@@ -23328,26 +23449,6 @@
                 }
             }
         },
-        "faqStructuredData": {
-            "2504832": {
-                "type": "faq",
-                "enabled": true,
-                "collapsed": false,
-                "fields": {
-                    "question": "QuestionRequired",
-                    "answer": "<p><b>c</b><br /><strong></strong></p>"
-                }
-            },
-            "2504833": {
-                "type": "faq",
-                "enabled": true,
-                "collapsed": false,
-                "fields": {
-                    "question": "QuestionRequired",
-                    "answer": "<p>QuestionRequiredQuestionRequiredQuestionRequiredQuestionRequired</p>"
-                }
-            }
-        },
         "seoMetaTags": {
             "bundleVersion": "1.0.23",
             "sourceBundleType": "field",
@@ -23359,7 +23460,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-03-09T10:51:50-05:00",
+            "sourceDateUpdated": "2022-12-07T09:41:09-06:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -23372,7 +23473,7 @@
                 "seoImageHeight": "",
                 "seoImageDescription": "",
                 "canonicalUrl": "",
-                "robots": "all",
+                "robots": "",
                 "ogType": "article",
                 "ogTitle": "",
                 "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
@@ -23411,7 +23512,7 @@
                 }
             },
             "metaSiteVars": {
-                "siteName": "BeyondTrust (en)",
+                "siteName": "BeyondTrust",
                 "siteAlternateName": "",
                 "identity": null,
                 "creator": null,
@@ -23432,7 +23533,7 @@
             },
             "metaSitemapVars": {
                 "sitemapUrls": false,
-                "sitemapAssets": null,
+                "sitemapAssets": false,
                 "sitemapAssetTransform": null,
                 "newsSitemap": null,
                 "newsPublicationName": "",
@@ -23447,6 +23548,7 @@
                 "sitemapVideoFieldMap": [],
                 "inherited": {
                     "sitemapUrls": true,
+                    "sitemapAssets": true,
                     "sitemapChangeFreq": true,
                     "sitemapPriority": true
                 },
@@ -24088,7 +24190,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-03-10T02:17:05-05:00",
+            "sourceDateUpdated": "2026-03-14T00:13:05-05:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -24467,7 +24569,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-03-10T02:17:05-05:00",
+            "sourceDateUpdated": "2026-03-14T00:13:05-05:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -26498,7 +26600,7 @@
         "slug": "emeia-virtual-user-group-pws",
         "uri": "events/virtualevents/emeia-virtual-user-group-pws",
         "dateCreated": "2023-09-28T05:39:19-05:00",
-        "dateUpdated": "2026-03-06T03:14:47-06:00",
+        "dateUpdated": "2023-10-10T15:15:20-05:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "trashed": false,
@@ -26985,10 +27087,10 @@
         "archived": false,
         "siteId": 1,
         "title": "EMEIA | Privileged Remote Access User Group",
-        "slug": "emeia-virtual-user-group-pra",
-        "uri": "events/virtualevents/emeia-virtual-user-group-pra",
+        "slug": "emeia-virtual-user-group-pra-2",
+        "uri": "events/virtualevents/emeia-virtual-user-group-pra-2",
         "dateCreated": "2023-09-28T04:52:10-05:00",
-        "dateUpdated": "2026-03-06T03:27:34-06:00",
+        "dateUpdated": "2023-10-10T15:14:40-05:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "trashed": false,
@@ -26997,10 +27099,10 @@
         "isDraft": false,
         "isRevision": false,
         "isUnpublishedDraft": false,
-        "ref": "events/emeia-virtual-user-group-pra",
+        "ref": "events/emeia-virtual-user-group-pra-2",
         "status": "live",
         "structureId": null,
-        "url": "https://bluetext.beyondtrust.com/events/virtualevents/emeia-virtual-user-group-pra",
+        "url": "https://bluetext.beyondtrust.com/events/virtualevents/emeia-virtual-user-group-pra-2",
         "authorId": 69674,
         "typeId": 100,
         "image": [
