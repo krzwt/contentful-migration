@@ -1,6 +1,7 @@
 import {
   makeLink,
   upsertCta,
+  upsertFormProduct,
   parseCraftLink,
   resolveInternalUrl,
   resolveInternalTitle,
@@ -115,7 +116,19 @@ export async function createOrUpdateFormComponent(env, formData = {}) {
       );
     }
   }
-  setIfPresent("product", formData.product);
+  // product is a Link to formProducts (optionLabel + value), not a string
+  if (formData.product != null && String(formData.product).trim() !== "") {
+    try {
+      const productEntry = await upsertFormProduct(env, formData.product);
+      if (productEntry?.sys?.id) {
+        fields.product = { [LOCALE]: makeLink(productEntry.sys.id) };
+      }
+    } catch (err) {
+      console.warn(
+        `   ⚠ Error resolving product "${formData.product}" for formComponent ${blockIdValue}: ${err.message}`,
+      );
+    }
+  }
   setIfPresent("sfcid", formData.salesforceCampaignId);
   setIfPresent("lang", formData.lang);
 

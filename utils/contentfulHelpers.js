@@ -405,6 +405,34 @@ export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType, v
 }
 
 /**
+ * Slugify a string for use as formProducts.value (unique).
+ */
+function slugifyProductValue(label) {
+    if (label == null || String(label).trim() === "") return "default";
+    return String(label)
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^a-z0-9-]/g, "");
+}
+
+/**
+ * Find or create a formProducts entry by optionLabel (and value).
+ * formComponent.product must link to formProducts, not a string.
+ */
+export async function upsertFormProduct(env, optionLabel, value = null) {
+    if (!optionLabel || String(optionLabel).trim() === "") return null;
+    const label = String(optionLabel).trim();
+    const val = value != null && String(value).trim() !== "" ? String(value).trim() : slugifyProductValue(label);
+    const entryId = `formproducts-${val}`;
+    const fields = {
+        optionLabel: { [LOCALE]: label },
+        value: { [LOCALE]: val },
+    };
+    return await upsertEntry(env, "formProducts", entryId, fields, true);
+}
+
+/**
  * Upserts a 'sectionTitle' entry
  */
 export async function upsertSectionTitle(env, id, title) {
