@@ -1,5 +1,5 @@
 import { LOCALE, getOrCreateSeo, safeId } from "./pageHandler.js";
-import { upsertEntry, makeLink, ensurePublished } from "../utils/contentfulHelpers.js";
+import { upsertEntry, makeLink, ensurePublished, resolveEntryRef } from "../utils/contentfulHelpers.js";
 import { getCategoryName, getCategory } from "../utils/categoryLoader.js";
 import { loadTagMapping, getTagNames } from "../utils/tagHandler.js";
 import { COMPONENTS } from "../registry.js";
@@ -150,7 +150,34 @@ export async function migrateResources(
         const rwfFields = {
           blockName: { [LOCALE]: item.resourceTitle || item.title || "Webinar" },
           webcastInfo: { [LOCALE]: webcastInfoIds.map((id) => makeLink(id)) },
+          includeIsc2Info: { [LOCALE]: !!item.includeIsc2Info },
+          publicEvent: { [LOCALE]: !!item.publicEvent },
+          eloquaCampaignId: { [LOCALE]: item.eloquaCampaignId || "" },
+          thirdPartyUrl: { [LOCALE]: item.thirdPartyUrl || "" },
         };
+        if (item.eventStartDate) rwfFields.eventStartDate = { [LOCALE]: item.eventStartDate };
+        if (item.startDateTime) rwfFields.startDateTime = { [LOCALE]: item.startDateTime };
+        if (item.endDateTime) rwfFields.endDateTime = { [LOCALE]: item.endDateTime };
+        if (item.companyLogo?.[0] && assetMap?.has(String(item.companyLogo[0]))) {
+          const logoAsset = assetMap.get(String(item.companyLogo[0]));
+          rwfFields.companyLogo = { [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: logoAsset.id } } };
+        }
+        if (item.people?.[0]) {
+          const firstPersonId = item.people[0];
+          const ref = resolveEntryRef(firstPersonId);
+          if (ref?.type === "peopleCpt" && ref?.id) {
+            rwfFields.authorsHosts = { [LOCALE]: makeLink(ref.id) };
+          } else if (env) {
+            try {
+              const personEntry = await env.getEntry(`person-${firstPersonId}`);
+              if (personEntry?.sys?.id) {
+                rwfFields.authorsHosts = { [LOCALE]: makeLink(personEntry.sys.id) };
+              }
+            } catch (_) {
+              // person entry not found; leave authorsHosts unset
+            }
+          }
+        }
         resourceWebinarFieldsEntry = await upsertEntry(
           env,
           "resourceWebinarFields",
