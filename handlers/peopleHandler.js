@@ -1,5 +1,6 @@
 import { LOCALE, safeId } from "./pageHandler.js";
 import { upsertEntry, makeLink } from "../utils/contentfulHelpers.js";
+import { convertHtmlToRichText } from "../utils/richText.js";
 
 /**
  * Main function to migrate People entries
@@ -22,14 +23,19 @@ export async function migratePeople(env, peopleData, assetMap = null, targetIndi
             const contactInfoIds = await processContactInfo(env, person, shouldPublish);
             const otherLinkIds = await processOtherLinks(env, person, shouldPublish);
 
-            // 2. Prepare Fields
+            // 2. Prepare Fields (personsBiography is Rich Text in Contentful)
+            const biographyRaw = (person.personsBiography || "").trim();
+            const biographyHtml = biographyRaw
+                ? "<p>" + cleanHtml(biographyRaw).replace(/\n\n/g, "</p><p>").replace(/\n/g, "<br/>") + "</p>"
+                : "<p></p>";
+            const biographyRich = await convertHtmlToRichText(env, biographyHtml);
+
             const fields = {
                 entryId: { [LOCALE]: String(person.id) },
                 title: { [LOCALE]: person.title || person.personsName || "Unknown Person" },
                 personsName: { [LOCALE]: person.personsName || "" },
                 personsTitle: { [LOCALE]: person.personsTitle || "" },
-                // Biography: Clean HTML slightly for Long Text (Markdown)
-                personsBiography: { [LOCALE]: cleanHtml(person.personsBiography || "") },
+                personsBiography: { [LOCALE]: biographyRich },
             };
 
             // 3. Handle Photo (Media)

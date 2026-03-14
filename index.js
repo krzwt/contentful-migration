@@ -87,11 +87,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newStandaloneConversion",
   //   label: "Standalone Conversion",
   // },
-  {
-    file: "./data/standalone-microsite.json",
-    pageContentType: "newStandaloneMicrosite",
-    label: "Standalone Microsite",
-  },
+  // {
+  //   file: "./data/standalone-microsite.json",
+  //   pageContentType: "newStandaloneMicrosite",
+  //   label: "Standalone Microsite",
+  // },
   // {
   //   file: "./data/standalone-thankyou.json",
   //   pageContentType: "newStandaloneThankYou",
@@ -102,11 +102,11 @@ const DATA_SOURCES = [
   //   pageContentType: "newPartners",
   //   label: "Partners"
   // },
-  // {
-  //   file: "./data/people-cpt.json",
-  //   label: "People CPT",
-  //   isPeople: true
-  // },
+  {
+    file: "./data/people-cpt.json",
+    label: "People CPT",
+    isPeople: true
+  },
   // {
   //   file: "./data/company-quotes.json",
   //   label: "Company Quotes",

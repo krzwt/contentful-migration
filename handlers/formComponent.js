@@ -181,3 +181,23 @@ export async function createOrUpdateFormComponent(env, formData = {}) {
   return entry;
 }
 
+/**
+ * Handler for Craft "assetDownloadForm" blocks (e.g. in sidebarFormsStandalone or sections).
+ * Creates a formComponent entry linked to the Asset Download embed (entryId "assetDownloadForm")
+ * and maps redirectUrl to a CTA entry.
+ */
+export async function createOrUpdateAssetDownloadForm(env, block, assetMap = null, summary = null) {
+  const blockId = block.blockId ?? block.id;
+  if (!blockId) return null;
+
+  const formData = {
+    blockId: String(blockId),
+    blockName: "Asset Download Form",
+    redirectUrl: block.redirectUrl ?? block.fields?.redirectUrl,
+    selectFormEntryId: "assetDownloadForm",
+    embedSource: "contentful",
+  };
+
+  return createOrUpdateFormComponent(env, formData);
+}
+
