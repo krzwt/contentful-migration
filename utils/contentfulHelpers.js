@@ -248,7 +248,8 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
         target: { [LOCALE]: (safeUrl.startsWith("http") || isPdf) ? "_blank (New Tab)" : "_self (Same Tab)" }
     };
 
-    // If we have a linkedId, try to find the actual page entry in Contentful using the cache
+    // We do not create any page — only link to an existing Contentful page when found.
+    // If linkedId is not resolved now (target page not migrated yet), skip this CTA; re-run after full migration and it will be found.
     if (linkedId && env) {
         const ref = resolveEntryRef(linkedId);
 
@@ -269,14 +270,59 @@ export async function upsertCta(env, id, label, url, shouldPublish = true, linke
                 }
             }
         } else {
-            // If the reference is not found in Contentful, we still create the CTA entry with the provided URL fallback.
-            console.log(`   🔗 Internal reference ${linkedId} for cta-${id} not found in Contentful. Using URL fallback.`);
+            // Reference not in entry-id cache: try URL map, then query Contentful by entryId for allowed page types
+            const resolvedUrl = resolveInternalUrl(linkedId);
+            if (resolvedUrl) {
+                fields.url = { [LOCALE]: normalizeUrl(resolvedUrl) };
+                console.log(`   🔗 CTA ${id} using URL from map for linkedId ${linkedId}: ${resolvedUrl}`);
+            } else {
+                // Try to find the page entry in Contentful by entryId (e.g. page migrated in same run)
+                let foundEntryId = null;
+                for (const pageType of ALLOWED_PAGE_LINK_TYPES) {
+                    try {
+                        const res = await env.getEntries({
+                            content_type: pageType,
+                            "fields.entryId": String(linkedId),
+                            limit: 1,
+                        });
+                        if (res?.items?.length > 0 && res.items[0].sys?.id) {
+                            foundEntryId = res.items[0].sys.id;
+                            break;
+                        }
+                    } catch (_) {
+                        // type may not exist, skip
+                    }
+                }
+                if (foundEntryId) {
+                    fields.pageLink = { [LOCALE]: { sys: { type: "Link", linkType: "Entry", id: foundEntryId } } };
+                    fields.url = { [LOCALE]: "" };
+                    console.log(`   🔗 CTA ${id} linked to page entry ${foundEntryId} (linkedId ${linkedId}) via Contentful query.`);
+                }
+            }
         }
     }
 
-    // skip if NO URL or Page Link
-    if (!fields.url?.[LOCALE] && !fields.pageLink?.[LOCALE]) {
-        console.warn(`   ⚠️ Skipping creation of cta-${id}: No destination found (URL or Page Link).`);
+    // Do not create CTA with raw IDs in URL; only set Page Link when the page is found in Contentful.
+    if (!fields.url?.[LOCALE]?.trim() && !fields.pageLink?.[LOCALE]) {
+        // If this CTA already exists with wrong URL (e.g. /#1344780), clear that URL so it's not stored
+        const ctaEntryId = `cta-${id}`;
+        try {
+            const existing = await env.getEntry(ctaEntryId);
+            const currentUrl = existing?.fields?.url?.[LOCALE] || "";
+            if (/^\/#\d+$/.test(currentUrl)) {
+                const fixFields = {
+                    label: { [LOCALE]: finalLabel },
+                    url: { [LOCALE]: "" },
+                    target: { [LOCALE]: "_self (Same Tab)" },
+                };
+                await upsertEntry(env, "cta", ctaEntryId, fixFields, shouldPublish);
+                console.log(`   🔗 CTA ${id}: Cleared wrong URL "${currentUrl}". Page Link will be set when target page is migrated (re-run later).`);
+                return await env.getEntry(ctaEntryId);
+            }
+        } catch (_) {
+            // CTA does not exist, skip creating
+        }
+        console.warn(`   ⚠️ Skipping CTA ${id}: Page for linkedId ${linkedId} not found yet. Re-run migration after all pages are migrated to link automatically.`);
         return null;
     }
 

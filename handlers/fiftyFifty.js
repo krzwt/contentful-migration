@@ -8,6 +8,7 @@ import {
   ensureAssetPublished,
   parseCraftLink,
   resolveInternalUrl,
+  resolveEntryRef,
 } from "../utils/contentfulHelpers.js";
 import fs from "fs";
 
@@ -27,14 +28,31 @@ const CONTENT_TYPE = "fiftyFiftyComponent";
 
 /**
  * Handler for fiftyFiftyComponent (mapped from Craft contentWithAsset)
+ * Called from index.js as (env, payload, assetMap, summary) with payload = { blockId, ...fields }
+ * or from contentBlock as (env, id, fields, assetMap, summary).
  */
 export async function createOrUpdateFiftyFifty(
   env,
-  id,
-  fields,
-  assetMap = null,
+  idOrPayload,
+  fieldsOrAssetMap,
+  assetMapOrSummary = null,
   summary = null,
 ) {
+  let id;
+  let fields;
+  let assetMap;
+  if (typeof idOrPayload === "object" && idOrPayload !== null && idOrPayload.blockId != null) {
+    // Called from index.js: (env, { blockId, ...fields }, assetMap, summary)
+    id = idOrPayload.blockId;
+    fields = idOrPayload;
+    assetMap = fieldsOrAssetMap;
+    summary = assetMapOrSummary;
+  } else {
+    id = idOrPayload;
+    fields = fieldsOrAssetMap || {};
+    assetMap = assetMapOrSummary;
+  }
+
   if (!env) {
     console.log(`   [DRY RUN] Would process fiftyFiftyComponent: ${id}`);
     return { sys: { id: `fifty-${id}` } };
@@ -73,6 +91,9 @@ export async function createOrUpdateFiftyFifty(
         true,
         linkInfo.linkedId,
       );
+      if (!ctaEntry && (label || linkInfo.linkedId)) {
+        console.warn(`   ⚠️ CTA for fifty-${id} was skipped by upsertCta (no URL/pageLink). Check linkedId ${linkInfo.linkedId} is in URL map or entry cache.`);
+      }
     }
   }
 
@@ -98,24 +119,24 @@ export async function createOrUpdateFiftyFifty(
     }
   }
 
-  // 4.5 Resource
+  // 4.5 Resource (Add Resource – link to resourcesCpt)
   let resourceLink = null;
   if (fields.resource && fields.resource.length > 0) {
     const resourceId = String(fields.resource[0]);
-    const contentfulId = ID_MAP[resourceId];
-    if (contentfulId) {
-      console.log(
-        `   🔗 Mapping resource ${resourceId} to ${contentfulId} for fifty-fifty`,
-      );
-      resourceLink = makeLink(contentfulId);
+    const ref = resolveEntryRef(resourceId);
+    if (ref?.type === "resourcesCpt" && ref?.id) {
+      resourceLink = makeLink(ref.id);
     } else {
-      // OPTIONAL: Blind link fallback if not in map (likely a resource)
-      const blindId = `resource-${resourceId}`;
-      console.warn(
-        `   ⚠️ Resource ID ${resourceId} not in map for fifty-fifty. Attempting blind link to ${blindId}`,
-      );
-      resourceLink = makeLink(blindId);
-      if (summary) summary.missingResources.add(resourceId);
+      const contentfulId = ID_MAP[resourceId];
+      if (contentfulId) {
+        resourceLink = makeLink(contentfulId);
+      } else if (env) {
+        try {
+          const existing = await env.getEntry(`resource-${resourceId}`);
+          if (existing?.sys?.id) resourceLink = makeLink(existing.sys.id);
+        } catch (_) {}
+        if (!resourceLink && summary) summary.missingResources.add(resourceId);
+      }
     }
   }
 
@@ -137,10 +158,10 @@ export async function createOrUpdateFiftyFifty(
   if (titleEntry)
     cfFields.sectionTitle = { [LOCALE]: makeLink(titleEntry.sys.id) };
 
-  cfFields.cta = { [LOCALE]: ctaEntry ? makeLink(ctaEntry.sys.id) : null };
+  if (ctaEntry) cfFields.cta = { [LOCALE]: makeLink(ctaEntry.sys.id) };
 
   if (assetLink) cfFields.addAsset = { [LOCALE]: assetLink };
-  // if (resourceLink) cfFields.addResource = { [LOCALE]: resourceLink }; // Skip resources for now per user request
+  if (resourceLink) cfFields.addResource = { [LOCALE]: resourceLink };
 
   // Create/Update the Fifty Fifty entry
   return await upsertEntry(env, CONTENT_TYPE, `fifty-${id}`, cfFields);
