@@ -39,6 +39,7 @@ import { createOrUpdateLinkCards } from "./handlers/linkCards.js";
 import { createOrUpdateToggleCards } from "./handlers/toggleCards.js";
 import { createOrUpdateFiftyFifty } from "./handlers/fiftyFifty.js";
 import { createOrUpdatePressBanner } from "./handlers/pressMediaHandler.js";
+import { createOrUpdateAssetDownloadForm } from "./handlers/formComponent.js";
 import { createOrUpdateSimpleList } from "./handlers/simpleList.js";
 import { createOrUpdateStackedPhotoBlock } from "./handlers/stackedPhotoBlock.js";
 import { createOrUpdateCallOutCradle } from "./handlers/callOutCradle.js";
@@ -113,5 +114,6 @@ export const COMPONENTS = {
   embeds: { handler: createOrUpdateMediaBlock }, // Maps to mediaBlock
   form: { mapping: formMapping, handler: genericComponentHandler }, // Mapping needs contentType="formComponent"
   nonMarketingGetNotifiedForm: { mapping: nonMarketingGetNotifiedFormMapping, handler: genericComponentHandler }, // Mapping needs contentType="formComponent"
-  contactForm: { mapping: nonMarketingGetNotifiedFormMapping, handler: genericComponentHandler } // Reuse same mapping → formComponent
+  contactForm: { mapping: nonMarketingGetNotifiedFormMapping, handler: genericComponentHandler }, // Reuse same mapping → formComponent
+  assetDownloadForm: { handler: createOrUpdateAssetDownloadForm }, // → formComponent + redirectUrl CTA, selectFormEntryId "assetDownloadForm"
 };

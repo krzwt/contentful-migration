@@ -2,12 +2,10 @@
  * Handler: quotes → quotesBlock
  * Craft: companyQuotes = array of entry IDs (references to external quote entries)
  * Contentful: quotesBlock { blockId, blockName, heading, quoteItems: [quoteItem] }
- *
- * Since Craft quotes reference external entries (IDs only), we create placeholder
- * quoteItem entries with the ID. The actual quote data would need to come from
- * a separate data export.
+ * If a quote entry doesn't exist, we try to create it from company-quotes.json (ensureQuoteItem).
  */
 import { upsertEntry, upsertSectionTitle, makeLink } from "../utils/contentfulHelpers.js";
+import { ensureQuoteItem } from "./quoteHandler.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "quotesBlock";
@@ -25,14 +23,29 @@ export async function createOrUpdateQuotes(env, blockData, assetMap = null) {
     // since index.js injects the page title as a fallback if it's empty.
     const heading = fields.headingSection || fields.heading45 || "";
 
-    // Build quoteItem entries from source IDs
+    // Build quoteItem entries from source IDs — only link to quotes that exist in Contentful (avoids notResolvable on publish)
     const quoteRefs = [];
+    const missingIds = [];
     const quoteIds = fields.companyQuotes || [];
 
     for (const qId of quoteIds) {
-        // We assume quotes are already migrated with ID: quote-ID
-        // We just link to them. If it doesn't exist, Contentful will show a broken link until it's migrated.
-        quoteRefs.push(makeLink(`quote-${qId}`));
+        const entryId = `quote-${qId}`;
+        if (!env) {
+            quoteRefs.push(makeLink(entryId));
+            continue;
+        }
+        let entry = null;
+        try {
+            entry = await env.getEntry(entryId);
+        } catch (_) {
+            // Quote not in Contentful — try to create from company-quotes.json
+            entry = await ensureQuoteItem(env, qId, assetMap);
+        }
+        if (entry?.sys?.id) {
+            quoteRefs.push(makeLink(entry.sys.id));
+        } else {
+            missingIds.push(qId);
+        }
     }
 
     const contentfulFields = {
@@ -44,6 +57,11 @@ export async function createOrUpdateQuotes(env, blockData, assetMap = null) {
     if (quoteRefs.length) {
         contentfulFields.quoteItems = { [LOCALE]: quoteRefs };
         console.log(`   🔗 Linked ${quoteRefs.length} quotes to block.`);
+    } else {
+        contentfulFields.quoteItems = { [LOCALE]: [] };
+    }
+    if (missingIds.length) {
+        console.warn(`   ⚠ quotesBlock ${blockId}: ${missingIds.length} quote(s) not in Contentful — skipped (IDs: ${missingIds.join(", ")})`);
     }
 
     // Upsert the block
