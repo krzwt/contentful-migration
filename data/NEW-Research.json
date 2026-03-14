@@ -1717,7 +1717,7 @@
             "1967559": {
                 "type": "contentBlock",
                 "enabled": true,
-                "collapsed": false,
+                "collapsed": true,
                 "level": 1,
                 "fields": {
                     "headingSection": "A 2024 Customers' Choice for Remote Desktop Software",
@@ -1731,7 +1731,7 @@
             "1968398": {
                 "type": "reviews",
                 "enabled": true,
-                "collapsed": false,
+                "collapsed": true,
                 "level": 1,
                 "fields": {
                     "headingSection": "What Our Remote Support Customers Are Saying",
@@ -1811,7 +1811,7 @@
             "1968561": {
                 "type": "quotes",
                 "enabled": true,
-                "collapsed": false,
+                "collapsed": true,
                 "level": 1,
                 "fields": {
                     "companyQuotes": [
@@ -1822,7 +1822,7 @@
             "1968823": {
                 "type": "contentBlock",
                 "enabled": true,
-                "collapsed": false,
+                "collapsed": true,
                 "level": 1,
                 "fields": {
                     "headingSection": "About BeyondTrust Remote Support",
@@ -1836,7 +1836,7 @@
             "1968611": {
                 "type": "contentBlock",
                 "enabled": true,
-                "collapsed": false,
+                "collapsed": true,
                 "level": 1,
                 "fields": {
                     "headingSection": "About Gartner®​ Peer Insights™ for Remote Desktop Software",
@@ -2187,7 +2187,7 @@
         "dateDeleted": null,
         "root": 654245,
         "lft": 14,
-        "rgt": 37,
+        "rgt": 41,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -4622,7 +4622,7 @@
         "slug": "edr-and-epm",
         "uri": "resources/whitepapers/edr-and-epm",
         "dateCreated": "2025-04-23T14:44:04-05:00",
-        "dateUpdated": "2025-12-02T11:22:39-06:00",
+        "dateUpdated": "2026-02-19T10:47:09-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
@@ -4693,15 +4693,6 @@
                     "headingSection": "Get your copy",
                     "bodyMedium": null,
                     "salesforceCampaignId": "701Vw00000JSvmoIAD"
-                }
-            },
-            "2437512": {
-                "type": "assetDownloadForm",
-                "enabled": true,
-                "collapsed": false,
-                "level": 2,
-                "fields": {
-                    "redirectUrl": "{\"linkedUrl\":\"https:\\/\\/assets.beyondtrust.com\\/assets\\/documents\\/Whitepaper-EPM-vs-EDR.pdf\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
                 }
             }
         },
@@ -5732,7 +5723,7 @@
     },
     {
         "sectionId": 73,
-        "postDate": "2025-12-18T00:00:00-06:00",
+        "postDate": "2026-03-02T00:00:00-06:00",
         "expiryDate": null,
         "deletedWithEntryType": false,
         "_authorId": 2088209,
@@ -5749,11 +5740,11 @@
         "enabled": true,
         "archived": false,
         "siteId": 1,
-        "title": "Leave No Privilege Behind",
+        "title": "A Least Privilege Strategy Guide to Strengthen Security for Public Sector Agencies",
         "slug": "leave-no-privilege-behind",
         "uri": "resources/whitepapers/leave-no-privilege-behind",
         "dateCreated": "2025-12-10T14:13:09-06:00",
-        "dateUpdated": "2026-01-09T15:35:05-06:00",
+        "dateUpdated": "2026-03-02T10:58:42-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
@@ -5779,7 +5770,7 @@
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "heading": "Leave No Privilege Behind",
+                    "heading": "A Least Privilege Strategy Guide to Strengthen Security for Public Sector Agencies",
                     "bodyRedactorRestricted": null,
                     "resourceBannerImage": [
                         2486919
@@ -5797,9 +5788,9 @@
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "headingSection": "Discovering, Understanding, and Managing Every Privilege",
+                    "headingSection": "Leave No Privilege Behind & Enable Zero Trust",
                     "headingSwitch": false,
-                    "bodyRedactorRestricted": "<p>Any unmanaged, excessive, or risky privilege can become the means by which an attack is launched or expanded. Public sector agencies and enterprises must consider how they are protecting every privilege and escalation pathway—including across domains. </p>\n<p>Download this ebook to learn more about what it means to \"Leave No Privilege Behind\", including:<br /></p>\n<ul class=\"checkmark\"><li>Defining the scope of a Leave No Privilege Behind approach</li><li>How to operationalize this approach across the organization</li><li>The roles that Zero Trust policies, continuous visibility, and actionable telemetry play in finding and managing every privilege</li><li>And more</li></ul>",
+                    "bodyRedactorRestricted": "<p>Almost every modern cyberattack—ransomware, insider threats, supply chain compromises, nation-state intrusions, etc.—shares a common theme: privileged access is needed to move laterally, maintain persistence, and / or gain a deeper foothold into environments. </p>\n<p>Privilege is the key exposure point that gives attackers power. Any unmanaged, excessive, or risky privilege or entitlement can become a means for threat actors to launch or expand their attacks. </p>\n<p>Which privileges do organizations commonly “leave behind”, undermining security and uptime? Examples include:</p>\n<ul class=\"custom-bullet-list\"><li>Standing or temporary accounts </li></ul>\n<ul class=\"custom-bullet-list\"><li>Active or dormant entitlements </li></ul>\n<ul class=\"custom-bullet-list\"><li>Shadow identities (unregistered SaaS accounts, self-service cloud access) </li></ul>\n<ul class=\"custom-bullet-list\"><li>Shared accounts (admin, root, superuser) </li></ul>\n<ul class=\"custom-bullet-list\"><li>Service accounts (domain-joined, database, application / web services) </li></ul>\n<ul class=\"custom-bullet-list\"><li>Cloud service principals (AWS IAM roles, Azure, GCP) </li></ul>\n<ul class=\"custom-bullet-list\"><li>AI agents (AI assistance, agentic, and model-to-model) </li></ul>\n<ul class=\"custom-bullet-list\"><li>Machine-to-machine communications (Kubernetes, message brokers) </li></ul>\n<ul class=\"custom-bullet-list\"><li>And many others </li></ul>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "label": null,
                     "contentSubsections": []
@@ -5812,8 +5803,83 @@
                 "level": 1,
                 "fields": {
                     "companyQuotes": [
+                        2519326
+                    ]
+                }
+            },
+            "2519471": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "What is a Leave No Privilege Behind Mindset?",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>Leave No Privilege Behind is a strategic approach to privilege-centric identity security that CISOs, infrastructure, and security teams can take to ensure every privilege—human, machine, and AI agent—is discovered, governed, right-sized, and continuously monitored and audited. It helps drive and operationalize a full-stack approach to least privilege. </p>\n<p>While this ebook is written for a public sector audience, its insights and practices apply to organizations of any industry that want to better manage their identity attack surface and reduce enterprise cyber risks.</p>\n<p>This mindset empowers public sector / government agencies to meet critical cybersecurity goals, such as:</p>\n<ul><li><strong>Operationalizing Zero Trus</strong><strong>t</strong>: Managing every privilege via the right identity intelligence informs organizations about where and how to harden their zero trust architecture.</li></ul>\n<ul><li><strong>Establishing AI Security</strong>: Managing every privilege enables public sector organizations to better secure <a href=\"{entry:2451696@1:url||https://bluetext.beyondtrust.com/blog/entry/how-to-govern-ai-agent-identities}\" target=\"_blank\" rel=\"noreferrer noopener\">agentic AI identities</a>.</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "2519474": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
                         2485648
                     ]
+                }
+            },
+            "2519473": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Next Steps to Strengthen Your Security via Least Privilege and Leave No Privilege Behind",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>Download the full ebook to learn more about how to Leave No Privilege Behind—whether human, machine, or AI agent—within your agency. </p>\n<p>You’ll get tactical steps for implementing least privilege access and zero trust security principles throughout your environment, including: </p>\n<ul><li>Seeing beyond surface-level inventories with the concepts of True Privilege™ and Paths to Privilege™ </li></ul>\n<ul><li>Collecting the right identity intelligence, especially continuous visibility and actionable telemetry, to inform privilege management across domains </li></ul>\n<ul><li>6 steps to preventing privilege gaps </li></ul>\n<ul><li>10 key takeaways for actionable next steps </li></ul>\n<p>Plus, discover how you can actualize a Leave No Privilege Behind mindset with BeyondTrust. </p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "2519475": {
+                "type": "faqs",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": null,
+                    "faqs": {
+                        "2519476": {
+                            "type": 99,
+                            "fields": {
+                                "faqs": {
+                                    "2519477": {
+                                        "type": "faq",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "question": "Why Prioritize Privilege-Centric Identity Security for Government and Public Sector?",
+                                            "answer": "<p>Privilege-centric identity security is important for government and public sector organizations because these groups are often favored targets for attackers. Prioritizing privileged access management (PAM) and other privilege-centric identity security controls ensures agencies gain comprehensive visibility and control over privileges and escalation paths. This also encompasses managing privileged accounts, eliminating standing access, enforcing least privilege, and continuously validating how privileges are being used.</p>"
+                                        }
+                                    },
+                                    "2519478": {
+                                        "type": "faq",
+                                        "enabled": true,
+                                        "collapsed": false,
+                                        "fields": {
+                                            "question": "Why Zero Trust for Government Agencies?",
+                                            "answer": "<p>Zero trust is a cybersecurity strategy that many government agencies adopt to strengthen cybersecurity and comply with numerous compliance frameworks. It assumes no user, device, workload, or identity should be inherently trusted. Zero trust requires verifying every identity and every access request based on context, privilege level, and risk. A few foundational zero trust controls for public sector organizations to consider include: </p>\n<ul class=\"custom-bullet-list\"><li>JEP (Just Enough Privilege): only getting the privileges needed to do a task or activity </li></ul><ul class=\"custom-bullet-list\"><li>JEA (Just Enough Access): restricting which actions an identity can take </li></ul><ul class=\"custom-bullet-list\"><li><a href=\"{entry:1617878@1:url||https://bluetext.beyondtrust.com/resources/glossary/just-in-time-access}\" target=\"_blank\" rel=\"noreferrer noopener\">JIT (Just-in-Time) Access</a>: only elevating privileges for a short, approved window </li></ul>"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -5835,15 +5901,6 @@
                     "headingSection": "Download the ebook",
                     "bodyMedium": null,
                     "salesforceCampaignId": "701Vw00000SbCwYIAV"
-                }
-            },
-            "2485644": {
-                "type": "assetDownloadForm",
-                "enabled": true,
-                "collapsed": false,
-                "level": 2,
-                "fields": {
-                    "redirectUrl": "{\"linkedUrl\":\"https:\\/\\/assets.beyondtrust.com\\/assets\\/documents\\/Leave_No_Privilege_Behind.pdf\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
                 }
             }
         },
@@ -6138,11 +6195,11 @@
         "enabled": true,
         "archived": false,
         "siteId": 1,
-        "title": "Comparing Microsoft Entra PIM vs. BeyondTrust",
+        "title": "Comparing Microsoft Entra PIM vs. BeyondTrust PAM",
         "slug": "microsoft-entra-pim-vs-beyondtrust",
         "uri": "resources/whitepapers/microsoft-entra-pim-vs-beyondtrust",
         "dateCreated": "2026-01-15T15:37:23-06:00",
-        "dateUpdated": "2026-01-23T17:32:53-06:00",
+        "dateUpdated": "2026-02-09T21:17:57-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
@@ -6493,7 +6550,7 @@
     },
     {
         "sectionId": 73,
-        "postDate": "2026-01-27T12:55:00-06:00",
+        "postDate": "2026-01-30T00:00:00-06:00",
         "expiryDate": null,
         "deletedWithEntryType": false,
         "_authorId": 2088209,
@@ -6514,7 +6571,7 @@
         "slug": "beyondtrust-ping-identity",
         "uri": "resources/whitepapers/beyondtrust-ping-identity",
         "dateCreated": "2026-01-16T12:55:04-06:00",
-        "dateUpdated": "2026-01-27T19:41:28-06:00",
+        "dateUpdated": "2026-01-30T11:36:19-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
@@ -6529,7 +6586,7 @@
         "isRevision": false,
         "isUnpublishedDraft": false,
         "ref": "newResearch/beyondtrust-ping-identity",
-        "status": "disabled",
+        "status": "live",
         "url": "https://bluetext.beyondtrust.com/resources/whitepapers/beyondtrust-ping-identity",
         "authorId": 2088209,
         "typeId": 160,
@@ -6542,7 +6599,9 @@
                 "fields": {
                     "heading": "Bridging PAM, IAM, & IGA with BeyondTrust + Ping Identity",
                     "bodyRedactorRestricted": null,
-                    "resourceBannerImage": [],
+                    "resourceBannerImage": [
+                        2502876
+                    ],
                     "switch": false,
                     "resourceVideo": [],
                     "people": []
@@ -6558,15 +6617,17 @@
                 "fields": {
                     "headingSection": "4 Use Cases for Managing, Governing, and Securing Every Identity",
                     "headingSwitch": false,
-                    "bodyRedactorRestricted": "<p>Historically, Privileged Access Management (PAM), Identity and Access Management (IAM), and Identity Governance and Administration (IGA) have operated in silos. But organizations can no longer get by with this approach. Today, they must to keep up with the rapidly shifting user profiles and access requirements of both human and non-human identities (RPA, bots, applications, workloads, AI agents, etc.), and a sprawling attack surface. </p>\n<p>BeyondTrust and Ping Identity offer a combined solution for bringing together these three disciplines, enabling organizations to implement an end-to-end identity security strategy that eliminates silos. </p>\n<p>Download this paper to learn:</p>\n<ul class=\"checkmark\"><li>The risks and challenges of siloed identity infrastructure</li><li>Key business and security outcomes from the BeyondTrust-Ping Identity joint solution approach</li><li>How our joint approach has you covered from holistic identity governance, to privilege management, threat detection and response, security for agentic AI—and more!</li></ul>",
+                    "bodyRedactorRestricted": "<p>Historically, Privileged Access Management (PAM), Identity and Access Management (IAM), and Identity Governance and Administration (IGA) have operated in silos. But organizations can no longer get by with this approach. Today, they must keep up with the rapidly shifting user profiles and access requirements of both human and non-human identities (RPA, bots, applications, workloads, AI agents, etc.), as well as a sprawling attack surface. </p>\n<p>BeyondTrust and Ping Identity offer a combined solution for bringing together these three disciplines, enabling organizations to implement an end-to-end identity security strategy that eliminates silos. </p>\n<p>Download this paper to learn:</p>\n<ul class=\"checkmark\"><li>The risks and challenges of siloed identity infrastructure</li><li>Key business and security outcomes from the BeyondTrust-Ping Identity joint solution approach</li><li>How our joint approach has you covered from holistic identity governance, to privilege management, threat detection and response, security for agentic AI—and more</li></ul>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "label": null,
                     "contentSubsections": []
                 }
             }
         },
-        "signupRequired": false,
-        "resourceDocument": [],
+        "signupRequired": true,
+        "resourceDocument": [
+            2502877
+        ],
         "resource": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
         "label25": null,
         "resourceCardLabel": [],
@@ -6620,13 +6681,13 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2026-01-27T19:37:04-06:00",
+            "sourceDateUpdated": "2026-01-28T07:43:42-06:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
                 "seoTitle": "BeyondTrust + Ping Identity: PAM, IAM, & IGA",
                 "siteNamePosition": "",
-                "seoDescription": "This guides offers an overview of 4 use cases for managing, governing, and securing every identity—including NHIs such as agentic A—with BeyondTrust and Ping Identity.",
+                "seoDescription": "A guide to BeyondTrust and Ping Identity's 4 use cases for managing, governing, and securing every identity—including NHIs such as agentic AI.",
                 "seoKeywords": "",
                 "seoImage": "",
                 "seoImageWidth": "",
@@ -6857,6 +6918,400 @@
     },
     {
         "sectionId": 73,
+        "postDate": "2026-02-03T18:12:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 670521,
+        "id": 2507227,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "c6e7c086-49b4-457a-a6d4-a42aa3cd40f8",
+        "siteSettingsId": 3510766,
+        "fieldLayoutId": null,
+        "structureId": 365014,
+        "contentId": 1761438,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Mapping BeyondTrust Capabilities to KSA’s NCA Essential Cybersecurity Controls",
+        "slug": "beyondtrust-ksa-nca-ecc",
+        "uri": "resources/whitepapers/beyondtrust-ksa-nca-ecc",
+        "dateCreated": "2026-02-03T17:49:17-06:00",
+        "dateUpdated": "2026-02-03T18:28:31-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654245,
+        "lft": 37,
+        "rgt": 38,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 1969564,
+        "canonicalId": 2507227,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newResearch/beyondtrust-ksa-nca-ecc",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/whitepapers/beyondtrust-ksa-nca-ecc",
+        "authorId": 670521,
+        "typeId": 160,
+        "mainBannerResources": {
+            "2507233": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Mapping BeyondTrust Capabilities to KSA’s NCA Essential Cybersecurity Controls",
+                    "bodyRedactorRestricted": "<p>A practical mapping guide showing how BeyondTrust identity security and PAM capabilities align to Saudi Arabia’s NCA Essential Cybersecurity Controls.</p>",
+                    "resourceBannerImage": [
+                        2507228
+                    ],
+                    "switch": false,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2507239": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Supporting Saudi Cybersecurity Objectives Through Identity Security",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>As Saudi Arabia accelerates its digital transformation under Vision 2030, organizations operating in or supporting the Kingdom face increasing pressure to meet the <a href=\"https://nca.gov.sa/en/regulatory-documents/controls-list/ecc/\" target=\"_blank\" rel=\"noreferrer noopener\">National Cybersecurity Authority’s Essential Cybersecurity Controls (NCA ECC)</a>. These controls establish baseline cybersecurity requirements across governance, defense, resilience, and third-party environments—placing identity and privileged access squarely at the center of compliance and risk reduction.</p>\n<p>This whitepaper provides a clear, security-focused mapping between the NCA ECC (including updates in ECC 2:2024) and BeyondTrust’s identity security and Privileged Access Management (PAM) solutions. Designed for security, IT, and compliance leaders, it shows how BeyondTrust can help organizations reduce identity-based risk, enforce least privilege, and more easily demonstrate alignment with key ECC control requirements across on-premises, cloud, OT, and third-party environments.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": {
+                        "2507240": {
+                            "type": "contentWithAsset",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "heading": "With this whitepaper, you will be able to:",
+                                "body": "<ul class=\"checkmark\"><li>Understand how organizations using BeyondTrust solutions can map to key NCA ECC domains, subdomains, and controls, including Identity and access management</li><li>See how least privilege, MFA, JIT access, and privileged session controls support ECC compliance objectives</li><li>Identify ways to improve audit readiness and evidence collection through centralized visibility and logging</li><li>Learn how to reduce identity-based attack paths across human, machine, and workload identities</li><li>Apply a practical, security-first approach to aligning identity controls with Saudi regulatory requirements</li></ul>\n<p><strong>Download the whitepaper today to learn more.</strong></p>",
+                                "asset": [],
+                                "resource": [],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "linkText": null,
+                                "contentAlignment": false,
+                                "contentTheme": "whiteTheme",
+                                "sidebarEnabled": false
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "signupRequired": true,
+        "resourceDocument": [
+            2507229
+        ],
+        "resource": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+        "label25": null,
+        "resourceCardLabel": [],
+        "timeOverride": null,
+        "modalFormsResources": {
+            "2507251": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Get the Whitepaper",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "701Vw00000VbpMfIAJ"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837249,
+            6944,
+            6948,
+            1716548,
+            20890,
+            6945,
+            6946,
+            6949,
+            43853,
+            423178,
+            30031,
+            58263,
+            58264,
+            1972045,
+            1716547,
+            8403,
+            8402,
+            43848
+        ],
+        "tags": [
+            1842453,
+            1962048,
+            2507230,
+            2241398,
+            2507231,
+            1982503,
+            1983212,
+            2507232,
+            1852520,
+            2241404
+        ],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2026-02-03T18:12:55-06:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "This practical mapping guide shows how BeyondTrust identity security and PAM capabilities align to Saudi Arabia’s NCA Essential Cybersecurity Controls.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceDocument",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceDocument",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceDocument",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 73,
         "postDate": "2024-08-21T16:02:00-05:00",
         "expiryDate": null,
         "deletedWithEntryType": false,
@@ -6882,8 +7337,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 38,
-        "rgt": 39,
+        "lft": 42,
+        "rgt": 43,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -7301,8 +7756,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 40,
-        "rgt": 41,
+        "lft": 44,
+        "rgt": 45,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -7580,8 +8035,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 42,
-        "rgt": 43,
+        "lft": 46,
+        "rgt": 47,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -8078,8 +8533,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 44,
-        "rgt": 45,
+        "lft": 48,
+        "rgt": 49,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -8357,8 +8812,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 46,
-        "rgt": 47,
+        "lft": 50,
+        "rgt": 51,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -8636,8 +9091,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 48,
-        "rgt": 49,
+        "lft": 52,
+        "rgt": 53,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -8915,8 +9370,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 50,
-        "rgt": 51,
+        "lft": 54,
+        "rgt": 55,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -9194,8 +9649,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 52,
-        "rgt": 53,
+        "lft": 56,
+        "rgt": 57,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -9473,8 +9928,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 54,
-        "rgt": 55,
+        "lft": 58,
+        "rgt": 59,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -9903,8 +10358,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 56,
-        "rgt": 63,
+        "lft": 60,
+        "rgt": 67,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -10178,12 +10633,12 @@
         "slug": "entitle-overview",
         "uri": "resources/datasheets/entitle-overview",
         "dateCreated": "2024-10-02T09:38:23-05:00",
-        "dateUpdated": "2024-10-15T12:37:27-05:00",
+        "dateUpdated": "2026-03-03T11:10:42-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 57,
-        "rgt": 58,
+        "lft": 61,
+        "rgt": 62,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -10205,9 +10660,9 @@
                 "level": 1,
                 "fields": {
                     "heading": "Entitle Overview",
-                    "bodyRedactorRestricted": null,
+                    "bodyRedactorRestricted": "<p>Entitle automates granting and revoking temporary access, eliminating unnecessary standing permissions and reducing security risks. Download the datasheet today to learn more.</p>",
                     "resourceBannerImage": [
-                        2121228
+                        2520036
                     ],
                     "switch": false,
                     "resourceVideo": [],
@@ -10238,22 +10693,10 @@
                 "fields": {
                     "headingSection": "Key Features",
                     "headingSwitch": false,
-                    "bodyRedactorRestricted": "<ul><li><strong>Self-Serve Access Requests:</strong> Enable users to request access via familiar tools like Teams and Slack, reducing admin workload with seamless integrations.</li><li><strong>No-Code Policy Workflows:</strong> Automate approval flows based on conditions like groups, schedules, or HR inputs, simplifying permission management.</li><li><strong>Automated Permission Provisioning:</strong> Automatically grant and revoke permissions with deep API integrations, ensuring access is role- and policy-based.</li><li><strong>Access Governance and Reviews:</strong> Centralize visibility of permissions with a full audit trail, tracking access duration and reasons for compliance.</li></ul>",
+                    "bodyRedactorRestricted": "<ul><li><strong>Self-Serve Access Requests:</strong> Enable users to request access via familiar tools like Teams and Slack, reducing admin workload with seamless integrations.</li><li><strong>No-Code Policy Workflows:</strong> Automate approval flows based on conditions like groups, schedules, or HR inputs, simplifying permission management.</li><li><strong>Automated Permission Provisioning:</strong> Automatically grant and revoke permissions with deep API integrations, ensuring access is role- and policy-based.</li><li><strong>Access Governance and Reviews:</strong> Centralize visibility of permissions with a full audit trail, tracking access duration and reasons for compliance.</li></ul>\n<p>Download the datasheet to learn more.</p>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "label": null,
                     "contentSubsections": []
-                }
-            },
-            "2087542": {
-                "type": "calloutBar",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "backgroundColor": "darkBlue",
-                    "headingSection": "Learn how Entitle Streamlines Just-in-Time Access",
-                    "label": "Download Datasheet",
-                    "ctaLink": "{\"linkedUrl\":\"https:\\/\\/assets.beyondtrust.com\\/videoUploads\\/BT_Datasheet-A4_2024_Entitle.pdf\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
                 }
             },
             "2087387": {
@@ -10272,18 +10715,18 @@
         },
         "signupRequired": false,
         "resourceDocument": [],
-        "resource": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+        "resource": "{\"linkedUrl\":\"https:\\/\\/assets.beyondtrust.com\\/assets\\/images\\/Entitle-Datasheet-2026.pdf\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
         "label25": null,
         "resourceCardLabel": [],
         "timeOverride": null,
         "modalFormsResources": {
-            "2121229": {
+            "2520049": {
                 "type": "form",
                 "enabled": true,
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "headingSection": "Null",
+                    "headingSection": "Download Datasheet",
                     "bodyMedium": null,
                     "salesforceCampaignId": "Null"
                 }
@@ -10586,8 +11029,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 59,
-        "rgt": 60,
+        "lft": 63,
+        "rgt": 64,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -10951,8 +11394,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 61,
-        "rgt": 62,
+        "lft": 65,
+        "rgt": 66,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -11316,8 +11759,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 64,
-        "rgt": 103,
+        "lft": 68,
+        "rgt": 109,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -11595,8 +12038,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 65,
-        "rgt": 66,
+        "lft": 69,
+        "rgt": 70,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -12042,8 +12485,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 67,
-        "rgt": 68,
+        "lft": 71,
+        "rgt": 72,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -12475,8 +12918,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 69,
-        "rgt": 70,
+        "lft": 73,
+        "rgt": 74,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -12875,8 +13318,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 71,
-        "rgt": 72,
+        "lft": 75,
+        "rgt": 76,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -13317,8 +13760,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 73,
-        "rgt": 74,
+        "lft": 77,
+        "rgt": 78,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -13681,8 +14124,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 75,
-        "rgt": 76,
+        "lft": 79,
+        "rgt": 80,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -14109,8 +14552,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 77,
-        "rgt": 78,
+        "lft": 81,
+        "rgt": 82,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -14634,8 +15077,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 79,
-        "rgt": 80,
+        "lft": 83,
+        "rgt": 84,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -15016,12 +15459,12 @@
         "slug": "ariento",
         "uri": "resources/case-studies/ariento",
         "dateCreated": "2025-07-07T13:32:21-05:00",
-        "dateUpdated": "2025-08-12T09:22:24-05:00",
+        "dateUpdated": "2026-01-29T14:00:02-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 81,
-        "rgt": 82,
+        "lft": 85,
+        "rgt": 86,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -15207,7 +15650,9 @@
             1837392,
             1837274,
             43853,
-            43848
+            43848,
+            6935,
+            6941
         ],
         "tags": [
             1856098,
@@ -15495,8 +15940,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 83,
-        "rgt": 84,
+        "lft": 87,
+        "rgt": 88,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -16033,8 +16478,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 85,
-        "rgt": 86,
+        "lft": 89,
+        "rgt": 90,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -16569,12 +17014,12 @@
         "slug": "large-state-entity-insights",
         "uri": "resources/case-studies/large-state-entity-insights",
         "dateCreated": "2025-08-07T12:55:42-05:00",
-        "dateUpdated": "2025-12-10T11:38:49-06:00",
+        "dateUpdated": "2026-01-29T13:59:44-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 87,
-        "rgt": 88,
+        "lft": 91,
+        "rgt": 92,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -16755,7 +17200,9 @@
             1716547,
             8403,
             8402,
-            43848
+            43848,
+            6935,
+            6941
         ],
         "tags": [
             1856098,
@@ -17043,8 +17490,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 89,
-        "rgt": 90,
+        "lft": 93,
+        "rgt": 94,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -17533,8 +17980,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 91,
-        "rgt": 92,
+        "lft": 95,
+        "rgt": 96,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -18063,8 +18510,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 93,
-        "rgt": 94,
+        "lft": 97,
+        "rgt": 98,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -18584,12 +19031,12 @@
         "slug": "la-department-of-water-power",
         "uri": "resources/case-studies/la-department-of-water-power",
         "dateCreated": "2025-10-27T13:04:07-05:00",
-        "dateUpdated": "2025-10-27T14:44:06-05:00",
+        "dateUpdated": "2026-01-29T13:59:16-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 95,
-        "rgt": 96,
+        "lft": 99,
+        "rgt": 100,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -18810,7 +19257,9 @@
             6949,
             43853,
             30031,
-            58264
+            58264,
+            6935,
+            6941
         ],
         "tags": [
             1834899,
@@ -19098,8 +19547,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 97,
-        "rgt": 98,
+        "lft": 101,
+        "rgt": 102,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -19544,8 +19993,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 99,
-        "rgt": 100,
+        "lft": 103,
+        "rgt": 104,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -20126,8 +20575,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 101,
-        "rgt": 102,
+        "lft": 105,
+        "rgt": 106,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -20646,6 +21095,537 @@
     },
     {
         "sectionId": 73,
+        "postDate": "2026-03-12T10:26:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 2088209,
+        "id": 2524710,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "19cef2d2-f152-476e-b8dc-44c65ada57e0",
+        "siteSettingsId": 3544449,
+        "fieldLayoutId": null,
+        "structureId": 365014,
+        "contentId": 1789466,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Nash County Success Story",
+        "slug": "nash-county-success-story",
+        "uri": "resources/case-studies/nash-county-success-story",
+        "dateCreated": "2026-03-12T10:12:58-05:00",
+        "dateUpdated": "2026-03-13T11:30:10-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654245,
+        "lft": 107,
+        "rgt": 108,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 2077840,
+        "canonicalId": 2524710,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newResearch/nash-county-success-story",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/case-studies/nash-county-success-story",
+        "authorId": 2088209,
+        "typeId": 160,
+        "mainBannerResources": {
+            "2524711": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Nash County Public Schools Transforms IT Support with BeyondTrust Remote Support",
+                    "bodyRedactorRestricted": "<p>Nash County Public Schools is a public education system in Nash County, North Carolina, dedicated to academic excellence, equity, and inclusive student success. The district serves students from Pre-K through 12th grade, with a focus on innovative instruction and supportive learning environments for all.</p>",
+                    "resourceBannerImage": [
+                        2524842
+                    ],
+                    "switch": false,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2524717": {
+                "type": "useCases",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading45": "Customer Profile",
+                    "useCases": {
+                        "2524718": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Industry",
+                                "body": "K-12 Education",
+                                "image": [
+                                    2340112
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "2524719": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Products",
+                                "body": "Remote Support",
+                                "image": [
+                                    2497999
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "2524720": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Size",
+                                "body": "Around 14,000 students & 1,700 –1,800 staff",
+                                "image": [
+                                    1356801
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        }
+                    }
+                }
+            },
+            "2524721": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Faster Support, Lower Costs, and Improved User Experience with BeyondTrust Remote Support",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p><strong>Tremain McQueen, CTO, and James Williams, Sr Network Engineer, at Nash County Public Schools</strong></p>\n<p>Nash County Public Schools in North Carolina serves just under 14,000 students and roughly 1,700 –1,800 staff across 24 schools and 27 sites. The district’s IT team oversees a one-to-one Chromebook program for students, a diverse mix of staff devices, and many campuses spread across the county. Yet the district’s 15-person technology team needed a better way to keep learning running without spending their days driving from school to school. </p>\n<p>The chance for transformation came when the district moved to a new, state-provided endpoint security tool and lost the bundled remote access solution they had formerly relied on. Rather than treat that as a setback, Nash County turned the cost savings into an opportunity to modernize remote support and resolve existing operational issues. </p>\n<p>The team sought a modern remote support solution that would let technicians quickly help teachers and students anywhere in the district, reduce classroom downtime, and strengthen security and oversight for Family Educational Rights &amp; Privacy Act (FERPA) sensitive data. BeyondTrust Remote Support offered Nash County a single, secure way to support every device and every user, from anywhere, all while improving ticket handling efficiency and avoiding unnecessary downtime spent traveling to school sites to provide in-person support. </p>\n<p>After a careful evaluation, the district selected <a href=\"{entry:501290@1:url||https://bluetext.beyondtrust.com/products/remote-support}\" target=\"_blank\" rel=\"noreferrer noopener\">BeyondTrust Remote Support</a>, and quickly found that it not only replaced what they had lost, but “changed their lives” in how they support classrooms, staff, and students.</p>\n<h3>A Growing District with Rising Support Demands</h3>\n<p>Technicians are assigned across elementary, middle, and high schools, and were often on the road resolving issues in person. Simple problems—like printer issues or misconfigured devices—could easily consume hours once travel time was included. Troubleshooting could also disrupt classroom instruction, often inconveniencing and frustrating all parties involved. </p>\n<p>When the district adopted a new endpoint security platform made available by the state, they saved more than $30,000 annually—but the remote access tool that was bundled with the old endpoint security platform went away with it. They now had a gap to fill, and a clear budget opportunity to do it right.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "2524792": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "The Challenge: Replace Built-In Remote Access and Improve Upon It",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>To find the right remote support solution, Nash County’s IT leaders first defined their must-have<br />capabilities: <br /></p>\n<ul class=\"custom-bullet-list\"><li><strong>Unattended technician access</strong> to staff and student devices without needing the user at the keyboard on the other end </li></ul><ul class=\"custom-bullet-list\"><li><strong>Robust reporting and auditing</strong> to see which devices were online, how they were configured, and what actions were taken</li></ul><ul class=\"custom-bullet-list\"><li><strong>Flexible device search</strong> by username, computer name, serial number, or MAC address</li></ul><ul class=\"custom-bullet-list\"><li><strong>Minimal classroom disruption</strong>, with the ability to quickly remote into devices without complex setup and minimize downtime</li></ul><ul class=\"custom-bullet-list\"><li><strong>Cost-effectiveness</strong>, given that the previous tool had been part of an all-in-one bundle</li></ul>\n<p>The team also wanted to ensure they were being good stewards of district funds, so they leaned on well-established K-12 peer groups and regional councils to understand what other districts were using and how those tools performed in real environments.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "2524793": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Evaluation: Peer-Driven, Requirements-Led Decision",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>Nash County’s technology team didn’t make the decision in isolation. They strategically consulted K-12 peer communities and regional director groups to benchmark options. They then formed an internal evaluation team representing different IT roles and, together, built a feature checklist and compared multiple remote support tools. </p>\n<p>Several products covered parts of their list, but with trade-offs—strong remote access but weak reporting, or reasonable features at an unsustainable price.</p>\n<p>When they saw a demo of BeyondTrust Remote Support, they realized they could get everything they needed—and more—within their budget. Features that had been scattered across different tools were consolidated into a single platform. </p>\n<p>The combination of capabilities, price, and public-sector-ready security made the decision, in their words, a “no-brainer.”</p>\n<p>BeyondTrust’s onboarding team then worked side-by-side with Nash County’s implementation group to stand the solution up quickly and tailor it to their environment. The experience left a strong impression and set the foundation for an ongoing partnership.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "2524834": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        2524820
+                    ]
+                }
+            },
+            "2524794": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "The Solution: BeyondTrust Remote Support for K-12",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>With BeyondTrust Remote Support in place, Nash County now has a single, secure platform to support staff and students anywhere in the district—and beyond.</p>\n<p>Key capabilities include:</p><ul><li><strong>Unattended access:</strong> Technicians can securely connect to devices even when no one is physically present or logged in, which is crucial for early-morning maintenance or resolving issues outside of class time.</li><li><strong>Cross-platform support:</strong> The team can support Windows, macOS, ChromeOS, iOS, and Android from one tool, keeping staff laptops, lab machines, and student Chromebooks all within reach.</li><li><strong>Flexible ways to connect: </strong>End users can be helped through pre-installed clients, browser-based sessions, or by simply visiting a portal and entering a numeric code—ideal for staff working from home or traveling.</li><li><strong>Powerful device search:</strong> Technicians can quickly locate a device using whatever information they have—username, device name, serial number, or MAC address—and jump straight into a session.</li><li><strong>Fast file transfers:</strong> Large files, including installers and patches, can be moved between devices in minutes, dramatically speeding up common maintenance tasks.</li><li><strong>Collaborative sessions: </strong>Multiple technicians can join the same remote session to cooperatively troubleshoot complex issues, instead of handing tickets off or duplicating work.</li><li><strong>SSO and granular permissions:</strong> SAML integration provides single sign-on for technicians, while pre-defined groups with specific permissions let the district safely extend limited access to non-IT staff who support specialized systems.</li><li><strong>Ticketing integration:</strong> Through API integrations, technicians can launch remote sessions directly from tickets in their ITSM solution of choice (such as ServiceNow or Jira Service Management), and key session details can be associated with the record for better tracking.</li><li><strong>Audit trails and session recording:</strong> Every session is logged, and optional recordings are used both for accountability and as a powerful training library for new technicians<br /></li></ul>\n<p>The district also set clear policies around where remote access is allowed. For example, technicians are not permitted to remote into personal home computers, helping maintain a strong privacy posture.<br /></p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "2524799": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "A Technician’s Day, Reimagined",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>Before BeyondTrust, a technician at Nash County Public Schools might start their day with a list of tickets and a map of schools they needed to physically visit. With BeyondTrust Remote Support in place, a typical day now looks decidedly different: <br /></p>\n<ul class=\"custom-bullet-list\"><li>Review 10–15 new tickets in the queue </li></ul><ul class=\"custom-bullet-list\"><li>Launch a BeyondTrust session directly from each ticket to connect to the affected device </li></ul><ul class=\"custom-bullet-list\"><li>Chat with the teacher or staff member, see exactly what they see via remote connection, and resolve the issue </li></ul><ul class=\"custom-bullet-list\"><li>Bring in a colleague for a second set of eyes on tricky issues by inviting them into the same session </li></ul><ul class=\"custom-bullet-list\"><li>Use unattended access to resolve problems outside class time, reducing disruptions for teachers and students</li></ul>\n<p>And support isn’t limited by geography. In one instance, a principal was able to receive remote help while traveling overseas, simply by visiting the portal and entering the session code. </p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "2524835": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        2524823
+                    ]
+                }
+            },
+            "2524800": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Results: Faster Support, Lower Costs, Better Training",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>Since deploying BeyondTrust Remote Support, Nash County Public Schools teachers and staff have noticed the difference: problems get solved faster, interruptions to instruction are shorter, and they no longer feel like they have to wait for someone to drive across the county to help them. They experience meaningful benefits, such as: <br /></p>\n<ul><li><strong>Time and cost-savings:</strong> With far fewer “truck rolls,” technicians spend more time fixing issues and less time driving between sites—translating into real cost savings and higher productivity. </li><li><strong>Higher ticket throughput:</strong> A high school technician can now handle 10–15 tickets per day remotely, with many resolved in a single session. </li><li><strong>Improved user experience:</strong> Staff and administrators get faster, more reliable support, wherever they are. The process is straightforward: get a session key, start a session, get real-time help. </li><li><strong>Stronger security and oversight:</strong> Comprehensive logging and optional recordings give the district clear visibility into what actions were taken on which devices, supporting both troubleshooting and compliance needs. </li><li><strong>Built-in training library:</strong> Session recordings serve as a real-world knowledge base for new technicians, who can watch how common issues were resolved and learn best practices directly from real sessions. </li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "2524801": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Why Nash County Recommends BeyondTrust",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>Looking back on their evaluation and rollout, Nash County’s IT leaders offer clear advice to other districts: <br /></p>\n<ul class=\"custom-bullet-list\"><li>Build a cross-functional team to define requirements and evaluate tools </li></ul><ul class=\"custom-bullet-list\"><li>Look carefully at must-have features like unattended access, reporting, and searchability </li></ul><ul class=\"custom-bullet-list\"><li>Consider both functionality and total cost of ownership </li></ul><ul class=\"custom-bullet-list\"><li>Don’t underestimate the value of onboarding and ongoing support</li></ul>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "2524836": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        2524826
+                    ]
+                }
+            }
+        },
+        "signupRequired": false,
+        "resourceDocument": [
+            2524887
+        ],
+        "resource": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+        "label25": null,
+        "resourceCardLabel": [],
+        "timeOverride": null,
+        "modalFormsResources": {
+            "2524888": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "n/a",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "n/a"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837392,
+            6944,
+            6946,
+            6949,
+            43853,
+            43848,
+            6935,
+            6938
+        ],
+        "tags": [
+            2454548,
+            1844609,
+            2090058,
+            1968058,
+            2440022,
+            1900881,
+            1835907,
+            2037651,
+            2454552,
+            2301776
+        ],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2026-03-12T10:47:44-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "Discover how Nash County transformed their IT support and saves hours of travel time with BeyondTrust Remote Support. ",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceDocument",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceDocument",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceDocument",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 73,
         "postDate": "2024-09-26T09:56:00-05:00",
         "expiryDate": null,
         "deletedWithEntryType": false,
@@ -20671,8 +21651,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 104,
-        "rgt": 119,
+        "lft": 110,
+        "rgt": 129,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -20950,8 +21930,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 105,
-        "rgt": 106,
+        "lft": 111,
+        "rgt": 112,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -21364,8 +22344,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 107,
-        "rgt": 108,
+        "lft": 113,
+        "rgt": 114,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -21779,12 +22759,12 @@
         "slug": "2024-sc-awards-winner-best-identity-management-solution",
         "uri": "resources/research/2024-sc-awards-winner-best-identity-management-solution",
         "dateCreated": "2024-11-06T15:59:03-06:00",
-        "dateUpdated": "2024-12-02T18:32:49-06:00",
+        "dateUpdated": "2026-02-10T12:14:00-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 109,
-        "rgt": 110,
+        "lft": 115,
+        "rgt": 116,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -21794,7 +22774,7 @@
         "isRevision": false,
         "isUnpublishedDraft": false,
         "ref": "newResearch/2024-sc-awards-winner-best-identity-management-solution",
-        "status": "live",
+        "status": "disabled",
         "url": "https://bluetext.beyondtrust.com/resources/research/2024-sc-awards-winner-best-identity-management-solution",
         "authorId": 670521,
         "typeId": 160,
@@ -22189,7 +23169,7 @@
     },
     {
         "sectionId": 73,
-        "postDate": "2025-11-06T00:00:00-06:00",
+        "postDate": "2026-02-25T22:00:00-06:00",
         "expiryDate": null,
         "deletedWithEntryType": false,
         "_authorId": 2088209,
@@ -22206,16 +23186,16 @@
         "enabled": true,
         "archived": false,
         "siteId": 1,
-        "title": "2025 GigaOm Radar for Cloud Infrastructure Entitlement Management (CIEM)",
+        "title": "2026 GigaOm Radar for Cloud Infrastructure Entitlement Management (CIEM)",
         "slug": "gigaom-radar-ciem",
         "uri": "resources/research/gigaom-radar-ciem",
         "dateCreated": "2025-03-25T12:48:26-05:00",
-        "dateUpdated": "2025-11-06T13:40:39-06:00",
+        "dateUpdated": "2026-03-09T12:21:07-05:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 111,
-        "rgt": 112,
+        "lft": 117,
+        "rgt": 118,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -22236,10 +23216,10 @@
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "heading": "2025 GigaOm Radar for Cloud Infrastructure Entitlement Management (CIEM)",
-                    "bodyRedactorRestricted": "<p>Access the 2025 CIEM report to learn:</p>\n<ul><li>The must-have CIEM solution capabilities and features</li><li>How 22 CIEM vendors measured up based on key capabilities, emerging features, and business criteria</li><li>Why GigaOm named BeyondTrust a Leader and Fast Mover in the report</li></ul>",
+                    "heading": "2026 GigaOm Radar for Cloud Infrastructure Entitlement Management (CIEM)",
+                    "bodyRedactorRestricted": "<p>Access the 2026 CIEM report to learn:</p>\n<ul class=\"checkmark\"><li>The must-have CIEM solution capabilities and features</li><li>How 22 CIEM vendors rate and compare across dozens of key criteria</li><li>Why GigaOm named BeyondTrust a Leader and Outperformer</li></ul>",
                     "resourceBannerImage": [
-                        2359831
+                        2519056
                     ],
                     "switch": true,
                     "resourceVideo": [],
@@ -22254,12 +23234,23 @@
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "headingSection": "About the 2025 GigaOm Radar for CIEM",
+                    "headingSection": "About the 2026 GigaOm Radar for CIEM",
                     "headingSwitch": false,
-                    "bodyRedactorRestricted": "<p>IT research firm GigaOm defines <a href=\"{entry:2143560@1:url||https://bluetext.beyondtrust.com/resources/glossary/ciem-cloud-infrastructure-entitlement-management}\" target=\"_blank\" rel=\"noreferrer noopener\">Cloud Infrastructure Entitlement Management (CIEM)</a> solutions as, \"specialized security tools designed to address the complex challenges of managing identities, access rights, and permissions in cloud and multicloud environments.\" GigaOm highlights that CIEM tools have not only grown in importance in recent years, but also evolved from being primarily focused on visibility to now providing security controls as well.</p>\n<p>In their 2025 Radar for Cloud Infrastructure Entitlement Management report, GigaOm evaluated 22 leading <a href=\"{entry:2456992@1:url||https://bluetext.beyondtrust.com/solutions/cloud-infrastructure-entitlement-management}\" target=\"_blank\" rel=\"noreferrer noopener\">CIEM solutions</a>. We are proud to announce BeyondTrust Entitle is recognized as a Leader and Fast Mover in the 2025 GigaOm CIEM Radar.</p>\n<p> </p>",
+                    "bodyRedactorRestricted": "<p>The research firm GigaOm defines <a href=\"{entry:2143560@1:url||https://bluetext.beyondtrust.com/resources/glossary/ciem-cloud-infrastructure-entitlement-management}\" target=\"_blank\" rel=\"noreferrer noopener\">Cloud Infrastructure Entitlement Management (CIEM)</a> solutions as: \"specialized security solutions that manage and secure identities and their associated permissions (entitlements) across cloud environments.\" According to GigaOm, CIEM tools have not only grown in importance in recent years, but modern solutions have evolved to incorporate advanced analytics and artificial intelligence (AI) to accelerate automated detection and remediation of access anomalies to maintain governance. </p>\n<p>In their 2026 Radar for Cloud Infrastructure Entitlement Management report, GigaOm evaluated 22 leading <a href=\"{entry:2456992@1:url||https://bluetext.beyondtrust.com/solutions/cloud-infrastructure-entitlement-management}\" target=\"_blank\" rel=\"noreferrer noopener\">CIEM solutions</a>. We are proud to announce that the BeyondTrust Pathfinder Platform is recognized as both a Leader and an Outperformer in the Innovation / Platform Play quadrant of the 2026 GigaOm CIEM Radar. </p>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "label": null,
                     "contentSubsections": []
+                }
+            },
+            "2517243": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        2515501
+                    ]
                 }
             },
             "2351315": {
@@ -22280,9 +23271,9 @@
                             "collapsed": false,
                             "fields": {
                                 "heading": null,
-                                "body": "<p>The 2025 GigaOm CIEM Radar offers insights into how the CIEM market is evolving and why, along with assessing and identifying the 22 leading CIEM solution offerings.<br /></p>\n<p>CIEM vendor product capabilities evaluated in the report include:</p>\n<ul><li><strong>Key features</strong> such as entitlements discovery and visualization, cross-cloud entitlements correlation, compliance, and identity governance.</li><li><strong>Emerging features</strong> such as just-in-time (JIT) access, data privacy and user consent management, and self-service access management.</li><li><strong>Business criteria</strong> such as configurability, flexibility, interoperability, and more.</li></ul>\n<p>Get complimentary access to the report now by completing the form to the right.</p>",
+                                "body": "<p>The 2026 GigaOm CIEM Radar offers insights into how the CIEM market is evolving and why, along with assessing and identifying the 22 leading CIEM solution offerings.<br /></p>\n<p>CIEM vendor product capabilities evaluated in the report include:</p>\n<ul><li><strong>Key features</strong> such as cloud identity threat detection and response, AI-enabled anomaly detection, automated least privilege, just-in-time (JIT) access, lifecycle entitlements governance and compliance, and automated remediation and right-sizing.</li><li><strong>Emerging features</strong> such as non-human identity (NHI) management, ITDR integration, zero trust architecture integration, predictive access analytics, self-service access management, serverless container security support, AI runtime policy enforcement, and data privacy and user consent management.</li><li><strong>Business criteria</strong> such as configurability, flexibility, interoperability, manageability, and more.</li></ul>\n<p>Get complimentary access to the report now by completing the form to the right.</p>",
                                 "asset": [
-                                    2359675
+                                    2520031
                                 ],
                                 "resource": [],
                                 "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
@@ -22295,48 +23286,91 @@
                     }
                 }
             },
-            "2351310": {
-                "type": "useCases",
+            "2517244": {
+                "type": "contentBlock",
                 "enabled": true,
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "heading45": "Why BeyondTrust is Recognized as CIEM Leader",
-                    "useCases": {
-                        "2351311": {
-                            "type": 102,
+                    "headingSection": "Key CIEM Differentiators for BeyondTrust in the Report",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": {
+                        "2517245": {
+                            "type": "grid",
+                            "enabled": true,
+                            "collapsed": false,
                             "fields": {
-                                "heading": "Just-In-Time Access",
-                                "body": "Received the highest-possible score for JIT access features, such as our highly-flexible workflow engine.",
-                                "image": [
-                                    2345468
-                                ],
-                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                                "ctaLabel": null
-                            }
-                        },
-                        "2351312": {
-                            "type": 102,
-                            "fields": {
-                                "heading": "Cross-Cloud Entitlements Correlation",
-                                "body": "Recognized for our permission graph visualization, connecting 150+ cloud platforms and SaaS apps.",
-                                "image": [
-                                    546692
-                                ],
-                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                                "ctaLabel": null
-                            }
-                        },
-                        "2351313": {
-                            "type": 102,
-                            "fields": {
-                                "heading": "Automated Least Privilege",
-                                "body": "Highlighted for our automated provisioning and revocation workflows that simplify JIT access and least privilege.",
-                                "image": [
-                                    546697
-                                ],
-                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                                "ctaLabel": null
+                                "item": {
+                                    "2517246": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                2515474
+                                            ],
+                                            "heading": "Just-In-Time (JIT) Access",
+                                            "body": "Received the highest-possible score for JIT access features, such as our highly-flexible workflow engine that leverages access request patterns to approve / deny based on risk, and integrates with more than 100+ apps.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2517247": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                2515481
+                                            ],
+                                            "heading": "AI Agent Insights",
+                                            "body": "Recognized for our AI agent insights, including leading-edge agentic AI governance, delivering holistic identity visibility and uncovering overprivileged AI agents, secrets misuse, shadow AI, and hidden escalation paths.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2517248": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                2515482
+                                            ],
+                                            "heading": "Cross-Domain Privilege Correlation",
+                                            "body": "Regarded for our cross-domain privilege correlation spanning cloud, on-premises, and SaaS environments that provides continuous assessment of identity risk across endpoints, servers, IdPs, DevOps systems, and more.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2517249": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                2515475
+                                            ],
+                                            "heading": "Lifecycle Entitlements Governance",
+                                            "body": "Recognized for the automatic provisioning/deprovisioning of accounts with role-based entitlements, automated access review campaigns, continuous monitoring of dormant and orphaned accounts, and identity drift detection.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2517250": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                2515483
+                                            ],
+                                            "heading": "True Privilege™ Graph",
+                                            "body": "Noted for our innovative True Privilege™ Graph visualizing privilege escalation paths, that reveal effective privileges of any identity and how obscure relationships can be leveraged for lateral movement and escalation.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    },
+                                    "2517251": {
+                                        "type": 104,
+                                        "fields": {
+                                            "icon": [
+                                                2515476
+                                            ],
+                                            "heading": "Compliance and Identity Governance",
+                                            "body": "Highlighted for our implementation of continuous monitoring, evaluation of entitlements and policies against common compliance controls, and maintaining immutable audit trails, generating audit-ready reports, and more.",
+                                            "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -22349,14 +23383,14 @@
                 "level": 1,
                 "fields": {
                     "companyQuotes": [
-                        2359129
+                        2515485
                     ]
                 }
             }
         },
         "signupRequired": true,
         "resourceDocument": [],
-        "resource": "{\"linkedUrl\":\"https:\\/\\/www.beyondtrust.com\\/2025-gigaom-ciem-radar\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
+        "resource": "{\"linkedUrl\":\"https:\\/\\/portal.gigaom.com\\/reprint\\/gigaom-radar-for-cloud-infrastructure-entitlement-management-ciem-250923\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}",
         "label25": "Read the Report",
         "resourceCardLabel": [],
         "timeOverride": null,
@@ -22367,18 +23401,18 @@
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "headingSection": "2025 GigaOm Radar for CIEM",
+                    "headingSection": "2026 GigaOm Radar for CIEM",
                     "bodyMedium": null,
-                    "salesforceCampaignId": "701Vw00000GthSvIAJ"
+                    "salesforceCampaignId": "701Vw00000ViK4PIAV"
                 }
             },
-            "2359135": {
+            "2517274": {
                 "type": "assetDownloadForm",
                 "enabled": true,
                 "collapsed": false,
                 "level": 2,
                 "fields": {
-                    "redirectUrl": "{\"linkedUrl\":\"https:\\/\\/www.beyondtrust.com\\/2025-gigaom-ciem-radar\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
+                    "redirectUrl": "{\"linkedUrl\":\"https:\\/\\/portal.gigaom.com\\/reprint\\/gigaom-radar-for-cloud-infrastructure-entitlement-management-ciem-250923\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
                 }
             }
         },
@@ -22389,7 +23423,8 @@
             6948,
             1716548,
             43853,
-            1972045
+            1972045,
+            1716547
         ],
         "tags": [
             1974100,
@@ -22416,17 +23451,17 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2025-03-26T20:16:09-05:00",
+            "sourceDateUpdated": "2026-02-20T13:01:54-06:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
-                "seoTitle": "2025 GigaOm Radar: Cloud Infrastructure Entitlement Management (CIEM)",
+                "seoTitle": "2026 GigaOm Radar: Cloud Infrastructure Entitlement Management (CIEM)",
                 "siteNamePosition": "",
-                "seoDescription": "BeyondTrust is a CIEM Leader in the 2025 GigaOm Radar for CIEM. Get the report to see how BeyondTrust stands out amongst 22 CIEM vendors. ",
+                "seoDescription": "BeyondTrust is a CIEM Leader in the 2026 GigaOm Radar for CIEM. Get the report to see how BeyondTrust stands out amongst 22 CIEM vendors. ",
                 "seoKeywords": "",
-                "seoImage": "",
-                "seoImageWidth": "",
-                "seoImageHeight": "",
+                "seoImage": "{{ entry.resourceDocument.collect()[0].url }}",
+                "seoImageWidth": "{{ entry.resourceDocument.collect()[0].width }}",
+                "seoImageHeight": "{{ entry.resourceDocument.collect()[0].height }}",
                 "seoImageDescription": "",
                 "canonicalUrl": "",
                 "robots": "all",
@@ -22615,10 +23650,10 @@
                 "seoKeywordsSource": "fromCustom",
                 "seoKeywordsField": "",
                 "seoImageIds": "",
-                "seoImageSource": "fromAsset",
+                "seoImageSource": "fromField",
                 "seoImageField": "resourceDocument",
-                "seoImageTransform": "1",
-                "seoImageTransformMode": "crop",
+                "seoImageTransform": "",
+                "seoImageTransformMode": "",
                 "seoImageDescriptionSource": "fromCustom",
                 "seoImageDescriptionField": "",
                 "twitterCreatorSource": "sameAsSiteTwitter",
@@ -22632,7 +23667,7 @@
                 "twitterImageSource": "sameAsSeo",
                 "twitterImageField": "resourceDocument",
                 "twitterImageTransform": "",
-                "twitterImageTransformMode": "crop",
+                "twitterImageTransformMode": "",
                 "twitterImageDescriptionSource": "",
                 "twitterImageDescriptionField": "",
                 "ogTitleSource": "sameAsSeo",
@@ -22644,7 +23679,7 @@
                 "ogImageSource": "sameAsSeo",
                 "ogImageField": "resourceDocument",
                 "ogImageTransform": "",
-                "ogImageTransformMode": "crop",
+                "ogImageTransformMode": "",
                 "ogImageDescriptionSource": "",
                 "ogImageDescriptionField": ""
             }
@@ -22678,8 +23713,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 113,
-        "rgt": 114,
+        "lft": 119,
+        "rgt": 120,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -23163,8 +24198,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 115,
-        "rgt": 116,
+        "lft": 121,
+        "rgt": 122,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -23564,12 +24599,12 @@
         "slug": "gartner-how-to-secure-enterprise-agentic-ai-ambition",
         "uri": "resources/research/gartner-how-to-secure-enterprise-agentic-ai-ambition",
         "dateCreated": "2026-01-20T12:59:11-06:00",
-        "dateUpdated": "2026-01-23T13:10:08-06:00",
+        "dateUpdated": "2026-02-12T15:44:18-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 117,
-        "rgt": 118,
+        "lft": 123,
+        "rgt": 124,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -23593,7 +24628,7 @@
                     "heading": "Gartner® Research: How to Secure Enterprise Agentic AI Ambition",
                     "bodyRedactorRestricted": "<p>Understand the key risks of agentic AI, and the core pieces to secure it at scale.</p>",
                     "resourceBannerImage": [
-                        2496428
+                        2496343
                     ],
                     "switch": true,
                     "resourceVideo": [],
@@ -23966,6 +25001,300 @@
     },
     {
         "sectionId": 73,
+        "postDate": "2026-03-12T15:22:00-05:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 670521,
+        "id": 2525485,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "b5180071-229f-4b94-9ee6-6d40864e6085",
+        "siteSettingsId": 3545964,
+        "fieldLayoutId": null,
+        "structureId": 365014,
+        "contentId": 1790699,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Omdia Research: AI Agents and Identity Security",
+        "slug": "omdia-ai-agents-and-identity-security",
+        "uri": "resources/research/omdia-ai-agents-and-identity-security",
+        "dateCreated": "2026-03-12T15:14:41-05:00",
+        "dateUpdated": "2026-03-12T15:24:35-05:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654245,
+        "lft": 127,
+        "rgt": 128,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 2077843,
+        "canonicalId": 2525485,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newResearch/omdia-ai-agents-and-identity-security",
+        "status": "disabled",
+        "url": "https://bluetext.beyondtrust.com/resources/research/omdia-ai-agents-and-identity-security",
+        "authorId": 670521,
+        "typeId": 160,
+        "mainBannerResources": {
+            "2525486": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Omdia Research: AI Agents and Identity Security: How Enterprises Are Rewriting the Rules",
+                    "bodyRedactorRestricted": null,
+                    "resourceBannerImage": [],
+                    "switch": false,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": [],
+        "signupRequired": false,
+        "resourceDocument": [],
+        "resource": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+        "label25": null,
+        "resourceCardLabel": [],
+        "timeOverride": null,
+        "modalFormsResources": [],
+        "generalCategories": [],
+        "tags": [],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2026-03-12T15:14:41-05:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "",
+                "ogType": "",
+                "ogTitle": "",
+                "ogSiteNamePosition": "",
+                "ogDescription": "",
+                "ogImage": "",
+                "ogImageWidth": "",
+                "ogImageHeight": "",
+                "ogImageDescription": "",
+                "twitterCard": "",
+                "twitterCreator": "",
+                "twitterTitle": "",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "",
+                "twitterImage": "",
+                "twitterImageWidth": "",
+                "twitterImageHeight": "",
+                "twitterImageDescription": "",
+                "inherited": [],
+                "overrides": []
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": null,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "",
+                "sitemapPriority": "",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": [],
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": [],
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": true,
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "",
+                "twitterTitleField": "",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "",
+                "twitterDescriptionField": "",
+                "twitterImageIds": [],
+                "twitterImageSource": "",
+                "twitterImageField": "",
+                "twitterImageTransform": false,
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "",
+                "ogTitleField": "",
+                "ogSiteNamePositionSource": "",
+                "ogDescriptionSource": "",
+                "ogDescriptionField": "",
+                "ogImageIds": [],
+                "ogImageSource": "",
+                "ogImageField": "",
+                "ogImageTransform": false,
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 73,
         "postDate": "2024-09-26T09:56:00-05:00",
         "expiryDate": null,
         "deletedWithEntryType": false,
@@ -23991,8 +25320,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 120,
-        "rgt": 123,
+        "lft": 130,
+        "rgt": 133,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -24270,8 +25599,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 121,
-        "rgt": 122,
+        "lft": 131,
+        "rgt": 132,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -24646,8 +25975,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 124,
-        "rgt": 185,
+        "lft": 134,
+        "rgt": 195,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -24925,8 +26254,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 125,
-        "rgt": 126,
+        "lft": 135,
+        "rgt": 136,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -25300,8 +26629,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 127,
-        "rgt": 128,
+        "lft": 137,
+        "rgt": 138,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -25702,8 +27031,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 129,
-        "rgt": 130,
+        "lft": 139,
+        "rgt": 140,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -26093,8 +27422,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 131,
-        "rgt": 132,
+        "lft": 141,
+        "rgt": 142,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -26485,8 +27814,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 133,
-        "rgt": 134,
+        "lft": 143,
+        "rgt": 144,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -26850,8 +28179,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 135,
-        "rgt": 136,
+        "lft": 145,
+        "rgt": 146,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -27238,8 +28567,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 137,
-        "rgt": 138,
+        "lft": 147,
+        "rgt": 148,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -27625,8 +28954,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 139,
-        "rgt": 140,
+        "lft": 149,
+        "rgt": 150,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -28031,8 +29360,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 141,
-        "rgt": 142,
+        "lft": 151,
+        "rgt": 152,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -28423,8 +29752,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 143,
-        "rgt": 144,
+        "lft": 153,
+        "rgt": 154,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -28812,8 +30141,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 145,
-        "rgt": 146,
+        "lft": 155,
+        "rgt": 156,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -29182,8 +30511,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 147,
-        "rgt": 148,
+        "lft": 157,
+        "rgt": 158,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -29588,8 +30917,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 149,
-        "rgt": 150,
+        "lft": 159,
+        "rgt": 160,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -29973,8 +31302,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 151,
-        "rgt": 152,
+        "lft": 161,
+        "rgt": 162,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -30340,8 +31669,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 153,
-        "rgt": 154,
+        "lft": 163,
+        "rgt": 164,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -30703,8 +32032,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 155,
-        "rgt": 156,
+        "lft": 165,
+        "rgt": 166,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -31067,8 +32396,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 157,
-        "rgt": 158,
+        "lft": 167,
+        "rgt": 168,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -31435,8 +32764,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 159,
-        "rgt": 160,
+        "lft": 169,
+        "rgt": 170,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -31805,8 +33134,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 161,
-        "rgt": 162,
+        "lft": 171,
+        "rgt": 172,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -32185,8 +33514,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 163,
-        "rgt": 164,
+        "lft": 173,
+        "rgt": 174,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -32548,8 +33877,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 165,
-        "rgt": 166,
+        "lft": 175,
+        "rgt": 176,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -32930,8 +34259,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 167,
-        "rgt": 168,
+        "lft": 177,
+        "rgt": 178,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -33296,8 +34625,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 169,
-        "rgt": 170,
+        "lft": 179,
+        "rgt": 180,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -33662,8 +34991,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 171,
-        "rgt": 172,
+        "lft": 181,
+        "rgt": 182,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -34022,8 +35351,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 173,
-        "rgt": 174,
+        "lft": 183,
+        "rgt": 184,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -34389,12 +35718,12 @@
         "slug": "secure-agentic-ai",
         "uri": "resources/solution-briefs/secure-agentic-ai",
         "dateCreated": "2025-09-15T15:38:42-05:00",
-        "dateUpdated": "2026-01-08T18:10:09-06:00",
+        "dateUpdated": "2026-02-19T15:47:14-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 175,
-        "rgt": 176,
+        "lft": 185,
+        "rgt": 186,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -34487,7 +35816,7 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2025-09-15T15:53:26-05:00",
+            "sourceDateUpdated": "2026-02-19T15:47:14-06:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
@@ -34521,7 +35850,6 @@
                 "inherited": {
                     "seoTitle": true,
                     "seoImage": true,
-                    "robots": true,
                     "canonicalUrl": true,
                     "twitterCard": true,
                     "twitterCreator": true,
@@ -34535,7 +35863,8 @@
                     "ogImage": true
                 },
                 "overrides": {
-                    "seoDescription": true
+                    "seoDescription": true,
+                    "robots": true
                 }
             },
             "metaSiteVars": {
@@ -34749,8 +36078,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 177,
-        "rgt": 178,
+        "lft": 187,
+        "rgt": 188,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -35110,8 +36439,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 179,
-        "rgt": 180,
+        "lft": 189,
+        "rgt": 190,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -35471,8 +36800,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 181,
-        "rgt": 182,
+        "lft": 191,
+        "rgt": 192,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -35859,8 +37188,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 183,
-        "rgt": 184,
+        "lft": 193,
+        "rgt": 194,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -36224,8 +37553,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 186,
-        "rgt": 187,
+        "lft": 196,
+        "rgt": 197,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -36622,8 +37951,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 188,
-        "rgt": 197,
+        "lft": 198,
+        "rgt": 207,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -36901,8 +38230,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 189,
-        "rgt": 190,
+        "lft": 199,
+        "rgt": 200,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -37529,8 +38858,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 191,
-        "rgt": 192,
+        "lft": 201,
+        "rgt": 202,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -38013,8 +39342,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 193,
-        "rgt": 194,
+        "lft": 203,
+        "rgt": 204,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -38598,8 +39927,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 195,
-        "rgt": 196,
+        "lft": 205,
+        "rgt": 206,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -39170,8 +40499,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 198,
-        "rgt": 199,
+        "lft": 208,
+        "rgt": 209,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -39559,8 +40888,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 200,
-        "rgt": 201,
+        "lft": 210,
+        "rgt": 211,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -39931,12 +41260,12 @@
         "slug": "identity-security-defense-in-depth-guide",
         "uri": "resources/identity-security-defense-in-depth-guide",
         "dateCreated": "2025-04-22T15:15:43-05:00",
-        "dateUpdated": "2026-01-22T10:36:47-06:00",
+        "dateUpdated": "2026-02-13T07:21:53-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 202,
-        "rgt": 203,
+        "lft": 212,
+        "rgt": 213,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -40012,15 +41341,6 @@
                     "headingSection": "Get Your Copy",
                     "bodyMedium": null,
                     "salesforceCampaignId": "701Vw00000LbC6AIAV"
-                }
-            },
-            "2435717": {
-                "type": "assetDownloadForm",
-                "enabled": true,
-                "collapsed": false,
-                "level": 2,
-                "fields": {
-                    "redirectUrl": "{\"linkedUrl\":\"https:\\/\\/assets.beyondtrust.com\\/assets\\/documents\\/Identity-Security-Defense-in-Depth-Guide.pdf\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"url\"}"
                 }
             }
         },
@@ -40324,8 +41644,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 204,
-        "rgt": 205,
+        "lft": 214,
+        "rgt": 215,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -40686,8 +42006,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 206,
-        "rgt": 207,
+        "lft": 216,
+        "rgt": 217,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -41063,8 +42383,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 208,
-        "rgt": 209,
+        "lft": 218,
+        "rgt": 219,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -41553,8 +42873,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 210,
-        "rgt": 211,
+        "lft": 220,
+        "rgt": 221,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -41938,8 +43258,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 654245,
-        "lft": 212,
-        "rgt": 213,
+        "lft": 222,
+        "rgt": 223,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -42263,6 +43583,368 @@
                 "ogImageField": "resourceDocument",
                 "ogImageTransform": "",
                 "ogImageTransformMode": "",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        },
+        "faqStructuredData": []
+    },
+    {
+        "sectionId": 73,
+        "postDate": "2026-01-28T10:20:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 670521,
+        "id": 2500269,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "aba079bd-dc05-4495-8efc-511323f9466f",
+        "siteSettingsId": 3500032,
+        "fieldLayoutId": null,
+        "structureId": 365014,
+        "contentId": 1753370,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Zero Trust PAM: A Mission-Ready Checklist for Government",
+        "slug": "zero-trust-pam-government-checklist",
+        "uri": "resources/zero-trust-pam-government-checklist",
+        "dateCreated": "2026-01-28T09:26:47-06:00",
+        "dateUpdated": "2026-01-29T14:10:14-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 654245,
+        "lft": 224,
+        "rgt": 225,
+        "level": 1,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": null,
+        "canonicalId": 2500269,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newResearch/zero-trust-pam-government-checklist",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/resources/zero-trust-pam-government-checklist",
+        "authorId": 670521,
+        "typeId": 160,
+        "mainBannerResources": {
+            "2500439": {
+                "type": "bannerImmersive",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading": "Zero Trust PAM: A Mission-Ready Checklist for Government",
+                    "bodyRedactorRestricted": "<p>A practical checklist for government organizations to evaluate, pilot, and deploy Zero Trust PAM without disrupting mission execution.</p>",
+                    "resourceBannerImage": [
+                        2500277
+                    ],
+                    "switch": false,
+                    "resourceVideo": [],
+                    "people": []
+                }
+            }
+        },
+        "defaultContentBlog": {
+            "2500445": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Evaluate Zero Trust PAM Readiness Without Disrupting the Mission",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>This checklist is designed for public sector security and IT leaders who need to move from Zero Trust strategy to execution. It helps agencies evaluate whether a Zero Trust PAM and Privileged Remote Access approach can reduce risk, support compliance, and deliver operational value—without slowing mission-critical work.</p>\n<p><strong>With this checklist, you will be able to:</strong></p>\n<ul class=\"checkmark\"><li>\n<p>Assess Zero Trust PAM capabilities across identity, session security, credentials, and resilience</p></li><li><p>Validate readiness for RFI, RFP, and pilot phases with clear evaluation criteria</p></li><li><p>Identify gaps that increase risk from standing privileges and exposed remote access</p></li><li><p>Define measurable pilot exit criteria tied to security, operational, and compliance outcomes</p></li><li><p>Build a practical path toward mission-ready Zero Trust PAM modernization</p></li></ul>\n<p><strong>Download the checklist today.</strong><br /></p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            }
+        },
+        "signupRequired": true,
+        "resourceDocument": [
+            2500278
+        ],
+        "resource": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+        "label25": null,
+        "resourceCardLabel": [],
+        "timeOverride": null,
+        "modalFormsResources": {
+            "2500451": {
+                "type": "form",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Download the Checklist",
+                    "bodyMedium": null,
+                    "salesforceCampaignId": "701Vw00000VIjzOIAT"
+                }
+            }
+        },
+        "generalCategories": [
+            1836820,
+            1837249,
+            6935,
+            6941
+        ],
+        "tags": [
+            2477946,
+            2172680,
+            1982400,
+            1856098,
+            1840189,
+            1835492,
+            1852511,
+            1982057,
+            2500428,
+            2250227
+        ],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2026-01-28T10:20:30-06:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "A practical checklist for government organizations to evaluate, pilot, and deploy Zero Trust PAM without disrupting mission execution.",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "all",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoImage": true,
+                    "robots": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "seoDescription": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "resourceDocument",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "resourceDocument",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "resourceDocument",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
                 "ogImageDescriptionSource": "",
                 "ogImageDescriptionField": ""
             }

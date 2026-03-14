@@ -22,7 +22,7 @@
         "slug": "partners",
         "uri": "partners",
         "dateCreated": "2023-09-18T14:09:09-05:00",
-        "dateUpdated": "2026-03-05T00:25:43-06:00",
+        "dateUpdated": "2026-02-02T11:38:15-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 164565,
@@ -45,7 +45,7 @@
             "1068763": {
                 "type": "bannerMediaRight",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "The PartnerTrust Ecosystem",
@@ -126,7 +126,7 @@
             "1068770": {
                 "type": "contentBlock",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "The BeyondTrust Partner Network for Sales, Service, and Support",
@@ -139,7 +139,7 @@
             "1068771": {
                 "type": "featureGrid",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSmall": "The Value of Working with BeyondTrust Partners",
@@ -205,7 +205,7 @@
             "1068919": {
                 "type": "quotes",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "companyQuotes": [
@@ -217,7 +217,7 @@
             "1068920": {
                 "type": "featureTabbed",
                 "enabled": false,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "Technology Alliances",
@@ -318,7 +318,7 @@
             "1069316": {
                 "type": "calloutCards",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "calloutCards": {
@@ -339,7 +339,7 @@
             "1069622": {
                 "type": "resourceTabbed",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "Resources",
@@ -350,6 +350,7 @@
                             "collapsed": false,
                             "fields": {
                                 "entries": [
+                                    2495566,
                                     2310558,
                                     589371,
                                     91674,
@@ -741,327 +742,6 @@
                     "bodyRedactorRestricted": null,
                     "partnerEmbed": [
                         1069558
-                    ]
-                }
-            }
-        },
-        "seoMetaTags": {
-            "bundleVersion": "1.0.23",
-            "sourceBundleType": "field",
-            "sourceId": null,
-            "sourceName": null,
-            "sourceHandle": null,
-            "sourceType": "field",
-            "typeId": null,
-            "sourceTemplate": "",
-            "sourceSiteId": null,
-            "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2023-09-18T14:29:37-05:00",
-            "metaGlobalVars": {
-                "language": null,
-                "mainEntityOfPage": "",
-                "seoTitle": "",
-                "siteNamePosition": "",
-                "seoDescription": "",
-                "seoKeywords": "",
-                "seoImage": "",
-                "seoImageWidth": "",
-                "seoImageHeight": "",
-                "seoImageDescription": "",
-                "canonicalUrl": "",
-                "robots": "",
-                "ogType": "",
-                "ogTitle": "",
-                "ogSiteNamePosition": "",
-                "ogDescription": "",
-                "ogImage": "",
-                "ogImageWidth": "",
-                "ogImageHeight": "",
-                "ogImageDescription": "",
-                "twitterCard": "",
-                "twitterCreator": "",
-                "twitterTitle": "",
-                "twitterSiteNamePosition": "",
-                "twitterDescription": "",
-                "twitterImage": "",
-                "twitterImageWidth": "",
-                "twitterImageHeight": "",
-                "twitterImageDescription": "",
-                "inherited": [],
-                "overrides": []
-            },
-            "metaSiteVars": {
-                "siteName": "BeyondTrust",
-                "siteAlternateName": "",
-                "identity": null,
-                "creator": null,
-                "twitterHandle": "",
-                "facebookProfileId": "",
-                "facebookAppId": "",
-                "googleSiteVerification": "",
-                "bingSiteVerification": "",
-                "pinterestSiteVerification": "",
-                "facebookSiteVerification": "",
-                "sameAsLinks": [],
-                "siteLinksSearchTarget": "",
-                "siteLinksQueryInput": "",
-                "referrer": "no-referrer-when-downgrade",
-                "additionalSitemapUrls": [],
-                "additionalSitemapUrlsDateUpdated": null,
-                "additionalSitemaps": []
-            },
-            "metaSitemapVars": {
-                "sitemapUrls": null,
-                "sitemapAssets": null,
-                "sitemapAssetTransform": null,
-                "newsSitemap": null,
-                "newsPublicationName": "",
-                "sitemapFiles": null,
-                "sitemapAltLinks": null,
-                "sitemapChangeFreq": "",
-                "sitemapPriority": "",
-                "sitemapLimit": null,
-                "sitemapPageSize": 500,
-                "structureDepth": null,
-                "sitemapImageFieldMap": [],
-                "sitemapVideoFieldMap": [],
-                "inherited": [],
-                "overrides": []
-            },
-            "metaContainers": {
-                "MetaTagContainergeneral": {
-                    "data": [],
-                    "name": "General",
-                    "description": "General Meta Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
-                    "handle": "general",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaTagContaineropengraph": {
-                    "data": [],
-                    "name": "Facebook",
-                    "description": "Facebook OpenGraph Meta Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
-                    "handle": "opengraph",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaTagContainertwitter": {
-                    "data": [],
-                    "name": "Twitter",
-                    "description": "Twitter Card Meta Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
-                    "handle": "twitter",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaTagContainermiscellaneous": {
-                    "data": [],
-                    "name": "Miscellaneous",
-                    "description": "Miscellaneous Meta Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
-                    "handle": "miscellaneous",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaLinkContainergeneral": {
-                    "data": [],
-                    "name": "General",
-                    "description": "Link Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
-                    "handle": "general",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaScriptContainergeneral": {
-                    "data": [],
-                    "position": 1,
-                    "name": "General",
-                    "description": "Script Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
-                    "handle": "general",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaJsonLdContainergeneral": {
-                    "data": [],
-                    "name": "General",
-                    "description": "JsonLd Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
-                    "handle": "general",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaTitleContainergeneral": {
-                    "data": [],
-                    "name": "General",
-                    "description": "Meta Title Tag",
-                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
-                    "handle": "general",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                }
-            },
-            "redirectsContainer": [],
-            "frontendTemplatesContainer": {
-                "data": [],
-                "name": null,
-                "description": null,
-                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
-                "handle": null,
-                "include": true,
-                "dependencies": null,
-                "clearCache": false
-            },
-            "metaBundleSettings": {
-                "siteType": "",
-                "siteSubType": "",
-                "siteSpecificType": "",
-                "seoTitleSource": "fromCustom",
-                "seoTitleField": "",
-                "siteNamePositionSource": "",
-                "seoDescriptionSource": "fromCustom",
-                "seoDescriptionField": "",
-                "seoKeywordsSource": "fromCustom",
-                "seoKeywordsField": "",
-                "seoImageIds": [],
-                "seoImageSource": "fromAsset",
-                "seoImageField": "",
-                "seoImageTransform": true,
-                "seoImageTransformMode": "crop",
-                "seoImageDescriptionSource": "fromCustom",
-                "seoImageDescriptionField": "",
-                "twitterCreatorSource": "",
-                "twitterCreatorField": "",
-                "twitterTitleSource": "",
-                "twitterTitleField": "",
-                "twitterSiteNamePositionSource": "",
-                "twitterDescriptionSource": "",
-                "twitterDescriptionField": "",
-                "twitterImageIds": [],
-                "twitterImageSource": "",
-                "twitterImageField": "",
-                "twitterImageTransform": true,
-                "twitterImageTransformMode": "crop",
-                "twitterImageDescriptionSource": "",
-                "twitterImageDescriptionField": "",
-                "ogTitleSource": "",
-                "ogTitleField": "",
-                "ogSiteNamePositionSource": "",
-                "ogDescriptionSource": "",
-                "ogDescriptionField": "",
-                "ogImageIds": [],
-                "ogImageSource": "",
-                "ogImageField": "",
-                "ogImageTransform": true,
-                "ogImageTransformMode": "crop",
-                "ogImageDescriptionSource": "",
-                "ogImageDescriptionField": ""
-            }
-        }
-    },
-    {
-        "sectionId": 62,
-        "postDate": "2023-09-18T14:29:00-05:00",
-        "expiryDate": null,
-        "deletedWithEntryType": false,
-        "_authorId": 77631,
-        "id": 1751746,
-        "tempId": null,
-        "draftId": null,
-        "revisionId": null,
-        "isProvisionalDraft": false,
-        "uid": "ec2250f8-cf98-4add-8f41-785858aba513",
-        "siteSettingsId": 2362617,
-        "fieldLayoutId": null,
-        "structureId": 75794,
-        "contentId": 981172,
-        "enabled": true,
-        "archived": false,
-        "siteId": 1,
-        "title": "TEST - Directory - Partner Locator",
-        "slug": "directory-test",
-        "uri": "partners/directory-test",
-        "dateCreated": "2024-06-12T05:21:55-05:00",
-        "dateUpdated": "2024-07-16T05:06:42-05:00",
-        "dateLastMerged": null,
-        "dateDeleted": null,
-        "root": 164565,
-        "lft": 5,
-        "rgt": 6,
-        "level": 2,
-        "trashed": false,
-        "validatingRelatedElement": false,
-        "parentId": 1068747,
-        "canonicalId": 1751746,
-        "isDraft": false,
-        "isRevision": false,
-        "isUnpublishedDraft": false,
-        "ref": "newPartners/directory-test",
-        "status": "disabled",
-        "url": "https://bluetext.beyondtrust.com/partners/directory-test",
-        "authorId": 77631,
-        "typeId": 126,
-        "mainBannerPartners": {
-            "1751747": {
-                "type": "bannerMediaRight",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Find a BeyondTrust Partner",
-                    "body200": "Use our locator to quickly find a BeyondTrust partner that provides the services your business requires, in a region near you.",
-                    "bannerAsset": {
-                        "1751748": {
-                            "type": "image",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "image": [
-                                    1068761
-                                ]
-                            }
-                        }
-                    },
-                    "label": null,
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
-                }
-            }
-        },
-        "sectionNavigation": [],
-        "partnersContent": {
-            "1751754": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Find the Right Partner for Your Business",
-                    "bodyRedactorRestricted": "<p>Our Partners offer a wide array of services and benefits tailored to your specific needs. So, it’s important to understand where you may need help.</p>\n<p>Are you looking for support choosing the right products and purchasing them easily? Do you need help implementing a product and require ongoing support and management? Or, do you simply want to understand who we integrate with and the benefits of our seamless integrations?</p>\n\n\n<p>By identifying the type of help you need, we can recommend a shortlist of partners for you to review.<br /></p>\n<ul><li><strong>Sales Partners:</strong> Resellers, Distributors, System Integrators, and Cloud Marketplaces<br />Simplify the buying process and get support in navigating the growing number of cybersecurity solutions with transactional partners that operate regionally and globally.</li></ul>\n<ul><li><strong>Technology Alliance Partners:</strong> Leading Software Providers<br />Enable seamless integrations and that maximize the value of your investments with a growing network of more than 100 technology alliance partners.</li></ul>\n<ul><li><strong>Service Partners:</strong> Delivery Partners<br />Achieve faster time to value with partners that are trained and certified to implement BeyondTrust solutions.</li></ul>",
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                    "text30": null,
-                    "contentSubsections": []
-                }
-            },
-            "1751755": {
-                "type": "embed",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Find Your Partner",
-                    "bodyRedactorRestricted": null,
-                    "partnerEmbed": [
-                        1751742
                     ]
                 }
             }

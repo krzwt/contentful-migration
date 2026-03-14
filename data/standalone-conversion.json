@@ -27,7 +27,7 @@
         "dateDeleted": null,
         "root": 218904,
         "lft": 2,
-        "rgt": 69,
+        "rgt": 71,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -3605,7 +3605,7 @@
         "slug": "password-safe",
         "uri": "sem/password-safe",
         "dateCreated": "2024-06-04T10:09:16-05:00",
-        "dateUpdated": "2026-02-09T03:59:50-06:00",
+        "dateUpdated": "2025-07-07T09:58:21-05:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
@@ -8763,7 +8763,7 @@
     },
     {
         "sectionId": 67,
-        "postDate": "2025-09-19T00:00:00-05:00",
+        "postDate": "2026-02-19T13:30:00-06:00",
         "expiryDate": null,
         "deletedWithEntryType": false,
         "_authorId": 670521,
@@ -8784,7 +8784,7 @@
         "slug": "cloud-migration",
         "uri": "sem/cloud-migration",
         "dateCreated": "2024-11-15T15:51:40-06:00",
-        "dateUpdated": "2025-09-19T10:07:00-05:00",
+        "dateUpdated": "2026-02-19T13:59:28-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
@@ -8810,8 +8810,8 @@
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "headingSection": "Migrate to BeyondTrust Cloud in 2025",
-                    "body180": "Take advantage of up to 100% cost-savings from AWS Marketplace EDP or Microsoft Azure Consumption Commitment (MACC) in 2025!"
+                    "headingSection": "Migrate to BeyondTrust Cloud in 2026",
+                    "body180": "Take advantage of up to 100% cost-savings from AWS Marketplace EDP or Microsoft Azure Consumption Commitment (MACC) in 2026!"
                 }
             }
         },
@@ -8840,8 +8840,8 @@
                             "enabled": true,
                             "collapsed": false,
                             "fields": {
-                                "heading": "Here are the Top 3 Reasons to migrate in 2025:",
-                                "body": "<ol><li><strong>Use your AWS or Azure Spend Commitment:</strong> Reduce upfront costs by applying eligible AWS Marketplace EDP or MACC to the cost of your migration while meeting your cloud provider spend commitments for 2025. You’ve essentially pre-paid.</li><li><strong>Rapid Migration:</strong> Our team of experts is ready to quickly and seamlessly help you deploy and migrate your solutions to the cloud.</li><li><strong>Expansion ready:</strong> Easily expand into the modern BeyondTrust PAM platform and enhance your overall security posture with best-practice security controls.</li></ol>",
+                                "heading": "Here are the Top 3 Reasons to migrate in 2026:",
+                                "body": "<ol><li><strong>Use your AWS or Azure Spend Commitment:</strong> Reduce upfront costs by applying eligible AWS Marketplace EDP or MACC to the cost of your migration while meeting your cloud provider spend commitments for 2026. You’ve essentially pre-paid.</li><li><strong>Rapid Migration:</strong> Our team of experts is ready to quickly and seamlessly help you deploy and migrate your solutions to the cloud.</li><li><strong>Expansion ready:</strong> Easily expand into the modern BeyondTrust PAM platform and enhance your overall security posture with best-practice security controls.</li></ol>",
                                 "asset": [],
                                 "resource": [],
                                 "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
@@ -18040,6 +18040,482 @@
     },
     {
         "sectionId": 67,
+        "postDate": "2026-03-06T00:00:00-06:00",
+        "expiryDate": null,
+        "deletedWithEntryType": false,
+        "_authorId": 2088209,
+        "id": 2520379,
+        "tempId": null,
+        "draftId": null,
+        "revisionId": null,
+        "isProvisionalDraft": false,
+        "uid": "835c6e6b-c260-43b8-9b1d-dc938bcab8fc",
+        "siteSettingsId": 3536288,
+        "fieldLayoutId": null,
+        "structureId": 104760,
+        "contentId": 1782804,
+        "enabled": true,
+        "archived": false,
+        "siteId": 1,
+        "title": "Entitle Demo Request",
+        "slug": "entitle-demo-request",
+        "uri": "sem/entitle-demo-request",
+        "dateCreated": "2026-03-04T07:58:45-06:00",
+        "dateUpdated": "2026-03-06T14:11:10-06:00",
+        "dateLastMerged": null,
+        "dateDeleted": null,
+        "root": 218904,
+        "lft": 69,
+        "rgt": 70,
+        "level": 2,
+        "trashed": false,
+        "validatingRelatedElement": false,
+        "parentId": 1542372,
+        "canonicalId": 2520379,
+        "isDraft": false,
+        "isRevision": false,
+        "isUnpublishedDraft": false,
+        "ref": "newStandaloneConversion/entitle-demo-request",
+        "status": "live",
+        "url": "https://bluetext.beyondtrust.com/sem/entitle-demo-request",
+        "authorId": 2088209,
+        "typeId": 135,
+        "mainBannerStandalone": {
+            "2520380": {
+                "type": "bannerMediaRight",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Get Granular, Just-in-Time Access Across your Cloud Infrastructure and SaaS",
+                    "bodyRedactorRestricted": "<p>See how Entitle is the easiest JIT automation tool to use - Book your demo now!</p>",
+                    "bannerAsset": {
+                        "2520381": {
+                            "type": "image",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "image": [
+                                    2483837
+                                ]
+                            }
+                        }
+                    },
+                    "mainBannerForm": {
+                        "2520477": {
+                            "type": "genericForm",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "version": "bannerDemoRequestForm",
+                                "product": "Entitle",
+                                "redirectUrl": "{\"linkedId\":11566,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
+                                "leadSourceDetails": null,
+                                "salesforceCampaignId": "701Vw00000Wv9P8IAJ",
+                                "formVariation": "EOtss"
+                            }
+                        }
+                    },
+                    "label": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"custom\"}"
+                }
+            }
+        },
+        "mainNavigationSwitch": false,
+        "mainNavigationDefaultCtas": false,
+        "mainNavigationLanguageSwitch": false,
+        "mainNavigationSearchSwitch": false,
+        "mainNavigationCtaButtonDarkBlue": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+        "mainNavigationCtaButtonWhite": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+        "breadcrumbSwitch": false,
+        "overviewContentStandalone": {
+            "2520389": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "Why BeyondTrust Entitle?",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": null,
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": {
+                        "2520390": {
+                            "type": "contentWithAsset",
+                            "enabled": true,
+                            "collapsed": false,
+                            "fields": {
+                                "heading": null,
+                                "body": "<p><strong>BeyondTrust Entitle provides the tools you need to: </strong></p>\n\n<ul class=\"checkmark\"><li><strong>Meet Compliance Standards in the Cloud:</strong> Enable policy-controlled, self-service privileged access that is auto-revoked after a set duration. Prove least privilege with signed audit logs and reports that streamline access reviews. </li></ul>\n<ul class=\"checkmark\"><li><strong>Reduce Damage and Respond Faster to Incidents: </strong>When an account gets compromised, cut off access to sensitive resources by default. During an incident, ensure the right people obtain the right access on demand with fine-grained automated workflows. </li></ul>\n<ul class=\"checkmark\"><li><strong>Make Your Cloud Secure by Default: </strong>Limit privilege sprawl when implementing new cloud infrastructure and tools. Entitle integrates hundreds of applications to unify privilege management across a variety of cloud and SaaS environments. </li></ul>",
+                                "asset": [
+                                    2487927
+                                ],
+                                "resource": [],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "linkText": null,
+                                "contentAlignment": false,
+                                "contentTheme": "whiteTheme",
+                                "sidebarEnabled": false
+                            }
+                        }
+                    }
+                }
+            },
+            "2522477": {
+                "type": "calloutCards",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "calloutCards": {
+                        "2522478": {
+                            "type": 110,
+                            "fields": {
+                                "image": [
+                                    2422405
+                                ],
+                                "heading": "A Leader & Outperformer in the 2026 GigaOm Radar Report for CIEM",
+                                "description": "BeyondTrust Pathfinder was highlighted in the report for features such as just-in-time access, lifecycle entitlements governance, compliance and identity governance, and more.",
+                                "ctaLink": "{\"linkedId\":2351119,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"{\\\"customText\\\":\\\"Read Full Report\\\"}\",\"type\":\"entry\"}"
+                            }
+                        },
+                        "2522479": {
+                            "type": 110,
+                            "fields": {
+                                "image": [
+                                    2422391
+                                ],
+                                "heading": "A Leader in the 2025 Gartner® Magic Quadrant™ for PAM",
+                                "description": "BeyondTrust is positioned as a Leader in the Gartner® Magic Quadrant™ for Privileged Access Management (PAM), for seven consecutive times.",
+                                "ctaLink": "{\"linkedId\":2455037,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"{\\\"customText\\\":\\\"Read Full Report\\\"}\",\"type\":\"entry\"}"
+                            }
+                        }
+                    }
+                }
+            },
+            "2520396": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        1838049,
+                        2310290,
+                        2504251
+                    ]
+                }
+            },
+            "2520453": {
+                "type": "useCases",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "heading45": "With Entitle:",
+                    "useCases": {
+                        "2520454": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Eliminate standing privileges by up to 91%",
+                                "body": "Ensure users receive only the permissions they need, when they need them.",
+                                "image": [
+                                    560645
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "2520455": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Reduce access request & support tickets",
+                                "body": "Enable approvers to respond more quickly and automate provisioning.",
+                                "image": [
+                                    2375814
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        },
+                        "2520456": {
+                            "type": 102,
+                            "fields": {
+                                "heading": "Save time on user access reviews",
+                                "body": "Pull all entitlements from your applications into one centralized control hub.",
+                                "image": [
+                                    545669
+                                ],
+                                "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                                "ctaLabel": null
+                            }
+                        }
+                    }
+                }
+            },
+            "2522607": {
+                "type": "calloutBar",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "backgroundColor": "orange",
+                    "headingSection": "Get started with an Entitle Demo!",
+                    "label": "Sign up today",
+                    "ctaLink": "{\"linkedUrl\":\"#top\",\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"payload\":\"[]\",\"type\":\"custom\"}"
+                }
+            }
+        },
+        "overrideUrls": [],
+        "heading45": null,
+        "seoMetaTags": {
+            "bundleVersion": "1.0.23",
+            "sourceBundleType": "field",
+            "sourceId": null,
+            "sourceName": null,
+            "sourceHandle": null,
+            "sourceType": "field",
+            "typeId": null,
+            "sourceTemplate": "",
+            "sourceSiteId": null,
+            "sourceAltSiteSettings": [],
+            "sourceDateUpdated": "2026-03-04T08:21:29-06:00",
+            "metaGlobalVars": {
+                "language": null,
+                "mainEntityOfPage": "",
+                "seoTitle": "",
+                "siteNamePosition": "",
+                "seoDescription": "",
+                "seoKeywords": "",
+                "seoImage": "",
+                "seoImageWidth": "",
+                "seoImageHeight": "",
+                "seoImageDescription": "",
+                "canonicalUrl": "",
+                "robots": "noindex,nofollow",
+                "ogType": "article",
+                "ogTitle": "{{ seomatic.meta.seoTitle }}",
+                "ogSiteNamePosition": "{{ seomatic.meta.siteNamePosition }}",
+                "ogDescription": "{{ seomatic.meta.seoDescription }}",
+                "ogImage": "{{ seomatic.meta.seoImage }}",
+                "ogImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "ogImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "ogImageDescription": "",
+                "twitterCard": "summary",
+                "twitterCreator": "{{ seomatic.site.twitterHandle }}",
+                "twitterTitle": "{{ seomatic.meta.seoTitle }}",
+                "twitterSiteNamePosition": "",
+                "twitterDescription": "{{ seomatic.meta.seoDescription }}",
+                "twitterImage": "{{ seomatic.meta.seoImage }}",
+                "twitterImageWidth": "{{ seomatic.meta.seoImageWidth }}",
+                "twitterImageHeight": "{{ seomatic.meta.seoImageHeight }}",
+                "twitterImageDescription": "",
+                "inherited": {
+                    "seoTitle": true,
+                    "seoDescription": true,
+                    "seoImage": true,
+                    "canonicalUrl": true,
+                    "twitterCard": true,
+                    "twitterCreator": true,
+                    "twitterTitle": true,
+                    "twitterDescription": true,
+                    "twitterImage": true,
+                    "ogType": true,
+                    "ogTitle": true,
+                    "ogSiteNamePosition": true,
+                    "ogDescription": true,
+                    "ogImage": true
+                },
+                "overrides": {
+                    "robots": true
+                }
+            },
+            "metaSiteVars": {
+                "siteName": "BeyondTrust (en)",
+                "siteAlternateName": "",
+                "identity": null,
+                "creator": null,
+                "twitterHandle": "",
+                "facebookProfileId": "",
+                "facebookAppId": "",
+                "googleSiteVerification": "",
+                "bingSiteVerification": "",
+                "pinterestSiteVerification": "",
+                "facebookSiteVerification": "",
+                "sameAsLinks": [],
+                "siteLinksSearchTarget": "",
+                "siteLinksQueryInput": "",
+                "referrer": "no-referrer-when-downgrade",
+                "additionalSitemapUrls": [],
+                "additionalSitemapUrlsDateUpdated": null,
+                "additionalSitemaps": []
+            },
+            "metaSitemapVars": {
+                "sitemapUrls": false,
+                "sitemapAssets": null,
+                "sitemapAssetTransform": null,
+                "newsSitemap": null,
+                "newsPublicationName": "",
+                "sitemapFiles": null,
+                "sitemapAltLinks": null,
+                "sitemapChangeFreq": "always",
+                "sitemapPriority": "1.0",
+                "sitemapLimit": null,
+                "sitemapPageSize": 500,
+                "structureDepth": null,
+                "sitemapImageFieldMap": [],
+                "sitemapVideoFieldMap": [],
+                "inherited": {
+                    "sitemapUrls": true,
+                    "sitemapChangeFreq": true,
+                    "sitemapPriority": true
+                },
+                "overrides": []
+            },
+            "metaContainers": {
+                "MetaTagContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "General Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContaineropengraph": {
+                    "data": [],
+                    "name": "Facebook",
+                    "description": "Facebook OpenGraph Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "opengraph",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainertwitter": {
+                    "data": [],
+                    "name": "Twitter",
+                    "description": "Twitter Card Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "twitter",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTagContainermiscellaneous": {
+                    "data": [],
+                    "name": "Miscellaneous",
+                    "description": "Miscellaneous Meta Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
+                    "handle": "miscellaneous",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaLinkContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Link Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaScriptContainergeneral": {
+                    "data": [],
+                    "position": 1,
+                    "name": "General",
+                    "description": "Script Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaJsonLdContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "JsonLd Tags",
+                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                },
+                "MetaTitleContainergeneral": {
+                    "data": [],
+                    "name": "General",
+                    "description": "Meta Title Tag",
+                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
+                    "handle": "general",
+                    "include": true,
+                    "dependencies": [],
+                    "clearCache": false
+                }
+            },
+            "redirectsContainer": [],
+            "frontendTemplatesContainer": {
+                "data": [],
+                "name": null,
+                "description": null,
+                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
+                "handle": null,
+                "include": true,
+                "dependencies": null,
+                "clearCache": false
+            },
+            "metaBundleSettings": {
+                "siteType": "",
+                "siteSubType": "",
+                "siteSpecificType": "",
+                "seoTitleSource": "fromCustom",
+                "seoTitleField": "title",
+                "siteNamePositionSource": "",
+                "seoDescriptionSource": "fromCustom",
+                "seoDescriptionField": "title",
+                "seoKeywordsSource": "fromCustom",
+                "seoKeywordsField": "",
+                "seoImageIds": "",
+                "seoImageSource": "fromAsset",
+                "seoImageField": "",
+                "seoImageTransform": "1",
+                "seoImageTransformMode": "crop",
+                "seoImageDescriptionSource": "fromCustom",
+                "seoImageDescriptionField": "",
+                "twitterCreatorSource": "sameAsSiteTwitter",
+                "twitterCreatorField": "",
+                "twitterTitleSource": "sameAsSeo",
+                "twitterTitleField": "title",
+                "twitterSiteNamePositionSource": "",
+                "twitterDescriptionSource": "sameAsSeo",
+                "twitterDescriptionField": "title",
+                "twitterImageIds": "",
+                "twitterImageSource": "sameAsSeo",
+                "twitterImageField": "",
+                "twitterImageTransform": "",
+                "twitterImageTransformMode": "crop",
+                "twitterImageDescriptionSource": "",
+                "twitterImageDescriptionField": "",
+                "ogTitleSource": "sameAsSeo",
+                "ogTitleField": "title",
+                "ogSiteNamePositionSource": "sameAsSeo",
+                "ogDescriptionSource": "sameAsSeo",
+                "ogDescriptionField": "title",
+                "ogImageIds": "",
+                "ogImageSource": "sameAsSeo",
+                "ogImageField": "",
+                "ogImageTransform": "",
+                "ogImageTransformMode": "crop",
+                "ogImageDescriptionSource": "",
+                "ogImageDescriptionField": ""
+            }
+        }
+    },
+    {
+        "sectionId": 67,
         "postDate": "2023-11-01T00:00:00-05:00",
         "expiryDate": null,
         "deletedWithEntryType": false,
@@ -18065,8 +18541,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 70,
-        "rgt": 71,
+        "lft": 72,
+        "rgt": 73,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -18448,8 +18924,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 72,
-        "rgt": 73,
+        "lft": 74,
+        "rgt": 75,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -19106,8 +19582,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 74,
-        "rgt": 75,
+        "lft": 76,
+        "rgt": 77,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -19634,12 +20110,12 @@
         "slug": "secure-remote-desktop-access",
         "uri": "secure-remote-desktop-access",
         "dateCreated": "2024-01-10T14:04:05-06:00",
-        "dateUpdated": "2025-11-14T11:19:13-06:00",
+        "dateUpdated": "2026-03-03T09:30:31-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 76,
-        "rgt": 77,
+        "lft": 78,
+        "rgt": 79,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -20161,11 +20637,11 @@
             "sourceTemplate": "",
             "sourceSiteId": null,
             "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2025-10-22T14:23:47-05:00",
+            "sourceDateUpdated": "2026-03-03T09:30:30-06:00",
             "metaGlobalVars": {
                 "language": null,
                 "mainEntityOfPage": "",
-                "seoTitle": "BeyondTrust Secure Remote Desktop & Remote Support Solutions",
+                "seoTitle": "Secure Remote Desktop Solutions",
                 "siteNamePosition": "",
                 "seoDescription": "Replace RDP and VPNs with BeyondTrust Secure Remote Desktop for safer, faster access for employees, vendors, and IT teams. Start your trial now.",
                 "seoKeywords": "",
@@ -20194,7 +20670,6 @@
                 "twitterImageDescription": "",
                 "inherited": {
                     "seoImage": true,
-                    "robots": true,
                     "canonicalUrl": true,
                     "twitterCard": true,
                     "twitterCreator": true,
@@ -20209,7 +20684,8 @@
                 },
                 "overrides": {
                     "seoTitle": true,
-                    "seoDescription": true
+                    "seoDescription": true,
+                    "robots": true
                 }
             },
             "metaSiteVars": {
@@ -20422,8 +20898,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 78,
-        "rgt": 79,
+        "lft": 80,
+        "rgt": 81,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -20731,8 +21207,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 80,
-        "rgt": 81,
+        "lft": 82,
+        "rgt": 83,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -21186,8 +21662,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 82,
-        "rgt": 83,
+        "lft": 84,
+        "rgt": 85,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -21641,8 +22117,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 84,
-        "rgt": 85,
+        "lft": 86,
+        "rgt": 87,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -21983,12 +22459,12 @@
         "slug": "privileged-remote-access-trial",
         "uri": "privileged-remote-access-trial",
         "dateCreated": "2024-02-21T14:03:25-06:00",
-        "dateUpdated": "2025-12-10T11:24:43-06:00",
+        "dateUpdated": "2026-03-12T16:09:40-05:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 86,
-        "rgt": 87,
+        "lft": 88,
+        "rgt": 89,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -22031,7 +22507,7 @@
                             "fields": {
                                 "webFormHandler": "legacyForm",
                                 "product": "pra",
-                                "salesforceCampaignId": "7012S0000004Shy",
+                                "salesforceCampaignId": "701Vw00000XsN1RIAV",
                                 "trialLength": "standard"
                             }
                         }
@@ -22143,7 +22619,7 @@
                             "fields": {
                                 "webFormHandler": "legacyForm",
                                 "product": "pra",
-                                "salesforceCampaignId": "7012S0000004Shy",
+                                "salesforceCampaignId": "701Vw00000XsN1RIAV",
                                 "trialLength": "standard"
                             }
                         }
@@ -22426,8 +22902,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 88,
-        "rgt": 89,
+        "lft": 90,
+        "rgt": 91,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -22837,8 +23313,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 90,
-        "rgt": 91,
+        "lft": 92,
+        "rgt": 93,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -23305,8 +23781,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 92,
-        "rgt": 93,
+        "lft": 94,
+        "rgt": 95,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -23971,8 +24447,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 94,
-        "rgt": 95,
+        "lft": 96,
+        "rgt": 97,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -24323,8 +24799,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 96,
-        "rgt": 97,
+        "lft": 98,
+        "rgt": 99,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -24698,8 +25174,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 98,
-        "rgt": 99,
+        "lft": 100,
+        "rgt": 101,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -24765,7 +25241,7 @@
             "1570032": {
                 "type": "contentBlock",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "Amplify Your Identity Security",
@@ -24849,7 +25325,7 @@
             "1592248": {
                 "type": "contentBlock",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "Examples of Identity Security Insights Detections",
@@ -24900,7 +25376,7 @@
             "1572171": {
                 "type": "quotes",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "companyQuotes": [
@@ -24913,7 +25389,7 @@
             "1574250": {
                 "type": "processFlow",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "Start Using Identity Security Insights for Free",
@@ -24964,7 +25440,7 @@
             "1572415": {
                 "type": "tryItCta",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "Secure a complimentary identity security assessment today!",
@@ -25266,8 +25742,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 100,
-        "rgt": 101,
+        "lft": 102,
+        "rgt": 103,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -25848,8 +26324,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 102,
-        "rgt": 103,
+        "lft": 104,
+        "rgt": 105,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -26384,8 +26860,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 104,
-        "rgt": 107,
+        "lft": 106,
+        "rgt": 109,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -26661,8 +27137,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 105,
-        "rgt": 106,
+        "lft": 107,
+        "rgt": 108,
         "level": 2,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -27096,8 +27572,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 108,
-        "rgt": 109,
+        "lft": 110,
+        "rgt": 111,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -27761,8 +28237,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 110,
-        "rgt": 111,
+        "lft": 112,
+        "rgt": 113,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -28100,8 +28576,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 112,
-        "rgt": 113,
+        "lft": 114,
+        "rgt": 115,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -28451,8 +28927,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 114,
-        "rgt": 115,
+        "lft": 116,
+        "rgt": 117,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -28825,8 +29301,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 116,
-        "rgt": 117,
+        "lft": 118,
+        "rgt": 119,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -29488,8 +29964,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 118,
-        "rgt": 119,
+        "lft": 120,
+        "rgt": 121,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -30086,8 +30562,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 120,
-        "rgt": 121,
+        "lft": 122,
+        "rgt": 123,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -30459,8 +30935,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 122,
-        "rgt": 123,
+        "lft": 124,
+        "rgt": 125,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -30942,8 +31418,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 124,
-        "rgt": 125,
+        "lft": 126,
+        "rgt": 127,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -31264,8 +31740,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 126,
-        "rgt": 127,
+        "lft": 128,
+        "rgt": 129,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -31565,8 +32041,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 128,
-        "rgt": 129,
+        "lft": 130,
+        "rgt": 131,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -32101,8 +32577,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 130,
-        "rgt": 131,
+        "lft": 132,
+        "rgt": 133,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -32637,8 +33113,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 132,
-        "rgt": 133,
+        "lft": 134,
+        "rgt": 135,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -33173,8 +33649,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 134,
-        "rgt": 135,
+        "lft": 136,
+        "rgt": 137,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -33542,12 +34018,12 @@
         "slug": "identity-security-research-kit",
         "uri": "identity-security-research-kit",
         "dateCreated": "2024-10-17T12:32:37-05:00",
-        "dateUpdated": "2025-11-05T15:04:57-06:00",
+        "dateUpdated": "2026-02-26T12:38:32-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 136,
-        "rgt": 137,
+        "lft": 138,
+        "rgt": 139,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -33569,7 +34045,7 @@
                 "level": 1,
                 "fields": {
                     "headingSection": "A Multicategory Identity Security Leader",
-                    "bodyRedactorRestricted": "<p>Industry experts have recognized BeyondTrust as a Leader across four distinct identity security domains:</p>\n<ul><li>Privileged Access Management (PAM)</li><li>Identity Threat Detection and Response (ITDR)</li><li>Cloud Infrastructure Entitlement Management (CIEM)</li><li>Cloud Identity Management</li></ul>\n<p>But, what is a Leader? We've curated recent analyst reports covering identity security disciplines and vendors. Sign up for your access, and discover for yourself!</p>",
+                    "bodyRedactorRestricted": "<p>Industry experts have recognized BeyondTrust as a Leader across four distinct identity security domains:</p>\n<ul><li>Privileged Access Management (PAM)</li><li>Identity Threat Detection and Response (ITDR)</li><li>Cloud Infrastructure Entitlement Management (CIEM)</li><li>Enterprise Secrets Management</li></ul>\n<p>But, what is a Leader? We've curated recent analyst reports covering identity security disciplines and vendors. Sign up for your access, and discover for yourself!</p>",
                     "bannerAsset": {
                         "2149032": {
                             "type": "image",
@@ -33706,40 +34182,15 @@
                     ]
                 }
             },
-            "2126906": {
-                "type": "contentBlock",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "3. Cloud Identity Management Leadership",
-                    "headingSwitch": false,
-                    "bodyRedactorRestricted": "<p>The prestigious <strong>SC Awards</strong> crowned BeyondTrust Entitle as the 2024 winner for the <em>Best Identity Management</em> <em>S</em><em>olution</em>.</p>\n<p>SC Staff touted our product's “groundbreaking approach to managing permissions and addressing the risks associated with excessive privileges in modern cloud environments.”<br /></p>\n<p>Sign up for the Identity Security Research Kit now, to download the full SC award and review, and also get access to other top analyst research content.</p>",
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
-                    "label": null,
-                    "contentSubsections": []
-                }
-            },
-            "2126994": {
-                "type": "quotes",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "companyQuotes": [
-                        2132986
-                    ]
-                }
-            },
             "2372752": {
                 "type": "contentBlock",
                 "enabled": true,
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "headingSection": "4. Cloud Infrastructure Entitlement Management (CIEM) Leadership",
+                    "headingSection": "3. Cloud Infrastructure Entitlement Management (CIEM) Leadership",
                     "headingSwitch": false,
-                    "bodyRedactorRestricted": "<p>GigaOm's 2025 Radar for Cloud Infrastructure Entitlement Management report recognized BeyondTrust Entitle as a Leader and Fast Mover. </p>\n<p>This report evaluated the capabilities of 22 CIEM solutions, including:</p>\n<ul><li><strong>Key features</strong> such as entitlements discovery and visualization, cross-cloud entitlements correlation, compliance, and identity governance.</li><li><strong>Emerging features</strong> such as just-in-time (JIT) access, data privacy and user consent management, and self-service access management.</li><li><strong>Business criteria</strong> such as configurability, flexibility, interoperability, and more.</li></ul>\n<p>Access the full report, included in our Identity Security Research Kit, to learn more. </p>",
+                    "bodyRedactorRestricted": "<p>GigaOm's 2026 Radar for Cloud Infrastructure Entitlement Management (CIEM) report recognized BeyondTrust Pathfinder as both a Leader and Outperformer in the Innovation / Platform Play quadrants. </p>\n<p>This report evaluated the capabilities of 22 CIEM solutions, including:</p>\n<ul><li><strong>Key features</strong> such as cloud identity threat detection and response, AI-enabled anomaly detection, automated least privilege, just-in-time (JIT) access, lifecycle entitlements governance and compliance, and automated remediation and right-sizing.</li><li><strong>Emerging features</strong> such non-human identity (NHI) management, ITDR integration, zero trust architecture integration, predictive access analytics, self-service access management, serverless container security support, AI runtime policy enforcement, and data privacy and user consent management.</li><li><strong>Business criteria </strong>such as configurability, flexibility, interoperability, manageability, and more.</li></ul>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "label": null,
                     "contentSubsections": []
@@ -33752,7 +34203,32 @@
                 "level": 1,
                 "fields": {
                     "companyQuotes": [
-                        2359129
+                        2515485
+                    ]
+                }
+            },
+            "2126906": {
+                "type": "contentBlock",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "headingSection": "4. Enterprise Secrets Management",
+                    "headingSwitch": false,
+                    "bodyRedactorRestricted": "<p>In the 2025 report, KuppingerCole recognizes <strong>BeyondTrust as an Enterprise Secrets Management Leader</strong> across all four categories: Overall, Product, Innovation, and Market. </p>\n<p>This research report highlights:</p>\n<ul class=\"checkmark\"><li>Key secrets management market drivers and trends</li><li>Essential and emerging secrets management capabilities covering humans and machines</li><li>The 22 secrets management solution vendors evaluated and ranked</li></ul>\n<p>Access the full report, included in our Identity Security Research Kit, to learn more.</p>",
+                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
+                    "label": null,
+                    "contentSubsections": []
+                }
+            },
+            "2511911": {
+                "type": "quotes",
+                "enabled": true,
+                "collapsed": false,
+                "level": 1,
+                "fields": {
+                    "companyQuotes": [
+                        2382974
                     ]
                 }
             },
@@ -34129,12 +34605,12 @@
         "slug": "identity-security-research",
         "uri": "identity-security-research",
         "dateCreated": "2024-11-13T09:35:52-06:00",
-        "dateUpdated": "2025-11-05T15:23:13-06:00",
+        "dateUpdated": "2026-02-26T12:39:12-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 138,
-        "rgt": 139,
+        "lft": 140,
+        "rgt": 141,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -34156,7 +34632,7 @@
                 "level": 1,
                 "fields": {
                     "headingSection": "A Multicategory Identity Security Leader",
-                    "bodyRedactorRestricted": "<p>In recent years, industry experts have recognized BeyondTrust as a Leader across three distinct identity security domains:</p>\n<ul><li>Privileged Access Management (PAM)</li><li>Identity Threat Detection and Response (ITDR)</li><li>Cloud Identity Management</li></ul>\n<p>But, what is a Leader? We've curated analyst reports covering the top identity security disciplines and vendors. Sign up for your access, and discover for yourself!</p>",
+                    "bodyRedactorRestricted": "<p>In recent years, industry experts have recognized BeyondTrust as a Leader across three distinct identity security domains:</p>\n<ul><li>Privileged Access Management (PAM)</li><li>Identity Threat Detection and Response (ITDR)</li><li>Cloud Infrastructure Entitlement Management (CIEM)</li></ul>\n<p>But, what is a Leader? We've curated analyst reports covering the top identity security disciplines and vendors. Sign up for your access, and discover for yourself!</p>",
                     "bannerAsset": {
                         "2188158": {
                             "type": "image",
@@ -34299,9 +34775,9 @@
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "headingSection": "3. Cloud Identity Management Leadership",
+                    "headingSection": "3. Cloud Infrastructure Entitlement Management (CIEM) Leadership",
                     "headingSwitch": false,
-                    "bodyRedactorRestricted": "<p>The prestigious <strong>SC Awards</strong> crowned BeyondTrust Entitle as the 2024 winner for the <em>Best Identity Management</em> <em>S</em><em>olution</em>.</p>\n<p>SC Staff touted our product's “groundbreaking approach to managing permissions and addressing the risks associated with excessive privileges in modern cloud environments.”<br /></p>\n<p>Sign up for the 2024 Identity Security Research Kit now, to download the full SC award and review, and also get access to other top analyst research content for 2024. </p>",
+                    "bodyRedactorRestricted": "<p>GigaOm's 2026 Radar for Cloud Infrastructure Entitlement Management (CIEM) report recognized BeyondTrust Pathfinder as both a Leader and Outperformer in the Innovation / Platform Play quadrants.</p>\n<p>This report evaluated the capabilities of 22 CIEM solutions, including:</p>\n<ul><li><strong>Key features</strong> such as cloud identity threat detection and response, AI-enabled anomaly detection, automated least privilege, just-in-time (JIT) access, lifecycle entitlements governance and compliance, and automated remediation and right-sizing.</li><li><strong>Emerging features</strong> such non-human identity (NHI) management, ITDR integration, zero trust architecture integration, predictive access analytics, self-service access management, serverless container security support, AI runtime policy enforcement, and data privacy and user consent management.</li><li><strong>Business criteria</strong> such as configurability, flexibility, interoperability, manageability, and more.</li></ul>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "label": null,
                     "contentSubsections": []
@@ -34314,7 +34790,7 @@
                 "level": 1,
                 "fields": {
                     "companyQuotes": [
-                        2132986
+                        2515485
                     ]
                 }
             },
@@ -34691,12 +35167,12 @@
         "slug": "identity-security-kit",
         "uri": "identity-security-kit",
         "dateCreated": "2024-10-18T10:19:25-05:00",
-        "dateUpdated": "2025-11-05T15:06:50-06:00",
+        "dateUpdated": "2026-02-26T12:34:40-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 140,
-        "rgt": 141,
+        "lft": 142,
+        "rgt": 143,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -34738,7 +35214,7 @@
                 "fields": {
                     "headingSection": "A Leader Across 4 Major Identity Security Disciplines",
                     "headingSwitch": false,
-                    "bodyRedactorRestricted": "<p>Get access to our curated kit featuring expert analysis on the leading identity security disciplines and vendors across 2024 and 2025. Get the insights you need to stay ahead, and disover why BeyondTrust is a Leader across the 4 most important domains of identity security—<strong>PAM, ITDR, CIEM and Cloud Identity Management</strong>.<br /></p>",
+                    "bodyRedactorRestricted": "<p>Get access to our curated kit featuring expert analysis on the leading identity security disciplines and vendors across 2024 and 2025. Get the insights you need to stay ahead, and disover why BeyondTrust is a Leader across the 4 most important domains of identity security—<strong>PAM, ITDR, CIEM, Secrets Management, and more</strong>.<br /></p>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "label": null,
                     "contentSubsections": []
@@ -34752,7 +35228,7 @@
                 "fields": {
                     "headingSection": "Sign up now for immediate access to:",
                     "headingSwitch": false,
-                    "bodyRedactorRestricted": "<ul><li><strong>The </strong><strong>2025 Gartner® Magic Quadrant™ for PAM</strong></li><li><strong>The 2025 Forrester<strong>™</strong> Wave: PIM Solutions</strong></li><li><strong>The 2025 GigaOm Radar for CIEM</strong></li><li><strong>2024 KuppingerCole Leadership Compass for ITDR</strong></li><li><strong>2024 SC Awards Analysis for Winner of Best Identity Management Solution category</strong></li><li><strong>The 2025 Gartner® Critical Capabilities for PAM</strong></li><li><strong>and more</strong></li></ul>",
+                    "bodyRedactorRestricted": "<ul><li><strong>The </strong><strong>2025 Gartner® Magic Quadrant™ for PAM</strong></li><li><strong>The 2025 Forrester<strong>™</strong> Wave: PIM Solutions</strong></li><li><strong>The 2026 GigaOm Radar for CIEM</strong></li><li><strong>2025 KuppingerCole Enterprise Secrets Management Leadership Compass</strong></li><li><strong>2024 KuppingerCole Leadership Compass for ITDR</strong></li><li><strong>The 2025 Gartner® Critical Capabilities for PAM</strong></li><li><strong>and more</strong></li></ul>",
                     "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}",
                     "label": null,
                     "contentSubsections": []
@@ -34767,7 +35243,7 @@
                     "companyQuotes": [
                         2455409,
                         1597472,
-                        2080922
+                        2359129
                     ]
                 }
             },
@@ -34848,7 +35324,7 @@
                                             "image": [
                                                 2366726
                                             ],
-                                            "description": "Named a Leader in the 2025 GigaOm Radar for Cloud Infrastructure Entitlement Management (CIEM)",
+                                            "description": "Named a Leader in the 2026 GigaOm Radar for Cloud Infrastructure Entitlement Management (CIEM)",
                                             "ctaLabel": null,
                                             "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
                                         }
@@ -34893,9 +35369,9 @@
                                         "collapsed": false,
                                         "fields": {
                                             "image": [
-                                                2126471
+                                                1556615
                                             ],
-                                            "description": "SC Award Winners 2024 BeyondTrust Entitle – Best Identity Management Solution",
+                                            "description": "Named a Leader in The Q3 2025 Forrester™ Wave: PIM Solutions",
                                             "ctaLabel": null,
                                             "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"entry\"}"
                                         }
@@ -35242,8 +35718,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 142,
-        "rgt": 143,
+        "lft": 144,
+        "rgt": 145,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -35579,8 +36055,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 144,
-        "rgt": 145,
+        "lft": 146,
+        "rgt": 147,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -36047,8 +36523,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 146,
-        "rgt": 147,
+        "lft": 148,
+        "rgt": 149,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -36527,8 +37003,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 148,
-        "rgt": 149,
+        "lft": 150,
+        "rgt": 151,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -36899,8 +37375,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 150,
-        "rgt": 151,
+        "lft": 152,
+        "rgt": 153,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -37271,8 +37747,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 152,
-        "rgt": 153,
+        "lft": 154,
+        "rgt": 155,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -37648,12 +38124,12 @@
         "slug": "lunch-on-us",
         "uri": "lunch-on-us",
         "dateCreated": "2025-08-07T13:31:46-05:00",
-        "dateUpdated": "2025-08-18T08:54:10-05:00",
+        "dateUpdated": "2026-03-10T10:32:17-05:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 154,
-        "rgt": 155,
+        "lft": 156,
+        "rgt": 157,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -37674,7 +38150,7 @@
                 "collapsed": false,
                 "level": 1,
                 "fields": {
-                    "headingSection": "Introductions, Insights and Lunch, On Us",
+                    "headingSection": "Introductions, Insights, and Lunch—On Us",
                     "bodyRedactorRestricted": "<p>One platform. Complete control.<br /></p>",
                     "bannerAsset": {
                         "2424652": {
@@ -38033,8 +38509,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 156,
-        "rgt": 157,
+        "lft": 158,
+        "rgt": 159,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -38414,8 +38890,8 @@
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 218904,
-        "lft": 158,
-        "rgt": 159,
+        "lft": 160,
+        "rgt": 161,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,

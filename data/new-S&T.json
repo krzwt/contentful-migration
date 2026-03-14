@@ -22,12 +22,12 @@
         "slug": "services-training",
         "uri": "services-training",
         "dateCreated": "2023-08-08T17:34:22-05:00",
-        "dateUpdated": "2026-03-04T23:14:48-06:00",
+        "dateUpdated": "2025-12-11T11:42:04-06:00",
         "dateLastMerged": null,
         "dateDeleted": null,
         "root": 128346,
         "lft": 2,
-        "rgt": 13,
+        "rgt": 11,
         "level": 1,
         "trashed": false,
         "validatingRelatedElement": false,
@@ -613,7 +613,7 @@
             "2483844": {
                 "type": "featureTabbed",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "Your training journey starts here",
@@ -725,7 +725,7 @@
             "2483948": {
                 "type": "table",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "Training Program Comparison Chart",
@@ -858,7 +858,7 @@
             "2483951": {
                 "type": "contentBlock",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "Explore course offerings",
@@ -906,7 +906,7 @@
             "946676": {
                 "type": "faqs",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "headingSection": "FAQs",
@@ -969,7 +969,7 @@
             "947150": {
                 "type": "quotes",
                 "enabled": true,
-                "collapsed": true,
+                "collapsed": false,
                 "level": 1,
                 "fields": {
                     "companyQuotes": [
@@ -2070,339 +2070,6 @@
                 "ogImageSource": "sameAsSeo",
                 "ogImageField": "",
                 "ogImageTransform": "1",
-                "ogImageTransformMode": "crop",
-                "ogImageDescriptionSource": "",
-                "ogImageDescriptionField": ""
-            }
-        }
-    },
-    {
-        "sectionId": 58,
-        "postDate": "2024-02-13T00:00:00-06:00",
-        "expiryDate": null,
-        "deletedWithEntryType": false,
-        "_authorId": 70871,
-        "id": 1416754,
-        "tempId": null,
-        "draftId": null,
-        "revisionId": null,
-        "isProvisionalDraft": false,
-        "uid": "e6468344-546f-4acd-a395-c236aa08144f",
-        "siteSettingsId": 1934116,
-        "fieldLayoutId": null,
-        "structureId": 61821,
-        "contentId": 779938,
-        "enabled": true,
-        "archived": false,
-        "siteId": 1,
-        "title": "Cloud Migrations",
-        "slug": "cloud-migrations",
-        "uri": "services-training/cloud-migrations",
-        "dateCreated": "2024-02-13T10:08:18-06:00",
-        "dateUpdated": "2024-02-13T10:15:53-06:00",
-        "dateLastMerged": null,
-        "dateDeleted": null,
-        "root": 128346,
-        "lft": 9,
-        "rgt": 10,
-        "level": 2,
-        "trashed": false,
-        "validatingRelatedElement": false,
-        "parentId": 945908,
-        "canonicalId": 1416754,
-        "isDraft": false,
-        "isRevision": false,
-        "isUnpublishedDraft": false,
-        "ref": "newServices/cloud-migrations",
-        "status": "disabled",
-        "url": "https://bluetext.beyondtrust.com/services-training/cloud-migrations",
-        "authorId": 70871,
-        "typeId": 124,
-        "bannerMediaRight": {
-            "1416755": {
-                "type": "banner",
-                "enabled": true,
-                "collapsed": false,
-                "level": 1,
-                "fields": {
-                    "headingSection": "Cloud Migrations",
-                    "body200": "Elevate your deployment with BeyondTrust Cloud.",
-                    "bannerAsset": {
-                        "1416756": {
-                            "type": "image",
-                            "enabled": true,
-                            "collapsed": false,
-                            "fields": {
-                                "image": [
-                                    652920
-                                ]
-                            }
-                        }
-                    },
-                    "label": null,
-                    "ctaLink": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"\"}"
-                }
-            }
-        },
-        "sectionNavigation": {
-            "1416793": {
-                "type": "siteSection",
-                "enabled": true,
-                "collapsed": false,
-                "fields": {
-                    "sectionName": "Overview",
-                    "sectionUrlRoot": "{\"linkedId\":1416754,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
-                    "links": {
-                        "1416794": {
-                            "type": 63,
-                            "fields": {
-                                "destination": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
-                                "label": "Remote Support Migrations",
-                                "queryParams": null
-                            }
-                        },
-                        "1416795": {
-                            "type": 63,
-                            "fields": {
-                                "destination": "{\"linkedId\":null,\"linkedSiteId\":null,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":null,\"type\":\"url\"}",
-                                "label": "EPM Migrations",
-                                "queryParams": null
-                            }
-                        }
-                    },
-                    "cta": {
-                        "1416796": {
-                            "type": 64,
-                            "fields": {
-                                "destination": "{\"linkedId\":947228,\"linkedSiteId\":1,\"linkedTitle\":null,\"linkedUrl\":null,\"payload\":\"[]\",\"type\":\"entry\"}",
-                                "label": "Service Inquiries"
-                            }
-                        }
-                    },
-                    "icon": []
-                }
-            }
-        },
-        "servicesOverviewContent": [],
-        "heading45": null,
-        "seoMetaTags": {
-            "bundleVersion": "1.0.23",
-            "sourceBundleType": "field",
-            "sourceId": null,
-            "sourceName": null,
-            "sourceHandle": null,
-            "sourceType": "field",
-            "typeId": null,
-            "sourceTemplate": "",
-            "sourceSiteId": null,
-            "sourceAltSiteSettings": [],
-            "sourceDateUpdated": "2024-02-13T10:08:18-06:00",
-            "metaGlobalVars": {
-                "language": null,
-                "mainEntityOfPage": "",
-                "seoTitle": "",
-                "siteNamePosition": "",
-                "seoDescription": "",
-                "seoKeywords": "",
-                "seoImage": "",
-                "seoImageWidth": "",
-                "seoImageHeight": "",
-                "seoImageDescription": "",
-                "canonicalUrl": "",
-                "robots": "",
-                "ogType": "",
-                "ogTitle": "",
-                "ogSiteNamePosition": "",
-                "ogDescription": "",
-                "ogImage": "",
-                "ogImageWidth": "",
-                "ogImageHeight": "",
-                "ogImageDescription": "",
-                "twitterCard": "",
-                "twitterCreator": "",
-                "twitterTitle": "",
-                "twitterSiteNamePosition": "",
-                "twitterDescription": "",
-                "twitterImage": "",
-                "twitterImageWidth": "",
-                "twitterImageHeight": "",
-                "twitterImageDescription": "",
-                "inherited": [],
-                "overrides": []
-            },
-            "metaSiteVars": {
-                "siteName": "BeyondTrust",
-                "siteAlternateName": "",
-                "identity": null,
-                "creator": null,
-                "twitterHandle": "",
-                "facebookProfileId": "",
-                "facebookAppId": "",
-                "googleSiteVerification": "",
-                "bingSiteVerification": "",
-                "pinterestSiteVerification": "",
-                "facebookSiteVerification": "",
-                "sameAsLinks": [],
-                "siteLinksSearchTarget": "",
-                "siteLinksQueryInput": "",
-                "referrer": "no-referrer-when-downgrade",
-                "additionalSitemapUrls": [],
-                "additionalSitemapUrlsDateUpdated": null,
-                "additionalSitemaps": []
-            },
-            "metaSitemapVars": {
-                "sitemapUrls": null,
-                "sitemapAssets": null,
-                "sitemapAssetTransform": null,
-                "newsSitemap": null,
-                "newsPublicationName": "",
-                "sitemapFiles": null,
-                "sitemapAltLinks": null,
-                "sitemapChangeFreq": "",
-                "sitemapPriority": "",
-                "sitemapLimit": null,
-                "sitemapPageSize": 500,
-                "structureDepth": null,
-                "sitemapImageFieldMap": [],
-                "sitemapVideoFieldMap": [],
-                "inherited": [],
-                "overrides": []
-            },
-            "metaContainers": {
-                "MetaTagContainergeneral": {
-                    "data": [],
-                    "name": "General",
-                    "description": "General Meta Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
-                    "handle": "general",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaTagContaineropengraph": {
-                    "data": [],
-                    "name": "Facebook",
-                    "description": "Facebook OpenGraph Meta Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
-                    "handle": "opengraph",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaTagContainertwitter": {
-                    "data": [],
-                    "name": "Twitter",
-                    "description": "Twitter Card Meta Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
-                    "handle": "twitter",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaTagContainermiscellaneous": {
-                    "data": [],
-                    "name": "Miscellaneous",
-                    "description": "Miscellaneous Meta Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaTagContainer",
-                    "handle": "miscellaneous",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaLinkContainergeneral": {
-                    "data": [],
-                    "name": "General",
-                    "description": "Link Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaLinkContainer",
-                    "handle": "general",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaScriptContainergeneral": {
-                    "data": [],
-                    "position": 1,
-                    "name": "General",
-                    "description": "Script Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaScriptContainer",
-                    "handle": "general",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaJsonLdContainergeneral": {
-                    "data": [],
-                    "name": "General",
-                    "description": "JsonLd Tags",
-                    "class": "nystudio107\\seomatic\\models\\MetaJsonLdContainer",
-                    "handle": "general",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                },
-                "MetaTitleContainergeneral": {
-                    "data": [],
-                    "name": "General",
-                    "description": "Meta Title Tag",
-                    "class": "nystudio107\\seomatic\\models\\MetaTitleContainer",
-                    "handle": "general",
-                    "include": true,
-                    "dependencies": [],
-                    "clearCache": false
-                }
-            },
-            "redirectsContainer": [],
-            "frontendTemplatesContainer": {
-                "data": [],
-                "name": null,
-                "description": null,
-                "class": "nystudio107\\seomatic\\models\\FrontendTemplateContainer",
-                "handle": null,
-                "include": true,
-                "dependencies": null,
-                "clearCache": false
-            },
-            "metaBundleSettings": {
-                "siteType": "",
-                "siteSubType": "",
-                "siteSpecificType": "",
-                "seoTitleSource": "fromCustom",
-                "seoTitleField": "",
-                "siteNamePositionSource": "",
-                "seoDescriptionSource": "fromCustom",
-                "seoDescriptionField": "",
-                "seoKeywordsSource": "fromCustom",
-                "seoKeywordsField": "",
-                "seoImageIds": [],
-                "seoImageSource": "fromAsset",
-                "seoImageField": "",
-                "seoImageTransform": true,
-                "seoImageTransformMode": "crop",
-                "seoImageDescriptionSource": "fromCustom",
-                "seoImageDescriptionField": "",
-                "twitterCreatorSource": "",
-                "twitterCreatorField": "",
-                "twitterTitleSource": "",
-                "twitterTitleField": "",
-                "twitterSiteNamePositionSource": "",
-                "twitterDescriptionSource": "",
-                "twitterDescriptionField": "",
-                "twitterImageIds": [],
-                "twitterImageSource": "",
-                "twitterImageField": "",
-                "twitterImageTransform": false,
-                "twitterImageTransformMode": "crop",
-                "twitterImageDescriptionSource": "",
-                "twitterImageDescriptionField": "",
-                "ogTitleSource": "",
-                "ogTitleField": "",
-                "ogSiteNamePositionSource": "",
-                "ogDescriptionSource": "",
-                "ogDescriptionField": "",
-                "ogImageIds": [],
-                "ogImageSource": "",
-                "ogImageField": "",
-                "ogImageTransform": false,
                 "ogImageTransformMode": "crop",
                 "ogImageDescriptionSource": "",
                 "ogImageDescriptionField": ""
