@@ -16,6 +16,7 @@ import { migrateSt } from "./handlers/newSt.js";
 import { migrateStTam } from "./handlers/newStTam.js";
 import { migrateStServices } from "./handlers/newStServices.js";
 import { migrateForms } from "./handlers/formHandler.js";
+import { migratePartnersEmbeds } from "./handlers/partnersEmbedsHandler.js";
 import { migratePressMedia } from "./handlers/pressMediaHandler.js";
 import { migrateBlogs } from "./handlers/blogHandler.js";
 import { migrateAnnouncements } from "./handlers/announcementHandler.js";
@@ -102,11 +103,16 @@ const DATA_SOURCES = [
   //   pageContentType: "newPartners",
   //   label: "Partners"
   // },
-  {
-    file: "./data/people-cpt.json",
-    label: "People CPT",
-    isPeople: true
-  },
+  // {
+  //   file: "./data/newPartnersEmbeds.json",
+  //   label: "Partners Embeds",
+  //   isPartnersEmbeds: true
+  // },
+  // {
+  //   file: "./data/people-cpt.json",
+  //   label: "People CPT",
+  //   isPeople: true
+  // },
   // {
   //   file: "./data/company-quotes.json",
   //   label: "Company Quotes",
@@ -177,6 +183,7 @@ const DATA_SOURCES = [
   //   file: "./data/events.json",
   //   label: "Events",
   //   isEvents: true
+  // },
   // {
   //   file: "./data/NEW-Video.json",
   //   label: "Video CPT",
@@ -741,6 +748,10 @@ async function run() {
 
     if (source.isForms) {
       await migrateForms(env, dataRaw, summary);
+    }
+
+    if (source.isPartnersEmbeds) {
+      await migratePartnersEmbeds(env, batchData, summary);
     }
 
     if (source.isPressMedia) {
