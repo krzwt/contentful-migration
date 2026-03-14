@@ -1,5 +1,5 @@
 import { LOCALE, getOrCreateSeo, publishPage } from "./pageHandler.js";
-import { upsertEntry, upsertCta, makeLink, parseCraftLink, upsertAssetWrapper } from "../utils/contentfulHelpers.js";
+import { upsertEntry, upsertCta, makeLink, parseCraftLink, upsertAssetWrapper, resolveEntryRef } from "../utils/contentfulHelpers.js";
 import { getCategoryName } from "../utils/categoryLoader.js";
 import { COMPONENTS } from "../registry.js";
 import { convertHtmlToRichText } from "../utils/richText.js";
@@ -366,6 +366,25 @@ export async function migrateEvents(
                     }
                 }
             }
+
+            // Event Manager (Link to users entry; Craft user ID -> Contentful users entry)
+            if (item.eventManager && item.eventManager.length > 0) {
+                const managerId = item.eventManager[0];
+                const ref = resolveEntryRef(managerId);
+                if (ref && ref.type === "users" && ref.id) {
+                    mainFields.eventManager = { [LOCALE]: makeLink(ref.id) };
+                } else if (env) {
+                    try {
+                        const userEntry = await env.getEntry(`user-${managerId}`);
+                        if (userEntry?.sys?.id) {
+                            mainFields.eventManager = { [LOCALE]: makeLink(userEntry.sys.id) };
+                        }
+                    } catch (_) {
+                        // User entry not found; leave eventManager unset
+                    }
+                }
+            }
+            mainFields.emailLeadNotificationsToEventManager = { [LOCALE]: !!item.emailEventManager };
 
             if (seoEntry) mainFields.seo = { [LOCALE]: makeLink(seoEntry.sys.id) };
             if (layoutEntry) mainFields.eventTypeLayoutFields = { [LOCALE]: makeLink(layoutEntry.sys.id) };

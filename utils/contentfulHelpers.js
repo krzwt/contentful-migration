@@ -109,7 +109,8 @@ export async function prePopulateEntryIdCache(env) {
             "newStBtu", "newPressMediaCpt", "podcastsCpt", "newStTam", "newStServices",
             "embedFormsCpt", "newSt", "newGlobalReachMap", "eventsCpt", "newStandaloneContent",
             "newStandaloneConversion", "newStandaloneMicrosite", "newStandaloneThankYou",
-            "peopleCpt", "newCompany", "newPartners", "newPartnersEmbeds", "company", "quoteItem"
+            "peopleCpt", "newCompany", "newPartners", "newPartnersEmbeds", "company", "quoteItem",
+            "users"
         ];
     }
 
