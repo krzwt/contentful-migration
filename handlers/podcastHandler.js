@@ -1,6 +1,6 @@
 import fs from "fs";
 import { LOCALE, getOrCreateSeo, safeId } from "./pageHandler.js";
-import { upsertEntry, makeLink, upsertAssetWrapper } from "../utils/contentfulHelpers.js";
+import { upsertEntry, makeLink, upsertAssetWrapper, resolveEntryRef } from "../utils/contentfulHelpers.js";
 import { getCategoryName, getCategory } from "../utils/categoryLoader.js";
 import { getTagNames } from "../utils/tagHandler.js";
 import { convertHtmlToRichText } from "../utils/richText.js";
@@ -139,11 +139,24 @@ export async function migratePodcasts(
                 }
             }
 
-            // 2.4 Authors / Hosts (from banner people → peopleCpt references)
+            // 2.4 Authors / Hosts (from banner people → peopleCpt references; only link if entry exists)
             if (bannerPeople.length > 0) {
-                fields.authorsHosts = {
-                    [LOCALE]: bannerPeople.map((pid) => makeLink(`person-${pid}`)),
-                };
+                const authorLinks = [];
+                const missingAuthors = [];
+                for (const pid of bannerPeople) {
+                    const ref = resolveEntryRef(pid);
+                    if (ref && ref.id) {
+                        authorLinks.push(makeLink(ref.id));
+                    } else {
+                        missingAuthors.push(`person-${pid}`);
+                    }
+                }
+                if (authorLinks.length > 0) {
+                    fields.authorsHosts = { [LOCALE]: authorLinks };
+                }
+                if (missingAuthors.length > 0) {
+                    console.warn(`   ⚠ Authors/Hosts not in Contentful — skipped: ${missingAuthors.join(", ")}`);
+                }
                 console.log(
                     `   👤 Authors/Hosts: ${bannerPeople.map((p) => `person-${p}`).join(", ")}`
                 );
@@ -168,11 +181,26 @@ export async function migratePodcasts(
                 fields.podcastDuration = { [LOCALE]: parseInt(item.podcastDuration) || null };
             }
 
-            // 2.7 Guests (top-level people → peopleCpt references)
+            // 2.7 Guests (top-level people → peopleCpt references; only link if entry exists)
             if (item.people && item.people.length > 0) {
-                fields.guests = {
-                    [LOCALE]: item.people.map((pid) => makeLink(`person-${pid}`)),
-                };
+                const guestLinks = [];
+                const missingGuests = [];
+                for (const pid of item.people) {
+                    const ref = resolveEntryRef(pid);
+                    if (ref && ref.id) {
+                        guestLinks.push(makeLink(ref.id));
+                    } else {
+                        missingGuests.push(`person-${pid}`);
+                    }
+                }
+                if (guestLinks.length > 0) {
+                    fields.guests = { [LOCALE]: guestLinks };
+                } else {
+                    fields.guests = { [LOCALE]: [] };
+                }
+                if (missingGuests.length > 0) {
+                    console.warn(`   ⚠ Guest(s) not in Contentful — skipped: ${missingGuests.join(", ")}`);
+                }
             }
 
             // 2.8 Podcast Description (RichText)
