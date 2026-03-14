@@ -1,6 +1,6 @@
 import fs from "fs";
 import { cleanCraftUrls, normalizeUrl } from "./normalize.js";
-import { getVideoThumbnailUrl } from "./videoThumbnailUrl.js";
+import { getVideoThumbnailUrl, normalizeAssetsDomain } from "./videoThumbnailUrl.js";
 
 const LOCALE = "en-US";
 const GLOBAL_URL_MAP = new Map(); // Map craftId -> uri/slug
@@ -341,17 +341,18 @@ export async function upsertAssetWrapper(env, id, contentfulAssetId, mimeType, v
 
     // If it's a Wistia/External video (or S3 direct URL), use videoUrl only — no Media Asset upload
     if (videoUrl) {
+        const normalizedVideoUrl = normalizeAssetsDomain(videoUrl);
         console.log(`   🎬 Video asset wrapper (direct URL): asset-${id}`);
         const fields = {
             assetType: { [LOCALE]: "Video" },
-            videoUrl: { [LOCALE]: videoUrl },
+            videoUrl: { [LOCALE]: normalizedVideoUrl },
             mediaAsset: { [LOCALE]: null }  // clear any previously uploaded asset so only Video URL is used
         };
         if (internalName != null && String(internalName).trim() !== "") {
             fields.internalName = { [LOCALE]: String(internalName).trim().slice(0, 256) };
         }
-        // S3 thumbnail URL — Contentful field "Video Thumbnail URL" is usually id "videoThumbnailUrl"
-        const thumbnailUrl = getVideoThumbnailUrl(videoUrl);
+        // S3 thumbnail URL (always assets.beyondtrust.com)
+        const thumbnailUrl = getVideoThumbnailUrl(normalizedVideoUrl);
         const thumbnailFieldId = "videoThumbnailUrl";
         if (thumbnailUrl) fields[thumbnailFieldId] = { [LOCALE]: thumbnailUrl };
 

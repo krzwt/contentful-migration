@@ -1,9 +1,12 @@
 import { convertHtmlToRichText } from "../utils/richText.js";
 import { upsertCta, upsertAssetWrapper, makeLink, upsertEntry } from "../utils/contentfulHelpers.js";
 import { createOrUpdateFormComponent } from "./formComponent.js";
+import { getOrderedKeys } from "../utils/jsonOrder.js";
 
 const LOCALE = "en-US";
 const CONTENT_TYPE = "bannerHero";
+
+/** Contentful bannerHero fields: blockId, blockName, layoutVariant, heading, description, addAsset, removeShadow, superSizeAsset, mainBannerForm, cta, addStatistics */
 
 /* -----------------------------
    VARIANT MAPPING
@@ -101,13 +104,17 @@ export async function createOrUpdateHero(env, heroData, assetMap = null) {
   /* -----------------------------
      BANNER HERO FIELDS
   ------------------------------ */
+  const superSize =
+    heroData.superSizeAsset ?? heroData.superSize ?? heroData.enlargeBanner ?? heroData.fields?.superSizeAsset ?? heroData.fields?.superSize ?? heroData.fields?.enlargeBanner;
+
   const fields = {
     blockId: { [LOCALE]: heroData.blockId },
     blockName: { [LOCALE]: heroData.blockName || heroData.heading || "Banner Hero" },
     layoutVariant: { [LOCALE]: mapVariant(heroData.variation) },
     heading: { [LOCALE]: heroData.heading || "" },
     description: { [LOCALE]: await convertHtmlToRichText(env, heroData.body || "") },
-    removeShadow: { [LOCALE]: !!heroData.removeShadow }
+    removeShadow: { [LOCALE]: !!heroData.removeShadow },
+    superSizeAsset: { [LOCALE]: !!superSize }
   };
 
   if (ctaEntry) {
@@ -116,6 +123,8 @@ export async function createOrUpdateHero(env, heroData, assetMap = null) {
         sys: { type: "Link", linkType: "Entry", id: ctaEntry.sys.id }
       }
     };
+  } else {
+    fields.cta = { [LOCALE]: null };
   }
 
   if (assetWrapper) {
@@ -124,6 +133,38 @@ export async function createOrUpdateHero(env, heroData, assetMap = null) {
         sys: { type: "Link", linkType: "Entry", id: assetWrapper.sys.id }
       }
     };
+  }
+
+  // Add Statistics (optional): banner can have nested statistics groups → statistics entries
+  const statsData = heroData.statistics || heroData.fields?.statistics;
+  if (statsData && typeof statsData === "object" && env) {
+    const statRefs = [];
+    const orderedGIds = getOrderedKeys(heroData.blockSegment || "", statsData);
+    for (const sId of orderedGIds) {
+      const statGroup = statsData[sId];
+      if (typeof statGroup !== "object" || !statGroup.fields?.listing) continue;
+      const listing = statGroup.fields.listing;
+      const orderedItemIds = getOrderedKeys("", listing);
+      for (const itemId of orderedItemIds) {
+        const item = listing[itemId];
+        if (typeof item !== "object" || !item.fields) continue;
+        const f = item.fields;
+        const itemFields = {
+          rangeStart: { [LOCALE]: String(f.rangeStart ?? "0") },
+          rangeEnd: { [LOCALE]: String(f.rangeEnd ?? "0") },
+          statDescription: { [LOCALE]: f.description || "" },
+        };
+        if (f.suffix) itemFields.suffix = { [LOCALE]: f.suffix };
+        if (f.footnote) itemFields.footnote = { [LOCALE]: f.footnote };
+        try {
+          const itemEntry = await upsertEntry(env, "statistics", `stat-banner-${heroData.blockId}-${itemId}`, itemFields, true);
+          if (itemEntry?.sys?.id) statRefs.push(makeLink(itemEntry.sys.id));
+        } catch (_) {
+          // skip
+        }
+      }
+    }
+    if (statRefs.length) fields.addStatistics = { [LOCALE]: statRefs };
   }
 
   // 3. FORM SUPPORT

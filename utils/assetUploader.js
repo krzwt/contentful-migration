@@ -1,4 +1,5 @@
 import fs from "fs";
+import { normalizeAssetsDomain } from "./videoThumbnailUrl.js";
 
 const LOCALE = "en-US";
 const BASE_URL = process.env.S3_BASE_URL || process.env.BASE_URL || "https://assets.beyondtrust.com";
@@ -116,10 +117,11 @@ export function loadAssetMetadata(filePaths) {
 
         // 5. General handle for leftover $S3_BUCKET text
         if (url.includes("$S3_BUCKET")) {
-          // If BASE_URL is something like https://assets.beyondtrust.com, we just use that as prefix?
-          url = url.replace("$S3_BUCKET", "beyondtrust-assets"); // Arbitrary guess, but maybe they want BASE_URL?
+          url = url.replace("$S3_BUCKET", "beyondtrust-assets");
         }
 
+        // Normalize UAT → production (assets-uat.btdevops.io → assets.beyondtrust.com)
+        url = normalizeAssetsDomain(url);
 
         assetMap.set(String(asset.id), {
           title: asset.title,
@@ -378,13 +380,16 @@ export async function processAssets(env, assetIds, assetMetadata, isDryRun = fal
 
     const metadata = assetMetadata.get(String(craftAssetId));
 
-    // S3 / assets.beyondtrust.com: use direct URL for videos (no upload to Contentful)
-    const S3_VIDEO_DOMAIN = "assets.beyondtrust.com";
-    if (metadata?.url && metadata.mimeType?.startsWith("video/") && metadata.url.includes(S3_VIDEO_DOMAIN)) {
+    // S3: use direct URL for videos (no upload); normalize UAT → assets.beyondtrust.com
+    const isS3Video =
+      metadata?.url &&
+      metadata.mimeType?.startsWith("video/") &&
+      (metadata.url.includes("assets.beyondtrust.com") || metadata.url.includes("assets-uat.btdevops.io"));
+    if (isS3Video) {
       contentfulAssetMap.set(String(craftAssetId), {
         id: null,
         mimeType: metadata.mimeType || "video/mp4",
-        wistiaUrl: metadata.url,
+        wistiaUrl: normalizeAssetsDomain(metadata.url),
         title: metadata.title || null,
       });
       continue;
