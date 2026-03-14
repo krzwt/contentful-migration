@@ -1,50 +1,56 @@
 {
-    "data": {
-      "assets": [
-        {
-          "id": "2328214",
-          "title": "Cyber Leaders Exchange",
-          "url": "https://assets-uat.btdevops.io/assets/images/resource-cards/Case-Study.png",
-          "filename": "Case-Study.png",
-          "mimeType": "image/png",
-          "width": 2000,
-          "height": 2000,
-          "size": "1483709",
-          "alt": null
-        },
-        {
-          "id": "2320461",
-          "title": "Resource Card Ninja Van case study",
-          "url": "https://assets-uat.btdevops.io/assets/images/resource-cards/Ninja-Van-Resource-Card.png",
-          "filename": "Ninja-Van-Resource-Card.png",
-          "mimeType": "image/png",
-          "width": 2000,
-          "height": 2000,
-          "size": "173353",
-          "alt": null
-        },
-        {
-          "id": "2121227",
-          "title": "Entitle Datasheet Resource Card 2000x2000 whitepaper",
-          "url": "https://assets-uat.btdevops.io/assets/images/resource-cards/Entitle_Datasheet_Resource-Card_2000x2000-whitepaper.png",
-          "filename": "Entitle_Datasheet_Resource-Card_2000x2000-whitepaper.png",
-          "mimeType": "image/png",
-          "width": 2000,
-          "height": 2000,
-          "size": "1363319",
-          "alt": null
-        },
-        {
-          "id": "710104",
-          "title": "Partner gift banner",
-          "url": "https://assets-uat.btdevops.io/assets/images/banner-images/partner-gift-banner.jpg",
-          "filename": "partner-gift-banner.jpg",
-          "mimeType": "image/jpeg",
-          "width": 2100,
-          "height": 400,
-          "size": "73000",
-          "alt": null
-        }
-      ]
-    }
+  "data": {
+    "assets": [
+      {
+        "id": "2524829",
+        "title": "Nash County Public Schools Logo",
+        "url": "S3_BASE_URL/assets/images/logos/Nash-County-Public-Schools-Logo.png",
+        "filename": "Nash-County-Public-Schools-Logo.png",
+        "mimeType": "image/png",
+        "width": 2226,
+        "height": 770,
+        "size": "88113"
+      },
+      {
+        "id": "2515486",
+        "title": "Gigaom logo primary",
+        "url": "S3_BASE_URL/assets/images/logos/gigaom-logo-primary.svg",
+        "filename": "gigaom-logo-primary.svg",
+        "mimeType": "image/svg+xml",
+        "width": 1800,
+        "height": 324,
+        "size": "1861"
+      },
+      {
+        "id": "2514134",
+        "title": "Pete Herzog Audio Episode",
+        "url": "https://assets-uat.btdevops.io/assets/documents/Pete-Herzog-Audio-Episode.mp3",
+        "filename": "Pete-Herzog-Audio-Episode.mp3",
+        "mimeType": "audio/mpeg",
+        "width": null,
+        "height": null,
+        "size": "92948141"
+      },
+      {
+        "id": "2511828",
+        "title": "Awards page top infosec innovator winner",
+        "url": "S3_BASE_URL/assets/images/logos/Awards-page-top-infosec-innovator-winner.png",
+        "filename": "Awards-page-top-infosec-innovator-winner.png",
+        "mimeType": "image/png",
+        "width": 500,
+        "height": 300,
+        "size": "65648"
+      },
+      {
+        "id": "545730",
+        "title": "Visibility orange",
+        "url": "https://assets-uat.btdevops.io/assets/images/products/images/Visibility_orange.svg",
+        "filename": "Visibility_orange.svg",
+        "mimeType": "image/svg+xml",
+        "width": 85,
+        "height": 69,
+        "size": "879"
+      }
+    ]
   }
+}

@@ -1,4 +1,226 @@
 {
+  "resourceTabSection": {
+    "name": "🧩 Resource Tab Section",
+    "description": "",
+    "displayField": "blockName",
+    "fields": {
+      "blockId": {
+        "name": "Block ID",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "blockName": {
+        "name": "Block Name",
+        "type": "Symbol",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "validations": []
+      },
+      "sectionTitle": {
+        "name": "Section Title",
+        "type": "Link",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "linkType": "Entry",
+        "validations": [
+          {
+            "linkContentType": [
+              "sectionTitle"
+            ]
+          }
+        ]
+      },
+      "blogTab": {
+        "name": "Blog Tab",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "blogCpt",
+                "resourcesCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "max": 6
+            }
+          }
+        ]
+      },
+      "documentsTab": {
+        "name": "Documents Tab",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "resourcesCpt",
+                "newResearchCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "max": 6
+            }
+          }
+        ]
+      },
+      "videosTab": {
+        "name": "Videos Tab",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "resourcesCpt",
+                "newVideoCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "max": 6
+            }
+          }
+        ]
+      },
+      "podcastsTab": {
+        "name": "Podcasts Tab",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "podcastsCpt",
+                "resourcesCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "max": 6
+            }
+          }
+        ]
+      },
+      "eventsTab": {
+        "name": "Events Tab",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "eventsCpt",
+                "resourcesCpt",
+                "newEventsCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "max": 6
+            }
+          }
+        ]
+      },
+      "webinarsTab": {
+        "name": "Webinars Tab",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "resourcesCpt",
+                "newEventsCpt",
+                "newWebinarsCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "max": 6
+            }
+          }
+        ]
+      },
+      "mediaTab": {
+        "name": "Media Tab",
+        "type": "Array",
+        "required": false,
+        "localized": false,
+        "disabled": false,
+        "items": {
+          "type": "Link",
+          "validations": [
+            {
+              "linkContentType": [
+                "resourcesCpt",
+                "newPressMediaCpt"
+              ]
+            }
+          ],
+          "linkType": "Entry"
+        },
+        "validations": [
+          {
+            "size": {
+              "max": 6
+            }
+          }
+        ]
+      }
+    }
+  },
   "assetGrid": {
     "name": "🧩 Asset Grid",
     "description": "",
@@ -1622,228 +1844,6 @@
           "linkType": "Entry"
         },
         "validations": []
-      }
-    }
-  },
-  "resourceTabSection": {
-    "name": "🧩 Resource Tab Section",
-    "description": "",
-    "displayField": "blockName",
-    "fields": {
-      "blockId": {
-        "name": "Block ID",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "blockName": {
-        "name": "Block Name",
-        "type": "Symbol",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "validations": []
-      },
-      "sectionTitle": {
-        "name": "Section Title",
-        "type": "Link",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "linkType": "Entry",
-        "validations": [
-          {
-            "linkContentType": [
-              "sectionTitle"
-            ]
-          }
-        ]
-      },
-      "blogTab": {
-        "name": "Blog Tab",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "blogCpt",
-                "resourcesCpt"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "max": 5
-            }
-          }
-        ]
-      },
-      "documentsTab": {
-        "name": "Documents Tab",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "resourcesCpt",
-                "newResearchCpt"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "max": 6
-            }
-          }
-        ]
-      },
-      "videosTab": {
-        "name": "Videos Tab",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "resourcesCpt",
-                "newVideoCpt"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "max": 6
-            }
-          }
-        ]
-      },
-      "podcastsTab": {
-        "name": "Podcasts Tab",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "podcastsCpt",
-                "resourcesCpt"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "max": 6
-            }
-          }
-        ]
-      },
-      "eventsTab": {
-        "name": "Events Tab",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "eventsCpt",
-                "resourcesCpt",
-                "newEventsCpt"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "max": 6
-            }
-          }
-        ]
-      },
-      "webinarsTab": {
-        "name": "Webinars Tab",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "resourcesCpt",
-                "newEventsCpt",
-                "newWebinarsCpt"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "max": 6
-            }
-          }
-        ]
-      },
-      "mediaTab": {
-        "name": "Media Tab",
-        "type": "Array",
-        "required": false,
-        "localized": false,
-        "disabled": false,
-        "items": {
-          "type": "Link",
-          "validations": [
-            {
-              "linkContentType": [
-                "resourcesCpt",
-                "newPressMediaCpt"
-              ]
-            }
-          ],
-          "linkType": "Entry"
-        },
-        "validations": [
-          {
-            "size": {
-              "max": 6
-            }
-          }
-        ]
       }
     }
   },

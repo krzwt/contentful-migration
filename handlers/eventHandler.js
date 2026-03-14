@@ -1,7 +1,22 @@
 import { LOCALE, getOrCreateSeo, publishPage } from "./pageHandler.js";
 import { upsertEntry, upsertCta, makeLink, parseCraftLink, upsertAssetWrapper } from "../utils/contentfulHelpers.js";
+import { getCategoryName } from "../utils/categoryLoader.js";
 import { COMPONENTS } from "../registry.js";
 import { convertHtmlToRichText } from "../utils/richText.js";
+
+/** Map general category names to Contentful taxonomy concept IDs (eventsCpt requires at least one concept from generalCategories) */
+const EVENT_CONCEPT_MAP = {
+    "Use Cases": "useCases",
+    "Content Type": "contentType",
+    "Videos": "videos",
+    "Industries": "industries",
+    "Education": "education",
+    "Government": "government",
+    "Healthcare": "healthcare",
+    "High Tech": "highTech",
+    "Financial Services": "financialServices",
+};
+const DEFAULT_EVENT_CONCEPT = "useCases";
 
 const TIMEZONE_MAP = {
     "UTC": "Universal Time Coordinated (UTC/GMT)",
@@ -359,7 +374,23 @@ export async function migrateEvents(
             if (agendaLinks.length > 0) mainFields.eventAgenda = { [LOCALE]: agendaLinks };
             if (sectionEntries.length > 0) mainFields.sections = { [LOCALE]: sectionEntries };
 
-            const mainEntry = await upsertEntry(env, "eventsCpt", `event-${item.id}`, mainFields, shouldPublish);
+            // eventsCpt requires at least one TaxonomyConcept from generalCategories scheme
+            const conceptIds = new Set();
+            if (item.generalCategories && item.generalCategories.length > 0) {
+                for (const catId of item.generalCategories) {
+                    const catName = getCategoryName(catId);
+                    const conceptId = EVENT_CONCEPT_MAP[catName];
+                    if (conceptId) conceptIds.add(conceptId);
+                }
+            }
+            if (conceptIds.size === 0) conceptIds.add(DEFAULT_EVENT_CONCEPT);
+            const eventMetadata = {
+                concepts: Array.from(conceptIds).map(id => ({
+                    sys: { type: "Link", linkType: "TaxonomyConcept", id }
+                }))
+            };
+
+            const mainEntry = await upsertEntry(env, "eventsCpt", `event-${item.id}`, mainFields, shouldPublish, eventMetadata);
 
             if (mainEntry && shouldPublish) {
                 await publishPage(env, mainEntry, item);

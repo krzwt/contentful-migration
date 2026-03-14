@@ -33,6 +33,17 @@ const TAB_FIELD_MAP = {
     media: "mediaTab"
 };
 
+// Contentful linkContentType per tab (only add links that match)
+const TAB_ALLOWED_TYPES = {
+    documentsTab: ["resourcesCpt", "newResearchCpt"],
+    videosTab: ["resourcesCpt", "newVideoCpt"],
+    blogTab: ["blogCpt", "resourcesCpt"],
+    podcastsTab: ["podcastsCpt", "resourcesCpt"],
+    eventsTab: ["eventsCpt", "resourcesCpt"],
+    webinarsTab: ["resourcesCpt", "newEventsCpt"],
+    mediaTab: ["resourcesCpt", "newPressMediaCpt"]
+};
+
 export async function createOrUpdateResourceTabbed(env, blockData, assetMap = null, summary = null) {
     try { await env.getContentType(CONTENT_TYPE); } catch (err) {
         console.warn(`   ⚠ Content type "${CONTENT_TYPE}" not found: ${err.message}. Skipping.`);
@@ -77,18 +88,54 @@ export async function createOrUpdateResourceTabbed(env, blockData, assetMap = nu
                 continue;
             }
 
+            const allowedTypes = TAB_ALLOWED_TYPES[targetField];
             for (const id of entryIds) {
                 let contentfulId = ID_MAP[id];
+                let contentType = null;
+                const ref = resolveEntryRef(id);
+                if (ref) {
+                    contentfulId = contentfulId || ref.id;
+                    contentType = ref.type;
+                }
                 if (!contentfulId) {
-                    // Fallback to entryId cache (handles blogs, podcasts, etc.)
-                    const ref = resolveEntryRef(id);
-                    if (ref) {
-                        contentfulId = ref.id;
-                    }
+                    contentfulId = ID_MAP[id];
                 }
 
                 if (!contentfulId) {
                     console.warn(`   ⚠️ Skipping unmapped entry ID ${id} in tab "${type}"`);
+                    if (summary) summary.missingResources.add(id);
+                    continue;
+                }
+
+                // Resolve content type if we don't have it (e.g. from ID_MAP only)
+                if (allowedTypes && !contentType && env) {
+                    try {
+                        const entry = await env.getEntry(contentfulId);
+                        contentType = entry.sys?.contentType?.sys?.id || null;
+                    } catch (_) {
+                        contentType = null;
+                    }
+                }
+
+                // Only add links that match the tab's linkContentType (avoid 422)
+                if (allowedTypes && contentType && !allowedTypes.includes(contentType)) {
+                    // videosTab: webinars are now resourcesCpt; try resource-{id}
+                    if (targetField === "videosTab" && (contentType === "newWebinarsCpt" || String(contentfulId).startsWith("webinar-"))) {
+                        const resourceId = `resource-${id}`;
+                        try {
+                            const resEntry = await env.getEntry(resourceId);
+                            if (resEntry?.sys?.contentType?.sys?.id === "resourcesCpt") {
+                                contentfulId = resourceId;
+                                contentType = "resourcesCpt";
+                            }
+                        } catch (_) {
+                            // resource entry doesn't exist, skip
+                        }
+                    }
+                }
+
+                if (allowedTypes && contentType && !allowedTypes.includes(contentType)) {
+                    console.warn(`   ⚠️ Skipping entry ${contentfulId} (${contentType}) in "${targetField}" — allowed: ${allowedTypes.join(", ")}`);
                     if (summary) summary.missingResources.add(id);
                     continue;
                 }
@@ -102,18 +149,15 @@ export async function createOrUpdateResourceTabbed(env, blockData, assetMap = nu
         }
     }
 
-    // Clean up empty fields and handle "max items" based on Contentful schema validation
+    // Truncate to max items; keep empty arrays so we clear invalid links on update
+    const maxLimit = 6;
     tabFields.forEach(f => {
         const items = fields[f][LOCALE];
-        if (items.length === 0) {
-            delete fields[f];
-        } else {
-            const maxLimit = (f === "blogTab") ? 5 : 6;
-            if (items.length > maxLimit) {
-                console.warn(`   ⚠️ Field "${f}" has ${items.length} items, which exceeds Contentful's limit of ${maxLimit}. Truncating.`);
-                fields[f][LOCALE] = items.slice(0, maxLimit);
-            }
+        if (items.length > maxLimit) {
+            console.warn(`   ⚠️ Field "${f}" has ${items.length} items, which exceeds Contentful's limit of ${maxLimit}. Truncating.`);
+            fields[f][LOCALE] = items.slice(0, maxLimit);
         }
+        // Keep field even when empty so existing invalid links (e.g. webinars in videosTab) get cleared
     });
 
     return await upsertEntry(env, CONTENT_TYPE, `restabs-${blockId}`, fields);

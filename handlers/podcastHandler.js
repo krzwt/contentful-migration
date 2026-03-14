@@ -31,6 +31,17 @@ if (fs.existsSync(PODCAST_CATS_FILE)) {
     }
 }
 
+/** Normalize taxonomy concept IDs to valid Contentful concept ids (avoids "TaxonomyConcept is not valid" for casing variants) */
+const CONCEPT_ID_NORMALIZE = {
+    dEFCON: "defCon",
+    DEFCON: "defCon",
+    "dEF CON": "defCon",
+};
+
+function normalizeConceptId(id) {
+    if (!id || typeof id !== "string") return id;
+    return CONCEPT_ID_NORMALIZE[id] ?? id;
+}
 
 /**
  * Main function to migrate Podcast entries
@@ -300,7 +311,7 @@ export async function migratePodcasts(
                 for (const catId of item.generalCategories) {
                     const catName = getCategoryName(catId);
                     const conceptId = conceptMapping[catName];
-                    if (conceptId) conceptsSet.add(conceptId);
+                    if (conceptId) conceptsSet.add(normalizeConceptId(conceptId));
                 }
             }
 
@@ -332,7 +343,7 @@ export async function migratePodcasts(
                     }
 
                     if (conceptId) {
-                        conceptsSet.add(conceptId);
+                        conceptsSet.add(normalizeConceptId(conceptId));
                     } else if (conceptId !== "") {
                         const catName = getCategoryName(catId);
                         console.warn(`   ⚠️ No Taxonomy mapping for podcastCategory: ${catName || "Unknown"} (ID: ${catId})`);
@@ -342,7 +353,7 @@ export async function migratePodcasts(
 
             if (conceptsSet.size > 0) {
                 metadata.concepts = Array.from(conceptsSet).map(id => ({
-                    sys: { type: "Link", linkType: "TaxonomyConcept", id }
+                    sys: { type: "Link", linkType: "TaxonomyConcept", id: normalizeConceptId(id) }
                 }));
             }
 
