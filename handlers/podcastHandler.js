@@ -36,6 +36,8 @@ const CONCEPT_ID_NORMALIZE = {
     dEFCON: "defCon",
     DEFCON: "defCon",
     "dEF CON": "defCon",
+    cERT: "cert",
+    CERT: "cert",
 };
 
 function normalizeConceptId(id) {

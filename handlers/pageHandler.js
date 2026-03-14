@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import { upsertEntry, makeLink } from "../utils/contentfulHelpers.js";
 
 export const LOCALE = "en-US";
 const DEFAULT_PAGE_TYPE = "page";
@@ -200,6 +201,35 @@ export async function getOrCreateSeo(env, pageData, assetMap = null) {
       fields.ogImage = {
         [LOCALE]: { sys: { type: "Link", linkType: "Asset", id: imageAssetId } }
       };
+    }
+
+    // FAQ Structured Data (SEO → faqStructuredData: Array of Link to faQsItem)
+    const faqRaw = pageData.faqStructuredData;
+    if (env && Array.isArray(faqRaw) && faqRaw.length > 0) {
+      const faqLinks = [];
+      const pageId = pageData.id != null ? String(pageData.id) : (pageData.slug || seoId);
+      for (let i = 0; i < faqRaw.length; i++) {
+        const item = faqRaw[i];
+        const question = (item && (item.question ?? item.name ?? item.q ?? "")).trim();
+        const answer = (item && (item.answer ?? item.description ?? item.a ?? item.content ?? "")).trim();
+        if (!question && !answer) continue;
+        const faqEntryId = `faq-seo-${pageId}-${i}`;
+        const faqFields = {
+          question: { [LOCALE]: question || "(No question)" },
+          answer: { [LOCALE]: answer.trim() || "(No answer)" }
+        };
+        try {
+          const faqEntry = await upsertEntry(env, "faQsItem", faqEntryId, faqFields, true);
+          if (faqEntry && faqEntry.sys && faqEntry.sys.id) {
+            faqLinks.push(makeLink(faqEntry.sys.id));
+          }
+        } catch (e) {
+          console.warn(`   ⚠ FAQ item ${i} for SEO ${seoId}: ${e.message}`);
+        }
+      }
+      if (faqLinks.length > 0) {
+        fields.faqStructuredData = { [LOCALE]: faqLinks };
+      }
     }
 
     if (!env) {

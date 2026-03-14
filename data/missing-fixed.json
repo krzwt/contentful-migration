@@ -2,14 +2,44 @@
   "data": {
     "assets": [
       {
-        "id": "2502978",
-        "title": "Brandyn Murtagh Audio Episode",
-        "url": "https://assets-uat.btdevops.io/assets/documents/Brandyn-Murtagh-Audio-Episode.mp3",
-        "filename": "Brandyn-Murtagh-Audio-Episode.mp3",
-        "mimeType": "audio/mpeg",
-        "width": null,
-        "height": null,
-        "size": "80742426"
+        "id": "2117002",
+        "title": "Gary Bowser Headshot",
+        "url": "https://assets-uat.btdevops.io/assets/documents/Gary-Bowser-Headshot.png",
+        "filename": "Gary-Bowser-Headshot.png",
+        "mimeType": "image/png",
+        "width": 820,
+        "height": 464,
+        "size": "497152"
+      },
+      {
+        "id": "1989441",
+        "title": "Robert R Snake Hansen Headshot",
+        "url": "https://assets-uat.btdevops.io/assets/images/Robert-RSnake-Hansen-Headshot.jpeg",
+        "filename": "Robert-RSnake-Hansen-Headshot.jpeg",
+        "mimeType": "image/jpeg",
+        "width": 614,
+        "height": 465,
+        "size": "163077"
+      },
+      {
+        "id": "1416836",
+        "title": "Terry Cutler Headshot",
+        "url": "https://assets-uat.btdevops.io/assets/documents/Terry-Cutler-Headshot.jpg",
+        "filename": "Terry-Cutler-Headshot.jpg",
+        "mimeType": "image/jpeg",
+        "width": 300,
+        "height": 300,
+        "size": "18241"
+      },
+      {
+        "id": "844130",
+        "title": "Download",
+        "url": "https://assets-uat.btdevops.io/assets/images/download.jpg",
+        "filename": "download.jpg",
+        "mimeType": "image/jpeg",
+        "width": 225,
+        "height": 225,
+        "size": "8937"
       }
     ]
   }
